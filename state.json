@@ -1,5 +1,12 @@
 {
  "alerts": {
+  "AAPLBUSDT": {
+   "score": 50,
+   "signals": [
+    "WHALE"
+   ],
+   "ts": "2026-10-30T20:42:53+00:00"
+  },
   "ALPINEUSDT": {
    "score": 61,
    "signals": [
