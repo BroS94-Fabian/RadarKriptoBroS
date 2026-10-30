@@ -103,6 +103,14 @@
    ],
    "ts": "2026-10-30T12:56:52+00:00"
   },
+  "QQQBUSDT": {
+   "score": 63,
+   "signals": [
+    "WHALE",
+    "VOL"
+   ],
+   "ts": "2026-10-30T19:49:08+00:00"
+  },
   "SOPHUSDT": {
    "score": 64,
    "signals": [
