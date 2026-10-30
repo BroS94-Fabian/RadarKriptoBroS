@@ -1,0 +1,54 @@
+# =====================================================================
+#  PENGATURAN RADAR WHALE KRIPTO
+#  Ubah angka di bawah lewat GitHub (klik file ini > ikon pensil > Commit).
+#  Perubahan berlaku otomatis pada putaran berikutnya.
+# =====================================================================
+
+# Bursa sumber data: binance atau okx.
+# Kalau bursa pertama tidak bisa diakses, radar otomatis pindah ke yang lain.
+sumber_data: binance
+quote: USDT
+
+# Koin dengan volume 24 jam di bawah ini diabaikan (koin sepi gampang dimainkan).
+min_volume_24j_usd: 2000000
+
+# Jumlah maksimum koin yang dipindai (diurutkan dari volume terbesar).
+maks_koin_dipindai: 250
+
+# Koin yang SELALU dipindai walau volumenya kecil. Contoh: [BTC, ETH, SOL]
+pantau_khusus: []
+
+# Stablecoin & token pembungkus yang tidak perlu dipantau.
+abaikan: [USDC, FDUSD, TUSD, USDP, DAI, BUSD, EUR, EURI, AEUR, USDE, PYUSD, USD1,
+          XUSD, BFUSD, RLUSD, USDS, PAXG, XAUT, WBTC, WBETH, BNSOL]
+
+ambang:
+  # Lonjakan volume harian: volume 24 jam >= X kali rata-rata 20 hari
+  rvol_harian: 3.0
+  # Whale masuk: volume 1 jam >= X kali rata-rata 48 jam sebelumnya
+  rvol_jam: 4.0
+  # Porsi beli agresif (market buy) minimal saat lonjakan 1 jam. 0.58 = 58%
+  beli_agresif: 0.58
+  # Chaikin Money Flow 20 hari minimal untuk dianggap akumulasi
+  cmf_akumulasi: 0.05
+  # Kemiringan OBV minimal (dalam satuan volume harian rata-rata per hari)
+  obv_naik: 0.30
+  # Akumulasi diam-diam hanya dihitung bila harga 20 hari bergerak <= X%
+  sideways_maks_persen: 12
+  # Beri peringatan FOMO bila harga sudah naik >= X% dalam 24 jam
+  pump_24j_rawan_persen: 40
+  # Skor minimal (0-100) agar alert dikirim. Naikkan kalau alert terlalu banyak.
+  skor_min_alert: 45
+
+# Koin yang sama tidak di-alert ulang selama X jam
+# (kecuali muncul sinyal baru atau skornya naik >= 15).
+cooldown_jam: 12
+
+# Maksimum alert bergrafik per putaran (sisanya dikirim sebagai daftar singkat).
+maks_grafik_per_run: 5
+
+# Rentang data untuk menghitung zona akumulasi (profil volume), dalam hari.
+profil_volume_hari: 30
+
+# Ringkasan harian dikirim sekali sehari mulai jam ini (WIB).
+ringkasan_harian_jam_wib: 8
