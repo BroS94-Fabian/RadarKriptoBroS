@@ -1,0 +1,1262 @@
+{
+ "alerts2": {
+  "BCHUSDT|naik": {
+   "skor": 51,
+   "status": "terbentuk",
+   "ts": "2026-10-31T08:46:12+00:00"
+  },
+  "BONKUSDT|naik": {
+   "skor": 60,
+   "status": "terbentuk",
+   "ts": "2026-10-31T08:46:12+00:00"
+  },
+  "GLMUSDT|naik": {
+   "skor": 59,
+   "status": "breakout",
+   "ts": "2026-10-31T08:46:12+00:00"
+  },
+  "GRASS-USDT|turun": {
+   "skor": 57,
+   "status": "breakout",
+   "ts": "2026-10-31T08:46:12+00:00"
+  },
+  "LINKUSDT|naik": {
+   "skor": 55,
+   "status": "terbentuk",
+   "ts": "2026-10-31T08:46:12+00:00"
+  },
+  "LTCUSDT|naik": {
+   "skor": 52,
+   "status": "terbentuk",
+   "ts": "2026-10-31T08:46:12+00:00"
+  },
+  "PENGUUSDT|naik": {
+   "skor": 59,
+   "status": "terbentuk",
+   "ts": "2026-10-31T08:46:12+00:00"
+  },
+  "SHIBUSDT|naik": {
+   "skor": 51,
+   "status": "terbentuk",
+   "ts": "2026-10-31T08:46:12+00:00"
+  },
+  "UNIUSDT|naik": {
+   "skor": 56,
+   "status": "breakout",
+   "ts": "2026-10-31T08:46:12+00:00"
+  },
+  "VIRTUALUSDT|naik": {
+   "skor": 52,
+   "status": "terbentuk",
+   "ts": "2026-10-31T08:46:12+00:00"
+  }
+ },
+ "last_summary": "2026-10-31",
+ "ranking": {
+  "data": [
+   {
+    "name": "Bitcoin",
+    "rank": 1,
+    "stabil": false,
+    "symbol": "BTC"
+   },
+   {
+    "name": "Ethereum",
+    "rank": 2,
+    "stabil": false,
+    "symbol": "ETH"
+   },
+   {
+    "name": "Tether USDt",
+    "rank": 3,
+    "stabil": true,
+    "symbol": "USDT"
+   },
+   {
+    "name": "BNB",
+    "rank": 4,
+    "stabil": false,
+    "symbol": "BNB"
+   },
+   {
+    "name": "XRP",
+    "rank": 5,
+    "stabil": false,
+    "symbol": "XRP"
+   },
+   {
+    "name": "USDC",
+    "rank": 6,
+    "stabil": true,
+    "symbol": "USDC"
+   },
+   {
+    "name": "Solana",
+    "rank": 7,
+    "stabil": false,
+    "symbol": "SOL"
+   },
+   {
+    "name": "TRON",
+    "rank": 8,
+    "stabil": false,
+    "symbol": "TRX"
+   },
+   {
+    "name": "Hyperliquid",
+    "rank": 9,
+    "stabil": false,
+    "symbol": "HYPE"
+   },
+   {
+    "name": "Zcash",
+    "rank": 10,
+    "stabil": false,
+    "symbol": "ZEC"
+   },
+   {
+    "name": "Dogecoin",
+    "rank": 11,
+    "stabil": false,
+    "symbol": "DOGE"
+   },
+   {
+    "name": "Monero",
+    "rank": 12,
+    "stabil": false,
+    "symbol": "XMR"
+   },
+   {
+    "name": "UNUS SED LEO",
+    "rank": 13,
+    "stabil": false,
+    "symbol": "LEO"
+   },
+   {
+    "name": "Chainlink",
+    "rank": 14,
+    "stabil": false,
+    "symbol": "LINK"
+   },
+   {
+    "name": "Cardano",
+    "rank": 15,
+    "stabil": false,
+    "symbol": "ADA"
+   },
+   {
+    "name": "Stellar",
+    "rank": 16,
+    "stabil": false,
+    "symbol": "XLM"
+   },
+   {
+    "name": "Bitcoin Cash",
+    "rank": 17,
+    "stabil": false,
+    "symbol": "BCH"
+   },
+   {
+    "name": "NEAR Protocol",
+    "rank": 18,
+    "stabil": false,
+    "symbol": "NEAR"
+   },
+   {
+    "name": "Dai",
+    "rank": 19,
+    "stabil": true,
+    "symbol": "DAI"
+   },
+   {
+    "name": "Ethena USDe",
+    "rank": 20,
+    "stabil": true,
+    "symbol": "USDE"
+   },
+   {
+    "name": "Uniswap",
+    "rank": 21,
+    "stabil": false,
+    "symbol": "UNI"
+   },
+   {
+    "name": "Litecoin",
+    "rank": 22,
+    "stabil": false,
+    "symbol": "LTC"
+   },
+   {
+    "name": "World Liberty Financial USD",
+    "rank": 23,
+    "stabil": true,
+    "symbol": "USD1"
+   },
+   {
+    "name": "Canton",
+    "rank": 24,
+    "stabil": false,
+    "symbol": "CC"
+   },
+   {
+    "name": "Avalanche",
+    "rank": 25,
+    "stabil": false,
+    "symbol": "AVAX"
+   },
+   {
+    "name": "Sui",
+    "rank": 26,
+    "stabil": false,
+    "symbol": "SUI"
+   },
+   {
+    "name": "Gram (prev. Toncoin)",
+    "rank": 27,
+    "stabil": false,
+    "symbol": "GRAM"
+   },
+   {
+    "name": "Hedera",
+    "rank": 28,
+    "stabil": false,
+    "symbol": "HBAR"
+   },
+   {
+    "name": "Global Dollar",
+    "rank": 29,
+    "stabil": true,
+    "symbol": "USDG"
+   },
+   {
+    "name": "Tether Gold",
+    "rank": 30,
+    "stabil": true,
+    "symbol": "XAUT"
+   },
+   {
+    "name": "PayPal USD",
+    "rank": 31,
+    "stabil": true,
+    "symbol": "PYUSD"
+   },
+   {
+    "name": "Shiba Inu",
+    "rank": 32,
+    "stabil": false,
+    "symbol": "SHIB"
+   },
+   {
+    "name": "Bittensor",
+    "rank": 33,
+    "stabil": false,
+    "symbol": "TAO"
+   },
+   {
+    "name": "Cronos",
+    "rank": 34,
+    "stabil": false,
+    "symbol": "CRO"
+   },
+   {
+    "name": "Ethena",
+    "rank": 35,
+    "stabil": false,
+    "symbol": "ENA"
+   },
+   {
+    "name": "Ripple USD",
+    "rank": 36,
+    "stabil": true,
+    "symbol": "RLUSD"
+   },
+   {
+    "name": "Quant",
+    "rank": 37,
+    "stabil": false,
+    "symbol": "QNT"
+   },
+   {
+    "name": "OKB",
+    "rank": 38,
+    "stabil": false,
+    "symbol": "OKB"
+   },
+   {
+    "name": "MemeCore",
+    "rank": 39,
+    "stabil": false,
+    "symbol": "M"
+   },
+   {
+    "name": "Pepe",
+    "rank": 40,
+    "stabil": false,
+    "symbol": "PEPE"
+   },
+   {
+    "name": "Aave",
+    "rank": 41,
+    "stabil": false,
+    "symbol": "AAVE"
+   },
+   {
+    "name": "Ondo",
+    "rank": 42,
+    "stabil": false,
+    "symbol": "ONDO"
+   },
+   {
+    "name": "Aster",
+    "rank": 43,
+    "stabil": false,
+    "symbol": "ASTER"
+   },
+   {
+    "name": "Pump.fun",
+    "rank": 44,
+    "stabil": false,
+    "symbol": "PUMP"
+   },
+   {
+    "name": "PAX Gold",
+    "rank": 45,
+    "stabil": true,
+    "symbol": "PAXG"
+   },
+   {
+    "name": "Polkadot",
+    "rank": 46,
+    "stabil": false,
+    "symbol": "DOT"
+   },
+   {
+    "name": "United Stables",
+    "rank": 47,
+    "stabil": true,
+    "symbol": "U"
+   },
+   {
+    "name": "Sky",
+    "rank": 48,
+    "stabil": false,
+    "symbol": "SKY"
+   },
+   {
+    "name": "World Liberty Financial",
+    "rank": 49,
+    "stabil": false,
+    "symbol": "WLFI"
+   },
+   {
+    "name": "Mantle",
+    "rank": 50,
+    "stabil": false,
+    "symbol": "MNT"
+   },
+   {
+    "name": "USDD",
+    "rank": 51,
+    "stabil": true,
+    "symbol": "USDD"
+   },
+   {
+    "name": "Worldcoin",
+    "rank": 52,
+    "stabil": false,
+    "symbol": "WLD"
+   },
+   {
+    "name": "Internet Computer",
+    "rank": 53,
+    "stabil": false,
+    "symbol": "ICP"
+   },
+   {
+    "name": "Bitget Token",
+    "rank": 54,
+    "stabil": false,
+    "symbol": "BGB"
+   },
+   {
+    "name": "Morpho",
+    "rank": 55,
+    "stabil": false,
+    "symbol": "MORPHO"
+   },
+   {
+    "name": "Ethereum Classic",
+    "rank": 56,
+    "stabil": false,
+    "symbol": "ETC"
+   },
+   {
+    "name": "Arbitrum",
+    "rank": 57,
+    "stabil": false,
+    "symbol": "ARB"
+   },
+   {
+    "name": "JUST",
+    "rank": 58,
+    "stabil": false,
+    "symbol": "JST"
+   },
+   {
+    "name": "Venice Token",
+    "rank": 59,
+    "stabil": false,
+    "symbol": "VVV"
+   },
+   {
+    "name": "GateToken",
+    "rank": 60,
+    "stabil": false,
+    "symbol": "GT"
+   },
+   {
+    "name": "KuCoin Token",
+    "rank": 61,
+    "stabil": false,
+    "symbol": "KCS"
+   },
+   {
+    "name": "Polygon (prev. MATIC)",
+    "rank": 62,
+    "stabil": false,
+    "symbol": "POL"
+   },
+   {
+    "name": "Kaspa",
+    "rank": 63,
+    "stabil": false,
+    "symbol": "KAS"
+   },
+   {
+    "name": "Pi",
+    "rank": 64,
+    "stabil": false,
+    "symbol": "PI"
+   },
+   {
+    "name": "Algorand",
+    "rank": 65,
+    "stabil": false,
+    "symbol": "ALGO"
+   },
+   {
+    "name": "Jupiter",
+    "rank": 66,
+    "stabil": false,
+    "symbol": "JUP"
+   },
+   {
+    "name": "Render",
+    "rank": 67,
+    "stabil": false,
+    "symbol": "RENDER"
+   },
+   {
+    "name": "Cosmos",
+    "rank": 68,
+    "stabil": false,
+    "symbol": "ATOM"
+   },
+   {
+    "name": "Aerodrome Finance",
+    "rank": 69,
+    "stabil": false,
+    "symbol": "AERO"
+   },
+   {
+    "name": "Filecoin",
+    "rank": 70,
+    "stabil": false,
+    "symbol": "FIL"
+   },
+   {
+    "name": "Injective",
+    "rank": 71,
+    "stabil": false,
+    "symbol": "INJ"
+   },
+   {
+    "name": "LayerZero",
+    "rank": 72,
+    "stabil": false,
+    "symbol": "ZRO"
+   },
+   {
+    "name": "Lighter",
+    "rank": 73,
+    "stabil": false,
+    "symbol": "LIT"
+   },
+   {
+    "name": "PancakeSwap",
+    "rank": 74,
+    "stabil": false,
+    "symbol": "CAKE"
+   },
+   {
+    "name": "XDC Network",
+    "rank": 75,
+    "stabil": false,
+    "symbol": "XDC"
+   },
+   {
+    "name": "Midnight",
+    "rank": 76,
+    "stabil": false,
+    "symbol": "NIGHT"
+   },
+   {
+    "name": "Dash",
+    "rank": 77,
+    "stabil": false,
+    "symbol": "DASH"
+   },
+   {
+    "name": "ether.fi",
+    "rank": 78,
+    "stabil": false,
+    "symbol": "ETHFI"
+   },
+   {
+    "name": "Stacks",
+    "rank": 79,
+    "stabil": false,
+    "symbol": "STX"
+   },
+   {
+    "name": "Aptos",
+    "rank": 80,
+    "stabil": false,
+    "symbol": "APT"
+   },
+   {
+    "name": "Flare",
+    "rank": 81,
+    "stabil": false,
+    "symbol": "FLR"
+   },
+   {
+    "name": "币安人生",
+    "rank": 82,
+    "stabil": false,
+    "symbol": "币安人生"
+   },
+   {
+    "name": "Pyth Network",
+    "rank": 83,
+    "stabil": false,
+    "symbol": "PYTH"
+   },
+   {
+    "name": "VeChain",
+    "rank": 84,
+    "stabil": false,
+    "symbol": "VET"
+   },
+   {
+    "name": "Nexo",
+    "rank": 85,
+    "stabil": false,
+    "symbol": "NEXO"
+   },
+   {
+    "name": "TrueUSD",
+    "rank": 86,
+    "stabil": true,
+    "symbol": "TUSD"
+   },
+   {
+    "name": "Stable",
+    "rank": 87,
+    "stabil": true,
+    "symbol": "STABLE"
+   },
+   {
+    "name": "Celestia",
+    "rank": 88,
+    "stabil": false,
+    "symbol": "TIA"
+   },
+   {
+    "name": "Pudgy Penguins",
+    "rank": 89,
+    "stabil": false,
+    "symbol": "PENGU"
+   },
+   {
+    "name": "Curve DAO Token",
+    "rank": 90,
+    "stabil": false,
+    "symbol": "CRV"
+   },
+   {
+    "name": "EURC",
+    "rank": 91,
+    "stabil": true,
+    "symbol": "EURC"
+   },
+   {
+    "name": "OFFICIAL TRUMP",
+    "rank": 92,
+    "stabil": false,
+    "symbol": "TRUMP"
+   },
+   {
+    "name": "Raydium",
+    "rank": 93,
+    "stabil": false,
+    "symbol": "RAY"
+   },
+   {
+    "name": "Artificial Superintelligence Alliance",
+    "rank": 94,
+    "stabil": false,
+    "symbol": "FET"
+   },
+   {
+    "name": "Virtuals Protocol",
+    "rank": 95,
+    "stabil": false,
+    "symbol": "VIRTUAL"
+   },
+   {
+    "name": "Plasma",
+    "rank": 96,
+    "stabil": true,
+    "symbol": "XPL"
+   },
+   {
+    "name": "Sei",
+    "rank": 97,
+    "stabil": false,
+    "symbol": "SEI"
+   },
+   {
+    "name": "BitTorrent [New]",
+    "rank": 98,
+    "stabil": false,
+    "symbol": "BTT"
+   },
+   {
+    "name": "Bitcoin SV",
+    "rank": 99,
+    "stabil": false,
+    "symbol": "BSV"
+   },
+   {
+    "name": "SPX6900",
+    "rank": 100,
+    "stabil": false,
+    "symbol": "SPX"
+   },
+   {
+    "name": "Starknet",
+    "rank": 101,
+    "stabil": false,
+    "symbol": "STRK"
+   },
+   {
+    "name": "Pendle",
+    "rank": 102,
+    "stabil": false,
+    "symbol": "PENDLE"
+   },
+   {
+    "name": "Sun [New]",
+    "rank": 103,
+    "stabil": false,
+    "symbol": "SUN"
+   },
+   {
+    "name": "Pieverse",
+    "rank": 104,
+    "stabil": false,
+    "symbol": "PIEVERSE"
+   },
+   {
+    "name": "Falcon Finance",
+    "rank": 105,
+    "stabil": true,
+    "symbol": "FF"
+   },
+   {
+    "name": "First Digital USD",
+    "rank": 106,
+    "stabil": true,
+    "symbol": "FDUSD"
+   },
+   {
+    "name": "Tezos",
+    "rank": 107,
+    "stabil": false,
+    "symbol": "XTZ"
+   },
+   {
+    "name": "Gnosis",
+    "rank": 108,
+    "stabil": false,
+    "symbol": "GNO"
+   },
+   {
+    "name": "Kite",
+    "rank": 109,
+    "stabil": false,
+    "symbol": "KITE"
+   },
+   {
+    "name": "Lido DAO",
+    "rank": 110,
+    "stabil": false,
+    "symbol": "LDO"
+   },
+   {
+    "name": "Optimism",
+    "rank": 111,
+    "stabil": false,
+    "symbol": "OP"
+   },
+   {
+    "name": "Bonk",
+    "rank": 112,
+    "stabil": false,
+    "symbol": "BONK"
+   },
+   {
+    "name": "Beam",
+    "rank": 113,
+    "stabil": false,
+    "symbol": "BEAM"
+   },
+   {
+    "name": "Immutable",
+    "rank": 114,
+    "stabil": false,
+    "symbol": "IMX"
+   },
+   {
+    "name": "Conflux",
+    "rank": 115,
+    "stabil": false,
+    "symbol": "CFX"
+   },
+   {
+    "name": "Terra Classic",
+    "rank": 116,
+    "stabil": false,
+    "symbol": "LUNC"
+   },
+   {
+    "name": "AINFT",
+    "rank": 117,
+    "stabil": false,
+    "symbol": "NFT"
+   },
+   {
+    "name": "Decred",
+    "rank": 118,
+    "stabil": false,
+    "symbol": "DCR"
+   },
+   {
+    "name": "Monad",
+    "rank": 119,
+    "stabil": false,
+    "symbol": "MON"
+   },
+   {
+    "name": "The Graph",
+    "rank": 120,
+    "stabil": false,
+    "symbol": "GRT"
+   },
+   {
+    "name": "FLOKI",
+    "rank": 121,
+    "stabil": false,
+    "symbol": "FLOKI"
+   },
+   {
+    "name": "Kaia",
+    "rank": 122,
+    "stabil": false,
+    "symbol": "KAIA"
+   },
+   {
+    "name": "THORChain",
+    "rank": 123,
+    "stabil": false,
+    "symbol": "RUNE"
+   },
+   {
+    "name": "Ethereum Name Service",
+    "rank": 124,
+    "stabil": false,
+    "symbol": "ENS"
+   },
+   {
+    "name": "Arweave",
+    "rank": 125,
+    "stabil": false,
+    "symbol": "AR"
+   },
+   {
+    "name": "Compound",
+    "rank": 126,
+    "stabil": false,
+    "symbol": "COMP"
+   },
+   {
+    "name": "Jito",
+    "rank": 127,
+    "stabil": false,
+    "symbol": "JTO"
+   },
+   {
+    "name": "Zebec Network",
+    "rank": 128,
+    "stabil": false,
+    "symbol": "ZBCN"
+   },
+   {
+    "name": "Convex Finance",
+    "rank": 129,
+    "stabil": false,
+    "symbol": "CVX"
+   },
+   {
+    "name": "Basic Attention Token",
+    "rank": 130,
+    "stabil": false,
+    "symbol": "BAT"
+   },
+   {
+    "name": "EigenCloud",
+    "rank": 131,
+    "stabil": false,
+    "symbol": "EIGEN"
+   },
+   {
+    "name": "JasmyCoin",
+    "rank": 132,
+    "stabil": false,
+    "symbol": "JASMY"
+   },
+   {
+    "name": "IOTA",
+    "rank": 133,
+    "stabil": false,
+    "symbol": "IOTA"
+   },
+   {
+    "name": "Kamino",
+    "rank": 134,
+    "stabil": false,
+    "symbol": "KMNO"
+   },
+   {
+    "name": "Akash Network",
+    "rank": 135,
+    "stabil": false,
+    "symbol": "AKT"
+   },
+   {
+    "name": "Maple Finance",
+    "rank": 136,
+    "stabil": false,
+    "symbol": "SYRUP"
+   },
+   {
+    "name": "Trust Wallet Token",
+    "rank": 137,
+    "stabil": false,
+    "symbol": "TWT"
+   },
+   {
+    "name": "SOON",
+    "rank": 138,
+    "stabil": false,
+    "symbol": "SOON"
+   },
+   {
+    "name": "dogwifhat",
+    "rank": 139,
+    "stabil": false,
+    "symbol": "WIF"
+   },
+   {
+    "name": "OriginTrail",
+    "rank": 140,
+    "stabil": false,
+    "symbol": "TRAC"
+   },
+   {
+    "name": "Zama",
+    "rank": 141,
+    "stabil": false,
+    "symbol": "ZAMA"
+   },
+   {
+    "name": "Theta Network",
+    "rank": 142,
+    "stabil": false,
+    "symbol": "THETA"
+   },
+   {
+    "name": "Meteora",
+    "rank": 143,
+    "stabil": false,
+    "symbol": "MET"
+   },
+   {
+    "name": "Onyxcoin",
+    "rank": 144,
+    "stabil": false,
+    "symbol": "XCN"
+   },
+   {
+    "name": "GoМining",
+    "rank": 145,
+    "stabil": false,
+    "symbol": "GOMINING"
+   },
+   {
+    "name": "Pons",
+    "rank": 146,
+    "stabil": false,
+    "symbol": "PONS"
+   },
+   {
+    "name": "Axie Infinity",
+    "rank": 147,
+    "stabil": false,
+    "symbol": "AXS"
+   },
+   {
+    "name": "Decentraland",
+    "rank": 148,
+    "stabil": false,
+    "symbol": "MANA"
+   },
+   {
+    "name": "MX Token",
+    "rank": 149,
+    "stabil": false,
+    "symbol": "MX"
+   },
+   {
+    "name": "Fluid",
+    "rank": 150,
+    "stabil": false,
+    "symbol": "FLUID"
+   },
+   {
+    "name": "Grass",
+    "rank": 151,
+    "stabil": false,
+    "symbol": "GRASS"
+   },
+   {
+    "name": "Neo",
+    "rank": 152,
+    "stabil": false,
+    "symbol": "NEO"
+   },
+   {
+    "name": "AWE",
+    "rank": 153,
+    "stabil": false,
+    "symbol": "AWE"
+   },
+   {
+    "name": "Cap",
+    "rank": 154,
+    "stabil": false,
+    "symbol": "CAP"
+   },
+   {
+    "name": "Vision",
+    "rank": 155,
+    "stabil": false,
+    "symbol": "VSN"
+   },
+   {
+    "name": "The Sandbox",
+    "rank": 156,
+    "stabil": false,
+    "symbol": "SAND"
+   },
+   {
+    "name": "Sentient",
+    "rank": 157,
+    "stabil": false,
+    "symbol": "SENT"
+   },
+   {
+    "name": "Vaulta",
+    "rank": 158,
+    "stabil": false,
+    "symbol": "A"
+   },
+   {
+    "name": "Telcoin",
+    "rank": 159,
+    "stabil": true,
+    "symbol": "TEL"
+   },
+   {
+    "name": "BUILDon",
+    "rank": 160,
+    "stabil": false,
+    "symbol": "B"
+   },
+   {
+    "name": "eCash",
+    "rank": 161,
+    "stabil": false,
+    "symbol": "XEC"
+   },
+   {
+    "name": "Chiliz",
+    "rank": 162,
+    "stabil": false,
+    "symbol": "CHZ"
+   },
+   {
+    "name": "Useless Coin",
+    "rank": 163,
+    "stabil": false,
+    "symbol": "USELESS"
+   },
+   {
+    "name": "DeXe",
+    "rank": 164,
+    "stabil": false,
+    "symbol": "DEXE"
+   },
+   {
+    "name": "Fartcoin",
+    "rank": 165,
+    "stabil": false,
+    "symbol": "FARTCOIN"
+   },
+   {
+    "name": "edgeX",
+    "rank": 166,
+    "stabil": false,
+    "symbol": "EDGE"
+   },
+   {
+    "name": "AIOZ Network",
+    "rank": 167,
+    "stabil": false,
+    "symbol": "AIOZ"
+   },
+   {
+    "name": "Humanity",
+    "rank": 168,
+    "stabil": false,
+    "symbol": "H"
+   },
+   {
+    "name": "GEODNET",
+    "rank": 169,
+    "stabil": false,
+    "symbol": "GEOD"
+   },
+   {
+    "name": "Sonic",
+    "rank": 170,
+    "stabil": false,
+    "symbol": "S"
+   },
+   {
+    "name": "Golem",
+    "rank": 171,
+    "stabil": false,
+    "symbol": "GLM"
+   },
+   {
+    "name": "ZKsync",
+    "rank": 172,
+    "stabil": false,
+    "symbol": "ZK"
+   },
+   {
+    "name": "1inch",
+    "rank": 173,
+    "stabil": false,
+    "symbol": "1INCH"
+   },
+   {
+    "name": "ApeCoin",
+    "rank": 174,
+    "stabil": false,
+    "symbol": "APE"
+   },
+   {
+    "name": "SafePal",
+    "rank": 175,
+    "stabil": false,
+    "symbol": "SFP"
+   },
+   {
+    "name": "SuperVerse",
+    "rank": 176,
+    "stabil": false,
+    "symbol": "SUPER"
+   },
+   {
+    "name": "Plume",
+    "rank": 177,
+    "stabil": false,
+    "symbol": "PLUME"
+   },
+   {
+    "name": "MultiversX",
+    "rank": 178,
+    "stabil": false,
+    "symbol": "EGLD"
+   },
+   {
+    "name": "Aethir",
+    "rank": 179,
+    "stabil": false,
+    "symbol": "ATH"
+   },
+   {
+    "name": "0G",
+    "rank": 180,
+    "stabil": false,
+    "symbol": "0G"
+   },
+   {
+    "name": "Genius Terminal",
+    "rank": 181,
+    "stabil": false,
+    "symbol": "GENIUS"
+   },
+   {
+    "name": "Horizen",
+    "rank": 182,
+    "stabil": false,
+    "symbol": "ZEN"
+   },
+   {
+    "name": "Reserve Rights",
+    "rank": 183,
+    "stabil": false,
+    "symbol": "RSR"
+   },
+   {
+    "name": "DeepBook Protocol",
+    "rank": 184,
+    "stabil": false,
+    "symbol": "DEEP"
+   },
+   {
+    "name": "Prom",
+    "rank": 185,
+    "stabil": false,
+    "symbol": "PROM"
+   },
+   {
+    "name": "Orca",
+    "rank": 186,
+    "stabil": false,
+    "symbol": "ORCA"
+   },
+   {
+    "name": "DoubleZero",
+    "rank": 187,
+    "stabil": false,
+    "symbol": "2Z"
+   },
+   {
+    "name": "Cash Cat",
+    "rank": 188,
+    "stabil": false,
+    "symbol": "CASHCAT"
+   },
+   {
+    "name": "dYdX",
+    "rank": 189,
+    "stabil": false,
+    "symbol": "DYDX"
+   },
+   {
+    "name": "Gala",
+    "rank": 190,
+    "stabil": false,
+    "symbol": "GALA"
+   },
+   {
+    "name": "USD.AI",
+    "rank": 191,
+    "stabil": false,
+    "symbol": "CHIP"
+   },
+   {
+    "name": "peaq",
+    "rank": 192,
+    "stabil": false,
+    "symbol": "PEAQ"
+   },
+   {
+    "name": "GMX",
+    "rank": 193,
+    "stabil": false,
+    "symbol": "GMX"
+   },
+   {
+    "name": "Dog (Bitcoin)",
+    "rank": 194,
+    "stabil": false,
+    "symbol": "DOG"
+   },
+   {
+    "name": "Qtum",
+    "rank": 195,
+    "stabil": false,
+    "symbol": "QTUM"
+   },
+   {
+    "name": "Tagger",
+    "rank": 196,
+    "stabil": false,
+    "symbol": "TAG"
+   },
+   {
+    "name": "0x Protocol",
+    "rank": 197,
+    "stabil": false,
+    "symbol": "ZRX"
+   },
+   {
+    "name": "Walrus",
+    "rank": 198,
+    "stabil": false,
+    "symbol": "WAL"
+   },
+   {
+    "name": "FTX Token",
+    "rank": 199,
+    "stabil": false,
+    "symbol": "FTT"
+   },
+   {
+    "name": "Cheems (cheems.pet)",
+    "rank": 200,
+    "stabil": false,
+    "symbol": "CHEEMS"
+   }
+  ],
+  "n": 200,
+  "sumber": "CoinMarketCap",
+  "ts": "2026-10-31T08:46:12+00:00"
+ }
+}
