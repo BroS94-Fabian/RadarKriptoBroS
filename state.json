@@ -13,7 +13,7 @@
   "GLMUSDT|naik": {
    "skor": 69,
    "status": "breakout",
-   "ts": "2026-10-31T12:50:28+00:00"
+   "ts": "2026-10-31T08:46:12+00:00"
   },
   "GRASS-USDT|turun": {
    "skor": 57,
@@ -1493,33 +1493,7 @@
    "ts": "2026-10-31T09:42:02+00:00",
    "ts_hasil": null,
    "ts_update": "2026-10-31T14:01:59+00:00"
-  },
-  {
-   "base": "GLM",
-   "batal": null,
-   "batal_pct": null,
-   "bursa": "Binance",
-   "chg": 1.38,
-   "harga": 0.1161,
-   "harga_now": 0.1177,
-   "hasil": "berjalan",
-   "id": "GLMUSDT|naik|2026-10-31T12:50:28+00:00",
-   "isi_ulang": true,
-   "kelas": "naik",
-   "maks": 0.1178,
-   "maks_pct": 1.46,
-   "min": 0.1161,
-   "min_pct": 0.0,
-   "pola": null,
-   "rank": 171,
-   "skor": 69,
-   "symbol": "GLMUSDT",
-   "target": null,
-   "target_pct": null,
-   "ts": "2026-10-31T12:50:28+00:00",
-   "ts_hasil": null,
-   "ts_update": "2026-10-31T14:01:59+00:00"
   }
  ],
- "riwayat_isi_ulang": true
+ "riwayat_isi_ulang": false
 }
