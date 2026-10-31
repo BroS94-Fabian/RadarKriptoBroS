@@ -73,7 +73,9 @@ details ul{margin:6px 0 0;padding-left:18px} details li{margin:2px 0}
 table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums}
 th,td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
 th{position:sticky;top:0;background:var(--surface);color:var(--ink-2);font-weight:600;cursor:pointer;user-select:none}
+.jj td,.jj th{text-align:right}
 th:nth-child(2),td:nth-child(2),th:nth-child(6),td:nth-child(6),th:nth-child(9),td:nth-child(9),th:nth-child(13),td:nth-child(13){text-align:left}
+.jj th:nth-child(9),.jj td:nth-child(9){text-align:right}
 tbody tr{cursor:pointer} tbody tr:hover{background:var(--surface-2)}
 dialog{border:0;border-radius:14px;padding:0;max-width:760px;width:calc(100% - 24px);background:var(--surface);color:var(--ink);box-shadow:0 10px 40px rgba(0,0,0,.3)}
 dialog::backdrop{background:rgba(0,0,0,.45)}
@@ -84,6 +86,11 @@ dialog .card{box-shadow:none}
 .guide h2{font-size:16px;margin:0 0 6px}
 .guide ul{margin:0;padding-left:18px;color:var(--ink-2)}
 footer{margin-top:24px;font-size:12px;color:var(--muted)}
+.jejak-sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:14px}
+.jejak-sum .card b.big{font-size:28px}
+.hasil{font-size:12px;font-weight:700;border-radius:999px;padding:2px 8px;white-space:nowrap}
+.h-target{background:var(--good-bg);color:var(--good)} .h-batal{background:var(--crit-bg);color:var(--crit)}
+.h-berjalan{background:var(--surface-2);color:var(--ink-2)} .h-selesai{background:var(--surface-2);color:var(--muted)}
 .theme{float:right;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);border-radius:8px;padding:4px 10px;font:inherit;font-size:13px;cursor:pointer}
 @media (max-width:420px){.grid{grid-template-columns:1fr}.stat b{font-size:22px}}
 </style>
@@ -128,7 +135,7 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const KELAS = {"naik":"🟢 Potensi naik","turun":"🔴 Potensi turun","pantau-naik":"🟡 Pantau naik","pantau-turun":"🟡 Pantau turun","netral":"Netral"};
   const POSISI = {"bawah":"di bawah zona","dalam-bawah":"di bawah POC","dalam-atas":"di atas POC","atas":"di atas zona","-":"-"};
-  const TABS = [["naik","🟢 Potensi naik"],["turun","🔴 Potensi turun"],["pantau","🟡 Pantau"],["semua","Semua koin"]];
+  const TABS = [["naik","🟢 Potensi naik"],["turun","🔴 Potensi turun"],["pantau","🟡 Pantau"],["semua","Semua koin"],["jejak","📈 Rekam jejak"]];
   let DATA = null, tab = "naik", q = "", sortKey = "rank", sortDir = 1;
 
   // tema (disimpan per perangkat)
@@ -241,11 +248,47 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
     return `<div class="tbl-wrap"><table><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div>`;
   }
 
+  function waktuWIB(ts){
+    return new Date(ts).toLocaleString("id-ID", {timeZone:"Asia/Jakarta", day:"numeric", month:"short", hour:"2-digit", minute:"2-digit"}) + " WIB";
+  }
+  const HASIL = {"kena target":["h-target","🎯 Kena target"], "kena batal":["h-batal","🛑 Kena batal"], "berjalan":["h-berjalan","⏳ Berjalan"], "selesai":["h-selesai","Selesai (14 hari)"]};
+  function jejak(){
+    const riw = (DATA.riwayat || []).filter(e => !q || e.base.toLowerCase().includes(q.toLowerCase()));
+    const rk = DATA.rekap7 || {};
+    const box = (k, ikon, kata) => {
+      const x = rk[k] || {};
+      if (!x.n) return `<article class="card"><b>${ikon} Alert potensi ${kata}</b><span class="sub">Belum ada alert dalam ${rk.hari || 7} hari terakhir.</span></article>`;
+      return `<article class="card"><b>${ikon} Alert potensi ${kata} · ${rk.hari} hari terakhir</b>
+        <div><b class="big">${x.benar}/${x.n}</b> <span class="sub">bergerak ${kata} (${x.persen}%)</span></div>
+        <dl class="kv"><dt>Rata-rata</dt><dd class="${cls(x.rata)}">${pct(x.rata)}</dd>
+        <dt>Kena target</dt><dd>${x.target}</dd><dt>Kena batal</dt><dd>${x.batal}</dd>
+        <dt>Terbaik</dt><dd>${esc(x.terbaik.base)} ${pct(x.terbaik.chg)}</dd><dt>Terburuk</dt><dd>${esc(x.terburuk.base)} ${pct(x.terburuk.chg)}</dd></dl></article>`;
+    };
+    const rows = riw.map(e => {
+      const h = HASIL[e.hasil] || ["h-berjalan", e.hasil];
+      return `<tr><td>${waktuWIB(e.ts)}</td><td><b>${esc(e.base)}</b></td>
+        <td><span class="badge b-${e.kelas}">${e.kelas === "naik" ? "🟢 Naik" : "🔴 Turun"}</span></td>
+        <td>${fp(e.harga)}</td><td>${fp(e.harga_now)}</td><td class="${cls(e.chg)}"><b>${pct(e.chg)}</b></td>
+        <td class="${cls(e.maks_pct)}">${pct(e.maks_pct)}</td><td class="${cls(e.min_pct)}">${pct(e.min_pct)}</td>
+        <td>${e.target ? fp(e.target) + " (" + pct(e.target_pct) + ")" : "-"}</td>
+        <td>${e.batal ? fp(e.batal) + " (" + pct(e.batal_pct) + ")" : "-"}</td>
+        <td><span class="hasil ${h[0]}">${h[1]}</span></td></tr>`;
+    }).join("");
+    const tbl = riw.length ? `<div class="tbl-wrap"><table class="jj"><thead><tr><th>Waktu alert</th><th>Koin</th><th>Arah</th><th>Harga alert</th>
+        <th>Sekarang</th><th>Perubahan</th><th>Tertinggi</th><th>Terendah</th><th>Target</th><th>Batal</th><th>Hasil</th></tr></thead>
+        <tbody>${rows}</tbody></table></div>` : `<div class="empty">Belum ada catatan alert.</div>`;
+    return `<div class="jejak-sum">${box("naik","🟢","naik")}${box("turun","🔴","turun")}</div>${tbl}
+      <p class="sub">Perubahan dihitung dari harga saat alert terkirim. "Tertinggi/Terendah" = pergerakan maksimum sejak alert.
+      Tiap alert dipantau maksimal 14 hari. Alert yang terkirim sebelum fitur ini ada tidak punya catatan target/batal.</p>`;
+  }
+
   function render(){
     renderStats(); renderTabs();
     const list = filtered();
     let html = "";
-    if (tab === "semua") {
+    if (tab === "jejak") {
+      html = jejak();
+    } else if (tab === "semua") {
       html = table(list);
     } else {
       const pick = tab === "pantau" ? list.filter(r => r.kelas.startsWith("pantau")) : list.filter(r => r.kelas === tab);

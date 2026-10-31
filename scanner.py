@@ -40,6 +40,7 @@ import requests
 import yaml
 
 from analisa import BULAN, analisa_koin, fmt_pct, fmt_price
+import rekam_jejak as rekam
 from grafik import buat_grafik
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -285,6 +286,12 @@ class Binance:
     def link(self, r: dict, quote: str) -> str:
         return f"https://www.tradingview.com/chart/?symbol=BINANCE:{r['symbol']}"
 
+    def harga_pada(self, symbol: str, ts_ms: int) -> float | None:
+        """Harga pada menit tertentu (open candle 1 menit)."""
+        menit = int(ts_ms) // 60000 * 60000
+        rows = self._get("/api/v3/klines", {"symbol": symbol, "interval": "1m", "startTime": menit, "limit": 1})
+        return float(rows[0][1]) if rows else None
+
 
 class OKX:
     """Cadangan untuk koin yang tidak ada di Binance. OKX tidak memberi data
@@ -343,6 +350,12 @@ class OKX:
 
     def link(self, r: dict, quote: str) -> str:
         return f"https://www.tradingview.com/chart/?symbol=OKX:{r['base']}{quote}"
+
+    def harga_pada(self, symbol: str, ts_ms: int) -> float | None:
+        menit = int(ts_ms) // 60000 * 60000
+        rows = self._get("/api/v5/market/history-candles", {"instId": symbol, "bar": "1m", "after": menit + 1,
+                                                             "limit": 1})
+        return float(rows[0][1]) if rows else None
 
 
 # --------------------------------------------------------------------------- #
@@ -430,6 +443,11 @@ class DemoSource:
     def link(self, r: dict, quote: str) -> str:
         return ""
 
+    def harga_pada(self, symbol: str, ts_ms: int) -> float | None:
+        h = self.data[symbol]["h"]
+        k = h["time"].searchsorted(pd.Timestamp(ts_ms, unit="ms", tz="UTC"))
+        return float(h["open"].iloc[min(k, len(h) - 1)])
+
 
 # --------------------------------------------------------------------------- #
 # Universe: Top 200 yang tersedia di bursa
@@ -481,7 +499,10 @@ def scan(uni: list[dict], cfg: dict):
         src = u["_src"]
         d = src.candles(u["symbol"], "1d", 400)
         h = src.candles(u["symbol"], "1h", jam)
-        return analisa_koin(u, d, h, cfg)
+        r = analisa_koin(u, d, h, cfg)
+        if r:
+            r["_h"] = h
+        return r
 
     with ThreadPoolExecutor(max_workers=6) as ex:
         futs = {ex.submit(work, u): u for u in uni}
@@ -580,7 +601,7 @@ def baris_ringkas(r: dict) -> str:
             + (f" → {fmt_pct(t['pct'])}" if t else ""))
 
 
-def summary_text(results, now, src_rank, dash) -> str:
+def summary_text(results, now, src_rank, dash, rk=None) -> str:
     w = now.astimezone(WIB)
     naik = sorted([r for r in results if r["kelas"] == "naik"], key=lambda r: -r["skor_naik"])
     turun = sorted([r for r in results if r["kelas"] == "turun"], key=lambda r: -r["skor_turun"])
@@ -590,6 +611,10 @@ def summary_text(results, now, src_rank, dash) -> str:
     lines += [baris_ringkas(r) for r in naik[:10]] or ["• (belum ada)"]
     lines.append(f"\n🔴 <b>Potensi turun ({len(turun)})</b>")
     lines += [baris_ringkas(r) for r in turun[:10]] or ["• (belum ada)"]
+    rt = rekam.rekap_teks(rk or {})
+    if rt:
+        lines.append(f"\n📈 <b>Rekam jejak {rk['hari']} hari</b>")
+        lines += [html.escape(x) for x in rt]
     if dash:
         lines.append(f'\n📊 <a href="{html.escape(dash)}">Dashboard lengkap</a>')
     return "\n".join(lines)
@@ -741,6 +766,15 @@ def write_step_summary(results, meta, path) -> None:
         lines += [f"Dashboard: {meta['dashboard']}", ""]
     lines += [f"### 🟢 Potensi naik ({len(naik)})", ""] + tabel(naik, "naik")
     lines += ["", f"### 🔴 Potensi turun ({len(turun)})", ""] + tabel(turun, "turun")
+    riw = meta.get("riwayat") or []
+    if riw:
+        lines += ["", "### 📈 Rekam jejak alert", ""] + [f"- {x}" for x in rekam.rekap_teks(meta.get("rekap7", {}))]
+        lines += ["", "| Waktu alert (UTC) | Koin | Arah | Harga alert | Sekarang | Perubahan | Tertinggi | Terendah | Hasil |",
+                  "|---|---|---|---|---|---|---|---|---|"]
+        for e in riw[:40]:
+            lines.append(f"| {e['ts'][:16].replace('T', ' ')} | {e['base']} | {e['kelas']} | {fmt_price(e['harga'])} | "
+                         f"{fmt_price(e['harga_now'])} | {fmt_pct(e['chg'])} | {fmt_pct(e['maks_pct'])} | "
+                         f"{fmt_pct(e['min_pct'])} | {e['hasil']} |")
     with open(path, "a", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
 
@@ -791,6 +825,14 @@ def main() -> int:
     results, failed = scan(uni, cfg)
     print(f"Selesai {time.time() - t0:.0f} dtk · dianalisa {len(results)} · gagal {len(failed)}")
 
+    # Rekam jejak: lengkapi alert lama (sekali) lalu perbarui hasil semua alert yang berjalan
+    res_map = {r["symbol"]: r for r in results}
+    if not demo:
+        n_isi = rekam.isi_ulang(state, res_map, {u["symbol"]: u["_src"] for u in uni})
+        if n_isi:
+            print(f"Rekam jejak: {n_isi} alert lama dilengkapi harga historis")
+    rekam.perbarui(state, res_map, now)
+
     naik = sorted([r for r in results if r["kelas"] == "naik"], key=lambda r: -r["skor_naik"])
     turun = sorted([r for r in results if r["kelas"] == "turun"], key=lambda r: -r["skor_turun"])
     kandidat = naik + (turun if cfg["kirim_alert_turun"] else [])
@@ -816,6 +858,8 @@ def main() -> int:
         rest = alerts[maxg:]
         if rest:
             tg.send_text("Koin lain yang juga terdeteksi:\n" + "\n".join(baris_ringkas(r) for r in rest[:25]))
+        for r in alerts:
+            rekam.catat(state, r, now)
         if not demo:
             for r in alerts:
                 P = r["pola_naik" if r["kelas"] == "naik" else "pola_turun"]
@@ -828,17 +872,24 @@ def main() -> int:
     else:
         print("Tidak ada koin yang memenuhi syarat pada putaran ini.")
 
+    riw = sorted(state.get("riwayat", []), key=lambda e: e["ts"], reverse=True)
+    rk = rekam.rekap(riw, now)
+    if os.environ.get("GITHUB_ACTIONS"):
+        for x in rekam.rekap_teks(rk):
+            print(f"::notice title=Rekam jejak {rk['hari']} hari::{x}")
+
     w = now.astimezone(WIB)
     today = w.date().isoformat()
     if demo or (w.hour >= int(cfg["ringkasan_harian_jam_wib"]) and state.get("last_summary") != today):
-        tg.send_text(summary_text(results, now, src_rank, dash))
+        tg.send_text(summary_text(results, now, src_rank, dash, rk))
         if not demo:
             state["last_summary"] = today
 
     meta = dict(updated=now.isoformat(timespec="seconds"), updated_wib=waktu, sumber_ranking=src_rank,
                 sumber_harga=src_harga, jumlah=len(results), top_n=int(cfg["top_n"]),
                 tidak_tersedia=tidak_ada, dashboard=dash, demo=demo,
-                ambang=dict(skor_min=cfg["skor_min"], selisih_min=cfg["selisih_min"]))
+                ambang=dict(skor_min=cfg["skor_min"], selisih_min=cfg["selisih_min"]),
+                riwayat=riw, rekap7=rk)
     tulis_dashboard(results, charts, meta)
     if demo:
         os.makedirs(OUT_DIR, exist_ok=True)
