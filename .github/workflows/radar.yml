@@ -2,7 +2,7 @@ name: Radar Whale Kripto
 
 on:
   schedule:
-    - cron: "7 * * * *"   # tiap jam di menit ke-7 (waktu UTC; tetap tiap jam di WIB)
+    - cron: "7 * * * *"   # tiap jam di menit ke-7
   workflow_dispatch:       # tombol "Run workflow" untuk jalan manual
     inputs:
       mode:
@@ -12,7 +12,9 @@ on:
         default: normal
 
 permissions:
-  contents: write          # untuk menyimpan state.json (anti alert dobel)
+  contents: write          # simpan state.json (anti alert dobel)
+  pages: write             # terbitkan dashboard ke GitHub Pages
+  id-token: write
 
 concurrency:
   group: radar-whale
@@ -20,8 +22,8 @@ concurrency:
 
 jobs:
   scan:
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v6
 
@@ -37,6 +39,7 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          CMC_API_KEY: ${{ secrets.CMC_API_KEY }}
           MODE: ${{ github.event.inputs.mode || 'normal' }}
         run: python scanner.py --mode "$MODE"
 
@@ -50,3 +53,22 @@ jobs:
             git commit -m "radar: update state"
             git push || (git pull --rebase && git push)
           fi
+
+      - name: Siapkan dashboard
+        if: (github.event.inputs.mode || 'normal') == 'normal' && hashFiles('site/index.html') != ''
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+          include-hidden-files: true
+
+  dashboard:
+    needs: scan
+    if: needs.scan.result == 'success' && (github.event.inputs.mode || 'normal') == 'normal'
+    runs-on: ubuntu-24.04
+    continue-on-error: true   # kalau GitHub Pages belum diaktifkan, radar tetap dianggap sukses
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

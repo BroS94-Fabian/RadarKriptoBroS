@@ -1,54 +1,45 @@
 # =====================================================================
-#  PENGATURAN RADAR WHALE KRIPTO
+#  PENGATURAN RADAR KRIPTO
 #  Ubah angka di bawah lewat GitHub (klik file ini > ikon pensil > Commit).
 #  Perubahan berlaku otomatis pada putaran berikutnya.
 # =====================================================================
 
-# Bursa sumber data: binance atau okx.
-# Kalau bursa pertama tidak bisa diakses, radar otomatis pindah ke yang lain.
-sumber_data: binance
+# Daftar koin: 200 terbesar menurut market cap.
+#   coinmarketcap = butuh secret CMC_API_KEY (gratis). Kalau belum ada,
+#                   otomatis pakai CoinGecko sebagai cadangan.
+#   coingecko     = tanpa key.
+sumber_ranking: coinmarketcap
+top_n: 200
+ranking_refresh_jam: 6          # daftar top 200 diperbarui tiap 6 jam
+
+# Bursa sumber candle (urutan = prioritas). Koin yang tidak ada di Binance dicari di OKX.
+bursa: [binance, okx]
 quote: USDT
+min_volume_24j_usd: 300000      # pasangan USDT yang terlalu sepi diabaikan
 
-# Koin dengan volume 24 jam di bawah ini diabaikan (koin sepi gampang dimainkan).
-min_volume_24j_usd: 2000000
+# Koin tambahan yang ingin diabaikan, contoh: [XRP, DOGE]
+# (stablecoin & token pembungkus seperti USDT, USDC, WBTC, stETH sudah otomatis diabaikan)
+abaikan: []
 
-# Jumlah maksimum koin yang dipindai (diurutkan dari volume terbesar).
-maks_koin_dipindai: 250
+# ---- Klasifikasi ----
+# Skor 0-100 dihitung terpisah untuk "naik" dan "turun" dari:
+#   volume/akumulasi 20 · lokasi harga 15 · pola grafik 25 · momentum (MACD/RSI/Stoch) 20
+#   candlestick 8 · tren & MA 10 · Bollinger squeeze 5 · Elliott 6
+skor_min: 50                    # skor minimal untuk 🟢 POTENSI NAIK / 🔴 POTENSI TURUN
+selisih_min: 15                 # skor arah itu harus unggul minimal sekian dari arah lawan
+skor_pantau: 40                 # 🟡 PANTAU (hanya di dashboard, tidak dikirim ke Telegram)
+syarat_akumulasi: true          # 🟢 wajib ada bukti akumulasi (OBV/CMF/beli agresif)
+maks_naik_7h_persen: 20         # koin yang sudah naik >20% dalam 7 hari tidak dianggap "masih di bawah"
+kirim_alert_turun: true         # kirim juga alert 🔴 potensi turun ke Telegram
 
-# Koin yang SELALU dipindai walau volumenya kecil. Contoh: [BTC, ETH, SOL]
-pantau_khusus: []
+# ---- Telegram ----
+cooldown_jam: 12                # koin yang sama tidak dikirim ulang selama X jam
+maks_grafik_per_run: 6          # maks. alert bergrafik per putaran (sisanya daftar singkat)
+ringkasan_harian_jam_wib: 8     # ringkasan harian dikirim sekali sehari mulai jam ini
 
-# Stablecoin & token pembungkus yang tidak perlu dipantau.
-abaikan: [USDC, FDUSD, TUSD, USDP, DAI, BUSD, EUR, EURI, AEUR, USDE, PYUSD, USD1,
-          XUSD, BFUSD, RLUSD, USDS, PAXG, XAUT, WBTC, WBETH, BNSOL]
+# ---- Dashboard ----
+maks_grafik_dashboard: 40
+url_dashboard: ""               # kosongkan = otomatis https://<username>.github.io/<repo>/
 
-ambang:
-  # Lonjakan volume harian: volume 24 jam >= X kali rata-rata 20 hari
-  rvol_harian: 3.0
-  # Whale masuk: volume 1 jam >= X kali rata-rata 48 jam sebelumnya
-  rvol_jam: 4.0
-  # Porsi beli agresif (market buy) minimal saat lonjakan 1 jam. 0.58 = 58%
-  beli_agresif: 0.58
-  # Chaikin Money Flow 20 hari minimal untuk dianggap akumulasi
-  cmf_akumulasi: 0.05
-  # Kemiringan OBV minimal (dalam satuan volume harian rata-rata per hari)
-  obv_naik: 0.30
-  # Akumulasi diam-diam hanya dihitung bila harga 20 hari bergerak <= X%
-  sideways_maks_persen: 12
-  # Beri peringatan FOMO bila harga sudah naik >= X% dalam 24 jam
-  pump_24j_rawan_persen: 40
-  # Skor minimal (0-100) agar alert dikirim. Naikkan kalau alert terlalu banyak.
-  skor_min_alert: 45
-
-# Koin yang sama tidak di-alert ulang selama X jam
-# (kecuali muncul sinyal baru atau skornya naik >= 15).
-cooldown_jam: 12
-
-# Maksimum alert bergrafik per putaran (sisanya dikirim sebagai daftar singkat).
-maks_grafik_per_run: 5
-
-# Rentang data untuk menghitung zona akumulasi (profil volume), dalam hari.
+# Rentang data untuk zona akumulasi (profil volume), dalam hari.
 profil_volume_hari: 30
-
-# Ringkasan harian dikirim sekali sehari mulai jam ini (WIB).
-ringkasan_harian_jam_wib: 8

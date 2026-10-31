@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Kripto</title>
+<style>
+:root{
+  color-scheme: light;
+  --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#f3f2ef; --ink:#0b0b0b; --ink-2:#52514e; --muted:#76746e;
+  --line:#e1e0d9; --line-2:#c3c2b7; --accent:#2a78d6; --good:#0a7d0a; --good-bg:#e5f4e5; --crit:#c23232;
+  --crit-bg:#fbe9e9; --warn:#8a5a00; --warn-bg:#fdf1d6; --bar-up:#0ca30c; --bar-down:#d03b3b;
+  --shadow:0 1px 2px rgba(0,0,0,.05), 0 0 0 1px rgba(11,11,11,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --page:#0d0d0d; --surface:#1a1a19; --surface-2:#232321; --ink:#f0efec; --ink-2:#c3c2b7; --muted:#9a988f;
+    --line:#2c2c2a; --line-2:#383835; --accent:#5598e7; --good:#3ccb3c; --good-bg:#11301a; --crit:#f07a7a;
+    --crit-bg:#3a1616; --warn:#f2c35a; --warn-bg:#3a2c0c; --bar-up:#0ca30c; --bar-down:#e66767;
+    --shadow:0 0 0 1px rgba(255,255,255,.08);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --page:#0d0d0d; --surface:#1a1a19; --surface-2:#232321; --ink:#f0efec; --ink-2:#c3c2b7; --muted:#9a988f;
+  --line:#2c2c2a; --line-2:#383835; --accent:#5598e7; --good:#3ccb3c; --good-bg:#11301a; --crit:#f07a7a;
+  --crit-bg:#3a1616; --warn:#f2c35a; --warn-bg:#3a2c0c; --bar-up:#0ca30c; --bar-down:#e66767;
+  --shadow:0 0 0 1px rgba(255,255,255,.08);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:20px 16px 48px}
+header h1{font-size:24px;margin:0 0 2px;letter-spacing:-.01em}
+.sub{color:var(--ink-2);font-size:13px}
+.warn-note{margin-top:10px;font-size:13px;color:var(--ink-2);background:var(--surface-2);border-radius:8px;padding:8px 12px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:16px 0}
+.stat{background:var(--surface);box-shadow:var(--shadow);border-radius:10px;padding:10px 14px;cursor:pointer;text-align:left;border:0;color:inherit;font:inherit}
+.stat b{display:block;font-size:26px;line-height:1.1}
+.stat span{font-size:13px;color:var(--ink-2)}
+.stat[aria-pressed="true"]{outline:2px solid var(--accent)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0 14px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px}
+.tab{border:1px solid var(--line-2);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 12px;font:inherit;font-size:14px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--page);border-color:var(--ink)}
+input[type=search]{flex:1;min-width:160px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);border-radius:8px;padding:7px 10px;font:inherit}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
+.card{background:var(--surface);box-shadow:var(--shadow);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.card h3{margin:0;font-size:18px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.card h3 small{font-size:12px;color:var(--muted);font-weight:500}
+.row{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;border-radius:999px;padding:2px 9px;white-space:nowrap}
+.b-naik{background:var(--good-bg);color:var(--good)} .b-turun{background:var(--crit-bg);color:var(--crit)}
+.b-pantau-naik,.b-pantau-turun{background:var(--warn-bg);color:var(--warn)} .b-netral{background:var(--surface-2);color:var(--ink-2)}
+.price{font-size:15px;font-weight:600}
+.chg{font-size:13px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.scores{display:grid;grid-template-columns:auto 1fr auto;gap:2px 8px;align-items:center;font-size:12px;color:var(--ink-2)}
+.meter{height:6px;background:var(--surface-2);border-radius:3px;overflow:hidden}
+.meter i{display:block;height:100%;border-radius:3px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:14px}
+.kv dt{color:var(--ink-2)} .kv dd{margin:0;font-weight:500;min-width:0;overflow-wrap:anywhere}
+.big{font-size:17px;font-weight:700}
+.pos{color:var(--good)} .neg{color:var(--crit)}
+.ind{display:flex;flex-wrap:wrap;gap:6px}
+.ind span{font-size:12px;background:var(--surface-2);border-radius:6px;padding:2px 7px;color:var(--ink-2)}
+details{font-size:13px} summary{cursor:pointer;color:var(--accent)}
+details ul{margin:6px 0 0;padding-left:18px} details li{margin:2px 0}
+.chart{width:100%;border-radius:8px;border:1px solid var(--line);cursor:zoom-in;background:#fcfcfb}
+.links{display:flex;gap:12px;font-size:13px} a{color:var(--accent)}
+.arti{font-size:12px;color:var(--muted)}
+.empty{background:var(--surface);box-shadow:var(--shadow);border-radius:12px;padding:24px;color:var(--ink-2);text-align:center}
+.tbl-wrap{overflow-x:auto;background:var(--surface);box-shadow:var(--shadow);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums}
+th,td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th{position:sticky;top:0;background:var(--surface);color:var(--ink-2);font-weight:600;cursor:pointer;user-select:none}
+th:nth-child(2),td:nth-child(2),th:nth-child(6),td:nth-child(6),th:nth-child(9),td:nth-child(9),th:nth-child(13),td:nth-child(13){text-align:left}
+tbody tr{cursor:pointer} tbody tr:hover{background:var(--surface-2)}
+dialog{border:0;border-radius:14px;padding:0;max-width:760px;width:calc(100% - 24px);background:var(--surface);color:var(--ink);box-shadow:0 10px 40px rgba(0,0,0,.3)}
+dialog::backdrop{background:rgba(0,0,0,.45)}
+.dlg-head{display:flex;justify-content:flex-end;padding:8px 8px 0}
+.dlg-head button{border:0;background:var(--surface-2);color:var(--ink);border-radius:8px;padding:4px 10px;font:inherit;cursor:pointer}
+dialog .card{box-shadow:none}
+.guide{margin-top:28px;background:var(--surface);box-shadow:var(--shadow);border-radius:12px;padding:14px 16px;font-size:14px}
+.guide h2{font-size:16px;margin:0 0 6px}
+.guide ul{margin:0;padding-left:18px;color:var(--ink-2)}
+footer{margin-top:24px;font-size:12px;color:var(--muted)}
+.theme{float:right;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);border-radius:8px;padding:4px 10px;font:inherit;font-size:13px;cursor:pointer}
+@media (max-width:420px){.grid{grid-template-columns:1fr}.stat b{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <button class="theme" id="theme" type="button">Tema</button>
+    <h1>📡 Radar Kripto</h1>
+    <div class="sub" id="meta">Memuat data…</div>
+    <div class="warn-note">Analisa teknikal otomatis untuk koin top CoinMarketCap. <b>Target = proyeksi aturan pola grafik, bukan jaminan.</b> Bukan ajakan beli/jual — selalu cek grafik, berita, dan kelola risiko sendiri.</div>
+  </header>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="toolbar">
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <input type="search" id="q" placeholder="Cari koin (mis. BTC, Solana)…" aria-label="Cari koin">
+  </div>
+
+  <main id="view"></main>
+
+  <section class="guide">
+    <h2>Cara membaca</h2>
+    <ul>
+      <li><b>🟢 Potensi naik</b>: sedang diakumulasi (OBV/CMF/beli agresif), harga masih di dalam/di bawah zona akumulasi, dan banyak sinyal naik sepakat (pola, MACD, RSI, Stochastic, candle, Elliott).</li>
+      <li><b>🔴 Potensi turun</b>: distribusi, pola bearish (Double Top, Head and Shoulders, Rising Wedge, dll.), dan momentum melemah.</li>
+      <li><b>🟡 Pantau</b>: hampir memenuhi syarat — tidak dikirim ke Telegram.</li>
+      <li><b>Target</b> dihitung dari aturan pola: neckline ± tinggi pola, breakout ± panjang tiang bendera, awal baji, dst. Bila tidak ada pola: Elliott Wave atau resistance/support terdekat.</li>
+      <li><b>Batal</b>: level yang bila ditembus berarti polanya gagal. <b>Rasio</b> = potensi ÷ risiko ke level batal.</li>
+      <li><b>Zona akumulasi</b>: kisaran harga tempat 70% volume 30 hari terakhir terjadi; <b>POC</b> = harga dengan volume terbesar.</li>
+    </ul>
+  </section>
+  <footer id="foot"></footer>
+</div>
+
+<dialog id="dlg"><div class="dlg-head"><button type="button" id="dlg-close">Tutup ✕</button></div><div id="dlg-body"></div></dialog>
+
+<script>
+(function(){
+  const $ = s => document.querySelector(s);
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const KELAS = {"naik":"🟢 Potensi naik","turun":"🔴 Potensi turun","pantau-naik":"🟡 Pantau naik","pantau-turun":"🟡 Pantau turun","netral":"Netral"};
+  const POSISI = {"bawah":"di bawah zona","dalam-bawah":"di bawah POC","dalam-atas":"di atas POC","atas":"di atas zona","-":"-"};
+  const TABS = [["naik","🟢 Potensi naik"],["turun","🔴 Potensi turun"],["pantau","🟡 Pantau"],["semua","Semua koin"]];
+  let DATA = null, tab = "naik", q = "", sortKey = "rank", sortDir = 1;
+
+  // tema (disimpan per perangkat)
+  try { const t = localStorage.getItem("radar-tema"); if (t) document.documentElement.dataset.theme = t; } catch(e) {}
+  $("#theme").onclick = () => {
+    const cur = document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    const nx = cur === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = nx;
+    try { localStorage.setItem("radar-tema", nx); } catch(e) {}
+  };
+
+  function num(x, d){ return Number(x).toLocaleString("id-ID",{minimumFractionDigits:d,maximumFractionDigits:d}); }
+  function fp(p){
+    if (p == null || !isFinite(p)) return "-";
+    const a = Math.abs(p);
+    const d = a >= 1000 ? 0 : a >= 10 ? 2 : a >= 1 ? 3 : Math.min(10, Math.max(4, Math.floor(-Math.log10(a)) + 3));
+    return "$" + num(p, d);
+  }
+  function pct(x){ if (x == null || !isFinite(x)) return "-"; return (x > 0 ? "+" : x < 0 ? "−" : "") + num(Math.abs(x), 1) + "%"; }
+  function cls(x){ return x == null ? "" : x > 0 ? "pos" : x < 0 ? "neg" : ""; }
+  function big(v){
+    if (v == null) return "-";
+    if (v >= 1e9) return "$" + num(v/1e9, 2) + " M";
+    if (v >= 1e6) return "$" + num(v/1e6, 1) + " jt";
+    return "$" + num(v, 0);
+  }
+  const arah = r => r.arah_utama;
+  const pola = r => arah(r) === "naik" ? r.pola_naik : r.pola_turun;
+  const alasan = r => arah(r) === "naik" ? r.alasan_naik : r.alasan_turun;
+  const skor = r => arah(r) === "naik" ? r.skor_naik : r.skor_turun;
+
+  function meter(label, v, color){
+    return `<span>${label}</span><div class="meter"><i style="width:${Math.min(100, v)}%;background:${color}"></i></div><span>${v}</span>`;
+  }
+
+  function card(r){
+    const P = pola(r), t = r.target, b = r.batal, ind = r.indikator, ak = r.akumulasi, el = r.elliott;
+    const up = arah(r) === "naik";
+    const ex = [];
+    if (ind.rsi != null) ex.push(`RSI ${num(ind.rsi,0)}`);
+    if (ind.stoch_k != null) ex.push(`Stoch ${num(ind.stoch_k,0)}`);
+    ex.push(`MACD ${esc(ind.macd_status)}`);
+    if (ind.bb_pctb != null) ex.push(`BB %B ${num(ind.bb_pctb,2)}`);
+    if (ind.bb_squeeze) ex.push("BB squeeze");
+    if (ind.div_rsi) ex.push(`Divergensi RSI ${esc(ind.div_rsi)}`);
+    if (r.candle) ex.push(`Candle ${esc(r.candle)}`);
+    ex.push(`Tren ${esc(ind.tren)}`);
+    const ma = [["MA20", ind.ma20], ["MA50", ind.ma50], ["MA200", ind.ma200]].filter(x => x[1] != null)
+      .map(([n, v]) => `${n} ${fp(v)} (${r.price >= v ? "di atas" : "di bawah"})`).join(" · ");
+    return `<article class="card">
+      <div class="row"><h3>${esc(r.base)}<small>#${r.rank ?? "-"} CMC · ${esc(r.nama)} · ${esc(r.bursa)}</small></h3>
+        <span class="badge b-${r.kelas}">${KELAS[r.kelas] || r.kelas}</span></div>
+      <div class="row"><span class="price">${fp(r.price)}</span>
+        <span class="chg">24j <span class="${cls(r.chg24)}">${pct(r.chg24)}</span> · 7h <span class="${cls(r.chg7)}">${pct(r.chg7)}</span> · 30h <span class="${cls(r.chg30)}">${pct(r.chg30)}</span></span></div>
+      <div class="scores">${meter("Skor naik", r.skor_naik, "var(--bar-up)")}${meter("Skor turun", r.skor_turun, "var(--bar-down)")}</div>
+      <dl class="kv">
+        ${P ? `<dt>Pola</dt><dd>${esc(P.nama)} — ${esc(P.status_teks)}<div class="arti">${esc(P.arti)}</div></dd>` : `<dt>Pola</dt><dd>Tidak ada pola jelas</dd>`}
+        ${t ? `<dt>Potensi ${up ? "naik" : "turun"}</dt><dd><span class="big ${cls(t.pct)}">${pct(t.pct)}</span> → ${fp(t.harga)} <span class="arti">(${esc(t.sumber)})</span></dd>` : ""}
+        ${b ? `<dt>Batal jika</dt><dd>${up ? "&lt;" : "&gt;"} ${fp(b.harga)} (${pct(b.pct)})${r.rr ? ` · rasio ${num(r.rr,1)}` : ""}</dd>` : ""}
+        ${el ? `<dt>Elliott</dt><dd>${esc(el.teks)} → ${fp(el.target)} (${pct(el.pct)})</dd>` : ""}
+        ${ak.zona ? `<dt>Zona akumulasi</dt><dd>${fp(ak.zona.val)} – ${fp(ak.zona.vah)} · POC ${fp(ak.zona.poc)} · harga ${POSISI[ak.posisi] || "-"}</dd>` : ""}
+        <dt>Volume</dt><dd>24j ${big(r.qvol24)} (${ak.rvol_d != null ? num(ak.rvol_d,1) + "x rata²" : "-"}) · beli ${ak.beli24 != null ? num(ak.beli24*100,0) + "%" : "-"} · CMF ${ak.cmf != null ? num(ak.cmf,2) : "-"}</dd>
+        ${ma ? `<dt>MA</dt><dd>${ma}</dd>` : ""}
+      </dl>
+      <div class="ind">${ex.map(x => `<span>${x}</span>`).join("")}</div>
+      <details><summary>Alasan (${alasan(r).length})</summary><ul>${alasan(r).map(a => `<li>${esc(a)}</li>`).join("")}</ul></details>
+      ${r.chart ? `<img class="chart" loading="lazy" src="${esc(r.chart)}?v=${encodeURIComponent(DATA.updated)}" alt="Grafik analisa ${esc(r.base)}" data-full="${esc(r.chart)}">` : ""}
+      <div class="links">${r.link ? `<a href="${esc(r.link)}" target="_blank" rel="noopener">Buka di TradingView ↗</a>` : ""}</div>
+    </article>`;
+  }
+
+  function filtered(){
+    let list = DATA.koin;
+    if (q) { const s = q.toLowerCase(); list = list.filter(r => r.base.toLowerCase().includes(s) || (r.nama || "").toLowerCase().includes(s)); }
+    return list;
+  }
+
+  function renderStats(){
+    const k = DATA.koin;
+    const c = x => k.filter(r => r.kelas === x || (x === "pantau" && r.kelas.startsWith("pantau"))).length;
+    const items = [["naik", c("naik"), "🟢 Potensi naik"], ["turun", c("turun"), "🔴 Potensi turun"], ["pantau", c("pantau"), "🟡 Pantau"], ["semua", k.length, "Koin dianalisa"]];
+    $("#stats").innerHTML = items.map(([id, n, l]) => `<button class="stat" data-tab="${id}" aria-pressed="${tab === id}"><b>${n}</b><span>${l}</span></button>`).join("");
+    $("#stats").querySelectorAll(".stat").forEach(b => b.onclick = () => { tab = b.dataset.tab; render(); });
+  }
+
+  function renderTabs(){
+    $("#tabs").innerHTML = TABS.map(([id, l]) => `<button class="tab" role="tab" data-tab="${id}" aria-selected="${tab === id}">${l}</button>`).join("");
+    $("#tabs").querySelectorAll(".tab").forEach(b => b.onclick = () => { tab = b.dataset.tab; try { localStorage.setItem("radar-tab", tab); } catch(e) {} render(); });
+  }
+
+  const COLS = [
+    ["rank","#",r=>r.rank??9999], ["base","Koin",r=>r.base], ["price","Harga",r=>r.price], ["chg24","24j",r=>r.chg24??-1e9],
+    ["chg7","7h",r=>r.chg7??-1e9], ["kelas","Status",r=>["naik","pantau-naik","netral","pantau-turun","turun"].indexOf(r.kelas)],
+    ["skor_naik","Skor ↑",r=>r.skor_naik], ["skor_turun","Skor ↓",r=>r.skor_turun], ["pola","Pola",r=>pola(r)?pola(r).nama:"~"],
+    ["target","Target",r=>r.target?r.target.pct:-1e9], ["rsi","RSI",r=>r.indikator.rsi??-1], ["stoch","Stoch",r=>r.indikator.stoch_k??-1],
+    ["zona","Posisi zona",r=>r.akumulasi.posisi]
+  ];
+  function table(list){
+    const col = COLS.find(c => c[0] === sortKey) || COLS[0];
+    list = [...list].sort((a, b) => { const x = col[2](a), y = col[2](b); return (x > y ? 1 : x < y ? -1 : 0) * sortDir; });
+    const head = COLS.map(([k, l]) => `<th data-k="${k}" scope="col">${l}${k === sortKey ? (sortDir > 0 ? " ▲" : " ▼") : ""}</th>`).join("");
+    const rows = list.map(r => `<tr data-s="${esc(r.symbol)}">
+      <td>${r.rank ?? "-"}</td><td><b>${esc(r.base)}</b></td><td>${fp(r.price)}</td>
+      <td class="${cls(r.chg24)}">${pct(r.chg24)}</td><td class="${cls(r.chg7)}">${pct(r.chg7)}</td>
+      <td><span class="badge b-${r.kelas}">${KELAS[r.kelas] || r.kelas}</span></td>
+      <td>${r.skor_naik}</td><td>${r.skor_turun}</td><td>${pola(r) ? esc(pola(r).nama) : "-"}</td>
+      <td class="${cls(r.target && r.target.pct)}">${r.target ? pct(r.target.pct) : "-"}</td>
+      <td>${r.indikator.rsi != null ? num(r.indikator.rsi,0) : "-"}</td><td>${r.indikator.stoch_k != null ? num(r.indikator.stoch_k,0) : "-"}</td>
+      <td>${POSISI[r.akumulasi.posisi] || "-"}</td></tr>`).join("");
+    return `<div class="tbl-wrap"><table><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div>`;
+  }
+
+  function render(){
+    renderStats(); renderTabs();
+    const list = filtered();
+    let html = "";
+    if (tab === "semua") {
+      html = table(list);
+    } else {
+      const pick = tab === "pantau" ? list.filter(r => r.kelas.startsWith("pantau")) : list.filter(r => r.kelas === tab);
+      pick.sort((a, b) => skor(b) - skor(a));
+      html = pick.length ? `<div class="grid">${pick.map(card).join("")}</div>`
+        : `<div class="empty">Belum ada koin di kategori ini saat ini.${tab !== "pantau" ? " Coba lihat tab 🟡 Pantau atau Semua koin." : ""}</div>`;
+    }
+    $("#view").innerHTML = html;
+    $("#view").querySelectorAll("th").forEach(th => th.onclick = () => {
+      const k = th.dataset.k; if (sortKey === k) sortDir *= -1; else { sortKey = k; sortDir = ["rank","base","kelas"].includes(k) ? 1 : -1; } render();
+    });
+    $("#view").querySelectorAll("tbody tr").forEach(tr => tr.onclick = () => openCoin(tr.dataset.s));
+    $("#view").querySelectorAll("img.chart").forEach(im => im.onclick = () => window.open(im.dataset.full, "_blank"));
+  }
+
+  function openCoin(sym){
+    const r = DATA.koin.find(x => x.symbol === sym); if (!r) return;
+    $("#dlg-body").innerHTML = card(r);
+    $("#dlg-body").querySelectorAll("img.chart").forEach(im => im.onclick = () => window.open(im.dataset.full, "_blank"));
+    $("#dlg").showModal();
+  }
+  $("#dlg-close").onclick = () => $("#dlg").close();
+  $("#dlg").addEventListener("click", e => { if (e.target === $("#dlg")) $("#dlg").close(); });
+  $("#q").addEventListener("input", e => { q = e.target.value.trim(); render(); });
+
+  fetch("data.json?t=" + Date.now()).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(d => {
+    DATA = d;
+    try { const t = localStorage.getItem("radar-tab"); if (t) tab = t; } catch(e) {}
+    $("#meta").textContent = `Diperbarui ${d.updated_wib} · Ranking: ${d.sumber_ranking} · Data harga: ${d.sumber_harga}${d.demo ? " · MODE DEMO" : ""}`;
+    const na = (d.tidak_tersedia || []);
+    $("#foot").textContent = `${d.jumlah} koin dianalisa dari top ${d.top_n}. ` +
+      (na.length ? `Tidak ada di bursa sumber (${na.length}): ${na.slice(0, 40).join(", ")}${na.length > 40 ? "…" : ""}. ` : "") +
+      `Ambang: skor ≥ ${d.ambang.skor_min}, selisih ≥ ${d.ambang.selisih_min}. Diperbarui otomatis tiap jam.`;
+    render();
+  }).catch(e => { $("#meta").textContent = "Gagal memuat data (" + e.message + "). Coba muat ulang halaman."; });
+})();
+</script>
+</body>
+</html>
