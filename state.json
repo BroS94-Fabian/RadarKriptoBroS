@@ -1270,9 +1270,9 @@
    "batal": null,
    "batal_pct": null,
    "bursa": "Binance",
-   "chg": -1.11,
+   "chg": -1.49,
    "harga": 287.7,
-   "harga_now": 284.5,
+   "harga_now": 283.4,
    "hasil": "berjalan",
    "id": "BCHUSDT|naik|2026-10-31T08:46:12+00:00",
    "isi_ulang": true,
@@ -1289,16 +1289,16 @@
    "target_pct": null,
    "ts": "2026-10-31T08:46:12+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-01T14:40:49+00:00"
+   "ts_update": "2026-11-01T15:38:52+00:00"
   },
   {
    "base": "BONK",
    "batal": null,
    "batal_pct": null,
    "bursa": "Binance",
-   "chg": 0.0,
+   "chg": -0.68,
    "harga": 2.95e-06,
-   "harga_now": 2.95e-06,
+   "harga_now": 2.93e-06,
    "hasil": "berjalan",
    "id": "BONKUSDT|naik|2026-10-31T08:46:12+00:00",
    "isi_ulang": true,
@@ -1315,16 +1315,16 @@
    "target_pct": null,
    "ts": "2026-10-31T08:46:12+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-01T14:40:49+00:00"
+   "ts_update": "2026-11-01T15:38:52+00:00"
   },
   {
    "base": "GRASS",
    "batal": null,
    "batal_pct": null,
    "bursa": "OKX",
-   "chg": 2.49,
+   "chg": 2.42,
    "harga": 0.5788,
-   "harga_now": 0.5932,
+   "harga_now": 0.5928,
    "hasil": "berjalan",
    "id": "GRASS-USDT|turun|2026-10-31T08:46:12+00:00",
    "isi_ulang": true,
@@ -1341,16 +1341,16 @@
    "target_pct": null,
    "ts": "2026-10-31T08:46:12+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-01T14:40:49+00:00"
+   "ts_update": "2026-11-01T15:38:52+00:00"
   },
   {
    "base": "LTC",
    "batal": null,
    "batal_pct": null,
    "bursa": "Binance",
-   "chg": 2.32,
+   "chg": 1.96,
    "harga": 54.68,
-   "harga_now": 55.95,
+   "harga_now": 55.75,
    "hasil": "berjalan",
    "id": "LTCUSDT|naik|2026-10-31T08:46:12+00:00",
    "isi_ulang": true,
@@ -1367,16 +1367,16 @@
    "target_pct": null,
    "ts": "2026-10-31T08:46:12+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-01T14:40:49+00:00"
+   "ts_update": "2026-11-01T15:38:52+00:00"
   },
   {
    "base": "PENGU",
    "batal": null,
    "batal_pct": null,
    "bursa": "Binance",
-   "chg": -0.19,
+   "chg": -0.72,
    "harga": 0.007349,
-   "harga_now": 0.007335,
+   "harga_now": 0.007296,
    "hasil": "berjalan",
    "id": "PENGUUSDT|naik|2026-10-31T08:46:12+00:00",
    "isi_ulang": true,
@@ -1393,16 +1393,16 @@
    "target_pct": null,
    "ts": "2026-10-31T08:46:12+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-01T14:40:49+00:00"
+   "ts_update": "2026-11-01T15:38:52+00:00"
   },
   {
    "base": "SHIB",
    "batal": null,
    "batal_pct": null,
    "bursa": "Binance",
-   "chg": -0.63,
+   "chg": -0.42,
    "harga": 4.73e-06,
-   "harga_now": 4.7e-06,
+   "harga_now": 4.71e-06,
    "hasil": "berjalan",
    "id": "SHIBUSDT|naik|2026-10-31T08:46:12+00:00",
    "isi_ulang": true,
@@ -1419,16 +1419,16 @@
    "target_pct": null,
    "ts": "2026-10-31T08:46:12+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-01T14:40:49+00:00"
+   "ts_update": "2026-11-01T15:38:52+00:00"
   },
   {
    "base": "UNI",
    "batal": null,
    "batal_pct": null,
    "bursa": "Binance",
-   "chg": 5.57,
+   "chg": 5.35,
    "harga": 6.949,
-   "harga_now": 7.336,
+   "harga_now": 7.321,
    "hasil": "berjalan",
    "id": "UNIUSDT|naik|2026-10-31T08:46:12+00:00",
    "isi_ulang": true,
@@ -1445,16 +1445,16 @@
    "target_pct": null,
    "ts": "2026-10-31T08:46:12+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-01T14:40:49+00:00"
+   "ts_update": "2026-11-01T15:38:52+00:00"
   },
   {
    "base": "VIRTUAL",
    "batal": null,
    "batal_pct": null,
    "bursa": "Binance",
-   "chg": 2.96,
+   "chg": 3.0,
    "harga": 0.5805,
-   "harga_now": 0.5977,
+   "harga_now": 0.5979,
    "hasil": "berjalan",
    "id": "VIRTUALUSDT|naik|2026-10-31T08:46:12+00:00",
    "isi_ulang": true,
@@ -1471,16 +1471,16 @@
    "target_pct": null,
    "ts": "2026-10-31T08:46:12+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-01T14:40:49+00:00"
+   "ts_update": "2026-11-01T15:38:52+00:00"
   },
   {
    "base": "LINK",
    "batal": null,
    "batal_pct": null,
    "bursa": "Binance",
-   "chg": 0.77,
+   "chg": 1.29,
    "harga": 11.469,
-   "harga_now": 11.557,
+   "harga_now": 11.617,
    "hasil": "berjalan",
    "id": "LINKUSDT|naik|2026-10-31T09:42:02+00:00",
    "isi_ulang": true,
@@ -1497,7 +1497,7 @@
    "target_pct": null,
    "ts": "2026-10-31T09:42:02+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-01T14:40:49+00:00"
+   "ts_update": "2026-11-01T15:38:52+00:00"
   },
   {
    "base": "GLM",
@@ -1530,9 +1530,9 @@
    "batal": 1.89395,
    "batal_pct": -18.1,
    "bursa": "Binance",
-   "chg": -1.69,
+   "chg": -1.34,
    "harga": 2.312,
-   "harga_now": 2.273,
+   "harga_now": 2.281,
    "hasil": "berjalan",
    "id": "MORPHOUSDT|naik|2026-10-31T15:38:36+00:00",
    "isi_ulang": false,
@@ -1549,7 +1549,7 @@
    "target_pct": 29.6,
    "ts": "2026-10-31T15:38:36+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-01T14:40:49+00:00"
+   "ts_update": "2026-11-01T15:38:52+00:00"
   }
  ],
  "riwayat_isi_ulang": true
