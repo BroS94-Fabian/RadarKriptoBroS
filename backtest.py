@@ -46,6 +46,11 @@ TAHAN = 30          # horizon maksimum simulasi
 ATURAN = {
     "pola": ("Target & batal pola (tanpa TP1)",
              dict(mode="persen", tp1_persen=5, sl_persen=99, porsi_tp1=0, maks_hari=30), True),
+    "pola_sl8": ("Target pola, SL maks −8%", dict(mode="persen", tp1_persen=5, sl_persen=8, porsi_tp1=0, maks_hari=30), True),
+    "pola_sl12": ("Target pola, SL maks −12%", dict(mode="persen", tp1_persen=5, sl_persen=12, porsi_tp1=0, maks_hari=30), True),
+    "pola_sl15": ("Target pola, SL maks −15%", dict(mode="persen", tp1_persen=5, sl_persen=15, porsi_tp1=0, maks_hari=30), True),
+    "pola_tp5": ("50% di +5%, sisa ke target pola, SL batal pola → impas", dict(mode="persen", tp1_persen=5, sl_persen=99, porsi_tp1=0.5, maks_hari=30), True),
+    "pola_tp10": ("50% di +10%, sisa ke target pola, SL batal pola → impas", dict(mode="persen", tp1_persen=10, sl_persen=99, porsi_tp1=0.5, maks_hari=30), True),
     "tetap_3_3": ("TP +3% / SL −3% (jual semua)", dict(mode="persen", tp1_persen=3, sl_persen=3, porsi_tp1=1, maks_hari=30), False),
     "tetap_5_5": ("TP +5% / SL −5% (jual semua)", dict(mode="persen", tp1_persen=5, sl_persen=5, porsi_tp1=1, maks_hari=30), False),
     "tetap_8_4": ("TP +8% / SL −4% (jual semua)", dict(mode="persen", tp1_persen=8, sl_persen=4, porsi_tp1=1, maks_hari=30), False),
@@ -157,6 +162,8 @@ FILTER = {
     "pasar BTC naik + tanpa meme": lambda d: d[(d["rezim"] == "naik") & ~d["meme"]],
     "pasar BTC + tanpa meme + breakout": lambda d: d[(d["rezim"] != "turun") & ~d["meme"] & (d["status"] == "breakout")],
     "skor ≥60": lambda d: d[d["skor"] >= 60],
+    "pasar BTC naik + tanpa meme + skor ≥55": lambda d: d[(d["rezim"] == "naik") & ~d["meme"] & (d["skor"] >= 55)],
+    "pasar BTC naik + tanpa meme + breakout": lambda d: d[(d["rezim"] == "naik") & ~d["meme"] & (d["status"] == "breakout")],
     "pasar BTC + tanpa meme + skor ≥55": lambda d: d[(d["rezim"] != "turun") & ~d["meme"] & (d["skor"] >= 55)],
 }
 FILTER_CFG = {
@@ -205,7 +212,7 @@ def laporan(df: pd.DataFrame, meta: dict) -> tuple[dict, str]:
     filt = []
     for nama, f in FILTER.items():
         sub = f(naik)
-        for k in dict.fromkeys((terbaik, "pola", "sebagian_5_5", "sebagian_atr")):
+        for k in dict.fromkeys((terbaik, "pola", "pola_sl12", "pola_tp10", "pola_tp5", "sebagian_5_5")):
             if k in ATURAN:
                 st = statistik(sub, f"{k}_bersih")
                 st.update(grup=nama, aturan=k)
@@ -236,7 +243,7 @@ def laporan(df: pd.DataFrame, meta: dict) -> tuple[dict, str]:
     for judul, rows in hasil["rinci"].items():
         L += [f"### {judul}", ""] + tabel_md(rows, judul) + [""]
     L += ["## 3. Pengaruh filter (sinyal naik)", ""]
-    for k in dict.fromkeys((terbaik, "pola", "sebagian_5_5", "sebagian_atr")):
+    for k in dict.fromkeys((terbaik, "pola", "pola_sl12", "pola_tp10", "pola_tp5", "sebagian_5_5")):
         if k not in ATURAN:
             continue
         L += [f"### Aturan: {ATURAN[k][0]}", ""] + tabel_md([r for r in filt if r["aturan"] == k], "Filter") + [""]
