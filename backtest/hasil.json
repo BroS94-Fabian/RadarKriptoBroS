@@ -1,17 +1,22 @@
 {
  "meta": {
-  "dibuat": "2026-11-03T00:30:16+00:00",
-  "dibuat_wib": "3 Nov 2026 07:30 WIB",
+  "dibuat": "2026-11-03T00:36:46+00:00",
+  "dibuat_wib": "3 Nov 2026 07:36 WIB",
   "ranking": "CoinMarketCap",
   "koin": 125,
   "dari": "2024-10-25",
   "sampai": "2026-10-03",
   "sinyal": 843,
   "hari_data": 1000,
-  "durasi_detik": 231
+  "durasi_detik": 234
  },
  "aturan": {
   "pola": "Target & batal pola (tanpa TP1)",
+  "pola_sl8": "Target pola, SL maks −8%",
+  "pola_sl12": "Target pola, SL maks −12%",
+  "pola_sl15": "Target pola, SL maks −15%",
+  "pola_tp5": "50% di +5%, sisa ke target pola, SL batal pola → impas",
+  "pola_tp10": "50% di +10%, sisa ke target pola, SL batal pola → impas",
   "tetap_3_3": "TP +3% / SL −3% (jual semua)",
   "tetap_5_5": "TP +5% / SL −5% (jual semua)",
   "tetap_8_4": "TP +8% / SL −4% (jual semua)",
@@ -34,6 +39,56 @@
    "pf": 0.83,
    "hari": 14.3,
    "grup": "pola"
+  },
+  {
+   "n": 571,
+   "menang": 27.3,
+   "rata": -0.66,
+   "median": -8.38,
+   "total": -374.6,
+   "pf": 0.88,
+   "hari": 9.1,
+   "grup": "pola_sl8"
+  },
+  {
+   "n": 571,
+   "menang": 31.5,
+   "rata": -0.93,
+   "median": -7.64,
+   "total": -530.5,
+   "pf": 0.86,
+   "hari": 11.6,
+   "grup": "pola_sl12"
+  },
+  {
+   "n": 571,
+   "menang": 32.9,
+   "rata": -1.14,
+   "median": -7.17,
+   "total": -651.6,
+   "pf": 0.84,
+   "hari": 12.9,
+   "grup": "pola_sl15"
+  },
+  {
+   "n": 571,
+   "menang": 65.1,
+   "rata": -0.64,
+   "median": 2.08,
+   "total": -364.5,
+   "pf": 0.84,
+   "hari": 8.1,
+   "grup": "pola_tp5"
+  },
+  {
+   "n": 571,
+   "menang": 50.8,
+   "rata": -0.72,
+   "median": 3.44,
+   "total": -412.5,
+   "pf": 0.87,
+   "hari": 12.1,
+   "grup": "pola_tp10"
   },
   {
    "n": 571,
@@ -156,6 +211,56 @@
    "pf": 0.93,
    "hari": 16.2,
    "grup": "pola"
+  },
+  {
+   "n": 272,
+   "menang": 25.7,
+   "rata": -1.37,
+   "median": -8.38,
+   "total": -373.9,
+   "pf": 0.76,
+   "hari": 9.8,
+   "grup": "pola_sl8"
+  },
+  {
+   "n": 272,
+   "menang": 32.0,
+   "rata": -1.45,
+   "median": -9.89,
+   "total": -394.0,
+   "pf": 0.8,
+   "hari": 12.5,
+   "grup": "pola_sl12"
+  },
+  {
+   "n": 272,
+   "menang": 37.1,
+   "rata": -0.74,
+   "median": -7.0,
+   "total": -202.3,
+   "pf": 0.9,
+   "hari": 13.8,
+   "grup": "pola_sl15"
+  },
+  {
+   "n": 272,
+   "menang": 72.1,
+   "rata": -0.31,
+   "median": 2.08,
+   "total": -84.4,
+   "pf": 0.91,
+   "hari": 8.9,
+   "grup": "pola_tp5"
+  },
+  {
+   "n": 272,
+   "menang": 55.5,
+   "rata": -0.58,
+   "median": 4.57,
+   "total": -158.4,
+   "pf": 0.9,
+   "hari": 13.9,
+   "grup": "pola_tp10"
   },
   {
    "n": 272,
@@ -610,6 +715,39 @@
   },
   {
    "n": 571,
+   "menang": 31.5,
+   "rata": -0.93,
+   "median": -7.64,
+   "total": -530.5,
+   "pf": 0.86,
+   "hari": 11.6,
+   "grup": "tanpa filter",
+   "aturan": "pola_sl12"
+  },
+  {
+   "n": 571,
+   "menang": 50.8,
+   "rata": -0.72,
+   "median": 3.44,
+   "total": -412.5,
+   "pf": 0.87,
+   "hari": 12.1,
+   "grup": "tanpa filter",
+   "aturan": "pola_tp10"
+  },
+  {
+   "n": 571,
+   "menang": 65.1,
+   "rata": -0.64,
+   "median": 2.08,
+   "total": -364.5,
+   "pf": 0.84,
+   "hari": 8.1,
+   "grup": "tanpa filter",
+   "aturan": "pola_tp5"
+  },
+  {
+   "n": 571,
    "menang": 46.8,
    "rata": -0.43,
    "median": -3.73,
@@ -618,17 +756,6 @@
    "hari": 4.5,
    "grup": "tanpa filter",
    "aturan": "sebagian_5_5"
-  },
-  {
-   "n": 571,
-   "menang": 41.2,
-   "rata": -1.63,
-   "median": -5.82,
-   "total": -930.5,
-   "pf": 0.72,
-   "hari": 9.3,
-   "grup": "tanpa filter",
-   "aturan": "sebagian_atr"
   },
   {
    "n": 392,
@@ -654,6 +781,39 @@
   },
   {
    "n": 392,
+   "menang": 34.2,
+   "rata": 0.56,
+   "median": -6.67,
+   "total": 220.8,
+   "pf": 1.09,
+   "hari": 10.4,
+   "grup": "filter pasar BTC",
+   "aturan": "pola_sl12"
+  },
+  {
+   "n": 392,
+   "menang": 50.8,
+   "rata": 0.18,
+   "median": 3.68,
+   "total": 70.3,
+   "pf": 1.03,
+   "hari": 10.7,
+   "grup": "filter pasar BTC",
+   "aturan": "pola_tp10"
+  },
+  {
+   "n": 392,
+   "menang": 64.5,
+   "rata": -0.09,
+   "median": 2.08,
+   "total": -35.4,
+   "pf": 0.98,
+   "hari": 7.6,
+   "grup": "filter pasar BTC",
+   "aturan": "pola_tp5"
+  },
+  {
+   "n": 392,
    "menang": 46.7,
    "rata": -0.19,
    "median": -4.07,
@@ -662,17 +822,6 @@
    "hari": 4.3,
    "grup": "filter pasar BTC",
    "aturan": "sebagian_5_5"
-  },
-  {
-   "n": 392,
-   "menang": 41.1,
-   "rata": -1.06,
-   "median": -5.55,
-   "total": -416.2,
-   "pf": 0.81,
-   "hari": 8.1,
-   "grup": "filter pasar BTC",
-   "aturan": "sebagian_atr"
   },
   {
    "n": 542,
@@ -698,6 +847,39 @@
   },
   {
    "n": 542,
+   "menang": 31.9,
+   "rata": -0.86,
+   "median": -7.6,
+   "total": -463.8,
+   "pf": 0.87,
+   "hari": 11.8,
+   "grup": "tanpa meme",
+   "aturan": "pola_sl12"
+  },
+  {
+   "n": 542,
+   "menang": 50.9,
+   "rata": -0.52,
+   "median": 3.59,
+   "total": -281.1,
+   "pf": 0.9,
+   "hari": 12.3,
+   "grup": "tanpa meme",
+   "aturan": "pola_tp10"
+  },
+  {
+   "n": 542,
+   "menang": 65.7,
+   "rata": -0.46,
+   "median": 2.08,
+   "total": -251.8,
+   "pf": 0.88,
+   "hari": 8.3,
+   "grup": "tanpa meme",
+   "aturan": "pola_tp5"
+  },
+  {
+   "n": 542,
    "menang": 46.9,
    "rata": -0.36,
    "median": -3.62,
@@ -706,17 +888,6 @@
    "hari": 4.6,
    "grup": "tanpa meme",
    "aturan": "sebagian_5_5"
-  },
-  {
-   "n": 542,
-   "menang": 41.1,
-   "rata": -1.65,
-   "median": -5.77,
-   "total": -895.4,
-   "pf": 0.72,
-   "hari": 9.5,
-   "grup": "tanpa meme",
-   "aturan": "sebagian_atr"
   },
   {
    "n": 545,
@@ -742,6 +913,39 @@
   },
   {
    "n": 545,
+   "menang": 31.7,
+   "rata": -0.92,
+   "median": -7.64,
+   "total": -500.9,
+   "pf": 0.86,
+   "hari": 11.7,
+   "grup": "meme butuh skor ≥60",
+   "aturan": "pola_sl12"
+  },
+  {
+   "n": 545,
+   "menang": 50.8,
+   "rata": -0.58,
+   "median": 3.44,
+   "total": -314.8,
+   "pf": 0.89,
+   "hari": 12.2,
+   "grup": "meme butuh skor ≥60",
+   "aturan": "pola_tp10"
+  },
+  {
+   "n": 545,
+   "menang": 65.5,
+   "rata": -0.53,
+   "median": 2.08,
+   "total": -288.0,
+   "pf": 0.86,
+   "hari": 8.3,
+   "grup": "meme butuh skor ≥60",
+   "aturan": "pola_tp5"
+  },
+  {
+   "n": 545,
    "menang": 46.8,
    "rata": -0.37,
    "median": -3.62,
@@ -750,17 +954,6 @@
    "hari": 4.6,
    "grup": "meme butuh skor ≥60",
    "aturan": "sebagian_5_5"
-  },
-  {
-   "n": 545,
-   "menang": 41.1,
-   "rata": -1.68,
-   "median": -5.82,
-   "total": -915.7,
-   "pf": 0.71,
-   "hari": 9.5,
-   "grup": "meme butuh skor ≥60",
-   "aturan": "sebagian_atr"
   },
   {
    "n": 157,
@@ -786,6 +979,39 @@
   },
   {
    "n": 157,
+   "menang": 40.8,
+   "rata": 0.84,
+   "median": -8.46,
+   "total": 131.9,
+   "pf": 1.13,
+   "hari": 11.4,
+   "grup": "hanya breakout",
+   "aturan": "pola_sl12"
+  },
+  {
+   "n": 157,
+   "menang": 58.0,
+   "rata": -0.84,
+   "median": 4.58,
+   "total": -132.5,
+   "pf": 0.87,
+   "hari": 13.4,
+   "grup": "hanya breakout",
+   "aturan": "pola_tp10"
+  },
+  {
+   "n": 157,
+   "menang": 72.0,
+   "rata": -0.51,
+   "median": 2.08,
+   "total": -80.5,
+   "pf": 0.89,
+   "hari": 8.4,
+   "grup": "hanya breakout",
+   "aturan": "pola_tp5"
+  },
+  {
+   "n": 157,
    "menang": 52.2,
    "rata": 0.45,
    "median": 2.08,
@@ -794,17 +1020,6 @@
    "hari": 4.4,
    "grup": "hanya breakout",
    "aturan": "sebagian_5_5"
-  },
-  {
-   "n": 157,
-   "menang": 49.0,
-   "rata": -0.85,
-   "median": -2.21,
-   "total": -133.8,
-   "pf": 0.86,
-   "hari": 9.1,
-   "grup": "hanya breakout",
-   "aturan": "sebagian_atr"
   },
   {
    "n": 372,
@@ -830,6 +1045,39 @@
   },
   {
    "n": 372,
+   "menang": 34.9,
+   "rata": 0.69,
+   "median": -6.59,
+   "total": 256.8,
+   "pf": 1.11,
+   "hari": 10.6,
+   "grup": "pasar BTC + tanpa meme",
+   "aturan": "pola_sl12"
+  },
+  {
+   "n": 372,
+   "menang": 51.3,
+   "rata": 0.46,
+   "median": 4.57,
+   "total": 172.2,
+   "pf": 1.09,
+   "hari": 10.8,
+   "grup": "pasar BTC + tanpa meme",
+   "aturan": "pola_tp10"
+  },
+  {
+   "n": 372,
+   "menang": 65.3,
+   "rata": 0.1,
+   "median": 2.08,
+   "total": 36.0,
+   "pf": 1.03,
+   "hari": 7.7,
+   "grup": "pasar BTC + tanpa meme",
+   "aturan": "pola_tp5"
+  },
+  {
+   "n": 372,
    "menang": 47.3,
    "rata": -0.07,
    "median": -3.58,
@@ -838,17 +1086,6 @@
    "hari": 4.4,
    "grup": "pasar BTC + tanpa meme",
    "aturan": "sebagian_5_5"
-  },
-  {
-   "n": 372,
-   "menang": 41.7,
-   "rata": -0.99,
-   "median": -5.31,
-   "total": -369.2,
-   "pf": 0.82,
-   "hari": 8.2,
-   "grup": "pasar BTC + tanpa meme",
-   "aturan": "sebagian_atr"
   },
   {
    "n": 374,
@@ -874,6 +1111,39 @@
   },
   {
    "n": 374,
+   "menang": 34.8,
+   "rata": 0.62,
+   "median": -6.67,
+   "total": 232.0,
+   "pf": 1.1,
+   "hari": 10.5,
+   "grup": "pasar BTC + meme ≥60",
+   "aturan": "pola_sl12"
+  },
+  {
+   "n": 374,
+   "menang": 51.1,
+   "rata": 0.36,
+   "median": 4.25,
+   "total": 134.0,
+   "pf": 1.07,
+   "hari": 10.8,
+   "grup": "pasar BTC + meme ≥60",
+   "aturan": "pola_tp10"
+  },
+  {
+   "n": 374,
+   "menang": 65.0,
+   "rata": -0.01,
+   "median": 2.08,
+   "total": -2.3,
+   "pf": 1.0,
+   "hari": 7.7,
+   "grup": "pasar BTC + meme ≥60",
+   "aturan": "pola_tp5"
+  },
+  {
+   "n": 374,
    "menang": 47.1,
    "rata": -0.1,
    "median": -3.67,
@@ -882,17 +1152,6 @@
    "hari": 4.4,
    "grup": "pasar BTC + meme ≥60",
    "aturan": "sebagian_5_5"
-  },
-  {
-   "n": 374,
-   "menang": 41.4,
-   "rata": -1.06,
-   "median": -5.37,
-   "total": -395.2,
-   "pf": 0.81,
-   "hari": 8.2,
-   "grup": "pasar BTC + meme ≥60",
-   "aturan": "sebagian_atr"
   },
   {
    "n": 304,
@@ -918,6 +1177,39 @@
   },
   {
    "n": 304,
+   "menang": 36.8,
+   "rata": 1.79,
+   "median": -5.77,
+   "total": 544.7,
+   "pf": 1.31,
+   "hari": 10.4,
+   "grup": "pasar BTC naik saja",
+   "aturan": "pola_sl12"
+  },
+  {
+   "n": 304,
+   "menang": 53.9,
+   "rata": 1.04,
+   "median": 4.58,
+   "total": 316.3,
+   "pf": 1.22,
+   "hari": 10.7,
+   "grup": "pasar BTC naik saja",
+   "aturan": "pola_tp10"
+  },
+  {
+   "n": 304,
+   "menang": 66.1,
+   "rata": 0.32,
+   "median": 2.08,
+   "total": 96.9,
+   "pf": 1.09,
+   "hari": 7.6,
+   "grup": "pasar BTC naik saja",
+   "aturan": "pola_tp5"
+  },
+  {
+   "n": 304,
    "menang": 49.3,
    "rata": 0.3,
    "median": -2.2,
@@ -926,17 +1218,6 @@
    "hari": 4.3,
    "grup": "pasar BTC naik saja",
    "aturan": "sebagian_5_5"
-  },
-  {
-   "n": 304,
-   "menang": 43.8,
-   "rata": -0.3,
-   "median": -4.31,
-   "total": -89.9,
-   "pf": 0.94,
-   "hari": 8.2,
-   "grup": "pasar BTC naik saja",
-   "aturan": "sebagian_atr"
   },
   {
    "n": 287,
@@ -962,6 +1243,39 @@
   },
   {
    "n": 287,
+   "menang": 37.6,
+   "rata": 1.92,
+   "median": -5.71,
+   "total": 549.8,
+   "pf": 1.33,
+   "hari": 10.6,
+   "grup": "pasar BTC naik + tanpa meme",
+   "aturan": "pola_sl12"
+  },
+  {
+   "n": 287,
+   "menang": 54.4,
+   "rata": 1.24,
+   "median": 4.58,
+   "total": 354.6,
+   "pf": 1.27,
+   "hari": 10.9,
+   "grup": "pasar BTC naik + tanpa meme",
+   "aturan": "pola_tp10"
+  },
+  {
+   "n": 287,
+   "menang": 66.9,
+   "rata": 0.53,
+   "median": 2.08,
+   "total": 151.8,
+   "pf": 1.16,
+   "hari": 7.7,
+   "grup": "pasar BTC naik + tanpa meme",
+   "aturan": "pola_tp5"
+  },
+  {
+   "n": 287,
    "menang": 50.2,
    "rata": 0.45,
    "median": 2.08,
@@ -970,17 +1284,6 @@
    "hari": 4.5,
    "grup": "pasar BTC naik + tanpa meme",
    "aturan": "sebagian_5_5"
-  },
-  {
-   "n": 287,
-   "menang": 44.3,
-   "rata": -0.27,
-   "median": -4.21,
-   "total": -77.6,
-   "pf": 0.95,
-   "hari": 8.3,
-   "grup": "pasar BTC naik + tanpa meme",
-   "aturan": "sebagian_atr"
   },
   {
    "n": 93,
@@ -1007,6 +1310,39 @@
   {
    "n": 93,
    "menang": 52.7,
+   "rata": 4.25,
+   "median": 5.8,
+   "total": 395.6,
+   "pf": 1.83,
+   "hari": 9.5,
+   "grup": "pasar BTC + tanpa meme + breakout",
+   "aturan": "pola_sl12"
+  },
+  {
+   "n": 93,
+   "menang": 63.4,
+   "rata": 2.3,
+   "median": 4.58,
+   "total": 213.6,
+   "pf": 1.46,
+   "hari": 11.0,
+   "grup": "pasar BTC + tanpa meme + breakout",
+   "aturan": "pola_tp10"
+  },
+  {
+   "n": 93,
+   "menang": 73.1,
+   "rata": 0.98,
+   "median": 2.08,
+   "total": 91.4,
+   "pf": 1.25,
+   "hari": 7.3,
+   "grup": "pasar BTC + tanpa meme + breakout",
+   "aturan": "pola_tp5"
+  },
+  {
+   "n": 93,
+   "menang": 52.7,
    "rata": 0.85,
    "median": 2.08,
    "total": 79.1,
@@ -1014,17 +1350,6 @@
    "hari": 3.9,
    "grup": "pasar BTC + tanpa meme + breakout",
    "aturan": "sebagian_5_5"
-  },
-  {
-   "n": 93,
-   "menang": 53.8,
-   "rata": 0.97,
-   "median": 3.86,
-   "total": 90.0,
-   "pf": 1.2,
-   "hari": 7.7,
-   "grup": "pasar BTC + tanpa meme + breakout",
-   "aturan": "sebagian_atr"
   },
   {
    "n": 53,
@@ -1051,6 +1376,39 @@
   {
    "n": 53,
    "menang": 49.1,
+   "rata": 3.22,
+   "median": -0.62,
+   "total": 170.8,
+   "pf": 1.59,
+   "hari": 10.2,
+   "grup": "skor ≥60",
+   "aturan": "pola_sl12"
+  },
+  {
+   "n": 53,
+   "menang": 64.2,
+   "rata": 2.48,
+   "median": 4.58,
+   "total": 131.2,
+   "pf": 1.41,
+   "hari": 11.5,
+   "grup": "skor ≥60",
+   "aturan": "pola_tp10"
+  },
+  {
+   "n": 53,
+   "menang": 69.8,
+   "rata": 1.13,
+   "median": 2.08,
+   "total": 60.1,
+   "pf": 1.23,
+   "hari": 8.3,
+   "grup": "skor ≥60",
+   "aturan": "pola_tp5"
+  },
+  {
+   "n": 53,
+   "menang": 49.1,
    "rata": 1.55,
    "median": -5.39,
    "total": 82.2,
@@ -1060,15 +1418,136 @@
    "aturan": "sebagian_5_5"
   },
   {
-   "n": 53,
-   "menang": 52.8,
-   "rata": 0.89,
-   "median": 3.92,
-   "total": 47.0,
-   "pf": 1.17,
-   "hari": 8.1,
-   "grup": "skor ≥60",
-   "aturan": "sebagian_atr"
+   "n": 87,
+   "menang": 46.0,
+   "rata": 1.41,
+   "median": -5.39,
+   "total": 122.7,
+   "pf": 1.48,
+   "hari": 3.9,
+   "grup": "pasar BTC naik + tanpa meme + skor ≥55",
+   "aturan": "tetap_10_5"
+  },
+  {
+   "n": 87,
+   "menang": 56.3,
+   "rata": 6.15,
+   "median": 6.42,
+   "total": 534.8,
+   "pf": 2.32,
+   "hari": 11.9,
+   "grup": "pasar BTC naik + tanpa meme + skor ≥55",
+   "aturan": "pola"
+  },
+  {
+   "n": 87,
+   "menang": 54.0,
+   "rata": 6.34,
+   "median": 6.42,
+   "total": 551.5,
+   "pf": 2.44,
+   "hari": 9.9,
+   "grup": "pasar BTC naik + tanpa meme + skor ≥55",
+   "aturan": "pola_sl12"
+  },
+  {
+   "n": 87,
+   "menang": 60.9,
+   "rata": 3.56,
+   "median": 4.58,
+   "total": 309.4,
+   "pf": 1.88,
+   "hari": 10.9,
+   "grup": "pasar BTC naik + tanpa meme + skor ≥55",
+   "aturan": "pola_tp10"
+  },
+  {
+   "n": 87,
+   "menang": 75.9,
+   "rata": 3.32,
+   "median": 2.08,
+   "total": 289.0,
+   "pf": 2.3,
+   "hari": 8.6,
+   "grup": "pasar BTC naik + tanpa meme + skor ≥55",
+   "aturan": "pola_tp5"
+  },
+  {
+   "n": 87,
+   "menang": 57.5,
+   "rata": 2.4,
+   "median": 2.08,
+   "total": 208.7,
+   "pf": 2.07,
+   "hari": 4.8,
+   "grup": "pasar BTC naik + tanpa meme + skor ≥55",
+   "aturan": "sebagian_5_5"
+  },
+  {
+   "n": 78,
+   "menang": 46.2,
+   "rata": 1.51,
+   "median": -5.39,
+   "total": 117.5,
+   "pf": 1.52,
+   "hari": 3.3,
+   "grup": "pasar BTC naik + tanpa meme + breakout",
+   "aturan": "tetap_10_5"
+  },
+  {
+   "n": 78,
+   "menang": 61.5,
+   "rata": 6.22,
+   "median": 8.79,
+   "total": 484.9,
+   "pf": 2.23,
+   "hari": 12.2,
+   "grup": "pasar BTC naik + tanpa meme + breakout",
+   "aturan": "pola"
+  },
+  {
+   "n": 78,
+   "menang": 55.1,
+   "rata": 5.34,
+   "median": 6.69,
+   "total": 416.4,
+   "pf": 2.1,
+   "hari": 9.2,
+   "grup": "pasar BTC naik + tanpa meme + breakout",
+   "aturan": "pola_sl12"
+  },
+  {
+   "n": 78,
+   "menang": 65.4,
+   "rata": 2.76,
+   "median": 4.58,
+   "total": 215.5,
+   "pf": 1.58,
+   "hari": 11.3,
+   "grup": "pasar BTC naik + tanpa meme + breakout",
+   "aturan": "pola_tp10"
+  },
+  {
+   "n": 78,
+   "menang": 76.9,
+   "rata": 1.46,
+   "median": 2.08,
+   "total": 114.2,
+   "pf": 1.42,
+   "hari": 7.2,
+   "grup": "pasar BTC naik + tanpa meme + breakout",
+   "aturan": "pola_tp5"
+  },
+  {
+   "n": 78,
+   "menang": 57.7,
+   "rata": 1.49,
+   "median": 2.08,
+   "total": 116.5,
+   "pf": 1.65,
+   "hari": 3.8,
+   "grup": "pasar BTC naik + tanpa meme + breakout",
+   "aturan": "sebagian_5_5"
   },
   {
    "n": 113,
@@ -1094,6 +1573,39 @@
   },
   {
    "n": 113,
+   "menang": 46.9,
+   "rata": 3.58,
+   "median": -3.05,
+   "total": 404.6,
+   "pf": 1.67,
+   "hari": 9.7,
+   "grup": "pasar BTC + tanpa meme + skor ≥55",
+   "aturan": "pola_sl12"
+  },
+  {
+   "n": 113,
+   "menang": 57.5,
+   "rata": 2.24,
+   "median": 4.58,
+   "total": 252.6,
+   "pf": 1.46,
+   "hari": 10.7,
+   "grup": "pasar BTC + tanpa meme + skor ≥55",
+   "aturan": "pola_tp10"
+  },
+  {
+   "n": 113,
+   "menang": 73.5,
+   "rata": 2.58,
+   "median": 2.08,
+   "total": 291.7,
+   "pf": 1.86,
+   "hari": 8.4,
+   "grup": "pasar BTC + tanpa meme + skor ≥55",
+   "aturan": "pola_tp5"
+  },
+  {
+   "n": 113,
    "menang": 50.4,
    "rata": 1.23,
    "median": 1.88,
@@ -1102,29 +1614,18 @@
    "hari": 4.7,
    "grup": "pasar BTC + tanpa meme + skor ≥55",
    "aturan": "sebagian_5_5"
-  },
-  {
-   "n": 113,
-   "menang": 44.2,
-   "rata": -0.35,
-   "median": -5.68,
-   "total": -39.8,
-   "pf": 0.94,
-   "hari": 7.1,
-   "grup": "pasar BTC + tanpa meme + skor ≥55",
-   "aturan": "sebagian_atr"
   }
  ],
  "rekomendasi": {
-  "n": 93,
-  "menang": 59.1,
-  "rata": 5.74,
-  "median": 7.87,
-  "total": 533.5,
-  "pf": 2.09,
-  "hari": 12.2,
-  "grup": "pasar BTC + tanpa meme + breakout",
-  "aturan": "pola"
+  "n": 87,
+  "menang": 54.0,
+  "rata": 6.34,
+  "median": 6.42,
+  "total": 551.5,
+  "pf": 2.44,
+  "hari": 9.9,
+  "grup": "pasar BTC naik + tanpa meme + skor ≥55",
+  "aturan": "pola_sl12"
  },
  "filter_turun": [
   {
