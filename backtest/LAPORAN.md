@@ -1,6 +1,6 @@
 # 🧪 Laporan Backtest Radar Kripto
 
-Dibuat: 3 Nov 2026 07:36 WIB · Periode: 2024-10-25 s/d 2026-10-03 · 125 koin top CMC di Binance · 843 sinyal (571 naik, 272 turun)
+Dibuat: 3 Nov 2026 07:42 WIB · Periode: 2024-10-25 s/d 2026-10-03 · 125 koin top CMC di Binance · 843 sinyal (571 naik, 272 turun)
 
 Hasil **bersih** per sinyal (sudah dipotong biaya beli 0,1%, jual 0,1%, pajak jual 0,21%). Satu sinyal = satu posisi dengan modal sama.
 
@@ -14,6 +14,9 @@ Hasil **bersih** per sinyal (sudah dipotong biaya beli 0,1%, jual 0,1%, pajak ju
 | Target pola, SL maks −15% | 571 | 32.9% | -1.14% | -7.17% | -651.6% | 0.84 | 12.9 |
 | 50% di +5%, sisa ke target pola, SL batal pola → impas | 571 | 65.1% | -0.64% | +2.08% | -364.5% | 0.84 | 8.1 |
 | 50% di +10%, sisa ke target pola, SL batal pola → impas | 571 | 50.8% | -0.72% | +3.44% | -412.5% | 0.87 | 12.1 |
+| 50% di +5%, sisa ke target pola, SL maks −8% → impas | 571 | 54.8% | -0.63% | +2.08% | -358.5% | 0.82 | 5.5 |
+| 50% di +5%, sisa ke target pola, SL maks −12% → impas | 571 | 61.1% | -0.68% | +2.08% | -385.5% | 0.82 | 6.8 |
+| 50% di +7%, sisa ke target pola, SL maks −12% → impas | 571 | 54.3% | -0.54% | +3.08% | -308.4% | 0.88 | 8.2 |
 | TP +3% / SL −3% (jual semua) | 571 | 41.3% | -0.92% | -3.40% | -527.8% | 0.54 | 1.5 |
 | TP +5% / SL −5% (jual semua) | 571 | 47.3% | -0.68% | -5.39% | -386.9% | 0.76 | 2.5 |
 | TP +8% / SL −4% (jual semua) | 571 | 33.1% | -0.44% | -4.40% | -252.5% | 0.85 | 3.0 |
@@ -154,25 +157,6 @@ Hasil **bersih** per sinyal (sudah dipotong biaya beli 0,1%, jual 0,1%, pajak ju
 | pasar BTC naik + tanpa meme + breakout | 78 | 55.1% | +5.34% | +6.69% | +416.4% | 2.1 | 9.2 |
 | pasar BTC + tanpa meme + skor ≥55 | 113 | 46.9% | +3.58% | -3.05% | +404.6% | 1.67 | 9.7 |
 
-### Aturan: 50% di +10%, sisa ke target pola, SL batal pola → impas
-
-| Filter | Sinyal | Menang | Rata-rata bersih | Median | Total | Profit factor | Hari |
-|---|---|---|---|---|---|---|---|
-| tanpa filter | 571 | 50.8% | -0.72% | +3.44% | -412.5% | 0.87 | 12.1 |
-| filter pasar BTC | 392 | 50.8% | +0.18% | +3.68% | +70.3% | 1.03 | 10.7 |
-| tanpa meme | 542 | 50.9% | -0.52% | +3.59% | -281.1% | 0.9 | 12.3 |
-| meme butuh skor ≥60 | 545 | 50.8% | -0.58% | +3.44% | -314.8% | 0.89 | 12.2 |
-| hanya breakout | 157 | 58.0% | -0.84% | +4.58% | -132.5% | 0.87 | 13.4 |
-| pasar BTC + tanpa meme | 372 | 51.3% | +0.46% | +4.57% | +172.2% | 1.09 | 10.8 |
-| pasar BTC + meme ≥60 | 374 | 51.1% | +0.36% | +4.25% | +134.0% | 1.07 | 10.8 |
-| pasar BTC naik saja | 304 | 53.9% | +1.04% | +4.58% | +316.3% | 1.22 | 10.7 |
-| pasar BTC naik + tanpa meme | 287 | 54.4% | +1.24% | +4.58% | +354.6% | 1.27 | 10.9 |
-| pasar BTC + tanpa meme + breakout | 93 | 63.4% | +2.30% | +4.58% | +213.6% | 1.46 | 11.0 |
-| skor ≥60 | 53 | 64.2% | +2.48% | +4.58% | +131.2% | 1.41 | 11.5 |
-| pasar BTC naik + tanpa meme + skor ≥55 | 87 | 60.9% | +3.56% | +4.58% | +309.4% | 1.88 | 10.9 |
-| pasar BTC naik + tanpa meme + breakout | 78 | 65.4% | +2.76% | +4.58% | +215.5% | 1.58 | 11.3 |
-| pasar BTC + tanpa meme + skor ≥55 | 113 | 57.5% | +2.24% | +4.58% | +252.6% | 1.46 | 10.7 |
-
 ### Aturan: 50% di +5%, sisa ke target pola, SL batal pola → impas
 
 | Filter | Sinyal | Menang | Rata-rata bersih | Median | Total | Profit factor | Hari |
@@ -192,24 +176,43 @@ Hasil **bersih** per sinyal (sudah dipotong biaya beli 0,1%, jual 0,1%, pajak ju
 | pasar BTC naik + tanpa meme + breakout | 78 | 76.9% | +1.46% | +2.08% | +114.2% | 1.42 | 7.2 |
 | pasar BTC + tanpa meme + skor ≥55 | 113 | 73.5% | +2.58% | +2.08% | +291.7% | 1.86 | 8.4 |
 
-### Aturan: 50% di +5%, sisa ke target pola, SL −5% → impas
+### Aturan: 50% di +5%, sisa ke target pola, SL maks −12% → impas
 
 | Filter | Sinyal | Menang | Rata-rata bersih | Median | Total | Profit factor | Hari |
 |---|---|---|---|---|---|---|---|
-| tanpa filter | 571 | 46.8% | -0.43% | -3.73% | -242.7% | 0.85 | 4.5 |
-| filter pasar BTC | 392 | 46.7% | -0.19% | -4.07% | -73.6% | 0.93 | 4.3 |
-| tanpa meme | 542 | 46.9% | -0.36% | -3.62% | -194.6% | 0.87 | 4.6 |
-| meme butuh skor ≥60 | 545 | 46.8% | -0.37% | -3.62% | -203.3% | 0.87 | 4.6 |
-| hanya breakout | 157 | 52.2% | +0.45% | +2.08% | +70.9% | 1.18 | 4.4 |
-| pasar BTC + tanpa meme | 372 | 47.3% | -0.07% | -3.58% | -26.1% | 0.97 | 4.4 |
-| pasar BTC + meme ≥60 | 374 | 47.1% | -0.10% | -3.67% | -36.9% | 0.96 | 4.4 |
-| pasar BTC naik saja | 304 | 49.3% | +0.30% | -2.20% | +90.1% | 1.11 | 4.3 |
-| pasar BTC naik + tanpa meme | 287 | 50.2% | +0.45% | +2.08% | +128.9% | 1.17 | 4.5 |
-| pasar BTC + tanpa meme + breakout | 93 | 52.7% | +0.85% | +2.08% | +79.1% | 1.33 | 3.9 |
-| skor ≥60 | 53 | 49.1% | +1.55% | -5.39% | +82.2% | 1.56 | 4.5 |
-| pasar BTC naik + tanpa meme + skor ≥55 | 87 | 57.5% | +2.40% | +2.08% | +208.7% | 2.07 | 4.8 |
-| pasar BTC naik + tanpa meme + breakout | 78 | 57.7% | +1.49% | +2.08% | +116.5% | 1.65 | 3.8 |
-| pasar BTC + tanpa meme + skor ≥55 | 113 | 50.4% | +1.23% | +1.88% | +139.0% | 1.47 | 4.7 |
+| tanpa filter | 571 | 61.1% | -0.68% | +2.08% | -385.5% | 0.82 | 6.8 |
+| filter pasar BTC | 392 | 60.7% | -0.34% | +2.08% | -132.7% | 0.91 | 6.2 |
+| tanpa meme | 542 | 61.6% | -0.56% | +2.08% | -305.1% | 0.85 | 7.0 |
+| meme butuh skor ≥60 | 545 | 61.5% | -0.60% | +2.08% | -327.8% | 0.84 | 7.0 |
+| hanya breakout | 157 | 69.4% | +0.30% | +2.08% | +47.5% | 1.09 | 6.9 |
+| pasar BTC + tanpa meme | 372 | 61.6% | -0.19% | +2.08% | -71.8% | 0.95 | 6.4 |
+| pasar BTC + meme ≥60 | 374 | 61.2% | -0.26% | +2.08% | -96.5% | 0.93 | 6.4 |
+| pasar BTC naik saja | 304 | 62.8% | +0.30% | +2.08% | +89.8% | 1.09 | 6.2 |
+| pasar BTC naik + tanpa meme | 287 | 63.8% | +0.47% | +2.08% | +134.3% | 1.14 | 6.4 |
+| pasar BTC + tanpa meme + breakout | 93 | 71.0% | +1.12% | +2.08% | +104.3% | 1.33 | 6.2 |
+| skor ≥60 | 53 | 66.0% | +1.21% | +2.08% | +64.1% | 1.32 | 7.0 |
+| pasar BTC naik + tanpa meme + skor ≥55 | 87 | 71.3% | +2.98% | +2.08% | +259.7% | 2.07 | 7.1 |
+| pasar BTC naik + tanpa meme + breakout | 78 | 75.6% | +2.10% | +2.08% | +163.7% | 1.74 | 5.9 |
+| pasar BTC + tanpa meme + skor ≥55 | 113 | 67.3% | +1.66% | +2.08% | +187.3% | 1.5 | 7.0 |
+
+### Aturan: 50% di +5%, sisa ke target pola, SL maks −8% → impas
+
+| Filter | Sinyal | Menang | Rata-rata bersih | Median | Total | Profit factor | Hari |
+|---|---|---|---|---|---|---|---|
+| tanpa filter | 571 | 54.8% | -0.63% | +2.08% | -358.5% | 0.82 | 5.5 |
+| filter pasar BTC | 392 | 55.1% | -0.29% | +2.08% | -112.8% | 0.91 | 5.1 |
+| tanpa meme | 542 | 55.0% | -0.58% | +2.08% | -312.3% | 0.83 | 5.6 |
+| meme butuh skor ≥60 | 545 | 54.9% | -0.60% | +2.08% | -327.0% | 0.82 | 5.6 |
+| hanya breakout | 157 | 62.4% | +0.40% | +2.08% | +63.3% | 1.13 | 5.3 |
+| pasar BTC + tanpa meme | 372 | 55.6% | -0.20% | +2.08% | -76.2% | 0.94 | 5.2 |
+| pasar BTC + meme ≥60 | 374 | 55.3% | -0.25% | +2.08% | -93.0% | 0.93 | 5.2 |
+| pasar BTC naik saja | 304 | 57.9% | +0.38% | +2.08% | +116.5% | 1.12 | 5.2 |
+| pasar BTC naik + tanpa meme | 287 | 58.5% | +0.49% | +2.08% | +140.4% | 1.16 | 5.3 |
+| pasar BTC + tanpa meme + breakout | 93 | 66.7% | +1.39% | +2.08% | +129.5% | 1.5 | 5.0 |
+| skor ≥60 | 53 | 56.6% | +1.04% | +2.08% | +55.3% | 1.29 | 5.6 |
+| pasar BTC naik + tanpa meme + skor ≥55 | 87 | 67.8% | +3.01% | +2.08% | +262.2% | 2.24 | 6.0 |
+| pasar BTC naik + tanpa meme + breakout | 78 | 73.1% | +2.43% | +2.08% | +189.3% | 2.09 | 4.9 |
+| pasar BTC + tanpa meme + skor ≥55 | 113 | 62.8% | +1.69% | +2.08% | +191.0% | 1.59 | 5.9 |
 
 **Kombinasi terbaik:** pasar BTC naik + tanpa meme + skor ≥55 + Target pola, SL maks −12% → 87 sinyal, menang 54.0%, rata-rata bersih +6.34% per sinyal.
 
@@ -223,6 +226,9 @@ Hasil **bersih** per sinyal (sudah dipotong biaya beli 0,1%, jual 0,1%, pajak ju
 | Target pola, SL maks −15% | 272 | 37.1% | -0.74% | -7.00% | -202.3% | 0.9 | 13.8 |
 | 50% di +5%, sisa ke target pola, SL batal pola → impas | 272 | 72.1% | -0.31% | +2.08% | -84.4% | 0.91 | 8.9 |
 | 50% di +10%, sisa ke target pola, SL batal pola → impas | 272 | 55.5% | -0.58% | +4.57% | -158.4% | 0.9 | 13.9 |
+| 50% di +5%, sisa ke target pola, SL maks −8% → impas | 272 | 59.9% | -0.28% | +2.08% | -77.5% | 0.91 | 6.9 |
+| 50% di +5%, sisa ke target pola, SL maks −12% → impas | 272 | 66.2% | -0.33% | +2.08% | -89.9% | 0.9 | 8.0 |
+| 50% di +7%, sisa ke target pola, SL maks −12% → impas | 272 | 56.6% | -0.73% | +3.08% | -198.0% | 0.84 | 9.7 |
 | TP +3% / SL −3% (jual semua) | 272 | 44.9% | -0.72% | -3.40% | -195.3% | 0.62 | 1.5 |
 | TP +5% / SL −5% (jual semua) | 272 | 50.0% | -0.42% | -1.74% | -114.2% | 0.84 | 2.6 |
 | TP +8% / SL −4% (jual semua) | 272 | 30.9% | -0.72% | -4.40% | -197.0% | 0.76 | 3.4 |
