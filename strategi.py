@@ -3,10 +3,10 @@
 STRATEGI: filter sinyal, rencana jual (TP1/TP2/SL), simulasi keluar posisi & biaya.
 Dipakai bersama oleh radar (live) dan backtest, supaya aturannya persis sama.
 
-Rencana jual (contoh mode persen, TP1 3%, SL 3%, porsi 50%):
+Rencana jual (bawaan hasil backtest: TP1 5%, SL maks 12%, porsi 50%):
   - Beli di harga sinyal.
-  - SL awal  = yang lebih dekat antara batas batal pola dan −3%.
-  - TP1 +3%  : jual 50%, lalu SL dipindah ke harga beli (impas).
+  - SL awal  = yang lebih dekat antara batas batal pola dan −12%.
+  - TP1 +5%  : jual 50%, lalu SL dipindah ke harga beli (impas).
   - TP2      : target pola (kalau tidak ada: 2× jarak TP1) → jual sisanya.
   - Tidak kena apa pun dalam maks_hari → jual di harga penutupan terakhir.
 Sinyal turun = posisi short (cerminannya).
@@ -24,7 +24,7 @@ MEME = {"DOGE", "SHIB", "PEPE", "BONK", "WIF", "FLOKI", "PENGU", "TRUMP", "BRETT
         "KISHU", "LEASH", "BONE", "SAMO", "DEGEN", "HIPPO", "PUMP", "USELESS", "VINE", "GIGA", "AI16Z", "ZEREBRO",
         "BOOK", "HMSTR", "NOT", "MANEKI", "SLERF", "PONKE", "MICHI", "SIGMA", "RETARDIO", "LOFI", "BUTTHOLE"}
 
-DEFAULT_RENCANA = dict(mode="persen", tp1_persen=3.0, sl_persen=3.0, tp1_atr=1.5, sl_atr=1.5, porsi_tp1=0.5,
+DEFAULT_RENCANA = dict(mode="persen", tp1_persen=5.0, sl_persen=12.0, tp1_atr=1.5, sl_atr=1.5, porsi_tp1=0.5,
                        maks_hari=30)
 DEFAULT_BIAYA = dict(fee_beli_persen=0.1, fee_jual_persen=0.1, pajak_jual_persen=0.21)
 

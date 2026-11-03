@@ -25,33 +25,39 @@ abaikan: []
 # Skor 0-100 dihitung terpisah untuk "naik" dan "turun" dari:
 #   volume/akumulasi 20 · lokasi harga 15 · pola grafik 25 · momentum (MACD/RSI/Stoch) 20
 #   candlestick 8 · tren & MA 10 · Bollinger squeeze 5 · Elliott 6
-skor_min: 50                    # skor minimal untuk 🟢 POTENSI NAIK / 🔴 POTENSI TURUN
+skor_min: 55                    # skor minimal untuk 🟢 POTENSI NAIK / 🔴 POTENSI TURUN (backtest: ≥55 jauh lebih baik)
 selisih_min: 15                 # skor arah itu harus unggul minimal sekian dari arah lawan
 skor_pantau: 40                 # 🟡 PANTAU (hanya di dashboard, tidak dikirim ke Telegram)
 syarat_akumulasi: true          # 🟢 wajib ada bukti akumulasi (OBV/CMF/beli agresif)
 maks_naik_7h_persen: 20         # koin yang sudah naik >20% dalam 7 hari tidak dianggap "masih di bawah"
-kirim_alert_turun: true         # kirim juga alert 🔴 potensi turun ke Telegram
+kirim_alert_turun: false        # alert 🔴 potensi turun (backtest: hasilnya minus → dimatikan; tetap tampil di dashboard)
 
 # ---- Filter sinyal (lihat hasil uji di dashboard tab 🧪 Backtest) ----
+# Pengaturan di bawah = kombinasi terbaik backtest Okt 2024–Okt 2026 (87 sinyal):
+#   sinyal naik hanya saat BTC tren naik + bukan meme coin + skor ≥55
+#   → menang 71%, rata-rata bersih +3,0% per sinyal, rugi terburuk −12%.
 # filter_pasar: true   = sinyal naik ditahan saat BTC tren turun (di bawah MA50 & MA50 menurun),
 #                        sinyal turun ditahan saat BTC tren naik
 #               ketat  = sinyal naik HANYA saat BTC tren naik
 #               false  = tanpa filter pasar
-filter_pasar: true
+filter_pasar: ketat
 # filter_meme:  ketat   = meme coin butuh skor naik minimal skor_min + 10
 #               abaikan = meme coin tidak pernah dijadikan sinyal naik
 #               false   = tanpa filter
-filter_meme: ketat
+filter_meme: abaikan
 wajib_breakout: false           # true = sinyal hanya bila pola sudah breakout
 min_rr: 0                       # rasio TP2 : SL minimal (0 = tidak dicek)
 
 # ---- Rencana jual untuk setiap sinyal ----
 # TP1 = ambil untung sebagian, lalu stop loss sisa posisi dipindah ke harga beli.
 # TP2 = target pola (kalau tidak ada: 2x jarak TP1). SL = yang lebih dekat antara batas batal pola & sl.
+# Pilihan dari backtest (dengan filter di atas):
+#   porsi_tp1 0.5, tp1 5%, sl 12%  → menang 71%, rata-rata +3,0%, rugi terburuk −12%   (bawaan: sukses rate tinggi)
+#   porsi_tp1 0,   sl 12%          → menang 54%, rata-rata +6,3%, rugi terburuk −12%   (untung rata-rata lebih besar)
 rencana:
   mode: persen                  # persen | atr (jarak berdasarkan volatilitas koin)
-  tp1_persen: 3
-  sl_persen: 3
+  tp1_persen: 5
+  sl_persen: 12
   tp1_atr: 1.5
   sl_atr: 1.5
   porsi_tp1: 0.5                # 0.5 = jual 50% di TP1; 1 = jual semua di TP1; 0 = langsung ke TP2
@@ -70,6 +76,12 @@ ringkasan_harian_jam_wib: 8     # ringkasan harian dikirim sekali sehari mulai j
 # ---- Dashboard ----
 maks_grafik_dashboard: 40
 url_dashboard: ""               # kosongkan = otomatis https://<username>.github.io/<repo>/
+
+# ---- Money management (opsional) ----
+# Isi modal_rp untuk menampilkan ukuran posisi per sinyal: rugi bila kena SL = risiko_per_transaksi_persen x modal.
+modal_rp: 0                     # contoh: 10000000 (Rp10 juta). 0 = tidak dihitung
+risiko_per_transaksi_persen: 1
+maks_posisi_persen: 20          # satu posisi maksimal 20% modal
 
 # Rentang data untuk zona akumulasi (profil volume), dalam hari.
 profil_volume_hari: 30
