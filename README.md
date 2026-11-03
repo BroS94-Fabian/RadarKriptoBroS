@@ -69,6 +69,20 @@ Kalau tidak ada pola: dipakai target Elliott Wave, atau resistance/support terde
 - `syarat_akumulasi` / `maks_naik_7h_persen` — seberapa ketat syarat "akumulasi & masih di bawah".
 - `abaikan` — koin yang tidak ingin dipantau.
 
+## Filter sinyal, rencana jual & rekam jejak
+- **Filter pasar BTC** (`filter_pasar`): sinyal naik ditahan saat BTC tren turun (di bawah MA50 & MA50 menurun).
+  Pilihan `ketat` = sinyal naik hanya saat BTC tren naik.
+- **Filter meme coin** (`filter_meme`): `ketat` = meme coin butuh skor lebih tinggi, `abaikan` = tidak pernah jadi sinyal naik.
+- **Rencana jual** (`rencana`): tiap sinyal diberi TP1 (jual sebagian, lalu stop loss pindah ke harga beli), TP2 (target pola) dan SL.
+- Sinyal yang tertahan filter tetap terlihat di tab 🟡 Pantau dengan keterangan alasannya.
+- **Rekam jejak** (tab 📈): setiap alert dicatat harganya, lalu tiap jam dihitung hasilnya: perubahan, kena target/batal,
+  hasil bila mengikuti rencana jual (bersih setelah biaya & pajak), dan perubahan BTC di periode yang sama.
+
+## Backtest
+Menguji mesin analisa yang sama pada data harian ±2,7 tahun (top 200 CMC di Binance), membandingkan 12 aturan jual
+dan efek tiap filter. Jalankan: **Actions → Backtest Radar → Run workflow**. Hasil: `backtest/LAPORAN.md`
+dan tab 🧪 Backtest di dashboard. Keterbatasan: tanpa data per jam, daftar koin = top 200 saat ini (survivorship bias).
+
 ## Hal yang perlu diketahui
 - **Bukan nasihat investasi.** Pola grafik adalah probabilitas, bukan kepastian — banyak pola gagal. Selalu pakai level *batal* untuk membatasi rugi.
 - Analisa memakai candle **harian** yang sudah tutup; sinyal bisa berubah setelah candle hari ini tutup (07.00 WIB).

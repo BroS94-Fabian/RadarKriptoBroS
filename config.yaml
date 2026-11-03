@@ -32,6 +32,36 @@ syarat_akumulasi: true          # 🟢 wajib ada bukti akumulasi (OBV/CMF/beli a
 maks_naik_7h_persen: 20         # koin yang sudah naik >20% dalam 7 hari tidak dianggap "masih di bawah"
 kirim_alert_turun: true         # kirim juga alert 🔴 potensi turun ke Telegram
 
+# ---- Filter sinyal (lihat hasil uji di dashboard tab 🧪 Backtest) ----
+# filter_pasar: true   = sinyal naik ditahan saat BTC tren turun (di bawah MA50 & MA50 menurun),
+#                        sinyal turun ditahan saat BTC tren naik
+#               ketat  = sinyal naik HANYA saat BTC tren naik
+#               false  = tanpa filter pasar
+filter_pasar: true
+# filter_meme:  ketat   = meme coin butuh skor naik minimal skor_min + 10
+#               abaikan = meme coin tidak pernah dijadikan sinyal naik
+#               false   = tanpa filter
+filter_meme: ketat
+wajib_breakout: false           # true = sinyal hanya bila pola sudah breakout
+min_rr: 0                       # rasio TP2 : SL minimal (0 = tidak dicek)
+
+# ---- Rencana jual untuk setiap sinyal ----
+# TP1 = ambil untung sebagian, lalu stop loss sisa posisi dipindah ke harga beli.
+# TP2 = target pola (kalau tidak ada: 2x jarak TP1). SL = yang lebih dekat antara batas batal pola & sl.
+rencana:
+  mode: persen                  # persen | atr (jarak berdasarkan volatilitas koin)
+  tp1_persen: 3
+  sl_persen: 3
+  tp1_atr: 1.5
+  sl_atr: 1.5
+  porsi_tp1: 0.5                # 0.5 = jual 50% di TP1; 1 = jual semua di TP1; 0 = langsung ke TP2
+  maks_hari: 30                 # posisi ditutup bila tidak kena apa pun dalam X hari
+
+biaya:
+  fee_beli_persen: 0.1
+  fee_jual_persen: 0.1
+  pajak_jual_persen: 0.21
+
 # ---- Telegram ----
 cooldown_jam: 12                # koin yang sama tidak dikirim ulang selama X jam
 maks_grafik_per_run: 6          # maks. alert bergrafik per putaran (sisanya daftar singkat)

@@ -41,6 +41,7 @@ import yaml
 
 from analisa import BULAN, analisa_koin, fmt_pct, fmt_price
 import rekam_jejak as rekam
+import strategi as ST
 from grafik import buat_grafik
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -72,6 +73,12 @@ DEFAULT_CONFIG = {
     "profil_volume_hari": 30,
     "ringkasan_harian_jam_wib": 8,
     "url_dashboard": "",
+    "filter_pasar": True,
+    "filter_meme": "ketat",
+    "wajib_breakout": False,
+    "min_rr": 0,
+    "rencana": dict(ST.DEFAULT_RENCANA),
+    "biaya": dict(ST.DEFAULT_BIAYA),
 }
 
 STABIL = {"USDT", "USDC", "DAI", "FDUSD", "TUSD", "USDP", "USDE", "USDS", "PYUSD", "USD1", "RLUSD", "BUSD",
@@ -170,7 +177,8 @@ def top_cmc(key: str, n: int) -> list[dict]:
     for x in d.get("data", []):
         price = (x.get("quote") or {}).get("USD", {}).get("price")
         out.append(dict(symbol=str(x["symbol"]).upper(), name=x.get("name", ""), rank=int(x.get("cmc_rank") or 0),
-                        stabil=_stabil(x["symbol"], x.get("name", ""), price, x.get("tags") or [])))
+                        stabil=_stabil(x["symbol"], x.get("name", ""), price, x.get("tags") or []),
+                        meme=ST.is_meme(str(x["symbol"]), x.get("tags") or [])))
     return out
 
 
@@ -188,7 +196,8 @@ def top_coingecko(n: int) -> list[dict]:
         if not rk or rk > n:
             continue
         out.append(dict(symbol=str(x["symbol"]).upper(), name=x.get("name", ""), rank=int(rk),
-                        stabil=_stabil(x["symbol"], x.get("name", ""), x.get("current_price"))))
+                        stabil=_stabil(x["symbol"], x.get("name", ""), x.get("current_price")),
+                        meme=ST.is_meme(str(x["symbol"]))))
     return sorted(out, key=lambda r: r["rank"])
 
 
@@ -480,7 +489,8 @@ def bangun_universe(rank_list: list[dict], cfg: dict, demo: DemoSource | None):
         for src, tick in sources:
             key = ALIAS_BINANCE.get(sym, sym) if isinstance(src, Binance) else sym
             if key in tick:
-                found = dict(tick[key], name=coin["name"], rank=coin["rank"], bursa=src.name, _src=src)
+                found = dict(tick[key], name=coin["name"], rank=coin["rank"], bursa=src.name, _src=src,
+                             meme=bool(coin.get("meme")) or ST.is_meme(sym))
                 break
         if not found:
             tidak_ada.append(sym)
@@ -555,6 +565,11 @@ def caption(r: dict, cfg: dict, dash: str) -> str:
                     f"({e(t['sumber'])})")
     if b:
         head.append(f"🛑 Batal jika {'<' if naik else '>'} {fmt_price(b['harga'])} ({fmt_pct(b['pct'])}){_rr(r['rr'])}")
+    rc = r.get("rencana")
+    if rc:
+        head.append(f"📋 Rencana: TP1 {fmt_price(rc['tp1'])} ({fmt_pct(rc['tp1_pct'])}, jual "
+                    f"{rc['porsi_tp1'] * 100:.0f}%) · TP2 {fmt_price(rc['tp2'])} ({fmt_pct(rc['tp2_pct'])}) · "
+                    f"SL {fmt_price(rc['sl'])} ({fmt_pct(rc['sl_pct'])})")
     el = r.get("elliott")
     if el and el["arah"] == r["kelas"]:
         head.append(f"🌊 {e(el['teks'])} → {fmt_price(el['target'])} ({fmt_pct(el['pct'])})")
@@ -582,10 +597,16 @@ def caption(r: dict, cfg: dict, dash: str) -> str:
     return "\n".join(head)[:1020]
 
 
-def header_text(naik, turun, n_scan, src_rank, src_bursa, now, dash) -> str:
+REZIM_IKON = {"naik": "📈 NAIK", "turun": "📉 TURUN", "netral": "➖ SIDEWAYS"}
+
+
+def header_text(naik, turun, n_scan, src_rank, src_bursa, now, dash, rz=None, tertahan=0) -> str:
     lines = [f"📡 <b>Radar Kripto</b> · {now_wib_str(now)}",
-             f"Top {n_scan} koin ({html.escape(src_rank)}) · data {html.escape(src_bursa)}",
-             f"🟢 Potensi naik: <b>{len(naik)}</b> · 🔴 Potensi turun: <b>{len(turun)}</b>"]
+             f"Top {n_scan} koin ({html.escape(src_rank)}) · data {html.escape(src_bursa)}"]
+    if rz:
+        lines.append(f"Pasar BTC: <b>{REZIM_IKON.get(rz['rezim'], rz['rezim'])}</b> ({html.escape(rz['teks'])})")
+    lines.append(f"🟢 Potensi naik: <b>{len(naik)}</b> · 🔴 Potensi turun: <b>{len(turun)}</b>"
+                 + (f" · ⏸ ditahan filter: {tertahan}" if tertahan else ""))
     if dash:
         lines.append(f'📊 <a href="{html.escape(dash)}">Buka dashboard lengkap</a>')
     lines.append("<i>Target = proyeksi pola grafik, bukan jaminan. Bukan ajakan beli/jual.</i>")
@@ -601,12 +622,14 @@ def baris_ringkas(r: dict) -> str:
             + (f" → {fmt_pct(t['pct'])}" if t else ""))
 
 
-def summary_text(results, now, src_rank, dash, rk=None) -> str:
+def summary_text(results, now, src_rank, dash, rk=None, rz=None) -> str:
     w = now.astimezone(WIB)
     naik = sorted([r for r in results if r["kelas"] == "naik"], key=lambda r: -r["skor_naik"])
     turun = sorted([r for r in results if r["kelas"] == "turun"], key=lambda r: -r["skor_turun"])
     lines = [f"📋 <b>Ringkasan Harian Radar Kripto</b> — {w.day} {BULAN[w.month - 1]} {w.year}",
              f"{len(results)} koin top ({html.escape(src_rank)}) dianalisa."]
+    if rz:
+        lines.append(f"Pasar BTC: <b>{REZIM_IKON.get(rz['rezim'], rz['rezim'])}</b> ({html.escape(rz['teks'])})")
     lines.append(f"\n🟢 <b>Potensi naik ({len(naik)})</b>")
     lines += [baris_ringkas(r) for r in naik[:10]] or ["• (belum ada)"]
     lines.append(f"\n🔴 <b>Potensi turun ({len(turun)})</b>")
@@ -740,6 +763,10 @@ def tulis_dashboard(results, charts: dict[str, bytes], meta: dict) -> None:
             x["chart"] = None
         koin.append(x)
     data = dict(meta, koin=koin)
+    bt = os.path.join(ROOT, "backtest", "hasil.json")
+    if os.path.exists(bt):
+        shutil.copy(bt, os.path.join(SITE_DIR, "backtest.json"))
+        data["ada_backtest"] = True
     with open(os.path.join(SITE_DIR, "data.json"), "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, separators=(",", ":"), allow_nan=False)
     with open(os.path.join(SITE_DIR, ".nojekyll"), "w") as f:
@@ -761,6 +788,8 @@ def write_step_summary(results, meta, path) -> None:
     naik = sorted([r for r in results if r["kelas"] == "naik"], key=lambda r: -r["skor_naik"])
     turun = sorted([r for r in results if r["kelas"] == "turun"], key=lambda r: -r["skor_turun"])
     lines = [f"## Radar Kripto — {meta['updated_wib']}", "",
+             f"Pasar BTC: {meta.get('pasar', {}).get('rezim', '-')} ({meta.get('pasar', {}).get('teks', '')}) · "
+             f"ditahan filter: {meta.get('tertahan', 0)}", "",
              f"Ranking: {meta['sumber_ranking']} · Data: {meta['sumber_harga']} · Dianalisa: {len(results)}", ""]
     if meta.get("dashboard"):
         lines += [f"Dashboard: {meta['dashboard']}", ""]
@@ -831,7 +860,24 @@ def main() -> int:
         n_isi = rekam.isi_ulang(state, res_map, {u["symbol"]: u["_src"] for u in uni})
         if n_isi:
             print(f"Rekam jejak: {n_isi} alert lama dilengkapi harga historis")
-    rekam.perbarui(state, res_map, now)
+    # Kondisi pasar dari BTC, rencana jual & filter sinyal
+    r_btc = res_map.get("BTCUSDT") or res_map.get("BTC-USDT")
+    rz = (ST.rezim_pasar(r_btc["_g"]["dc"]["close"].to_numpy(), price=r_btc["price"]) if r_btc
+          else dict(rezim="netral", harga=None, ma=None, teks="data BTC tidak tersedia"))
+    R = ST.cfg_rencana(cfg)
+    tertahan = 0
+    for r in results:
+        arah = r["arah_utama"]
+        t, b = r.get("target"), r.get("batal")
+        r["rencana"] = ST.rencana(float(r["price"]), arah, t["harga"] if t else None, b["harga"] if b else None,
+                                  r["indikator"].get("atr_pct"), R)
+        k, alasan = ST.filter_sinyal(r, cfg, rz["rezim"])
+        if alasan:
+            r["kelas"], r["ditahan"] = k, alasan
+            tertahan += 1
+    print(f"Pasar BTC: {rz['rezim']} ({rz['teks']}) · {tertahan} sinyal ditahan filter")
+    btc_src = next((u["_src"] for u in uni if u["symbol"] in ("BTCUSDT", "BTC-USDT")), None)
+    rekam.perbarui(state, res_map, now, cfg, r_btc, btc_src)
 
     naik = sorted([r for r in results if r["kelas"] == "naik"], key=lambda r: -r["skor_naik"])
     turun = sorted([r for r in results if r["kelas"] == "turun"], key=lambda r: -r["skor_turun"])
@@ -850,7 +896,7 @@ def main() -> int:
             print(f"  ! grafik {r['base']} gagal: {e}")
 
     if alerts:
-        tg.send_text(header_text(naik, turun, len(results), src_rank, src_harga, now, dash))
+        tg.send_text(header_text(naik, turun, len(results), src_rank, src_harga, now, dash, rz, tertahan))
         maxg = int(cfg["maks_grafik_per_run"])
         for r in alerts[:maxg]:
             png = charts.get(r["symbol"]) or buat_grafik(r, cfg["quote"], src_harga, waktu)
@@ -859,7 +905,7 @@ def main() -> int:
         if rest:
             tg.send_text("Koin lain yang juga terdeteksi:\n" + "\n".join(baris_ringkas(r) for r in rest[:25]))
         for r in alerts:
-            rekam.catat(state, r, now)
+            rekam.catat(state, r, now, r_btc)
         if not demo:
             for r in alerts:
                 P = r["pola_naik" if r["kelas"] == "naik" else "pola_turun"]
@@ -881,7 +927,7 @@ def main() -> int:
     w = now.astimezone(WIB)
     today = w.date().isoformat()
     if demo or (w.hour >= int(cfg["ringkasan_harian_jam_wib"]) and state.get("last_summary") != today):
-        tg.send_text(summary_text(results, now, src_rank, dash, rk))
+        tg.send_text(summary_text(results, now, src_rank, dash, rk, rz))
         if not demo:
             state["last_summary"] = today
 
@@ -889,6 +935,9 @@ def main() -> int:
                 sumber_harga=src_harga, jumlah=len(results), top_n=int(cfg["top_n"]),
                 tidak_tersedia=tidak_ada, dashboard=dash, demo=demo,
                 ambang=dict(skor_min=cfg["skor_min"], selisih_min=cfg["selisih_min"]),
+                pasar=rz, tertahan=tertahan,
+                filter=dict(pasar=cfg["filter_pasar"], meme=cfg["filter_meme"], breakout=cfg["wajib_breakout"],
+                            min_rr=cfg["min_rr"]), rencana_cfg=R,
                 riwayat=riw, rekap7=rk)
     tulis_dashboard(results, charts, meta)
     if demo:

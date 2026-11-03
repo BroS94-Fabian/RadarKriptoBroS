@@ -932,6 +932,12 @@ def metrik_volume(info, dc: pd.DataFrame, h: pd.DataFrame, hari_profil: int):
             out["buy1h"] = 0.5 + cmf(t2["high"].to_numpy(), t2["low"].to_numpy(), t2["close"].to_numpy(),
                                      t2["volume"].to_numpy(), 2) / 2
         out["vp"] = volume_profile(hc.tail(24 * hari_profil))
+    else:  # tanpa data per jam (koin baru / backtest): pakai candle harian
+        last = dc.iloc[-1]
+        if "taker_buy_q" in dc and np.isfinite(last["taker_buy_q"]) and last["qvol"] > 0:
+            out["buy24"] = float(last["taker_buy_q"] / last["qvol"])
+            out["taker_real"] = True
+        out["vp"] = volume_profile(dc.tail(hari_profil))
     return out
 
 
@@ -1196,7 +1202,7 @@ def analisa_koin(info: dict, d: pd.DataFrame, h: pd.DataFrame, cfg: dict) -> dic
 
     hasil = dict(
         symbol=info["symbol"], base=info["base"], nama=info.get("name", info["base"]), rank=info.get("rank"),
-        bursa=info.get("bursa", ""), price=_r(price), chg24=_f(info.get("chg24"), 2), chg7=_f(chg7, 2),
+        bursa=info.get("bursa", ""), meme=bool(info.get("meme", False)), price=_r(price), chg24=_f(info.get("chg24"), 2), chg7=_f(chg7, 2),
         chg30=_f(chg30, 2), qvol24=_f(info.get("qvol24"), 0), kelas=kelas, arah_utama=arah_k,
         skor_naik=B.total, skor_turun=S.total, alasan_naik=B.daftar(), alasan_turun=S.daftar(),
         pola_naik=_pola_json(pola_naik), pola_turun=_pola_json(pola_turun),

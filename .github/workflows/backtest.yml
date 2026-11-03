@@ -1,0 +1,43 @@
+name: Backtest Radar
+
+on:
+  workflow_dispatch:
+    inputs:
+      hari:
+        description: "Jumlah hari data harian (maks 1000)"
+        default: "1000"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radar-backtest
+  cancel-in-progress: false
+
+jobs:
+  backtest:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Pasang library
+        run: pip install -r requirements.txt
+
+      - name: Jalankan backtest
+        env:
+          CMC_API_KEY: ${{ secrets.CMC_API_KEY }}
+        run: python backtest.py --hari "${{ github.event.inputs.hari || '1000' }}"
+
+      - name: Simpan hasil
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtest/
+          git commit -m "backtest: perbarui hasil" || exit 0
+          for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done

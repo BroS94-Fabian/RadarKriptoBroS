@@ -76,6 +76,7 @@ th{position:sticky;top:0;background:var(--surface);color:var(--ink-2);font-weigh
 .jj td,.jj th{text-align:right}
 th:nth-child(2),td:nth-child(2),th:nth-child(6),td:nth-child(6),th:nth-child(9),td:nth-child(9),th:nth-child(13),td:nth-child(13){text-align:left}
 .jj th:nth-child(9),.jj td:nth-child(9){text-align:right}
+.jj th:first-child,.jj td:first-child{text-align:left}
 tbody tr{cursor:pointer} tbody tr:hover{background:var(--surface-2)}
 dialog{border:0;border-radius:14px;padding:0;max-width:760px;width:calc(100% - 24px);background:var(--surface);color:var(--ink);box-shadow:0 10px 40px rgba(0,0,0,.3)}
 dialog::backdrop{background:rgba(0,0,0,.45)}
@@ -91,6 +92,12 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
 .hasil{font-size:12px;font-weight:700;border-radius:999px;padding:2px 8px;white-space:nowrap}
 .h-target{background:var(--good-bg);color:var(--good)} .h-batal{background:var(--crit-bg);color:var(--crit)}
 .h-berjalan{background:var(--surface-2);color:var(--ink-2)} .h-selesai{background:var(--surface-2);color:var(--muted)}
+.pasar{margin-top:10px;font-size:14px;border-radius:8px;padding:8px 12px;background:var(--surface);box-shadow:var(--shadow)}
+.plan{font-size:13px;background:var(--surface-2);border-radius:8px;padding:8px 10px}
+.plan b{font-weight:600}
+.tahan{font-size:12px;color:var(--warn);font-weight:600}
+.bt h3{margin:18px 0 8px;font-size:16px}
+.bt .tbl-wrap{margin-bottom:8px}
 .theme{float:right;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);border-radius:8px;padding:4px 10px;font:inherit;font-size:13px;cursor:pointer}
 @media (max-width:420px){.grid{grid-template-columns:1fr}.stat b{font-size:22px}}
 </style>
@@ -101,6 +108,7 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
     <button class="theme" id="theme" type="button">Tema</button>
     <h1>📡 Radar Kripto</h1>
     <div class="sub" id="meta">Memuat data…</div>
+    <div class="pasar" id="pasar" hidden></div>
     <div class="warn-note">Analisa teknikal otomatis untuk koin top CoinMarketCap. <b>Target = proyeksi aturan pola grafik, bukan jaminan.</b> Bukan ajakan beli/jual — selalu cek grafik, berita, dan kelola risiko sendiri.</div>
   </header>
 
@@ -135,7 +143,8 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const KELAS = {"naik":"🟢 Potensi naik","turun":"🔴 Potensi turun","pantau-naik":"🟡 Pantau naik","pantau-turun":"🟡 Pantau turun","netral":"Netral"};
   const POSISI = {"bawah":"di bawah zona","dalam-bawah":"di bawah POC","dalam-atas":"di atas POC","atas":"di atas zona","-":"-"};
-  const TABS = [["naik","🟢 Potensi naik"],["turun","🔴 Potensi turun"],["pantau","🟡 Pantau"],["semua","Semua koin"],["jejak","📈 Rekam jejak"]];
+  let TABS = [["naik","🟢 Potensi naik"],["turun","🔴 Potensi turun"],["pantau","🟡 Pantau"],["semua","Semua koin"],["jejak","📈 Rekam jejak"]];
+  let BT = null;
   let DATA = null, tab = "naik", q = "", sortKey = "rank", sortDir = 1;
 
   // tema (disimpan per perangkat)
@@ -200,6 +209,10 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
         <dt>Volume</dt><dd>24j ${big(r.qvol24)} (${ak.rvol_d != null ? num(ak.rvol_d,1) + "x rata²" : "-"}) · beli ${ak.beli24 != null ? num(ak.beli24*100,0) + "%" : "-"} · CMF ${ak.cmf != null ? num(ak.cmf,2) : "-"}</dd>
         ${ma ? `<dt>MA</dt><dd>${ma}</dd>` : ""}
       </dl>
+      ${r.rencana ? `<div class="plan">📋 <b>Rencana jual</b>: TP1 ${fp(r.rencana.tp1)} (${pct(r.rencana.tp1_pct)}, jual ${num(r.rencana.porsi_tp1*100,0)}%) ·
+        TP2 ${fp(r.rencana.tp2)} (${pct(r.rencana.tp2_pct)}) · SL ${fp(r.rencana.sl)} (${pct(r.rencana.sl_pct)})
+        ${r.rencana.porsi_tp1 > 0 && r.rencana.porsi_tp1 < 1 ? "<br><span class='arti'>Setelah TP1 tersentuh, SL sisa posisi pindah ke harga beli.</span>" : ""}</div>` : ""}
+      ${r.ditahan ? `<div class="tahan">⏸ ${esc(r.ditahan)}</div>` : ""}
       <div class="ind">${ex.map(x => `<span>${x}</span>`).join("")}</div>
       <details><summary>Alasan (${alasan(r).length})</summary><ul>${alasan(r).map(a => `<li>${esc(a)}</li>`).join("")}</ul></details>
       ${r.chart ? `<img class="chart" loading="lazy" src="${esc(r.chart)}?v=${encodeURIComponent(DATA.updated)}" alt="Grafik analisa ${esc(r.base)}" data-full="${esc(r.chart)}">` : ""}
@@ -262,7 +275,9 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
         <div><b class="big">${x.benar}/${x.n}</b> <span class="sub">bergerak ${kata} (${x.persen}%)</span></div>
         <dl class="kv"><dt>Rata-rata</dt><dd class="${cls(x.rata)}">${pct(x.rata)}</dd>
         <dt>Kena target</dt><dd>${x.target}</dd><dt>Kena batal</dt><dd>${x.batal}</dd>
-        <dt>Terbaik</dt><dd>${esc(x.terbaik.base)} ${pct(x.terbaik.chg)}</dd><dt>Terburuk</dt><dd>${esc(x.terburuk.base)} ${pct(x.terburuk.chg)}</dd></dl></article>`;
+        <dt>Terbaik</dt><dd>${esc(x.terbaik.base)} ${pct(x.terbaik.chg)}</dd><dt>Terburuk</dt><dd>${esc(x.terburuk.base)} ${pct(x.terburuk.chg)}</dd>
+        ${x.rencana ? `<dt>Rencana jual</dt><dd>${x.rencana.menang}/${x.rencana.n} untung · rata-rata bersih <span class="${cls(x.rencana.rata_bersih)}">${pct(x.rencana.rata_bersih)}</span></dd>` : ""}
+        ${x.btc ? `<dt>BTC periode sama</dt><dd>${pct(x.btc.rata_btc)} · ${x.btc.lebih_baik}/${x.btc.n} lebih baik dari BTC</dd>` : ""}</dl></article>`;
     };
     const rows = riw.map(e => {
       const h = HASIL[e.hasil] || ["h-berjalan", e.hasil];
@@ -272,21 +287,49 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
         <td class="${cls(e.maks_pct)}">${pct(e.maks_pct)}</td><td class="${cls(e.min_pct)}">${pct(e.min_pct)}</td>
         <td>${e.target ? fp(e.target) + " (" + pct(e.target_pct) + ")" : "-"}</td>
         <td>${e.batal ? fp(e.batal) + " (" + pct(e.batal_pct) + ")" : "-"}</td>
-        <td><span class="hasil ${h[0]}">${h[1]}</span></td></tr>`;
+        <td><span class="hasil ${h[0]}">${h[1]}</span></td>
+        <td>${e.hasil_rencana ? esc(e.hasil_rencana) + (e.pnl_rencana_bersih != null ? ` <b class="${cls(e.pnl_rencana_bersih)}">${pct(e.pnl_rencana_bersih)}</b>` : "") : "-"}</td>
+        <td class="${cls(e.btc_chg)}">${e.btc_chg != null ? pct(e.btc_chg) : "-"}</td></tr>`;
     }).join("");
     const tbl = riw.length ? `<div class="tbl-wrap"><table class="jj"><thead><tr><th>Waktu alert</th><th>Koin</th><th>Arah</th><th>Harga alert</th>
-        <th>Sekarang</th><th>Perubahan</th><th>Tertinggi</th><th>Terendah</th><th>Target</th><th>Batal</th><th>Hasil</th></tr></thead>
+        <th>Sekarang</th><th>Perubahan</th><th>Tertinggi</th><th>Terendah</th><th>Target</th><th>Batal</th><th>Hasil pola</th><th>Rencana jual (bersih)</th><th>BTC</th></tr></thead>
         <tbody>${rows}</tbody></table></div>` : `<div class="empty">Belum ada catatan alert.</div>`;
     return `<div class="jejak-sum">${box("naik","🟢","naik")}${box("turun","🔴","turun")}</div>${tbl}
       <p class="sub">Perubahan dihitung dari harga saat alert terkirim. "Tertinggi/Terendah" = pergerakan maksimum sejak alert.
-      Tiap alert dipantau maksimal 14 hari. Alert yang terkirim sebelum fitur ini ada tidak punya catatan target/batal.</p>`;
+      Tiap alert dipantau maksimal 14 hari. Alert yang terkirim sebelum fitur ini ada tidak punya catatan target/batal.
+      "Rencana jual" = hasil bila mengikuti TP1/TP2/SL, sudah dipotong biaya beli/jual 0,1% & pajak jual 0,21%.
+      Kolom BTC = perubahan BTC sejak waktu alert (pembanding).</p>`;
+  }
+
+  function btTabel(rows, judul){
+    const r2 = (rows || []).filter(r => r.n);
+    if (!r2.length) return "";
+    return `<div class="tbl-wrap"><table class="jj"><thead><tr><th>${esc(judul)}</th><th>Sinyal</th><th>Menang</th><th>Rata-rata bersih</th><th>Median</th><th>Profit factor</th><th>Hari</th></tr></thead><tbody>
+      ${r2.map(r => `<tr><td>${esc((BT.aturan && BT.aturan[r.grup]) || r.grup)}</td><td>${r.n}</td><td>${num(r.menang,1)}%</td>
+        <td class="${cls(r.rata)}"><b>${pct(r.rata)}</b></td><td class="${cls(r.median)}">${pct(r.median)}</td><td>${r.pf ?? "-"}</td><td>${num(r.hari,1)}</td></tr>`).join("")}
+      </tbody></table></div>`;
+  }
+  function backtest(){
+    if (!BT) return `<div class="empty">Memuat hasil backtest…</div>`;
+    const m = BT.meta, best = BT.terbaik_naik, rk = BT.rekomendasi, pb = BT.pembanding_btc;
+    let h = `<div class="bt"><p class="sub">Dibuat ${esc(m.dibuat_wib)} · periode ${esc(m.dari)} s/d ${esc(m.sampai)} · ${m.koin} koin · ${m.sinyal} sinyal.
+      Hasil bersih per sinyal (biaya beli/jual 0,1% + pajak jual 0,21%). Hasil masa lalu bukan jaminan.</p>`;
+    if (rk) h += `<div class="pasar">⭐ <b>Kombinasi terbaik:</b> ${esc(rk.grup)} + ${esc(BT.aturan[rk.aturan] || rk.aturan)} → ${rk.n} sinyal, menang ${num(rk.menang,1)}%, rata-rata bersih <b class="${cls(rk.rata)}">${pct(rk.rata)}</b> per sinyal</div>`;
+    h += `<h3>🟢 Sinyal naik — perbandingan aturan jual</h3>` + btTabel(BT.aturan_naik, "Aturan jual");
+    h += `<h3>Pengaruh filter (aturan: ${esc(BT.aturan[best] || best)})</h3>` + btTabel((BT.filter_naik || []).filter(r => r.aturan === best).map(r => ({...r})), "Filter");
+    for (const [judul, rows] of Object.entries(BT.rinci || {})) h += `<h3>${esc(judul)}</h3>` + btTabel(rows, judul);
+    h += `<h3>🔴 Sinyal turun (sebagai short)</h3>` + btTabel(BT.aturan_turun, "Aturan jual");
+    if (pb && pb.n) h += `<p class="sub">Dibanding BTC (tahan 7 hari): rata-rata koin sinyal ${pct(pb.koin_7h)} vs BTC ${pct(pb.btc_7h)} · ${num(pb.lebih_baik,1)}% sinyal lebih baik dari BTC.</p>`;
+    return h + `<p class="sub">Keterbatasan: data per jam tidak dipakai; daftar koin = top 200 saat ini (survivorship bias); masuk di harga penutupan harian.</p></div>`;
   }
 
   function render(){
     renderStats(); renderTabs();
     const list = filtered();
     let html = "";
-    if (tab === "jejak") {
+    if (tab === "backtest") {
+      html = backtest();
+    } else if (tab === "jejak") {
       html = jejak();
     } else if (tab === "semua") {
       html = table(list);
@@ -318,6 +361,17 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
     DATA = d;
     try { const t = localStorage.getItem("radar-tab"); if (t) tab = t; } catch(e) {}
     $("#meta").textContent = `Diperbarui ${d.updated_wib} · Ranking: ${d.sumber_ranking} · Data harga: ${d.sumber_harga}${d.demo ? " · MODE DEMO" : ""}`;
+    if (d.pasar) {
+      const ik = {"naik":"📈 NAIK","turun":"📉 TURUN","netral":"➖ SIDEWAYS"}[d.pasar.rezim] || d.pasar.rezim;
+      const f = d.filter || {};
+      $("#pasar").hidden = false;
+      $("#pasar").innerHTML = `Pasar BTC: <b>${ik}</b> (${esc(d.pasar.teks)})${d.tertahan ? ` · ⏸ ${d.tertahan} sinyal ditahan filter` : ""}
+        <span class="sub"> · Filter: pasar ${f.pasar === false ? "mati" : f.pasar === true ? "aktif" : esc(String(f.pasar))}, meme ${f.meme === false ? "mati" : esc(String(f.meme))}${f.breakout ? ", wajib breakout" : ""}${f.min_rr ? ", rasio ≥ " + f.min_rr : ""}</span>`;
+    }
+    if (d.ada_backtest) {
+      TABS.push(["backtest","🧪 Backtest"]);
+      fetch("backtest.json?t=" + Date.now()).then(r => r.json()).then(b => { BT = b; if (tab === "backtest") render(); }).catch(() => {});
+    }
     const na = (d.tidak_tersedia || []);
     $("#foot").textContent = `${d.jumlah} koin dianalisa dari top ${d.top_n}. ` +
       (na.length ? `Tidak ada di bursa sumber (${na.length}): ${na.slice(0, 40).join(", ")}${na.length > 40 ? "…" : ""}. ` : "") +
