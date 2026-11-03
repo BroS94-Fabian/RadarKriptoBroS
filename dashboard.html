@@ -211,7 +211,8 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
       </dl>
       ${r.rencana ? `<div class="plan">📋 <b>Rencana jual</b>: TP1 ${fp(r.rencana.tp1)} (${pct(r.rencana.tp1_pct)}, jual ${num(r.rencana.porsi_tp1*100,0)}%) ·
         TP2 ${fp(r.rencana.tp2)} (${pct(r.rencana.tp2_pct)}) · SL ${fp(r.rencana.sl)} (${pct(r.rencana.sl_pct)})
-        ${r.rencana.porsi_tp1 > 0 && r.rencana.porsi_tp1 < 1 ? "<br><span class='arti'>Setelah TP1 tersentuh, SL sisa posisi pindah ke harga beli.</span>" : ""}</div>` : ""}
+        ${r.rencana.porsi_tp1 > 0 && r.rencana.porsi_tp1 < 1 ? "<br><span class='arti'>Setelah TP1 tersentuh, SL sisa posisi pindah ke harga beli.</span>" : ""}
+        ${r.rencana.posisi_rp ? `<br>💼 Ukuran posisi ±Rp${num(r.rencana.posisi_rp,0)} (rugi maks ±Rp${num(r.rencana.risiko_rp,0)} bila kena SL)` : ""}</div>` : ""}
       ${r.ditahan ? `<div class="tahan">⏸ ${esc(r.ditahan)}</div>` : ""}
       <div class="ind">${ex.map(x => `<span>${x}</span>`).join("")}</div>
       <details><summary>Alasan (${alasan(r).length})</summary><ul>${alasan(r).map(a => `<li>${esc(a)}</li>`).join("")}</ul></details>

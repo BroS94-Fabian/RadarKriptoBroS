@@ -94,6 +94,17 @@ def rencana(price: float, arah: str, target=None, batal=None, atr_pct=None, R: d
                 sl=float(sl), sl_pct=pct(sl), porsi_tp1=float(R["porsi_tp1"]), maks_hari=int(R["maks_hari"]), rr=rr)
 
 
+def ukuran_posisi(plan: dict, cfg: dict) -> dict:
+    """Money management: besar posisi supaya rugi saat kena SL = risiko_per_transaksi_persen x modal,
+    dibatasi maks_posisi_persen x modal. modal_rp = 0 → tidak dihitung."""
+    modal = float(cfg.get("modal_rp", 0) or 0)
+    if modal <= 0 or not plan.get("sl_pct"):
+        return {}
+    risiko = modal * float(cfg.get("risiko_per_transaksi_persen", 1)) / 100
+    posisi = min(risiko / (abs(plan["sl_pct"]) / 100), modal * float(cfg.get("maks_posisi_persen", 20)) / 100)
+    return dict(posisi_rp=round(posisi, -3), risiko_rp=round(posisi * abs(plan["sl_pct"]) / 100, -3))
+
+
 def simulasi(plan: dict, highs, lows, closes, selesai: bool = True) -> dict:
     """Jalankan rencana pada urutan candle setelah sinyal.
     Bila SL dan TP tersentuh di candle yang sama, dianggap SL dulu (konservatif).

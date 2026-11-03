@@ -78,6 +78,9 @@ DEFAULT_CONFIG = {
     "wajib_breakout": False,
     "min_rr": 0,
     "rencana": dict(ST.DEFAULT_RENCANA),
+    "modal_rp": 0,
+    "risiko_per_transaksi_persen": 1,
+    "maks_posisi_persen": 20,
     "biaya": dict(ST.DEFAULT_BIAYA),
 }
 
@@ -570,6 +573,9 @@ def caption(r: dict, cfg: dict, dash: str) -> str:
         head.append(f"📋 Rencana: TP1 {fmt_price(rc['tp1'])} ({fmt_pct(rc['tp1_pct'])}, jual "
                     f"{rc['porsi_tp1'] * 100:.0f}%) · TP2 {fmt_price(rc['tp2'])} ({fmt_pct(rc['tp2_pct'])}) · "
                     f"SL {fmt_price(rc['sl'])} ({fmt_pct(rc['sl_pct'])})")
+        if rc.get("posisi_rp"):
+            head.append(f"💼 Ukuran posisi ±Rp{rc['posisi_rp']:,.0f} (rugi maks ±Rp{rc['risiko_rp']:,.0f} bila kena SL)"
+                        .replace(",", "."))
     el = r.get("elliott")
     if el and el["arah"] == r["kelas"]:
         head.append(f"🌊 {e(el['teks'])} → {fmt_price(el['target'])} ({fmt_pct(el['pct'])})")
@@ -876,6 +882,24 @@ def main() -> int:
             r["kelas"], r["ditahan"] = k, alasan
             tertahan += 1
     print(f"Pasar BTC: {rz['rezim']} ({rz['teks']}) · {tertahan} sinyal ditahan filter")
+    if not demo:
+        # Koin di rekam jejak yang tidak ikut dianalisa (mis. keluar dari top 200) tetap dipantau
+        srcs = {u["_src"].name: u["_src"] for u in uni}
+        for e in state.get("riwayat", []):
+            sym = e["symbol"]
+            if sym in res_map or (e.get("hasil") != "berjalan" and e.get("hasil_rencana") not in ("berjalan", None)):
+                continue
+            src = srcs.get(e.get("bursa")) or (Binance() if e.get("bursa") == "Binance" else OKX())
+            try:
+                hh = src.candles(sym, "1h", 24 * 35)
+                res_map[sym] = dict(symbol=sym, base=e["base"], bursa=e.get("bursa"), rank=e.get("rank"),
+                                    price=float(hh["close"].iloc[-1]), _h=hh)
+            except Exception as ex:
+                print(f"  ! pantau {sym} gagal: {ex}")
+    state["pasar"] = dict(rz, ts=now.isoformat(timespec="seconds"))
+    for r in results:
+        if r.get("rencana"):
+            r["rencana"].update(ST.ukuran_posisi(r["rencana"], cfg))
     btc_src = next((u["_src"] for u in uni if u["symbol"] in ("BTCUSDT", "BTC-USDT")), None)
     rekam.perbarui(state, res_map, now, cfg, r_btc, btc_src)
 
