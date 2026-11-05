@@ -890,6 +890,13 @@ def tulis_dashboard(results, charts: dict[str, bytes], meta: dict) -> None:
     if os.path.exists(bt):
         shutil.copy(bt, os.path.join(SITE_DIR, "backtest.json"))
         data["ada_backtest"] = True
+    s4 = os.path.join(ROOT, "siklus4")
+    if os.path.exists(os.path.join(s4, "hasil.json")):
+        os.makedirs(os.path.join(SITE_DIR, "siklus4"), exist_ok=True)
+        for fn in ("hasil.json", "grafik.png", "perbandingan.png"):
+            if os.path.exists(os.path.join(s4, fn)):
+                shutil.copy(os.path.join(s4, fn), os.path.join(SITE_DIR, "siklus4", fn))
+        data["ada_siklus4"] = True
     with open(os.path.join(SITE_DIR, "data.json"), "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, separators=(",", ":"), allow_nan=False)
     with open(os.path.join(SITE_DIR, ".nojekyll"), "w") as f:

@@ -40,7 +40,8 @@ import siklus as SK  # noqa: E402
 import strategi as ST  # noqa: E402
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "siklus4")
-HALVING = [pd.Timestamp(x, tz="UTC") for x in ("2016-07-09", "2020-05-11", "2024-04-20")]
+HALVING = [pd.Timestamp(x, tz="UTC") for x in ("2012-11-28", "2016-07-09", "2020-05-11", "2024-04-20")]
+WARNA_SIKLUS = {"2012": "#8fb4e3", "2016": "#eb6834", "2020": "#7a5af5", "2024": "#0b0b0b"}
 HALVING_BERIKUT = pd.Timestamp("2028-04-15", tz="UTC")   # perkiraan (±210.000 blok setelah 2024)
 WARNA = {0: "#d9d8d2", 1: "#2a78d6", 2: "#0a9a0a", 3: "#d99a00", 4: "#d03b3b"}
 NAMA = {1: "Stage 1 Dasar", 2: "Stage 2 Naik", 3: "Stage 3 Puncak", 4: "Stage 4 Turun"}
@@ -69,6 +70,27 @@ def harian(bn: S.Binance, sym: str, mulai: pd.Timestamp) -> pd.DataFrame:
                         "volume": df["v"].astype(float).to_numpy()},
                        index=pd.to_datetime(df["t"].astype("int64"), unit="ms", utc=True).dt.normalize().to_numpy())
     return out[~out.index.duplicated()]
+
+
+def bitstamp_harian(mulai: pd.Timestamp) -> pd.DataFrame:
+    """BTC/USD harian Bitstamp (data sejak 2011) — untuk siklus 2012 & 2016 yang belum ada di Binance."""
+    rows, t = [], int(mulai.timestamp())
+    for _ in range(12):
+        j = S.http_get("https://www.bitstamp.net/api/v2/ohlc/btcusd/", {"step": 86400, "limit": 1000, "start": t})
+        o = (j.get("data") or {}).get("ohlc") or []
+        if not o:
+            break
+        rows += o
+        if len(o) < 1000:
+            break
+        t = int(o[-1]["timestamp"]) + 86400
+    if not rows:
+        return pd.DataFrame()
+    df = pd.DataFrame(rows)
+    out = pd.DataFrame({k: df[k].astype(float).to_numpy() for k in ("open", "high", "low", "close", "volume")},
+                       index=pd.to_datetime(df["timestamp"].astype("int64"), unit="s", utc=True).dt.normalize().to_numpy())
+    out = out[~out.index.duplicated()].sort_index()
+    return out[out.index < pd.Timestamp.now(tz="UTC").normalize()]
 
 
 def stage_harian(d: pd.DataFrame) -> pd.Series:
@@ -129,6 +151,108 @@ def siklus_halving(btc: pd.DataFrame) -> list[dict]:
                         turun_pct=round((float(sesudah.loc[ib, "low"]) / pk - 1) * 100, 1) if ib is not None else None,
                         data_mulai=seg.index[0].strftime("%Y-%m-%d")))
     return out
+
+
+def jalur(close: pd.Series, acuan: pd.Timestamp, dari: int, sampai: int, dasar_harga: float) -> pd.Series:
+    """log(harga / harga acuan) per hari relatif terhadap tanggal acuan."""
+    seg = close[(close.index >= acuan + pd.Timedelta(days=dari)) & (close.index <= acuan + pd.Timedelta(days=sampai))]
+    return pd.Series(np.log(seg.to_numpy() / dasar_harga), index=(seg.index - acuan).days)
+
+
+def korelasi(a: pd.Series, b: pd.Series) -> float | None:
+    j = pd.concat([a, b], axis=1, join="inner").dropna()
+    if len(j) < 60:
+        return None
+    return round(float(np.corrcoef(j.iloc[:, 0], j.iloc[:, 1])[0, 1]), 2)
+
+
+def bandingkan(btc: pd.DataFrame, cyc: list[dict], hari_ini: pd.Timestamp) -> dict:
+    close = btc["close"]
+    now_c = cyc[-1]
+    hv_now = pd.Timestamp(now_c["halving"], tz="UTC")
+    pk_now = pd.Timestamp(now_c["puncak_tgl"], tz="UTC")
+    bt_now = pd.Timestamp(now_c["dasar_tgl"], tz="UTC") if now_c["dasar_tgl"] else None
+    d_hv, d_pk = int((hari_ini - hv_now).days), int((hari_ini - pk_now).days)
+    d_bt = int((hari_ini - bt_now).days) if bt_now is not None else None
+    J = {}
+    rows = []
+    for i, c in enumerate(cyc):
+        hv, pk = pd.Timestamp(c["halving"], tz="UTC"), pd.Timestamp(c["puncak_tgl"], tz="UTC")
+        if hv not in close.index:
+            continue
+        p_hv = float(close.loc[hv])
+        bt = pd.Timestamp(c["dasar_tgl"], tz="UTC") if c["dasar_tgl"] else None
+        J[c["halving"][:4]] = dict(
+            halving=jalur(close, hv, -400, 1460, p_hv), puncak=jalur(close, pk, -700, 1000, c["puncak"]),
+            dasar=jalur(close, bt, -450, 900, c["dasar"]) if bt is not None else None)
+        prev = cyc[i - 1] if i > 0 else None
+        r = dict(siklus=c["halving"][:4], harga_halving=p_hv, puncak=c["puncak"], puncak_tgl=c["puncak_tgl"],
+                 naik_halving_ke_puncak=round(c["puncak"] / p_hv, 1), hari_halving_ke_puncak=c["hari_halving_ke_puncak"],
+                 naik_dasar_ke_puncak=round(c["puncak"] / prev["dasar"], 1) if prev and prev.get("dasar") else None,
+                 dasar=c["dasar"], dasar_tgl=c["dasar_tgl"], turun_pct=c["turun_pct"],
+                 hari_puncak_ke_dasar=c["hari_puncak_ke_dasar"], selesai=c.get("dasar_final", True))
+        if bt is not None and d_bt is not None:
+            t = bt + pd.Timedelta(days=d_bt)
+            if t in close.index:
+                r["pulih_hari_sama"] = round((float(close.loc[t]) / c["dasar"] - 1) * 100, 1)
+        t = pk + pd.Timedelta(days=d_pk)
+        if t in close.index:
+            r["dari_puncak_hari_sama"] = round((float(close.loc[t]) / c["puncak"] - 1) * 100, 1)
+        rows.append(r)
+    kini = J[now_c["halving"][:4]]
+    for r in rows:
+        if r["siklus"] == now_c["halving"][:4]:
+            continue
+        x = J[r["siklus"]]
+        r["mirip_halving"] = korelasi(kini["halving"].loc[0:d_hv], x["halving"].loc[0:d_hv])
+        r["mirip_puncak"] = korelasi(kini["puncak"].loc[-500:d_pk], x["puncak"].loc[-500:d_pk])
+    # kemiripan antar siklus yang sudah lengkap (halving → halving berikutnya)
+    selesai = [k for k in J if k != now_c["halving"][:4]]
+    pasangan = []
+    for a in range(len(selesai)):
+        for b in range(a + 1, len(selesai)):
+            pasangan.append(dict(a=selesai[a], b=selesai[b],
+                                 r=korelasi(J[selesai[a]]["halving"].loc[0:1300], J[selesai[b]]["halving"].loc[0:1300])))
+    return dict(rows=rows, pasangan=pasangan, hari_sejak_halving=d_hv, hari_sejak_puncak=d_pk, hari_sejak_dasar=d_bt,
+                _J=J)
+
+
+def grafik_banding(B: dict, path: str):
+    J = B["_J"]
+    fig, axs = plt.subplots(3, 1, figsize=(12, 13))
+    fig.patch.set_facecolor("#fcfcfb")
+    cfg = [("halving", "Disejajarkan di hari HALVING — harga dibanding harga saat halving", "hari setelah halving",
+            B["hari_sejak_halving"], "×"),
+           ("puncak", "Disejajarkan di PUNCAK siklus — harga dibanding harga puncak", "hari setelah puncak",
+            B["hari_sejak_puncak"], "%"),
+           ("dasar", "Disejajarkan di DASAR (titik terendah) — harga dibanding harga dasar", "hari setelah dasar",
+            B["hari_sejak_dasar"], "×")]
+    for ax, (key, judul, xl, d_now, sat) in zip(axs, cfg):
+        for k, v in J.items():
+            s = v.get(key)
+            if s is None or s.empty:
+                continue
+            kini = k == max(J)
+            ax.plot(s.index, np.exp(s.to_numpy()), color=WARNA_SIKLUS.get(k, "#999"), lw=2.2 if kini else 1.3,
+                    alpha=1 if kini else 0.85, label=f"Siklus {k}" + (" (sekarang)" if kini else ""), zorder=5 if kini else 3)
+            if kini and d_now is not None and len(s):
+                ax.scatter([s.index[-1]], [np.exp(s.iloc[-1])], color="#c23232", s=40, zorder=6)
+        ax.set_yscale("log")
+        ax.axvline(0, color="#52514e", ls=":", lw=1)
+        ax.yaxis.set_minor_formatter(plt.NullFormatter())
+        if sat == "×":
+            ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, _: f"{y:g}×"))
+        else:
+            ax.set_ylim(0.08, 1.4)
+            ax.set_yticks([0.1, 0.2, 0.3, 0.5, 0.7, 1.0])
+            ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, _: f"{(y - 1) * 100:+.0f}%"))
+        ax.set_title(judul, loc="left", fontsize=11, fontweight="bold")
+        ax.set_xlabel(xl)
+        ax.grid(alpha=0.25, which="both")
+        ax.legend(loc="upper left", fontsize=8, frameon=False)
+    fig.tight_layout()
+    fig.savefig(path, dpi=105, facecolor=fig.get_facecolor())
+    plt.close(fig)
 
 
 def fmt(x, nd=1):
@@ -236,6 +360,15 @@ def main() -> int:
     bn = S.Binance()
 
     btc = harian(bn, "BTCUSDT", pd.Timestamp("2017-08-01", tz="UTC"))
+    try:
+        bs = bitstamp_harian(pd.Timestamp("2011-08-01", tz="UTC"))
+        bs = bs[bs.index < btc.index[0]]
+        if len(bs) > 300:
+            btc = pd.concat([bs, btc]).sort_index()
+            btc = btc[~btc.index.duplicated(keep="last")]
+            print(f"Bitstamp: {len(bs)} hari tambahan sejak {bs.index[0].date()}")
+    except Exception as e:
+        print("  ! Bitstamp gagal, BTC hanya dari Binance:", e)
     print(f"BTC: {len(btc)} hari ({btc.index[0].date()} – {btc.index[-1].date()})")
     hari_ini = btc.index[-1]
     tujuan = pd.Timestamp(args.tujuan, tz="UTC")
@@ -349,7 +482,7 @@ def main() -> int:
     w_stage = wk["stage"].reindex(btc.index, method="ffill")
     bawah_ma = (btc["close"] < ma200) & (ma200 < ma200.shift(20))
     KOND = {
-        "Semua hari sejak 2017": pd.Series(True, index=btc.index),
+        f"Semua hari sejak {btc.index[0].year}": pd.Series(True, index=btc.index),
         f"Stage harian BTC sama (Stage {s_now})": st_btc == s_now,
         f"Stage mingguan BTC sama (Stage {sekarang['stage_mingguan']})": w_stage == sekarang["stage_mingguan"],
         f"Turun {abs(dd_now) - 10:.0f}–{abs(dd_now) + 10:.0f}% dari ATH": (dd >= dd_now - 10) & (dd <= dd_now + 10),
@@ -405,13 +538,16 @@ def main() -> int:
                    for i, v in btc["close"].resample("ME").last().items() if i >= pd.Timestamp("2025-01-01", tz="UTC")]
     st_bulanan = [dict(bulan=i.strftime("%Y-%m"), stage=int(v)) for i, v in st_btc.resample("ME").last().items()]
 
-    hasil = dict(dibuat=now.isoformat(timespec="seconds"), dibuat_wib=S.now_wib_str(now), sekarang=sekarang,
+    BND = bandingkan(btc, cyc, hari_ini)
+    hasil = dict(perbandingan={k: v for k, v in BND.items() if not k.startswith("_")},
+                 dibuat=now.isoformat(timespec="seconds"), dibuat_wib=S.now_wib_str(now), sekarang=sekarang,
                  siklus=cyc, analog=analog, peluang=peluang, musiman=musim, pasar=pasar_now,
                  stage_btc_bulanan=st_bulanan, btc_bulanan=bulanan_btc, koin=len(data), koin_indeks=len(lama))
 
     # ---------- Laporan ----------
     os.makedirs(OUT, exist_ok=True)
     grafik(btc, st_btc, ma200, ma200w, cyc, idx_alt, breadth, tujuan, os.path.join(OUT, "grafik.png"))
+    grafik_banding(BND, os.path.join(OUT, "perbandingan.png"))
     L = ["# 🔄 Siklus 4 Tahun Kripto", "",
          f"Dibuat {hasil['dibuat_wib']} · BTC sejak {btc.index[0].date()} · {len(data)} koin lain sejak akhir 2019 · "
          f"horizon {H} hari (s/d {sekarang['tujuan']})", "",
@@ -442,7 +578,22 @@ def main() -> int:
                  f"{(c['dasar_tgl'] or '-')} · {rp(c['dasar']) if c['dasar'] else '-'}"
                  f"{'' if c.get('dasar_final', True) else ' (terendah sejauh ini)'} | {c['hari_puncak_ke_dasar'] or '-'} | "
                  f"{fmt(c['turun_pct'])} |")
-    L += ["", f"Catatan: data Binance baru mulai {cyc[0]['data_mulai']}, jadi siklus 2016 dihitung dari tanggal itu.", "",
+    L += ["", f"Data BTC mulai {btc.index[0].date()} (Bitstamp sebelum Agustus 2017, Binance sesudahnya).", "",
+          "## Perbandingan antar siklus", "", "![perbandingan](perbandingan.png)", "",
+          "| Siklus | Harga saat halving | Puncak | Naik halving→puncak | Naik dari dasar sebelumnya | Hari halving→puncak | "
+          "Turun puncak→dasar | Hari puncak→dasar | Pulih "
+          f"{BND['hari_sejak_dasar']} hari setelah dasar | {BND['hari_sejak_puncak']} hari setelah puncak | "
+          "Kemiripan bentuk vs sekarang (dari halving / dari puncak) |",
+          "|---|---|---|---|---|---|---|---|---|---|---|"]
+    for r in BND["rows"]:
+        L.append(f"| {r['siklus']} | {rp(r['harga_halving'])} | {rp(r['puncak'])} ({r['puncak_tgl']}) | {r['naik_halving_ke_puncak']}× | "
+                 f"{str(r['naik_dasar_ke_puncak']) + '×' if r['naik_dasar_ke_puncak'] else '-'} | {r['hari_halving_ke_puncak']} | "
+                 f"{fmt(r['turun_pct'])}{'' if r['selesai'] else ' (sejauh ini)'} | {r['hari_puncak_ke_dasar'] or '-'} | "
+                 f"{fmt(r.get('pulih_hari_sama'))} | {fmt(r.get('dari_puncak_hari_sama'))} | "
+                 f"{r.get('mirip_halving', '-')} / {r.get('mirip_puncak', '-')} |")
+    L += ["", "Kemiripan = korelasi bentuk grafik (log harga), 1 = identik, 0 = tidak mirip. "
+          "Siklus lengkap satu sama lain (halving → ±1.300 hari): "
+          + "; ".join(f"{p['a']} vs {p['b']} = {p['r']}" for p in BND["pasangan"]), "",
           f"## Posisi yang sama di siklus sebelumnya (horizon {H} hari)", "",
           "| Siklus | Disejajarkan dari | Periode | Turun dari puncak saat itu | Dasar sudah lewat? | Hasil | Terendah | Tertinggi |",
           "|---|---|---|---|---|---|---|---|"]

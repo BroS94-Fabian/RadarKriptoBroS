@@ -167,7 +167,7 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
                  3:["🟨","Stage 3 · Puncak","distribusi / pembentukan puncak"],4:["🟥","Stage 4 · Turun","tren turun (markdown)"]};
   const FASE = {"1":"membentuk dasar","1-akhir":"akhir dasar, siap tembus","1→2":"baru tembus dari dasar","2-awal":"awal naik","2":"naik berjalan",
                 "2-jenuh":"jenuh, rawan koreksi","3":"distribusi","3-akhir":"rawan jebol","3→4":"baru jebol dari puncak","4-awal":"awal turun","4":"turun berjalan"};
-  let BT = null;
+  let BT = null, S4 = null;
   let DATA = null, tab = "naik", q = "", sortKey = "rank", sortDir = 1;
 
   // tema (disimpan per perangkat)
@@ -280,6 +280,44 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
       <div class="links">${r.link ? `<a href="${esc(r.link)}" target="_blank" rel="noopener">Buka di TradingView ↗</a>` : ""}</div>
     </article>`;
   }
+  function siklus4View(){
+    if (!DATA.ada_siklus4) return "";
+    if (!S4) return `<div class="empty" style="margin-top:16px">Memuat analisa siklus 4 tahun…</div>`;
+    const n = S4.sekarang, P = S4.perbandingan || {}, NM = {1:"🟦 Stage 1 Dasar",2:"🟩 Stage 2 Naik",3:"🟨 Stage 3 Puncak",4:"🟥 Stage 4 Turun"};
+    const usd = x => x == null ? "-" : "$" + num(x, 0);
+    let h = `<h3 style="margin:24px 0 6px">🕰️ Siklus 4 tahun Bitcoin</h3>
+      <p class="sub">Diperbarui ${esc(S4.dibuat_wib)} (otomatis tiap Senin). Statistik masa lalu, bukan ramalan.</p>
+      <div class="pasar" style="margin:0 0 12px">BTC ${usd(n.harga)} · <b>${pct(n.turun_dari_ath)}</b> dari ATH ${usd(n.ath)}
+        ${n.naik_dari_terendah != null ? ` · ${pct(n.naik_dari_terendah)} dari terendah siklus` : ""}<br>
+        Stage mingguan (MA 30 minggu): <b>${NM[n.stage_mingguan] || "-"}</b> · Stage harian: <b>${NM[n.stage_harian] || "-"}</b><br>
+        ${n.hari_sejak_halving} hari setelah halving April 2024 · ${n.hari_sejak_puncak} hari setelah puncak siklus · ±${n.hari_ke_halving_berikut} hari ke halving berikutnya</div>
+      <img class="chart" src="siklus4/grafik.png?v=${encodeURIComponent(S4.dibuat)}" data-full="siklus4/grafik.png" alt="Grafik siklus 4 tahun Bitcoin dengan stage">`;
+    if (P.rows) {
+      h += `<h3 style="margin:18px 0 8px">Perbandingan tiap siklus</h3>
+        <img class="chart" src="siklus4/perbandingan.png?v=${encodeURIComponent(S4.dibuat)}" data-full="siklus4/perbandingan.png" alt="Perbandingan grafik siklus halving">
+        <div class="tbl-wrap" style="margin-top:10px"><table class="jj"><thead><tr><th>Siklus</th><th>Halving → puncak</th><th>Naik dari dasar sebelumnya</th>
+        <th>Puncak → dasar</th><th>${P.hari_sejak_dasar ?? "-"} hari setelah dasar</th><th>Mirip dgn sekarang</th></tr></thead><tbody>
+        ${P.rows.map(r => `<tr><td><b>${esc(r.siklus)}</b></td><td>${num(r.naik_halving_ke_puncak,1)}× · ${r.hari_halving_ke_puncak} hari</td>
+          <td>${r.naik_dasar_ke_puncak ? num(r.naik_dasar_ke_puncak,1) + "×" : "-"}</td>
+          <td class="neg">${pct(r.turun_pct)} · ${r.hari_puncak_ke_dasar ?? "-"} hari${r.selesai ? "" : " (sejauh ini)"}</td>
+          <td class="${cls(r.pulih_hari_sama)}">${r.pulih_hari_sama != null ? pct(r.pulih_hari_sama) : "-"}</td>
+          <td>${r.mirip_halving != null ? num(r.mirip_halving * 100, 0) + "% / " + num((r.mirip_puncak ?? 0) * 100, 0) + "%" : "sekarang"}</td></tr>`).join("")}
+        </tbody></table></div>
+        <p class="sub">Mirip = korelasi bentuk grafik (disejajarkan dari halving / dari puncak). 100% = bentuk identik.
+        Antar siklus lengkap: ${(P.pasangan || []).map(p => `${p.a} vs ${p.b} ${p.r != null ? num(p.r * 100, 0) + "%" : "-"}`).join(" · ")}.</p>`;
+    }
+    const pl = S4.peluang || [];
+    if (pl.length) {
+      h += `<h3 style="margin:18px 0 8px">Peluang sampai ${esc(n.tujuan)} (${n.horizon_hari} hari) dari sejarah</h3>
+        <div class="tbl-wrap"><table class="jj"><thead><tr><th>Kondisi</th><th>BTC naik</th><th>BTC median</th><th>BTC kisaran tengah</th><th>Altcoin naik</th><th>Altcoin median</th></tr></thead><tbody>
+        ${pl.map(p => { const b = p.btc || {}, a = p.alt || {}; return `<tr><td>${esc(p.kondisi)}</td><td><b>${b.n ? num(b.naik,0) + "%" : "-"}</b></td>
+          <td class="${cls(b.median)}">${b.n ? pct(b.median) : "-"}</td><td>${b.n ? pct(b.p25) + " s/d " + pct(b.p75) : "-"}</td>
+          <td><b>${a.n ? num(a.naik,0) + "%" : "-"}</b></td><td class="${cls(a.median)}">${a.n ? pct(a.median) : "-"}</td></tr>`; }).join("")}
+        </tbody></table></div>`;
+    }
+    return h;
+  }
+
   function siklusView(list){
     const by = {1:[],2:[],3:[],4:[]};
     list.forEach(r => { const s = r.siklus; if (s && by[s.stage]) by[s.stage].push(r); });
@@ -306,7 +344,7 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
     }).join("") + `</div>
       <p class="sub">Stage dari MA200 harian (±30 minggu): Stage 2 = harga di atas MA200 yang menanjak, Stage 4 = di bawah MA200 yang menurun,
       Stage 1/3 = MA mendatar (dasar setelah turun / puncak setelah naik). Nama koin <b style="color:var(--good)">hijau</b>/<b style="color:var(--crit)">merah</b> = sedang jadi sinyal radar. Klik koin untuk detail.</p>`;
-    return h;
+    return h + siklus4View();
   }
 
   function filtered(){
@@ -484,6 +522,9 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
         ${d.siklus ? `<br>🔄 Peta siklus: 🟦 Dasar ${d.siklus.jumlah["1"]} · 🟩 Naik ${d.siklus.jumlah["2"]} · 🟨 Puncak ${d.siklus.jumlah["3"]} · 🟥 Turun ${d.siklus.jumlah["4"]}` : ""}
         ${d.btc_siklus && d.btc_siklus.stage ? ` · BTC ${STAGE[d.btc_siklus.stage][0]} ${esc(d.btc_siklus.nama)}` : ""}
         <span class="sub"> · Filter: pasar ${f.pasar === false ? "mati" : f.pasar === true ? "aktif" : esc(String(f.pasar))}, meme ${f.meme === false ? "mati" : esc(String(f.meme))}${f.breakout ? ", wajib breakout" : ""}${f.min_rr ? ", rasio ≥ " + f.min_rr : ""}</span>`;
+    }
+    if (d.ada_siklus4) {
+      fetch("siklus4/hasil.json?t=" + Date.now()).then(r => r.json()).then(x => { S4 = x; if (tab === "siklus") render(); }).catch(() => {});
     }
     if (d.ada_backtest) {
       TABS.push(["backtest","🧪 Backtest"]);
