@@ -5,7 +5,7 @@ on:
     inputs:
       hari:
         description: "Jumlah hari data candle 1 jam"
-        default: "365"
+        default: "730"
       koin:
         description: "Jumlah koin (top CMC, bukan meme)"
         default: "100"
@@ -35,7 +35,7 @@ jobs:
       - name: Jalankan backtest jangka pendek
         env:
           CMC_API_KEY: ${{ secrets.CMC_API_KEY }}
-        run: python backtest_jp.py --hari "${{ github.event.inputs.hari || '365' }}" --maks-koin "${{ github.event.inputs.koin || '100' }}"
+        run: python backtest_jp.py --hari "${{ github.event.inputs.hari || '730' }}" --maks-koin "${{ github.event.inputs.koin || '100' }}"
 
       - name: Simpan hasil
         run: |

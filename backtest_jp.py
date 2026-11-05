@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-BACKTEST MODE JANGKA PENDEK (sideways, tahan maks. 3 jam)
-=========================================================
-Data candle 1 jam ±12 bulan untuk koin top CMC (bukan meme) di Binance.
-Menguji 12 variasi syarat masuk × 20 variasi TP/SL = 240 kombinasi.
+BACKTEST MODE JANGKA PENDEK
+===========================
+Candle 1 jam ±2 tahun untuk koin top CMC (bukan meme) di Binance.
+Dua kelompok lama tahan:  ≤3 jam  dan  6–24 jam (6, 12, 24 jam).
+Dua jenis sinyal: pantul (dasar kisaran) dan tembus (breakout atap kisaran + volume).
 
 Supaya tidak tertipu "kebetulan cocok":
-  - Kombinasi terbaik DIPILIH memakai periode 1 (6 bulan pertama) saja,
-  - lalu DIUJI di periode 2 (6 bulan berikutnya) yang tidak dipakai saat memilih.
-Hasil bersih sudah dipotong biaya beli/jual 0,1%, pajak jual 0,21% dan slippage 0,05% per sisi.
+  - Kombinasi terbaik DIPILIH memakai periode 1 (paruh pertama data) saja,
+  - lalu DIUJI di periode 2 (paruh kedua) yang tidak dipakai saat memilih.
+Bersih = setelah biaya beli/jual 0,1%, pajak jual 0,21%, slippage 0,05% per sisi.
 
 Hasil: backtest_jp/LAPORAN.md, backtest_jp/hasil.json
 """
@@ -31,22 +32,34 @@ import scanner as S
 import strategi as ST
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "backtest_jp")
-VAR_MASUK = [dict(rsi_max=r, posisi_max=p, lebar_min=l) for r in (30, 35, 40) for p in (0.2, 0.3) for l in (0.03, 0.05)]
-VAR_KELUAR = [dict(tp=t, sl=s) for t in ("1.0", "1.5", "2.0", "2.5", "tengah") for s in ("1.0", "1.5", "2.0", "support")]
+MASUK = ([dict(jenis="pantul", rsi_max=r, posisi_max=p, lebar_min=l)
+          for r in (30, 35, 40) for p in (0.2, 0.3) for l in (0.03, 0.05)]
+         + [dict(jenis="tembus", vol_rel_min=v, lebar_min=0.02, lebar_max=lm)
+            for v in (1.5, 2.5) for lm in (0.10, 0.20)])
+KELUAR = {
+    3: [(t, s) for t in ("1.0", "1.5", "2.0", "pola") for s in ("1.0", "1.5", "2.0", "support")],
+    6: [(t, s) for t in ("1.5", "2.0", "3.0", "pola") for s in ("1.5", "2.0", "3.0", "support")],
+    12: [(t, s) for t in ("2.0", "3.0", "4.0", "pola") for s in ("2.0", "3.0", "4.0", "support")],
+    24: [(t, s) for t in ("3.0", "4.0", "5.0", "pola") for s in ("2.0", "3.0", "5.0", "support")],
+}
+KELOMPOK = {"≤3 jam": [3], "6–24 jam": [6, 12, 24]}
 REZIM_KODE = {"naik": 0, "netral": 1, "turun": 2}
-HASIL_KODE = {"kena TP": 0, "kena SL": 1, "waktu habis": 2}
+MIN_N_P1 = 100
 
 
-def label_masuk(i):
-    v = VAR_MASUK[i]
-    return f"RSI≤{v['rsi_max']}, posisi≤{int(v['posisi_max'] * 100)}%, lebar≥{int(v['lebar_min'] * 100)}%"
+def label_masuk(vi):
+    v = MASUK[vi]
+    if v["jenis"] == "tembus":
+        return f"TEMBUS atap kisaran, volume ≥{v['vol_rel_min']}x, lebar kisaran ≤{int(v['lebar_max'] * 100)}%"
+    return f"PANTUL dasar kisaran, RSI≤{v['rsi_max']}, posisi≤{int(v['posisi_max'] * 100)}%, lebar≥{int(v['lebar_min'] * 100)}%"
 
 
-def label_keluar(i):
-    v = VAR_KELUAR[i]
-    tp = "TP tengah kisaran" if v["tp"] == "tengah" else f"TP +{v['tp']}%"
-    sl = "SL bawah support" if v["sl"] == "support" else f"SL −{v['sl']}%"
-    return f"{tp} / {sl}"
+def label_keluar(vi, H, vk):
+    t, s = KELUAR[H][vk]
+    tembus = MASUK[vi]["jenis"] == "tembus"
+    tp = ("TP atap + tinggi kisaran" if tembus else "TP tengah kisaran") if t == "pola" else f"TP +{t}%"
+    sl = ("SL masuk lagi ke kisaran" if tembus else "SL bawah support") if s == "support" else f"SL −{s}%"
+    return f"{tp} / {sl} / maks {H} jam"
 
 
 def ambil_jam(bn: S.Binance, symbol: str, hari: int) -> pd.DataFrame:
@@ -70,57 +83,84 @@ def ambil_jam(bn: S.Binance, symbol: str, hari: int) -> pd.DataFrame:
     return out.tail(hari * 24).reset_index(drop=True)
 
 
+def _jam(t: pd.Series) -> np.ndarray:
+    return ((t - pd.Timestamp("1970-01-01", tz="UTC")) // pd.Timedelta(hours=1)).to_numpy()
+
+
 def proses(job):
-    ci, h, rezim, P0 = job
+    """Hasil per koin: {(vi, H, vk, rezim, periode): [n, jumlah, jumlah², menang, untung, rugi]}."""
+    h, rezim, P0, batas = job
     F = JP.fitur(h, P0["jendela"])
     hi, lo, cl = h["high"].to_numpy(), h["low"].to_numpy(), h["close"].to_numpy()
-    rl, rh, sp = F["rng_lo"].to_numpy(), F["rng_hi"].to_numpy(), F["support"].to_numpy()
-    jam = ((h["time"] - pd.Timestamp("1970-01-01", tz="UTC")) // pd.Timedelta(hours=1)).to_numpy()
-    n, H = len(h), int(P0["tahan_jam"])
-    out = []
-    for vi, vm in enumerate(VAR_MASUK):
+    kol = {k: F[k].to_numpy() for k in ("rng_lo", "rng_hi", "rng_hi_prev", "rng_lo_prev", "support")}
+    jam = _jam(h["time"])
+    n = len(h)
+    agg: dict = {}
+    for vi, vm in enumerate(MASUK):
         P = dict(P0, **vm)
         idx = np.where(JP.mask_masuk(F, P).to_numpy())[0]
-        last = -10
-        for i in idx:
-            if i >= n - H or i - last < H:
-                continue
-            last = i
-            baris = {"rng_lo": rl[i], "rng_hi": rh[i], "support": sp[i]}
-            for vk, vx in enumerate(VAR_KELUAR):
-                plan = JP.rencana_jp(float(cl[i]), baris, dict(P, **vx))
-                if plan is None:
+        for H, exits in KELUAR.items():
+            last = -10 ** 9
+            for i in idx:
+                if i >= n - H or i - last < H:
                     continue
-                res = JP.simulasi_jp(plan, hi[i + 1:i + 1 + H], lo[i + 1:i + 1 + H], cl[i + 1:i + 1 + H])
-                out.append((vi, vk, ci, int(jam[i]), rezim[i], JP.bersih_jp(res["pnl"], P),
-                            HASIL_KODE[res["hasil"]]))
+                last = i
+                per = 1 if jam[i] < batas else 2
+                baris = {k: v[i] for k, v in kol.items()}
+                hh, ll, cc = hi[i + 1:i + 1 + H], lo[i + 1:i + 1 + H], cl[i + 1:i + 1 + H]
+                for vk, (tp, sl) in enumerate(exits):
+                    plan = JP.rencana_jp(float(cl[i]), baris, dict(P, tp=tp, sl=sl, tahan_jam=H))
+                    if plan is None:
+                        continue
+                    x = JP.bersih_jp(JP.simulasi_jp(plan, hh, ll, cc)["pnl"], P)
+                    key = (vi, H, vk, int(rezim[i]), per)
+                    a = agg.get(key)
+                    if a is None:
+                        a = agg[key] = [0, 0.0, 0.0, 0, 0.0, 0.0]
+                    a[0] += 1
+                    a[1] += x
+                    a[2] += x * x
+                    if x > 0:
+                        a[3] += 1
+                        a[4] += x
+                    else:
+                        a[5] -= x
+    return agg
+
+
+def gabung(aggs, filt):
+    out = np.zeros(6)
+    for key, a in aggs.items():
+        if filt(key):
+            out += np.array(a, dtype=float)
     return out
 
 
-def stat(x: np.ndarray) -> dict:
-    if len(x) == 0:
+def stat(a) -> dict:
+    n = int(a[0])
+    if n == 0:
         return dict(n=0)
-    pos, neg = x[x > 0].sum(), -x[x < 0].sum()
-    t = float(x.mean() / (x.std(ddof=1) / np.sqrt(len(x)))) if len(x) > 2 and x.std() > 0 else None
-    return dict(n=int(len(x)), menang=round(float((x > 0).mean() * 100), 1), rata=round(float(x.mean()), 3),
-                median=round(float(np.median(x)), 3), total=round(float(x.sum()), 1),
-                pf=round(float(pos / neg), 2) if neg > 0 else None, t=round(t, 2) if t is not None else None)
+    m = a[1] / n
+    var = max(a[2] / n - m * m, 0) * n / max(n - 1, 1)
+    sd = var ** 0.5
+    return dict(n=n, menang=round(100 * a[3] / n, 1), rata=round(m, 3),
+                pf=round(a[4] / a[5], 2) if a[5] > 0 else None,
+                t=round(m / (sd / n ** 0.5), 2) if sd > 0 and n > 2 else None, total=round(a[1], 1))
 
 
-def tabel(rows, kolom="Kombinasi"):
-    L = [f"| {kolom} | Trade | Menang | Rata-rata bersih | Median | Profit factor | t |", "|---|---|---|---|---|---|---|"]
-    for lbl, s in rows:
-        if not s.get("n"):
-            L.append(f"| {lbl} | 0 | - | - | - | - | - |")
-            continue
-        L.append(f"| {lbl} | {s['n']} | {s['menang']}% | {s['rata']:+.2f}% | {s['median']:+.2f}% | "
-                 f"{s['pf'] if s['pf'] is not None else '-'} | {s['t'] if s['t'] is not None else '-'} |")
-    return L
+def baris_md(lbl, s):
+    if not s.get("n"):
+        return f"| {lbl} | 0 | - | - | - | - |"
+    return (f"| {lbl} | {s['n']} | {s['menang']}% | {s['rata']:+.2f}% | "
+            f"{s['pf'] if s['pf'] is not None else '-'} | {s['t'] if s['t'] is not None else '-'} |")
+
+
+KEPALA = ["| | Trade | Menang | Rata-rata bersih | Profit factor | t |", "|---|---|---|---|---|---|"]
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--hari", type=int, default=365)
+    ap.add_argument("--hari", type=int, default=730)
     ap.add_argument("--maks-koin", type=int, default=100)
     args = ap.parse_args()
     t0 = time.time()
@@ -136,7 +176,7 @@ def main() -> int:
         b = S.ALIAS_BINANCE.get(c["symbol"], c["symbol"])
         if c.get("stabil") or c["symbol"] in cfg["abaikan"] or b not in tick or c.get("meme") or ST.is_meme(c["symbol"]):
             continue
-        koin.append((tick[b]["symbol"], c["symbol"], c["rank"]))
+        koin.append(tick[b]["symbol"])
     koin = koin[:args.maks_koin]
     print(f"{len(koin)} koin, ambil {args.hari} hari candle 1 jam...")
 
@@ -146,103 +186,106 @@ def main() -> int:
 
     data = {}
     with ThreadPoolExecutor(max_workers=3) as ex:
-        futs = {ex.submit(ambil_jam, bn, k[0], args.hari): k for k in koin}
+        futs = {ex.submit(ambil_jam, bn, k, args.hari): k for k in koin}
         for f in as_completed(futs):
             try:
                 d = f.result()
-                if len(d) > 24 * 30:
-                    data[futs[f][0]] = d
+                if len(d) > 24 * 60:
+                    data[futs[f]] = d
             except Exception as e:
-                print("  ! gagal", futs[f][0], e)
-    print(f"Data {len(data)} koin siap ({time.time() - t0:.0f} dtk). Simulasi {len(VAR_MASUK) * len(VAR_KELUAR)} kombinasi...")
-
+                print("  ! gagal", futs[f], e)
     syms = sorted(data)
-    jobs = []
-    for ci, sym in enumerate(syms):
-        h = data[sym]
-        kemarin = (h["time"] - pd.Timedelta(days=1)).dt.strftime("%Y-%m-%d")   # rezim hari sebelumnya (tanpa bocoran)
-        rezim = np.array([REZIM_KODE.get(rz_hari.get(d, "netral"), 1) for d in kemarin], dtype=np.int8)
-        jobs.append((ci, h, rezim, P0))
-    rows = []
-    with ProcessPoolExecutor(max_workers=os.cpu_count() or 2) as ex:
-        for out in ex.map(proses, jobs, chunksize=2):
-            rows.extend(out)
-    if not rows:
-        print("Tidak ada trade.")
-        return 1
-    df = pd.DataFrame(rows, columns=["vi", "vk", "ci", "jam", "rezim", "bersih", "hasil"])
-    t_awal, t_akhir = df["jam"].min(), df["jam"].max()
-    batas = t_awal + (t_akhir - t_awal) // 2
-    df["periode"] = np.where(df["jam"] < batas, 1, 2)
-    jam_ts = lambda j: datetime.fromtimestamp(int(j) * 3600, tz=timezone.utc).strftime("%d %b %Y")  # noqa: E731
+    t_awal = min(_jam(data[s]["time"])[0] for s in syms)
+    t_akhir = max(_jam(data[s]["time"])[-1] for s in syms)
+    batas = int(t_awal + (t_akhir - t_awal) // 2)
+    print(f"Data {len(syms)} koin ({time.time() - t0:.0f} dtk). Simulasi...")
 
-    # Pembanding: beli di sembarang jam saat sideways, jual 3 jam kemudian
-    acak = []
+    jobs, rezim_map = [], {}
     for sym in syms:
         h = data[sym]
-        kemarin = (h["time"] - pd.Timedelta(days=1)).dt.strftime("%Y-%m-%d")
-        rz = np.array([rz_hari.get(d, "netral") for d in kemarin])
-        c = h["close"].to_numpy()
-        r3 = (c[3:] / c[:-3] - 1) * 100
-        acak.extend(r3[rz[:-3] == "netral"][::6])
-    acak = np.array([JP.bersih_jp(x, P0) for x in acak])
+        kemarin = (h["time"] - pd.Timedelta(days=1)).dt.strftime("%Y-%m-%d")   # rezim hari sebelumnya (tanpa bocoran)
+        rz = np.array([REZIM_KODE.get(rz_hari.get(d, "netral"), 1) for d in kemarin], dtype=np.int8)
+        rezim_map[sym] = rz
+        jobs.append((h, rz, P0, batas))
+    aggs: dict = {}
+    with ProcessPoolExecutor(max_workers=os.cpu_count() or 2) as ex:
+        for i, agg in enumerate(ex.map(proses, jobs, chunksize=1), start=1):
+            for k, a in agg.items():
+                b = aggs.get(k)
+                if b is None:
+                    aggs[k] = list(a)
+                else:
+                    for j in range(6):
+                        b[j] += a[j]
+            if i % 20 == 0:
+                print(f"  {i}/{len(jobs)} koin · {time.time() - t0:.0f} dtk")
 
-    side = df[df["rezim"] == 1]
-    grp = {k: g["bersih"].to_numpy() for k, g in side.groupby(["vi", "vk", "periode"])}
-    kombinasi = []
-    for vi in range(len(VAR_MASUK)):
-        for vk in range(len(VAR_KELUAR)):
-            p1, p2 = grp.get((vi, vk, 1), np.array([])), grp.get((vi, vk, 2), np.array([]))
-            kombinasi.append(dict(vi=vi, vk=vk, masuk=label_masuk(vi), keluar=label_keluar(vk),
-                                  p1=stat(p1), p2=stat(p2), semua=stat(np.concatenate([p1, p2]))))
-    cand = [k for k in kombinasi if k["p1"].get("n", 0) >= 150]
-    cand.sort(key=lambda k: -k["p1"]["rata"])
-    best = cand[0] if cand else None
-    top = cand[:10]
-    lolos = bool(best and best["p2"].get("n", 0) >= 50 and best["p2"]["rata"] > 0 and best["p1"]["rata"] > 0)
+    # Pembanding: beli di jam acak saat sideways, jual setelah H jam
+    acak = {}
+    for H in KELUAR:
+        xs = []
+        for sym in syms:
+            c = data[sym]["close"].to_numpy()
+            r = (c[H:] / c[:-H] - 1) * 100
+            ok = rezim_map[sym][:-H] == 1
+            xs.extend(r[ok][::6])
+        xs = np.array([JP.bersih_jp(x, P0) for x in xs])
+        acak[H] = stat(np.array([len(xs), xs.sum(), (xs ** 2).sum(), (xs > 0).sum(), xs[xs > 0].sum(), -xs[xs < 0].sum()]))
+
+    def ringkas(vi, H, vk, rezim_filter):
+        sel = lambda per: (lambda k: k[0] == vi and k[1] == H and k[2] == vk and rezim_filter(k[3]) and k[4] == per)  # noqa: E731
+        p1, p2 = gabung(aggs, sel(1)), gabung(aggs, sel(2))
+        return dict(vi=vi, H=H, vk=vk, masuk=label_masuk(vi), keluar=label_keluar(vi, H, vk), param=dict(
+            MASUK[vi], tp=KELUAR[H][vk][0], sl=KELUAR[H][vk][1], tahan_jam=H),
+            p1=stat(p1), p2=stat(p2), semua=stat(p1 + p2))
 
     hasil = dict(meta=dict(dibuat=now.isoformat(timespec="seconds"), dibuat_wib=S.now_wib_str(now), koin=len(syms),
-                           dari=jam_ts(t_awal), sampai=jam_ts(t_akhir), batas_periode=jam_ts(batas),
-                           trade_sideways=int(len(side)), durasi=round(time.time() - t0)),
-                 pembanding_acak=stat(acak), terbaik=best, top10=top, lolos=lolos)
-    if best:
-        sub = df[(df["vi"] == best["vi"]) & (df["vk"] == best["vk"])]
-        hasil["terbaik_semua_rezim"] = {nm: stat(sub[sub["rezim"] == kd]["bersih"].to_numpy())
-                                        for nm, kd in REZIM_KODE.items()}
-        hb = sub[sub["rezim"] == 1]["hasil"].value_counts().to_dict()
-        hasil["terbaik_hasil"] = {nm: int(hb.get(kd, 0)) for nm, kd in HASIL_KODE.items()}
-        hasil["terbaik_per_bulan"] = {
-            str(m): stat(g["bersih"].to_numpy())
-            for m, g in sub[sub["rezim"] == 1].groupby(pd.to_datetime(sub[sub["rezim"] == 1]["jam"] * 3600, unit="s").dt.to_period("M"))}
-        per_koin = sub[sub["rezim"] == 1].groupby("ci")["bersih"].sum().sort_values()
-        hasil["terbaik_koin"] = dict(untung=int((per_koin > 0).sum()), rugi=int((per_koin <= 0).sum()))
+                           dari=datetime.fromtimestamp(t_awal * 3600, tz=timezone.utc).strftime("%d %b %Y"),
+                           sampai=datetime.fromtimestamp(t_akhir * 3600, tz=timezone.utc).strftime("%d %b %Y"),
+                           batas=datetime.fromtimestamp(batas * 3600, tz=timezone.utc).strftime("%d %b %Y"),
+                           kombinasi=sum(len(MASUK) * len(v) for v in KELUAR.values()), durasi=round(time.time() - t0)),
+                 pembanding_acak={str(H): s for H, s in acak.items()}, kelompok={})
+    for kondisi, rf in (("sideways", lambda r: r == 1), ("semua", lambda r: True)):
+        for nama, Hs in KELOMPOK.items():
+            semua_k = [ringkas(vi, H, vk, rf) for H in Hs for vi in range(len(MASUK)) for vk in range(len(KELUAR[H]))]
+            cand = sorted([k for k in semua_k if k["p1"].get("n", 0) >= MIN_N_P1], key=lambda k: -k["p1"]["rata"])
+            best = cand[0] if cand else None
+            lolos = bool(best and best["p1"]["rata"] > 0 and best["p2"].get("n", 0) >= 50 and best["p2"]["rata"] > 0)
+            per_h = {}
+            for H in Hs:
+                ch = [k for k in cand if k["H"] == H]
+                if ch:
+                    per_h[str(H)] = ch[0]
+            p2_pos = sum(1 for k in cand if k["p2"].get("rata", -1) > 0)
+            hasil["kelompok"][f"{nama}|{kondisi}"] = dict(terbaik=best, lolos=lolos, top10=cand[:10], per_jam=per_h,
+                                                         diuji=len(cand), p2_positif=p2_pos)
 
     m = hasil["meta"]
-    L = ["# ⚡ Backtest Mode Jangka Pendek (sideways, tahan maks. 3 jam)", "",
-         f"Dibuat {m['dibuat_wib']} · data candle 1 jam {m['dari']} s/d {m['sampai']} · {m['koin']} koin (bukan meme) · "
-         f"{len(VAR_MASUK) * len(VAR_KELUAR)} kombinasi diuji.", "",
-         f"Periode 1 (untuk MEMILIH): {m['dari']} – {m['batas_periode']} · Periode 2 (untuk MENGUJI): {m['batas_periode']} – {m['sampai']}.",
-         "Hanya trade saat BTC sideways. Bersih = setelah biaya 0,1% beli/jual, pajak jual 0,21%, slippage 0,05%/sisi.", "",
-         "## Pembanding", "", *tabel([("Beli di jam acak saat sideways, jual 3 jam kemudian", hasil["pembanding_acak"])], "Cara"), ""]
-    if best:
-        L += ["## Kombinasi terbaik (dipilih di periode 1)", "",
-              f"**Syarat masuk:** {best['masuk']} · **Jual:** {best['keluar']} · tutup paksa 3 jam", "",
-              *tabel([("Periode 1 (memilih)", best["p1"]), ("Periode 2 (menguji)", best["p2"]),
-                      ("Gabungan", best["semua"])], "Periode"), "",
-              f"**Lolos uji (positif di kedua periode): {'YA ✅' if lolos else 'TIDAK ❌'}**", "",
-              "### Hasil trade (sideways)", "",
-              " · ".join(f"{k}: {v}" for k, v in hasil["terbaik_hasil"].items()), "",
-              f"Per koin (total): {hasil['terbaik_koin']['untung']} koin untung, {hasil['terbaik_koin']['rugi']} koin rugi.", "",
-              "### Kombinasi yang sama di kondisi BTC lain", "",
-              *tabel([(f"BTC {k}", v) for k, v in hasil["terbaik_semua_rezim"].items()], "Kondisi"), "",
-              "### Per bulan (sideways)", "",
-              *tabel(list(hasil["terbaik_per_bulan"].items()), "Bulan"), "",
-              "## 10 kombinasi terbaik di periode 1 — dan hasilnya di periode 2", "",
-              "| Syarat masuk | Jual | P1 trade | P1 rata-rata | P2 trade | P2 rata-rata | P2 menang |",
-              "|---|---|---|---|---|---|---|"]
-        for k in top:
-            L.append(f"| {k['masuk']} | {k['keluar']} | {k['p1']['n']} | {k['p1']['rata']:+.2f}% | "
-                     f"{k['p2'].get('n', 0)} | {k['p2'].get('rata', 0):+.2f}% | {k['p2'].get('menang', 0)}% |")
+    L = ["# ⚡ Backtest Mode Jangka Pendek", "",
+         f"Dibuat {m['dibuat_wib']} · candle 1 jam {m['dari']} s/d {m['sampai']} · {m['koin']} koin (bukan meme) · "
+         f"{m['kombinasi']} kombinasi.", "",
+         f"Periode 1 (MEMILIH): {m['dari']} – {m['batas']} · Periode 2 (MENGUJI): {m['batas']} – {m['sampai']}.",
+         "Bersih = setelah biaya 0,1% beli/jual, pajak jual 0,21%, slippage 0,05% per sisi.", "",
+         "## Pembanding: beli di jam acak saat BTC sideways", "", *KEPALA]
+    L += [baris_md(f"Tahan {H} jam", s) for H, s in acak.items()]
+    for kondisi, judul in (("sideways", "saat BTC sideways"), ("semua", "di semua kondisi BTC")):
+        for nama in KELOMPOK:
+            g = hasil["kelompok"][f"{nama}|{kondisi}"]
+            b = g["terbaik"]
+            L += ["", f"## Mode {nama} — {judul}", ""]
+            if not b:
+                L += ["Tidak ada kombinasi dengan cukup trade."]
+                continue
+            L += [f"**Terbaik di periode 1:** {b['masuk']} · {b['keluar']}", "", *KEPALA,
+                  baris_md("Periode 1 (memilih)", b["p1"]), baris_md("Periode 2 (menguji)", b["p2"]),
+                  baris_md("Gabungan", b["semua"]), "",
+                  f"**Lolos uji (positif di kedua periode): {'YA ✅' if g['lolos'] else 'TIDAK ❌'}** · "
+                  f"dari {g['diuji']} kombinasi yang cukup trade, {g['p2_positif']} positif di periode 2.", "",
+                  "Terbaik per lama tahan (dipilih di periode 1):", "",
+                  "| Tahan | Sinyal | Jual | P1 rata-rata | P2 trade | P2 menang | P2 rata-rata |", "|---|---|---|---|---|---|---|"]
+            for H, k in g["per_jam"].items():
+                L.append(f"| {H} jam | {k['masuk']} | {k['keluar']} | {k['p1']['rata']:+.2f}% | {k['p2'].get('n', 0)} | "
+                         f"{k['p2'].get('menang', 0)}% | {k['p2'].get('rata', 0):+.2f}% |")
     L += ["", "## Keterbatasan", "",
           "- Masuk di harga penutupan candle 1 jam; bila TP & SL tersentuh di jam yang sama dianggap SL dulu.",
           "- Daftar koin = top CMC saat ini (survivorship bias). Spread & antrian order di bursa Indonesia bisa berbeda.",
