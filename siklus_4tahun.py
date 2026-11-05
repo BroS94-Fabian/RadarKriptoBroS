@@ -166,6 +166,7 @@ def grafik(btc, st_btc, ma200, ma200w, cyc, idx_alt, breadth, tujuan, path):
     ax.plot(ma200.index, ma200, color="#1baf7a", lw=1.2, label="MA200 harian (±30 minggu)")
     ax.plot(ma200w.index, ma200w, color="#7a5af5", lw=1.2, ls="--", label="MA 200 minggu (lantai siklus)")
     ax.set_yscale("log")
+    ax.set_ylim(top=float(btc["high"].max()) * 1.9)
     ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, _: f"${y:,.0f}".replace(",", ".")))
     for hv in HALVING:
         if hv >= btc.index[0] - pd.Timedelta(days=400):
