@@ -1,6 +1,6 @@
 {
- "dibuat": "2026-11-05T14:19:09+00:00",
- "dibuat_wib": "5 Nov 2026 21:19 WIB",
+ "dibuat": "2026-11-05T14:21:18+00:00",
+ "dibuat_wib": "5 Nov 2026 21:21 WIB",
  "sekarang": {
   "tanggal": "2026-11-04",
   "harga": 80504.01,
@@ -20,7 +20,13 @@
   "horizon_hari": 88,
   "tujuan": "2027-01-31",
   "alt_dari_puncak": -89.3,
-  "alt_puncak_tgl": "2021-05-09"
+  "alt_puncak_tgl": "2021-05-09",
+  "alt_dari_puncak_siklus": -76.7,
+  "alt_puncak_siklus_tgl": "2024-12-06",
+  "alt_dari_terendah_siklus": 33.8,
+  "alt_terendah_siklus_tgl": "2026-08-16",
+  "naik_dari_terendah": 39.3,
+  "hari_sejak_terendah": 126
  },
  "siklus": [
   {
@@ -36,13 +42,13 @@
   },
   {
    "halving": "2020-05-11",
-   "puncak_tgl": "2024-03-14",
-   "puncak": 73777.0,
-   "hari_halving_ke_puncak": 1403,
-   "dasar_tgl": "2024-04-19",
-   "dasar": 59600.01,
-   "hari_puncak_ke_dasar": 36,
-   "turun_pct": -19.2,
+   "puncak_tgl": "2021-11-10",
+   "puncak": 69000.0,
+   "hari_halving_ke_puncak": 548,
+   "dasar_tgl": "2022-11-21",
+   "dasar": 15476.0,
+   "hari_puncak_ke_dasar": 376,
+   "turun_pct": -77.6,
    "data_mulai": "2020-05-11"
   },
   {
@@ -99,25 +105,25 @@
    "hasil": 48.0,
    "terendah": -3.2,
    "tertinggi": 52.8,
-   "turun_dari_puncak": -77.6,
-   "dasar_sudah_lewat": false,
+   "turun_dari_puncak": -76.1,
+   "dasar_sudah_lewat": true,
    "stage": 4,
-   "puncak": "2024-03-14"
+   "puncak": "2021-11-10"
   },
   {
    "siklus": "2020",
    "acuan": "puncak",
-   "dari": "2025-04-12",
-   "sampai": "2025-07-09",
-   "harga_dari": 85276.9,
-   "harga_sampai": 111233.99,
-   "hasil": 30.4,
-   "terendah": -2.9,
-   "tertinggi": 31.3,
-   "turun_dari_puncak": 15.6,
+   "dari": "2022-12-09",
+   "sampai": "2023-03-07",
+   "harga_dari": 17128.56,
+   "harga_sampai": 22197.96,
+   "hasil": 29.6,
+   "terendah": -5.1,
+   "tertinggi": 47.4,
+   "turun_dari_puncak": -75.2,
    "dasar_sudah_lewat": true,
-   "stage": 3,
-   "puncak": "2024-03-14"
+   "stage": 4,
+   "puncak": "2021-11-10"
   }
  ],
  "peluang": [
@@ -306,35 +312,35 @@
    "btc": {
     "n": 302,
     "bulan": 11,
-    "naik": 85.1,
-    "median": 20.2,
-    "p25": 6.1,
-    "p75": 43.0,
-    "rata": 31.8,
-    "naik_10": 63.9,
-    "turun_10": 8.3
+    "naik": 81.8,
+    "median": 29.3,
+    "p25": 9.2,
+    "p75": 61.4,
+    "rata": 37.2,
+    "naik_10": 72.8,
+    "turun_10": 14.6
    },
    "alt": {
     "n": 151,
     "bulan": 6,
-    "naik": 60.9,
-    "median": 4.8,
-    "p25": -4.6,
-    "p75": 14.2,
-    "rata": 4.4,
-    "naik_10": 34.4,
-    "turun_10": 14.6
+    "naik": 53.0,
+    "median": 3.1,
+    "p25": -12.5,
+    "p75": 33.7,
+    "rata": 8.6,
+    "naik_10": 47.0,
+    "turun_10": 27.8
    },
    "eth": {
     "n": 151,
     "bulan": 6,
-    "naik": 81.5,
-    "median": 59.0,
-    "p25": 17.1,
-    "p75": 81.3,
-    "rata": 47.0,
-    "naik_10": 78.8,
-    "turun_10": 9.9
+    "naik": 86.1,
+    "median": 20.8,
+    "p25": 8.4,
+    "p75": 35.6,
+    "rata": 21.3,
+    "naik_10": 71.5,
+    "turun_10": 2.0
    }
   },
   {
@@ -1342,6 +1348,100 @@
   {
    "bulan": "2026-11",
    "stage": 3
+  }
+ ],
+ "btc_bulanan": [
+  {
+   "bulan": "2025-01",
+   "close": 102430.0
+  },
+  {
+   "bulan": "2025-02",
+   "close": 84350.0
+  },
+  {
+   "bulan": "2025-03",
+   "close": 82550.0
+  },
+  {
+   "bulan": "2025-04",
+   "close": 94172.0
+  },
+  {
+   "bulan": "2025-05",
+   "close": 104592.0
+  },
+  {
+   "bulan": "2025-06",
+   "close": 107146.0
+  },
+  {
+   "bulan": "2025-07",
+   "close": 115764.0
+  },
+  {
+   "bulan": "2025-08",
+   "close": 108246.0
+  },
+  {
+   "bulan": "2025-09",
+   "close": 114049.0
+  },
+  {
+   "bulan": "2025-10",
+   "close": 109608.0
+  },
+  {
+   "bulan": "2025-11",
+   "close": 90360.0
+  },
+  {
+   "bulan": "2025-12",
+   "close": 87648.0
+  },
+  {
+   "bulan": "2026-01",
+   "close": 78741.0
+  },
+  {
+   "bulan": "2026-02",
+   "close": 66973.0
+  },
+  {
+   "bulan": "2026-03",
+   "close": 68284.0
+  },
+  {
+   "bulan": "2026-04",
+   "close": 76347.0
+  },
+  {
+   "bulan": "2026-05",
+   "close": 73674.0
+  },
+  {
+   "bulan": "2026-06",
+   "close": 58625.0
+  },
+  {
+   "bulan": "2026-07",
+   "close": 62888.0
+  },
+  {
+   "bulan": "2026-08",
+   "close": 78581.0
+  },
+  {
+   "bulan": "2026-09",
+   "close": 83624.0
+  },
+  {
+   "bulan": "2026-10",
+   "close": 77582.0
+  },
+  {
+   "bulan": "2026-11",
+   "close": 80504.0
   }
  ],
  "koin": 131,
