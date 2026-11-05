@@ -74,16 +74,17 @@ def harian(bn: S.Binance, sym: str, mulai: pd.Timestamp) -> pd.DataFrame:
 
 def bitstamp_harian(mulai: pd.Timestamp) -> pd.DataFrame:
     """BTC/USD harian Bitstamp (data sejak 2011) — untuk siklus 2012 & 2016 yang belum ada di Binance."""
-    rows, t = [], int(mulai.timestamp())
-    for _ in range(12):
+    rows, t, akhir = [], int(mulai.timestamp()), int(time.time()) - 86400
+    for _ in range(15):
         j = S.http_get("https://www.bitstamp.net/api/v2/ohlc/btcusd/", {"step": 86400, "limit": 1000, "start": t})
         o = (j.get("data") or {}).get("ohlc") or []
         if not o:
             break
         rows += o
-        if len(o) < 1000:
+        t2 = int(o[-1]["timestamp"]) + 86400
+        if t2 <= t or t2 >= akhir:
             break
-        t = int(o[-1]["timestamp"]) + 86400
+        t = t2
     if not rows:
         return pd.DataFrame()
     df = pd.DataFrame(rows)
@@ -123,7 +124,7 @@ def ringkas(x: pd.Series) -> dict:
     x = x.dropna()
     if len(x) == 0:
         return dict(n=0)
-    bulan = x.index.to_period("M").nunique()
+    bulan = x.index.tz_localize(None).to_period("M").nunique() if x.index.tz is not None else x.index.to_period("M").nunique()
     return dict(n=int(len(x)), bulan=int(bulan), naik=round(float((x > 0).mean() * 100), 1),
                 median=round(float(x.median()), 1), p25=round(float(x.quantile(0.25)), 1),
                 p75=round(float(x.quantile(0.75)), 1), rata=round(float(x.mean()), 1),
@@ -369,6 +370,10 @@ def main() -> int:
             print(f"Bitstamp: {len(bs)} hari tambahan sejak {bs.index[0].date()}")
     except Exception as e:
         print("  ! Bitstamp gagal, BTC hanya dari Binance:", e)
+    kal = pd.date_range(btc.index[0], btc.index[-1], freq="D")
+    if len(kal) != len(btc):
+        print(f"  {len(kal) - len(btc)} hari kosong diisi harga hari sebelumnya")
+        btc = btc.reindex(kal).ffill()
     print(f"BTC: {len(btc)} hari ({btc.index[0].date()} – {btc.index[-1].date()})")
     hari_ini = btc.index[-1]
     tujuan = pd.Timestamp(args.tujuan, tz="UTC")
@@ -536,7 +541,7 @@ def main() -> int:
         sekarang["hari_sejak_terendah"] = int((hari_ini - lo_c).days)
     bulanan_btc = [dict(bulan=i.strftime("%Y-%m"), close=round(float(v), 0))
                    for i, v in btc["close"].resample("ME").last().items() if i >= pd.Timestamp("2025-01-01", tz="UTC")]
-    st_bulanan = [dict(bulan=i.strftime("%Y-%m"), stage=int(v)) for i, v in st_btc.resample("ME").last().items()]
+    st_bulanan = [dict(bulan=i.strftime("%Y-%m"), stage=int(v)) for i, v in st_btc.resample("ME").last().dropna().items()]
 
     BND = bandingkan(btc, cyc, hari_ini)
     hasil = dict(perbandingan={k: v for k, v in BND.items() if not k.startswith("_")},
