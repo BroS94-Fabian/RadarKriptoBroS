@@ -1,508 +1,2164 @@
 {
  "meta": {
-  "dibuat": "2026-11-04T10:59:44+00:00",
-  "dibuat_wib": "4 Nov 2026 17:59 WIB",
-  "koin": 100,
-  "dari": "07 Nov 2025",
-  "sampai": "04 Nov 2026",
-  "batas_periode": "07 May 2026",
-  "trade_sideways": 108480,
-  "durasi": 180
+  "dibuat": "2026-11-05T01:32:23+00:00",
+  "dibuat_wib": "5 Nov 2026 08:32 WIB",
+  "koin": 99,
+  "dari": "05 Nov 2024",
+  "sampai": "05 Nov 2026",
+  "batas": "05 Nov 2025",
+  "kombinasi": 1024,
+  "durasi": 329
  },
  "pembanding_acak": {
-  "n": 24454,
-  "menang": 29.5,
-  "rata": -0.463,
-  "median": -0.51,
-  "total": -11328.1,
-  "pf": 0.41,
-  "t": -45.82
- },
- "terbaik": {
-  "vi": 5,
-  "vk": 0,
-  "masuk": "RSI≤35, posisi≤20%, lebar≥5%",
-  "keluar": "TP +1.0% / SL −1.0%",
-  "p1": {
-   "n": 165,
-   "menang": 29.7,
-   "rata": -0.677,
-   "median": -0.845,
-   "total": -111.7,
-   "pf": 0.17,
-   "t": -10.14
+  "3": {
+   "n": 48107,
+   "menang": 31.2,
+   "rata": -0.494,
+   "pf": 0.43,
+   "t": -59.86,
+   "total": -23763.0
   },
-  "p2": {
-   "n": 178,
-   "menang": 33.7,
-   "rata": -0.555,
-   "median": -0.607,
-   "total": -98.7,
-   "pf": 0.21,
-   "t": -8.84
+  "6": {
+   "n": 48104,
+   "menang": 33.6,
+   "rata": -0.509,
+   "pf": 0.52,
+   "t": -46.55,
+   "total": -24506.6
   },
-  "semua": {
-   "n": 343,
-   "menang": 31.8,
-   "rata": -0.613,
-   "median": -0.665,
-   "total": -210.4,
-   "pf": 0.19,
-   "t": -13.4
+  "12": {
+   "n": 48005,
+   "menang": 37.6,
+   "rata": -0.487,
+   "pf": 0.65,
+   "t": -31.31,
+   "total": -23383.3
+  },
+  "24": {
+   "n": 47807,
+   "menang": 39.5,
+   "rata": -0.49,
+   "pf": 0.74,
+   "t": -22.2,
+   "total": -23444.8
   }
  },
- "top10": [
-  {
-   "vi": 5,
-   "vk": 0,
-   "masuk": "RSI≤35, posisi≤20%, lebar≥5%",
-   "keluar": "TP +1.0% / SL −1.0%",
-   "p1": {
-    "n": 165,
-    "menang": 29.7,
-    "rata": -0.677,
-    "median": -0.845,
-    "total": -111.7,
-    "pf": 0.17,
-    "t": -10.14
+ "kelompok": {
+  "≤3 jam|sideways": {
+   "terbaik": {
+    "vi": 14,
+    "H": 3,
+    "vk": 13,
+    "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+    "keluar": "TP atap + tinggi kisaran / SL −1.5% / maks 3 jam",
+    "param": {
+     "jenis": "tembus",
+     "vol_rel_min": 2.5,
+     "lebar_min": 0.02,
+     "lebar_max": 0.1,
+     "tp": "pola",
+     "sl": "1.5",
+     "tahan_jam": 3
+    },
+    "p1": {
+     "n": 228,
+     "menang": 44.7,
+     "rata": 0.128,
+     "pf": 1.21,
+     "t": 1.06,
+     "total": 29.2
+    },
+    "p2": {
+     "n": 126,
+     "menang": 21.4,
+     "rata": -0.757,
+     "pf": 0.22,
+     "t": -6.92,
+     "total": -95.3
+    },
+    "semua": {
+     "n": 354,
+     "menang": 36.4,
+     "rata": -0.187,
+     "pf": 0.75,
+     "t": -2.08,
+     "total": -66.2
+    }
    },
-   "p2": {
-    "n": 178,
-    "menang": 33.7,
-    "rata": -0.555,
-    "median": -0.607,
-    "total": -98.7,
-    "pf": 0.21,
-    "t": -8.84
+   "lolos": false,
+   "top10": [
+    {
+     "vi": 14,
+     "H": 3,
+     "vk": 13,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL −1.5% / maks 3 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "1.5",
+      "tahan_jam": 3
+     },
+     "p1": {
+      "n": 228,
+      "menang": 44.7,
+      "rata": 0.128,
+      "pf": 1.21,
+      "t": 1.06,
+      "total": 29.2
+     },
+     "p2": {
+      "n": 126,
+      "menang": 21.4,
+      "rata": -0.757,
+      "pf": 0.22,
+      "t": -6.92,
+      "total": -95.3
+     },
+     "semua": {
+      "n": 354,
+      "menang": 36.4,
+      "rata": -0.187,
+      "pf": 0.75,
+      "t": -2.08,
+      "total": -66.2
+     }
+    },
+    {
+     "vi": 14,
+     "H": 3,
+     "vk": 12,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL −1.0% / maks 3 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "1.0",
+      "tahan_jam": 3
+     },
+     "p1": {
+      "n": 228,
+      "menang": 43.0,
+      "rata": 0.094,
+      "pf": 1.15,
+      "t": 0.81,
+      "total": 21.4
+     },
+     "p2": {
+      "n": 126,
+      "menang": 18.3,
+      "rata": -0.783,
+      "pf": 0.15,
+      "t": -9.46,
+      "total": -98.7
+     },
+     "semua": {
+      "n": 354,
+      "menang": 34.2,
+      "rata": -0.218,
+      "pf": 0.7,
+      "t": -2.63,
+      "total": -77.3
+     }
+    },
+    {
+     "vi": 14,
+     "H": 3,
+     "vk": 14,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL −2.0% / maks 3 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "2.0",
+      "tahan_jam": 3
+     },
+     "p1": {
+      "n": 228,
+      "menang": 44.7,
+      "rata": 0.073,
+      "pf": 1.11,
+      "t": 0.58,
+      "total": 16.7
+     },
+     "p2": {
+      "n": 126,
+      "menang": 22.2,
+      "rata": -0.825,
+      "pf": 0.21,
+      "t": -6.95,
+      "total": -104.0
+     },
+     "semua": {
+      "n": 354,
+      "menang": 36.7,
+      "rata": -0.247,
+      "pf": 0.69,
+      "t": -2.62,
+      "total": -87.3
+     }
+    },
+    {
+     "vi": 14,
+     "H": 3,
+     "vk": 15,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 3 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "support",
+      "tahan_jam": 3
+     },
+     "p1": {
+      "n": 228,
+      "menang": 44.3,
+      "rata": 0.062,
+      "pf": 1.1,
+      "t": 0.51,
+      "total": 14.2
+     },
+     "p2": {
+      "n": 126,
+      "menang": 23.0,
+      "rata": -0.746,
+      "pf": 0.25,
+      "t": -6.19,
+      "total": -94.0
+     },
+     "semua": {
+      "n": 354,
+      "menang": 36.7,
+      "rata": -0.225,
+      "pf": 0.71,
+      "t": -2.44,
+      "total": -79.7
+     }
+    },
+    {
+     "vi": 15,
+     "H": 3,
+     "vk": 12,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤20%",
+     "keluar": "TP atap + tinggi kisaran / SL −1.0% / maks 3 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.2,
+      "tp": "pola",
+      "sl": "1.0",
+      "tahan_jam": 3
+     },
+     "p1": {
+      "n": 324,
+      "menang": 39.5,
+      "rata": 0.054,
+      "pf": 1.08,
+      "t": 0.45,
+      "total": 17.4
+     },
+     "p2": {
+      "n": 184,
+      "menang": 19.0,
+      "rata": -0.652,
+      "pf": 0.34,
+      "t": -5.11,
+      "total": -120.0
+     },
+     "semua": {
+      "n": 508,
+      "menang": 32.1,
+      "rata": -0.202,
+      "pf": 0.75,
+      "t": -2.25,
+      "total": -102.5
+     }
+    },
+    {
+     "vi": 15,
+     "H": 3,
+     "vk": 13,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤20%",
+     "keluar": "TP atap + tinggi kisaran / SL −1.5% / maks 3 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.2,
+      "tp": "pola",
+      "sl": "1.5",
+      "tahan_jam": 3
+     },
+     "p1": {
+      "n": 324,
+      "menang": 41.4,
+      "rata": 0.039,
+      "pf": 1.05,
+      "t": 0.31,
+      "total": 12.6
+     },
+     "p2": {
+      "n": 184,
+      "menang": 23.4,
+      "rata": -0.631,
+      "pf": 0.42,
+      "t": -4.35,
+      "total": -116.1
+     },
+     "semua": {
+      "n": 508,
+      "menang": 34.8,
+      "rata": -0.204,
+      "pf": 0.77,
+      "t": -2.12,
+      "total": -103.5
+     }
+    },
+    {
+     "vi": 15,
+     "H": 3,
+     "vk": 14,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤20%",
+     "keluar": "TP atap + tinggi kisaran / SL −2.0% / maks 3 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.2,
+      "tp": "pola",
+      "sl": "2.0",
+      "tahan_jam": 3
+     },
+     "p1": {
+      "n": 324,
+      "menang": 42.3,
+      "rata": -0.005,
+      "pf": 0.99,
+      "t": -0.04,
+      "total": -1.7
+     },
+     "p2": {
+      "n": 184,
+      "menang": 25.0,
+      "rata": -0.727,
+      "pf": 0.39,
+      "t": -4.72,
+      "total": -133.8
+     },
+     "semua": {
+      "n": 508,
+      "menang": 36.0,
+      "rata": -0.267,
+      "pf": 0.72,
+      "t": -2.65,
+      "total": -135.5
+     }
+    },
+    {
+     "vi": 15,
+     "H": 3,
+     "vk": 15,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤20%",
+     "keluar": "TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 3 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.2,
+      "tp": "pola",
+      "sl": "support",
+      "tahan_jam": 3
+     },
+     "p1": {
+      "n": 324,
+      "menang": 42.0,
+      "rata": -0.017,
+      "pf": 0.98,
+      "t": -0.13,
+      "total": -5.5
+     },
+     "p2": {
+      "n": 184,
+      "menang": 25.0,
+      "rata": -0.725,
+      "pf": 0.39,
+      "t": -4.45,
+      "total": -133.4
+     },
+     "semua": {
+      "n": 508,
+      "menang": 35.8,
+      "rata": -0.273,
+      "pf": 0.71,
+      "t": -2.7,
+      "total": -138.9
+     }
+    },
+    {
+     "vi": 14,
+     "H": 3,
+     "vk": 8,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP +2.0% / SL −1.0% / maks 3 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "2.0",
+      "sl": "1.0",
+      "tahan_jam": 3
+     },
+     "p1": {
+      "n": 228,
+      "menang": 45.6,
+      "rata": -0.098,
+      "pf": 0.83,
+      "t": -1.24,
+      "total": -22.3
+     },
+     "p2": {
+      "n": 126,
+      "menang": 27.8,
+      "rata": -0.51,
+      "pf": 0.4,
+      "t": -4.85,
+      "total": -64.3
+     },
+     "semua": {
+      "n": 354,
+      "menang": 39.3,
+      "rata": -0.245,
+      "pf": 0.64,
+      "t": -3.83,
+      "total": -86.6
+     }
+    },
+    {
+     "vi": 14,
+     "H": 3,
+     "vk": 9,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP +2.0% / SL −1.5% / maks 3 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "2.0",
+      "sl": "1.5",
+      "tahan_jam": 3
+     },
+     "p1": {
+      "n": 228,
+      "menang": 46.5,
+      "rata": -0.111,
+      "pf": 0.81,
+      "t": -1.34,
+      "total": -25.3
+     },
+     "p2": {
+      "n": 126,
+      "menang": 33.3,
+      "rata": -0.432,
+      "pf": 0.49,
+      "t": -3.59,
+      "total": -54.4
+     },
+     "semua": {
+      "n": 354,
+      "menang": 41.8,
+      "rata": -0.225,
+      "pf": 0.67,
+      "t": -3.27,
+      "total": -79.7
+     }
+    }
+   ],
+   "per_jam": {
+    "3": {
+     "vi": 14,
+     "H": 3,
+     "vk": 13,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL −1.5% / maks 3 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "1.5",
+      "tahan_jam": 3
+     },
+     "p1": {
+      "n": 228,
+      "menang": 44.7,
+      "rata": 0.128,
+      "pf": 1.21,
+      "t": 1.06,
+      "total": 29.2
+     },
+     "p2": {
+      "n": 126,
+      "menang": 21.4,
+      "rata": -0.757,
+      "pf": 0.22,
+      "t": -6.92,
+      "total": -95.3
+     },
+     "semua": {
+      "n": 354,
+      "menang": 36.4,
+      "rata": -0.187,
+      "pf": 0.75,
+      "t": -2.08,
+      "total": -66.2
+     }
+    }
    },
-   "semua": {
-    "n": 343,
-    "menang": 31.8,
-    "rata": -0.613,
-    "median": -0.665,
-    "total": -210.4,
-    "pf": 0.19,
-    "t": -13.4
-   }
+   "diuji": 256,
+   "p2_positif": 0
   },
-  {
-   "vi": 4,
-   "vk": 0,
-   "masuk": "RSI≤35, posisi≤20%, lebar≥3%",
-   "keluar": "TP +1.0% / SL −1.0%",
-   "p1": {
-    "n": 175,
-    "menang": 28.6,
-    "rata": -0.679,
-    "median": -0.782,
-    "total": -118.8,
-    "pf": 0.17,
-    "t": -10.61
+  "6–24 jam|sideways": {
+   "terbaik": {
+    "vi": 14,
+    "H": 24,
+    "vk": 15,
+    "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+    "keluar": "TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 24 jam",
+    "param": {
+     "jenis": "tembus",
+     "vol_rel_min": 2.5,
+     "lebar_min": 0.02,
+     "lebar_max": 0.1,
+     "tp": "pola",
+     "sl": "support",
+     "tahan_jam": 24
+    },
+    "p1": {
+     "n": 217,
+     "menang": 47.9,
+     "rata": 0.648,
+     "pf": 1.64,
+     "t": 3.01,
+     "total": 140.6
+    },
+    "p2": {
+     "n": 104,
+     "menang": 20.2,
+     "rata": -1.123,
+     "pf": 0.32,
+     "t": -4.98,
+     "total": -116.8
+    },
+    "semua": {
+     "n": 321,
+     "menang": 38.9,
+     "rata": 0.074,
+     "pf": 1.06,
+     "t": 0.44,
+     "total": 23.9
+    }
    },
-   "p2": {
-    "n": 216,
-    "menang": 29.2,
-    "rata": -0.564,
-    "median": -0.597,
-    "total": -121.9,
-    "pf": 0.18,
-    "t": -10.55
+   "lolos": false,
+   "top10": [
+    {
+     "vi": 14,
+     "H": 24,
+     "vk": 15,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 24 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "support",
+      "tahan_jam": 24
+     },
+     "p1": {
+      "n": 217,
+      "menang": 47.9,
+      "rata": 0.648,
+      "pf": 1.64,
+      "t": 3.01,
+      "total": 140.6
+     },
+     "p2": {
+      "n": 104,
+      "menang": 20.2,
+      "rata": -1.123,
+      "pf": 0.32,
+      "t": -4.98,
+      "total": -116.8
+     },
+     "semua": {
+      "n": 321,
+      "menang": 38.9,
+      "rata": 0.074,
+      "pf": 1.06,
+      "t": 0.44,
+      "total": 23.9
+     }
+    },
+    {
+     "vi": 14,
+     "H": 24,
+     "vk": 12,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL −2.0% / maks 24 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "2.0",
+      "tahan_jam": 24
+     },
+     "p1": {
+      "n": 217,
+      "menang": 48.8,
+      "rata": 0.624,
+      "pf": 1.57,
+      "t": 2.81,
+      "total": 135.4
+     },
+     "p2": {
+      "n": 104,
+      "menang": 25.0,
+      "rata": -0.919,
+      "pf": 0.43,
+      "t": -3.73,
+      "total": -95.6
+     },
+     "semua": {
+      "n": 321,
+      "menang": 41.1,
+      "rata": 0.124,
+      "pf": 1.1,
+      "t": 0.71,
+      "total": 39.8
+     }
+    },
+    {
+     "vi": 14,
+     "H": 24,
+     "vk": 11,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP +5.0% / SL masuk lagi ke kisaran / maks 24 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "5.0",
+      "sl": "support",
+      "tahan_jam": 24
+     },
+     "p1": {
+      "n": 217,
+      "menang": 47.0,
+      "rata": 0.534,
+      "pf": 1.52,
+      "t": 2.71,
+      "total": 115.8
+     },
+     "p2": {
+      "n": 104,
+      "menang": 20.2,
+      "rata": -1.098,
+      "pf": 0.33,
+      "t": -5.02,
+      "total": -114.2
+     },
+     "semua": {
+      "n": 321,
+      "menang": 38.3,
+      "rata": 0.005,
+      "pf": 1.0,
+      "t": 0.03,
+      "total": 1.6
+     }
+    },
+    {
+     "vi": 14,
+     "H": 24,
+     "vk": 8,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP +5.0% / SL −2.0% / maks 24 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "5.0",
+      "sl": "2.0",
+      "tahan_jam": 24
+     },
+     "p1": {
+      "n": 217,
+      "menang": 47.9,
+      "rata": 0.507,
+      "pf": 1.46,
+      "t": 2.51,
+      "total": 109.9
+     },
+     "p2": {
+      "n": 104,
+      "menang": 25.0,
+      "rata": -0.908,
+      "pf": 0.43,
+      "t": -3.88,
+      "total": -94.4
+     },
+     "semua": {
+      "n": 321,
+      "menang": 40.5,
+      "rata": 0.048,
+      "pf": 1.04,
+      "t": 0.3,
+      "total": 15.5
+     }
+    },
+    {
+     "vi": 14,
+     "H": 6,
+     "vk": 12,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL −1.5% / maks 6 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "1.5",
+      "tahan_jam": 6
+     },
+     "p1": {
+      "n": 223,
+      "menang": 52.5,
+      "rata": 0.486,
+      "pf": 1.71,
+      "t": 3.13,
+      "total": 108.3
+     },
+     "p2": {
+      "n": 123,
+      "menang": 16.3,
+      "rata": -1.005,
+      "pf": 0.16,
+      "t": -8.67,
+      "total": -123.6
+     },
+     "semua": {
+      "n": 346,
+      "menang": 39.6,
+      "rata": -0.044,
+      "pf": 0.95,
+      "t": -0.39,
+      "total": -15.3
+     }
+    },
+    {
+     "vi": 14,
+     "H": 24,
+     "vk": 13,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL −3.0% / maks 24 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "3.0",
+      "tahan_jam": 24
+     },
+     "p1": {
+      "n": 217,
+      "menang": 50.7,
+      "rata": 0.473,
+      "pf": 1.37,
+      "t": 1.98,
+      "total": 102.6
+     },
+     "p2": {
+      "n": 104,
+      "menang": 29.8,
+      "rata": -0.879,
+      "pf": 0.51,
+      "t": -2.91,
+      "total": -91.4
+     },
+     "semua": {
+      "n": 321,
+      "menang": 43.9,
+      "rata": 0.035,
+      "pf": 1.02,
+      "t": 0.18,
+      "total": 11.1
+     }
+    },
+    {
+     "vi": 14,
+     "H": 24,
+     "vk": 7,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP +4.0% / SL masuk lagi ke kisaran / maks 24 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "4.0",
+      "sl": "support",
+      "tahan_jam": 24
+     },
+     "p1": {
+      "n": 217,
+      "menang": 50.2,
+      "rata": 0.466,
+      "pf": 1.48,
+      "t": 2.62,
+      "total": 101.1
+     },
+     "p2": {
+      "n": 104,
+      "menang": 22.1,
+      "rata": -1.063,
+      "pf": 0.33,
+      "t": -5.13,
+      "total": -110.6
+     },
+     "semua": {
+      "n": 321,
+      "menang": 41.1,
+      "rata": -0.03,
+      "pf": 0.97,
+      "t": -0.21,
+      "total": -9.5
+     }
+    },
+    {
+     "vi": 14,
+     "H": 12,
+     "vk": 15,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 12 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "support",
+      "tahan_jam": 12
+     },
+     "p1": {
+      "n": 220,
+      "menang": 51.8,
+      "rata": 0.441,
+      "pf": 1.53,
+      "t": 2.49,
+      "total": 97.1
+     },
+     "p2": {
+      "n": 111,
+      "menang": 20.7,
+      "rata": -0.975,
+      "pf": 0.29,
+      "t": -5.36,
+      "total": -108.2
+     },
+     "semua": {
+      "n": 331,
+      "menang": 41.4,
+      "rata": -0.034,
+      "pf": 0.97,
+      "t": -0.25,
+      "total": -11.2
+     }
+    },
+    {
+     "vi": 14,
+     "H": 24,
+     "vk": 3,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP +3.0% / SL masuk lagi ke kisaran / maks 24 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "3.0",
+      "sl": "support",
+      "tahan_jam": 24
+     },
+     "p1": {
+      "n": 217,
+      "menang": 55.8,
+      "rata": 0.44,
+      "pf": 1.5,
+      "t": 2.87,
+      "total": 95.4
+     },
+     "p2": {
+      "n": 104,
+      "menang": 27.9,
+      "rata": -0.864,
+      "pf": 0.4,
+      "t": -4.36,
+      "total": -89.9
+     },
+     "semua": {
+      "n": 321,
+      "menang": 46.7,
+      "rata": 0.017,
+      "pf": 1.02,
+      "t": 0.14,
+      "total": 5.6
+     }
+    },
+    {
+     "vi": 14,
+     "H": 6,
+     "vk": 15,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 6 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "support",
+      "tahan_jam": 6
+     },
+     "p1": {
+      "n": 223,
+      "menang": 52.5,
+      "rata": 0.437,
+      "pf": 1.6,
+      "t": 2.75,
+      "total": 97.4
+     },
+     "p2": {
+      "n": 123,
+      "menang": 17.1,
+      "rata": -1.056,
+      "pf": 0.15,
+      "t": -8.25,
+      "total": -129.9
+     },
+     "semua": {
+      "n": 346,
+      "menang": 39.9,
+      "rata": -0.094,
+      "pf": 0.9,
+      "t": -0.79,
+      "total": -32.5
+     }
+    }
+   ],
+   "per_jam": {
+    "6": {
+     "vi": 14,
+     "H": 6,
+     "vk": 12,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL −1.5% / maks 6 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "1.5",
+      "tahan_jam": 6
+     },
+     "p1": {
+      "n": 223,
+      "menang": 52.5,
+      "rata": 0.486,
+      "pf": 1.71,
+      "t": 3.13,
+      "total": 108.3
+     },
+     "p2": {
+      "n": 123,
+      "menang": 16.3,
+      "rata": -1.005,
+      "pf": 0.16,
+      "t": -8.67,
+      "total": -123.6
+     },
+     "semua": {
+      "n": 346,
+      "menang": 39.6,
+      "rata": -0.044,
+      "pf": 0.95,
+      "t": -0.39,
+      "total": -15.3
+     }
+    },
+    "12": {
+     "vi": 14,
+     "H": 12,
+     "vk": 15,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 12 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "support",
+      "tahan_jam": 12
+     },
+     "p1": {
+      "n": 220,
+      "menang": 51.8,
+      "rata": 0.441,
+      "pf": 1.53,
+      "t": 2.49,
+      "total": 97.1
+     },
+     "p2": {
+      "n": 111,
+      "menang": 20.7,
+      "rata": -0.975,
+      "pf": 0.29,
+      "t": -5.36,
+      "total": -108.2
+     },
+     "semua": {
+      "n": 331,
+      "menang": 41.4,
+      "rata": -0.034,
+      "pf": 0.97,
+      "t": -0.25,
+      "total": -11.2
+     }
+    },
+    "24": {
+     "vi": 14,
+     "H": 24,
+     "vk": 15,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 24 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "support",
+      "tahan_jam": 24
+     },
+     "p1": {
+      "n": 217,
+      "menang": 47.9,
+      "rata": 0.648,
+      "pf": 1.64,
+      "t": 3.01,
+      "total": 140.6
+     },
+     "p2": {
+      "n": 104,
+      "menang": 20.2,
+      "rata": -1.123,
+      "pf": 0.32,
+      "t": -4.98,
+      "total": -116.8
+     },
+     "semua": {
+      "n": 321,
+      "menang": 38.9,
+      "rata": 0.074,
+      "pf": 1.06,
+      "t": 0.44,
+      "total": 23.9
+     }
+    }
    },
-   "semua": {
-    "n": 391,
-    "menang": 28.9,
-    "rata": -0.616,
-    "median": -0.647,
-    "total": -240.8,
-    "pf": 0.17,
-    "t": -14.95
-   }
+   "diuji": 768,
+   "p2_positif": 0
   },
-  {
-   "vi": 10,
-   "vk": 0,
-   "masuk": "RSI≤40, posisi≤30%, lebar≥3%",
-   "keluar": "TP +1.0% / SL −1.0%",
-   "p1": {
-    "n": 395,
-    "menang": 28.6,
-    "rata": -0.691,
-    "median": -0.836,
-    "total": -272.8,
-    "pf": 0.16,
-    "t": -16.41
+  "≤3 jam|semua": {
+   "terbaik": {
+    "vi": 14,
+    "H": 3,
+    "vk": 15,
+    "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+    "keluar": "TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 3 jam",
+    "param": {
+     "jenis": "tembus",
+     "vol_rel_min": 2.5,
+     "lebar_min": 0.02,
+     "lebar_max": 0.1,
+     "tp": "pola",
+     "sl": "support",
+     "tahan_jam": 3
+    },
+    "p1": {
+     "n": 1022,
+     "menang": 32.6,
+     "rata": -0.468,
+     "pf": 0.5,
+     "t": -8.7,
+     "total": -478.7
+    },
+    "p2": {
+     "n": 707,
+     "menang": 29.1,
+     "rata": -0.578,
+     "pf": 0.4,
+     "t": -9.65,
+     "total": -408.7
+    },
+    "semua": {
+     "n": 1729,
+     "menang": 31.2,
+     "rata": -0.513,
+     "pf": 0.46,
+     "t": -12.78,
+     "total": -887.4
+    }
    },
-   "p2": {
-    "n": 573,
-    "menang": 33.7,
-    "rata": -0.508,
-    "median": -0.51,
-    "total": -291.0,
-    "pf": 0.23,
-    "t": -15.06
+   "lolos": false,
+   "top10": [
+    {
+     "vi": 14,
+     "H": 3,
+     "vk": 15,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 3 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "support",
+      "tahan_jam": 3
+     },
+     "p1": {
+      "n": 1022,
+      "menang": 32.6,
+      "rata": -0.468,
+      "pf": 0.5,
+      "t": -8.7,
+      "total": -478.7
+     },
+     "p2": {
+      "n": 707,
+      "menang": 29.1,
+      "rata": -0.578,
+      "pf": 0.4,
+      "t": -9.65,
+      "total": -408.7
+     },
+     "semua": {
+      "n": 1729,
+      "menang": 31.2,
+      "rata": -0.513,
+      "pf": 0.46,
+      "t": -12.78,
+      "total": -887.4
+     }
+    },
+    {
+     "vi": 12,
+     "H": 3,
+     "vk": 15,
+     "masuk": "TEMBUS atap kisaran, volume ≥1.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 3 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 1.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "support",
+      "tahan_jam": 3
+     },
+     "p1": {
+      "n": 1892,
+      "menang": 31.2,
+      "rata": -0.475,
+      "pf": 0.46,
+      "t": -12.95,
+      "total": -899.5
+     },
+     "p2": {
+      "n": 1199,
+      "menang": 28.8,
+      "rata": -0.517,
+      "pf": 0.42,
+      "t": -11.64,
+      "total": -620.2
+     },
+     "semua": {
+      "n": 3091,
+      "menang": 30.3,
+      "rata": -0.492,
+      "pf": 0.45,
+      "t": -17.36,
+      "total": -1519.7
+     }
+    },
+    {
+     "vi": 14,
+     "H": 3,
+     "vk": 12,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL −1.0% / maks 3 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "1.0",
+      "tahan_jam": 3
+     },
+     "p1": {
+      "n": 1022,
+      "menang": 28.1,
+      "rata": -0.476,
+      "pf": 0.45,
+      "t": -10.44,
+      "total": -486.4
+     },
+     "p2": {
+      "n": 707,
+      "menang": 24.9,
+      "rata": -0.562,
+      "pf": 0.37,
+      "t": -11.41,
+      "total": -397.5
+     },
+     "semua": {
+      "n": 1729,
+      "menang": 26.8,
+      "rata": -0.511,
+      "pf": 0.41,
+      "t": -15.19,
+      "total": -883.8
+     }
+    },
+    {
+     "vi": 14,
+     "H": 3,
+     "vk": 14,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL −2.0% / maks 3 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "2.0",
+      "tahan_jam": 3
+     },
+     "p1": {
+      "n": 1022,
+      "menang": 32.8,
+      "rata": -0.48,
+      "pf": 0.49,
+      "t": -8.87,
+      "total": -491.0
+     },
+     "p2": {
+      "n": 707,
+      "menang": 29.4,
+      "rata": -0.566,
+      "pf": 0.41,
+      "t": -9.59,
+      "total": -400.4
+     },
+     "semua": {
+      "n": 1729,
+      "menang": 31.4,
+      "rata": -0.516,
+      "pf": 0.45,
+      "t": -12.86,
+      "total": -891.4
+     }
+    },
+    {
+     "vi": 12,
+     "H": 3,
+     "vk": 12,
+     "masuk": "TEMBUS atap kisaran, volume ≥1.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL −1.0% / maks 3 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 1.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "1.0",
+      "tahan_jam": 3
+     },
+     "p1": {
+      "n": 1892,
+      "menang": 28.0,
+      "rata": -0.482,
+      "pf": 0.42,
+      "t": -15.19,
+      "total": -911.0
+     },
+     "p2": {
+      "n": 1199,
+      "menang": 25.3,
+      "rata": -0.525,
+      "pf": 0.38,
+      "t": -14.02,
+      "total": -629.0
+     },
+     "semua": {
+      "n": 3091,
+      "menang": 26.9,
+      "rata": -0.498,
+      "pf": 0.41,
+      "t": -20.57,
+      "total": -1540.0
+     }
+    },
+    {
+     "vi": 14,
+     "H": 3,
+     "vk": 3,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP +1.0% / SL masuk lagi ke kisaran / maks 3 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "1.0",
+      "sl": "support",
+      "tahan_jam": 3
+     },
+     "p1": {
+      "n": 1022,
+      "menang": 50.5,
+      "rata": -0.484,
+      "pf": 0.33,
+      "t": -13.86,
+      "total": -494.6
+     },
+     "p2": {
+      "n": 707,
+      "menang": 47.9,
+      "rata": -0.522,
+      "pf": 0.3,
+      "t": -12.04,
+      "total": -369.4
+     },
+     "semua": {
+      "n": 1729,
+      "menang": 49.5,
+      "rata": -0.5,
+      "pf": 0.32,
+      "t": -18.37,
+      "total": -864.0
+     }
+    },
+    {
+     "vi": 14,
+     "H": 3,
+     "vk": 7,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP +1.5% / SL masuk lagi ke kisaran / maks 3 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "1.5",
+      "sl": "support",
+      "tahan_jam": 3
+     },
+     "p1": {
+      "n": 1022,
+      "menang": 41.4,
+      "rata": -0.486,
+      "pf": 0.41,
+      "t": -12.18,
+      "total": -496.9
+     },
+     "p2": {
+      "n": 707,
+      "menang": 38.8,
+      "rata": -0.508,
+      "pf": 0.4,
+      "t": -10.2,
+      "total": -359.2
+     },
+     "semua": {
+      "n": 1729,
+      "menang": 40.3,
+      "rata": -0.495,
+      "pf": 0.41,
+      "t": -15.89,
+      "total": -856.2
+     }
+    },
+    {
+     "vi": 12,
+     "H": 3,
+     "vk": 13,
+     "masuk": "TEMBUS atap kisaran, volume ≥1.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL −1.5% / maks 3 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 1.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "1.5",
+      "tahan_jam": 3
+     },
+     "p1": {
+      "n": 1892,
+      "menang": 30.8,
+      "rata": -0.487,
+      "pf": 0.45,
+      "t": -13.63,
+      "total": -920.9
+     },
+     "p2": {
+      "n": 1199,
+      "menang": 28.4,
+      "rata": -0.494,
+      "pf": 0.43,
+      "t": -11.66,
+      "total": -592.6
+     },
+     "semua": {
+      "n": 3091,
+      "menang": 29.9,
+      "rata": -0.49,
+      "pf": 0.44,
+      "t": -17.9,
+      "total": -1513.5
+     }
+    },
+    {
+     "vi": 14,
+     "H": 3,
+     "vk": 13,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL −1.5% / maks 3 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "1.5",
+      "tahan_jam": 3
+     },
+     "p1": {
+      "n": 1022,
+      "menang": 31.4,
+      "rata": -0.487,
+      "pf": 0.47,
+      "t": -9.55,
+      "total": -497.4
+     },
+     "p2": {
+      "n": 707,
+      "menang": 28.3,
+      "rata": -0.556,
+      "pf": 0.4,
+      "t": -10.03,
+      "total": -393.0
+     },
+     "semua": {
+      "n": 1729,
+      "menang": 30.1,
+      "rata": -0.515,
+      "pf": 0.44,
+      "t": -13.66,
+      "total": -890.4
+     }
+    },
+    {
+     "vi": 12,
+     "H": 3,
+     "vk": 14,
+     "masuk": "TEMBUS atap kisaran, volume ≥1.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL −2.0% / maks 3 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 1.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "2.0",
+      "tahan_jam": 3
+     },
+     "p1": {
+      "n": 1892,
+      "menang": 31.8,
+      "rata": -0.49,
+      "pf": 0.46,
+      "t": -13.0,
+      "total": -927.1
+     },
+     "p2": {
+      "n": 1199,
+      "menang": 29.6,
+      "rata": -0.5,
+      "pf": 0.44,
+      "t": -11.17,
+      "total": -599.6
+     },
+     "semua": {
+      "n": 3091,
+      "menang": 30.9,
+      "rata": -0.494,
+      "pf": 0.45,
+      "t": -17.11,
+      "total": -1526.7
+     }
+    }
+   ],
+   "per_jam": {
+    "3": {
+     "vi": 14,
+     "H": 3,
+     "vk": 15,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 3 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "support",
+      "tahan_jam": 3
+     },
+     "p1": {
+      "n": 1022,
+      "menang": 32.6,
+      "rata": -0.468,
+      "pf": 0.5,
+      "t": -8.7,
+      "total": -478.7
+     },
+     "p2": {
+      "n": 707,
+      "menang": 29.1,
+      "rata": -0.578,
+      "pf": 0.4,
+      "t": -9.65,
+      "total": -408.7
+     },
+     "semua": {
+      "n": 1729,
+      "menang": 31.2,
+      "rata": -0.513,
+      "pf": 0.46,
+      "t": -12.78,
+      "total": -887.4
+     }
+    }
    },
-   "semua": {
-    "n": 968,
-    "menang": 31.6,
-    "rata": -0.583,
-    "median": -0.654,
-    "total": -563.9,
-    "pf": 0.2,
-    "t": -22.0
-   }
+   "diuji": 256,
+   "p2_positif": 0
   },
-  {
-   "vi": 11,
-   "vk": 0,
-   "masuk": "RSI≤40, posisi≤30%, lebar≥5%",
-   "keluar": "TP +1.0% / SL −1.0%",
-   "p1": {
-    "n": 377,
-    "menang": 29.7,
-    "rata": -0.692,
-    "median": -0.863,
-    "total": -260.8,
-    "pf": 0.17,
-    "t": -15.83
+  "6–24 jam|semua": {
+   "terbaik": {
+    "vi": 15,
+    "H": 24,
+    "vk": 15,
+    "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤20%",
+    "keluar": "TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 24 jam",
+    "param": {
+     "jenis": "tembus",
+     "vol_rel_min": 2.5,
+     "lebar_min": 0.02,
+     "lebar_max": 0.2,
+     "tp": "pola",
+     "sl": "support",
+     "tahan_jam": 24
+    },
+    "p1": {
+     "n": 1757,
+     "menang": 30.7,
+     "rata": -0.219,
+     "pf": 0.86,
+     "t": -2.39,
+     "total": -385.4
+    },
+    "p2": {
+     "n": 1060,
+     "menang": 23.9,
+     "rata": -0.614,
+     "pf": 0.64,
+     "t": -5.59,
+     "total": -651.2
+    },
+    "semua": {
+     "n": 2817,
+     "menang": 28.1,
+     "rata": -0.368,
+     "pf": 0.78,
+     "t": -5.2,
+     "total": -1036.6
+    }
    },
-   "p2": {
-    "n": 451,
-    "menang": 39.0,
-    "rata": -0.475,
-    "median": -0.405,
-    "total": -214.1,
-    "pf": 0.27,
-    "t": -11.84
+   "lolos": false,
+   "top10": [
+    {
+     "vi": 15,
+     "H": 24,
+     "vk": 15,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤20%",
+     "keluar": "TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 24 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.2,
+      "tp": "pola",
+      "sl": "support",
+      "tahan_jam": 24
+     },
+     "p1": {
+      "n": 1757,
+      "menang": 30.7,
+      "rata": -0.219,
+      "pf": 0.86,
+      "t": -2.39,
+      "total": -385.4
+     },
+     "p2": {
+      "n": 1060,
+      "menang": 23.9,
+      "rata": -0.614,
+      "pf": 0.64,
+      "t": -5.59,
+      "total": -651.2
+     },
+     "semua": {
+      "n": 2817,
+      "menang": 28.1,
+      "rata": -0.368,
+      "pf": 0.78,
+      "t": -5.2,
+      "total": -1036.6
+     }
+    },
+    {
+     "vi": 14,
+     "H": 24,
+     "vk": 15,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 24 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "support",
+      "tahan_jam": 24
+     },
+     "p1": {
+      "n": 920,
+      "menang": 33.5,
+      "rata": -0.26,
+      "pf": 0.81,
+      "t": -2.63,
+      "total": -239.5
+     },
+     "p2": {
+      "n": 637,
+      "menang": 25.7,
+      "rata": -0.741,
+      "pf": 0.53,
+      "t": -6.94,
+      "total": -472.0
+     },
+     "semua": {
+      "n": 1557,
+      "menang": 30.3,
+      "rata": -0.457,
+      "pf": 0.69,
+      "t": -6.25,
+      "total": -711.6
+     }
+    },
+    {
+     "vi": 15,
+     "H": 24,
+     "vk": 12,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤20%",
+     "keluar": "TP atap + tinggi kisaran / SL −2.0% / maks 24 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.2,
+      "tp": "pola",
+      "sl": "2.0",
+      "tahan_jam": 24
+     },
+     "p1": {
+      "n": 1757,
+      "menang": 30.4,
+      "rata": -0.273,
+      "pf": 0.83,
+      "t": -3.07,
+      "total": -480.3
+     },
+     "p2": {
+      "n": 1060,
+      "menang": 25.3,
+      "rata": -0.616,
+      "pf": 0.65,
+      "t": -5.68,
+      "total": -652.7
+     },
+     "semua": {
+      "n": 2817,
+      "menang": 28.5,
+      "rata": -0.402,
+      "pf": 0.76,
+      "t": -5.83,
+      "total": -1133.0
+     }
+    },
+    {
+     "vi": 12,
+     "H": 24,
+     "vk": 15,
+     "masuk": "TEMBUS atap kisaran, volume ≥1.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 24 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 1.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "support",
+      "tahan_jam": 24
+     },
+     "p1": {
+      "n": 1504,
+      "menang": 31.4,
+      "rata": -0.287,
+      "pf": 0.79,
+      "t": -3.85,
+      "total": -431.8
+     },
+     "p2": {
+      "n": 973,
+      "menang": 25.5,
+      "rata": -0.638,
+      "pf": 0.57,
+      "t": -7.55,
+      "total": -620.5
+     },
+     "semua": {
+      "n": 2477,
+      "menang": 29.1,
+      "rata": -0.425,
+      "pf": 0.7,
+      "t": -7.55,
+      "total": -1052.3
+     }
+    },
+    {
+     "vi": 14,
+     "H": 24,
+     "vk": 11,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP +5.0% / SL masuk lagi ke kisaran / maks 24 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "5.0",
+      "sl": "support",
+      "tahan_jam": 24
+     },
+     "p1": {
+      "n": 920,
+      "menang": 33.7,
+      "rata": -0.297,
+      "pf": 0.79,
+      "t": -3.25,
+      "total": -273.2
+     },
+     "p2": {
+      "n": 637,
+      "menang": 25.3,
+      "rata": -0.755,
+      "pf": 0.53,
+      "t": -7.31,
+      "total": -481.1
+     },
+     "semua": {
+      "n": 1557,
+      "menang": 30.3,
+      "rata": -0.484,
+      "pf": 0.67,
+      "t": -7.05,
+      "total": -754.4
+     }
+    },
+    {
+     "vi": 12,
+     "H": 24,
+     "vk": 11,
+     "masuk": "TEMBUS atap kisaran, volume ≥1.5x, lebar kisaran ≤10%",
+     "keluar": "TP +5.0% / SL masuk lagi ke kisaran / maks 24 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 1.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "5.0",
+      "sl": "support",
+      "tahan_jam": 24
+     },
+     "p1": {
+      "n": 1504,
+      "menang": 31.9,
+      "rata": -0.315,
+      "pf": 0.77,
+      "t": -4.59,
+      "total": -473.7
+     },
+     "p2": {
+      "n": 973,
+      "menang": 25.8,
+      "rata": -0.637,
+      "pf": 0.57,
+      "t": -7.86,
+      "total": -619.5
+     },
+     "semua": {
+      "n": 2477,
+      "menang": 29.5,
+      "rata": -0.441,
+      "pf": 0.68,
+      "t": -8.4,
+      "total": -1093.2
+     }
+    },
+    {
+     "vi": 13,
+     "H": 24,
+     "vk": 15,
+     "masuk": "TEMBUS atap kisaran, volume ≥1.5x, lebar kisaran ≤20%",
+     "keluar": "TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 24 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 1.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.2,
+      "tp": "pola",
+      "sl": "support",
+      "tahan_jam": 24
+     },
+     "p1": {
+      "n": 2906,
+      "menang": 27.9,
+      "rata": -0.319,
+      "pf": 0.8,
+      "t": -4.78,
+      "total": -926.6
+     },
+     "p2": {
+      "n": 1612,
+      "menang": 23.5,
+      "rata": -0.516,
+      "pf": 0.68,
+      "t": -5.86,
+      "total": -831.2
+     },
+     "semua": {
+      "n": 4518,
+      "menang": 26.3,
+      "rata": -0.389,
+      "pf": 0.76,
+      "t": -7.32,
+      "total": -1757.8
+     }
+    },
+    {
+     "vi": 14,
+     "H": 24,
+     "vk": 7,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP +4.0% / SL masuk lagi ke kisaran / maks 24 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "4.0",
+      "sl": "support",
+      "tahan_jam": 24
+     },
+     "p1": {
+      "n": 920,
+      "menang": 36.1,
+      "rata": -0.319,
+      "pf": 0.76,
+      "t": -3.79,
+      "total": -293.2
+     },
+     "p2": {
+      "n": 637,
+      "menang": 29.0,
+      "rata": -0.635,
+      "pf": 0.58,
+      "t": -6.45,
+      "total": -404.6
+     },
+     "semua": {
+      "n": 1557,
+      "menang": 33.2,
+      "rata": -0.448,
+      "pf": 0.68,
+      "t": -6.99,
+      "total": -697.8
+     }
+    },
+    {
+     "vi": 14,
+     "H": 24,
+     "vk": 12,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL −2.0% / maks 24 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "2.0",
+      "tahan_jam": 24
+     },
+     "p1": {
+      "n": 920,
+      "menang": 33.9,
+      "rata": -0.322,
+      "pf": 0.78,
+      "t": -3.23,
+      "total": -296.3
+     },
+     "p2": {
+      "n": 637,
+      "menang": 29.0,
+      "rata": -0.639,
+      "pf": 0.6,
+      "t": -5.64,
+      "total": -406.8
+     },
+     "semua": {
+      "n": 1557,
+      "menang": 31.9,
+      "rata": -0.452,
+      "pf": 0.7,
+      "t": -6.02,
+      "total": -703.1
+     }
+    },
+    {
+     "vi": 12,
+     "H": 12,
+     "vk": 15,
+     "masuk": "TEMBUS atap kisaran, volume ≥1.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 12 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 1.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "support",
+      "tahan_jam": 12
+     },
+     "p1": {
+      "n": 1646,
+      "menang": 35.1,
+      "rata": -0.326,
+      "pf": 0.73,
+      "t": -5.31,
+      "total": -536.7
+     },
+     "p2": {
+      "n": 1076,
+      "menang": 27.6,
+      "rata": -0.631,
+      "pf": 0.51,
+      "t": -9.21,
+      "total": -678.9
+     },
+     "semua": {
+      "n": 2722,
+      "menang": 32.1,
+      "rata": -0.447,
+      "pf": 0.64,
+      "t": -9.69,
+      "total": -1215.6
+     }
+    }
+   ],
+   "per_jam": {
+    "6": {
+     "vi": 14,
+     "H": 6,
+     "vk": 15,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 6 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "support",
+      "tahan_jam": 6
+     },
+     "p1": {
+      "n": 991,
+      "menang": 35.3,
+      "rata": -0.365,
+      "pf": 0.66,
+      "t": -5.21,
+      "total": -362.2
+     },
+     "p2": {
+      "n": 689,
+      "menang": 26.1,
+      "rata": -0.768,
+      "pf": 0.37,
+      "t": -10.77,
+      "total": -529.2
+     },
+     "semua": {
+      "n": 1680,
+      "menang": 31.5,
+      "rata": -0.531,
+      "pf": 0.53,
+      "t": -10.43,
+      "total": -891.4
+     }
+    },
+    "12": {
+     "vi": 12,
+     "H": 12,
+     "vk": 15,
+     "masuk": "TEMBUS atap kisaran, volume ≥1.5x, lebar kisaran ≤10%",
+     "keluar": "TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 12 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 1.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.1,
+      "tp": "pola",
+      "sl": "support",
+      "tahan_jam": 12
+     },
+     "p1": {
+      "n": 1646,
+      "menang": 35.1,
+      "rata": -0.326,
+      "pf": 0.73,
+      "t": -5.31,
+      "total": -536.7
+     },
+     "p2": {
+      "n": 1076,
+      "menang": 27.6,
+      "rata": -0.631,
+      "pf": 0.51,
+      "t": -9.21,
+      "total": -678.9
+     },
+     "semua": {
+      "n": 2722,
+      "menang": 32.1,
+      "rata": -0.447,
+      "pf": 0.64,
+      "t": -9.69,
+      "total": -1215.6
+     }
+    },
+    "24": {
+     "vi": 15,
+     "H": 24,
+     "vk": 15,
+     "masuk": "TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤20%",
+     "keluar": "TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 24 jam",
+     "param": {
+      "jenis": "tembus",
+      "vol_rel_min": 2.5,
+      "lebar_min": 0.02,
+      "lebar_max": 0.2,
+      "tp": "pola",
+      "sl": "support",
+      "tahan_jam": 24
+     },
+     "p1": {
+      "n": 1757,
+      "menang": 30.7,
+      "rata": -0.219,
+      "pf": 0.86,
+      "t": -2.39,
+      "total": -385.4
+     },
+     "p2": {
+      "n": 1060,
+      "menang": 23.9,
+      "rata": -0.614,
+      "pf": 0.64,
+      "t": -5.59,
+      "total": -651.2
+     },
+     "semua": {
+      "n": 2817,
+      "menang": 28.1,
+      "rata": -0.368,
+      "pf": 0.78,
+      "t": -5.2,
+      "total": -1036.6
+     }
+    }
    },
-   "semua": {
-    "n": 828,
-    "menang": 34.8,
-    "rata": -0.574,
-    "median": -0.662,
-    "total": -474.9,
-    "pf": 0.22,
-    "t": -19.27
-   }
-  },
-  {
-   "vi": 9,
-   "vk": 0,
-   "masuk": "RSI≤40, posisi≤20%, lebar≥5%",
-   "keluar": "TP +1.0% / SL −1.0%",
-   "p1": {
-    "n": 260,
-    "menang": 28.5,
-    "rata": -0.702,
-    "median": -0.89,
-    "total": -182.6,
-    "pf": 0.16,
-    "t": -13.41
-   },
-   "p2": {
-    "n": 289,
-    "menang": 35.6,
-    "rata": -0.532,
-    "median": -0.597,
-    "total": -153.7,
-    "pf": 0.23,
-    "t": -10.66
-   },
-   "semua": {
-    "n": 549,
-    "menang": 32.2,
-    "rata": -0.613,
-    "median": -0.723,
-    "total": -336.3,
-    "pf": 0.2,
-    "t": -16.89
-   }
-  },
-  {
-   "vi": 8,
-   "vk": 0,
-   "masuk": "RSI≤40, posisi≤20%, lebar≥3%",
-   "keluar": "TP +1.0% / SL −1.0%",
-   "p1": {
-    "n": 275,
-    "menang": 27.3,
-    "rata": -0.706,
-    "median": -0.88,
-    "total": -194.2,
-    "pf": 0.15,
-    "t": -14.06
-   },
-   "p2": {
-    "n": 362,
-    "menang": 30.1,
-    "rata": -0.562,
-    "median": -0.6,
-    "total": -203.3,
-    "pf": 0.19,
-    "t": -13.37
-   },
-   "semua": {
-    "n": 637,
-    "menang": 28.9,
-    "rata": -0.624,
-    "median": -0.671,
-    "total": -397.6,
-    "pf": 0.17,
-    "t": -19.29
-   }
-  },
-  {
-   "vi": 6,
-   "vk": 0,
-   "masuk": "RSI≤35, posisi≤30%, lebar≥3%",
-   "keluar": "TP +1.0% / SL −1.0%",
-   "p1": {
-    "n": 235,
-    "menang": 27.2,
-    "rata": -0.715,
-    "median": -0.896,
-    "total": -168.0,
-    "pf": 0.15,
-    "t": -13.08
-   },
-   "p2": {
-    "n": 298,
-    "menang": 33.9,
-    "rata": -0.483,
-    "median": -0.43,
-    "total": -143.9,
-    "pf": 0.23,
-    "t": -10.53
-   },
-   "semua": {
-    "n": 533,
-    "menang": 31.0,
-    "rata": -0.585,
-    "median": -0.633,
-    "total": -311.9,
-    "pf": 0.19,
-    "t": -16.48
-   }
-  },
-  {
-   "vi": 7,
-   "vk": 0,
-   "masuk": "RSI≤35, posisi≤30%, lebar≥5%",
-   "keluar": "TP +1.0% / SL −1.0%",
-   "p1": {
-    "n": 224,
-    "menang": 28.1,
-    "rata": -0.718,
-    "median": -1.02,
-    "total": -160.9,
-    "pf": 0.16,
-    "t": -12.66
-   },
-   "p2": {
-    "n": 247,
-    "menang": 38.1,
-    "rata": -0.469,
-    "median": -0.356,
-    "total": -116.0,
-    "pf": 0.26,
-    "t": -8.84
-   },
-   "semua": {
-    "n": 471,
-    "menang": 33.3,
-    "rata": -0.588,
-    "median": -0.647,
-    "total": -276.9,
-    "pf": 0.2,
-    "t": -15.01
-   }
-  },
-  {
-   "vi": 5,
-   "vk": 3,
-   "masuk": "RSI≤35, posisi≤20%, lebar≥5%",
-   "keluar": "TP +1.0% / SL bawah support",
-   "p1": {
-    "n": 156,
-    "menang": 28.2,
-    "rata": -0.722,
-    "median": -0.846,
-    "total": -112.6,
-    "pf": 0.16,
-    "t": -9.7
-   },
-   "p2": {
-    "n": 167,
-    "menang": 34.7,
-    "rata": -0.575,
-    "median": -0.596,
-    "total": -96.0,
-    "pf": 0.21,
-    "t": -8.07
-   },
-   "semua": {
-    "n": 323,
-    "menang": 31.6,
-    "rata": -0.646,
-    "median": -0.769,
-    "total": -208.6,
-    "pf": 0.18,
-    "t": -12.53
-   }
-  },
-  {
-   "vi": 7,
-   "vk": 3,
-   "masuk": "RSI≤35, posisi≤30%, lebar≥5%",
-   "keluar": "TP +1.0% / SL bawah support",
-   "p1": {
-    "n": 214,
-    "menang": 28.0,
-    "rata": -0.725,
-    "median": -0.846,
-    "total": -155.2,
-    "pf": 0.15,
-    "t": -11.5
-   },
-   "p2": {
-    "n": 235,
-    "menang": 38.7,
-    "rata": -0.488,
-    "median": -0.377,
-    "total": -114.7,
-    "pf": 0.26,
-    "t": -8.11
-   },
-   "semua": {
-    "n": 449,
-    "menang": 33.6,
-    "rata": -0.601,
-    "median": -0.652,
-    "total": -269.8,
-    "pf": 0.2,
-    "t": -13.71
-   }
+   "diuji": 768,
+   "p2_positif": 0
   }
- ],
- "lolos": false,
- "terbaik_semua_rezim": {
-  "naik": {
-   "n": 741,
-   "menang": 31.7,
-   "rata": -0.518,
-   "median": -0.487,
-   "total": -383.7,
-   "pf": 0.21,
-   "t": -17.93
-  },
-  "netral": {
-   "n": 343,
-   "menang": 31.8,
-   "rata": -0.613,
-   "median": -0.665,
-   "total": -210.4,
-   "pf": 0.19,
-   "t": -13.4
-  },
-  "turun": {
-   "n": 938,
-   "menang": 34.5,
-   "rata": -0.526,
-   "median": -0.53,
-   "total": -493.7,
-   "pf": 0.23,
-   "t": -19.49
-  }
- },
- "terbaik_hasil": {
-  "kena TP": 100,
-  "kena SL": 138,
-  "waktu habis": 105
- },
- "terbaik_per_bulan": {
-  "2026-01": {
-   "n": 56,
-   "menang": 23.2,
-   "rata": -0.907,
-   "median": -1.506,
-   "total": -50.8,
-   "pf": 0.11,
-   "t": -8.07
-  },
-  "2026-03": {
-   "n": 90,
-   "menang": 31.1,
-   "rata": -0.588,
-   "median": -0.515,
-   "total": -52.9,
-   "pf": 0.2,
-   "t": -6.64
-  },
-  "2026-04": {
-   "n": 19,
-   "menang": 42.1,
-   "rata": -0.421,
-   "median": -0.347,
-   "total": -8.0,
-   "pf": 0.33,
-   "t": -2.08
-  },
-  "2026-05": {
-   "n": 41,
-   "menang": 43.9,
-   "rata": -0.525,
-   "median": -0.589,
-   "total": -21.5,
-   "pf": 0.26,
-   "t": -3.67
-  },
-  "2026-06": {
-   "n": 7,
-   "menang": 42.9,
-   "rata": -0.321,
-   "median": -0.056,
-   "total": -2.2,
-   "pf": 0.39,
-   "t": -0.94
-  },
-  "2026-07": {
-   "n": 37,
-   "menang": 21.6,
-   "rata": -0.664,
-   "median": -0.629,
-   "total": -24.6,
-   "pf": 0.12,
-   "t": -5.41
-  },
-  "2026-08": {
-   "n": 31,
-   "menang": 22.6,
-   "rata": -0.537,
-   "median": -0.371,
-   "total": -16.6,
-   "pf": 0.13,
-   "t": -4.22
-  },
-  "2026-10": {
-   "n": 34,
-   "menang": 52.9,
-   "rata": -0.268,
-   "median": 0.486,
-   "total": -9.1,
-   "pf": 0.49,
-   "t": -1.75
-  },
-  "2026-11": {
-   "n": 28,
-   "menang": 21.4,
-   "rata": -0.88,
-   "median": -1.506,
-   "total": -24.6,
-   "pf": 0.11,
-   "t": -5.77
-  }
- },
- "terbaik_koin": {
-  "untung": 7,
-  "rugi": 45
  }
 }

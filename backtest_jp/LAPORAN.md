@@ -1,70 +1,94 @@
-# ⚡ Backtest Mode Jangka Pendek (sideways, tahan maks. 3 jam)
+# ⚡ Backtest Mode Jangka Pendek
 
-Dibuat 4 Nov 2026 17:59 WIB · data candle 1 jam 07 Nov 2025 s/d 04 Nov 2026 · 100 koin (bukan meme) · 240 kombinasi diuji.
+Dibuat 5 Nov 2026 08:32 WIB · candle 1 jam 05 Nov 2024 s/d 05 Nov 2026 · 99 koin (bukan meme) · 1024 kombinasi.
 
-Periode 1 (untuk MEMILIH): 07 Nov 2025 – 07 May 2026 · Periode 2 (untuk MENGUJI): 07 May 2026 – 04 Nov 2026.
-Hanya trade saat BTC sideways. Bersih = setelah biaya 0,1% beli/jual, pajak jual 0,21%, slippage 0,05%/sisi.
+Periode 1 (MEMILIH): 05 Nov 2024 – 05 Nov 2025 · Periode 2 (MENGUJI): 05 Nov 2025 – 05 Nov 2026.
+Bersih = setelah biaya 0,1% beli/jual, pajak jual 0,21%, slippage 0,05% per sisi.
 
-## Pembanding
+## Pembanding: beli di jam acak saat BTC sideways
 
-| Cara | Trade | Menang | Rata-rata bersih | Median | Profit factor | t |
+| | Trade | Menang | Rata-rata bersih | Profit factor | t |
+|---|---|---|---|---|---|
+| Tahan 3 jam | 48107 | 31.2% | -0.49% | 0.43 | -59.86 |
+| Tahan 6 jam | 48104 | 33.6% | -0.51% | 0.52 | -46.55 |
+| Tahan 12 jam | 48005 | 37.6% | -0.49% | 0.65 | -31.31 |
+| Tahan 24 jam | 47807 | 39.5% | -0.49% | 0.74 | -22.2 |
+
+## Mode ≤3 jam — saat BTC sideways
+
+**Terbaik di periode 1:** TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10% · TP atap + tinggi kisaran / SL −1.5% / maks 3 jam
+
+| | Trade | Menang | Rata-rata bersih | Profit factor | t |
+|---|---|---|---|---|---|
+| Periode 1 (memilih) | 228 | 44.7% | +0.13% | 1.21 | 1.06 |
+| Periode 2 (menguji) | 126 | 21.4% | -0.76% | 0.22 | -6.92 |
+| Gabungan | 354 | 36.4% | -0.19% | 0.75 | -2.08 |
+
+**Lolos uji (positif di kedua periode): TIDAK ❌** · dari 256 kombinasi yang cukup trade, 0 positif di periode 2.
+
+Terbaik per lama tahan (dipilih di periode 1):
+
+| Tahan | Sinyal | Jual | P1 rata-rata | P2 trade | P2 menang | P2 rata-rata |
 |---|---|---|---|---|---|---|
-| Beli di jam acak saat sideways, jual 3 jam kemudian | 24454 | 29.5% | -0.46% | -0.51% | 0.41 | -45.82 |
+| 3 jam | TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10% | TP atap + tinggi kisaran / SL −1.5% / maks 3 jam | +0.13% | 126 | 21.4% | -0.76% |
 
-## Kombinasi terbaik (dipilih di periode 1)
+## Mode 6–24 jam — saat BTC sideways
 
-**Syarat masuk:** RSI≤35, posisi≤20%, lebar≥5% · **Jual:** TP +1.0% / SL −1.0% · tutup paksa 3 jam
+**Terbaik di periode 1:** TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10% · TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 24 jam
 
-| Periode | Trade | Menang | Rata-rata bersih | Median | Profit factor | t |
+| | Trade | Menang | Rata-rata bersih | Profit factor | t |
+|---|---|---|---|---|---|
+| Periode 1 (memilih) | 217 | 47.9% | +0.65% | 1.64 | 3.01 |
+| Periode 2 (menguji) | 104 | 20.2% | -1.12% | 0.32 | -4.98 |
+| Gabungan | 321 | 38.9% | +0.07% | 1.06 | 0.44 |
+
+**Lolos uji (positif di kedua periode): TIDAK ❌** · dari 768 kombinasi yang cukup trade, 0 positif di periode 2.
+
+Terbaik per lama tahan (dipilih di periode 1):
+
+| Tahan | Sinyal | Jual | P1 rata-rata | P2 trade | P2 menang | P2 rata-rata |
 |---|---|---|---|---|---|---|
-| Periode 1 (memilih) | 165 | 29.7% | -0.68% | -0.84% | 0.17 | -10.14 |
-| Periode 2 (menguji) | 178 | 33.7% | -0.56% | -0.61% | 0.21 | -8.84 |
-| Gabungan | 343 | 31.8% | -0.61% | -0.67% | 0.19 | -13.4 |
+| 6 jam | TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10% | TP atap + tinggi kisaran / SL −1.5% / maks 6 jam | +0.49% | 123 | 16.3% | -1.00% |
+| 12 jam | TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10% | TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 12 jam | +0.44% | 111 | 20.7% | -0.97% |
+| 24 jam | TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10% | TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 24 jam | +0.65% | 104 | 20.2% | -1.12% |
 
-**Lolos uji (positif di kedua periode): TIDAK ❌**
+## Mode ≤3 jam — di semua kondisi BTC
 
-### Hasil trade (sideways)
+**Terbaik di periode 1:** TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10% · TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 3 jam
 
-kena TP: 100 · kena SL: 138 · waktu habis: 105
+| | Trade | Menang | Rata-rata bersih | Profit factor | t |
+|---|---|---|---|---|---|
+| Periode 1 (memilih) | 1022 | 32.6% | -0.47% | 0.5 | -8.7 |
+| Periode 2 (menguji) | 707 | 29.1% | -0.58% | 0.4 | -9.65 |
+| Gabungan | 1729 | 31.2% | -0.51% | 0.46 | -12.78 |
 
-Per koin (total): 7 koin untung, 45 koin rugi.
+**Lolos uji (positif di kedua periode): TIDAK ❌** · dari 256 kombinasi yang cukup trade, 0 positif di periode 2.
 
-### Kombinasi yang sama di kondisi BTC lain
+Terbaik per lama tahan (dipilih di periode 1):
 
-| Kondisi | Trade | Menang | Rata-rata bersih | Median | Profit factor | t |
+| Tahan | Sinyal | Jual | P1 rata-rata | P2 trade | P2 menang | P2 rata-rata |
 |---|---|---|---|---|---|---|
-| BTC naik | 741 | 31.7% | -0.52% | -0.49% | 0.21 | -17.93 |
-| BTC netral | 343 | 31.8% | -0.61% | -0.67% | 0.19 | -13.4 |
-| BTC turun | 938 | 34.5% | -0.53% | -0.53% | 0.23 | -19.49 |
+| 3 jam | TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10% | TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 3 jam | -0.47% | 707 | 29.1% | -0.58% |
 
-### Per bulan (sideways)
+## Mode 6–24 jam — di semua kondisi BTC
 
-| Bulan | Trade | Menang | Rata-rata bersih | Median | Profit factor | t |
+**Terbaik di periode 1:** TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤20% · TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 24 jam
+
+| | Trade | Menang | Rata-rata bersih | Profit factor | t |
+|---|---|---|---|---|---|
+| Periode 1 (memilih) | 1757 | 30.7% | -0.22% | 0.86 | -2.39 |
+| Periode 2 (menguji) | 1060 | 23.9% | -0.61% | 0.64 | -5.59 |
+| Gabungan | 2817 | 28.1% | -0.37% | 0.78 | -5.2 |
+
+**Lolos uji (positif di kedua periode): TIDAK ❌** · dari 768 kombinasi yang cukup trade, 0 positif di periode 2.
+
+Terbaik per lama tahan (dipilih di periode 1):
+
+| Tahan | Sinyal | Jual | P1 rata-rata | P2 trade | P2 menang | P2 rata-rata |
 |---|---|---|---|---|---|---|
-| 2026-01 | 56 | 23.2% | -0.91% | -1.51% | 0.11 | -8.07 |
-| 2026-03 | 90 | 31.1% | -0.59% | -0.52% | 0.2 | -6.64 |
-| 2026-04 | 19 | 42.1% | -0.42% | -0.35% | 0.33 | -2.08 |
-| 2026-05 | 41 | 43.9% | -0.53% | -0.59% | 0.26 | -3.67 |
-| 2026-06 | 7 | 42.9% | -0.32% | -0.06% | 0.39 | -0.94 |
-| 2026-07 | 37 | 21.6% | -0.66% | -0.63% | 0.12 | -5.41 |
-| 2026-08 | 31 | 22.6% | -0.54% | -0.37% | 0.13 | -4.22 |
-| 2026-10 | 34 | 52.9% | -0.27% | +0.49% | 0.49 | -1.75 |
-| 2026-11 | 28 | 21.4% | -0.88% | -1.51% | 0.11 | -5.77 |
-
-## 10 kombinasi terbaik di periode 1 — dan hasilnya di periode 2
-
-| Syarat masuk | Jual | P1 trade | P1 rata-rata | P2 trade | P2 rata-rata | P2 menang |
-|---|---|---|---|---|---|---|
-| RSI≤35, posisi≤20%, lebar≥5% | TP +1.0% / SL −1.0% | 165 | -0.68% | 178 | -0.56% | 33.7% |
-| RSI≤35, posisi≤20%, lebar≥3% | TP +1.0% / SL −1.0% | 175 | -0.68% | 216 | -0.56% | 29.2% |
-| RSI≤40, posisi≤30%, lebar≥3% | TP +1.0% / SL −1.0% | 395 | -0.69% | 573 | -0.51% | 33.7% |
-| RSI≤40, posisi≤30%, lebar≥5% | TP +1.0% / SL −1.0% | 377 | -0.69% | 451 | -0.47% | 39.0% |
-| RSI≤40, posisi≤20%, lebar≥5% | TP +1.0% / SL −1.0% | 260 | -0.70% | 289 | -0.53% | 35.6% |
-| RSI≤40, posisi≤20%, lebar≥3% | TP +1.0% / SL −1.0% | 275 | -0.71% | 362 | -0.56% | 30.1% |
-| RSI≤35, posisi≤30%, lebar≥3% | TP +1.0% / SL −1.0% | 235 | -0.71% | 298 | -0.48% | 33.9% |
-| RSI≤35, posisi≤30%, lebar≥5% | TP +1.0% / SL −1.0% | 224 | -0.72% | 247 | -0.47% | 38.1% |
-| RSI≤35, posisi≤20%, lebar≥5% | TP +1.0% / SL bawah support | 156 | -0.72% | 167 | -0.57% | 34.7% |
-| RSI≤35, posisi≤30%, lebar≥5% | TP +1.0% / SL bawah support | 214 | -0.72% | 235 | -0.49% | 38.7% |
+| 6 jam | TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤10% | TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 6 jam | -0.36% | 689 | 26.1% | -0.77% |
+| 12 jam | TEMBUS atap kisaran, volume ≥1.5x, lebar kisaran ≤10% | TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 12 jam | -0.33% | 1076 | 27.6% | -0.63% |
+| 24 jam | TEMBUS atap kisaran, volume ≥2.5x, lebar kisaran ≤20% | TP atap + tinggi kisaran / SL masuk lagi ke kisaran / maks 24 jam | -0.22% | 1060 | 23.9% | -0.61% |
 
 ## Keterbatasan
 
