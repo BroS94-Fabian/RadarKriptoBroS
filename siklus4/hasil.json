@@ -1,0 +1,1349 @@
+{
+ "dibuat": "2026-11-05T14:19:09+00:00",
+ "dibuat_wib": "5 Nov 2026 21:19 WIB",
+ "sekarang": {
+  "tanggal": "2026-11-04",
+  "harga": 80504.01,
+  "ath": 126199.63,
+  "turun_dari_ath": -36.2,
+  "stage_harian": 3,
+  "fase": "3",
+  "fase_teks": "kenaikan tertahan, harga bolak-balik (distribusi)",
+  "stage_mingguan": 2,
+  "ma30w": 73733.588,
+  "ma30w_slope": 2.19,
+  "ma200": 73231.0857,
+  "ma200w": 67471.86314999999,
+  "hari_sejak_halving": 928,
+  "hari_sejak_puncak": 394,
+  "hari_ke_halving_berikut": 528,
+  "horizon_hari": 88,
+  "tujuan": "2027-01-31",
+  "alt_dari_puncak": -89.3,
+  "alt_puncak_tgl": "2021-05-09"
+ },
+ "siklus": [
+  {
+   "halving": "2016-07-09",
+   "puncak_tgl": "2017-12-17",
+   "puncak": 19798.68,
+   "hari_halving_ke_puncak": 526,
+   "dasar_tgl": "2018-12-15",
+   "dasar": 3156.26,
+   "hari_puncak_ke_dasar": 363,
+   "turun_pct": -84.1,
+   "data_mulai": "2017-08-17"
+  },
+  {
+   "halving": "2020-05-11",
+   "puncak_tgl": "2024-03-14",
+   "puncak": 73777.0,
+   "hari_halving_ke_puncak": 1403,
+   "dasar_tgl": "2024-04-19",
+   "dasar": 59600.01,
+   "hari_puncak_ke_dasar": 36,
+   "turun_pct": -19.2,
+   "data_mulai": "2020-05-11"
+  },
+  {
+   "halving": "2024-04-20",
+   "puncak_tgl": "2025-10-06",
+   "puncak": 126199.63,
+   "hari_halving_ke_puncak": 534,
+   "dasar_tgl": "2026-07-01",
+   "dasar": 57800.19,
+   "hari_puncak_ke_dasar": 268,
+   "turun_pct": -54.2,
+   "data_mulai": "2024-04-20",
+   "dasar_final": false
+  }
+ ],
+ "analog": [
+  {
+   "siklus": "2016",
+   "acuan": "halving",
+   "dari": "2019-01-23",
+   "sampai": "2019-04-21",
+   "harga_dari": 3552.82,
+   "harga_sampai": 5256.14,
+   "hasil": 47.9,
+   "terendah": -5.7,
+   "tertinggi": 52.6,
+   "turun_dari_puncak": -82.1,
+   "dasar_sudah_lewat": true,
+   "stage": 4,
+   "puncak": "2017-12-17"
+  },
+  {
+   "siklus": "2016",
+   "acuan": "puncak",
+   "dari": "2019-01-15",
+   "sampai": "2019-04-13",
+   "harga_dari": 3553.06,
+   "harga_sampai": 5045.22,
+   "hasil": 42.0,
+   "terendah": -5.7,
+   "tertinggi": 52.6,
+   "turun_dari_puncak": -82.1,
+   "dasar_sudah_lewat": true,
+   "stage": 4,
+   "puncak": "2017-12-17"
+  },
+  {
+   "siklus": "2020",
+   "acuan": "halving",
+   "dari": "2022-11-25",
+   "sampai": "2023-02-21",
+   "harga_dari": 16522.14,
+   "harga_sampai": 24452.16,
+   "hasil": 48.0,
+   "terendah": -3.2,
+   "tertinggi": 52.8,
+   "turun_dari_puncak": -77.6,
+   "dasar_sudah_lewat": false,
+   "stage": 4,
+   "puncak": "2024-03-14"
+  },
+  {
+   "siklus": "2020",
+   "acuan": "puncak",
+   "dari": "2025-04-12",
+   "sampai": "2025-07-09",
+   "harga_dari": 85276.9,
+   "harga_sampai": 111233.99,
+   "hasil": 30.4,
+   "terendah": -2.9,
+   "tertinggi": 31.3,
+   "turun_dari_puncak": 15.6,
+   "dasar_sudah_lewat": true,
+   "stage": 3,
+   "puncak": "2024-03-14"
+  }
+ ],
+ "peluang": [
+  {
+   "kondisi": "Semua hari sejak 2017",
+   "btc": {
+    "n": 3279,
+    "bulan": 109,
+    "naik": 54.5,
+    "median": 4.3,
+    "p25": -16.5,
+    "p75": 33.6,
+    "rata": 16.7,
+    "naik_10": 43.9,
+    "turun_10": 34.6
+   },
+   "alt": {
+    "n": 2103,
+    "bulan": 70,
+    "naik": 42.5,
+    "median": -7.9,
+    "p25": -26.3,
+    "p75": 26.8,
+    "rata": 12.2,
+    "naik_10": 34.8,
+    "turun_10": 47.5
+   },
+   "eth": {
+    "n": 2473,
+    "bulan": 82,
+    "naik": 59.3,
+    "median": 10.2,
+    "p25": -17.4,
+    "p75": 44.1,
+    "rata": 20.1,
+    "naik_10": 50.2,
+    "turun_10": 31.6
+   }
+  },
+  {
+   "kondisi": "Stage harian BTC sama (Stage 3)",
+   "btc": {
+    "n": 947,
+    "bulan": 51,
+    "naik": 58.2,
+    "median": 7.4,
+    "p25": -13.6,
+    "p75": 37.9,
+    "rata": 14.7,
+    "naik_10": 47.2,
+    "turun_10": 30.2
+   },
+   "alt": {
+    "n": 720,
+    "bulan": 38,
+    "naik": 48.9,
+    "median": -1.6,
+    "p25": -25.8,
+    "p75": 44.8,
+    "rata": 9.9,
+    "naik_10": 42.4,
+    "turun_10": 41.0
+   },
+   "eth": {
+    "n": 843,
+    "bulan": 45,
+    "naik": 60.1,
+    "median": 17.1,
+    "p25": -21.6,
+    "p75": 46.2,
+    "rata": 17.4,
+    "naik_10": 53.3,
+    "turun_10": 31.3
+   }
+  },
+  {
+   "kondisi": "Stage mingguan BTC sama (Stage 2)",
+   "btc": {
+    "n": 1155,
+    "bulan": 49,
+    "naik": 55.5,
+    "median": 3.4,
+    "p25": -13.6,
+    "p75": 29.2,
+    "rata": 18.2,
+    "naik_10": 40.5,
+    "turun_10": 31.9
+   },
+   "alt": {
+    "n": 899,
+    "bulan": 37,
+    "naik": 40.8,
+    "median": -8.7,
+    "p25": -26.1,
+    "p75": 22.7,
+    "rata": 24.2,
+    "naik_10": 32.8,
+    "turun_10": 48.3
+   },
+   "eth": {
+    "n": 1024,
+    "bulan": 43,
+    "naik": 57.5,
+    "median": 5.8,
+    "p25": -16.2,
+    "p75": 54.0,
+    "rata": 29.4,
+    "naik_10": 47.5,
+    "turun_10": 31.2
+   }
+  },
+  {
+   "kondisi": "Turun 26–46% dari ATH",
+   "btc": {
+    "n": 659,
+    "bulan": 42,
+    "naik": 47.8,
+    "median": -4.1,
+    "p25": -22.1,
+    "p75": 38.5,
+    "rata": 14.0,
+    "naik_10": 41.1,
+    "turun_10": 46.1
+   },
+   "alt": {
+    "n": 499,
+    "bulan": 29,
+    "naik": 37.7,
+    "median": -16.4,
+    "p25": -31.4,
+    "p75": 22.8,
+    "rata": -4.9,
+    "naik_10": 32.5,
+    "turun_10": 57.3
+   },
+   "eth": {
+    "n": 582,
+    "bulan": 34,
+    "naik": 52.2,
+    "median": 3.6,
+    "p25": -26.5,
+    "p75": 41.6,
+    "rata": 14.5,
+    "naik_10": 46.2,
+    "turun_10": 42.8
+   }
+  },
+  {
+   "kondisi": "Harga di bawah MA200 yang menurun",
+   "btc": {
+    "n": 996,
+    "bulan": 41,
+    "naik": 43.3,
+    "median": -7.7,
+    "p25": -21.1,
+    "p75": 25.1,
+    "rata": 4.2,
+    "naik_10": 35.4,
+    "turun_10": 46.5
+   },
+   "alt": {
+    "n": 601,
+    "bulan": 25,
+    "naik": 35.3,
+    "median": -14.2,
+    "p25": -27.8,
+    "p75": 11.9,
+    "rata": -6.9,
+    "naik_10": 26.6,
+    "turun_10": 54.9
+   },
+   "eth": {
+    "n": 703,
+    "bulan": 30,
+    "naik": 48.6,
+    "median": -1.6,
+    "p25": -21.6,
+    "p75": 28.2,
+    "rata": 3.0,
+    "naik_10": 39.7,
+    "turun_10": 40.8
+   }
+  },
+  {
+   "kondisi": "Fase siklus sama: 319–469 hari setelah puncak siklus",
+   "btc": {
+    "n": 302,
+    "bulan": 11,
+    "naik": 85.1,
+    "median": 20.2,
+    "p25": 6.1,
+    "p75": 43.0,
+    "rata": 31.8,
+    "naik_10": 63.9,
+    "turun_10": 8.3
+   },
+   "alt": {
+    "n": 151,
+    "bulan": 6,
+    "naik": 60.9,
+    "median": 4.8,
+    "p25": -4.6,
+    "p75": 14.2,
+    "rata": 4.4,
+    "naik_10": 34.4,
+    "turun_10": 14.6
+   },
+   "eth": {
+    "n": 151,
+    "bulan": 6,
+    "naik": 81.5,
+    "median": 59.0,
+    "p25": 17.1,
+    "p75": 81.3,
+    "rata": 47.0,
+    "naik_10": 78.8,
+    "turun_10": 9.9
+   }
+  },
+  {
+   "kondisi": "Fase siklus sama: 853–1003 hari setelah halving",
+   "btc": {
+    "n": 302,
+    "bulan": 12,
+    "naik": 79.8,
+    "median": 30.7,
+    "p25": 7.7,
+    "p75": 64.7,
+    "rata": 40.5,
+    "naik_10": 71.2,
+    "turun_10": 16.2
+   },
+   "alt": {
+    "n": 151,
+    "bulan": 6,
+    "naik": 53.0,
+    "median": 3.1,
+    "p25": -14.1,
+    "p75": 33.7,
+    "rata": 7.9,
+    "naik_10": 47.0,
+    "turun_10": 27.8
+   },
+   "eth": {
+    "n": 151,
+    "bulan": 6,
+    "naik": 76.8,
+    "median": 20.7,
+    "p25": 1.2,
+    "p75": 35.6,
+    "rata": 18.8,
+    "naik_10": 66.9,
+    "turun_10": 7.9
+   }
+  }
+ ],
+ "musiman": [
+  {
+   "tahun": "04 Nov 2017 → 31 Jan 2018",
+   "btc": 39.8
+  },
+  {
+   "tahun": "04 Nov 2018 → 31 Jan 2019",
+   "btc": -47.1
+  },
+  {
+   "tahun": "04 Nov 2019 → 31 Jan 2020",
+   "btc": -0.4
+  },
+  {
+   "tahun": "04 Nov 2020 → 31 Jan 2021",
+   "btc": 134.0
+  },
+  {
+   "tahun": "04 Nov 2021 → 31 Jan 2022",
+   "btc": -37.3,
+   "alt": -47.9
+  },
+  {
+   "tahun": "04 Nov 2022 → 31 Jan 2023",
+   "btc": 9.3,
+   "alt": -11.2
+  },
+  {
+   "tahun": "04 Nov 2023 → 31 Jan 2024",
+   "btc": 21.4,
+   "alt": 21.7
+  },
+  {
+   "tahun": "04 Nov 2024 → 31 Jan 2025",
+   "btc": 51.0,
+   "alt": 75.6
+  },
+  {
+   "tahun": "04 Nov 2025 → 31 Jan 2026",
+   "btc": -22.4,
+   "alt": -31.7
+  }
+ ],
+ "pasar": {
+  "dasar": 47.2,
+  "naik": 13.4,
+  "puncak": 24.4,
+  "turun": 15.0,
+  "n": 127,
+  "riwayat_bulanan": [
+   {
+    "bulan": "2020-06",
+    "naik": 30.8,
+    "turun": 3.8,
+    "dasar": 46.2
+   },
+   {
+    "bulan": "2020-07",
+    "naik": 77.8,
+    "turun": 0.0,
+    "dasar": 11.1
+   },
+   {
+    "bulan": "2020-08",
+    "naik": 70.4,
+    "turun": 0.0,
+    "dasar": 7.4
+   },
+   {
+    "bulan": "2020-09",
+    "naik": 11.1,
+    "turun": 11.1,
+    "dasar": 11.1
+   },
+   {
+    "bulan": "2020-10",
+    "naik": 18.5,
+    "turun": 0.0,
+    "dasar": 18.5
+   },
+   {
+    "bulan": "2020-11",
+    "naik": 63.0,
+    "turun": 0.0,
+    "dasar": 7.4
+   },
+   {
+    "bulan": "2020-12",
+    "naik": 40.7,
+    "turun": 0.0,
+    "dasar": 18.5
+   },
+   {
+    "bulan": "2021-01",
+    "naik": 96.4,
+    "turun": 0.0,
+    "dasar": 0.0
+   },
+   {
+    "bulan": "2021-02",
+    "naik": 100.0,
+    "turun": 0.0,
+    "dasar": 0.0
+   },
+   {
+    "bulan": "2021-03",
+    "naik": 83.3,
+    "turun": 0.0,
+    "dasar": 2.8
+   },
+   {
+    "bulan": "2021-04",
+    "naik": 90.5,
+    "turun": 0.0,
+    "dasar": 0.0
+   },
+   {
+    "bulan": "2021-05",
+    "naik": 26.1,
+    "turun": 0.0,
+    "dasar": 10.9
+   },
+   {
+    "bulan": "2021-06",
+    "naik": 0.0,
+    "turun": 17.0,
+    "dasar": 31.9
+   },
+   {
+    "bulan": "2021-07",
+    "naik": 6.2,
+    "turun": 10.4,
+    "dasar": 29.2
+   },
+   {
+    "bulan": "2021-08",
+    "naik": 46.9,
+    "turun": 0.0,
+    "dasar": 8.2
+   },
+   {
+    "bulan": "2021-09",
+    "naik": 25.0,
+    "turun": 7.7,
+    "dasar": 19.2
+   },
+   {
+    "bulan": "2021-10",
+    "naik": 26.4,
+    "turun": 3.8,
+    "dasar": 28.3
+   },
+   {
+    "bulan": "2021-11",
+    "naik": 18.5,
+    "turun": 20.4,
+    "dasar": 31.5
+   },
+   {
+    "bulan": "2021-12",
+    "naik": 10.5,
+    "turun": 36.8,
+    "dasar": 24.6
+   },
+   {
+    "bulan": "2022-01",
+    "naik": 1.8,
+    "turun": 77.2,
+    "dasar": 5.3
+   },
+   {
+    "bulan": "2022-02",
+    "naik": 0.0,
+    "turun": 63.8,
+    "dasar": 22.4
+   },
+   {
+    "bulan": "2022-03",
+    "naik": 6.7,
+    "turun": 5.0,
+    "dasar": 70.0
+   },
+   {
+    "bulan": "2022-04",
+    "naik": 3.1,
+    "turun": 62.5,
+    "dasar": 28.1
+   },
+   {
+    "bulan": "2022-05",
+    "naik": 0.0,
+    "turun": 98.4,
+    "dasar": 1.6
+   },
+   {
+    "bulan": "2022-06",
+    "naik": 0.0,
+    "turun": 97.0,
+    "dasar": 3.0
+   },
+   {
+    "bulan": "2022-07",
+    "naik": 0.0,
+    "turun": 49.3,
+    "dasar": 50.7
+   },
+   {
+    "bulan": "2022-08",
+    "naik": 2.9,
+    "turun": 75.0,
+    "dasar": 22.1
+   },
+   {
+    "bulan": "2022-09",
+    "naik": 2.9,
+    "turun": 79.4,
+    "dasar": 14.7
+   },
+   {
+    "bulan": "2022-10",
+    "naik": 2.9,
+    "turun": 63.8,
+    "dasar": 31.9
+   },
+   {
+    "bulan": "2022-11",
+    "naik": 2.9,
+    "turun": 84.1,
+    "dasar": 11.6
+   },
+   {
+    "bulan": "2022-12",
+    "naik": 0.0,
+    "turun": 81.7,
+    "dasar": 15.5
+   },
+   {
+    "bulan": "2023-01",
+    "naik": 26.4,
+    "turun": 0.0,
+    "dasar": 70.8
+   },
+   {
+    "bulan": "2023-02",
+    "naik": 41.7,
+    "turun": 0.0,
+    "dasar": 54.2
+   },
+   {
+    "bulan": "2023-03",
+    "naik": 8.3,
+    "turun": 19.4,
+    "dasar": 58.3
+   },
+   {
+    "bulan": "2023-04",
+    "naik": 12.3,
+    "turun": 17.8,
+    "dasar": 47.9
+   },
+   {
+    "bulan": "2023-05",
+    "naik": 1.3,
+    "turun": 54.7,
+    "dasar": 21.3
+   },
+   {
+    "bulan": "2023-06",
+    "naik": 5.3,
+    "turun": 76.0,
+    "dasar": 5.3
+   },
+   {
+    "bulan": "2023-07",
+    "naik": 13.3,
+    "turun": 12.0,
+    "dasar": 54.7
+   },
+   {
+    "bulan": "2023-08",
+    "naik": 2.7,
+    "turun": 73.3,
+    "dasar": 9.3
+   },
+   {
+    "bulan": "2023-09",
+    "naik": 4.0,
+    "turun": 70.7,
+    "dasar": 13.3
+   },
+   {
+    "bulan": "2023-10",
+    "naik": 15.4,
+    "turun": 11.5,
+    "dasar": 69.2
+   },
+   {
+    "bulan": "2023-11",
+    "naik": 57.7,
+    "turun": 0.0,
+    "dasar": 38.5
+   },
+   {
+    "bulan": "2023-12",
+    "naik": 79.0,
+    "turun": 0.0,
+    "dasar": 12.3
+   },
+   {
+    "bulan": "2024-01",
+    "naik": 24.7,
+    "turun": 8.6,
+    "dasar": 13.6
+   },
+   {
+    "bulan": "2024-02",
+    "naik": 81.9,
+    "turun": 0.0,
+    "dasar": 6.0
+   },
+   {
+    "bulan": "2024-03",
+    "naik": 86.9,
+    "turun": 0.0,
+    "dasar": 3.6
+   },
+   {
+    "bulan": "2024-04",
+    "naik": 8.3,
+    "turun": 20.2,
+    "dasar": 1.2
+   },
+   {
+    "bulan": "2024-05",
+    "naik": 22.6,
+    "turun": 2.4,
+    "dasar": 7.1
+   },
+   {
+    "bulan": "2024-06",
+    "naik": 5.9,
+    "turun": 55.3,
+    "dasar": 4.7
+   },
+   {
+    "bulan": "2024-07",
+    "naik": 11.5,
+    "turun": 29.9,
+    "dasar": 21.8
+   },
+   {
+    "bulan": "2024-08",
+    "naik": 4.6,
+    "turun": 31.0,
+    "dasar": 41.4
+   },
+   {
+    "bulan": "2024-09",
+    "naik": 4.4,
+    "turun": 1.1,
+    "dasar": 74.4
+   },
+   {
+    "bulan": "2024-10",
+    "naik": 8.7,
+    "turun": 34.8,
+    "dasar": 47.8
+   },
+   {
+    "bulan": "2024-11",
+    "naik": 70.2,
+    "turun": 0.0,
+    "dasar": 29.8
+   },
+   {
+    "bulan": "2024-12",
+    "naik": 34.0,
+    "turun": 2.1,
+    "dasar": 56.4
+   },
+   {
+    "bulan": "2025-01",
+    "naik": 6.2,
+    "turun": 12.5,
+    "dasar": 34.4
+   },
+   {
+    "bulan": "2025-02",
+    "naik": 2.1,
+    "turun": 20.8,
+    "dasar": 58.3
+   },
+   {
+    "bulan": "2025-03",
+    "naik": 0.0,
+    "turun": 75.3,
+    "dasar": 12.4
+   },
+   {
+    "bulan": "2025-04",
+    "naik": 2.0,
+    "turun": 27.6,
+    "dasar": 54.1
+   },
+   {
+    "bulan": "2025-05",
+    "naik": 13.1,
+    "turun": 3.0,
+    "dasar": 73.7
+   },
+   {
+    "bulan": "2025-06",
+    "naik": 2.0,
+    "turun": 79.0,
+    "dasar": 10.0
+   },
+   {
+    "bulan": "2025-07",
+    "naik": 22.5,
+    "turun": 6.9,
+    "dasar": 70.6
+   },
+   {
+    "bulan": "2025-08",
+    "naik": 19.2,
+    "turun": 19.2,
+    "dasar": 58.7
+   },
+   {
+    "bulan": "2025-09",
+    "naik": 14.4,
+    "turun": 20.2,
+    "dasar": 48.1
+   },
+   {
+    "bulan": "2025-10",
+    "naik": 6.6,
+    "turun": 79.2,
+    "dasar": 2.8
+   },
+   {
+    "bulan": "2025-11",
+    "naik": 6.5,
+    "turun": 55.6,
+    "dasar": 26.9
+   },
+   {
+    "bulan": "2025-12",
+    "naik": 1.8,
+    "turun": 74.8,
+    "dasar": 14.4
+   },
+   {
+    "bulan": "2026-01",
+    "naik": 4.5,
+    "turun": 72.3,
+    "dasar": 18.8
+   },
+   {
+    "bulan": "2026-02",
+    "naik": 1.8,
+    "turun": 88.4,
+    "dasar": 5.4
+   },
+   {
+    "bulan": "2026-03",
+    "naik": 2.7,
+    "turun": 74.3,
+    "dasar": 21.2
+   },
+   {
+    "bulan": "2026-04",
+    "naik": 4.3,
+    "turun": 17.1,
+    "dasar": 77.8
+   },
+   {
+    "bulan": "2026-05",
+    "naik": 5.8,
+    "turun": 61.2,
+    "dasar": 30.6
+   },
+   {
+    "bulan": "2026-06",
+    "naik": 2.4,
+    "turun": 80.5,
+    "dasar": 13.0
+   },
+   {
+    "bulan": "2026-07",
+    "naik": 0.8,
+    "turun": 58.5,
+    "dasar": 35.0
+   },
+   {
+    "bulan": "2026-08",
+    "naik": 19.2,
+    "turun": 20.0,
+    "dasar": 55.2
+   },
+   {
+    "bulan": "2026-09",
+    "naik": 67.5,
+    "turun": 2.4,
+    "dasar": 27.8
+   },
+   {
+    "bulan": "2026-10",
+    "naik": 20.5,
+    "turun": 8.7,
+    "dasar": 49.6
+   },
+   {
+    "bulan": "2026-11",
+    "naik": 13.4,
+    "turun": 15.0,
+    "dasar": 47.2
+   }
+  ]
+ },
+ "stage_btc_bulanan": [
+  {
+   "bulan": "2017-08",
+   "stage": 0
+  },
+  {
+   "bulan": "2017-09",
+   "stage": 0
+  },
+  {
+   "bulan": "2017-10",
+   "stage": 0
+  },
+  {
+   "bulan": "2017-11",
+   "stage": 0
+  },
+  {
+   "bulan": "2017-12",
+   "stage": 0
+  },
+  {
+   "bulan": "2018-01",
+   "stage": 0
+  },
+  {
+   "bulan": "2018-02",
+   "stage": 0
+  },
+  {
+   "bulan": "2018-03",
+   "stage": 1
+  },
+  {
+   "bulan": "2018-04",
+   "stage": 1
+  },
+  {
+   "bulan": "2018-05",
+   "stage": 3
+  },
+  {
+   "bulan": "2018-06",
+   "stage": 4
+  },
+  {
+   "bulan": "2018-07",
+   "stage": 1
+  },
+  {
+   "bulan": "2018-08",
+   "stage": 1
+  },
+  {
+   "bulan": "2018-09",
+   "stage": 1
+  },
+  {
+   "bulan": "2018-10",
+   "stage": 1
+  },
+  {
+   "bulan": "2018-11",
+   "stage": 4
+  },
+  {
+   "bulan": "2018-12",
+   "stage": 4
+  },
+  {
+   "bulan": "2019-01",
+   "stage": 4
+  },
+  {
+   "bulan": "2019-02",
+   "stage": 1
+  },
+  {
+   "bulan": "2019-03",
+   "stage": 1
+  },
+  {
+   "bulan": "2019-04",
+   "stage": 1
+  },
+  {
+   "bulan": "2019-05",
+   "stage": 2
+  },
+  {
+   "bulan": "2019-06",
+   "stage": 2
+  },
+  {
+   "bulan": "2019-07",
+   "stage": 3
+  },
+  {
+   "bulan": "2019-08",
+   "stage": 3
+  },
+  {
+   "bulan": "2019-09",
+   "stage": 3
+  },
+  {
+   "bulan": "2019-10",
+   "stage": 3
+  },
+  {
+   "bulan": "2019-11",
+   "stage": 3
+  },
+  {
+   "bulan": "2019-12",
+   "stage": 3
+  },
+  {
+   "bulan": "2020-01",
+   "stage": 1
+  },
+  {
+   "bulan": "2020-02",
+   "stage": 2
+  },
+  {
+   "bulan": "2020-03",
+   "stage": 4
+  },
+  {
+   "bulan": "2020-04",
+   "stage": 1
+  },
+  {
+   "bulan": "2020-05",
+   "stage": 1
+  },
+  {
+   "bulan": "2020-06",
+   "stage": 3
+  },
+  {
+   "bulan": "2020-07",
+   "stage": 2
+  },
+  {
+   "bulan": "2020-08",
+   "stage": 2
+  },
+  {
+   "bulan": "2020-09",
+   "stage": 3
+  },
+  {
+   "bulan": "2020-10",
+   "stage": 2
+  },
+  {
+   "bulan": "2020-11",
+   "stage": 2
+  },
+  {
+   "bulan": "2020-12",
+   "stage": 2
+  },
+  {
+   "bulan": "2021-01",
+   "stage": 2
+  },
+  {
+   "bulan": "2021-02",
+   "stage": 2
+  },
+  {
+   "bulan": "2021-03",
+   "stage": 2
+  },
+  {
+   "bulan": "2021-04",
+   "stage": 2
+  },
+  {
+   "bulan": "2021-05",
+   "stage": 3
+  },
+  {
+   "bulan": "2021-06",
+   "stage": 3
+  },
+  {
+   "bulan": "2021-07",
+   "stage": 3
+  },
+  {
+   "bulan": "2021-08",
+   "stage": 2
+  },
+  {
+   "bulan": "2021-09",
+   "stage": 3
+  },
+  {
+   "bulan": "2021-10",
+   "stage": 2
+  },
+  {
+   "bulan": "2021-11",
+   "stage": 3
+  },
+  {
+   "bulan": "2021-12",
+   "stage": 3
+  },
+  {
+   "bulan": "2022-01",
+   "stage": 4
+  },
+  {
+   "bulan": "2022-02",
+   "stage": 1
+  },
+  {
+   "bulan": "2022-03",
+   "stage": 3
+  },
+  {
+   "bulan": "2022-04",
+   "stage": 1
+  },
+  {
+   "bulan": "2022-05",
+   "stage": 4
+  },
+  {
+   "bulan": "2022-06",
+   "stage": 4
+  },
+  {
+   "bulan": "2022-07",
+   "stage": 4
+  },
+  {
+   "bulan": "2022-08",
+   "stage": 4
+  },
+  {
+   "bulan": "2022-09",
+   "stage": 4
+  },
+  {
+   "bulan": "2022-10",
+   "stage": 1
+  },
+  {
+   "bulan": "2022-11",
+   "stage": 4
+  },
+  {
+   "bulan": "2022-12",
+   "stage": 4
+  },
+  {
+   "bulan": "2023-01",
+   "stage": 2
+  },
+  {
+   "bulan": "2023-02",
+   "stage": 2
+  },
+  {
+   "bulan": "2023-03",
+   "stage": 2
+  },
+  {
+   "bulan": "2023-04",
+   "stage": 2
+  },
+  {
+   "bulan": "2023-05",
+   "stage": 3
+  },
+  {
+   "bulan": "2023-06",
+   "stage": 2
+  },
+  {
+   "bulan": "2023-07",
+   "stage": 2
+  },
+  {
+   "bulan": "2023-08",
+   "stage": 3
+  },
+  {
+   "bulan": "2023-09",
+   "stage": 3
+  },
+  {
+   "bulan": "2023-10",
+   "stage": 2
+  },
+  {
+   "bulan": "2023-11",
+   "stage": 2
+  },
+  {
+   "bulan": "2023-12",
+   "stage": 2
+  },
+  {
+   "bulan": "2024-01",
+   "stage": 3
+  },
+  {
+   "bulan": "2024-02",
+   "stage": 2
+  },
+  {
+   "bulan": "2024-03",
+   "stage": 2
+  },
+  {
+   "bulan": "2024-04",
+   "stage": 3
+  },
+  {
+   "bulan": "2024-05",
+   "stage": 2
+  },
+  {
+   "bulan": "2024-06",
+   "stage": 3
+  },
+  {
+   "bulan": "2024-07",
+   "stage": 2
+  },
+  {
+   "bulan": "2024-08",
+   "stage": 3
+  },
+  {
+   "bulan": "2024-09",
+   "stage": 3
+  },
+  {
+   "bulan": "2024-10",
+   "stage": 2
+  },
+  {
+   "bulan": "2024-11",
+   "stage": 2
+  },
+  {
+   "bulan": "2024-12",
+   "stage": 2
+  },
+  {
+   "bulan": "2025-01",
+   "stage": 2
+  },
+  {
+   "bulan": "2025-02",
+   "stage": 3
+  },
+  {
+   "bulan": "2025-03",
+   "stage": 3
+  },
+  {
+   "bulan": "2025-04",
+   "stage": 3
+  },
+  {
+   "bulan": "2025-05",
+   "stage": 2
+  },
+  {
+   "bulan": "2025-06",
+   "stage": 3
+  },
+  {
+   "bulan": "2025-07",
+   "stage": 2
+  },
+  {
+   "bulan": "2025-08",
+   "stage": 3
+  },
+  {
+   "bulan": "2025-09",
+   "stage": 3
+  },
+  {
+   "bulan": "2025-10",
+   "stage": 3
+  },
+  {
+   "bulan": "2025-11",
+   "stage": 4
+  },
+  {
+   "bulan": "2025-12",
+   "stage": 4
+  },
+  {
+   "bulan": "2026-01",
+   "stage": 4
+  },
+  {
+   "bulan": "2026-02",
+   "stage": 4
+  },
+  {
+   "bulan": "2026-03",
+   "stage": 4
+  },
+  {
+   "bulan": "2026-04",
+   "stage": 1
+  },
+  {
+   "bulan": "2026-05",
+   "stage": 4
+  },
+  {
+   "bulan": "2026-06",
+   "stage": 4
+  },
+  {
+   "bulan": "2026-07",
+   "stage": 1
+  },
+  {
+   "bulan": "2026-08",
+   "stage": 2
+  },
+  {
+   "bulan": "2026-09",
+   "stage": 2
+  },
+  {
+   "bulan": "2026-10",
+   "stage": 3
+  },
+  {
+   "bulan": "2026-11",
+   "stage": 3
+  }
+ ],
+ "koin": 131,
+ "koin_indeks": 46
+}
