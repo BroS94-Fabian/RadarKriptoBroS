@@ -1,0 +1,45 @@
+name: Analisa Siklus 4 Tahun
+
+on:
+  workflow_dispatch:
+    inputs:
+      tujuan:
+        description: "Tanggal tujuan perhitungan peluang (YYYY-MM-DD)"
+        default: "2027-01-31"
+  schedule:
+    - cron: "37 1 * * 1"   # tiap Senin 08.37 WIB (diperbarui mingguan)
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radar-siklus4
+  cancel-in-progress: false
+
+jobs:
+  siklus:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Pasang library
+        run: pip install -r requirements.txt
+
+      - name: Analisa siklus
+        env:
+          CMC_API_KEY: ${{ secrets.CMC_API_KEY }}
+        run: python siklus_4tahun.py --tujuan "${{ github.event.inputs.tujuan || '2027-01-31' }}"
+
+      - name: Simpan hasil
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add siklus4/
+          git commit -m "siklus 4 tahun: perbarui hasil" || exit 0
+          for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done
