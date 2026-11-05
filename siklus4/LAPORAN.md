@@ -1,6 +1,6 @@
 # 🔄 Siklus 4 Tahun Kripto
 
-Dibuat 5 Nov 2026 21:22 WIB · BTC sejak 2017-08-17 · 131 koin lain sejak akhir 2019 · horizon 88 hari (s/d 2027-01-31)
+Dibuat 5 Nov 2026 21:33 WIB · BTC sejak 2011-08-18 · 131 koin lain sejak akhir 2019 · horizon 88 hari (s/d 2027-01-31)
 
 ![grafik](grafik.png)
 
@@ -19,16 +19,32 @@ Dibuat 5 Nov 2026 21:22 WIB · BTC sejak 2017-08-17 · 131 koin lain sejak akhir
 
 | Halving | Puncak | Hari halving→puncak | Dasar | Hari puncak→dasar | Turun |
 |---|---|---|---|---|---|
+| 2012-11-28 | 2013-11-30 · $1.163 | 367 | 2015-01-14 · $152 | 410 | -86,9% |
 | 2016-07-09 | 2017-12-17 · $19.799 | 526 | 2018-12-15 · $3.156 | 363 | -84,1% |
 | 2020-05-11 | 2021-11-10 · $69.000 | 548 | 2022-11-21 · $15.476 | 376 | -77,6% |
 | 2024-04-20 | 2025-10-06 · $126.200 | 534 | 2026-07-01 · $57.800 (terendah sejauh ini) | 268 | -54,2% |
 
-Catatan: data Binance baru mulai 2017-08-17, jadi siklus 2016 dihitung dari tanggal itu.
+Data BTC mulai 2011-08-18 (Bitstamp sebelum Agustus 2017, Binance sesudahnya).
+
+## Perbandingan antar siklus
+
+![perbandingan](perbandingan.png)
+
+| Siklus | Harga saat halving | Puncak | Naik halving→puncak | Naik dari dasar sebelumnya | Hari halving→puncak | Turun puncak→dasar | Hari puncak→dasar | Pulih 126 hari setelah dasar | 394 hari setelah puncak | Kemiripan bentuk vs sekarang (dari halving / dari puncak) |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 2012 | $12 | $1.163 (2013-11-30) | 95.2× | - | 367 | -86,9% | 410 | +53,8% | -73,1% | 0.55 / 0.26 |
+| 2016 | $648 | $19.799 (2017-12-17) | 30.6× | 129.9× | 526 | -84,1% | 363 | +67,7% | -82,1% | 0.41 / 0.34 |
+| 2020 | $8.562 | $69.000 (2021-11-10) | 8.1× | 21.9× | 548 | -77,6% | 376 | +75,3% | -75,2% | 0.73 / 0.75 |
+| 2024 | $64.941 | $126.200 (2025-10-06) | 1.9× | 8.2× | 534 | -54,2% (sejauh ini) | 268 | +39,3% | -36,2% | - / - |
+
+Kemiripan = korelasi bentuk grafik (log harga), 1 = identik, 0 = tidak mirip. Siklus lengkap satu sama lain (halving → ±1.300 hari): 2012 vs 2016 = 0.82; 2012 vs 2020 = 0.72; 2016 vs 2020 = 0.61
 
 ## Posisi yang sama di siklus sebelumnya (horizon 88 hari)
 
 | Siklus | Disejajarkan dari | Periode | Turun dari puncak saat itu | Dasar sudah lewat? | Hasil | Terendah | Tertinggi |
 |---|---|---|---|---|---|---|---|
+| 2012 | halving | 2015-06-14 → 2015-09-10 | -80,0% | ya | **+2,8%** | -14,6% | +37,0% |
+| 2012 | puncak | 2014-12-29 → 2015-03-27 | -73,1% | belum | **-20,8%** | -51,3% | +2,6% |
 | 2016 | halving | 2019-01-23 → 2019-04-21 | -82,1% | ya | **+47,9%** | -5,7% | +52,6% |
 | 2016 | puncak | 2019-01-15 → 2019-04-13 | -82,1% | ya | **+42,0%** | -5,7% | +52,6% |
 | 2020 | halving | 2022-11-25 → 2023-02-21 | -76,1% | ya | **+48,0%** | -3,2% | +52,8% |
@@ -40,25 +56,25 @@ Setiap hari dalam sejarah dengan kondisi serupa dihitung hasilnya H hari kemudia
 
 | Kondisi | Aset | Hari (bulan) | Peluang naik | Median | Kisaran tengah (25–75%) | Naik ≥10% | Turun ≥10% |
 |---|---|---|---|---|---|---|---|
-| Semua hari sejak 2017 | BTC | 3279 (109) | **54.5%** | +4,3% | -16,5% s/d +33,6% | 43.9% | 34.6% |
-| Semua hari sejak 2017 | Altcoin | 2103 (70) | **42.5%** | -7,9% | -26,3% s/d +26,8% | 34.8% | 47.5% |
-| Semua hari sejak 2017 | ETH | 2473 (82) | **59.3%** | +10,2% | -17,4% s/d +44,1% | 50.2% | 31.6% |
-| Stage harian BTC sama (Stage 3) | BTC | 947 (51) | **58.2%** | +7,4% | -13,6% s/d +37,9% | 47.2% | 30.2% |
+| Semua hari sejak 2011 | BTC | 5470 (181) | **59.8%** | +10,3% | -14,0% s/d +47,0% | 50.2% | 29.7% |
+| Semua hari sejak 2011 | Altcoin | 2103 (70) | **42.5%** | -7,9% | -26,3% s/d +26,8% | 34.8% | 47.5% |
+| Semua hari sejak 2011 | ETH | 2473 (82) | **59.3%** | +10,2% | -17,4% s/d +44,1% | 50.2% | 31.6% |
+| Stage harian BTC sama (Stage 3) | BTC | 1506 (79) | **60.0%** | +11,9% | -15,0% s/d +40,4% | 51.3% | 30.5% |
 | Stage harian BTC sama (Stage 3) | Altcoin | 720 (38) | **48.9%** | -1,6% | -25,8% s/d +44,8% | 42.4% | 41.0% |
 | Stage harian BTC sama (Stage 3) | ETH | 843 (45) | **60.1%** | +17,1% | -21,6% s/d +46,2% | 53.3% | 31.3% |
-| Stage mingguan BTC sama (Stage 2) | BTC | 1155 (49) | **55.5%** | +3,4% | -13,6% s/d +29,2% | 40.5% | 31.9% |
+| Stage mingguan BTC sama (Stage 2) | BTC | 2625 (99) | **66.1%** | +17,5% | -9,0% s/d +64,0% | 55.9% | 23.8% |
 | Stage mingguan BTC sama (Stage 2) | Altcoin | 899 (37) | **40.8%** | -8,7% | -26,1% s/d +22,7% | 32.8% | 48.3% |
 | Stage mingguan BTC sama (Stage 2) | ETH | 1024 (43) | **57.5%** | +5,8% | -16,2% s/d +54,0% | 47.5% | 31.2% |
-| Turun 26–46% dari ATH | BTC | 659 (42) | **47.8%** | -4,1% | -22,1% s/d +38,5% | 41.1% | 46.1% |
+| Turun 26–46% dari ATH | BTC | 1020 (68) | **51.1%** | +1,1% | -21,8% s/d +39,8% | 45.3% | 40.2% |
 | Turun 26–46% dari ATH | Altcoin | 499 (29) | **37.7%** | -16,4% | -31,4% s/d +22,8% | 32.5% | 57.3% |
 | Turun 26–46% dari ATH | ETH | 582 (34) | **52.2%** | +3,6% | -26,5% s/d +41,6% | 46.2% | 42.8% |
-| Harga di bawah MA200 yang menurun | BTC | 996 (41) | **43.3%** | -7,7% | -21,1% s/d +25,1% | 35.4% | 46.5% |
+| Harga di bawah MA200 yang menurun | BTC | 1377 (57) | **40.4%** | -8,2% | -22,2% s/d +19,2% | 31.3% | 47.3% |
 | Harga di bawah MA200 yang menurun | Altcoin | 601 (25) | **35.3%** | -14,2% | -27,8% s/d +11,9% | 26.6% | 54.9% |
 | Harga di bawah MA200 yang menurun | ETH | 703 (30) | **48.6%** | -1,6% | -21,6% s/d +28,2% | 39.7% | 40.8% |
-| Fase siklus sama: 319–469 hari setelah puncak siklus | BTC | 302 (11) | **81.8%** | +29,3% | +9,2% s/d +61,4% | 72.8% | 14.6% |
+| Fase siklus sama: 319–469 hari setelah puncak siklus | BTC | 453 (17) | **60.0%** | +9,7% | -15,4% s/d +44,3% | 49.2% | 31.3% |
 | Fase siklus sama: 319–469 hari setelah puncak siklus | Altcoin | 151 (6) | **53.0%** | +3,1% | -12,5% s/d +33,7% | 47.0% | 27.8% |
 | Fase siklus sama: 319–469 hari setelah puncak siklus | ETH | 151 (6) | **86.1%** | +20,8% | +8,4% s/d +35,6% | 71.5% | 2.0% |
-| Fase siklus sama: 853–1003 hari setelah halving | BTC | 302 (12) | **79.8%** | +30,7% | +7,7% s/d +64,7% | 71.2% | 16.2% |
+| Fase siklus sama: 853–1003 hari setelah halving | BTC | 453 (18) | **74.2%** | +19,6% | -1,5% s/d +47,9% | 62.3% | 14.1% |
 | Fase siklus sama: 853–1003 hari setelah halving | Altcoin | 151 (6) | **53.0%** | +3,1% | -14,1% s/d +33,7% | 47.0% | 27.8% |
 | Fase siklus sama: 853–1003 hari setelah halving | ETH | 151 (6) | **76.8%** | +20,7% | +1,2% s/d +35,6% | 66.9% | 7.9% |
 
