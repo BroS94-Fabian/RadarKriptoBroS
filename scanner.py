@@ -80,6 +80,10 @@ DEFAULT_CONFIG = {
     "filter_stage_naik": [],
     "filter_stage_turun": [],
     "min_checklist": 0,
+    "sinyal_stage2": True,
+    "stage2_filter_pasar": "ketat",
+    "stage2_maks_grafik": 5,
+    "stage2_jeda_hari": 10,
     "rencana": dict(ST.DEFAULT_RENCANA),
     "modal_rp": 0,
     "risiko_per_transaksi_persen": 1,
@@ -631,6 +635,44 @@ def caption(r: dict, cfg: dict, dash: str) -> str:
         head.remove(buang.pop(0))
 
 
+def caption_stage2(r: dict, cfg: dict, dash: str) -> str:
+    """Alert 🟩 awal Stage 2 (lolos backtest: BTC tren naik, bukan meme, rencana TP1 5%/TP2 10%/SL 12%)."""
+    e = html.escape
+    q = cfg["quote"]
+    sk, rc, ck = r.get("siklus") or {}, r["stage2"]["rencana"], r.get("checklist")
+    dari = {1: "Stage 1 Dasar", 3: "Stage 3 Puncak", 4: "Stage 4 Turun"}.get(sk.get("sebelum"), "stage sebelumnya")
+    rank = f" · #{r['rank']} CMC" if r.get("rank") else ""
+    L = [f"🟩 <b>AWAL STAGE 2 · {e(r['base'])}/{q}</b>{rank}",
+         f"💰 {fmt_price(r['price'])} | 24j {fmt_pct(r['chg24'])} | 7h {fmt_pct(r['chg7'])} | 30h {fmt_pct(r['chg30'])}",
+         f"🔄 Hari ini resmi masuk <b>Stage 2 · Naik</b> (dari {dari}). MA{sk.get('ma_n', 200)} {e(sk.get('ma_arah', '-'))}, "
+         f"harga {fmt_pct(sk.get('jarak_ma'))} dari MA.",
+         f"📋 Rencana: TP1 {fmt_price(rc['tp1'])} ({fmt_pct(rc['tp1_pct'])}, jual {rc['porsi_tp1'] * 100:.0f}%) · "
+         f"TP2 {fmt_price(rc['tp2'])} ({fmt_pct(rc['tp2_pct'])}) · SL {fmt_price(rc['sl'])} ({fmt_pct(rc['sl_pct'])}) · "
+         f"maks {rc['maks_hari']} hari"]
+    if rc.get("posisi_rp"):
+        L.append(f"💼 Ukuran posisi ±Rp{rc['posisi_rp']:,.0f} (rugi maks ±Rp{rc['risiko_rp']:,.0f})".replace(",", "."))
+    vo = sk.get("volume") or {}
+    if vo.get("teks"):
+        L.append(f"🔊 {e(vo['teks'])}")
+    fb = sk.get("fib")
+    if fb:
+        L.append(f"🧭 Kalau mau menunggu pullback: zona Fibonacci {fmt_price(fb['f618'])}–{fmt_price(fb['f382'])}")
+    if ck:
+        L.append(f"☑️ Checklist {ck['cocok']}/6: {e(ck['teks'])}")
+    L.append("📈 <i>Backtest Okt 2024–Okt 2026 (BTC tren naik, bukan meme): 260 sinyal, menang 81%, "
+             "rata-rata bersih +1,85%; lebih baik ±1% dari beli acak di minggu yang sama.</i>")
+    links = []
+    if r.get("link"):
+        links.append(f'<a href="{e(r["link"])}">TradingView</a>')
+    if dash:
+        links.append(f'<a href="{e(dash)}">Dashboard</a>')
+    if links:
+        L.append(" · ".join(links))
+    while len("\n".join(L)) > 1020 and len(L) > 4:
+        L.pop(-2 if not links else -3)
+    return "\n".join(L)
+
+
 REZIM_IKON = {"naik": "📈 NAIK", "turun": "📉 TURUN", "netral": "➖ SIDEWAYS"}
 
 
@@ -689,7 +731,7 @@ def baris_ringkas(r: dict) -> str:
             + (f" → {fmt_pct(t['pct'])}" if t else ""))
 
 
-def summary_text(results, now, src_rank, dash, rk=None, rz=None, ps=None, btc_st=None) -> str:
+def summary_text(results, now, src_rank, dash, rk=None, rz=None, ps=None, btc_st=None, stage2=None) -> str:
     w = now.astimezone(WIB)
     naik = sorted([r for r in results if r["kelas"] == "naik"], key=lambda r: -r["skor_naik"])
     turun = sorted([r for r in results if r["kelas"] == "turun"], key=lambda r: -r["skor_turun"])
@@ -710,6 +752,11 @@ def summary_text(results, now, src_rank, dash, rk=None, rz=None, ps=None, btc_st
     lines += [baris_ringkas(r) for r in naik[:10]] or ["• (belum ada)"]
     lines.append(f"\n🔴 <b>Potensi turun ({len(turun)})</b>")
     lines += [baris_ringkas(r) for r in turun[:10]] or ["• (belum ada)"]
+    if stage2 is not None:
+        lolos = [r for r in stage2 if not r["stage2"]["ditahan"]]
+        lines.append(f"\n🟩 <b>Awal Stage 2 hari ini ({len(lolos)})</b>")
+        lines += [f"• <b>{html.escape(r['base'])}</b> (#{r['rank']}) {fmt_price(r['price'])}" for r in lolos[:10]] or [
+            "• (belum ada" + (f"; {len(stage2)} koin ditahan karena BTC tidak tren naik)" if stage2 else ")")]
     rt = rekam.rekap_teks(rk or {})
     if rt:
         lines.append(f"\n📈 <b>Rekam jejak {rk['hari']} hari</b>")
@@ -956,6 +1003,26 @@ def main() -> int:
     print(f"Pasar BTC: {rz['rezim']} ({rz['teks']}) · {tertahan} sinyal ditahan filter")
     ps = peta_siklus(results)
     btc_st = teks_btc_stage(r_btc)
+    # Sinyal 🟩 awal Stage 2 (hari pertama Stage 2 terkonfirmasi pada candle harian terakhir)
+    stage2 = []
+    if cfg.get("sinyal_stage2", True):
+        for r in results:
+            sk = r.get("siklus") or {}
+            if not sk.get("baru_stage2") or r.get("meme"):
+                continue
+            plan = ST.rencana(float(r["price"]), "naik", None, None, r["indikator"].get("atr_pct"), R)
+            plan.update(ST.ukuran_posisi(plan, cfg))
+            fp = str(cfg.get("stage2_filter_pasar", "ketat")).lower()
+            ditahan = None
+            if fp == "ketat" and rz["rezim"] != "naik":
+                ditahan = "ditahan: pasar BTC tidak sedang tren naik"
+            elif fp in ("true", "longgar") and rz["rezim"] == "turun":
+                ditahan = "ditahan: pasar BTC sedang tren turun"
+            tgl = str(r["_g"]["dc"]["time"].iloc[-1])[:10]
+            r["stage2"] = dict(rencana=plan, ditahan=ditahan, tanggal=tgl)
+            stage2.append(r)
+        stage2.sort(key=lambda r: r.get("rank") or 9999)
+        print(f"Awal Stage 2: {len(stage2)} koin ({sum(1 for r in stage2 if not r['stage2']['ditahan'])} lolos filter pasar)")
     print(teks_peta(ps))
     if os.environ.get("GITHUB_ACTIONS"):
         print(f"::notice title=Siklus 4 stage::{teks_peta(ps)} · BTC {((r_btc or {}).get('siklus') or {}).get('nama', '-')}"
@@ -988,6 +1055,11 @@ def main() -> int:
     naik = sorted([r for r in results if r["kelas"] == "naik"], key=lambda r: -r["skor_naik"])
     turun = sorted([r for r in results if r["kelas"] == "turun"], key=lambda r: -r["skor_turun"])
     kandidat = naik + (turun if cfg["kirim_alert_turun"] else [])
+    st2 = state.setdefault("stage2", {})
+    jeda2 = timedelta(days=int(cfg.get("stage2_jeda_hari", 10)))
+    alert2 = [r for r in stage2 if not r["stage2"]["ditahan"] and (demo or not (
+        r["symbol"] in st2 and (st2[r["symbol"]].get("tanggal") == r["stage2"]["tanggal"]
+                                or now - datetime.fromisoformat(st2[r["symbol"]]["ts"]) < jeda2)))]
     alerts = kandidat if demo else [r for r in kandidat if perlu_alert(r, state, cfg, now)]
 
     # Grafik: semua koin naik/turun (untuk dashboard), dibatasi jumlahnya
@@ -995,9 +1067,10 @@ def main() -> int:
     charts: dict[str, bytes] = {}
     pantau = sorted([r for r in results if r["kelas"].startswith("pantau")],
                     key=lambda r: -max(r["skor_naik"], r["skor_turun"]))
-    for r in (naik + turun + pantau)[: int(cfg["maks_grafik_dashboard"])]:
+    for r in (naik + turun + [x for x in stage2 if x not in naik] + pantau)[: int(cfg["maks_grafik_dashboard"])]:
         try:
-            charts[r["symbol"]] = buat_grafik(r, cfg["quote"], src_harga, waktu)
+            rg = dict(r, _chip="stage2") if r.get("stage2") and r["kelas"] not in ("naik", "turun") else r
+            charts[r["symbol"]] = buat_grafik(rg, cfg["quote"], src_harga, waktu)
         except Exception as e:
             print(f"  ! grafik {r['base']} gagal: {e}")
 
@@ -1024,6 +1097,31 @@ def main() -> int:
     else:
         print("Tidak ada koin yang memenuhi syarat pada putaran ini.")
 
+    if alert2:
+        tg.send_text(f"🟩 <b>Sinyal Awal Stage 2</b> · {now_wib_str(now)}\n"
+                     f"{len(alert2)} koin hari ini resmi masuk tren naik (Stage 1 → 2) saat BTC "
+                     f"{REZIM_IKON.get(rz['rezim'], rz['rezim'])}.\n"
+                     + (f"{btc_st}\n" if btc_st else "") + teks_peta(ps) +
+                     "\n<i>Sinyal ini lolos uji historis, tapi bukan jaminan. Bukan ajakan beli/jual.</i>")
+        m2 = int(cfg.get("stage2_maks_grafik", 5))
+        for r in alert2[:m2]:
+            png = charts.get(r["symbol"]) or buat_grafik(dict(r, _chip="stage2"), cfg["quote"], src_harga, waktu)
+            tg.send_photo(png, caption_stage2(r, cfg, dash))
+        if alert2[m2:]:
+            tg.send_text("Koin lain yang juga baru masuk Stage 2:\n" + "\n".join(
+                f"• <b>{html.escape(r['base'])}</b> (#{r['rank']}) {fmt_price(r['price'])} · TP1 "
+                f"{fmt_price(r['stage2']['rencana']['tp1'])} · SL {fmt_price(r['stage2']['rencana']['sl'])}"
+                for r in alert2[m2:m2 + 25]))
+        for r in alert2:
+            rc = r["stage2"]["rencana"]
+            rek = dict(r, kelas="naik", pola_naik=None, rencana=rc,
+                       target=dict(harga=rc["tp2"], pct=rc["tp2_pct"]), batal=dict(harga=rc["sl"], pct=rc["sl_pct"]))
+            rekam.catat(state, rek, now, r_btc, jenis="stage2")
+            if not demo:
+                st2[r["symbol"]] = dict(tanggal=r["stage2"]["tanggal"], ts=now.isoformat(timespec="seconds"))
+    st2_batas = now - timedelta(days=40)
+    state["stage2"] = {k: v for k, v in st2.items() if datetime.fromisoformat(v["ts"]) >= st2_batas}
+
     riw = sorted(state.get("riwayat", []), key=lambda e: e["ts"], reverse=True)
     rk = rekam.rekap(riw, now)
     if os.environ.get("GITHUB_ACTIONS"):
@@ -1033,7 +1131,8 @@ def main() -> int:
     w = now.astimezone(WIB)
     today = w.date().isoformat()
     if demo or (w.hour >= int(cfg["ringkasan_harian_jam_wib"]) and state.get("last_summary") != today):
-        tg.send_text(summary_text(results, now, src_rank, dash, rk, rz, ps, btc_st))
+        tg.send_text(summary_text(results, now, src_rank, dash, rk, rz, ps, btc_st,
+                                  stage2 if cfg.get("sinyal_stage2", True) else None))
         if not demo:
             state["last_summary"] = today
 
@@ -1041,7 +1140,7 @@ def main() -> int:
                 sumber_harga=src_harga, jumlah=len(results), top_n=int(cfg["top_n"]),
                 tidak_tersedia=tidak_ada, dashboard=dash, demo=demo,
                 ambang=dict(skor_min=cfg["skor_min"], selisih_min=cfg["selisih_min"]),
-                pasar=rz, tertahan=tertahan, siklus=ps,
+                pasar=rz, tertahan=tertahan, siklus=ps, stage2_aktif=bool(cfg.get("sinyal_stage2", True)),
                 btc_siklus=(r_btc or {}).get("siklus"),
                 filter=dict(pasar=cfg["filter_pasar"], meme=cfg["filter_meme"], breakout=cfg["wajib_breakout"],
                             min_rr=cfg["min_rr"], stage_naik=cfg["filter_stage_naik"],

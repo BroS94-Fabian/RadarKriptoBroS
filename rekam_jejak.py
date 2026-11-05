@@ -42,11 +42,13 @@ def _entri(r: dict, kelas: str, ts: str, harga: float, **extra) -> dict:
     return e
 
 
-def catat(state: dict, r: dict, now: datetime, r_btc: dict | None = None) -> bool:
-    """Catat alert baru. Satu koin+arah hanya punya satu catatan yang 'berjalan'."""
+def catat(state: dict, r: dict, now: datetime, r_btc: dict | None = None, jenis: str = "radar") -> bool:
+    """Catat alert baru. Satu koin+arah+jenis hanya punya satu catatan yang 'berjalan'.
+    jenis: "radar" (sinyal skor) atau "stage2" (sinyal awal Stage 2)."""
     riw = state.setdefault("riwayat", [])
     kelas = r["kelas"]
-    if any(e["symbol"] == r["symbol"] and e["kelas"] == kelas and e["hasil"] == "berjalan" for e in riw):
+    if any(e["symbol"] == r["symbol"] and e["kelas"] == kelas and e.get("jenis", "radar") == jenis
+           and e["hasil"] == "berjalan" for e in riw):
         return False
     P = r["pola_naik" if kelas == "naik" else "pola_turun"]
     t, b = r.get("target"), r.get("batal")
@@ -55,7 +57,7 @@ def catat(state: dict, r: dict, now: datetime, r_btc: dict | None = None) -> boo
         skor=r["skor_naik"] if kelas == "naik" else r["skor_turun"], pola=P["nama"] if P else None,
         target=t["harga"] if t else None, target_pct=t["pct"] if t else None,
         batal=b["harga"] if b else None, batal_pct=b["pct"] if b else None,
-        rencana=_rencana_json(r.get("rencana")),
+        rencana=_rencana_json(r.get("rencana")), jenis=jenis,
         btc_harga=_r(float(r_btc["price"])) if r_btc else None))
     return True
 
@@ -179,12 +181,15 @@ def perbarui(state: dict, res_map: dict, now: datetime, cfg: dict | None = None,
 
 def rekap(riw: list, now: datetime, hari: int = 7) -> dict:
     out = {"hari": hari}
-    for kelas in ("naik", "turun"):
-        E = [e for e in riw if e["kelas"] == kelas and now - _ts(e["ts"]) <= timedelta(days=hari)]
+    for kelas in ("naik", "turun", "stage2"):
+        jenis = "stage2" if kelas == "stage2" else "radar"
+        kls = "naik" if kelas == "stage2" else kelas
+        E = [e for e in riw if e["kelas"] == kls and e.get("jenis", "radar") == jenis
+             and now - _ts(e["ts"]) <= timedelta(days=hari)]
         if not E:
             out[kelas] = dict(n=0)
             continue
-        sgn = 1 if kelas == "naik" else -1
+        sgn = -1 if kelas == "turun" else 1
         chg = np.array([e["chg"] or 0.0 for e in E])
         benar = int(np.sum(sgn * chg > 0))
         best = max(E, key=lambda e: sgn * (e["chg"] or 0))
@@ -209,11 +214,11 @@ def rekap(riw: list, now: datetime, hari: int = 7) -> dict:
 
 def rekap_teks(rk: dict) -> list[str]:
     lines = []
-    for kelas, ikon, kata in (("naik", "🟢", "naik"), ("turun", "🔴", "turun")):
+    for kelas, ikon, kata in (("naik", "🟢", "naik"), ("turun", "🔴", "turun"), ("stage2", "🟩", "naik")):
         x = rk.get(kelas, {})
         if not x.get("n"):
             continue
-        lines.append(f"{ikon} {x['benar']}/{x['n']} alert bergerak {kata} ({x['persen']}%), rata-rata "
+        lines.append(f"{ikon} {x['benar']}/{x['n']} alert{' awal Stage 2' if kelas == 'stage2' else ''} bergerak {kata} ({x['persen']}%), rata-rata "
                      f"{fmt_pct(x['rata'])} · kena target {x['target']} · kena batal {x['batal']}")
         if x.get("rencana"):
             rc = x["rencana"]

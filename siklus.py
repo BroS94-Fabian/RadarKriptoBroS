@@ -234,7 +234,8 @@ def analisa(o, h, l, c, v, price: float) -> dict:
     stg = int(F["stage"][j])
     kode, teks = fase(F, j, float(c[j]))
     out = dict(stage=stg, nama=NAMA[stg], arti=ARTI[stg], ikon=IKON[stg], fase=kode, teks=teks,
-               saran=SARAN.get(kode, ""), umur=int(F["umur"][j]), sebelum=int(F["prev"][j]), ma_n=F["ma_n"])
+               saran=SARAN.get(kode, ""), umur=int(F["umur"][j]), sebelum=int(F["prev"][j]), ma_n=F["ma_n"],
+               baru_stage2=bool(stg == 2 and j >= 1 and F["stage"][j - 1] != 2))
     if stg:
         sl = F["slope_l"][j]
         thr = F["thr"][j]

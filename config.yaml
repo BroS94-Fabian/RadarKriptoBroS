@@ -57,6 +57,19 @@ min_rr: 0                       # rasio TP2 : SL minimal (0 = tidak dicek)
 filter_stage_naik: []
 filter_stage_turun: []
 min_checklist: 0                # minimal butir checklist yang cocok (Siklus, Tren, S&R, Pola, Candle, Volume), 0 = tidak dicek
+# Hasil backtest Okt 2024–Okt 2026: filter stage di atas justru MENURUNKAN hasil sinyal 🟢 radar
+# (+2,2% → ±0% per sinyal), karena sinyal radar terbaik muncul di awal Stage 4 (pantulan). Jadi dibiarkan kosong.
+
+# ---- Sinyal 🟩 AWAL STAGE 2 (alert terpisah dari sinyal 🟢 skor) ----
+# Koin yang HARI INI resmi masuk Stage 2 (tren naik terkonfirmasi), bukan meme, saat BTC tren naik.
+# Rencana jual = bagian "rencana" di bawah (bawaan: 50% di +5%, sisa di +10%, SL −12%, maks 30 hari).
+# Backtest Okt 2024–Okt 2026: 260 sinyal, menang 81%, rata-rata bersih +1,85%
+#   periode 1 +1,80% · periode 2 +1,91% · lebih baik ±1% dari beli acak di minggu yang sama.
+# Catatan: sinyal datang bergerombol saat pasar ramai (bisa >10 koin sehari) → batasi jumlah posisi sendiri.
+sinyal_stage2: true
+stage2_filter_pasar: ketat      # ketat = hanya saat BTC tren naik (hasil backtest) · longgar = kecuali BTC tren turun · false
+stage2_maks_grafik: 5           # maks. alert bergrafik per putaran (sisanya daftar singkat)
+stage2_jeda_hari: 10            # koin yang sama tidak dikirim ulang selama X hari
 
 # ---- Rencana jual untuk setiap sinyal ----
 # TP1 = ambil untung sebagian, lalu stop loss sisa posisi dipindah ke harga beli.
