@@ -34,6 +34,7 @@ import pandas as pd
 
 import analisa as A
 import scanner as S
+import siklus as SK
 import strategi as ST
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "backtest")
@@ -41,6 +42,7 @@ HARI_MIN = 260      # butuh MA200 + ruang analisa
 JENDELA = 400       # jumlah candle yang dianalisa per hari (sama seperti radar)
 JEDA = 10           # setelah sinyal, koin & arah yang sama tidak dihitung lagi selama 10 hari
 TAHAN = 30          # horizon maksimum simulasi
+TAHAN_SIKLUS = 180  # horizon maksimum aturan "ikuti siklus"
 
 # nama: (keterangan, rencana, pakai target/batal pola)
 ATURAN = {
@@ -110,6 +112,11 @@ def proses_koin(job):
                    elliott=(r["elliott"]["arah"] if r["elliott"] else "-"),
                    chg7_koin=(c[min(t + 7, n - 1)] / c[t] - 1) * 100,
                    chg7_btc=((b7 / b0 - 1) * 100) if b0 and b7 else None)
+        sk, ck = r.get("siklus") or {}, r.get("checklist") or {}
+        rec.update(stage=int(sk.get("stage") or 0), fase=str(sk.get("fase", "0")),
+                   vol_status=(sk.get("volume") or {}).get("status", "-"),
+                   vol_arah=(sk.get("volume") or {}).get("arah") or "-",
+                   checklist=ck.get("cocok"), checklist_lawan=ck.get("lawan"))
         for nama, (_, R, pakai_pola) in ATURAN.items():
             plan = ST.rencana(float(c[t]), k, tgt if pakai_pola else None, bt if pakai_pola else None, atrp, R)
             m = R["maks_hari"]
@@ -118,6 +125,63 @@ def proses_koin(job):
             rec[f"{nama}_hasil"] = res["hasil"]
             rec[f"{nama}_hari"] = res["hari"]
         out.append(rec)
+    return out, siklus_murni(sym, meme, d, rezim, cfg)
+
+
+def ikuti_siklus(c, l, ma_s, t, n):
+    """Keluar bila harga tutup di bawah MA50 (setelah ≥3 hari) atau kena SL −12%; maks 180 hari."""
+    e = c[t]
+    sl = e * 0.88
+    akhir = min(n - 1, t + TAHAN_SIKLUS)
+    for k in range(t + 1, akhir + 1):
+        if l[k] <= sl:
+            return (sl / e - 1) * 100, k - t, "kena SL"
+        if k - t >= 3 and np.isfinite(ma_s[k]) and c[k] < ma_s[k]:
+            return (c[k] / e - 1) * 100, k - t, "tutup < MA50"
+    return (c[akhir] / e - 1) * 100, akhir - t, ("batas waktu" if akhir == t + TAHAN_SIKLUS else "data habis")
+
+
+def siklus_murni(sym, meme, d, rezim, cfg):
+    """Strategi berbasis stage saja (tanpa skor radar) + pembanding beli acak per stage."""
+    n = len(d)
+    o, h, l, c, v = (d[k].to_numpy(dtype=float) for k in ("open", "high", "low", "close", "volume"))
+    tgl = d["time"].dt.strftime("%Y-%m-%d").to_numpy()
+    F = SK.hitung(o, h, l, c, v)
+    st, R, Sb, vr, ma_l, ma_s = F["stage"], F.get("R"), F.get("S"), F.get("vol_rel"), F.get("ma_l"), F.get("ma_s")
+    if R is None:
+        return []
+    Rn = ST.DEFAULT_RENCANA
+    out, jeda = [], {}
+    for t in range(HARI_MIN, n - TAHAN):
+        if st[t] == 0:
+            continue
+        ev = []
+        if t % 5 == 0:
+            ev.append(("acak", None, None))
+        was1 = bool((st[max(0, t - 10):t + 1] == 1).any())
+        if (was1 and st[t] in (1, 2) and np.isfinite(R[t]) and np.isfinite(R[t - 1]) and c[t] > R[t]
+                and c[t - 1] <= R[t - 1] and vr[t] >= 1.5 and c[t] > ma_l[t] and R[t] / Sb[t] - 1 <= 0.6):
+            ev.append(("tembus_dasar", R[t] + (R[t] - Sb[t]), Sb[t]))
+        if st[t] == 2 and st[t - 1] != 2:
+            ev.append(("awal_stage2", None, None))
+        if st[t] == 2 and c[t] / ma_l[t] - 1 < 0.8 and c[t] > o[t]:
+            fb = SK.fibonacci(h, l, t, c[t])
+            if fb and fb["posisi"] == "zona":
+                ev.append(("pullback_fib", fb["swing_high"],
+                           fb["swing_low"] + (fb["swing_high"] - fb["swing_low"]) * 0.214))
+        for nama, tgt, bt in ev:
+            if nama != "acak":
+                if t <= jeda.get(nama, -1):
+                    continue
+                jeda[nama] = t + JEDA
+            plan = ST.rencana(float(c[t]), "naik", tgt, bt, None, Rn)
+            r1 = ST.simulasi(plan, h[t + 1:t + 1 + TAHAN], l[t + 1:t + 1 + TAHAN], c[t + 1:t + 1 + TAHAN])
+            p2, hari2, hs2 = ikuti_siklus(c, l, ma_s, t, n)
+            out.append(dict(tanggal=tgl[t], symbol=sym, meme=meme, rezim=rezim.get(tgl[t], "netral"),
+                            stage=int(st[t]), event=nama,
+                            rencana_bersih=round(ST.bersih(r1["pnl"], cfg.get("biaya")), 3), rencana_hari=r1["hari"],
+                            siklus_bersih=round(ST.bersih(p2, cfg.get("biaya")), 3), siklus_hari=hari2,
+                            siklus_hasil=hs2))
     return out
 
 
@@ -268,6 +332,120 @@ def laporan(df: pd.DataFrame, meta: dict) -> tuple[dict, str]:
     return hasil, "\n".join(L) + "\n"
 
 
+# --------------------------------------------------------------------------- #
+# Siklus 4 stage
+# --------------------------------------------------------------------------- #
+def ringkas(x: pd.Series, hari: pd.Series | None = None) -> dict:
+    x = x.dropna()
+    if len(x) == 0:
+        return dict(n=0)
+    pos, neg = x[x > 0].sum(), -x[x < 0].sum()
+    sd = float(x.std(ddof=1)) if len(x) > 1 else 0.0
+    return dict(n=int(len(x)), menang=round(float((x > 0).mean() * 100), 1), rata=round(float(x.mean()), 2),
+                median=round(float(x.median()), 2), pf=round(float(pos / neg), 2) if neg > 0 else None,
+                t=round(float(x.mean() / (sd / np.sqrt(len(x)))), 2) if sd > 0 else None,
+                hari=round(float(hari.loc[x.index].mean()), 1) if hari is not None else None)
+
+
+def per_periode(df: pd.DataFrame, kol: str, kol_hari: str, mid: str, grup: str, **extra) -> dict:
+    r = ringkas(df[kol], df[kol_hari])
+    r.update(grup=grup, **extra)
+    r["p1"] = ringkas(df.loc[df["tanggal"] < mid, kol])
+    r["p2"] = ringkas(df.loc[df["tanggal"] >= mid, kol])
+    return r
+
+
+VAR_STAGE = {
+    "tanpa filter stage": lambda d: d,
+    "Stage 1 atau 2": lambda d: d[d["stage"].isin([1, 2])],
+    "Stage 2 saja": lambda d: d[d["stage"] == 2],
+    "Stage 1 saja": lambda d: d[d["stage"] == 1],
+    "bukan Stage 4": lambda d: d[d["stage"] != 4],
+    "bukan Stage 3/4": lambda d: d[~d["stage"].isin([3, 4])],
+    "fase ideal (akhir dasar, 1→2, awal/tengah naik)": lambda d: d[d["fase"].isin(["1-akhir", "1→2", "2-awal", "2"])],
+    "checklist ≥4/6": lambda d: d[d["checklist"] >= 4],
+    "checklist ≥5/6": lambda d: d[d["checklist"] >= 5],
+    "volume tidak berlawanan": lambda d: d[d["vol_arah"] != "turun"],
+    "Stage 1/2 + checklist ≥4": lambda d: d[d["stage"].isin([1, 2]) & (d["checklist"] >= 4)],
+}
+EVENT = {"tembus_dasar": "Tembus atap dasar (Stage 1→2) + volume ≥1,5×",
+         "awal_stage2": "Hari pertama Stage 2 terkonfirmasi",
+         "pullback_fib": "Pullback Stage 2 ke zona Fibonacci 0,382–0,618 + candle hijau",
+         "acak": "Beli hari acak (pembanding)"}
+PASAR = {"semua kondisi": lambda d: d, "BTC tidak tren turun": lambda d: d[d["rezim"] != "turun"],
+         "BTC tren naik": lambda d: d[d["rezim"] == "naik"]}
+
+
+def tabel_periode(rows, judul):
+    L = [f"| {judul} | Sinyal | Menang | Rata-rata bersih | Profit factor | t | Periode 1 | Periode 2 |",
+         "|---|---|---|---|---|---|---|---|"]
+    f = lambda q: f"{q['rata']:+.2f}% ({q['n']}, menang {q['menang']}%)" if q.get("n") else "-"  # noqa: E731
+    for r in rows:
+        if not r.get("n"):
+            continue
+        L.append(f"| {r['grup']} | {r['n']} | {r['menang']}% | {r['rata']:+.2f}% | {r['pf'] if r['pf'] is not None else '-'} | "
+                 f"{r['t'] if r['t'] is not None else '-'} | {f(r['p1'])} | {f(r['p2'])} |")
+    return L
+
+
+def laporan_siklus(df: pd.DataFrame, dsik: pd.DataFrame, meta: dict) -> tuple[dict, str]:
+    d0, d1 = pd.Timestamp(meta["dari"]), pd.Timestamp(meta["sampai"])
+    mid = (d0 + (d1 - d0) / 2).strftime("%Y-%m-%d")
+    H = dict(mid=mid, periode1=f"{meta['dari']} – {mid}", periode2=f"{mid} – {meta['sampai']}")
+    naik = df[(df["kelas"] == "naik")].copy()
+    naik["checklist"] = naik["checklist"].fillna(0)
+    dflt = naik[(naik["rezim"] == "naik") & ~naik["meme"]]
+    L = ["## 6. Siklus 4 stage (Stage 1 Dasar → 2 Naik → 3 Puncak → 4 Turun)", "",
+         f"Periode 1 = {H['periode1']} · Periode 2 = {H['periode2']}. Filter yang baik harus positif di **kedua** periode.", ""]
+    H["radar"] = {}
+    for kol, judul in (("pola_tp5_sl12_bersih", "Rencana bawaan (50% di +5%, sisa ke target, SL −12%)"),
+                       ("pola_sl12_bersih", "Target pola, SL −12%")):
+        kh = kol.replace("_bersih", "_hari")
+        rows_d = [per_periode(f(dflt), kol, kh, mid, nm) for nm, f in VAR_STAGE.items()]
+        rows_a = [per_periode(f(naik), kol, kh, mid, nm) for nm, f in VAR_STAGE.items()]
+        H["radar"][kol] = dict(judul=judul, filter_bawaan=rows_d, semua_sinyal=rows_a)
+        L += [f"### 6a. Sinyal 🟢 radar + filter stage — {judul}", "",
+              "Dengan filter bawaan (BTC tren naik + bukan meme):", ""] + tabel_periode(rows_d, "Filter stage")
+        L += ["", "Semua sinyal naik (tanpa filter pasar/meme):", ""] + tabel_periode(rows_a, "Filter stage") + [""]
+    kol = "pola_tp5_sl12_bersih"
+    H["radar_per_stage"] = [per_periode(g, kol, "pola_tp5_sl12_hari", mid, f"Stage {k}") for k, g in naik.groupby("stage")]
+    H["radar_per_fase"] = [per_periode(g, kol, "pola_tp5_sl12_hari", mid, str(k)) for k, g in naik.groupby("fase")]
+    turun = df[df["kelas"] == "turun"]
+    H["turun_per_stage"] = [per_periode(g, kol, "pola_tp5_sl12_hari", mid, f"Stage {k}") for k, g in turun.groupby("stage")]
+    L += ["### 6b. Sinyal 🟢 radar per stage (semua sinyal, rencana bawaan)", ""] + tabel_periode(H["radar_per_stage"], "Stage")
+    L += ["", "Per fase:", ""] + tabel_periode(H["radar_per_fase"], "Fase")
+    L += ["", "### 6c. Sinyal 🔴 radar (short) per stage", ""] + tabel_periode(H["turun_per_stage"], "Stage") + [""]
+
+    H["murni"] = []
+    if len(dsik):
+        ds = dsik[~dsik["meme"]]
+        acak = ds[ds["event"] == "acak"]
+        H["acak_per_stage"] = {k: [per_periode(g, k2, k2.replace("_bersih", "_hari"), mid, f"Stage {st}")
+                                   for st, g in acak.groupby("stage")]
+                               for k, k2 in (("rencana", "rencana_bersih"), ("siklus", "siklus_bersih"))}
+        L += ["### 6d. Beli di hari acak menurut stage (pembanding, bukan meme)", "",
+              "Apakah stage saja sudah membedakan hasil? Rencana bawaan:", ""] + tabel_periode(H["acak_per_stage"]["rencana"], "Stage")
+        L += ["", "Aturan *ikuti siklus* (jual saat tutup di bawah MA50 atau SL −12%, maks 180 hari):", ""]
+        L += tabel_periode(H["acak_per_stage"]["siklus"], "Stage") + [""]
+        L += ["### 6e. Strategi siklus murni (tanpa skor radar, bukan meme)", ""]
+        for ev, ket in EVENT.items():
+            g = ds[ds["event"] == ev]
+            for pn, pf in PASAR.items():
+                gg = pf(g)
+                for k2, ket2 in (("rencana_bersih", "rencana bawaan"), ("siklus_bersih", "ikuti siklus (MA50)")):
+                    H["murni"].append(per_periode(gg, k2, k2.replace("_bersih", "_hari"), mid,
+                                                  f"{ket} · {pn} · {ket2}", event=ev, pasar=pn, keluar=k2))
+        L += tabel_periode(H["murni"], "Strategi · pasar · aturan jual") + [""]
+    lolos = [r for r in H["murni"] if r["event"] != "acak" and r.get("n", 0) >= 30
+             and (r["p1"].get("n", 0) >= 15 and r["p2"].get("n", 0) >= 15)
+             and r["p1"]["rata"] > 0 and r["p2"]["rata"] > 0]
+    H["murni_lolos"] = sorted(lolos, key=lambda r: -min(r["p1"]["rata"], r["p2"]["rata"]))
+    L += ["**Strategi siklus murni yang positif di kedua periode (≥15 sinyal per periode):** "
+          + ("; ".join(f"{r['grup']} → {r['rata']:+.2f}% ({r['n']} sinyal)" for r in H["murni_lolos"][:5])
+             if H["murni_lolos"] else "tidak ada."), ""]
+    return H, "\n".join(L) + "\n"
+
+
 def _json_safe(o):
     if isinstance(o, dict):
         return {k: _json_safe(v) for k, v in o.items()}
@@ -329,10 +507,11 @@ def main() -> int:
 
     jobs = [(sym, base, rank, meme, data[sym], rezim, btc_close, cfg)
             for sym, base, rank, meme in koin if sym in data and len(data[sym]) > HARI_MIN + TAHAN]
-    rows = []
+    rows, rows_sik = [], []
     with ProcessPoolExecutor(max_workers=os.cpu_count() or 2) as ex:
-        for i, out in enumerate(ex.map(proses_koin, jobs, chunksize=1), start=1):
+        for i, (out, out_sik) in enumerate(ex.map(proses_koin, jobs, chunksize=1), start=1):
             rows.extend(out)
+            rows_sik.extend(out_sik)
             if i % 20 == 0:
                 print(f"  {i}/{len(jobs)} koin · {len(rows)} sinyal · {time.time() - t0:.0f} dtk")
     if not rows:
@@ -344,6 +523,10 @@ def main() -> int:
                 koin=len(jobs), dari=str(df["tanggal"].min()), sampai=str(df["tanggal"].max()), sinyal=len(df),
                 hari_data=args.hari, durasi_detik=round(time.time() - t0))
     hasil, md = laporan(df, meta)
+    dsik = pd.DataFrame(rows_sik)
+    h_sik, md_sik = laporan_siklus(df, dsik, meta)
+    hasil["siklus"] = h_sik
+    md = md.replace("## Keterbatasan", md_sik + "\n## Keterbatasan")
     os.makedirs(OUT, exist_ok=True)
     with open(os.path.join(OUT, "hasil.json"), "w", encoding="utf-8") as f:
         json.dump(_json_safe(hasil), f, ensure_ascii=False, indent=1, allow_nan=False)
@@ -351,6 +534,8 @@ def main() -> int:
         f.write(md)
     with gzip.open(os.path.join(OUT, "sinyal.csv.gz"), "wt", encoding="utf-8") as f:
         df.to_csv(f, index=False)
+    with gzip.open(os.path.join(OUT, "siklus.csv.gz"), "wt", encoding="utf-8") as f:
+        dsik.to_csv(f, index=False)
     step = os.environ.get("GITHUB_STEP_SUMMARY")
     if step:
         with open(step, "a", encoding="utf-8") as f:

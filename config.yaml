@@ -48,6 +48,16 @@ filter_meme: abaikan
 wajib_breakout: false           # true = sinyal hanya bila pola sudah breakout
 min_rr: 0                       # rasio TP2 : SL minimal (0 = tidak dicek)
 
+# ---- Siklus 4 stage (Stage 1 Dasar → 2 Naik → 3 Puncak → 4 Turun) ----
+# Stage tiap koin selalu ditampilkan (Telegram, grafik, dashboard tab 🔄 Siklus).
+# Filter di bawah ini membatasi sinyal berdasarkan stage. Isi dengan nomor stage dan/atau kode fase:
+#   1, 2, 3, 4  atau  "1-akhir", "1→2", "2-awal", "2", "2-jenuh", "3", "3-akhir", "3→4", "4-awal", "4"
+#   contoh: filter_stage_naik: [1, 2]   → sinyal naik hanya bila koin di Stage 1 atau 2
+#   []  = tidak difilter
+filter_stage_naik: []
+filter_stage_turun: []
+min_checklist: 0                # minimal butir checklist yang cocok (Siklus, Tren, S&R, Pola, Candle, Volume), 0 = tidak dicek
+
 # ---- Rencana jual untuk setiap sinyal ----
 # TP1 = ambil untung sebagian, lalu stop loss sisa posisi dipindah ke harga beli.
 # TP2 = target pola (kalau tidak ada: 2x jarak TP1). SL = yang lebih dekat antara batas batal pola & sl.

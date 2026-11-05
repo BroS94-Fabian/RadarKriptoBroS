@@ -171,12 +171,18 @@ def buat_grafik(r: dict, quote: str, sumber: str, waktu: str) -> bytes:
     rank = f"  ·  #{r['rank']} CoinMarketCap" if r.get("rank") else ""
     ax.set_title(f"{r['base']}/{quote}{rank}", loc="left", fontsize=13, fontweight="bold", color=C["ink"], pad=34)
     sub = f"Harga {fmt_price(price)} ({fmt_pct(r['chg24'])} 24j)  ·  Skor naik {r['skor_naik']} / turun {r['skor_turun']}"
+    sk = r.get("siklus") or {}
     ax.text(0, 1.035, sub, transform=ax.transAxes, fontsize=9, color=C["ink2"], va="bottom")
     _chip(ax, 1.0, 1.035, chip_txt, chip_col, chip_fg)
     if P:
         ax.text(0.01, 0.97, f"{P['nama']}", transform=ax.transAxes, fontsize=9, fontweight="bold",
                 color=C["ink"], va="top", zorder=9,
                 bbox=dict(boxstyle="round,pad=0.3", fc=C["surface"], ec=C["axis"], lw=0.8))
+    if sk.get("stage"):
+        warna = {1: C["blue"], 2: C["good"], 3: "#c98a00", 4: C["crit"]}.get(sk["stage"], C["axis"])
+        ax.text(0.01, 0.905 if P else 0.97, f"{sk['nama']} — {sk['teks']}", transform=ax.transAxes, fontsize=8.5,
+                color=C["ink"], va="top", zorder=9,
+                bbox=dict(boxstyle="round,pad=0.3", fc=C["surface"], ec=warna, lw=1.4))
     leg = "MA20 / MA50 / MA200 · area abu = Bollinger Bands · area biru = zona akumulasi · garis putus abu = trend line"
     ax.text(0, -0.025, leg, transform=ax.transAxes, fontsize=7, color=C["muted"], va="top")
 

@@ -74,7 +74,7 @@ table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:ta
 th,td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
 th{position:sticky;top:0;background:var(--surface);color:var(--ink-2);font-weight:600;cursor:pointer;user-select:none}
 .jj td,.jj th{text-align:right}
-th:nth-child(2),td:nth-child(2),th:nth-child(6),td:nth-child(6),th:nth-child(9),td:nth-child(9),th:nth-child(13),td:nth-child(13){text-align:left}
+th:nth-child(2),td:nth-child(2),th:nth-child(6),td:nth-child(6),th:nth-child(9),td:nth-child(9),th:nth-child(13),td:nth-child(13),th:nth-child(14),td:nth-child(14){text-align:left}
 .jj th:nth-child(9),.jj td:nth-child(9){text-align:right}
 .jj th:first-child,.jj td:first-child{text-align:left}
 tbody tr{cursor:pointer} tbody tr:hover{background:var(--surface-2)}
@@ -98,6 +98,22 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
 .tahan{font-size:12px;color:var(--warn);font-weight:600}
 .bt h3{margin:18px 0 8px;font-size:16px}
 .bt .tbl-wrap{margin-bottom:8px}
+.sik{font-size:13px;border-radius:8px;padding:8px 10px;border-left:4px solid var(--line-2);background:var(--surface-2)}
+.sik b{font-weight:700}
+.s1{border-left-color:var(--accent)} .s2{border-left-color:var(--good)} .s3{border-left-color:var(--warn)} .s4{border-left-color:var(--crit)}
+.ck{display:flex;flex-wrap:wrap;gap:4px;font-size:12px}
+.ck span{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px}
+.siklus-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.siklus-col{background:var(--surface);box-shadow:var(--shadow);border-radius:12px;padding:12px;border-top:4px solid var(--line-2);min-width:0}
+.siklus-col h3{margin:0 0 2px;font-size:16px}
+.siklus-col .n{font-size:26px;font-weight:700;line-height:1.1}
+.siklus-col h4{margin:10px 0 4px;font-size:12px;color:var(--ink-2);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.chip{border:1px solid var(--line-2);background:var(--surface);color:var(--ink);border-radius:999px;padding:1px 8px;font:inherit;font-size:12px;cursor:pointer}
+.chip.sig-naik{border-color:var(--good);color:var(--good);font-weight:700} .chip.sig-turun{border-color:var(--crit);color:var(--crit);font-weight:700}
+.cycle{width:100%;height:auto;display:block;margin:0 0 12px}
+@media (max-width:820px){.siklus-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:420px){.siklus-grid{grid-template-columns:1fr}}
 .theme{float:right;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);border-radius:8px;padding:4px 10px;font:inherit;font-size:13px;cursor:pointer}
 @media (max-width:420px){.grid{grid-template-columns:1fr}.stat b{font-size:22px}}
 </style>
@@ -129,6 +145,8 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
       <li><b>🟡 Pantau</b>: hampir memenuhi syarat — tidak dikirim ke Telegram.</li>
       <li><b>Target</b> dihitung dari aturan pola: neckline ± tinggi pola, breakout ± panjang tiang bendera, awal baji, dst. Bila tidak ada pola: Elliott Wave atau resistance/support terdekat.</li>
       <li><b>Batal</b>: level yang bila ditembus berarti polanya gagal. <b>Rasio</b> = potensi ÷ risiko ke level batal.</li>
+      <li><b>Siklus 4 stage</b> (cara berpikir "Super Trader"): 🟦 Dasar → 🟩 Naik → 🟨 Puncak → 🟥 Turun. Beli paling ideal di awal Stage 2 (tembus dari dasar dengan volume) atau saat pullback ke Fibonacci 0,382–0,618; ambil untung di Stage 3; hindari Stage 4.</li>
+      <li><b>Checklist</b>: Siklus → Tren → Support &amp; Resistance → Pola → Candlestick → Volume (volume tinggi searah harga = konfirmasi; volume tipis/lonjakan mendadak = anomali, "bell ringing").</li>
       <li><b>Zona akumulasi</b>: kisaran harga tempat 70% volume 30 hari terakhir terjadi; <b>POC</b> = harga dengan volume terbesar.</li>
     </ul>
   </section>
@@ -143,7 +161,11 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const KELAS = {"naik":"🟢 Potensi naik","turun":"🔴 Potensi turun","pantau-naik":"🟡 Pantau naik","pantau-turun":"🟡 Pantau turun","netral":"Netral"};
   const POSISI = {"bawah":"di bawah zona","dalam-bawah":"di bawah POC","dalam-atas":"di atas POC","atas":"di atas zona","-":"-"};
-  let TABS = [["naik","🟢 Potensi naik"],["turun","🔴 Potensi turun"],["pantau","🟡 Pantau"],["semua","Semua koin"],["jejak","📈 Rekam jejak"]];
+  let TABS = [["naik","🟢 Potensi naik"],["turun","🔴 Potensi turun"],["pantau","🟡 Pantau"],["siklus","🔄 Siklus 4 stage"],["semua","Semua koin"],["jejak","📈 Rekam jejak"]];
+  const STAGE = {1:["🟦","Stage 1 · Dasar","akumulasi / pembentukan dasar"],2:["🟩","Stage 2 · Naik","tren naik (markup)"],
+                 3:["🟨","Stage 3 · Puncak","distribusi / pembentukan puncak"],4:["🟥","Stage 4 · Turun","tren turun (markdown)"]};
+  const FASE = {"1":"membentuk dasar","1-akhir":"akhir dasar, siap tembus","1→2":"baru tembus dari dasar","2-awal":"awal naik","2":"naik berjalan",
+                "2-jenuh":"jenuh, rawan koreksi","3":"distribusi","3-akhir":"rawan jebol","3→4":"baru jebol dari puncak","4-awal":"awal turun","4":"turun berjalan"};
   let BT = null;
   let DATA = null, tab = "naik", q = "", sortKey = "rank", sortDir = 1;
 
@@ -213,12 +235,58 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
         TP2 ${fp(r.rencana.tp2)} (${pct(r.rencana.tp2_pct)}) · SL ${fp(r.rencana.sl)} (${pct(r.rencana.sl_pct)})
         ${r.rencana.porsi_tp1 > 0 && r.rencana.porsi_tp1 < 1 ? "<br><span class='arti'>Setelah TP1 tersentuh, SL sisa posisi pindah ke harga beli.</span>" : ""}
         ${r.rencana.posisi_rp ? `<br>💼 Ukuran posisi ±Rp${num(r.rencana.posisi_rp,0)} (rugi maks ±Rp${num(r.rencana.risiko_rp,0)} bila kena SL)` : ""}</div>` : ""}
+      ${sikBlok(r)}
       ${r.ditahan ? `<div class="tahan">⏸ ${esc(r.ditahan)}</div>` : ""}
       <div class="ind">${ex.map(x => `<span>${x}</span>`).join("")}</div>
       <details><summary>Alasan (${alasan(r).length})</summary><ul>${alasan(r).map(a => `<li>${esc(a)}</li>`).join("")}</ul></details>
       ${r.chart ? `<img class="chart" loading="lazy" src="${esc(r.chart)}?v=${encodeURIComponent(DATA.updated)}" alt="Grafik analisa ${esc(r.base)}" data-full="${esc(r.chart)}">` : ""}
       <div class="links">${r.link ? `<a href="${esc(r.link)}" target="_blank" rel="noopener">Buka di TradingView ↗</a>` : ""}</div>
     </article>`;
+  }
+
+  function sikBlok(r){
+    const s = r.siklus, ck = r.checklist;
+    if (!s || !s.stage) return "";
+    const fb = s.fib, vo = s.volume || {};
+    return `<div class="sik s${s.stage}">🔄 <b>${esc(s.nama)}</b> — ${esc(s.teks)}${s.ma_arah ? ` · MA${s.ma_n} ${esc(s.ma_arah)} (harga ${pct(s.jarak_ma)} dari MA)` : ""}
+      ${s.saran ? `<br>💡 ${esc(s.saran)}` : ""}
+      ${fb ? `<br>🧭 Fibonacci 0,382–0,618: ${fp(fb.f618)} – ${fp(fb.f382)} (0,5 = ${fp(fb.f500)}) · harga ${esc(fb.teks)}` : ""}
+      ${vo.teks ? `<br>🔊 ${esc(vo.teks)}` : ""}
+      ${ck ? `<div class="ck" style="margin-top:6px"><b>☑️ Checklist ${ck.cocok}/6 (${ck.arah}):</b>${ck.butir.map(b => `<span>${esc(b.nama)} ${b.ikon}</span>`).join("")}</div>` : ""}</div>`;
+  }
+
+  // Diagram siklus (Stage 1 → 4)
+  function diagram(){
+    return `<svg class="cycle" viewBox="0 0 800 150" role="img" aria-label="Diagram siklus empat stage: dasar, naik, puncak, turun">
+      <path d="M10 120 C 90 120, 150 122, 220 118 S 330 30, 420 34 S 560 36, 600 40 S 700 120, 790 128" fill="none" stroke="var(--ink-2)" stroke-width="3"/>
+      <g font-size="13" font-weight="700" text-anchor="middle" fill="var(--ink)">
+        <text x="110" y="105">🟦 1 · Dasar</text><text x="290" y="58">🟩 2 · Naik</text>
+        <text x="500" y="22">🟨 3 · Puncak</text><text x="700" y="80">🟥 4 · Turun</text></g>
+      <circle cx="222" cy="117" r="7" fill="var(--good)"/><text x="234" y="142" font-size="12" fill="var(--good)">titik beli ideal (1→2)</text>
+      <circle cx="604" cy="42" r="7" fill="var(--crit)"/><text x="614" y="62" font-size="12" fill="var(--crit)">keluar (3→4)</text>
+    </svg>`;
+  }
+  function siklusView(list){
+    const by = {1:[],2:[],3:[],4:[]};
+    list.forEach(r => { const s = r.siklus; if (s && by[s.stage]) by[s.stage].push(r); });
+    const urutFase = {1:["1-akhir","1"],2:["1→2","2-awal","2","2-jenuh"],3:["3","3-akhir"],4:["3→4","4-awal","4"]};
+    const ps = DATA.siklus || {}, bs = DATA.btc_siklus;
+    let h = diagram();
+    if (bs && bs.stage) h += `<div class="pasar" style="margin:0 0 12px">BTC: ${STAGE[bs.stage][0]} <b>${esc(bs.nama)}</b> — ${esc(bs.teks)}${bs.saran ? ` · ${esc(bs.saran)}` : ""}</div>`;
+    h += `<div class="siklus-grid">` + [1,2,3,4].map(st => {
+      const xs = by[st];
+      const grup = urutFase[st].map(f => {
+        const ys = xs.filter(r => r.siklus.fase === f).sort((a, b) => (a.rank ?? 9999) - (b.rank ?? 9999));
+        if (!ys.length) return "";
+        return `<h4>${esc(FASE[f] || f)} (${ys.length})</h4><div class="chips">${ys.map(r =>
+          `<button class="chip ${r.kelas === "naik" ? "sig-naik" : r.kelas === "turun" ? "sig-turun" : ""}" data-s="${esc(r.symbol)}" title="${esc(r.nama)}">${esc(r.base)}</button>`).join("")}</div>`;
+      }).join("");
+      return `<div class="siklus-col s${st}" style="border-top-color:var(${["--accent","--good","--warn","--crit"][st-1]})">
+        <h3>${STAGE[st][0]} ${STAGE[st][1]}</h3><div class="sub">${STAGE[st][2]}</div><div class="n">${xs.length}</div>${grup || `<div class="sub">—</div>`}</div>`;
+    }).join("") + `</div>
+      <p class="sub">Stage dari MA200 harian (±30 minggu): Stage 2 = harga di atas MA200 yang menanjak, Stage 4 = di bawah MA200 yang menurun,
+      Stage 1/3 = MA mendatar (dasar setelah turun / puncak setelah naik). Nama koin <b style="color:var(--good)">hijau</b>/<b style="color:var(--crit)">merah</b> = sedang jadi sinyal radar. Klik koin untuk detail.</p>`;
+    return h;
   }
 
   function filtered(){
@@ -245,7 +313,7 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
     ["chg7","7h",r=>r.chg7??-1e9], ["kelas","Status",r=>["naik","pantau-naik","netral","pantau-turun","turun"].indexOf(r.kelas)],
     ["skor_naik","Skor ↑",r=>r.skor_naik], ["skor_turun","Skor ↓",r=>r.skor_turun], ["pola","Pola",r=>pola(r)?pola(r).nama:"~"],
     ["target","Target",r=>r.target?r.target.pct:-1e9], ["rsi","RSI",r=>r.indikator.rsi??-1], ["stoch","Stoch",r=>r.indikator.stoch_k??-1],
-    ["zona","Posisi zona",r=>r.akumulasi.posisi]
+    ["zona","Posisi zona",r=>r.akumulasi.posisi], ["siklus","Siklus",r=>r.siklus ? r.siklus.stage * 10 + (r.siklus.umur||0)/1000 : 99]
   ];
   function table(list){
     const col = COLS.find(c => c[0] === sortKey) || COLS[0];
@@ -258,7 +326,8 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
       <td>${r.skor_naik}</td><td>${r.skor_turun}</td><td>${pola(r) ? esc(pola(r).nama) : "-"}</td>
       <td class="${cls(r.target && r.target.pct)}">${r.target ? pct(r.target.pct) : "-"}</td>
       <td>${r.indikator.rsi != null ? num(r.indikator.rsi,0) : "-"}</td><td>${r.indikator.stoch_k != null ? num(r.indikator.stoch_k,0) : "-"}</td>
-      <td>${POSISI[r.akumulasi.posisi] || "-"}</td></tr>`).join("");
+      <td>${POSISI[r.akumulasi.posisi] || "-"}</td>
+      <td>${r.siklus && r.siklus.stage ? `${STAGE[r.siklus.stage][0]} S${r.siklus.stage} · ${esc(FASE[r.siklus.fase] || r.siklus.fase)}` : "-"}</td></tr>`).join("");
     return `<div class="tbl-wrap"><table><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div>`;
   }
 
@@ -310,6 +379,24 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
         <td class="${cls(r.rata)}"><b>${pct(r.rata)}</b></td><td class="${cls(r.median)}">${pct(r.median)}</td><td>${r.pf ?? "-"}</td><td>${num(r.hari,1)}</td></tr>`).join("")}
       </tbody></table></div>`;
   }
+  function btTabelP(rows, judul){
+    const r2 = (rows || []).filter(r => r.n);
+    if (!r2.length) return "";
+    const per = q => q && q.n ? `<span class="${cls(q.rata)}">${pct(q.rata)}</span> <span class="sub">(${q.n})</span>` : "-";
+    return `<div class="tbl-wrap"><table class="jj"><thead><tr><th>${esc(judul)}</th><th>Sinyal</th><th>Menang</th><th>Rata-rata bersih</th><th>Profit factor</th><th>Periode 1</th><th>Periode 2</th></tr></thead><tbody>
+      ${r2.map(r => `<tr><td>${esc(r.grup)}</td><td>${r.n}</td><td>${num(r.menang,1)}%</td><td class="${cls(r.rata)}"><b>${pct(r.rata)}</b></td>
+        <td>${r.pf ?? "-"}</td><td>${per(r.p1)}</td><td>${per(r.p2)}</td></tr>`).join("")}</tbody></table></div>`;
+  }
+  function btSiklus(){
+    const S = BT.siklus; if (!S) return "";
+    let h = `<h3>🔄 Siklus 4 stage</h3><p class="sub">Periode 1 = ${esc(S.periode1)} · Periode 2 = ${esc(S.periode2)}. Filter/strategi yang layak harus positif di kedua periode.</p>`;
+    const rd = (S.radar || {})["pola_tp5_sl12_bersih"];
+    if (rd) h += `<h3>Sinyal 🟢 radar + filter stage (filter bawaan, ${esc(rd.judul)})</h3>` + btTabelP(rd.filter_bawaan, "Filter stage");
+    h += `<h3>Sinyal 🟢 radar per stage (semua sinyal)</h3>` + btTabelP(S.radar_per_stage, "Stage");
+    if (S.acak_per_stage) h += `<h3>Beli hari acak menurut stage (pembanding)</h3>` + btTabelP(S.acak_per_stage.rencana, "Stage");
+    h += `<h3>Strategi siklus murni (tanpa skor radar)</h3>` + btTabelP(S.murni, "Strategi · pasar · aturan jual");
+    return h;
+  }
   function backtest(){
     if (!BT) return `<div class="empty">Memuat hasil backtest…</div>`;
     const m = BT.meta, best = BT.terbaik_naik, rk = BT.rekomendasi, pb = BT.pembanding_btc;
@@ -320,6 +407,7 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
     h += `<h3>Pengaruh filter (aturan: ${esc(BT.aturan[best] || best)})</h3>` + btTabel((BT.filter_naik || []).filter(r => r.aturan === best).map(r => ({...r})), "Filter");
     for (const [judul, rows] of Object.entries(BT.rinci || {})) h += `<h3>${esc(judul)}</h3>` + btTabel(rows, judul);
     h += `<h3>🔴 Sinyal turun (sebagai short)</h3>` + btTabel(BT.aturan_turun, "Aturan jual");
+    h += btSiklus();
     if (pb && pb.n) h += `<p class="sub">Dibanding BTC (tahan 7 hari): rata-rata koin sinyal ${pct(pb.koin_7h)} vs BTC ${pct(pb.btc_7h)} · ${num(pb.lebih_baik,1)}% sinyal lebih baik dari BTC.</p>`;
     return h + `<p class="sub">Keterbatasan: data per jam tidak dipakai; daftar koin = top 200 saat ini (survivorship bias); masuk di harga penutupan harian.</p></div>`;
   }
@@ -334,6 +422,8 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
       html = jejak();
     } else if (tab === "semua") {
       html = table(list);
+    } else if (tab === "siklus") {
+      html = siklusView(list);
     } else {
       const pick = tab === "pantau" ? list.filter(r => r.kelas.startsWith("pantau")) : list.filter(r => r.kelas === tab);
       pick.sort((a, b) => skor(b) - skor(a));
@@ -345,6 +435,7 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
       const k = th.dataset.k; if (sortKey === k) sortDir *= -1; else { sortKey = k; sortDir = ["rank","base","kelas"].includes(k) ? 1 : -1; } render();
     });
     $("#view").querySelectorAll("tbody tr").forEach(tr => tr.onclick = () => openCoin(tr.dataset.s));
+    $("#view").querySelectorAll(".chip[data-s]").forEach(b => b.onclick = () => openCoin(b.dataset.s));
     $("#view").querySelectorAll("img.chart").forEach(im => im.onclick = () => window.open(im.dataset.full, "_blank"));
   }
 
@@ -367,6 +458,8 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
       const f = d.filter || {};
       $("#pasar").hidden = false;
       $("#pasar").innerHTML = `Pasar BTC: <b>${ik}</b> (${esc(d.pasar.teks)})${d.tertahan ? ` · ⏸ ${d.tertahan} sinyal ditahan filter` : ""}
+        ${d.siklus ? `<br>🔄 Peta siklus: 🟦 Dasar ${d.siklus.jumlah["1"]} · 🟩 Naik ${d.siklus.jumlah["2"]} · 🟨 Puncak ${d.siklus.jumlah["3"]} · 🟥 Turun ${d.siklus.jumlah["4"]}` : ""}
+        ${d.btc_siklus && d.btc_siklus.stage ? ` · BTC ${STAGE[d.btc_siklus.stage][0]} ${esc(d.btc_siklus.nama)}` : ""}
         <span class="sub"> · Filter: pasar ${f.pasar === false ? "mati" : f.pasar === true ? "aktif" : esc(String(f.pasar))}, meme ${f.meme === false ? "mati" : esc(String(f.meme))}${f.breakout ? ", wajib breakout" : ""}${f.min_rr ? ", rasio ≥ " + f.min_rr : ""}</span>`;
     }
     if (d.ada_backtest) {

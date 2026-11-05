@@ -1193,6 +1193,12 @@ def analisa_koin(info: dict, d: pd.DataFrame, h: pd.DataFrame, cfg: dict) -> dic
             x["pct"] = (x["harga"] / price - 1) * 100
     rr = abs(target["pct"] / batal["pct"]) if target and batal and batal["pct"] else None
 
+    # --- Siklus 4 stage & checklist Super Trader ---
+    import siklus as SK  # impor di sini (siklus memakai fungsi indikator dari modul ini)
+    sik = SK.analisa(o, hh, ll, c, v, price)
+    Pl = pola_turun if arah_k == "naik" else pola_naik
+    ck = SK.checklist(sik, arah_k, tl["tren"], rr, Pk, Pl, cdl["arah"] if cdl else None)
+
     def _pola_json(P):
         if not P:
             return None
@@ -1223,9 +1229,22 @@ def analisa_koin(info: dict, d: pd.DataFrame, h: pd.DataFrame, cfg: dict) -> dic
         akumulasi=dict(obv_trend=_f(obv_trend, 2), cmf=_f(cmf20, 3), beli24=_f(buy24, 3), rvol_d=_f(rvol_d, 2),
                        rvol_h=_f(rvol_h, 2), posisi=posisi,
                        zona=dict(val=_r(vp["val"]), poc=_r(vp["poc"]), vah=_r(vp["vah"])) if vp else None),
+        siklus=_siklus_json(sik), checklist=ck,
     )
     hasil["_g"] = dict(dc=dc, ma20=ma20, ma50=ma50, ma200=ma200, bb_up=bb_up, bb_lo=bb_lo, bb_mid=bb_mid,
                        rsi=r, macd=m_line, macd_sig=m_sig, macd_hist=m_hist, sk=sk, sd=sd, tl=tl, vp=vp,
                        pola=pola_naik if arah_k == "naik" else pola_turun, ell=ell, target=target, batal=batal,
-                       obv=ob)
+                       obv=ob, siklus=sik)
     return hasil
+
+
+def _siklus_json(sik: dict) -> dict:
+    out = {k: (_f(v, 2) if isinstance(v, float) else v) for k, v in sik.items() if not k.startswith("_") and k not in ("volume", "fib")}
+    for k in ("ma", "atap", "lantai"):
+        if out.get(k) is not None:
+            out[k] = _r(sik[k])
+    vo = sik["volume"]
+    out["volume"] = dict(status=vo["status"], arah=vo["arah"], teks=vo["teks"], vr10=_f(vo.get("vr10"), 2))
+    fb = sik.get("fib")
+    out["fib"] = ({k: (_r(v) if isinstance(v, float) else v) for k, v in fb.items()} if fb else None)
+    return out

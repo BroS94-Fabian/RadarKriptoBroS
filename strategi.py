@@ -164,6 +164,16 @@ def filter_sinyal(r: dict, cfg: dict, rezim: str) -> tuple[str, str | None]:
         P = r.get("pola_naik" if k == "naik" else "pola_turun")
         if not P or P.get("status") != "breakout":
             return turun_ke, "ditahan: pola belum breakout"
+    fs = cfg.get(f"filter_stage_{k}") or []
+    sik = r.get("siklus") or {}
+    if fs and sik.get("stage"):
+        izin = {str(x) for x in fs}
+        if str(sik["stage"]) not in izin and str(sik.get("fase")) not in izin:
+            return turun_ke, f"ditahan: koin di {sik['nama']} ({sik['teks']})"
+    mc = int(cfg.get("min_checklist", 0) or 0)
+    ck = r.get("checklist")
+    if mc and ck and ck["cocok"] < mc:
+        return turun_ke, f"ditahan: checklist baru {ck['cocok']}/6 cocok (minimal {mc})"
     min_rr = float(cfg.get("min_rr", 0) or 0)
     rc = r.get("rencana")
     if min_rr and rc and (rc.get("rr") or 0) < min_rr:

@@ -77,6 +77,9 @@ DEFAULT_CONFIG = {
     "filter_meme": "abaikan",
     "wajib_breakout": False,
     "min_rr": 0,
+    "filter_stage_naik": [],
+    "filter_stage_turun": [],
+    "min_checklist": 0,
     "rencana": dict(ST.DEFAULT_RENCANA),
     "modal_rp": 0,
     "risiko_per_transaksi_persen": 1,
@@ -559,6 +562,17 @@ def caption(r: dict, cfg: dict, dash: str) -> str:
     head = [f"{'🟢' if naik else '🔴'} <b>{e(r['base'])}/{q}</b>{rank} · Skor {'naik' if naik else 'turun'} "
             f"<b>{skor}</b>/100",
             f"💰 {fmt_price(r['price'])} | 24j {fmt_pct(r['chg24'])} | 7h {fmt_pct(r['chg7'])}"]
+    opsional = []   # (prioritas, indeks sisip, teks) — prioritas besar dibuang lebih dulu bila caption kepanjangan
+    sk = r.get("siklus") or {}
+    if sk.get("stage"):
+        head.append(f"🔄 Siklus: {sk['ikon']} <b>{e(sk['nama'])}</b> — {e(sk['teks'])}"
+                    + (f" (MA{sk['ma_n']} {e(sk['ma_arah'])})" if sk.get("ma_arah") else ""))
+        if sk.get("saran"):
+            opsional.append((3, len(head), f"💡 {e(sk['saran'])}"))
+        fb = sk.get("fib")
+        if fb:
+            opsional.append((2, len(head), f"🧭 Fibonacci 0,382–0,618: {fmt_price(fb['f618'])}–{fmt_price(fb['f382'])} "
+                                           f"— harga {e(fb['teks'])}"))
     P = r["pola_naik" if naik else "pola_turun"]
     if P:
         head.append(f"📐 {e(P['nama'])} — {e(P['status_teks'])}")
@@ -588,6 +602,14 @@ def caption(r: dict, cfg: dict, dash: str) -> str:
     stk = f"{ind['stoch_k']:.0f}" if ind["stoch_k"] is not None else "-"
     head.append(f"📊 RSI {rsi} · Stoch {stk} · MACD {e(ind['macd_status'])}"
                 + (" · BB squeeze" if ind["bb_squeeze"] else ""))
+    vo = sk.get("volume") or {}
+    if vo.get("status") not in (None, "-", "normal"):
+        head.append(f"🔊 Volume: {e(vo['teks'])}")
+    ck = r.get("checklist")
+    if ck:
+        head.append(f"☑️ Checklist {ck['cocok']}/6: {e(ck['teks'])}")
+    for _, i, teks in sorted(opsional, key=lambda x: -x[1]):
+        head.insert(i, teks)
     alasan = r["alasan_naik" if naik else "alasan_turun"]
     links = []
     if r.get("link"):
@@ -595,22 +617,59 @@ def caption(r: dict, cfg: dict, dash: str) -> str:
     if dash:
         links.append(f'<a href="{e(dash)}">Dashboard</a>')
     tail = [" · ".join(links)] if links else []
-    for k in range(min(5, len(alasan)), -1, -1):
-        body = head + (["✅ Alasan:"] + [f"• {e(a)}" for a in alasan[:k]] if k else []) + tail
-        text = "\n".join(body)
-        if len(text) <= 1020:
-            return text
-    return "\n".join(head)[:1020]
+    buang = [x for p in ("📊", "🧲", "🌊") for x in head if x.startswith(p)]
+    buang += [t for _, _, t in sorted(opsional, key=lambda x: -x[0])]
+    def susun(k):
+        return "\n".join(head + (["✅ Alasan:"] + [f"• {e(a)}" for a in alasan[:k]] if k else []) + tail)
+    while True:   # utamakan ≥3 alasan; buang baris tambahan dulu, baru kurangi alasan
+        k_min = 0 if not buang else min(3, len(alasan))
+        for k in range(min(5, len(alasan)), k_min - 1, -1):
+            if len(susun(k)) <= 1020:
+                return susun(k)
+        if not buang:
+            return "\n".join(head[:2] + tail)
+        head.remove(buang.pop(0))
 
 
 REZIM_IKON = {"naik": "📈 NAIK", "turun": "📉 TURUN", "netral": "➖ SIDEWAYS"}
 
 
-def header_text(naik, turun, n_scan, src_rank, src_bursa, now, dash, rz=None, tertahan=0) -> str:
+def peta_siklus(results) -> dict:
+    """Jumlah koin per stage + koin yang baru tembus dasar / baru jebol puncak."""
+    n = {k: 0 for k in (1, 2, 3, 4)}
+    for r in results:
+        st = (r.get("siklus") or {}).get("stage")
+        if st in n:
+            n[st] += 1
+    urut = sorted(results, key=lambda r: r.get("rank") or 9999)
+    fase = lambda f: [r["base"] for r in urut if (r.get("siklus") or {}).get("fase") == f]  # noqa: E731
+    tot = sum(n.values()) or 1
+    return dict(jumlah={str(k): v for k, v in n.items()}, persen_naik=round(n[2] / tot * 100),
+                persen_turun=round(n[4] / tot * 100), tembus_dasar=fase("1→2"), siap_tembus=fase("1-akhir"),
+                jebol_puncak=fase("3→4"))
+
+
+def teks_peta(ps: dict) -> str:
+    j = ps["jumlah"]
+    return (f"🔄 Peta siklus: 🟦 Dasar {j['1']} · 🟩 Naik {j['2']} · 🟨 Puncak {j['3']} · 🟥 Turun {j['4']}")
+
+
+def teks_btc_stage(r_btc) -> str | None:
+    sk = (r_btc or {}).get("siklus") or {}
+    if not sk.get("stage"):
+        return None
+    return f"BTC: {sk['ikon']} <b>{html.escape(sk['nama'])}</b> — {html.escape(sk['teks'])}"
+
+
+def header_text(naik, turun, n_scan, src_rank, src_bursa, now, dash, rz=None, tertahan=0, ps=None, btc_st=None) -> str:
     lines = [f"📡 <b>Radar Kripto</b> · {now_wib_str(now)}",
              f"Top {n_scan} koin ({html.escape(src_rank)}) · data {html.escape(src_bursa)}"]
     if rz:
         lines.append(f"Pasar BTC: <b>{REZIM_IKON.get(rz['rezim'], rz['rezim'])}</b> ({html.escape(rz['teks'])})")
+    if btc_st:
+        lines.append(btc_st)
+    if ps:
+        lines.append(teks_peta(ps))
     lines.append(f"🟢 Potensi naik: <b>{len(naik)}</b> · 🔴 Potensi turun: <b>{len(turun)}</b>"
                  + (f" · ⏸ ditahan filter: {tertahan}" if tertahan else ""))
     if dash:
@@ -624,11 +683,13 @@ def baris_ringkas(r: dict) -> str:
     P = r["pola_naik" if r["kelas"] == "naik" else "pola_turun"]
     pola = f" {html.escape(P['nama'])}" if P else ""
     skor = r["skor_naik"] if r["kelas"] == "naik" else r["skor_turun"]
-    return (f"• <b>{html.escape(r['base'])}</b> (#{r['rank']}) skor {skor}{pola}"
+    sk = r.get("siklus") or {}
+    st = f" · {sk['ikon']}S{sk['stage']}" if sk.get("stage") else ""
+    return (f"• <b>{html.escape(r['base'])}</b> (#{r['rank']}) skor {skor}{st}{pola}"
             + (f" → {fmt_pct(t['pct'])}" if t else ""))
 
 
-def summary_text(results, now, src_rank, dash, rk=None, rz=None) -> str:
+def summary_text(results, now, src_rank, dash, rk=None, rz=None, ps=None, btc_st=None) -> str:
     w = now.astimezone(WIB)
     naik = sorted([r for r in results if r["kelas"] == "naik"], key=lambda r: -r["skor_naik"])
     turun = sorted([r for r in results if r["kelas"] == "turun"], key=lambda r: -r["skor_turun"])
@@ -636,6 +697,15 @@ def summary_text(results, now, src_rank, dash, rk=None, rz=None) -> str:
              f"{len(results)} koin top ({html.escape(src_rank)}) dianalisa."]
     if rz:
         lines.append(f"Pasar BTC: <b>{REZIM_IKON.get(rz['rezim'], rz['rezim'])}</b> ({html.escape(rz['teks'])})")
+    if btc_st:
+        lines.append(btc_st)
+    if ps:
+        lines.append(teks_peta(ps) + f" (naik {ps['persen_naik']}% · turun {ps['persen_turun']}%)")
+        for label, key in (("🟦→🟩 Baru tembus dari dasar", "tembus_dasar"), ("🟦 Akhir dasar, siap tembus", "siap_tembus"),
+                           ("🟨→🟥 Baru jebol dari puncak", "jebol_puncak")):
+            xs = ps.get(key) or []
+            if xs:
+                lines.append(f"{label} ({len(xs)}): " + html.escape(", ".join(xs[:12])) + ("…" if len(xs) > 12 else ""))
     lines.append(f"\n🟢 <b>Potensi naik ({len(naik)})</b>")
     lines += [baris_ringkas(r) for r in naik[:10]] or ["• (belum ada)"]
     lines.append(f"\n🔴 <b>Potensi turun ({len(turun)})</b>")
@@ -781,12 +851,13 @@ def tulis_dashboard(results, charts: dict[str, bytes], meta: dict) -> None:
 
 def write_step_summary(results, meta, path) -> None:
     def tabel(rows, kelas):
-        out = ["| # CMC | Koin | Skor | Pola | Target | Batal | RSI | Zona |", "|---|---|---|---|---|---|---|---|"]
+        out = ["| # CMC | Koin | Skor | Stage | Pola | Target | Batal | RSI | Zona |", "|---|---|---|---|---|---|---|---|---|"]
         for r in rows:
             P = r["pola_naik" if kelas == "naik" else "pola_turun"]
             skor = r["skor_naik"] if kelas == "naik" else r["skor_turun"]
             t, b = r["target"], r["batal"]
-            out.append(f"| {r['rank']} | {r['base']} | {skor} | {P['nama'] if P else '-'} | "
+            sk = r.get("siklus") or {}
+            out.append(f"| {r['rank']} | {r['base']} | {skor} | {sk.get('fase', '-')} | {P['nama'] if P else '-'} | "
                        f"{fmt_pct(t['pct']) if t else '-'} | {fmt_pct(b['pct']) if b else '-'} | "
                        f"{r['indikator']['rsi'] if r['indikator']['rsi'] is not None else '-'} | "
                        f"{r['akumulasi']['posisi']} |")
@@ -796,6 +867,7 @@ def write_step_summary(results, meta, path) -> None:
     lines = [f"## Radar Kripto — {meta['updated_wib']}", "",
              f"Pasar BTC: {meta.get('pasar', {}).get('rezim', '-')} ({meta.get('pasar', {}).get('teks', '')}) · "
              f"ditahan filter: {meta.get('tertahan', 0)}", "",
+             teks_peta(meta["siklus"]) if meta.get("siklus") else "", "",
              f"Ranking: {meta['sumber_ranking']} · Data: {meta['sumber_harga']} · Dianalisa: {len(results)}", ""]
     if meta.get("dashboard"):
         lines += [f"Dashboard: {meta['dashboard']}", ""]
@@ -882,6 +954,9 @@ def main() -> int:
             r["kelas"], r["ditahan"] = k, alasan
             tertahan += 1
     print(f"Pasar BTC: {rz['rezim']} ({rz['teks']}) · {tertahan} sinyal ditahan filter")
+    ps = peta_siklus(results)
+    btc_st = teks_btc_stage(r_btc)
+    print(teks_peta(ps))
     if not demo:
         # Koin di rekam jejak yang tidak ikut dianalisa (mis. keluar dari top 200) tetap dipantau
         srcs = {u["_src"].name: u["_src"] for u in uni}
@@ -920,7 +995,7 @@ def main() -> int:
             print(f"  ! grafik {r['base']} gagal: {e}")
 
     if alerts:
-        tg.send_text(header_text(naik, turun, len(results), src_rank, src_harga, now, dash, rz, tertahan))
+        tg.send_text(header_text(naik, turun, len(results), src_rank, src_harga, now, dash, rz, tertahan, ps, btc_st))
         maxg = int(cfg["maks_grafik_per_run"])
         for r in alerts[:maxg]:
             png = charts.get(r["symbol"]) or buat_grafik(r, cfg["quote"], src_harga, waktu)
@@ -951,7 +1026,7 @@ def main() -> int:
     w = now.astimezone(WIB)
     today = w.date().isoformat()
     if demo or (w.hour >= int(cfg["ringkasan_harian_jam_wib"]) and state.get("last_summary") != today):
-        tg.send_text(summary_text(results, now, src_rank, dash, rk, rz))
+        tg.send_text(summary_text(results, now, src_rank, dash, rk, rz, ps, btc_st))
         if not demo:
             state["last_summary"] = today
 
@@ -959,9 +1034,11 @@ def main() -> int:
                 sumber_harga=src_harga, jumlah=len(results), top_n=int(cfg["top_n"]),
                 tidak_tersedia=tidak_ada, dashboard=dash, demo=demo,
                 ambang=dict(skor_min=cfg["skor_min"], selisih_min=cfg["selisih_min"]),
-                pasar=rz, tertahan=tertahan,
+                pasar=rz, tertahan=tertahan, siklus=ps,
+                btc_siklus=(r_btc or {}).get("siklus"),
                 filter=dict(pasar=cfg["filter_pasar"], meme=cfg["filter_meme"], breakout=cfg["wajib_breakout"],
-                            min_rr=cfg["min_rr"]), rencana_cfg=R,
+                            min_rr=cfg["min_rr"], stage_naik=cfg["filter_stage_naik"],
+                            stage_turun=cfg["filter_stage_turun"], min_checklist=cfg["min_checklist"]), rencana_cfg=R,
                 riwayat=riw, rekap7=rk)
     tulis_dashboard(results, charts, meta)
     if demo:
