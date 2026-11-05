@@ -115,8 +115,10 @@ def siklus_halving(btc: pd.DataFrame) -> list[dict]:
         seg = btc[(btc.index >= hv) & (btc.index < batas[i + 1])]
         if seg.empty:
             continue
-        ip = seg["high"].idxmax()
-        pk = float(seg.loc[ip, "high"])
+        # puncak siklus = harga tertinggi dalam ±2,5 tahun setelah halving (puncak historis: 526–549 hari)
+        win = seg[seg.index < hv + pd.Timedelta(days=900)]
+        ip = win["high"].idxmax()
+        pk = float(win.loc[ip, "high"])
         sesudah = seg[seg.index > ip]
         ib = sesudah["low"].idxmin() if len(sesudah) else None
         out.append(dict(halving=hv.strftime("%Y-%m-%d"), puncak_tgl=ip.strftime("%Y-%m-%d"), puncak=pk,
@@ -389,11 +391,22 @@ def main() -> int:
     if idx_alt is not None:
         sekarang["alt_dari_puncak"] = round(float(idx_alt.iloc[-1] / idx_alt.max() - 1) * 100, 1)
         sekarang["alt_puncak_tgl"] = idx_alt.idxmax().strftime("%Y-%m-%d")
+        ia = idx_alt[idx_alt.index >= HALVING[-1]]
+        sekarang["alt_dari_puncak_siklus"] = round(float(ia.iloc[-1] / ia.max() - 1) * 100, 1)
+        sekarang["alt_puncak_siklus_tgl"] = ia.idxmax().strftime("%Y-%m-%d")
+        sekarang["alt_dari_terendah_siklus"] = round(float(ia.iloc[-1] / ia[ia.index > ia.idxmax()].min() - 1) * 100, 1)
+        sekarang["alt_terendah_siklus_tgl"] = ia[ia.index > ia.idxmax()].idxmin().strftime("%Y-%m-%d")
+    lo_c = pd.Timestamp(c_now["dasar_tgl"], tz="UTC") if c_now["dasar_tgl"] else None
+    if lo_c is not None:
+        sekarang["naik_dari_terendah"] = round((harga / c_now["dasar"] - 1) * 100, 1)
+        sekarang["hari_sejak_terendah"] = int((hari_ini - lo_c).days)
+    bulanan_btc = [dict(bulan=i.strftime("%Y-%m"), close=round(float(v), 0))
+                   for i, v in btc["close"].resample("ME").last().items() if i >= pd.Timestamp("2025-01-01", tz="UTC")]
     st_bulanan = [dict(bulan=i.strftime("%Y-%m"), stage=int(v)) for i, v in st_btc.resample("ME").last().items()]
 
     hasil = dict(dibuat=now.isoformat(timespec="seconds"), dibuat_wib=S.now_wib_str(now), sekarang=sekarang,
                  siklus=cyc, analog=analog, peluang=peluang, musiman=musim, pasar=pasar_now,
-                 stage_btc_bulanan=st_bulanan, koin=len(data), koin_indeks=len(lama))
+                 stage_btc_bulanan=st_bulanan, btc_bulanan=bulanan_btc, koin=len(data), koin_indeks=len(lama))
 
     # ---------- Laporan ----------
     os.makedirs(OUT, exist_ok=True)
@@ -414,8 +427,13 @@ def main() -> int:
     if pasar_now:
         L.append(f"- Peta pasar ({pasar_now['n']} koin): Dasar {pasar_now['dasar']}% · Naik {pasar_now['naik']}% · "
                  f"Puncak {pasar_now['puncak']}% · Turun {pasar_now['turun']}%")
+    if "naik_dari_terendah" in sekarang:
+        L.append(f"- Terendah siklus ini {rp(c_now['dasar'])} ({c_now['dasar_tgl']}, {sekarang['hari_sejak_terendah']} hari lalu) · "
+                 f"sekarang {fmt(sekarang['naik_dari_terendah'])} dari titik itu")
     if "alt_dari_puncak" in sekarang:
-        L.append(f"- Indeks altcoin {fmt(sekarang['alt_dari_puncak'])} dari puncaknya ({sekarang['alt_puncak_tgl']})")
+        L.append(f"- Indeks altcoin {fmt(sekarang['alt_dari_puncak_siklus'])} dari puncak siklus ini "
+                 f"({sekarang['alt_puncak_siklus_tgl']}), {fmt(sekarang['alt_dari_terendah_siklus'])} dari terendahnya "
+                 f"({sekarang['alt_terendah_siklus_tgl']}) · {fmt(sekarang['alt_dari_puncak'])} dari puncak 2021")
     L += ["", "## Siklus halving", "",
           "| Halving | Puncak | Hari halving→puncak | Dasar | Hari puncak→dasar | Turun |", "|---|---|---|---|---|---|"]
     for c in cyc:
