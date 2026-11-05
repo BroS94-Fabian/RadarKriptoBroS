@@ -22,6 +22,11 @@ Tiap jam radar ini menganalisa koin **200 terbesar di CoinMarketCap** (data cand
 8. **Stochastic** (14,3,3) — cross di area <20 / >80.
 9. **Elliott Wave** — perkiraan otomatis posisi gelombang (akhir gelombang 2, gelombang 3, impuls 5 selesai, koreksi A-B-C).
 10. **Akumulasi volume** — OBV, CMF, porsi beli agresif, lonjakan volume, profil volume (zona akumulasi & POC).
+11. **Siklus 4 stage** (Weinstein / *Super Trader Analysis*) — tiap koin dipetakan ke 🟦 Stage 1 Dasar, 🟩 Stage 2 Naik,
+    🟨 Stage 3 Puncak, atau 🟥 Stage 4 Turun memakai MA200 harian (±30 minggu): arah MA, posisi harga, posisi di kisaran
+    1 tahun, low/high baru. Fase: akhir dasar, *baru tembus dari dasar (1→2)*, awal naik, jenuh, rawan jebol, *baru jebol (3→4)*.
+    Ditambah **checklist** Siklus → Tren → Support & Resistance → Pola → Candlestick → Volume, **volume konfirmasi/anomali**
+    (*bell ringing*), dan **zona pullback Fibonacci 0,382–0,618** untuk koin Stage 2. Lihat tab 🔄 Siklus di dashboard.
 
 ### Cara menghitung persentase naik/turun
 | Pola | Target | Batal jika |

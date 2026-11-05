@@ -957,6 +957,13 @@ def main() -> int:
     ps = peta_siklus(results)
     btc_st = teks_btc_stage(r_btc)
     print(teks_peta(ps))
+    if os.environ.get("GITHUB_ACTIONS"):
+        print(f"::notice title=Siklus 4 stage::{teks_peta(ps)} · BTC {((r_btc or {}).get('siklus') or {}).get('nama', '-')}"
+              f" · tembus dasar: {', '.join(ps['tembus_dasar'][:15]) or '-'} · siap tembus: {', '.join(ps['siap_tembus'][:15]) or '-'}")
+    if not demo:
+        bs = (r_btc or {}).get("siklus") or {}
+        state["siklus"] = dict(ps, btc=dict(stage=bs.get("stage"), fase=bs.get("fase"), teks=bs.get("teks")),
+                               ts=now.isoformat(timespec="seconds"))
     if not demo:
         # Koin di rekam jejak yang tidak ikut dianalisa (mis. keluar dari top 200) tetap dipantau
         srcs = {u["_src"].name: u["_src"] for u in uni}
