@@ -83,11 +83,11 @@
  },
  "last_summary": "2026-11-06",
  "pasar": {
-  "harga": 75696.0,
+  "harga": 76144.2,
   "ma": 82061.3818,
   "rezim": "netral",
   "teks": "BTC sideways di sekitar MA50",
-  "ts": "2026-11-06T08:59:00+00:00"
+  "ts": "2026-11-06T10:04:49+00:00"
  },
  "ranking": {
   "data": [
@@ -1501,12 +1501,12 @@
    "base": "BCH",
    "batal": null,
    "batal_pct": null,
-   "btc_chg": -2.12,
+   "btc_chg": -1.54,
    "btc_harga": 77336.0,
    "bursa": "Binance",
-   "chg": -7.65,
+   "chg": -6.81,
    "harga": 287.7,
-   "harga_now": 265.7,
+   "harga_now": 268.1,
    "hasil": "berjalan",
    "hasil_rencana": "kena SL",
    "id": "BCHUSDT|naik|2026-10-31T08:46:12+00:00",
@@ -1541,18 +1541,18 @@
    "target_pct": null,
    "ts": "2026-10-31T08:46:12+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-06T08:59:00+00:00"
+   "ts_update": "2026-11-06T10:04:49+00:00"
   },
   {
    "base": "BONK",
    "batal": null,
    "batal_pct": null,
-   "btc_chg": -2.12,
+   "btc_chg": -1.54,
    "btc_harga": 77336.0,
    "bursa": "Binance",
-   "chg": -2.71,
+   "chg": -1.02,
    "harga": 2.95e-06,
-   "harga_now": 2.87e-06,
+   "harga_now": 2.92e-06,
    "hasil": "berjalan",
    "hasil_rencana": "kena SL",
    "id": "BONKUSDT|naik|2026-10-31T08:46:12+00:00",
@@ -1587,18 +1587,18 @@
    "target_pct": null,
    "ts": "2026-10-31T08:46:12+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-06T08:59:00+00:00"
+   "ts_update": "2026-11-06T10:04:49+00:00"
   },
   {
    "base": "GRASS",
    "batal": null,
    "batal_pct": null,
-   "btc_chg": -2.12,
+   "btc_chg": -1.54,
    "btc_harga": 77336.0,
    "bursa": "OKX",
-   "chg": -14.06,
+   "chg": -14.2,
    "harga": 0.5788,
-   "harga_now": 0.4974,
+   "harga_now": 0.4966,
    "hasil": "berjalan",
    "hasil_rencana": "kena SL",
    "id": "GRASS-USDT|turun|2026-10-31T08:46:12+00:00",
@@ -1633,18 +1633,18 @@
    "target_pct": null,
    "ts": "2026-10-31T08:46:12+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-06T08:59:00+00:00"
+   "ts_update": "2026-11-06T10:04:49+00:00"
   },
   {
    "base": "LTC",
    "batal": null,
    "batal_pct": null,
-   "btc_chg": -2.12,
+   "btc_chg": -1.54,
    "btc_harga": 77336.0,
    "bursa": "Binance",
-   "chg": -4.24,
+   "chg": -3.26,
    "harga": 54.68,
-   "harga_now": 52.36,
+   "harga_now": 52.9,
    "hasil": "berjalan",
    "hasil_rencana": "impas setelah TP1",
    "id": "LTCUSDT|naik|2026-10-31T08:46:12+00:00",
@@ -1679,18 +1679,18 @@
    "target_pct": null,
    "ts": "2026-10-31T08:46:12+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-06T08:59:00+00:00"
+   "ts_update": "2026-11-06T10:04:49+00:00"
   },
   {
    "base": "PENGU",
    "batal": null,
    "batal_pct": null,
-   "btc_chg": -2.12,
+   "btc_chg": -1.54,
    "btc_harga": 77336.0,
    "bursa": "Binance",
-   "chg": -9.87,
+   "chg": -9.1,
    "harga": 0.007349,
-   "harga_now": 0.006624,
+   "harga_now": 0.00668,
    "hasil": "berjalan",
    "hasil_rencana": "kena SL",
    "id": "PENGUUSDT|naik|2026-10-31T08:46:12+00:00",
@@ -1725,18 +1725,18 @@
    "target_pct": null,
    "ts": "2026-10-31T08:46:12+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-06T08:59:00+00:00"
+   "ts_update": "2026-11-06T10:04:49+00:00"
   },
   {
    "base": "SHIB",
    "batal": null,
    "batal_pct": null,
-   "btc_chg": -2.12,
+   "btc_chg": -1.54,
    "btc_harga": 77336.0,
    "bursa": "Binance",
-   "chg": -2.96,
+   "chg": -2.54,
    "harga": 4.73e-06,
-   "harga_now": 4.59e-06,
+   "harga_now": 4.61e-06,
    "hasil": "berjalan",
    "hasil_rencana": "kena SL",
    "id": "SHIBUSDT|naik|2026-10-31T08:46:12+00:00",
@@ -1771,18 +1771,18 @@
    "target_pct": null,
    "ts": "2026-10-31T08:46:12+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-06T08:59:00+00:00"
+   "ts_update": "2026-11-06T10:04:49+00:00"
   },
   {
    "base": "UNI",
    "batal": null,
    "batal_pct": null,
-   "btc_chg": -2.12,
+   "btc_chg": -1.54,
    "btc_harga": 77336.0,
    "bursa": "Binance",
-   "chg": 0.37,
+   "chg": 0.83,
    "harga": 6.949,
-   "harga_now": 6.975,
+   "harga_now": 7.007,
    "hasil": "berjalan",
    "hasil_rencana": "kena TP2",
    "id": "UNIUSDT|naik|2026-10-31T08:46:12+00:00",
@@ -1817,18 +1817,18 @@
    "target_pct": null,
    "ts": "2026-10-31T08:46:12+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-06T08:59:00+00:00"
+   "ts_update": "2026-11-06T10:04:49+00:00"
   },
   {
    "base": "VIRTUAL",
    "batal": null,
    "batal_pct": null,
-   "btc_chg": -2.12,
+   "btc_chg": -1.54,
    "btc_harga": 77336.0,
    "bursa": "Binance",
-   "chg": -1.65,
+   "chg": -1.31,
    "harga": 0.5805,
-   "harga_now": 0.5709,
+   "harga_now": 0.5729,
    "hasil": "berjalan",
    "hasil_rencana": "impas setelah TP1",
    "id": "VIRTUALUSDT|naik|2026-10-31T08:46:12+00:00",
@@ -1863,18 +1863,18 @@
    "target_pct": null,
    "ts": "2026-10-31T08:46:12+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-06T08:59:00+00:00"
+   "ts_update": "2026-11-06T10:04:49+00:00"
   },
   {
    "base": "LINK",
    "batal": null,
    "batal_pct": null,
-   "btc_chg": -2.27,
+   "btc_chg": -1.69,
    "btc_harga": 77452.5,
    "bursa": "Binance",
-   "chg": -6.43,
+   "chg": -5.86,
    "harga": 11.469,
-   "harga_now": 10.731,
+   "harga_now": 10.797,
    "hasil": "berjalan",
    "hasil_rencana": "impas setelah TP1",
    "id": "LINKUSDT|naik|2026-10-31T09:42:02+00:00",
@@ -1909,18 +1909,18 @@
    "target_pct": null,
    "ts": "2026-10-31T09:42:02+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-06T08:59:00+00:00"
+   "ts_update": "2026-11-06T10:04:49+00:00"
   },
   {
    "base": "GLM",
    "batal": null,
    "batal_pct": null,
-   "btc_chg": -2.12,
+   "btc_chg": -1.54,
    "btc_harga": 77336.0,
    "bursa": "Binance",
-   "chg": -6.02,
+   "chg": -5.32,
    "harga": 0.1146,
-   "harga_now": 0.1077,
+   "harga_now": 0.1085,
    "hasil": "berjalan",
    "hasil_rencana": "berjalan",
    "id": "GLMUSDT|naik|2026-10-31T08:46:12+00:00",
@@ -1931,8 +1931,8 @@
    "meme": false,
    "min": 0.1032,
    "min_pct": -9.95,
-   "pnl_rencana": -6.02,
-   "pnl_rencana_bersih": -6.41,
+   "pnl_rencana": -5.32,
+   "pnl_rencana_bersih": -5.72,
    "pola": null,
    "rank": 171,
    "rencana": {
@@ -1955,18 +1955,18 @@
    "target_pct": null,
    "ts": "2026-10-31T08:46:12+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-06T08:59:00+00:00"
+   "ts_update": "2026-11-06T10:04:49+00:00"
   },
   {
    "base": "MORPHO",
    "batal": 1.89395,
    "batal_pct": -18.1,
-   "btc_chg": -2.46,
+   "btc_chg": -1.89,
    "btc_harga": 77608.0,
    "bursa": "Binance",
-   "chg": -9.69,
+   "chg": -9.21,
    "harga": 2.312,
-   "harga_now": 2.088,
+   "harga_now": 2.099,
    "hasil": "berjalan",
    "hasil_rencana": "impas setelah TP1",
    "id": "MORPHOUSDT|naik|2026-10-31T15:38:36+00:00",
@@ -2001,7 +2001,7 @@
    "target_pct": 29.6,
    "ts": "2026-10-31T15:38:36+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-06T08:59:00+00:00"
+   "ts_update": "2026-11-06T10:04:49+00:00"
   },
   {
    "base": "XEC",
@@ -2053,7 +2053,7 @@
    "base": "GRAM",
    "batal": 1.03972,
    "batal_pct": -13.9,
-   "btc_chg": -3.26,
+   "btc_chg": -2.69,
    "btc_harga": 78246.0,
    "bursa": "Binance",
    "chg": -8.94,
@@ -2093,7 +2093,7 @@
    "target_pct": 43.2,
    "ts": "2026-11-02T01:04:02+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-06T08:59:00+00:00"
+   "ts_update": "2026-11-06T10:04:49+00:00"
   },
   {
    "base": "AR",
@@ -2145,12 +2145,12 @@
    "base": "DEXE",
    "batal": 1.9593,
    "batal_pct": 38.6,
-   "btc_chg": -2.32,
+   "btc_chg": -1.75,
    "btc_harga": 77497.0,
    "bursa": "Binance",
-   "chg": -8.42,
+   "chg": -6.44,
    "harga": 1.414,
-   "harga_now": 1.295,
+   "harga_now": 1.323,
    "hasil": "berjalan",
    "hasil_rencana": "impas setelah TP1",
    "id": "DEXEUSDT|turun|2026-11-02T17:05:44+00:00",
@@ -2185,18 +2185,18 @@
    "target_pct": -21.3,
    "ts": "2026-11-02T17:05:44+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-06T08:59:00+00:00"
+   "ts_update": "2026-11-06T10:04:49+00:00"
   },
   {
    "base": "DASH",
    "batal": 42.4639,
    "batal_pct": -8.5,
-   "btc_chg": -1.76,
+   "btc_chg": -1.18,
    "btc_harga": 77056.0,
    "bursa": "Binance",
-   "chg": -3.56,
+   "chg": -2.44,
    "harga": 46.4,
-   "harga_now": 44.75,
+   "harga_now": 45.27,
    "hasil": "berjalan",
    "hasil_rencana": "kena SL",
    "id": "DASHUSDT|naik|2026-11-03T00:30:27+00:00",
@@ -2230,7 +2230,7 @@
    "target_pct": 43.6,
    "ts": "2026-11-03T00:30:27+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-06T08:59:00+00:00"
+   "ts_update": "2026-11-06T10:04:49+00:00"
   }
  ],
  "riwayat_isi_ulang": true,
@@ -2247,10 +2247,10 @@
    "1": 58,
    "2": 19,
    "3": 37,
-   "4": 22
+   "4": 23
   },
   "persen_naik": 14,
-  "persen_turun": 16,
+  "persen_turun": 17,
   "siap_tembus": [
    "BCH",
    "LTC",
@@ -2265,7 +2265,7 @@
   "tembus_dasar": [
    "PEPE"
   ],
-  "ts": "2026-11-06T08:59:00+00:00"
+  "ts": "2026-11-06T10:04:49+00:00"
  },
  "stage2": {}
 }
