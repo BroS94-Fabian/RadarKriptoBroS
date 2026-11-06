@@ -1,4 +1,122 @@
 {
+ "jangkauan": [
+  {
+   "akhir": {
+    "p10": -29.8,
+    "p25": -16.2,
+    "p50": 4.3,
+    "p75": 33.1,
+    "p90": 70.6
+   },
+   "tertinggi": {
+    "p10": 3.5,
+    "p25": 9.9,
+    "p50": 22.3,
+    "p75": 47.7,
+    "p90": 89.8
+   },
+   "terendah": {
+    "p10": -46.0,
+    "p25": -29.3,
+    "p50": -16.3,
+    "p75": -6.3,
+    "p90": -2.0
+   },
+   "kondisi": "Semua hari sejak 2017",
+   "n": 3281,
+   "sentuh_turun_10": 65.5,
+   "sentuh_naik_10": 74.7,
+   "sentuh_turun_20": 42.1,
+   "sentuh_naik_20": 53.5
+  },
+  {
+   "akhir": {
+    "p10": -25.4,
+    "p25": -16.5,
+    "p50": 2.0,
+    "p75": 31.1,
+    "p90": 57.8
+   },
+   "tertinggi": {
+    "p10": 3.4,
+    "p25": 10.3,
+    "p50": 23.6,
+    "p75": 45.7,
+    "p90": 70.3
+   },
+   "terendah": {
+    "p10": -38.6,
+    "p25": -29.7,
+    "p50": -20.0,
+    "p75": -6.3,
+    "p90": -1.8
+   },
+   "kondisi": "Stage harian BTC sama (Stage 3)",
+   "n": 1067,
+   "sentuh_turun_10": 67.8,
+   "sentuh_naik_10": 75.3,
+   "sentuh_turun_20": 50.0,
+   "sentuh_naik_20": 54.6
+  },
+  {
+   "akhir": {
+    "p10": -16.8,
+    "p25": -7.8,
+    "p50": 17.0,
+    "p75": 44.1,
+    "p90": 71.9
+   },
+   "tertinggi": {
+    "p10": 12.4,
+    "p25": 26.1,
+    "p50": 39.9,
+    "p75": 57.4,
+    "p90": 89.9
+   },
+   "terendah": {
+    "p10": -35.1,
+    "p25": -22.4,
+    "p50": -12.5,
+    "p75": -3.8,
+    "p90": -1.2
+   },
+   "kondisi": "Stage mingguan BTC sama (Stage 1)",
+   "n": 406,
+   "sentuh_turun_10": 57.9,
+   "sentuh_naik_10": 94.6,
+   "sentuh_turun_20": 31.0,
+   "sentuh_naik_20": 81.5
+  },
+  {
+   "akhir": {
+    "p10": -13.3,
+    "p25": 8.8,
+    "p50": 29.4,
+    "p75": 59.8,
+    "p90": 105.5
+   },
+   "tertinggi": {
+    "p10": 6.3,
+    "p25": 12.9,
+    "p50": 42.9,
+    "p75": 64.3,
+    "p90": 127.9
+   },
+   "terendah": {
+    "p10": -24.8,
+    "p25": -18.9,
+    "p50": -7.5,
+    "p75": -2.9,
+    "p90": -1.0
+   },
+   "kondisi": "Fase siklus sama: 320–470 hari setelah puncak siklus",
+   "n": 302,
+   "sentuh_turun_10": 44.4,
+   "sentuh_naik_10": 85.4,
+   "sentuh_turun_20": 19.9,
+   "sentuh_naik_20": 67.5
+  }
+ ],
  "perbandingan": {
   "rows": [
    {
@@ -14,8 +132,8 @@
     "turun_pct": -86.9,
     "hari_puncak_ke_dasar": 410,
     "selesai": true,
-    "pulih_hari_sama": 53.8,
-    "dari_puncak_hari_sama": -73.1,
+    "pulih_hari_sama": 54.2,
+    "dari_puncak_hari_sama": -73.3,
     "mirip_halving": 0.55,
     "mirip_puncak": 0.26
    },
@@ -32,8 +150,8 @@
     "turun_pct": -84.1,
     "hari_puncak_ke_dasar": 363,
     "selesai": true,
-    "pulih_hari_sama": 67.7,
-    "dari_puncak_hari_sama": -82.1,
+    "pulih_hari_sama": 66.5,
+    "dari_puncak_hari_sama": -81.9,
     "mirip_halving": 0.41,
     "mirip_puncak": 0.34
    },
@@ -50,7 +168,7 @@
     "turun_pct": -77.6,
     "hari_puncak_ke_dasar": 376,
     "selesai": true,
-    "pulih_hari_sama": 75.3,
+    "pulih_hari_sama": 76.2,
     "dari_puncak_hari_sama": -75.2,
     "mirip_halving": 0.73,
     "mirip_puncak": 0.75
@@ -68,8 +186,8 @@
     "turun_pct": -54.2,
     "hari_puncak_ke_dasar": 268,
     "selesai": false,
-    "pulih_hari_sama": 39.3,
-    "dari_puncak_hari_sama": -36.2
+    "pulih_hari_sama": 31.6,
+    "dari_puncak_hari_sama": -39.7
    }
   ],
   "pasangan": [
@@ -89,38 +207,38 @@
     "r": 0.61
    }
   ],
-  "hari_sejak_halving": 928,
-  "hari_sejak_puncak": 394,
-  "hari_sejak_dasar": 126
+  "hari_sejak_halving": 929,
+  "hari_sejak_puncak": 395,
+  "hari_sejak_dasar": 127
  },
- "dibuat": "2026-11-05T14:33:02+00:00",
- "dibuat_wib": "5 Nov 2026 21:33 WIB",
+ "dibuat": "2026-11-06T04:39:16+00:00",
+ "dibuat_wib": "6 Nov 2026 11:39 WIB",
  "sekarang": {
-  "tanggal": "2026-11-04",
-  "harga": 80504.01,
+  "tanggal": "2026-11-05",
+  "harga": 76088.01,
   "ath": 126199.63,
-  "turun_dari_ath": -36.2,
+  "turun_dari_ath": -39.7,
   "stage_harian": 3,
-  "fase": "3",
-  "fase_teks": "kenaikan tertahan, harga bolak-balik (distribusi)",
-  "stage_mingguan": 2,
-  "ma30w": 73733.588,
-  "ma30w_slope": 2.19,
-  "ma200": 73231.0857,
+  "fase": "3-akhir",
+  "fase_teks": "di lantai kisaran puncak, rawan jebol",
+  "stage_mingguan": 1,
+  "ma30w": 73586.388,
+  "ma30w_slope": 1.99,
+  "ma200": 73242.5168,
   "ma200w": 67471.86314999999,
-  "hari_sejak_halving": 928,
-  "hari_sejak_puncak": 394,
-  "hari_ke_halving_berikut": 528,
-  "horizon_hari": 88,
+  "hari_sejak_halving": 929,
+  "hari_sejak_puncak": 395,
+  "hari_ke_halving_berikut": 527,
+  "horizon_hari": 87,
   "tujuan": "2027-01-31",
-  "alt_dari_puncak": -89.3,
+  "alt_dari_puncak": -90.9,
   "alt_puncak_tgl": "2021-05-09",
-  "alt_dari_puncak_siklus": -76.7,
+  "alt_dari_puncak_siklus": -79.0,
   "alt_puncak_siklus_tgl": "2024-12-06",
-  "alt_dari_terendah_siklus": 33.8,
+  "alt_dari_terendah_siklus": 25.6,
   "alt_terendah_siklus_tgl": "2026-08-16",
-  "naik_dari_terendah": 39.3,
-  "hari_sejak_terendah": 126
+  "naik_dari_terendah": 31.6,
+  "hari_sejak_terendah": 127
  },
  "siklus": [
   {
@@ -173,14 +291,14 @@
   {
    "siklus": "2012",
    "acuan": "halving",
-   "dari": "2015-06-14",
+   "dari": "2015-06-15",
    "sampai": "2015-09-10",
-   "harga_dari": 232.09,
+   "harga_dari": 235.92,
    "harga_sampai": 238.66,
-   "hasil": 2.8,
-   "terendah": -14.6,
-   "tertinggi": 37.0,
-   "turun_dari_puncak": -80.0,
+   "hasil": 1.2,
+   "terendah": -16.0,
+   "tertinggi": 34.8,
+   "turun_dari_puncak": -79.7,
    "dasar_sudah_lewat": true,
    "stage": 1,
    "puncak": "2013-11-30"
@@ -188,14 +306,14 @@
   {
    "siklus": "2012",
    "acuan": "puncak",
-   "dari": "2014-12-29",
+   "dari": "2014-12-30",
    "sampai": "2015-03-27",
-   "harga_dari": 313.01,
+   "harga_dari": 311.07,
    "harga_sampai": 247.94,
-   "hasil": -20.8,
-   "terendah": -51.3,
-   "tertinggi": 2.6,
-   "turun_dari_puncak": -73.1,
+   "hasil": -20.3,
+   "terendah": -51.0,
+   "tertinggi": 3.2,
+   "turun_dari_puncak": -73.3,
    "dasar_sudah_lewat": false,
    "stage": 4,
    "puncak": "2013-11-30"
@@ -203,14 +321,14 @@
   {
    "siklus": "2016",
    "acuan": "halving",
-   "dari": "2019-01-23",
+   "dari": "2019-01-24",
    "sampai": "2019-04-21",
-   "harga_dari": 3552.82,
+   "harga_dari": 3569.62,
    "harga_sampai": 5256.14,
-   "hasil": 47.9,
-   "terendah": -5.7,
-   "tertinggi": 52.6,
-   "turun_dari_puncak": -82.1,
+   "hasil": 47.2,
+   "terendah": -6.2,
+   "tertinggi": 51.9,
+   "turun_dari_puncak": -82.0,
    "dasar_sudah_lewat": true,
    "stage": 4,
    "puncak": "2017-12-17"
@@ -218,14 +336,14 @@
   {
    "siklus": "2016",
    "acuan": "puncak",
-   "dari": "2019-01-15",
+   "dari": "2019-01-16",
    "sampai": "2019-04-13",
-   "harga_dari": 3553.06,
+   "harga_dari": 3591.84,
    "harga_sampai": 5045.22,
-   "hasil": 42.0,
-   "terendah": -5.7,
-   "tertinggi": 52.6,
-   "turun_dari_puncak": -82.1,
+   "hasil": 40.5,
+   "terendah": -6.7,
+   "tertinggi": 51.0,
+   "turun_dari_puncak": -81.9,
    "dasar_sudah_lewat": true,
    "stage": 4,
    "puncak": "2017-12-17"
@@ -233,13 +351,13 @@
   {
    "siklus": "2020",
    "acuan": "halving",
-   "dari": "2022-11-25",
+   "dari": "2022-11-26",
    "sampai": "2023-02-21",
-   "harga_dari": 16522.14,
+   "harga_dari": 16458.57,
    "harga_sampai": 24452.16,
-   "hasil": 48.0,
-   "terendah": -3.2,
-   "tertinggi": 52.8,
+   "hasil": 48.6,
+   "terendah": -2.8,
+   "tertinggi": 53.4,
    "turun_dari_puncak": -76.1,
    "dasar_sudah_lewat": true,
    "stage": 4,
@@ -248,9 +366,9 @@
   {
    "siklus": "2020",
    "acuan": "puncak",
-   "dari": "2022-12-09",
+   "dari": "2022-12-10",
    "sampai": "2023-03-07",
-   "harga_dari": 17128.56,
+   "harga_dari": 17127.49,
    "harga_sampai": 22197.96,
    "hasil": 29.6,
    "terendah": -5.1,
@@ -265,37 +383,37 @@
   {
    "kondisi": "Semua hari sejak 2011",
    "btc": {
-    "n": 5470,
+    "n": 5472,
     "bulan": 181,
-    "naik": 59.8,
-    "median": 10.3,
-    "p25": -14.0,
-    "p75": 47.0,
-    "rata": 34.8,
+    "naik": 59.7,
+    "median": 10.2,
+    "p25": -14.1,
+    "p75": 46.5,
+    "rata": 34.3,
     "naik_10": 50.2,
-    "turun_10": 29.7
+    "turun_10": 29.8
    },
    "alt": {
-    "n": 2103,
+    "n": 2105,
     "bulan": 70,
-    "naik": 42.5,
-    "median": -7.9,
-    "p25": -26.3,
-    "p75": 26.8,
-    "rata": 12.2,
+    "naik": 42.2,
+    "median": -8.0,
+    "p25": -26.6,
+    "p75": 25.9,
+    "rata": 11.6,
     "naik_10": 34.8,
-    "turun_10": 47.5
+    "turun_10": 47.1
    },
    "eth": {
-    "n": 2473,
+    "n": 2475,
     "bulan": 82,
-    "naik": 59.3,
-    "median": 10.2,
-    "p25": -17.4,
-    "p75": 44.1,
-    "rata": 20.1,
-    "naik_10": 50.2,
-    "turun_10": 31.6
+    "naik": 59.1,
+    "median": 9.7,
+    "p25": -17.6,
+    "p75": 44.2,
+    "rata": 19.9,
+    "naik_10": 49.8,
+    "turun_10": 31.9
    }
   },
   {
@@ -303,212 +421,212 @@
    "btc": {
     "n": 1506,
     "bulan": 79,
-    "naik": 60.0,
-    "median": 11.9,
-    "p25": -15.0,
+    "naik": 59.8,
+    "median": 11.7,
+    "p25": -15.4,
     "p75": 40.4,
-    "rata": 18.3,
-    "naik_10": 51.3,
-    "turun_10": 30.5
+    "rata": 17.9,
+    "naik_10": 51.1,
+    "turun_10": 30.9
    },
    "alt": {
     "n": 720,
     "bulan": 38,
-    "naik": 48.9,
-    "median": -1.6,
-    "p25": -25.8,
-    "p75": 44.8,
-    "rata": 9.9,
-    "naik_10": 42.4,
-    "turun_10": 41.0
+    "naik": 47.9,
+    "median": -1.4,
+    "p25": -25.6,
+    "p75": 45.0,
+    "rata": 9.6,
+    "naik_10": 42.5,
+    "turun_10": 40.6
    },
    "eth": {
     "n": 843,
     "bulan": 45,
-    "naik": 60.1,
-    "median": 17.1,
-    "p25": -21.6,
-    "p75": 46.2,
-    "rata": 17.4,
-    "naik_10": 53.3,
-    "turun_10": 31.3
+    "naik": 59.9,
+    "median": 16.6,
+    "p25": -21.3,
+    "p75": 45.7,
+    "rata": 17.0,
+    "naik_10": 52.8,
+    "turun_10": 31.4
    }
   },
   {
-   "kondisi": "Stage mingguan BTC sama (Stage 2)",
+   "kondisi": "Stage mingguan BTC sama (Stage 1)",
    "btc": {
-    "n": 2625,
-    "bulan": 99,
-    "naik": 66.1,
-    "median": 17.5,
-    "p25": -9.0,
-    "p75": 64.0,
-    "rata": 58.9,
-    "naik_10": 55.9,
-    "turun_10": 23.8
+    "n": 602,
+    "bulan": 30,
+    "naik": 67.4,
+    "median": 21.5,
+    "p25": -6.4,
+    "p75": 46.7,
+    "rata": 25.0,
+    "naik_10": 61.6,
+    "turun_10": 20.3
    },
    "alt": {
-    "n": 899,
-    "bulan": 37,
-    "naik": 40.8,
-    "median": -8.7,
-    "p25": -26.1,
-    "p75": 22.7,
-    "rata": 24.2,
-    "naik_10": 32.8,
-    "turun_10": 48.3
+    "n": 168,
+    "bulan": 9,
+    "naik": 59.5,
+    "median": 25.9,
+    "p25": -13.0,
+    "p75": 65.4,
+    "rata": 25.7,
+    "naik_10": 57.1,
+    "turun_10": 29.2
    },
    "eth": {
-    "n": 1024,
-    "bulan": 43,
-    "naik": 57.5,
-    "median": 5.8,
-    "p25": -16.2,
-    "p75": 54.0,
-    "rata": 29.4,
-    "naik_10": 47.5,
-    "turun_10": 31.2
+    "n": 231,
+    "bulan": 12,
+    "naik": 91.3,
+    "median": 23.5,
+    "p25": 10.4,
+    "p75": 41.0,
+    "rata": 28.3,
+    "naik_10": 75.8,
+    "turun_10": 1.3
    }
   },
   {
-   "kondisi": "Turun 26–46% dari ATH",
+   "kondisi": "Turun 30–50% dari ATH",
    "btc": {
-    "n": 1020,
-    "bulan": 68,
-    "naik": 51.1,
-    "median": 1.1,
-    "p25": -21.8,
-    "p75": 39.8,
+    "n": 1179,
+    "bulan": 71,
+    "naik": 52.9,
+    "median": 5.6,
+    "p25": -20.8,
+    "p75": 38.3,
     "rata": 17.2,
-    "naik_10": 45.3,
-    "turun_10": 40.2
+    "naik_10": 48.3,
+    "turun_10": 38.4
    },
    "alt": {
-    "n": 499,
-    "bulan": 29,
-    "naik": 37.7,
-    "median": -16.4,
-    "p25": -31.4,
-    "p75": 22.8,
-    "rata": -4.9,
-    "naik_10": 32.5,
-    "turun_10": 57.3
+    "n": 530,
+    "bulan": 26,
+    "naik": 50.0,
+    "median": -0.3,
+    "p25": -25.5,
+    "p75": 31.0,
+    "rata": 1.2,
+    "naik_10": 42.1,
+    "turun_10": 44.3
    },
    "eth": {
-    "n": 582,
+    "n": 637,
     "bulan": 34,
-    "naik": 52.2,
-    "median": 3.6,
-    "p25": -26.5,
-    "p75": 41.6,
-    "rata": 14.5,
-    "naik_10": 46.2,
-    "turun_10": 42.8
+    "naik": 61.4,
+    "median": 18.7,
+    "p25": -19.4,
+    "p75": 44.3,
+    "rata": 20.0,
+    "naik_10": 55.3,
+    "turun_10": 33.6
    }
   },
   {
    "kondisi": "Harga di bawah MA200 yang menurun",
    "btc": {
-    "n": 1377,
+    "n": 1379,
     "bulan": 57,
-    "naik": 40.4,
+    "naik": 40.2,
     "median": -8.2,
     "p25": -22.2,
     "p75": 19.2,
-    "rata": 1.9,
+    "rata": 1.8,
     "naik_10": 31.3,
-    "turun_10": 47.3
+    "turun_10": 47.6
    },
    "alt": {
-    "n": 601,
+    "n": 603,
     "bulan": 25,
     "naik": 35.3,
-    "median": -14.2,
-    "p25": -27.8,
-    "p75": 11.9,
-    "rata": -6.9,
-    "naik_10": 26.6,
-    "turun_10": 54.9
+    "median": -14.4,
+    "p25": -28.9,
+    "p75": 12.5,
+    "rata": -7.5,
+    "naik_10": 26.4,
+    "turun_10": 55.1
    },
    "eth": {
-    "n": 703,
+    "n": 705,
     "bulan": 30,
-    "naik": 48.6,
-    "median": -1.6,
-    "p25": -21.6,
-    "p75": 28.2,
+    "naik": 48.4,
+    "median": -2.6,
+    "p25": -21.8,
+    "p75": 28.3,
     "rata": 3.0,
-    "naik_10": 39.7,
-    "turun_10": 40.8
+    "naik_10": 40.0,
+    "turun_10": 41.7
    }
   },
   {
-   "kondisi": "Fase siklus sama: 319–469 hari setelah puncak siklus",
+   "kondisi": "Fase siklus sama: 320–470 hari setelah puncak siklus",
    "btc": {
     "n": 453,
-    "bulan": 17,
-    "naik": 60.0,
-    "median": 9.7,
-    "p25": -15.4,
-    "p75": 44.3,
+    "bulan": 18,
+    "naik": 59.6,
+    "median": 9.2,
+    "p25": -14.3,
+    "p75": 45.0,
     "rata": 18.9,
-    "naik_10": 49.2,
-    "turun_10": 31.3
+    "naik_10": 48.3,
+    "turun_10": 30.2
    },
    "alt": {
     "n": 151,
     "bulan": 6,
-    "naik": 53.0,
-    "median": 3.1,
-    "p25": -12.5,
+    "naik": 50.3,
+    "median": 3.2,
+    "p25": -13.8,
     "p75": 33.7,
-    "rata": 8.6,
-    "naik_10": 47.0,
-    "turun_10": 27.8
+    "rata": 7.4,
+    "naik_10": 47.7,
+    "turun_10": 29.8
    },
    "eth": {
     "n": 151,
     "bulan": 6,
-    "naik": 86.1,
-    "median": 20.8,
-    "p25": 8.4,
-    "p75": 35.6,
-    "rata": 21.3,
-    "naik_10": 71.5,
+    "naik": 86.8,
+    "median": 21.0,
+    "p25": 7.7,
+    "p75": 35.9,
+    "rata": 21.1,
+    "naik_10": 70.9,
     "turun_10": 2.0
    }
   },
   {
-   "kondisi": "Fase siklus sama: 853–1003 hari setelah halving",
+   "kondisi": "Fase siklus sama: 854–1004 hari setelah halving",
    "btc": {
     "n": 453,
-    "bulan": 18,
-    "naik": 74.2,
-    "median": 19.6,
-    "p25": -1.5,
-    "p75": 47.9,
-    "rata": 30.4,
-    "naik_10": 62.3,
-    "turun_10": 14.1
+    "bulan": 17,
+    "naik": 73.7,
+    "median": 20.5,
+    "p25": -0.9,
+    "p75": 48.4,
+    "rata": 30.3,
+    "naik_10": 61.8,
+    "turun_10": 13.5
    },
    "alt": {
     "n": 151,
     "bulan": 6,
-    "naik": 53.0,
-    "median": 3.1,
-    "p25": -14.1,
+    "naik": 50.3,
+    "median": 3.2,
+    "p25": -15.2,
     "p75": 33.7,
-    "rata": 7.9,
-    "naik_10": 47.0,
-    "turun_10": 27.8
+    "rata": 6.6,
+    "naik_10": 47.7,
+    "turun_10": 29.8
    },
    "eth": {
     "n": 151,
     "bulan": 6,
-    "naik": 76.8,
+    "naik": 77.5,
     "median": 20.7,
-    "p25": 1.2,
-    "p75": 35.6,
+    "p25": 1.8,
+    "p75": 35.9,
     "rata": 18.8,
     "naik_10": 66.9,
     "turun_10": 7.9
@@ -517,99 +635,100 @@
  ],
  "musiman": [
   {
-   "tahun": "04 Nov 2017 → 31 Jan 2018",
-   "btc": 39.8
+   "tahun": "05 Nov 2017 → 31 Jan 2018",
+   "btc": 40.0
   },
   {
-   "tahun": "04 Nov 2018 → 31 Jan 2019",
-   "btc": -47.1
+   "tahun": "05 Nov 2018 → 31 Jan 2019",
+   "btc": -46.9
   },
   {
-   "tahun": "04 Nov 2019 → 31 Jan 2020",
-   "btc": -0.4
+   "tahun": "05 Nov 2019 → 31 Jan 2020",
+   "btc": 0.5
   },
   {
-   "tahun": "04 Nov 2020 → 31 Jan 2021",
-   "btc": 134.0
+   "tahun": "05 Nov 2020 → 31 Jan 2021",
+   "btc": 112.3,
+   "alt": 174.3
   },
   {
-   "tahun": "04 Nov 2021 → 31 Jan 2022",
-   "btc": -37.3,
-   "alt": -47.9
+   "tahun": "05 Nov 2021 → 31 Jan 2022",
+   "btc": -36.9,
+   "alt": -47.3
   },
   {
-   "tahun": "04 Nov 2022 → 31 Jan 2023",
-   "btc": 9.3,
-   "alt": -11.2
+   "tahun": "05 Nov 2022 → 31 Jan 2023",
+   "btc": 8.6,
+   "alt": -14.4
   },
   {
-   "tahun": "04 Nov 2023 → 31 Jan 2024",
-   "btc": 21.4,
-   "alt": 21.7
+   "tahun": "05 Nov 2023 → 31 Jan 2024",
+   "btc": 21.6,
+   "alt": 18.6
   },
   {
-   "tahun": "04 Nov 2024 → 31 Jan 2025",
-   "btc": 51.0,
-   "alt": 75.6
+   "tahun": "05 Nov 2024 → 31 Jan 2025",
+   "btc": 47.7,
+   "alt": 66.9
   },
   {
-   "tahun": "04 Nov 2025 → 31 Jan 2026",
-   "btc": -22.4,
-   "alt": -31.7
+   "tahun": "05 Nov 2025 → 31 Jan 2026",
+   "btc": -24.2,
+   "alt": -34.6
   }
  ],
  "pasar": {
-  "dasar": 47.2,
-  "naik": 13.4,
-  "puncak": 24.4,
-  "turun": 15.0,
-  "n": 127,
+  "dasar": 46.9,
+  "naik": 13.3,
+  "puncak": 25.8,
+  "turun": 14.1,
+  "n": 128,
   "riwayat_bulanan": [
    {
     "bulan": "2020-06",
-    "naik": 30.8,
-    "turun": 3.8,
-    "dasar": 46.2
+    "naik": 29.6,
+    "turun": 3.7,
+    "dasar": 44.4
    },
    {
     "bulan": "2020-07",
-    "naik": 77.8,
+    "naik": 79.3,
     "turun": 0.0,
-    "dasar": 11.1
+    "dasar": 10.3
    },
    {
     "bulan": "2020-08",
-    "naik": 70.4,
+    "naik": 72.4,
     "turun": 0.0,
-    "dasar": 7.4
+    "dasar": 6.9
    },
    {
     "bulan": "2020-09",
-    "naik": 11.1,
-    "turun": 11.1,
-    "dasar": 11.1
+    "naik": 10.3,
+    "turun": 10.3,
+    "dasar": 10.3
    },
    {
     "bulan": "2020-10",
-    "naik": 18.5,
+    "naik": 20.7,
     "turun": 0.0,
-    "dasar": 18.5
+    "dasar": 20.7
    },
    {
     "bulan": "2020-11",
-    "naik": 63.0,
+    "naik": 62.1,
     "turun": 0.0,
-    "dasar": 7.4
+    "dasar": 6.9
    },
    {
     "bulan": "2020-12",
-    "naik": 40.7,
-    "turun": 0.0,
-    "dasar": 18.5
+    "naik": 41.4,
+    "turun": 3.4,
+    "dasar": 17.2
    },
    {
     "bulan": "2021-01",
-    "naik": 96.4,
+    "naik": 96.7,
     "turun": 0.0,
     "dasar": 0.0
    },
@@ -621,99 +740,99 @@
    },
    {
     "bulan": "2021-03",
-    "naik": 83.3,
+    "naik": 84.2,
     "turun": 0.0,
-    "dasar": 2.8
+    "dasar": 2.6
    },
    {
     "bulan": "2021-04",
-    "naik": 90.5,
+    "naik": 88.6,
     "turun": 0.0,
     "dasar": 0.0
    },
    {
     "bulan": "2021-05",
-    "naik": 26.1,
+    "naik": 25.0,
     "turun": 0.0,
-    "dasar": 10.9
+    "dasar": 10.4
    },
    {
     "bulan": "2021-06",
     "naik": 0.0,
-    "turun": 17.0,
-    "dasar": 31.9
+    "turun": 16.3,
+    "dasar": 30.6
    },
    {
     "bulan": "2021-07",
-    "naik": 6.2,
-    "turun": 10.4,
-    "dasar": 29.2
+    "naik": 6.0,
+    "turun": 10.0,
+    "dasar": 28.0
    },
    {
     "bulan": "2021-08",
-    "naik": 46.9,
+    "naik": 49.0,
     "turun": 0.0,
-    "dasar": 8.2
+    "dasar": 7.8
    },
    {
     "bulan": "2021-09",
-    "naik": 25.0,
-    "turun": 7.7,
-    "dasar": 19.2
+    "naik": 25.9,
+    "turun": 7.4,
+    "dasar": 18.5
    },
    {
     "bulan": "2021-10",
-    "naik": 26.4,
-    "turun": 3.8,
-    "dasar": 28.3
+    "naik": 27.3,
+    "turun": 3.6,
+    "dasar": 27.3
    },
    {
     "bulan": "2021-11",
-    "naik": 18.5,
-    "turun": 20.4,
-    "dasar": 31.5
+    "naik": 17.9,
+    "turun": 19.6,
+    "dasar": 30.4
    },
    {
     "bulan": "2021-12",
-    "naik": 10.5,
-    "turun": 36.8,
-    "dasar": 24.6
+    "naik": 10.2,
+    "turun": 37.3,
+    "dasar": 25.4
    },
    {
     "bulan": "2022-01",
-    "naik": 1.8,
-    "turun": 77.2,
-    "dasar": 5.3
+    "naik": 1.7,
+    "turun": 78.0,
+    "dasar": 5.1
    },
    {
     "bulan": "2022-02",
     "naik": 0.0,
-    "turun": 63.8,
-    "dasar": 22.4
+    "turun": 63.3,
+    "dasar": 21.7
    },
    {
     "bulan": "2022-03",
-    "naik": 6.7,
-    "turun": 5.0,
-    "dasar": 70.0
+    "naik": 6.5,
+    "turun": 4.8,
+    "dasar": 69.4
    },
    {
     "bulan": "2022-04",
-    "naik": 3.1,
-    "turun": 62.5,
-    "dasar": 28.1
+    "naik": 3.0,
+    "turun": 62.1,
+    "dasar": 28.8
    },
    {
     "bulan": "2022-05",
     "naik": 0.0,
-    "turun": 98.4,
-    "dasar": 1.6
+    "turun": 98.5,
+    "dasar": 1.5
    },
    {
     "bulan": "2022-06",
     "naik": 0.0,
-    "turun": 97.0,
-    "dasar": 3.0
+    "turun": 97.1,
+    "dasar": 2.9
    },
    {
     "bulan": "2022-07",
@@ -724,314 +843,314 @@
    {
     "bulan": "2022-08",
     "naik": 2.9,
-    "turun": 75.0,
-    "dasar": 22.1
+    "turun": 75.7,
+    "dasar": 21.4
    },
    {
     "bulan": "2022-09",
     "naik": 2.9,
-    "turun": 79.4,
-    "dasar": 14.7
+    "turun": 80.0,
+    "dasar": 14.3
    },
    {
     "bulan": "2022-10",
-    "naik": 2.9,
-    "turun": 63.8,
-    "dasar": 31.9
+    "naik": 2.8,
+    "turun": 64.8,
+    "dasar": 31.0
    },
    {
     "bulan": "2022-11",
     "naik": 2.9,
-    "turun": 84.1,
-    "dasar": 11.6
+    "turun": 84.3,
+    "dasar": 11.4
    },
    {
     "bulan": "2022-12",
     "naik": 0.0,
-    "turun": 81.7,
-    "dasar": 15.5
+    "turun": 81.9,
+    "dasar": 15.3
    },
    {
     "bulan": "2023-01",
-    "naik": 26.4,
+    "naik": 26.0,
     "turun": 0.0,
-    "dasar": 70.8
+    "dasar": 71.2
    },
    {
     "bulan": "2023-02",
-    "naik": 41.7,
-    "turun": 0.0,
-    "dasar": 54.2
+    "naik": 41.1,
+    "turun": 1.4,
+    "dasar": 53.4
    },
    {
     "bulan": "2023-03",
-    "naik": 8.3,
-    "turun": 19.4,
-    "dasar": 58.3
+    "naik": 8.2,
+    "turun": 19.2,
+    "dasar": 58.9
    },
    {
     "bulan": "2023-04",
-    "naik": 12.3,
-    "turun": 17.8,
-    "dasar": 47.9
+    "naik": 12.2,
+    "turun": 18.9,
+    "dasar": 47.3
    },
    {
     "bulan": "2023-05",
     "naik": 1.3,
-    "turun": 54.7,
-    "dasar": 21.3
+    "turun": 53.9,
+    "dasar": 22.4
    },
    {
     "bulan": "2023-06",
     "naik": 5.3,
-    "turun": 76.0,
-    "dasar": 5.3
+    "turun": 75.0,
+    "dasar": 6.6
    },
    {
     "bulan": "2023-07",
-    "naik": 13.3,
-    "turun": 12.0,
-    "dasar": 54.7
+    "naik": 13.2,
+    "turun": 11.8,
+    "dasar": 55.3
    },
    {
     "bulan": "2023-08",
-    "naik": 2.7,
-    "turun": 73.3,
-    "dasar": 9.3
+    "naik": 2.6,
+    "turun": 73.7,
+    "dasar": 9.2
    },
    {
     "bulan": "2023-09",
-    "naik": 4.0,
-    "turun": 70.7,
-    "dasar": 13.3
+    "naik": 3.9,
+    "turun": 71.4,
+    "dasar": 13.0
    },
    {
     "bulan": "2023-10",
-    "naik": 15.4,
-    "turun": 11.5,
-    "dasar": 69.2
+    "naik": 15.0,
+    "turun": 13.8,
+    "dasar": 67.5
    },
    {
     "bulan": "2023-11",
-    "naik": 57.7,
+    "naik": 56.2,
     "turun": 0.0,
-    "dasar": 38.5
+    "dasar": 40.0
    },
    {
     "bulan": "2023-12",
-    "naik": 79.0,
-    "turun": 0.0,
-    "dasar": 12.3
+    "naik": 77.1,
+    "turun": 1.2,
+    "dasar": 13.3
    },
    {
     "bulan": "2024-01",
-    "naik": 24.7,
-    "turun": 8.6,
-    "dasar": 13.6
+    "naik": 24.1,
+    "turun": 9.6,
+    "dasar": 14.5
    },
    {
     "bulan": "2024-02",
-    "naik": 81.9,
-    "turun": 0.0,
-    "dasar": 6.0
+    "naik": 80.0,
+    "turun": 1.2,
+    "dasar": 7.1
    },
    {
     "bulan": "2024-03",
-    "naik": 86.9,
-    "turun": 0.0,
-    "dasar": 3.6
+    "naik": 86.0,
+    "turun": 1.2,
+    "dasar": 3.5
    },
    {
     "bulan": "2024-04",
-    "naik": 8.3,
-    "turun": 20.2,
+    "naik": 8.1,
+    "turun": 22.1,
     "dasar": 1.2
    },
    {
     "bulan": "2024-05",
-    "naik": 22.6,
-    "turun": 2.4,
-    "dasar": 7.1
+    "naik": 22.1,
+    "turun": 2.3,
+    "dasar": 9.3
    },
    {
     "bulan": "2024-06",
-    "naik": 5.9,
-    "turun": 55.3,
-    "dasar": 4.7
+    "naik": 5.7,
+    "turun": 56.3,
+    "dasar": 4.6
    },
    {
     "bulan": "2024-07",
-    "naik": 11.5,
-    "turun": 29.9,
-    "dasar": 21.8
+    "naik": 11.2,
+    "turun": 30.3,
+    "dasar": 22.5
    },
    {
     "bulan": "2024-08",
-    "naik": 4.6,
-    "turun": 31.0,
-    "dasar": 41.4
+    "naik": 4.5,
+    "turun": 32.6,
+    "dasar": 40.4
    },
    {
     "bulan": "2024-09",
-    "naik": 4.4,
+    "naik": 4.3,
     "turun": 1.1,
-    "dasar": 74.4
+    "dasar": 75.0
    },
    {
     "bulan": "2024-10",
-    "naik": 8.7,
-    "turun": 34.8,
-    "dasar": 47.8
+    "naik": 8.5,
+    "turun": 35.1,
+    "dasar": 47.9
    },
    {
     "bulan": "2024-11",
-    "naik": 70.2,
+    "naik": 68.8,
     "turun": 0.0,
-    "dasar": 29.8
+    "dasar": 31.2
    },
    {
     "bulan": "2024-12",
-    "naik": 34.0,
+    "naik": 34.4,
     "turun": 2.1,
-    "dasar": 56.4
+    "dasar": 56.2
    },
    {
     "bulan": "2025-01",
-    "naik": 6.2,
-    "turun": 12.5,
-    "dasar": 34.4
+    "naik": 6.1,
+    "turun": 12.2,
+    "dasar": 34.7
    },
    {
     "bulan": "2025-02",
-    "naik": 2.1,
-    "turun": 20.8,
-    "dasar": 58.3
+    "naik": 2.0,
+    "turun": 20.4,
+    "dasar": 59.2
    },
    {
     "bulan": "2025-03",
     "naik": 0.0,
-    "turun": 75.3,
-    "dasar": 12.4
+    "turun": 74.7,
+    "dasar": 13.1
    },
    {
     "bulan": "2025-04",
     "naik": 2.0,
-    "turun": 27.6,
-    "dasar": 54.1
+    "turun": 28.0,
+    "dasar": 53.0
    },
    {
     "bulan": "2025-05",
-    "naik": 13.1,
+    "naik": 12.9,
     "turun": 3.0,
-    "dasar": 73.7
+    "dasar": 73.3
    },
    {
     "bulan": "2025-06",
     "naik": 2.0,
-    "turun": 79.0,
-    "dasar": 10.0
+    "turun": 79.4,
+    "dasar": 9.8
    },
    {
     "bulan": "2025-07",
-    "naik": 22.5,
-    "turun": 6.9,
-    "dasar": 70.6
+    "naik": 22.1,
+    "turun": 6.7,
+    "dasar": 71.2
    },
    {
     "bulan": "2025-08",
-    "naik": 19.2,
-    "turun": 19.2,
-    "dasar": 58.7
+    "naik": 18.9,
+    "turun": 20.8,
+    "dasar": 57.5
    },
    {
     "bulan": "2025-09",
-    "naik": 14.4,
-    "turun": 20.2,
+    "naik": 14.2,
+    "turun": 20.8,
     "dasar": 48.1
    },
    {
     "bulan": "2025-10",
-    "naik": 6.6,
-    "turun": 79.2,
-    "dasar": 2.8
+    "naik": 6.5,
+    "turun": 78.5,
+    "dasar": 3.7
    },
    {
     "bulan": "2025-11",
-    "naik": 6.5,
-    "turun": 55.6,
-    "dasar": 26.9
+    "naik": 6.4,
+    "turun": 56.0,
+    "dasar": 26.6
    },
    {
     "bulan": "2025-12",
     "naik": 1.8,
-    "turun": 74.8,
-    "dasar": 14.4
+    "turun": 75.0,
+    "dasar": 14.3
    },
    {
     "bulan": "2026-01",
-    "naik": 4.5,
-    "turun": 72.3,
-    "dasar": 18.8
+    "naik": 4.4,
+    "turun": 72.6,
+    "dasar": 18.6
    },
    {
     "bulan": "2026-02",
     "naik": 1.8,
-    "turun": 88.4,
-    "dasar": 5.4
+    "turun": 88.5,
+    "dasar": 5.3
    },
    {
     "bulan": "2026-03",
-    "naik": 2.7,
-    "turun": 74.3,
-    "dasar": 21.2
+    "naik": 2.6,
+    "turun": 75.4,
+    "dasar": 20.2
    },
    {
     "bulan": "2026-04",
-    "naik": 4.3,
-    "turun": 17.1,
-    "dasar": 77.8
+    "naik": 4.2,
+    "turun": 16.9,
+    "dasar": 78.0
    },
    {
     "bulan": "2026-05",
-    "naik": 5.8,
-    "turun": 61.2,
-    "dasar": 30.6
+    "naik": 5.7,
+    "turun": 61.5,
+    "dasar": 30.3
    },
    {
     "bulan": "2026-06",
     "naik": 2.4,
-    "turun": 80.5,
-    "dasar": 13.0
+    "turun": 80.6,
+    "dasar": 12.9
    },
    {
     "bulan": "2026-07",
     "naik": 0.8,
-    "turun": 58.5,
-    "dasar": 35.0
+    "turun": 58.9,
+    "dasar": 34.7
    },
    {
     "bulan": "2026-08",
-    "naik": 19.2,
-    "turun": 20.0,
-    "dasar": 55.2
+    "naik": 19.0,
+    "turun": 19.8,
+    "dasar": 55.6
    },
    {
     "bulan": "2026-09",
-    "naik": 67.5,
+    "naik": 66.9,
     "turun": 2.4,
-    "dasar": 27.8
+    "dasar": 28.3
    },
    {
     "bulan": "2026-10",
-    "naik": 20.5,
-    "turun": 8.7,
-    "dasar": 49.6
+    "naik": 21.1,
+    "turun": 8.6,
+    "dasar": 49.2
    },
    {
     "bulan": "2026-11",
-    "naik": 13.4,
-    "turun": 15.0,
-    "dasar": 47.2
+    "naik": 13.3,
+    "turun": 14.1,
+    "dasar": 46.9
    }
   ]
  },
@@ -1864,9 +1983,9 @@
   },
   {
    "bulan": "2026-11",
-   "close": 80504.0
+   "close": 76088.0
   }
  ],
- "koin": 131,
- "koin_indeks": 46
+ "koin": 132,
+ "koin_indeks": 48
 }
