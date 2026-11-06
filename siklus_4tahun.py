@@ -506,6 +506,30 @@ def main() -> int:
         if fe is not None:
             row["eth"] = ringkas(fe[fe.index.isin(btc.index[m])])
         peluang.append(row)
+    # Jangkauan harga: tertinggi & terendah yang TERSENTUH serta harga akhir dalam H hari (data sejak Agustus 2017)
+    c_, h_, l_ = btc["close"].to_numpy(), btc["high"].to_numpy(), btc["low"].to_numpy()
+    n_ = len(c_)
+    akhir_ = np.full(n_, np.nan); mx_ = np.full(n_, np.nan); mn_ = np.full(n_, np.nan)
+    for t in range(n_ - H):
+        akhir_[t] = c_[t + H] / c_[t] - 1
+        mx_[t] = h_[t + 1:t + H + 1].max() / c_[t] - 1
+        mn_[t] = l_[t + 1:t + H + 1].min() / c_[t] - 1
+    J3 = pd.DataFrame(dict(akhir=akhir_, tertinggi=mx_, terendah=mn_), index=btc.index) * 100
+    era = btc.index >= pd.Timestamp("2017-08-17", tz="UTC")
+    jangkauan = []
+    for nm, m in list(KOND.items())[:3] + [list(KOND.items())[5]]:
+        m = m.fillna(False).astype(bool).to_numpy() & era
+        x = J3[m].dropna()
+        if len(x) < 30:
+            continue
+        q = {k: {f"p{int(p * 100)}": round(float(x[k].quantile(p)), 1) for p in (0.1, 0.25, 0.5, 0.75, 0.9)}
+             for k in ("akhir", "tertinggi", "terendah")}
+        q.update(kondisi=nm.replace(f"sejak {btc.index[0].year}", "sejak 2017"), n=int(len(x)),
+                 sentuh_turun_10=round(float((x["terendah"] <= -10).mean() * 100), 1),
+                 sentuh_naik_10=round(float((x["tertinggi"] >= 10).mean() * 100), 1),
+                 sentuh_turun_20=round(float((x["terendah"] <= -20).mean() * 100), 1),
+                 sentuh_naik_20=round(float((x["tertinggi"] >= 20).mean() * 100), 1))
+        jangkauan.append(q)
     musim = []
     for th in range(2017, hari_ini.year + 1):
         a = pd.Timestamp(f"{th}-{hari_ini.month:02d}-{hari_ini.day:02d}", tz="UTC")
@@ -544,7 +568,7 @@ def main() -> int:
     st_bulanan = [dict(bulan=i.strftime("%Y-%m"), stage=int(v)) for i, v in st_btc.resample("ME").last().dropna().items()]
 
     BND = bandingkan(btc, cyc, hari_ini)
-    hasil = dict(perbandingan={k: v for k, v in BND.items() if not k.startswith("_")},
+    hasil = dict(jangkauan=jangkauan, perbandingan={k: v for k, v in BND.items() if not k.startswith("_")},
                  dibuat=now.isoformat(timespec="seconds"), dibuat_wib=S.now_wib_str(now), sekarang=sekarang,
                  siklus=cyc, analog=analog, peluang=peluang, musiman=musim, pasar=pasar_now,
                  stage_btc_bulanan=st_bulanan, btc_bulanan=bulanan_btc, koin=len(data), koin_indeks=len(lama))
@@ -616,6 +640,16 @@ def main() -> int:
             if x.get("n"):
                 L.append(f"| {p['kondisi']} | {aset} | {x['n']} ({x['bulan']}) | **{x['naik']}%** | {fmt(x['median'])} | "
                          f"{fmt(x['p25'])} s/d {fmt(x['p75'])} | {x['naik_10']}% | {x['turun_10']}% |")
+    L += ["", f"## Jangkauan harga BTC dalam {H} hari (data sejak Agustus 2017, dari harga {rp(harga)})", "",
+          "| Kondisi | Hari | Terendah tersentuh (tengah / 10% terburuk) | Harga akhir (25% · median · 75%) | "
+          "Tertinggi tersentuh (tengah / 10% terbaik) | Sentuh −10% / −20% | Sentuh +10% / +20% |",
+          "|---|---|---|---|---|---|---|"]
+    for q in jangkauan:
+        L.append(f"| {q['kondisi']} | {q['n']} | {rp(harga * (1 + q['terendah']['p50'] / 100))} / {rp(harga * (1 + q['terendah']['p10'] / 100))} | "
+                 f"{rp(harga * (1 + q['akhir']['p25'] / 100))} · {rp(harga * (1 + q['akhir']['p50'] / 100))} · "
+                 f"{rp(harga * (1 + q['akhir']['p75'] / 100))} | {rp(harga * (1 + q['tertinggi']['p50'] / 100))} / "
+                 f"{rp(harga * (1 + q['tertinggi']['p90'] / 100))} | {q['sentuh_turun_10']}% / {q['sentuh_turun_20']}% | "
+                 f"{q['sentuh_naik_10']}% / {q['sentuh_naik_20']}% |")
     L += ["", f"## Musiman: tanggal yang sama tiap tahun (+{H} hari)", "", "| Periode | BTC | Altcoin |", "|---|---|---|"]
     for m in musim:
         L.append(f"| {m['tahun']} | {fmt(m['btc'])} | {fmt(m.get('alt'))} |")
