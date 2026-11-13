@@ -1,6 +1,6 @@
 {
- "dibuat": "2026-11-13T11:46:58+00:00",
- "dibuat_wib": "13 Nov 2026 18:46 WIB",
+ "dibuat": "2026-11-13T11:48:56+00:00",
+ "dibuat_wib": "13 Nov 2026 18:48 WIB",
  "dari": "2020-09-17",
  "sampai": "2026-10-13",
  "mid": "2023-09-30",
@@ -3829,10 +3829,10 @@
    "lebih_acak": {
     "n": 32975,
     "menang": 49.0,
-    "rata": -0.0,
+    "rata": 0.0,
     "median": -0.86,
     "pf": 1.0,
-    "t": -0.0
+    "t": 0.0
    },
    "hari": 2.4
   },
@@ -5171,6 +5171,194 @@
     "t": 4.26
    },
    "hari": 2.1
+  }
+ ],
+ "rinci": [
+  {
+   "judul": "Pantulan Stage 4 ke Fibonacci 0,382–0,618 + candle merah · BTC tidak tren naik · bukan meme · Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "per_tahun": [
+    {
+     "n": 1,
+     "menang": 100.0,
+     "rata": 41.82,
+     "median": 41.82,
+     "pf": null,
+     "t": null,
+     "tahun": "2021"
+    },
+    {
+     "n": 16,
+     "menang": 75.0,
+     "rata": 5.92,
+     "median": 3.38,
+     "pf": 4.26,
+     "t": 1.79,
+     "tahun": "2022"
+    },
+    {
+     "n": 13,
+     "menang": 61.5,
+     "rata": -0.41,
+     "median": 0.19,
+     "pf": 0.83,
+     "t": -0.26,
+     "tahun": "2023"
+    },
+    {
+     "n": 23,
+     "menang": 39.1,
+     "rata": -2.3,
+     "median": -2.51,
+     "pf": 0.45,
+     "t": -1.44,
+     "tahun": "2024"
+    },
+    {
+     "n": 133,
+     "menang": 60.9,
+     "rata": 13.71,
+     "median": 15.35,
+     "pf": 4.21,
+     "t": 6.99,
+     "tahun": "2025"
+    },
+    {
+     "n": 39,
+     "menang": 41.0,
+     "rata": -1.41,
+     "median": -1.56,
+     "pf": 0.58,
+     "t": -1.27,
+     "tahun": "2026"
+    }
+   ],
+   "bulan_aktif": 36,
+   "maks_sinyal_sebulan": 102,
+   "porsi_3_bulan_teratas": 103.3
+  },
+  {
+   "judul": "Pantulan Stage 4 ke Fibonacci 0,382–0,618 + candle merah · BTC tidak tren naik · bukan meme · TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "per_tahun": [
+    {
+     "n": 1,
+     "menang": 100.0,
+     "rata": 13.63,
+     "median": 13.63,
+     "pf": null,
+     "t": null,
+     "tahun": "2021"
+    },
+    {
+     "n": 16,
+     "menang": 93.8,
+     "rata": 3.56,
+     "median": 1.97,
+     "pf": 11.78,
+     "t": 3.24,
+     "tahun": "2022"
+    },
+    {
+     "n": 13,
+     "menang": 92.3,
+     "rata": 1.79,
+     "median": 1.85,
+     "pf": 2.86,
+     "t": 1.37,
+     "tahun": "2023"
+    },
+    {
+     "n": 23,
+     "menang": 73.9,
+     "rata": 1.13,
+     "median": 1.82,
+     "pf": 1.41,
+     "t": 0.58,
+     "tahun": "2024"
+    },
+    {
+     "n": 133,
+     "menang": 91.7,
+     "rata": 3.57,
+     "median": 1.91,
+     "pf": 4.45,
+     "t": 5.48,
+     "tahun": "2025"
+    },
+    {
+     "n": 39,
+     "menang": 71.8,
+     "rata": 0.06,
+     "median": 2.0,
+     "pf": 1.02,
+     "t": 0.04,
+     "tahun": "2026"
+    }
+   ],
+   "bulan_aktif": 36,
+   "maks_sinyal_sebulan": 102,
+   "porsi_3_bulan_teratas": 87.1
+  },
+  {
+   "judul": "Pantulan Stage 4 ke Fibonacci 0,382–0,618 + candle merah · BTC tidak tren naik · termasuk meme · TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "per_tahun": [
+    {
+     "n": 1,
+     "menang": 100.0,
+     "rata": 13.63,
+     "median": 13.63,
+     "pf": null,
+     "t": null,
+     "tahun": "2021"
+    },
+    {
+     "n": 16,
+     "menang": 93.8,
+     "rata": 3.56,
+     "median": 1.97,
+     "pf": 11.78,
+     "t": 3.24,
+     "tahun": "2022"
+    },
+    {
+     "n": 13,
+     "menang": 92.3,
+     "rata": 1.79,
+     "median": 1.85,
+     "pf": 2.86,
+     "t": 1.37,
+     "tahun": "2023"
+    },
+    {
+     "n": 24,
+     "menang": 75.0,
+     "rata": 1.15,
+     "median": 1.82,
+     "pf": 1.44,
+     "t": 0.62,
+     "tahun": "2024"
+    },
+    {
+     "n": 149,
+     "menang": 89.9,
+     "rata": 3.32,
+     "median": 1.91,
+     "pf": 3.63,
+     "t": 5.25,
+     "tahun": "2025"
+    },
+    {
+     "n": 41,
+     "menang": 73.2,
+     "rata": 0.44,
+     "median": 2.0,
+     "pf": 1.15,
+     "t": 0.34,
+     "tahun": "2026"
+    }
+   ],
+   "bulan_aktif": 36,
+   "maks_sinyal_sebulan": 115,
+   "porsi_3_bulan_teratas": 84.5
   }
  ],
  "radar": [

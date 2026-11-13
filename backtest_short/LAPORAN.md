@@ -1,6 +1,6 @@
 # 🔴 Backtest Short Selling
 
-Dibuat 13 Nov 2026 18:46 WIB · 127 koin · 2020-09-17 s/d 2026-10-13 · periode 1 < 2023-09-30 ≤ periode 2
+Dibuat 13 Nov 2026 18:48 WIB · 127 koin · 2020-09-17 s/d 2026-10-13 · periode 1 < 2023-09-30 ≤ periode 2
 
 Biaya konservatif: fee buka 0.1% + pajak 0.21% + fee tutup 0.1% + funding 0.03%/hari. Kolom 'Futures murah' = 0,05% + 0,05% tanpa pajak & funding.
 
@@ -20,6 +20,45 @@ Syarat lolos: ≥30 sinyal, ≥15 per periode, rata-rata positif di KEDUA period
 - **Pantulan Stage 4 ke Fibonacci 0,382–0,618 + candle merah · BTC tren turun · termasuk meme · Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)** → 173 sinyal, menang 55.5%, rata-rata +7.92% (P1 +1.78% (22, menang 63.6%) · P2 +8.81% (151, menang 54.3%)) · lebih baik dari acak +4.77% (t 3.45)
 - **Pantulan Stage 4 ke Fibonacci 0,382–0,618 + candle merah · BTC tren turun · termasuk meme · TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%** → 173 sinyal, menang 75.1%, rata-rata +1.29% (P1 +1.54% (22, menang 81.8%) · P2 +1.26% (151, menang 74.2%)) · lebih baik dari acak +1.80% (t 3.38)
 - **Pantulan Stage 4 ke Fibonacci 0,382–0,618 + candle merah · BTC tidak tren naik · termasuk meme · TP −5% / SL +5% (tutup semua)** → 244 sinyal, menang 66.8%, rata-rata +1.20% (P1 +1.17% (27, menang 66.7%) · P2 +1.20% (217, menang 66.8%)) · lebih baik dari acak +1.21% (t 4.19)
+
+### Per tahun — Pantulan Stage 4 ke Fibonacci 0,382–0,618 + candle merah · BTC tidak tren naik · bukan meme · Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)
+
+| Tahun | Sinyal | Menang | Rata-rata |
+|---|---|---|---|
+| 2021 | 1 | 100.0% | +41.82% |
+| 2022 | 16 | 75.0% | +5.92% |
+| 2023 | 13 | 61.5% | -0.41% |
+| 2024 | 23 | 39.1% | -2.30% |
+| 2025 | 133 | 60.9% | +13.71% |
+| 2026 | 39 | 41.0% | -1.41% |
+
+Aktif di 36 bulan · maks 102 sinyal sebulan · 3 bulan terbaik menyumbang 103.3% total untung
+
+### Per tahun — Pantulan Stage 4 ke Fibonacci 0,382–0,618 + candle merah · BTC tidak tren naik · bukan meme · TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%
+
+| Tahun | Sinyal | Menang | Rata-rata |
+|---|---|---|---|
+| 2021 | 1 | 100.0% | +13.63% |
+| 2022 | 16 | 93.8% | +3.56% |
+| 2023 | 13 | 92.3% | +1.79% |
+| 2024 | 23 | 73.9% | +1.13% |
+| 2025 | 133 | 91.7% | +3.57% |
+| 2026 | 39 | 71.8% | +0.06% |
+
+Aktif di 36 bulan · maks 102 sinyal sebulan · 3 bulan terbaik menyumbang 87.1% total untung
+
+### Per tahun — Pantulan Stage 4 ke Fibonacci 0,382–0,618 + candle merah · BTC tidak tren naik · termasuk meme · TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%
+
+| Tahun | Sinyal | Menang | Rata-rata |
+|---|---|---|---|
+| 2021 | 1 | 100.0% | +13.63% |
+| 2022 | 16 | 93.8% | +3.56% |
+| 2023 | 13 | 92.3% | +1.79% |
+| 2024 | 24 | 75.0% | +1.15% |
+| 2025 | 149 | 89.9% | +3.32% |
+| 2026 | 41 | 73.2% | +0.44% |
+
+Aktif di 36 bulan · maks 115 sinyal sebulan · 3 bulan terbaik menyumbang 84.5% total untung
 
 ## Semua kombinasi
 
