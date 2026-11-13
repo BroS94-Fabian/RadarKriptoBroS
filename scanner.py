@@ -686,14 +686,16 @@ def caption_short(r: dict, cfg: dict, dash: str) -> str:
     sf = sk.get("short_fib") or {}
     lev = cfg.get("short_leverage_maks", 2)
     rank = f" · #{r['rank']} CMC" if r.get("rank") else ""
-    L = [f"🔻 <b>SHORT · {e(r['base'])}/{q}</b>{rank}",
+    L = [f"🔻 <b>JUAL DULU (SHORT) · {e(r['base'])}/{q}</b>{rank}",
          f"💰 {fmt_price(r['price'])} | 24j {fmt_pct(r['chg24'])} | 7h {fmt_pct(r['chg7'])} | 30h {fmt_pct(r['chg30'])}",
          f"🔄 <b>Stage 4 · Turun</b>: harga memantul ke zona Fibonacci {fmt_price(sf.get('f382'))}–{fmt_price(sf.get('f618'))} "
          f"(dari turun {fmt_price(sf.get('swing_high'))} → {fmt_price(sf.get('swing_low'))}) lalu candle merah.",
-         f"📋 <b>Rencana short</b>: masuk ±{fmt_price(rc['entry'])}",
-         f"   🎯 TP1 {fmt_price(rc['tp1'])} ({fmt_pct(rc['tp1_pct'])}) → tutup {rc['porsi_tp1'] * 100:.0f}%, SL pindah ke harga masuk",
-         f"   🎯 TP2 {fmt_price(rc['tp2'])} ({fmt_pct(rc['tp2_pct'])}) → tutup sisanya",
-         f"   🛑 SL {fmt_price(rc['sl'])} ({fmt_pct(rc['sl_pct'])}) · maks {rc['maks_hari']} hari"]
+         f"📋 <b>JUAL di ±{fmt_price(rc['entry'])}</b>, lalu beli kembali di bawah:",
+         f"   ✅ Beli kembali {rc['porsi_tp1'] * 100:.0f}% di {fmt_price(rc['tp1'])} ({fmt_pct(rc['tp1_pct'])}), "
+         f"lalu batas rugi pindah ke harga jual",
+         f"   ✅ Beli kembali sisanya di {fmt_price(rc['tp2'])} ({fmt_pct(rc['tp2_pct'])})",
+         f"   🛑 Kalau malah naik ke {fmt_price(rc['sl'])} ({fmt_pct(rc['sl_pct'])}) → beli kembali (cut loss) · "
+         f"maks {rc['maks_hari']} hari"]
     if rc.get("posisi_rp"):
         L.append(f"💼 Ukuran posisi ±Rp{rc['posisi_rp']:,.0f} (rugi maks ±Rp{rc['risiko_rp']:,.0f})".replace(",", "."))
     L.append(f"⚠️ Leverage maks {lev}× (SL {fmt_pct(rc['sl_pct'])} × {lev} = rugi ±{abs(rc['sl_pct']) * lev:.0f}% margin). Wajib pasang SL.")
@@ -1224,7 +1226,8 @@ def main() -> int:
                      f"{len(alertS)} koin di Stage 4 (tren turun) baru memantul ke zona Fibonacci lalu melemah lagi. "
                      f"BTC {REZIM_IKON.get(rz['rezim'], rz['rezim'])}.\n"
                      + (f"{btc_st}\n" if btc_st else "") +
-                     "Short = untung kalau harga TURUN (futures/margin). Pakai leverage rendah & selalu pasang SL.\n"
+                     "Jual dulu, beli kembali lebih murah. Punya koinnya → jual di spot. Tidak punya → buka posisi "
+                     "short di futures (leverage rendah). Selalu pasang batas rugi.\n"
                      "<i>Lolos uji historis, tapi bukan jaminan. Bukan ajakan beli/jual.</i>")
         mS = int(cfg.get("short_maks_grafik", 5))
         for r in alertS[:mS]:

@@ -272,12 +272,13 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
     const rc = r.short.rencana, sf = (r.siklus || {}).short_fib || {};
     const lev = DATA.short_leverage || 2;
     return `<article class="card">
-      <div class="row"><h3>${esc(r.base)}<small>#${r.rank ?? "-"} CMC · ${esc(r.nama)}</small></h3><span class="badge b-turun">🔻 Short</span></div>
+      <div class="row"><h3>${esc(r.base)}<small>#${r.rank ?? "-"} CMC · ${esc(r.nama)}</small></h3><span class="badge b-turun">🔻 Jual dulu</span></div>
       <div class="row"><span class="price">${fp(r.price)}</span><span class="chg">24j <span class="${cls(r.chg24)}">${pct(r.chg24)}</span> · 7h <span class="${cls(r.chg7)}">${pct(r.chg7)}</span> · 30h <span class="${cls(r.chg30)}">${pct(r.chg30)}</span></span></div>
       <div class="sik s4">🔄 <b>Stage 4 · Turun</b> — memantul ke zona Fibonacci ${fp(sf.f382)} – ${fp(sf.f618)} (turun dari ${fp(sf.swing_high)} ke ${fp(sf.swing_low)}) lalu candle merah</div>
-      <div class="plan">📋 <b>Rencana short</b>: masuk ±${fp(rc.entry)}<br>
-        🎯 TP1 ${fp(rc.tp1)} (${pct(rc.tp1_pct)}, tutup ${num(rc.porsi_tp1*100,0)}%, SL pindah ke harga masuk)<br>
-        🎯 TP2 ${fp(rc.tp2)} (${pct(rc.tp2_pct)}) · 🛑 SL ${fp(rc.sl)} (${pct(rc.sl_pct)}) · maks ${rc.maks_hari} hari
+      <div class="plan">📋 <b>JUAL di ±${fp(rc.entry)}</b>, lalu beli kembali di bawah:<br>
+        ✅ Beli kembali ${num(rc.porsi_tp1*100,0)}% di ${fp(rc.tp1)} (${pct(rc.tp1_pct)}), batas rugi pindah ke harga jual<br>
+        ✅ Beli kembali sisanya di ${fp(rc.tp2)} (${pct(rc.tp2_pct)})<br>
+        🛑 Kalau naik ke ${fp(rc.sl)} (${pct(rc.sl_pct)}) → beli kembali (cut loss) · maks ${rc.maks_hari} hari
         ${rc.posisi_rp ? `<br>💼 Ukuran posisi ±Rp${num(rc.posisi_rp,0)} (rugi maks ±Rp${num(rc.risiko_rp,0)})` : ""}
         <br>⚠️ Leverage maks ${lev}× (SL × ${lev} = rugi ±${num(Math.abs(rc.sl_pct) * lev, 0)}% margin)</div>
       ${r.short.ditahan ? `<div class="tahan">⏸ ${esc(r.short.ditahan)}</div>` : ""}
