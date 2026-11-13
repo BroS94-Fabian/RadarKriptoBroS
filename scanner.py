@@ -703,7 +703,7 @@ def caption_short(r: dict, cfg: dict, dash: str) -> str:
     if ck:
         L.append(f"☑️ Checklist short {ck['cocok']}/6: {e(ck['teks'])}")
     L.append("📈 <i>Backtest 2020–2026 (BTC tidak tren naik, bukan meme): 225 sinyal, menang 87%, rata-rata bersih "
-             "+2,65% (biaya, pajak & funding sudah dihitung).</i>")
+             "+2,65%; di luar crash Okt 2025 ±+1,5%. Biaya, pajak & funding sudah dihitung.</i>")
     links = []
     if r.get("link"):
         links.append(f'<a href="{e(r["link"])}">TradingView</a>')

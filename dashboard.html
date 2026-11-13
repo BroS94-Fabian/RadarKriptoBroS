@@ -502,7 +502,7 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
       html = jejak();
     } else if (tab === "short") {
       const xs = list.filter(r => r.short);
-      html = `<p class="sub" style="margin:0 0 12px">🔻 Short = untung kalau harga <b>turun</b> (futures/margin). Sinyal: koin di Stage 4 yang memantul ke zona Fibonacci 0,382–0,618 lalu candle merah, hanya saat BTC tidak tren naik, bukan meme. Backtest 2020–2026: menang 87%, rata-rata bersih +2,65% per sinyal.</p>`
+      html = `<p class="sub" style="margin:0 0 12px">🔻 Short = untung kalau harga <b>turun</b> (futures/margin). Sinyal: koin di Stage 4 yang memantul ke zona Fibonacci 0,382–0,618 lalu candle merah, hanya saat BTC tidak tren naik, bukan meme. Backtest 2020–2026: menang 87%, rata-rata bersih +2,65% per sinyal (di luar crash Oktober 2025 sekitar +1,5%). Batasi jumlah posisi short yang dibuka bersamaan.</p>`
         + (DATA.short_aktif === false ? `<div class="empty">Sinyal short dimatikan di config.</div>`
           : xs.length ? `<div class="grid">${xs.map(card3).join("")}</div>` : `<div class="empty">Belum ada sinyal short hari ini.</div>`);
     } else if (tab === "semua") {
