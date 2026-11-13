@@ -214,6 +214,20 @@ def main() -> int:
              and r["p1"]["rata"] > 0 and r["p2"]["rata"] > 0 and (r["lebih_acak"].get("rata") or -1) > 0]
     hasil["lolos"] = sorted(lolos, key=lambda r: -min(r["p1"]["rata"], r["p2"]["rata"]))
 
+    # Rincian per tahun untuk strategi terbaik (cek apakah untungnya merata, bukan dari 1–2 bulan saja)
+    hasil["rinci"] = []
+    pilih = hasil["lolos"][:1] + [r for r in hasil["lolos"] if r["keluar"] == "rencana"][:2]
+    for b in {(r["event"], r["pasar"], r["meme"], r["keluar"]): r for r in pilih}.values():
+        g = PASAR[b["pasar"]](MEME[b["meme"]](df[df["event"] == b["event"]]))
+        kol = f"{b['keluar']}_kons"
+        th = [dict(ringkas(gg[kol]), tahun=t) for t, gg in g.groupby(g["tanggal"].str[:4])]
+        bln = g.groupby(g["tanggal"].str[:7])[kol].agg(["count", "sum"])
+        hasil["rinci"].append(dict(judul=f"{EVENT[b['event']]} · {b['pasar']} · {b['meme']} · {b['ket']}", per_tahun=th,
+                                   bulan_aktif=int(len(bln)), maks_sinyal_sebulan=int(bln["count"].max()),
+                                   porsi_3_bulan_teratas=round(float(bln["sum"].nlargest(3).sum() / bln["sum"].sum() * 100), 1)
+                                   if bln["sum"].sum() > 0 else None))
+    df[df["event"] != "acak"].to_csv(os.path.join(OUT, "sinyal.csv.gz"), index=False, compression="gzip")
+
     # Sinyal 🔴 radar (dari backtest utama): balik ke pnl mentah lalu hitung biaya short
     radar = []
     p = os.path.join(os.path.dirname(OUT), "backtest", "sinyal.csv.gz")
@@ -254,6 +268,11 @@ def main() -> int:
                      f"(t {r['lebih_acak'].get('t')})")
     else:
         L.append("Tidak ada.")
+    for k in hasil["rinci"]:
+        L += ["", f"### Per tahun — {k['judul']}", "", "| Tahun | Sinyal | Menang | Rata-rata |", "|---|---|---|---|"]
+        L += [f"| {r['tahun']} | {r['n']} | {r['menang']}% | {r['rata']:+.2f}% |" for r in k["per_tahun"]]
+        L += ["", f"Aktif di {k['bulan_aktif']} bulan · maks {k['maks_sinyal_sebulan']} sinyal sebulan · "
+                  f"3 bulan terbaik menyumbang {k['porsi_3_bulan_teratas']}% total untung"]
     L += ["", "## Semua kombinasi", "",
           "| Strategi | Pasar | Meme | Aturan | Sinyal | Menang | Rata-rata | PF | Periode 1 | Periode 2 | vs acak | Futures murah |",
           "|---|---|---|---|---|---|---|---|---|---|---|---|"]
