@@ -1,0 +1,43 @@
+name: Backtest Short
+
+on:
+  workflow_dispatch:
+    inputs:
+      mulai:
+        description: "Data mulai (YYYY-MM-DD)"
+        default: "2020-01-01"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radar-backtest-short
+  cancel-in-progress: false
+
+jobs:
+  short:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Pasang library
+        run: pip install -r requirements.txt
+
+      - name: Backtest short
+        env:
+          CMC_API_KEY: ${{ secrets.CMC_API_KEY }}
+        run: python backtest_short.py --mulai "${{ github.event.inputs.mulai || '2020-01-01' }}"
+
+      - name: Simpan hasil
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtest_short/
+          git commit -m "backtest short: perbarui hasil" || exit 0
+          for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done
