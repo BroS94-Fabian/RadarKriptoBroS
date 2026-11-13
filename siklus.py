@@ -226,14 +226,14 @@ def fibonacci(h, l, j: int, price: float) -> dict | None:
     return dict(swing_high=hi, swing_low=lo, f382=lv[0.382], f500=lv[0.5], f618=lv[0.618], posisi=posisi, teks=teks)
 
 
-def short_fib(o, h, l, c, F: dict, j: int) -> dict | None:
+def short_fib(o, h, l, c, F: dict, j: int, wajib_merah: bool = True) -> dict | None:
     """Sinyal SHORT (lolos backtest): koin di Stage 4, harga memantul naik ke zona Fibonacci 0,382–0,618
     dari penurunan terakhir, lalu candle merah. Target = low terakhir, batal = level 0,786."""
     st = F["stage"]
     if j < 90 or st[j] != 4 or "ma_l" not in F:
         return None
     ma = F["ma_l"][j]
-    if not (np.isfinite(ma) and c[j] / ma - 1 > -0.45 and c[j] < o[j]):
+    if not (np.isfinite(ma) and c[j] / ma - 1 > -0.45 and (c[j] < o[j] or not wajib_merah)):
         return None
     a = j - 59
     il = a + int(np.argmin(l[a:j + 1]))
@@ -243,7 +243,7 @@ def short_fib(o, h, l, c, F: dict, j: int) -> dict | None:
     if not (lo > 0 and hi / lo - 1 >= 0.15 and ih < il < j):
         return None
     f382, f618 = lo + (hi - lo) * 0.382, lo + (hi - lo) * 0.618
-    if not (f382 <= c[j] <= f618 and h[j] >= f382):
+    if not (f382 <= c[j] <= f618 and (h[j] >= f382 or not wajib_merah)):
         return None
     return dict(swing_high=hi, swing_low=lo, f382=f382, f500=lo + (hi - lo) * 0.5, f618=f618,
                 f786=lo + (hi - lo) * 0.786, target=lo, batal=lo + (hi - lo) * 0.786)
@@ -269,6 +269,8 @@ def analisa(o, h, l, c, v, price: float) -> dict:
     out["volume"] = analisa_volume(o, h, l, c, v, j)
     out["fib"] = fibonacci(h, l, j, price) if stg == 2 else None
     out["short_fib"] = short_fib(o, h, l, c, F, j)
+    # kandidat: sudah di zona Fibonacci, tinggal menunggu candle harian merah
+    out["short_kandidat"] = None if out["short_fib"] else short_fib(o, h, l, c, F, j, wajib_merah=False)
     out["_F"] = F
     return out
 

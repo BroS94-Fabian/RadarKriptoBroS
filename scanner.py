@@ -775,7 +775,7 @@ def baris_ringkas(r: dict) -> str:
 
 
 def summary_text(results, now, src_rank, dash, rk=None, rz=None, ps=None, btc_st=None, stage2=None,
-                 shorts=None) -> str:
+                 shorts=None, kand_short=None) -> str:
     w = now.astimezone(WIB)
     naik = sorted([r for r in results if r["kelas"] == "naik"], key=lambda r: -r["skor_naik"])
     turun = sorted([r for r in results if r["kelas"] == "turun"], key=lambda r: -r["skor_turun"])
@@ -808,6 +808,9 @@ def summary_text(results, now, src_rank, dash, rk=None, rz=None, ps=None, btc_st
                   f"{fmt_price(r['short']['rencana']['tp1'])} · SL {fmt_price(r['short']['rencana']['sl'])}"
                   for r in lolos[:10]] or [
             "• (belum ada" + (f"; {len(shorts)} koin ditahan karena BTC tren naik)" if shorts else ")")]
+        if kand_short:
+            lines.append(f"⏳ Kandidat short, tunggu candle harian merah ({len(kand_short)}): "
+                         + html.escape(", ".join(r["base"] for r in kand_short[:15])) + ("…" if len(kand_short) > 15 else ""))
     rt = rekam.rekap_teks(rk or {})
     if rt:
         lines.append(f"\n📈 <b>Rekam jejak {rk['hari']} hari</b>")
@@ -1101,6 +1104,14 @@ def main() -> int:
             shorts.append(r)
         shorts.sort(key=lambda r: r.get("rank") or 9999)
         print(f"Sinyal short: {len(shorts)} koin ({sum(1 for r in shorts if not r['short']['ditahan'])} lolos filter pasar)")
+    kand_short = sorted([r for r in results if (r.get("siklus") or {}).get("short_kandidat") and not r.get("meme")],
+                        key=lambda r: r.get("rank") or 9999)
+    if os.environ.get("GITHUB_ACTIONS"):
+        print(f"::notice title=Short::sinyal {', '.join(r['base'] for r in shorts) or '-'} · kandidat (tunggu candle merah): "
+              f"{', '.join(r['base'] for r in kand_short[:25]) or '-'}")
+    if not demo:
+        state["short_kandidat"] = dict(ts=now.isoformat(timespec="seconds"),
+                                       sinyal=[r["base"] for r in shorts], kandidat=[r["base"] for r in kand_short])
     print(teks_peta(ps))
     if os.environ.get("GITHUB_ACTIONS"):
         print(f"::notice title=Siklus 4 stage::{teks_peta(ps)} · BTC {((r_btc or {}).get('siklus') or {}).get('nama', '-')}"
@@ -1244,7 +1255,7 @@ def main() -> int:
     if demo or (w.hour >= int(cfg["ringkasan_harian_jam_wib"]) and state.get("last_summary") != today):
         tg.send_text(summary_text(results, now, src_rank, dash, rk, rz, ps, btc_st,
                                   stage2 if cfg.get("sinyal_stage2", True) else None,
-                                  shorts if cfg.get("sinyal_short", True) else None))
+                                  shorts if cfg.get("sinyal_short", True) else None, kand_short))
         if not demo:
             state["last_summary"] = today
 

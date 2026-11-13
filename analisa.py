@@ -1245,9 +1245,10 @@ def analisa_koin(info: dict, d: pd.DataFrame, h: pd.DataFrame, cfg: dict) -> dic
 
 def _siklus_json(sik: dict) -> dict:
     out = {k: (_f(v, 2) if isinstance(v, float) else v) for k, v in sik.items()
-           if not k.startswith("_") and k not in ("volume", "fib", "short_fib")}
-    sf = sik.get("short_fib")
-    out["short_fib"] = {k: _r(v) for k, v in sf.items()} if sf else None
+           if not k.startswith("_") and k not in ("volume", "fib", "short_fib", "short_kandidat")}
+    for key in ("short_fib", "short_kandidat"):
+        sf = sik.get(key)
+        out[key] = {k: _r(v) for k, v in sf.items()} if sf else None
     for k in ("ma", "atap", "lantai"):
         if out.get(k) is not None:
             out[k] = _r(sik[k])

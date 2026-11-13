@@ -505,6 +505,10 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
       html = `<p class="sub" style="margin:0 0 12px">🔻 Short = untung kalau harga <b>turun</b> (futures/margin). Sinyal: koin di Stage 4 yang memantul ke zona Fibonacci 0,382–0,618 lalu candle merah, hanya saat BTC tidak tren naik, bukan meme. Backtest 2020–2026: menang 87%, rata-rata bersih +2,65% per sinyal (di luar crash Oktober 2025 sekitar +1,5%). Batasi jumlah posisi short yang dibuka bersamaan.</p>`
         + (DATA.short_aktif === false ? `<div class="empty">Sinyal short dimatikan di config.</div>`
           : xs.length ? `<div class="grid">${xs.map(card3).join("")}</div>` : `<div class="empty">Belum ada sinyal short hari ini.</div>`);
+      const kd = list.filter(r => r.siklus && r.siklus.short_kandidat && !r.meme).sort((a, b) => (a.rank ?? 9999) - (b.rank ?? 9999));
+      if (kd.length) html += `<h3 style="margin:16px 0 6px">⏳ Kandidat short (${kd.length})</h3>
+        <p class="sub" style="margin:0 0 8px">Sudah di Stage 4 dan memantul ke zona Fibonacci 0,382–0,618 — jadi sinyal kalau candle harian berikutnya tutup merah.</p>
+        <div class="chips">${kd.map(r => `<button class="chip" data-s="${esc(r.symbol)}">${esc(r.base)} · ${fp(r.siklus.short_kandidat.f382)}–${fp(r.siklus.short_kandidat.f618)}</button>`).join("")}</div>`;
     } else if (tab === "semua") {
       html = table(list);
     } else if (tab === "siklus") {
