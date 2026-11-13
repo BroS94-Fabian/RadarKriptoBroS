@@ -147,6 +147,7 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
       <li><b>Batal</b>: level yang bila ditembus berarti polanya gagal. <b>Rasio</b> = potensi ÷ risiko ke level batal.</li>
       <li><b>Siklus 4 stage</b> (cara berpikir "Super Trader"): 🟦 Dasar → 🟩 Naik → 🟨 Puncak → 🟥 Turun. Beli paling ideal di awal Stage 2 (tembus dari dasar dengan volume) atau saat pullback ke Fibonacci 0,382–0,618; ambil untung di Stage 3; hindari Stage 4.</li>
       <li><b>🟩 Awal Stage 2</b>: koin yang hari ini resmi masuk tren naik (bukan meme, saat BTC tren naik). Alert terpisah dengan rencana TP1 +5% (jual 50%), TP2 +10%, SL −12%. Backtest 2 tahun: menang 81%, rata-rata bersih +1,85% per sinyal.</li>
+      <li><b>🔻 Short</b>: koin di Stage 4 (tren turun) yang memantul ke zona Fibonacci 0,382–0,618 lalu candle merah, saat BTC tidak tren naik. Rencana: TP1 −5% (tutup 50%), TP2 ke low terakhir/−10%, SL di atas level 0,786 (maks +12%). Pakai leverage rendah.</li>
       <li><b>Checklist</b>: Siklus → Tren → Support &amp; Resistance → Pola → Candlestick → Volume (volume tinggi searah harga = konfirmasi; volume tipis/lonjakan mendadak = anomali, "bell ringing").</li>
       <li><b>Zona akumulasi</b>: kisaran harga tempat 70% volume 30 hari terakhir terjadi; <b>POC</b> = harga dengan volume terbesar.</li>
     </ul>
@@ -162,7 +163,7 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const KELAS = {"naik":"🟢 Potensi naik","turun":"🔴 Potensi turun","pantau-naik":"🟡 Pantau naik","pantau-turun":"🟡 Pantau turun","netral":"Netral"};
   const POSISI = {"bawah":"di bawah zona","dalam-bawah":"di bawah POC","dalam-atas":"di atas POC","atas":"di atas zona","-":"-"};
-  let TABS = [["naik","🟢 Potensi naik"],["turun","🔴 Potensi turun"],["pantau","🟡 Pantau"],["siklus","🔄 Siklus 4 stage"],["semua","Semua koin"],["jejak","📈 Rekam jejak"]];
+  let TABS = [["naik","🟢 Potensi naik"],["short","🔻 Short"],["turun","🔴 Potensi turun"],["pantau","🟡 Pantau"],["siklus","🔄 Siklus 4 stage"],["semua","Semua koin"],["jejak","📈 Rekam jejak"]];
   const STAGE = {1:["🟦","Stage 1 · Dasar","akumulasi / pembentukan dasar"],2:["🟩","Stage 2 · Naik","tren naik (markup)"],
                  3:["🟨","Stage 3 · Puncak","distribusi / pembentukan puncak"],4:["🟥","Stage 4 · Turun","tren turun (markdown)"]};
   const FASE = {"1":"membentuk dasar","1-akhir":"akhir dasar, siap tembus","1→2":"baru tembus dari dasar","2-awal":"awal naik","2":"naik berjalan",
@@ -267,6 +268,23 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
       <circle cx="604" cy="42" r="7" fill="var(--crit)"/><text x="614" y="62" font-size="12" fill="var(--crit)">keluar (3→4)</text>
     </svg>`;
   }
+  function card3(r){
+    const rc = r.short.rencana, sf = (r.siklus || {}).short_fib || {};
+    const lev = DATA.short_leverage || 2;
+    return `<article class="card">
+      <div class="row"><h3>${esc(r.base)}<small>#${r.rank ?? "-"} CMC · ${esc(r.nama)}</small></h3><span class="badge b-turun">🔻 Short</span></div>
+      <div class="row"><span class="price">${fp(r.price)}</span><span class="chg">24j <span class="${cls(r.chg24)}">${pct(r.chg24)}</span> · 7h <span class="${cls(r.chg7)}">${pct(r.chg7)}</span> · 30h <span class="${cls(r.chg30)}">${pct(r.chg30)}</span></span></div>
+      <div class="sik s4">🔄 <b>Stage 4 · Turun</b> — memantul ke zona Fibonacci ${fp(sf.f382)} – ${fp(sf.f618)} (turun dari ${fp(sf.swing_high)} ke ${fp(sf.swing_low)}) lalu candle merah</div>
+      <div class="plan">📋 <b>Rencana short</b>: masuk ±${fp(rc.entry)}<br>
+        🎯 TP1 ${fp(rc.tp1)} (${pct(rc.tp1_pct)}, tutup ${num(rc.porsi_tp1*100,0)}%, SL pindah ke harga masuk)<br>
+        🎯 TP2 ${fp(rc.tp2)} (${pct(rc.tp2_pct)}) · 🛑 SL ${fp(rc.sl)} (${pct(rc.sl_pct)}) · maks ${rc.maks_hari} hari
+        ${rc.posisi_rp ? `<br>💼 Ukuran posisi ±Rp${num(rc.posisi_rp,0)} (rugi maks ±Rp${num(rc.risiko_rp,0)})` : ""}
+        <br>⚠️ Leverage maks ${lev}× (SL × ${lev} = rugi ±${num(Math.abs(rc.sl_pct) * lev, 0)}% margin)</div>
+      ${r.short.ditahan ? `<div class="tahan">⏸ ${esc(r.short.ditahan)}</div>` : ""}
+      ${r.chart ? `<img class="chart" loading="lazy" src="${esc(r.chart)}?v=${encodeURIComponent(DATA.updated)}" alt="Grafik ${esc(r.base)}" data-full="${esc(r.chart)}">` : ""}
+      <div class="links">${r.link ? `<a href="${esc(r.link)}" target="_blank" rel="noopener">Buka di TradingView ↗</a>` : ""}</div>
+    </article>`;
+  }
   function card2(r){
     const rc = r.stage2.rencana, s = r.siklus || {};
     return `<article class="card">
@@ -358,6 +376,7 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
     const c = x => k.filter(r => r.kelas === x || (x === "pantau" && r.kelas.startsWith("pantau"))).length;
     const items = [["naik", c("naik"), "🟢 Potensi naik"], ["turun", c("turun"), "🔴 Potensi turun"], ["pantau", c("pantau"), "🟡 Pantau"]];
     if (DATA.stage2_aktif !== false) items.push(["siklus", k.filter(r => r.stage2 && !r.stage2.ditahan).length, "🟩 Awal Stage 2"]);
+    if (DATA.short_aktif !== false) items.push(["short", k.filter(r => r.short && !r.short.ditahan).length, "🔻 Short"]);
     items.push(["semua", k.length, "Koin dianalisa"]);
     $("#stats").innerHTML = items.map(([id, n, l]) => `<button class="stat" data-tab="${id}" aria-pressed="${tab === id}"><b>${n}</b><span>${l}</span></button>`).join("");
     $("#stats").querySelectorAll(".stat").forEach(b => b.onclick = () => { tab = b.dataset.tab; render(); });
@@ -413,7 +432,7 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
     const rows = riw.map(e => {
       const h = HASIL[e.hasil] || ["h-berjalan", e.hasil];
       return `<tr><td>${waktuWIB(e.ts)}</td><td><b>${esc(e.base)}</b></td>
-        <td><span class="badge b-${e.kelas}">${e.jenis === "stage2" ? "🟩 Stage 2" : e.kelas === "naik" ? "🟢 Naik" : "🔴 Turun"}</span></td>
+        <td><span class="badge b-${e.kelas}">${e.jenis === "stage2" ? "🟩 Stage 2" : e.jenis === "short" ? "🔻 Short" : e.kelas === "naik" ? "🟢 Naik" : "🔴 Turun"}</span></td>
         <td>${fp(e.harga)}</td><td>${fp(e.harga_now)}</td><td class="${cls(e.chg)}"><b>${pct(e.chg)}</b></td>
         <td class="${cls(e.maks_pct)}">${pct(e.maks_pct)}</td><td class="${cls(e.min_pct)}">${pct(e.min_pct)}</td>
         <td>${e.target ? fp(e.target) + " (" + pct(e.target_pct) + ")" : "-"}</td>
@@ -425,7 +444,7 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
     const tbl = riw.length ? `<div class="tbl-wrap"><table class="jj"><thead><tr><th>Waktu alert</th><th>Koin</th><th>Arah</th><th>Harga alert</th>
         <th>Sekarang</th><th>Perubahan</th><th>Tertinggi</th><th>Terendah</th><th>Target</th><th>Batal</th><th>Hasil pola</th><th>Rencana jual (bersih)</th><th>BTC</th></tr></thead>
         <tbody>${rows}</tbody></table></div>` : `<div class="empty">Belum ada catatan alert.</div>`;
-    return `<div class="jejak-sum">${box("naik","🟢","naik")}${box("turun","🔴","turun")}${box("stage2","🟩","naik","Alert awal Stage 2")}</div>${tbl}
+    return `<div class="jejak-sum">${box("naik","🟢","naik")}${box("turun","🔴","turun")}${box("stage2","🟩","naik","Alert awal Stage 2")}${box("short","🔻","turun","Alert short")}</div>${tbl}
       <p class="sub">Perubahan dihitung dari harga saat alert terkirim. "Tertinggi/Terendah" = pergerakan maksimum sejak alert.
       Tiap alert dipantau maksimal 14 hari. Alert yang terkirim sebelum fitur ini ada tidak punya catatan target/batal.
       "Rencana jual" = hasil bila mengikuti TP1/TP2/SL, sudah dipotong biaya beli/jual 0,1% & pajak jual 0,21%.
@@ -481,6 +500,11 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
       html = backtest();
     } else if (tab === "jejak") {
       html = jejak();
+    } else if (tab === "short") {
+      const xs = list.filter(r => r.short);
+      html = `<p class="sub" style="margin:0 0 12px">🔻 Short = untung kalau harga <b>turun</b> (futures/margin). Sinyal: koin di Stage 4 yang memantul ke zona Fibonacci 0,382–0,618 lalu candle merah, hanya saat BTC tidak tren naik, bukan meme. Backtest 2020–2026: menang 87%, rata-rata bersih +2,65% per sinyal.</p>`
+        + (DATA.short_aktif === false ? `<div class="empty">Sinyal short dimatikan di config.</div>`
+          : xs.length ? `<div class="grid">${xs.map(card3).join("")}</div>` : `<div class="empty">Belum ada sinyal short hari ini.</div>`);
     } else if (tab === "semua") {
       html = table(list);
     } else if (tab === "siklus") {

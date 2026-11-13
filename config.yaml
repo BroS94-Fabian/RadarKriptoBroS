@@ -71,6 +71,25 @@ stage2_filter_pasar: ketat      # ketat = hanya saat BTC tren naik (hasil backte
 stage2_maks_grafik: 5           # maks. alert bergrafik per putaran (sisanya daftar singkat)
 stage2_jeda_hari: 10            # koin yang sama tidak dikirim ulang selama X hari
 
+# ---- Sinyal 🔻 SHORT (notifikasi terpisah dari sinyal beli) ----
+# Koin di Stage 4 (tren turun) yang memantul naik ke zona Fibonacci 0,382–0,618 dari penurunan terakhir,
+# lalu candle harian merah. Bukan meme, dan tidak dikirim saat BTC tren naik.
+# Rencana (cermin rencana beli): TP1 −5% tutup 50% (SL pindah ke harga masuk), TP2 = low terakhir (min −10%),
+# SL = level Fibonacci 0,786 (maks +12%), maks 30 hari.
+# Backtest Sep 2020–Okt 2026 (biaya 0,1%+0,1% + pajak 0,21% + funding 0,03%/hari): 225 sinyal, menang 87%,
+#   rata-rata bersih +2,65% · periode 1 +3,20% · periode 2 +2,58% · lebih baik +1,65% dari short acak.
+# Yang GAGAL uji (tidak dipakai): sinyal 🔴 radar sebagai short, awal Stage 4, jebol lantai puncak.
+sinyal_short: true
+short_filter_pasar: longgar     # longgar = tidak saat BTC tren naik (hasil backtest) · ketat = hanya saat BTC tren turun · false
+short_maks_grafik: 5
+short_jeda_hari: 10
+short_leverage_maks: 2          # hanya untuk pengingat di pesan (SL × leverage = rugi margin)
+biaya_short:
+  fee_buka: 0.1
+  pajak: 0.21
+  fee_tutup: 0.1
+  funding_harian: 0.03
+
 # ---- Rencana jual untuk setiap sinyal ----
 # TP1 = ambil untung sebagian, lalu stop loss sisa posisi dipindah ke harga beli.
 # TP2 = target pola (kalau tidak ada: 2x jarak TP1). SL = yang lebih dekat antara batas batal pola & sl.

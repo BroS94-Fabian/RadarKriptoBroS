@@ -167,7 +167,8 @@ def buat_grafik(r: dict, quote: str, sumber: str, waktu: str) -> bytes:
     kelas = r["kelas"]
     chip_txt, chip_col, chip_fg = {"naik": ("POTENSI NAIK", C["good"], "#ffffff"),
                                    "turun": ("POTENSI TURUN", C["crit"], "#ffffff"),
-                                   "stage2": ("AWAL STAGE 2", C["good"], "#ffffff")}.get(
+                                   "stage2": ("AWAL STAGE 2", C["good"], "#ffffff"),
+                                   "short": ("SHORT", C["crit"], "#ffffff")}.get(
         r.get("_chip") or kelas, ("NETRAL", C["axis"], C["ink"]))
     rank = f"  ·  #{r['rank']} CoinMarketCap" if r.get("rank") else ""
     ax.set_title(f"{r['base']}/{quote}{rank}", loc="left", fontsize=13, fontweight="bold", color=C["ink"], pad=34)

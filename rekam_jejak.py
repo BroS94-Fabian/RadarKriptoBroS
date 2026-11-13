@@ -44,7 +44,7 @@ def _entri(r: dict, kelas: str, ts: str, harga: float, **extra) -> dict:
 
 def catat(state: dict, r: dict, now: datetime, r_btc: dict | None = None, jenis: str = "radar") -> bool:
     """Catat alert baru. Satu koin+arah+jenis hanya punya satu catatan yang 'berjalan'.
-    jenis: "radar" (sinyal skor) atau "stage2" (sinyal awal Stage 2)."""
+    jenis: "radar" (sinyal skor), "stage2" (sinyal awal Stage 2) atau "short" (pantulan Stage 4)."""
     riw = state.setdefault("riwayat", [])
     kelas = r["kelas"]
     if any(e["symbol"] == r["symbol"] and e["kelas"] == kelas and e.get("jenis", "radar") == jenis
@@ -181,15 +181,15 @@ def perbarui(state: dict, res_map: dict, now: datetime, cfg: dict | None = None,
 
 def rekap(riw: list, now: datetime, hari: int = 7) -> dict:
     out = {"hari": hari}
-    for kelas in ("naik", "turun", "stage2"):
-        jenis = "stage2" if kelas == "stage2" else "radar"
-        kls = "naik" if kelas == "stage2" else kelas
+    for kelas in ("naik", "turun", "stage2", "short"):
+        kls, jenis = {"naik": ("naik", "radar"), "turun": ("turun", "radar"), "stage2": ("naik", "stage2"),
+                      "short": ("turun", "short")}[kelas]
         E = [e for e in riw if e["kelas"] == kls and e.get("jenis", "radar") == jenis
              and now - _ts(e["ts"]) <= timedelta(days=hari)]
         if not E:
             out[kelas] = dict(n=0)
             continue
-        sgn = -1 if kelas == "turun" else 1
+        sgn = -1 if kls == "turun" else 1
         chg = np.array([e["chg"] or 0.0 for e in E])
         benar = int(np.sum(sgn * chg > 0))
         best = max(E, key=lambda e: sgn * (e["chg"] or 0))
@@ -214,11 +214,13 @@ def rekap(riw: list, now: datetime, hari: int = 7) -> dict:
 
 def rekap_teks(rk: dict) -> list[str]:
     lines = []
-    for kelas, ikon, kata in (("naik", "🟢", "naik"), ("turun", "🔴", "turun"), ("stage2", "🟩", "naik")):
+    for kelas, ikon, kata in (("naik", "🟢", "naik"), ("turun", "🔴", "turun"), ("stage2", "🟩", "naik"),
+                              ("short", "🔻", "turun")):
         x = rk.get(kelas, {})
         if not x.get("n"):
             continue
-        lines.append(f"{ikon} {x['benar']}/{x['n']} alert{' awal Stage 2' if kelas == 'stage2' else ''} bergerak {kata} ({x['persen']}%), rata-rata "
+        nm = {"stage2": " awal Stage 2", "short": " short"}.get(kelas, "")
+        lines.append(f"{ikon} {x['benar']}/{x['n']} alert{nm} bergerak {kata} ({x['persen']}%), rata-rata "
                      f"{fmt_pct(x['rata'])} · kena target {x['target']} · kena batal {x['batal']}")
         if x.get("rencana"):
             rc = x["rencana"]

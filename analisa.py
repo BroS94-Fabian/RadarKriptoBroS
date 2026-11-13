@@ -1198,6 +1198,11 @@ def analisa_koin(info: dict, d: pd.DataFrame, h: pd.DataFrame, cfg: dict) -> dic
     sik = SK.analisa(o, hh, ll, c, v, price)
     Pl = pola_turun if arah_k == "naik" else pola_naik
     ck = SK.checklist(sik, arah_k, tl["tren"], rr, Pk, Pl, cdl["arah"] if cdl else None)
+    ck_short = None
+    if sik.get("short_fib"):   # checklist arah turun untuk sinyal short (S&R dari rencana short: target vs batal)
+        sf = sik["short_fib"]
+        rr_s = (price - sf["target"]) / (sf["batal"] - price) if sf["batal"] > price else None
+        ck_short = SK.checklist(sik, "turun", tl["tren"], rr_s, pola_turun, pola_naik, cdl["arah"] if cdl else None)
 
     def _pola_json(P):
         if not P:
@@ -1229,7 +1234,7 @@ def analisa_koin(info: dict, d: pd.DataFrame, h: pd.DataFrame, cfg: dict) -> dic
         akumulasi=dict(obv_trend=_f(obv_trend, 2), cmf=_f(cmf20, 3), beli24=_f(buy24, 3), rvol_d=_f(rvol_d, 2),
                        rvol_h=_f(rvol_h, 2), posisi=posisi,
                        zona=dict(val=_r(vp["val"]), poc=_r(vp["poc"]), vah=_r(vp["vah"])) if vp else None),
-        siklus=_siklus_json(sik), checklist=ck,
+        siklus=_siklus_json(sik), checklist=ck, checklist_short=ck_short,
     )
     hasil["_g"] = dict(dc=dc, ma20=ma20, ma50=ma50, ma200=ma200, bb_up=bb_up, bb_lo=bb_lo, bb_mid=bb_mid,
                        rsi=r, macd=m_line, macd_sig=m_sig, macd_hist=m_hist, sk=sk, sd=sd, tl=tl, vp=vp,
@@ -1239,7 +1244,10 @@ def analisa_koin(info: dict, d: pd.DataFrame, h: pd.DataFrame, cfg: dict) -> dic
 
 
 def _siklus_json(sik: dict) -> dict:
-    out = {k: (_f(v, 2) if isinstance(v, float) else v) for k, v in sik.items() if not k.startswith("_") and k not in ("volume", "fib")}
+    out = {k: (_f(v, 2) if isinstance(v, float) else v) for k, v in sik.items()
+           if not k.startswith("_") and k not in ("volume", "fib", "short_fib")}
+    sf = sik.get("short_fib")
+    out["short_fib"] = {k: _r(v) for k, v in sf.items()} if sf else None
     for k in ("ma", "atap", "lantai"):
         if out.get(k) is not None:
             out[k] = _r(sik[k])
