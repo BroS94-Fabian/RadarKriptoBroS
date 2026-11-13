@@ -1,0 +1,5826 @@
+{
+ "dibuat": "2026-11-13T11:46:58+00:00",
+ "dibuat_wib": "13 Nov 2026 18:46 WIB",
+ "dari": "2020-09-17",
+ "sampai": "2026-10-13",
+ "mid": "2023-09-30",
+ "koin": 127,
+ "biaya": {
+  "fee_buka": 0.1,
+  "pajak": 0.21,
+  "fee_tutup": 0.1,
+  "funding_harian": 0.03
+ },
+ "biaya_futures": {
+  "fee_buka": 0.05,
+  "pajak": 0.0,
+  "fee_tutup": 0.05,
+  "funding_harian": 0.0
+ },
+ "baris": [
+  {
+   "n": 823,
+   "menang": 70.6,
+   "rata": -0.51,
+   "median": 2.0,
+   "pf": 0.86,
+   "t": -1.83,
+   "event": "awal_stage4",
+   "meme": "bukan meme",
+   "pasar": "BTC tren turun",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 361,
+    "menang": 76.7,
+    "rata": 0.56,
+    "median": 2.03,
+    "pf": 1.19,
+    "t": 1.41
+   },
+   "p2": {
+    "n": 462,
+    "menang": 65.8,
+    "rata": -1.34,
+    "median": 2.0,
+    "pf": 0.68,
+    "t": -3.51
+   },
+   "futures": {
+    "n": 823,
+    "menang": 70.8,
+    "rata": -0.04,
+    "median": 2.4,
+    "pf": 0.99,
+    "t": -0.15
+   },
+   "lebih_acak": {
+    "n": 822,
+    "menang": 57.2,
+    "rata": -0.51,
+    "median": 1.59,
+    "pf": 0.83,
+    "t": -2.14
+   },
+   "hari": 5.3
+  },
+  {
+   "n": 823,
+   "menang": 63.1,
+   "rata": -0.31,
+   "median": 1.97,
+   "pf": 0.9,
+   "t": -1.33,
+   "event": "awal_stage4",
+   "meme": "bukan meme",
+   "pasar": "BTC tren turun",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 361,
+    "menang": 68.7,
+    "rata": 0.47,
+    "median": 2.0,
+    "pf": 1.18,
+    "t": 1.4
+   },
+   "p2": {
+    "n": 462,
+    "menang": 58.7,
+    "rata": -0.92,
+    "median": 1.97,
+    "pf": 0.74,
+    "t": -2.96
+   },
+   "futures": {
+    "n": 823,
+    "menang": 63.1,
+    "rata": 0.12,
+    "median": 2.4,
+    "pf": 1.04,
+    "t": 0.54
+   },
+   "lebih_acak": {
+    "n": 822,
+    "menang": 51.2,
+    "rata": -0.29,
+    "median": 0.08,
+    "pf": 0.89,
+    "t": -1.44
+   },
+   "hari": 4.0
+  },
+  {
+   "n": 823,
+   "menang": 53.3,
+   "rata": -0.14,
+   "median": 4.45,
+   "pf": 0.95,
+   "t": -0.78,
+   "event": "awal_stage4",
+   "meme": "bukan meme",
+   "pasar": "BTC tren turun",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 361,
+    "menang": 56.8,
+    "rata": 0.2,
+    "median": 4.48,
+    "pf": 1.08,
+    "t": 0.77
+   },
+   "p2": {
+    "n": 462,
+    "menang": 50.6,
+    "rata": -0.4,
+    "median": 4.27,
+    "pf": 0.85,
+    "t": -1.71
+   },
+   "futures": {
+    "n": 823,
+    "menang": 53.3,
+    "rata": 0.24,
+    "median": 4.9,
+    "pf": 1.1,
+    "t": 1.38
+   },
+   "lebih_acak": {
+    "n": 822,
+    "menang": 54.5,
+    "rata": 0.05,
+    "median": 1.59,
+    "pf": 1.02,
+    "t": 0.29
+   },
+   "hari": 2.2
+  },
+  {
+   "n": 823,
+   "menang": 28.7,
+   "rata": -2.17,
+   "median": -12.45,
+   "pf": 0.71,
+   "t": -3.9,
+   "event": "awal_stage4",
+   "meme": "bukan meme",
+   "pasar": "BTC tren turun",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 361,
+    "menang": 23.8,
+    "rata": -3.03,
+    "median": -12.45,
+    "pf": 0.61,
+    "t": -3.64
+   },
+   "p2": {
+    "n": 462,
+    "menang": 32.5,
+    "rata": -1.49,
+    "median": -10.89,
+    "pf": 0.79,
+    "t": -2.0
+   },
+   "futures": {
+    "n": 823,
+    "menang": 31.2,
+    "rata": -1.07,
+    "median": -12.11,
+    "pf": 0.85,
+    "t": -1.85
+   },
+   "lebih_acak": {
+    "n": 822,
+    "menang": 35.2,
+    "rata": -0.27,
+    "median": -1.99,
+    "pf": 0.94,
+    "t": -0.6
+   },
+   "hari": 26.1
+  },
+  {
+   "n": 1138,
+   "menang": 73.6,
+   "rata": -0.04,
+   "median": 2.0,
+   "pf": 0.99,
+   "t": -0.19,
+   "event": "awal_stage4",
+   "meme": "bukan meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 486,
+    "menang": 79.8,
+    "rata": 0.98,
+    "median": 2.03,
+    "pf": 1.39,
+    "t": 3.02
+   },
+   "p2": {
+    "n": 652,
+    "menang": 68.9,
+    "rata": -0.8,
+    "median": 2.0,
+    "pf": 0.79,
+    "t": -2.54
+   },
+   "futures": {
+    "n": 1138,
+    "menang": 73.7,
+    "rata": 0.43,
+    "median": 2.4,
+    "pf": 1.14,
+    "t": 1.87
+   },
+   "lebih_acak": {
+    "n": 1138,
+    "menang": 60.9,
+    "rata": -0.5,
+    "median": 1.8,
+    "pf": 0.83,
+    "t": -2.5
+   },
+   "hari": 5.4
+  },
+  {
+   "n": 1138,
+   "menang": 66.5,
+   "rata": 0.11,
+   "median": 2.0,
+   "pf": 1.04,
+   "t": 0.58,
+   "event": "awal_stage4",
+   "meme": "bukan meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 486,
+    "menang": 72.0,
+    "rata": 0.8,
+    "median": 2.0,
+    "pf": 1.33,
+    "t": 2.84
+   },
+   "p2": {
+    "n": 652,
+    "menang": 62.4,
+    "rata": -0.4,
+    "median": 1.97,
+    "pf": 0.87,
+    "t": -1.56
+   },
+   "futures": {
+    "n": 1138,
+    "menang": 66.5,
+    "rata": 0.55,
+    "median": 2.4,
+    "pf": 1.2,
+    "t": 2.87
+   },
+   "lebih_acak": {
+    "n": 1138,
+    "menang": 55.7,
+    "rata": -0.21,
+    "median": 1.62,
+    "pf": 0.92,
+    "t": -1.24
+   },
+   "hari": 4.3
+  },
+  {
+   "n": 1138,
+   "menang": 55.3,
+   "rata": 0.05,
+   "median": 4.45,
+   "pf": 1.02,
+   "t": 0.34,
+   "event": "awal_stage4",
+   "meme": "bukan meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 486,
+    "menang": 60.3,
+    "rata": 0.55,
+    "median": 4.51,
+    "pf": 1.25,
+    "t": 2.47
+   },
+   "p2": {
+    "n": 652,
+    "menang": 51.5,
+    "rata": -0.32,
+    "median": 4.39,
+    "pf": 0.88,
+    "t": -1.64
+   },
+   "futures": {
+    "n": 1138,
+    "menang": 55.3,
+    "rata": 0.43,
+    "median": 4.9,
+    "pf": 1.19,
+    "t": 2.93
+   },
+   "lebih_acak": {
+    "n": 1138,
+    "menang": 55.3,
+    "rata": -0.0,
+    "median": 1.98,
+    "pf": 1.0,
+    "t": -0.01
+   },
+   "hari": 2.4
+  },
+  {
+   "n": 1138,
+   "menang": 31.6,
+   "rata": -0.72,
+   "median": -7.97,
+   "pf": 0.9,
+   "t": -1.42,
+   "event": "awal_stage4",
+   "meme": "bukan meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 486,
+    "menang": 30.0,
+    "rata": -0.55,
+    "median": -8.27,
+    "pf": 0.92,
+    "t": -0.66
+   },
+   "p2": {
+    "n": 652,
+    "menang": 32.8,
+    "rata": -0.85,
+    "median": -7.89,
+    "pf": 0.88,
+    "t": -1.35
+   },
+   "futures": {
+    "n": 1138,
+    "menang": 33.9,
+    "rata": 0.44,
+    "median": -7.21,
+    "pf": 1.07,
+    "t": 0.83
+   },
+   "lebih_acak": {
+    "n": 1138,
+    "menang": 38.0,
+    "rata": 0.1,
+    "median": -2.22,
+    "pf": 1.02,
+    "t": 0.25
+   },
+   "hari": 28.4
+  },
+  {
+   "n": 1556,
+   "menang": 71.9,
+   "rata": -0.34,
+   "median": 2.0,
+   "pf": 0.9,
+   "t": -1.72,
+   "event": "awal_stage4",
+   "meme": "bukan meme",
+   "pasar": "semua kondisi",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 539,
+    "menang": 79.2,
+    "rata": 0.87,
+    "median": 2.03,
+    "pf": 1.33,
+    "t": 2.79
+   },
+   "p2": {
+    "n": 1017,
+    "menang": 67.9,
+    "rata": -0.99,
+    "median": 1.97,
+    "pf": 0.75,
+    "t": -3.85
+   },
+   "futures": {
+    "n": 1556,
+    "menang": 72.0,
+    "rata": 0.13,
+    "median": 2.4,
+    "pf": 1.04,
+    "t": 0.67
+   },
+   "lebih_acak": {
+    "n": 1556,
+    "menang": 55.2,
+    "rata": -0.84,
+    "median": 1.34,
+    "pf": 0.73,
+    "t": -4.94
+   },
+   "hari": 5.6
+  },
+  {
+   "n": 1556,
+   "menang": 64.1,
+   "rata": -0.22,
+   "median": 1.97,
+   "pf": 0.93,
+   "t": -1.33,
+   "event": "awal_stage4",
+   "meme": "bukan meme",
+   "pasar": "semua kondisi",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 539,
+    "menang": 70.9,
+    "rata": 0.64,
+    "median": 2.0,
+    "pf": 1.26,
+    "t": 2.37
+   },
+   "p2": {
+    "n": 1017,
+    "menang": 60.5,
+    "rata": -0.68,
+    "median": 1.94,
+    "pf": 0.8,
+    "t": -3.25
+   },
+   "futures": {
+    "n": 1556,
+    "menang": 64.1,
+    "rata": 0.22,
+    "median": 2.4,
+    "pf": 1.08,
+    "t": 1.35
+   },
+   "lebih_acak": {
+    "n": 1556,
+    "menang": 51.5,
+    "rata": -0.65,
+    "median": 0.66,
+    "pf": 0.76,
+    "t": -4.54
+   },
+   "hari": 4.5
+  },
+  {
+   "n": 1556,
+   "menang": 50.8,
+   "rata": -0.4,
+   "median": 4.3,
+   "pf": 0.85,
+   "t": -3.18,
+   "event": "awal_stage4",
+   "meme": "bukan meme",
+   "pasar": "semua kondisi",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 539,
+    "menang": 59.0,
+    "rata": 0.42,
+    "median": 4.48,
+    "pf": 1.19,
+    "t": 1.98
+   },
+   "p2": {
+    "n": 1017,
+    "menang": 46.4,
+    "rata": -0.84,
+    "median": -5.45,
+    "pf": 0.71,
+    "t": -5.37
+   },
+   "futures": {
+    "n": 1556,
+    "menang": 50.8,
+    "rata": -0.02,
+    "median": 4.9,
+    "pf": 0.99,
+    "t": -0.16
+   },
+   "lebih_acak": {
+    "n": 1556,
+    "menang": 50.8,
+    "rata": -0.5,
+    "median": 1.13,
+    "pf": 0.79,
+    "t": -4.31
+   },
+   "hari": 2.5
+  },
+  {
+   "n": 1556,
+   "menang": 29.6,
+   "rata": -1.03,
+   "median": -7.94,
+   "pf": 0.85,
+   "t": -2.42,
+   "event": "awal_stage4",
+   "meme": "bukan meme",
+   "pasar": "semua kondisi",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 539,
+    "menang": 30.1,
+    "rata": -0.39,
+    "median": -7.42,
+    "pf": 0.94,
+    "t": -0.5
+   },
+   "p2": {
+    "n": 1017,
+    "menang": 29.4,
+    "rata": -1.37,
+    "median": -8.24,
+    "pf": 0.81,
+    "t": -2.72
+   },
+   "futures": {
+    "n": 1556,
+    "menang": 31.6,
+    "rata": 0.09,
+    "median": -7.31,
+    "pf": 1.01,
+    "t": 0.2
+   },
+   "lebih_acak": {
+    "n": 1556,
+    "menang": 35.5,
+    "rata": -0.79,
+    "median": -3.11,
+    "pf": 0.85,
+    "t": -2.25
+   },
+   "hari": 27.1
+  },
+  {
+   "n": 872,
+   "menang": 70.6,
+   "rata": -0.46,
+   "median": 2.0,
+   "pf": 0.87,
+   "t": -1.68,
+   "event": "awal_stage4",
+   "meme": "termasuk meme",
+   "pasar": "BTC tren turun",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 372,
+    "menang": 76.9,
+    "rata": 0.6,
+    "median": 2.03,
+    "pf": 1.21,
+    "t": 1.53
+   },
+   "p2": {
+    "n": 500,
+    "menang": 66.0,
+    "rata": -1.24,
+    "median": 2.0,
+    "pf": 0.7,
+    "t": -3.35
+   },
+   "futures": {
+    "n": 872,
+    "menang": 70.9,
+    "rata": 0.01,
+    "median": 2.4,
+    "pf": 1.0,
+    "t": 0.04
+   },
+   "lebih_acak": {
+    "n": 871,
+    "menang": 57.5,
+    "rata": -0.48,
+    "median": 1.55,
+    "pf": 0.84,
+    "t": -2.06
+   },
+   "hari": 5.3
+  },
+  {
+   "n": 872,
+   "menang": 63.3,
+   "rata": -0.23,
+   "median": 2.0,
+   "pf": 0.93,
+   "t": -1.01,
+   "event": "awal_stage4",
+   "meme": "termasuk meme",
+   "pasar": "BTC tren turun",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 372,
+    "menang": 68.8,
+    "rata": 0.51,
+    "median": 2.0,
+    "pf": 1.19,
+    "t": 1.53
+   },
+   "p2": {
+    "n": 500,
+    "menang": 59.2,
+    "rata": -0.78,
+    "median": 1.97,
+    "pf": 0.78,
+    "t": -2.6
+   },
+   "futures": {
+    "n": 872,
+    "menang": 63.3,
+    "rata": 0.2,
+    "median": 2.4,
+    "pf": 1.07,
+    "t": 0.9
+   },
+   "lebih_acak": {
+    "n": 871,
+    "menang": 50.9,
+    "rata": -0.21,
+    "median": 0.1,
+    "pf": 0.92,
+    "t": -1.1
+   },
+   "hari": 4.0
+  },
+  {
+   "n": 872,
+   "menang": 53.2,
+   "rata": -0.15,
+   "median": 4.45,
+   "pf": 0.94,
+   "t": -0.89,
+   "event": "awal_stage4",
+   "meme": "termasuk meme",
+   "pasar": "BTC tren turun",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 372,
+    "menang": 56.5,
+    "rata": 0.17,
+    "median": 4.48,
+    "pf": 1.07,
+    "t": 0.64
+   },
+   "p2": {
+    "n": 500,
+    "menang": 50.8,
+    "rata": -0.38,
+    "median": 4.39,
+    "pf": 0.86,
+    "t": -1.72
+   },
+   "futures": {
+    "n": 872,
+    "menang": 53.2,
+    "rata": 0.23,
+    "median": 4.9,
+    "pf": 1.1,
+    "t": 1.34
+   },
+   "lebih_acak": {
+    "n": 871,
+    "menang": 54.2,
+    "rata": 0.02,
+    "median": 1.55,
+    "pf": 1.01,
+    "t": 0.14
+   },
+   "hari": 2.2
+  },
+  {
+   "n": 872,
+   "menang": 29.7,
+   "rata": -1.97,
+   "median": -11.55,
+   "pf": 0.73,
+   "t": -3.65,
+   "event": "awal_stage4",
+   "meme": "termasuk meme",
+   "pasar": "BTC tren turun",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 372,
+    "menang": 24.7,
+    "rata": -2.78,
+    "median": -12.45,
+    "pf": 0.64,
+    "t": -3.35
+   },
+   "p2": {
+    "n": 500,
+    "menang": 33.4,
+    "rata": -1.36,
+    "median": -10.5,
+    "pf": 0.81,
+    "t": -1.92
+   },
+   "futures": {
+    "n": 872,
+    "menang": 32.1,
+    "rata": -0.86,
+    "median": -10.9,
+    "pf": 0.87,
+    "t": -1.53
+   },
+   "lebih_acak": {
+    "n": 871,
+    "menang": 35.5,
+    "rata": -0.22,
+    "median": -1.87,
+    "pf": 0.95,
+    "t": -0.5
+   },
+   "hari": 26.5
+  },
+  {
+   "n": 1195,
+   "menang": 73.6,
+   "rata": -0.02,
+   "median": 2.0,
+   "pf": 0.99,
+   "t": -0.08,
+   "event": "awal_stage4",
+   "meme": "termasuk meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 499,
+    "menang": 80.0,
+    "rata": 1.0,
+    "median": 2.03,
+    "pf": 1.4,
+    "t": 3.14
+   },
+   "p2": {
+    "n": 696,
+    "menang": 69.0,
+    "rata": -0.75,
+    "median": 2.0,
+    "pf": 0.8,
+    "t": -2.44
+   },
+   "futures": {
+    "n": 1195,
+    "menang": 73.7,
+    "rata": 0.45,
+    "median": 2.4,
+    "pf": 1.14,
+    "t": 2.02
+   },
+   "lebih_acak": {
+    "n": 1195,
+    "menang": 61.2,
+    "rata": -0.51,
+    "median": 1.79,
+    "pf": 0.82,
+    "t": -2.61
+   },
+   "hari": 5.4
+  },
+  {
+   "n": 1195,
+   "menang": 66.7,
+   "rata": 0.16,
+   "median": 2.0,
+   "pf": 1.06,
+   "t": 0.85,
+   "event": "awal_stage4",
+   "meme": "termasuk meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 499,
+    "menang": 72.1,
+    "rata": 0.82,
+    "median": 2.0,
+    "pf": 1.35,
+    "t": 2.97
+   },
+   "p2": {
+    "n": 696,
+    "menang": 62.8,
+    "rata": -0.32,
+    "median": 1.97,
+    "pf": 0.9,
+    "t": -1.27
+   },
+   "futures": {
+    "n": 1195,
+    "menang": 66.7,
+    "rata": 0.6,
+    "median": 2.4,
+    "pf": 1.22,
+    "t": 3.19
+   },
+   "lebih_acak": {
+    "n": 1195,
+    "menang": 55.6,
+    "rata": -0.18,
+    "median": 1.67,
+    "pf": 0.93,
+    "t": -1.12
+   },
+   "hari": 4.3
+  },
+  {
+   "n": 1195,
+   "menang": 55.2,
+   "rata": 0.05,
+   "median": 4.45,
+   "pf": 1.02,
+   "t": 0.32,
+   "event": "awal_stage4",
+   "meme": "termasuk meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 499,
+    "menang": 60.1,
+    "rata": 0.53,
+    "median": 4.51,
+    "pf": 1.24,
+    "t": 2.42
+   },
+   "p2": {
+    "n": 696,
+    "menang": 51.7,
+    "rata": -0.3,
+    "median": 4.39,
+    "pf": 0.89,
+    "t": -1.6
+   },
+   "futures": {
+    "n": 1195,
+    "menang": 55.2,
+    "rata": 0.43,
+    "median": 4.9,
+    "pf": 1.19,
+    "t": 2.97
+   },
+   "lebih_acak": {
+    "n": 1195,
+    "menang": 55.2,
+    "rata": -0.03,
+    "median": 1.99,
+    "pf": 0.99,
+    "t": -0.22
+   },
+   "hari": 2.4
+  },
+  {
+   "n": 1195,
+   "menang": 32.5,
+   "rata": -0.6,
+   "median": -7.83,
+   "pf": 0.91,
+   "t": -1.22,
+   "event": "awal_stage4",
+   "meme": "termasuk meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 499,
+    "menang": 30.9,
+    "rata": -0.36,
+    "median": -7.93,
+    "pf": 0.95,
+    "t": -0.44
+   },
+   "p2": {
+    "n": 696,
+    "menang": 33.6,
+    "rata": -0.77,
+    "median": -7.73,
+    "pf": 0.89,
+    "t": -1.28
+   },
+   "futures": {
+    "n": 1195,
+    "menang": 34.6,
+    "rata": 0.57,
+    "median": -6.92,
+    "pf": 1.09,
+    "t": 1.11
+   },
+   "lebih_acak": {
+    "n": 1195,
+    "menang": 38.2,
+    "rata": 0.09,
+    "median": -2.09,
+    "pf": 1.02,
+    "t": 0.23
+   },
+   "hari": 28.6
+  },
+  {
+   "n": 1634,
+   "menang": 71.9,
+   "rata": -0.31,
+   "median": 2.0,
+   "pf": 0.91,
+   "t": -1.57,
+   "event": "awal_stage4",
+   "meme": "termasuk meme",
+   "pasar": "semua kondisi",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 553,
+    "menang": 79.4,
+    "rata": 0.9,
+    "median": 2.03,
+    "pf": 1.35,
+    "t": 2.95
+   },
+   "p2": {
+    "n": 1081,
+    "menang": 68.1,
+    "rata": -0.92,
+    "median": 1.97,
+    "pf": 0.77,
+    "t": -3.71
+   },
+   "futures": {
+    "n": 1634,
+    "menang": 72.1,
+    "rata": 0.17,
+    "median": 2.4,
+    "pf": 1.05,
+    "t": 0.88
+   },
+   "lebih_acak": {
+    "n": 1634,
+    "menang": 56.7,
+    "rata": -0.83,
+    "median": 1.47,
+    "pf": 0.73,
+    "t": -4.98
+   },
+   "hari": 5.6
+  },
+  {
+   "n": 1634,
+   "menang": 64.3,
+   "rata": -0.16,
+   "median": 1.97,
+   "pf": 0.95,
+   "t": -0.99,
+   "event": "awal_stage4",
+   "meme": "termasuk meme",
+   "pasar": "semua kondisi",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 553,
+    "menang": 71.1,
+    "rata": 0.68,
+    "median": 2.0,
+    "pf": 1.27,
+    "t": 2.55
+   },
+   "p2": {
+    "n": 1081,
+    "menang": 60.9,
+    "rata": -0.59,
+    "median": 1.94,
+    "pf": 0.82,
+    "t": -2.91
+   },
+   "futures": {
+    "n": 1634,
+    "menang": 64.4,
+    "rata": 0.28,
+    "median": 2.4,
+    "pf": 1.1,
+    "t": 1.75
+   },
+   "lebih_acak": {
+    "n": 1634,
+    "menang": 51.5,
+    "rata": -0.61,
+    "median": 0.75,
+    "pf": 0.77,
+    "t": -4.4
+   },
+   "hari": 4.5
+  },
+  {
+   "n": 1634,
+   "menang": 50.8,
+   "rata": -0.4,
+   "median": 4.3,
+   "pf": 0.85,
+   "t": -3.24,
+   "event": "awal_stage4",
+   "meme": "termasuk meme",
+   "pasar": "semua kondisi",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 553,
+    "menang": 59.0,
+    "rata": 0.41,
+    "median": 4.48,
+    "pf": 1.18,
+    "t": 1.98
+   },
+   "p2": {
+    "n": 1081,
+    "menang": 46.6,
+    "rata": -0.82,
+    "median": -5.45,
+    "pf": 0.72,
+    "t": -5.39
+   },
+   "futures": {
+    "n": 1634,
+    "menang": 50.8,
+    "rata": -0.02,
+    "median": 4.9,
+    "pf": 0.99,
+    "t": -0.14
+   },
+   "lebih_acak": {
+    "n": 1634,
+    "menang": 50.8,
+    "rata": -0.51,
+    "median": 1.09,
+    "pf": 0.78,
+    "t": -4.55
+   },
+   "hari": 2.5
+  },
+  {
+   "n": 1634,
+   "menang": 30.4,
+   "rata": -0.9,
+   "median": -7.83,
+   "pf": 0.87,
+   "t": -2.16,
+   "event": "awal_stage4",
+   "meme": "termasuk meme",
+   "pasar": "semua kondisi",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 553,
+    "menang": 30.7,
+    "rata": -0.23,
+    "median": -7.26,
+    "pf": 0.97,
+    "t": -0.3
+   },
+   "p2": {
+    "n": 1081,
+    "menang": 30.2,
+    "rata": -1.24,
+    "median": -8.09,
+    "pf": 0.82,
+    "t": -2.54
+   },
+   "futures": {
+    "n": 1634,
+    "menang": 32.3,
+    "rata": 0.24,
+    "median": -7.03,
+    "pf": 1.04,
+    "t": 0.55
+   },
+   "lebih_acak": {
+    "n": 1634,
+    "menang": 35.6,
+    "rata": -0.78,
+    "median": -2.98,
+    "pf": 0.85,
+    "t": -2.29
+   },
+   "hari": 27.4
+  },
+  {
+   "n": 31,
+   "menang": 74.2,
+   "rata": 0.06,
+   "median": 1.97,
+   "pf": 1.02,
+   "t": 0.04,
+   "event": "jebol_puncak",
+   "meme": "bukan meme",
+   "pasar": "BTC tren turun",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 16,
+    "menang": 81.2,
+    "rata": 1.32,
+    "median": 2.0,
+    "pf": 1.73,
+    "t": 0.77
+   },
+   "p2": {
+    "n": 15,
+    "menang": 66.7,
+    "rata": -1.3,
+    "median": 1.91,
+    "pf": 0.66,
+    "t": -0.6
+   },
+   "futures": {
+    "n": 31,
+    "menang": 74.2,
+    "rata": 0.71,
+    "median": 2.4,
+    "pf": 1.27,
+    "t": 0.52
+   },
+   "lebih_acak": {
+    "n": 31,
+    "menang": 35.5,
+    "rata": -2.31,
+    "median": -1.2,
+    "pf": 0.45,
+    "t": -1.75
+   },
+   "hari": 11.5
+  },
+  {
+   "n": 31,
+   "menang": 61.3,
+   "rata": -0.74,
+   "median": 1.91,
+   "pf": 0.78,
+   "t": -0.57,
+   "event": "jebol_puncak",
+   "meme": "bukan meme",
+   "pasar": "BTC tren turun",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 16,
+    "menang": 62.5,
+    "rata": -0.4,
+    "median": 1.96,
+    "pf": 0.88,
+    "t": -0.21
+   },
+   "p2": {
+    "n": 15,
+    "menang": 60.0,
+    "rata": -1.1,
+    "median": 1.91,
+    "pf": 0.68,
+    "t": -0.6
+   },
+   "futures": {
+    "n": 31,
+    "menang": 61.3,
+    "rata": -0.2,
+    "median": 2.4,
+    "pf": 0.94,
+    "t": -0.15
+   },
+   "lebih_acak": {
+    "n": 31,
+    "menang": 35.5,
+    "rata": -2.87,
+    "median": -3.75,
+    "pf": 0.37,
+    "t": -2.27
+   },
+   "hari": 7.7
+  },
+  {
+   "n": 31,
+   "menang": 48.4,
+   "rata": -0.66,
+   "median": -5.45,
+   "pf": 0.77,
+   "t": -0.72,
+   "event": "jebol_puncak",
+   "meme": "bukan meme",
+   "pasar": "BTC tren turun",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 16,
+    "menang": 43.8,
+    "rata": -1.15,
+    "median": -5.45,
+    "pf": 0.63,
+    "t": -0.89
+   },
+   "p2": {
+    "n": 15,
+    "menang": 53.3,
+    "rata": -0.14,
+    "median": 4.57,
+    "pf": 0.95,
+    "t": -0.1
+   },
+   "futures": {
+    "n": 31,
+    "menang": 48.4,
+    "rata": -0.26,
+    "median": -5.1,
+    "pf": 0.9,
+    "t": -0.29
+   },
+   "lebih_acak": {
+    "n": 31,
+    "menang": 48.4,
+    "rata": -1.94,
+    "median": -2.96,
+    "pf": 0.42,
+    "t": -2.12
+   },
+   "hari": 3.0
+  },
+  {
+   "n": 31,
+   "menang": 32.3,
+   "rata": -3.64,
+   "median": -7.55,
+   "pf": 0.46,
+   "t": -1.93,
+   "event": "jebol_puncak",
+   "meme": "bukan meme",
+   "pasar": "BTC tren turun",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 16,
+    "menang": 18.8,
+    "rata": -5.15,
+    "median": -6.68,
+    "pf": 0.25,
+    "t": -2.31
+   },
+   "p2": {
+    "n": 15,
+    "menang": 46.7,
+    "rata": -2.03,
+    "median": -8.58,
+    "pf": 0.69,
+    "t": -0.65
+   },
+   "futures": {
+    "n": 31,
+    "menang": 38.7,
+    "rata": -2.4,
+    "median": -5.88,
+    "pf": 0.61,
+    "t": -1.21
+   },
+   "lebih_acak": {
+    "n": 31,
+    "menang": 35.5,
+    "rata": -3.46,
+    "median": -2.08,
+    "pf": 0.44,
+    "t": -1.7
+   },
+   "hari": 31.0
+  },
+  {
+   "n": 59,
+   "menang": 72.9,
+   "rata": -0.8,
+   "median": 1.88,
+   "pf": 0.75,
+   "t": -0.83,
+   "event": "jebol_puncak",
+   "meme": "bukan meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 17,
+    "menang": 82.4,
+    "rata": 1.35,
+    "median": 2.0,
+    "pf": 1.8,
+    "t": 0.84
+   },
+   "p2": {
+    "n": 42,
+    "menang": 69.0,
+    "rata": -1.68,
+    "median": 1.88,
+    "pf": 0.56,
+    "t": -1.43
+   },
+   "futures": {
+    "n": 59,
+    "menang": 72.9,
+    "rata": -0.19,
+    "median": 2.4,
+    "pf": 0.94,
+    "t": -0.19
+   },
+   "lebih_acak": {
+    "n": 59,
+    "menang": 39.0,
+    "rata": -1.65,
+    "median": -1.13,
+    "pf": 0.55,
+    "t": -1.71
+   },
+   "hari": 10.2
+  },
+  {
+   "n": 59,
+   "menang": 54.2,
+   "rata": -1.97,
+   "median": 1.85,
+   "pf": 0.5,
+   "t": -2.25,
+   "event": "jebol_puncak",
+   "meme": "bukan meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 17,
+    "menang": 64.7,
+    "rata": -0.27,
+    "median": 1.91,
+    "pf": 0.91,
+    "t": -0.15
+   },
+   "p2": {
+    "n": 42,
+    "menang": 50.0,
+    "rata": -2.65,
+    "median": -3.61,
+    "pf": 0.38,
+    "t": -2.67
+   },
+   "futures": {
+    "n": 59,
+    "menang": 54.2,
+    "rata": -1.45,
+    "median": 2.4,
+    "pf": 0.61,
+    "t": -1.64
+   },
+   "lebih_acak": {
+    "n": 59,
+    "menang": 32.2,
+    "rata": -2.49,
+    "median": -2.23,
+    "pf": 0.36,
+    "t": -3.07
+   },
+   "hari": 6.7
+  },
+  {
+   "n": 59,
+   "menang": 35.6,
+   "rata": -1.93,
+   "median": -5.45,
+   "pf": 0.45,
+   "t": -3.07,
+   "event": "jebol_puncak",
+   "meme": "bukan meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 17,
+    "menang": 47.1,
+    "rata": -0.82,
+    "median": -5.45,
+    "pf": 0.72,
+    "t": -0.65
+   },
+   "p2": {
+    "n": 42,
+    "menang": 31.0,
+    "rata": -2.39,
+    "median": -5.45,
+    "pf": 0.37,
+    "t": -3.3
+   },
+   "futures": {
+    "n": 59,
+    "menang": 35.6,
+    "rata": -1.54,
+    "median": -5.1,
+    "pf": 0.53,
+    "t": -2.45
+   },
+   "lebih_acak": {
+    "n": 59,
+    "menang": 35.6,
+    "rata": -1.96,
+    "median": -0.97,
+    "pf": 0.37,
+    "t": -3.4
+   },
+   "hari": 2.7
+  },
+  {
+   "n": 59,
+   "menang": 28.8,
+   "rata": -3.14,
+   "median": -9.69,
+   "pf": 0.57,
+   "t": -1.88,
+   "event": "jebol_puncak",
+   "meme": "bukan meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 17,
+    "menang": 23.5,
+    "rata": -4.06,
+    "median": -5.81,
+    "pf": 0.38,
+    "t": -1.72
+   },
+   "p2": {
+    "n": 42,
+    "menang": 31.0,
+    "rata": -2.77,
+    "median": -10.75,
+    "pf": 0.64,
+    "t": -1.28
+   },
+   "futures": {
+    "n": 59,
+    "menang": 33.9,
+    "rata": -1.91,
+    "median": -8.65,
+    "pf": 0.72,
+    "t": -1.09
+   },
+   "lebih_acak": {
+    "n": 59,
+    "menang": 28.8,
+    "rata": -2.04,
+    "median": -4.95,
+    "pf": 0.65,
+    "t": -1.2
+   },
+   "hari": 30.5
+  },
+  {
+   "n": 69,
+   "menang": 75.4,
+   "rata": 0.01,
+   "median": 1.88,
+   "pf": 1.0,
+   "t": 0.01,
+   "event": "jebol_puncak",
+   "meme": "bukan meme",
+   "pasar": "semua kondisi",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 17,
+    "menang": 82.4,
+    "rata": 1.35,
+    "median": 2.0,
+    "pf": 1.8,
+    "t": 0.84
+   },
+   "p2": {
+    "n": 52,
+    "menang": 73.1,
+    "rata": -0.44,
+    "median": 1.88,
+    "pf": 0.87,
+    "t": -0.37
+   },
+   "futures": {
+    "n": 69,
+    "menang": 75.4,
+    "rata": 0.63,
+    "median": 2.4,
+    "pf": 1.23,
+    "t": 0.64
+   },
+   "lebih_acak": {
+    "n": 69,
+    "menang": 30.4,
+    "rata": -2.19,
+    "median": -0.82,
+    "pf": 0.43,
+    "t": -2.36
+   },
+   "hari": 10.5
+  },
+  {
+   "n": 69,
+   "menang": 59.4,
+   "rata": -0.93,
+   "median": 1.88,
+   "pf": 0.73,
+   "t": -1.02,
+   "event": "jebol_puncak",
+   "meme": "bukan meme",
+   "pasar": "semua kondisi",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 17,
+    "menang": 64.7,
+    "rata": -0.27,
+    "median": 1.91,
+    "pf": 0.91,
+    "t": -0.15
+   },
+   "p2": {
+    "n": 52,
+    "menang": 57.7,
+    "rata": -1.15,
+    "median": 1.84,
+    "pf": 0.68,
+    "t": -1.07
+   },
+   "futures": {
+    "n": 69,
+    "menang": 59.4,
+    "rata": -0.39,
+    "median": 2.4,
+    "pf": 0.88,
+    "t": -0.43
+   },
+   "lebih_acak": {
+    "n": 69,
+    "menang": 37.7,
+    "rata": -2.62,
+    "median": -1.67,
+    "pf": 0.38,
+    "t": -3.04
+   },
+   "hari": 7.6
+  },
+  {
+   "n": 69,
+   "menang": 42.0,
+   "rata": -1.29,
+   "median": -5.45,
+   "pf": 0.6,
+   "t": -2.15,
+   "event": "jebol_puncak",
+   "meme": "bukan meme",
+   "pasar": "semua kondisi",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 17,
+    "menang": 47.1,
+    "rata": -0.82,
+    "median": -5.45,
+    "pf": 0.72,
+    "t": -0.65
+   },
+   "p2": {
+    "n": 52,
+    "menang": 40.4,
+    "rata": -1.45,
+    "median": -5.45,
+    "pf": 0.56,
+    "t": -2.1
+   },
+   "futures": {
+    "n": 69,
+    "menang": 42.0,
+    "rata": -0.9,
+    "median": -5.1,
+    "pf": 0.7,
+    "t": -1.5
+   },
+   "lebih_acak": {
+    "n": 69,
+    "menang": 42.0,
+    "rata": -2.15,
+    "median": -5.09,
+    "pf": 0.39,
+    "t": -3.72
+   },
+   "hari": 2.8
+  },
+  {
+   "n": 69,
+   "menang": 29.0,
+   "rata": -2.24,
+   "median": -8.63,
+   "pf": 0.68,
+   "t": -1.18,
+   "event": "jebol_puncak",
+   "meme": "bukan meme",
+   "pasar": "semua kondisi",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 17,
+    "menang": 23.5,
+    "rata": -4.06,
+    "median": -5.81,
+    "pf": 0.38,
+    "t": -1.72
+   },
+   "p2": {
+    "n": 52,
+    "menang": 30.8,
+    "rata": -1.64,
+    "median": -9.67,
+    "pf": 0.77,
+    "t": -0.69
+   },
+   "futures": {
+    "n": 69,
+    "menang": 34.8,
+    "rata": -1.01,
+    "median": -7.6,
+    "pf": 0.84,
+    "t": -0.51
+   },
+   "lebih_acak": {
+    "n": 69,
+    "menang": 27.5,
+    "rata": -4.85,
+    "median": -5.24,
+    "pf": 0.42,
+    "t": -2.57
+   },
+   "hari": 30.6
+  },
+  {
+   "n": 32,
+   "menang": 75.0,
+   "rata": 0.12,
+   "median": 1.99,
+   "pf": 1.04,
+   "t": 0.09,
+   "event": "jebol_puncak",
+   "meme": "termasuk meme",
+   "pasar": "BTC tren turun",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 16,
+    "menang": 81.2,
+    "rata": 1.32,
+    "median": 2.0,
+    "pf": 1.73,
+    "t": 0.77
+   },
+   "p2": {
+    "n": 16,
+    "menang": 68.8,
+    "rata": -1.09,
+    "median": 1.94,
+    "pf": 0.7,
+    "t": -0.54
+   },
+   "futures": {
+    "n": 32,
+    "menang": 75.0,
+    "rata": 0.76,
+    "median": 2.4,
+    "pf": 1.3,
+    "t": 0.58
+   },
+   "lebih_acak": {
+    "n": 32,
+    "menang": 37.5,
+    "rata": -2.22,
+    "median": -1.34,
+    "pf": 0.46,
+    "t": -1.72
+   },
+   "hari": 11.2
+  },
+  {
+   "n": 32,
+   "menang": 62.5,
+   "rata": -0.65,
+   "median": 1.91,
+   "pf": 0.8,
+   "t": -0.52,
+   "event": "jebol_puncak",
+   "meme": "termasuk meme",
+   "pasar": "BTC tren turun",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 16,
+    "menang": 62.5,
+    "rata": -0.4,
+    "median": 1.96,
+    "pf": 0.88,
+    "t": -0.21
+   },
+   "p2": {
+    "n": 16,
+    "menang": 62.5,
+    "rata": -0.91,
+    "median": 1.91,
+    "pf": 0.72,
+    "t": -0.52
+   },
+   "futures": {
+    "n": 32,
+    "menang": 62.5,
+    "rata": -0.12,
+    "median": 2.4,
+    "pf": 0.96,
+    "t": -0.09
+   },
+   "lebih_acak": {
+    "n": 32,
+    "menang": 37.5,
+    "rata": -2.73,
+    "median": -3.69,
+    "pf": 0.39,
+    "t": -2.21
+   },
+   "hari": 7.5
+  },
+  {
+   "n": 32,
+   "menang": 50.0,
+   "rata": -0.5,
+   "median": -0.5,
+   "pf": 0.82,
+   "t": -0.55,
+   "event": "jebol_puncak",
+   "meme": "termasuk meme",
+   "pasar": "BTC tren turun",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 16,
+    "menang": 43.8,
+    "rata": -1.15,
+    "median": -5.45,
+    "pf": 0.63,
+    "t": -0.89
+   },
+   "p2": {
+    "n": 16,
+    "menang": 56.2,
+    "rata": 0.15,
+    "median": 4.57,
+    "pf": 1.06,
+    "t": 0.12
+   },
+   "futures": {
+    "n": 32,
+    "menang": 50.0,
+    "rata": -0.1,
+    "median": -0.1,
+    "pf": 0.96,
+    "t": -0.11
+   },
+   "lebih_acak": {
+    "n": 32,
+    "menang": 50.0,
+    "rata": -1.72,
+    "median": -1.23,
+    "pf": 0.47,
+    "t": -1.88
+   },
+   "hari": 2.9
+  },
+  {
+   "n": 32,
+   "menang": 31.2,
+   "rata": -3.92,
+   "median": -8.06,
+   "pf": 0.43,
+   "t": -2.13,
+   "event": "jebol_puncak",
+   "meme": "termasuk meme",
+   "pasar": "BTC tren turun",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 16,
+    "menang": 18.8,
+    "rata": -5.15,
+    "median": -6.68,
+    "pf": 0.25,
+    "t": -2.31
+   },
+   "p2": {
+    "n": 16,
+    "menang": 43.8,
+    "rata": -2.7,
+    "median": -10.52,
+    "pf": 0.61,
+    "t": -0.9
+   },
+   "futures": {
+    "n": 32,
+    "menang": 37.5,
+    "rata": -2.7,
+    "median": -6.61,
+    "pf": 0.57,
+    "t": -1.4
+   },
+   "lebih_acak": {
+    "n": 32,
+    "menang": 31.2,
+    "rata": -3.66,
+    "median": -2.06,
+    "pf": 0.41,
+    "t": -1.86
+   },
+   "hari": 30.4
+  },
+  {
+   "n": 61,
+   "menang": 72.1,
+   "rata": -0.95,
+   "median": 1.88,
+   "pf": 0.71,
+   "t": -0.99,
+   "event": "jebol_puncak",
+   "meme": "termasuk meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 17,
+    "menang": 82.4,
+    "rata": 1.35,
+    "median": 2.0,
+    "pf": 1.8,
+    "t": 0.84
+   },
+   "p2": {
+    "n": 44,
+    "menang": 68.2,
+    "rata": -1.84,
+    "median": 1.88,
+    "pf": 0.53,
+    "t": -1.6
+   },
+   "futures": {
+    "n": 61,
+    "menang": 72.1,
+    "rata": -0.34,
+    "median": 2.4,
+    "pf": 0.89,
+    "t": -0.35
+   },
+   "lebih_acak": {
+    "n": 61,
+    "menang": 39.3,
+    "rata": -1.64,
+    "median": -1.32,
+    "pf": 0.55,
+    "t": -1.74
+   },
+   "hari": 9.9
+  },
+  {
+   "n": 61,
+   "menang": 54.1,
+   "rata": -2.01,
+   "median": 1.85,
+   "pf": 0.49,
+   "t": -2.35,
+   "event": "jebol_puncak",
+   "meme": "termasuk meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 17,
+    "menang": 64.7,
+    "rata": -0.27,
+    "median": 1.91,
+    "pf": 0.91,
+    "t": -0.15
+   },
+   "p2": {
+    "n": 44,
+    "menang": 50.0,
+    "rata": -2.68,
+    "median": -3.61,
+    "pf": 0.37,
+    "t": -2.78
+   },
+   "futures": {
+    "n": 61,
+    "menang": 54.1,
+    "rata": -1.5,
+    "median": 2.4,
+    "pf": 0.6,
+    "t": -1.73
+   },
+   "lebih_acak": {
+    "n": 61,
+    "menang": 31.1,
+    "rata": -2.47,
+    "median": -1.96,
+    "pf": 0.35,
+    "t": -3.14
+   },
+   "hari": 6.6
+  },
+  {
+   "n": 61,
+   "menang": 36.1,
+   "rata": -1.89,
+   "median": -5.45,
+   "pf": 0.46,
+   "t": -3.03,
+   "event": "jebol_puncak",
+   "meme": "termasuk meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 17,
+    "menang": 47.1,
+    "rata": -0.82,
+    "median": -5.45,
+    "pf": 0.72,
+    "t": -0.65
+   },
+   "p2": {
+    "n": 44,
+    "menang": 31.8,
+    "rata": -2.3,
+    "median": -5.45,
+    "pf": 0.39,
+    "t": -3.23
+   },
+   "futures": {
+    "n": 61,
+    "menang": 36.1,
+    "rata": -1.49,
+    "median": -5.1,
+    "pf": 0.54,
+    "t": -2.41
+   },
+   "lebih_acak": {
+    "n": 61,
+    "menang": 36.1,
+    "rata": -1.83,
+    "median": -0.85,
+    "pf": 0.39,
+    "t": -3.25
+   },
+   "hari": 2.7
+  },
+  {
+   "n": 61,
+   "menang": 27.9,
+   "rata": -3.45,
+   "median": -9.97,
+   "pf": 0.54,
+   "t": -2.12,
+   "event": "jebol_puncak",
+   "meme": "termasuk meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 17,
+    "menang": 23.5,
+    "rata": -4.06,
+    "median": -5.81,
+    "pf": 0.38,
+    "t": -1.72
+   },
+   "p2": {
+    "n": 44,
+    "menang": 29.5,
+    "rata": -3.21,
+    "median": -12.0,
+    "pf": 0.59,
+    "t": -1.54
+   },
+   "futures": {
+    "n": 61,
+    "menang": 32.8,
+    "rata": -2.25,
+    "median": -9.26,
+    "pf": 0.68,
+    "t": -1.31
+   },
+   "lebih_acak": {
+    "n": 61,
+    "menang": 26.2,
+    "rata": -2.17,
+    "median": -4.36,
+    "pf": 0.63,
+    "t": -1.32
+   },
+   "hari": 29.7
+  },
+  {
+   "n": 71,
+   "menang": 74.6,
+   "rata": -0.14,
+   "median": 1.88,
+   "pf": 0.95,
+   "t": -0.15,
+   "event": "jebol_puncak",
+   "meme": "termasuk meme",
+   "pasar": "semua kondisi",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 17,
+    "menang": 82.4,
+    "rata": 1.35,
+    "median": 2.0,
+    "pf": 1.8,
+    "t": 0.84
+   },
+   "p2": {
+    "n": 54,
+    "menang": 72.2,
+    "rata": -0.61,
+    "median": 1.88,
+    "pf": 0.82,
+    "t": -0.53
+   },
+   "futures": {
+    "n": 71,
+    "menang": 74.6,
+    "rata": 0.48,
+    "median": 2.4,
+    "pf": 1.17,
+    "t": 0.49
+   },
+   "lebih_acak": {
+    "n": 71,
+    "menang": 32.4,
+    "rata": -2.33,
+    "median": -1.14,
+    "pf": 0.41,
+    "t": -2.55
+   },
+   "hari": 10.3
+  },
+  {
+   "n": 71,
+   "menang": 59.2,
+   "rata": -0.99,
+   "median": 1.88,
+   "pf": 0.72,
+   "t": -1.12,
+   "event": "jebol_puncak",
+   "meme": "termasuk meme",
+   "pasar": "semua kondisi",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 17,
+    "menang": 64.7,
+    "rata": -0.27,
+    "median": 1.91,
+    "pf": 0.91,
+    "t": -0.15
+   },
+   "p2": {
+    "n": 54,
+    "menang": 57.4,
+    "rata": -1.22,
+    "median": 1.84,
+    "pf": 0.66,
+    "t": -1.18
+   },
+   "futures": {
+    "n": 71,
+    "menang": 59.2,
+    "rata": -0.46,
+    "median": 2.4,
+    "pf": 0.86,
+    "t": -0.51
+   },
+   "lebih_acak": {
+    "n": 71,
+    "menang": 36.6,
+    "rata": -2.71,
+    "median": -1.79,
+    "pf": 0.37,
+    "t": -3.22
+   },
+   "hari": 7.4
+  },
+  {
+   "n": 71,
+   "menang": 42.3,
+   "rata": -1.27,
+   "median": -5.45,
+   "pf": 0.6,
+   "t": -2.14,
+   "event": "jebol_puncak",
+   "meme": "termasuk meme",
+   "pasar": "semua kondisi",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 17,
+    "menang": 47.1,
+    "rata": -0.82,
+    "median": -5.45,
+    "pf": 0.72,
+    "t": -0.65
+   },
+   "p2": {
+    "n": 54,
+    "menang": 40.7,
+    "rata": -1.41,
+    "median": -5.45,
+    "pf": 0.57,
+    "t": -2.08
+   },
+   "futures": {
+    "n": 71,
+    "menang": 42.3,
+    "rata": -0.88,
+    "median": -5.1,
+    "pf": 0.7,
+    "t": -1.48
+   },
+   "lebih_acak": {
+    "n": 71,
+    "menang": 42.3,
+    "rata": -2.09,
+    "median": -4.96,
+    "pf": 0.4,
+    "t": -3.67
+   },
+   "hari": 2.7
+  },
+  {
+   "n": 71,
+   "menang": 28.2,
+   "rata": -2.53,
+   "median": -9.65,
+   "pf": 0.65,
+   "t": -1.37,
+   "event": "jebol_puncak",
+   "meme": "termasuk meme",
+   "pasar": "semua kondisi",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 17,
+    "menang": 23.5,
+    "rata": -4.06,
+    "median": -5.81,
+    "pf": 0.38,
+    "t": -1.72
+   },
+   "p2": {
+    "n": 54,
+    "menang": 29.6,
+    "rata": -2.05,
+    "median": -9.83,
+    "pf": 0.72,
+    "t": -0.88
+   },
+   "futures": {
+    "n": 71,
+    "menang": 33.8,
+    "rata": -1.32,
+    "median": -8.52,
+    "pf": 0.8,
+    "t": -0.69
+   },
+   "lebih_acak": {
+    "n": 71,
+    "menang": 25.4,
+    "rata": -5.2,
+    "median": -5.21,
+    "pf": 0.4,
+    "t": -2.81
+   },
+   "hari": 29.9
+  },
+  {
+   "n": 162,
+   "menang": 85.8,
+   "rata": 2.01,
+   "median": 1.91,
+   "pf": 2.27,
+   "t": 3.63,
+   "event": "pantul_fib",
+   "meme": "bukan meme",
+   "pasar": "BTC tren turun",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 22,
+    "menang": 90.9,
+    "rata": 2.23,
+    "median": 1.9,
+    "pf": 3.76,
+    "t": 2.14
+   },
+   "p2": {
+    "n": 140,
+    "menang": 85.0,
+    "rata": 1.97,
+    "median": 1.91,
+    "pf": 2.16,
+    "t": 3.19
+   },
+   "futures": {
+    "n": 162,
+    "menang": 86.4,
+    "rata": 2.68,
+    "median": 2.4,
+    "pf": 2.77,
+    "t": 4.73
+   },
+   "lebih_acak": {
+    "n": 162,
+    "menang": 72.8,
+    "rata": 1.62,
+    "median": 1.07,
+    "pf": 1.98,
+    "t": 2.96
+   },
+   "hari": 12.1
+  },
+  {
+   "n": 162,
+   "menang": 74.7,
+   "rata": 1.2,
+   "median": 1.88,
+   "pf": 1.56,
+   "t": 2.17,
+   "event": "pantul_fib",
+   "meme": "bukan meme",
+   "pasar": "BTC tren turun",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 22,
+    "menang": 81.8,
+    "rata": 1.54,
+    "median": 1.9,
+    "pf": 2.1,
+    "t": 1.34
+   },
+   "p2": {
+    "n": 140,
+    "menang": 73.6,
+    "rata": 1.15,
+    "median": 1.88,
+    "pf": 1.51,
+    "t": 1.86
+   },
+   "futures": {
+    "n": 162,
+    "menang": 74.7,
+    "rata": 1.83,
+    "median": 2.4,
+    "pf": 1.9,
+    "t": 3.2
+   },
+   "lebih_acak": {
+    "n": 162,
+    "menang": 63.6,
+    "rata": 1.71,
+    "median": 2.45,
+    "pf": 1.85,
+    "t": 3.1
+   },
+   "hari": 10.5
+  },
+  {
+   "n": 162,
+   "menang": 61.7,
+   "rata": 0.69,
+   "median": 4.51,
+   "pf": 1.33,
+   "t": 1.81,
+   "event": "pantul_fib",
+   "meme": "bukan meme",
+   "pasar": "BTC tren turun",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 22,
+    "menang": 63.6,
+    "rata": 0.86,
+    "median": 4.42,
+    "pf": 1.43,
+    "t": 0.82
+   },
+   "p2": {
+    "n": 140,
+    "menang": 61.4,
+    "rata": 0.67,
+    "median": 4.51,
+    "pf": 1.32,
+    "t": 1.61
+   },
+   "futures": {
+    "n": 162,
+    "menang": 61.7,
+    "rata": 1.06,
+    "median": 4.9,
+    "pf": 1.55,
+    "t": 2.78
+   },
+   "lebih_acak": {
+    "n": 162,
+    "menang": 61.7,
+    "rata": 1.65,
+    "median": 3.29,
+    "pf": 2.02,
+    "t": 4.26
+   },
+   "hari": 2.1
+  },
+  {
+   "n": 162,
+   "menang": 54.9,
+   "rata": 7.98,
+   "median": 1.43,
+   "pf": 2.98,
+   "t": 5.12,
+   "event": "pantul_fib",
+   "meme": "bukan meme",
+   "pasar": "BTC tren turun",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 22,
+    "menang": 63.6,
+    "rata": 1.78,
+    "median": 2.44,
+    "pf": 1.74,
+    "t": 0.83
+   },
+   "p2": {
+    "n": 140,
+    "menang": 53.6,
+    "rata": 8.95,
+    "median": 0.79,
+    "pf": 3.09,
+    "t": 5.09
+   },
+   "futures": {
+    "n": 162,
+    "menang": 56.8,
+    "rata": 9.36,
+    "median": 1.85,
+    "pf": 3.49,
+    "t": 5.73
+   },
+   "lebih_acak": {
+    "n": 162,
+    "menang": 61.7,
+    "rata": 5.33,
+    "median": 3.49,
+    "pf": 2.11,
+    "t": 3.73
+   },
+   "hari": 35.8
+  },
+  {
+   "n": 225,
+   "menang": 86.7,
+   "rata": 2.65,
+   "median": 1.94,
+   "pf": 2.77,
+   "t": 5.23,
+   "event": "pantul_fib",
+   "meme": "bukan meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 27,
+    "menang": 92.6,
+    "rata": 3.2,
+    "median": 1.94,
+    "pf": 5.86,
+    "t": 3.23
+   },
+   "p2": {
+    "n": 198,
+    "menang": 85.9,
+    "rata": 2.58,
+    "median": 1.93,
+    "pf": 2.6,
+    "t": 4.6
+   },
+   "futures": {
+    "n": 225,
+    "menang": 87.1,
+    "rata": 3.34,
+    "median": 2.4,
+    "pf": 3.35,
+    "t": 6.45
+   },
+   "lebih_acak": {
+    "n": 225,
+    "menang": 64.0,
+    "rata": 1.65,
+    "median": 0.68,
+    "pf": 2.0,
+    "t": 3.47
+   },
+   "hari": 12.7
+  },
+  {
+   "n": 225,
+   "menang": 78.2,
+   "rata": 2.11,
+   "median": 1.91,
+   "pf": 2.15,
+   "t": 4.2,
+   "event": "pantul_fib",
+   "meme": "bukan meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 27,
+    "menang": 85.2,
+    "rata": 2.64,
+    "median": 1.94,
+    "pf": 3.32,
+    "t": 2.42
+   },
+   "p2": {
+    "n": 198,
+    "menang": 77.3,
+    "rata": 2.04,
+    "median": 1.91,
+    "pf": 2.06,
+    "t": 3.69
+   },
+   "futures": {
+    "n": 225,
+    "menang": 78.2,
+    "rata": 2.76,
+    "median": 2.4,
+    "pf": 2.58,
+    "t": 5.33
+   },
+   "lebih_acak": {
+    "n": 225,
+    "menang": 59.6,
+    "rata": 1.73,
+    "median": 1.4,
+    "pf": 1.92,
+    "t": 3.61
+   },
+   "hari": 11.2
+  },
+  {
+   "n": 225,
+   "menang": 65.8,
+   "rata": 1.1,
+   "median": 4.51,
+   "pf": 1.59,
+   "t": 3.46,
+   "event": "pantul_fib",
+   "meme": "bukan meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 27,
+    "menang": 66.7,
+    "rata": 1.17,
+    "median": 4.48,
+    "pf": 1.64,
+    "t": 1.27
+   },
+   "p2": {
+    "n": 198,
+    "menang": 65.7,
+    "rata": 1.09,
+    "median": 4.51,
+    "pf": 1.58,
+    "t": 3.21
+   },
+   "futures": {
+    "n": 225,
+    "menang": 65.8,
+    "rata": 1.47,
+    "median": 4.9,
+    "pf": 1.84,
+    "t": 4.65
+   },
+   "lebih_acak": {
+    "n": 225,
+    "menang": 66.2,
+    "rata": 1.17,
+    "median": 3.03,
+    "pf": 1.72,
+    "t": 3.84
+   },
+   "hari": 2.2
+  },
+  {
+   "n": 225,
+   "menang": 56.4,
+   "rata": 8.21,
+   "median": 1.88,
+   "pf": 3.16,
+   "t": 6.28,
+   "event": "pantul_fib",
+   "meme": "bukan meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 27,
+    "menang": 66.7,
+    "rata": 4.53,
+    "median": 2.53,
+    "pf": 3.02,
+    "t": 1.75
+   },
+   "p2": {
+    "n": 198,
+    "menang": 55.1,
+    "rata": 8.71,
+    "median": 1.35,
+    "pf": 3.17,
+    "t": 6.05
+   },
+   "futures": {
+    "n": 225,
+    "menang": 57.8,
+    "rata": 9.53,
+    "median": 2.32,
+    "pf": 3.69,
+    "t": 6.97
+   },
+   "lebih_acak": {
+    "n": 225,
+    "menang": 60.4,
+    "rata": 5.44,
+    "median": 2.84,
+    "pf": 2.21,
+    "t": 4.58
+   },
+   "hari": 33.9
+  },
+  {
+   "n": 397,
+   "menang": 70.8,
+   "rata": -0.5,
+   "median": 1.85,
+   "pf": 0.85,
+   "t": -1.18,
+   "event": "pantul_fib",
+   "meme": "bukan meme",
+   "pasar": "semua kondisi",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 71,
+    "menang": 73.2,
+    "rata": -0.7,
+    "median": 1.91,
+    "pf": 0.78,
+    "t": -0.79
+   },
+   "p2": {
+    "n": 326,
+    "menang": 70.2,
+    "rata": -0.45,
+    "median": 1.85,
+    "pf": 0.87,
+    "t": -0.95
+   },
+   "futures": {
+    "n": 397,
+    "menang": 71.0,
+    "rata": 0.12,
+    "median": 2.4,
+    "pf": 1.04,
+    "t": 0.29
+   },
+   "lebih_acak": {
+    "n": 397,
+    "menang": 45.3,
+    "rata": 0.54,
+    "median": -0.15,
+    "pf": 1.23,
+    "t": 1.52
+   },
+   "hari": 10.3
+  },
+  {
+   "n": 397,
+   "menang": 62.2,
+   "rata": -0.54,
+   "median": 1.76,
+   "pf": 0.83,
+   "t": -1.47,
+   "event": "pantul_fib",
+   "meme": "bukan meme",
+   "pasar": "semua kondisi",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 71,
+    "menang": 59.2,
+    "rata": -1.47,
+    "median": 1.82,
+    "pf": 0.57,
+    "t": -1.97
+   },
+   "p2": {
+    "n": 326,
+    "menang": 62.9,
+    "rata": -0.34,
+    "median": 1.76,
+    "pf": 0.89,
+    "t": -0.81
+   },
+   "futures": {
+    "n": 397,
+    "menang": 62.2,
+    "rata": 0.03,
+    "median": 2.4,
+    "pf": 1.01,
+    "t": 0.08
+   },
+   "lebih_acak": {
+    "n": 397,
+    "menang": 49.9,
+    "rata": 0.47,
+    "median": -0.1,
+    "pf": 1.22,
+    "t": 1.49
+   },
+   "hari": 8.7
+  },
+  {
+   "n": 397,
+   "menang": 52.6,
+   "rata": -0.21,
+   "median": 4.42,
+   "pf": 0.92,
+   "t": -0.84,
+   "event": "pantul_fib",
+   "meme": "bukan meme",
+   "pasar": "semua kondisi",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 71,
+    "menang": 46.5,
+    "rata": -0.83,
+    "median": -5.45,
+    "pf": 0.72,
+    "t": -1.39
+   },
+   "p2": {
+    "n": 326,
+    "menang": 54.0,
+    "rata": -0.08,
+    "median": 4.45,
+    "pf": 0.97,
+    "t": -0.27
+   },
+   "futures": {
+    "n": 397,
+    "menang": 52.6,
+    "rata": 0.16,
+    "median": 4.9,
+    "pf": 1.07,
+    "t": 0.64
+   },
+   "lebih_acak": {
+    "n": 397,
+    "menang": 52.6,
+    "rata": 0.76,
+    "median": 2.1,
+    "pf": 1.45,
+    "t": 3.35
+   },
+   "hari": 2.1
+  },
+  {
+   "n": 397,
+   "menang": 43.1,
+   "rata": 3.0,
+   "median": -1.62,
+   "pf": 1.66,
+   "t": 3.59,
+   "event": "pantul_fib",
+   "meme": "bukan meme",
+   "pasar": "semua kondisi",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 71,
+    "menang": 43.7,
+    "rata": -0.94,
+    "median": -1.46,
+    "pf": 0.79,
+    "t": -0.73
+   },
+   "p2": {
+    "n": 326,
+    "menang": 42.9,
+    "rata": 3.85,
+    "median": -1.76,
+    "pf": 1.84,
+    "t": 3.97
+   },
+   "futures": {
+    "n": 397,
+    "menang": 46.1,
+    "rata": 3.95,
+    "median": -1.16,
+    "pf": 1.93,
+    "t": 4.52
+   },
+   "lebih_acak": {
+    "n": 397,
+    "menang": 58.4,
+    "rata": 3.1,
+    "median": 1.95,
+    "pf": 1.81,
+    "t": 4.32
+   },
+   "hari": 21.5
+  },
+  {
+   "n": 173,
+   "menang": 85.5,
+   "rata": 2.0,
+   "median": 1.91,
+   "pf": 2.23,
+   "t": 3.7,
+   "event": "pantul_fib",
+   "meme": "termasuk meme",
+   "pasar": "BTC tren turun",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 22,
+    "menang": 90.9,
+    "rata": 2.23,
+    "median": 1.9,
+    "pf": 3.76,
+    "t": 2.14
+   },
+   "p2": {
+    "n": 151,
+    "menang": 84.8,
+    "rata": 1.97,
+    "median": 1.91,
+    "pf": 2.13,
+    "t": 3.27
+   },
+   "futures": {
+    "n": 173,
+    "menang": 86.1,
+    "rata": 2.67,
+    "median": 2.4,
+    "pf": 2.71,
+    "t": 4.83
+   },
+   "lebih_acak": {
+    "n": 173,
+    "menang": 73.4,
+    "rata": 1.63,
+    "median": 1.17,
+    "pf": 1.95,
+    "t": 3.04
+   },
+   "hari": 12.2
+  },
+  {
+   "n": 173,
+   "menang": 75.1,
+   "rata": 1.29,
+   "median": 1.88,
+   "pf": 1.62,
+   "t": 2.41,
+   "event": "pantul_fib",
+   "meme": "termasuk meme",
+   "pasar": "BTC tren turun",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 22,
+    "menang": 81.8,
+    "rata": 1.54,
+    "median": 1.9,
+    "pf": 2.1,
+    "t": 1.34
+   },
+   "p2": {
+    "n": 151,
+    "menang": 74.2,
+    "rata": 1.26,
+    "median": 1.88,
+    "pf": 1.57,
+    "t": 2.12
+   },
+   "futures": {
+    "n": 173,
+    "menang": 75.1,
+    "rata": 1.92,
+    "median": 2.4,
+    "pf": 1.97,
+    "t": 3.48
+   },
+   "lebih_acak": {
+    "n": 173,
+    "menang": 64.7,
+    "rata": 1.8,
+    "median": 2.59,
+    "pf": 1.91,
+    "t": 3.38
+   },
+   "hari": 10.7
+  },
+  {
+   "n": 173,
+   "menang": 63.0,
+   "rata": 0.82,
+   "median": 4.51,
+   "pf": 1.41,
+   "t": 2.23,
+   "event": "pantul_fib",
+   "meme": "termasuk meme",
+   "pasar": "BTC tren turun",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 22,
+    "menang": 63.6,
+    "rata": 0.86,
+    "median": 4.42,
+    "pf": 1.43,
+    "t": 0.82
+   },
+   "p2": {
+    "n": 151,
+    "menang": 62.9,
+    "rata": 0.81,
+    "median": 4.51,
+    "pf": 1.4,
+    "t": 2.07
+   },
+   "futures": {
+    "n": 173,
+    "menang": 63.0,
+    "rata": 1.19,
+    "median": 4.9,
+    "pf": 1.63,
+    "t": 3.24
+   },
+   "lebih_acak": {
+    "n": 173,
+    "menang": 63.0,
+    "rata": 1.77,
+    "median": 3.62,
+    "pf": 2.12,
+    "t": 4.73
+   },
+   "hari": 2.1
+  },
+  {
+   "n": 173,
+   "menang": 55.5,
+   "rata": 7.92,
+   "median": 1.91,
+   "pf": 2.95,
+   "t": 5.29,
+   "event": "pantul_fib",
+   "meme": "termasuk meme",
+   "pasar": "BTC tren turun",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 22,
+    "menang": 63.6,
+    "rata": 1.78,
+    "median": 2.44,
+    "pf": 1.74,
+    "t": 0.83
+   },
+   "p2": {
+    "n": 151,
+    "menang": 54.3,
+    "rata": 8.81,
+    "median": 1.88,
+    "pf": 3.04,
+    "t": 5.26
+   },
+   "futures": {
+    "n": 173,
+    "menang": 57.2,
+    "rata": 9.3,
+    "median": 2.52,
+    "pf": 3.45,
+    "t": 5.93
+   },
+   "lebih_acak": {
+    "n": 173,
+    "menang": 61.3,
+    "rata": 4.77,
+    "median": 4.1,
+    "pf": 1.93,
+    "t": 3.45
+   },
+   "hari": 35.9
+  },
+  {
+   "n": 244,
+   "menang": 86.1,
+   "rata": 2.6,
+   "median": 1.94,
+   "pf": 2.64,
+   "t": 5.27,
+   "event": "pantul_fib",
+   "meme": "termasuk meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 27,
+    "menang": 92.6,
+    "rata": 3.2,
+    "median": 1.94,
+    "pf": 5.86,
+    "t": 3.23
+   },
+   "p2": {
+    "n": 217,
+    "menang": 85.3,
+    "rata": 2.52,
+    "median": 1.94,
+    "pf": 2.48,
+    "t": 4.67
+   },
+   "futures": {
+    "n": 244,
+    "menang": 86.5,
+    "rata": 3.29,
+    "median": 2.4,
+    "pf": 3.17,
+    "t": 6.52
+   },
+   "lebih_acak": {
+    "n": 244,
+    "menang": 64.8,
+    "rata": 1.58,
+    "median": 0.73,
+    "pf": 1.91,
+    "t": 3.44
+   },
+   "hari": 12.7
+  },
+  {
+   "n": 244,
+   "menang": 78.3,
+   "rata": 2.17,
+   "median": 1.91,
+   "pf": 2.18,
+   "t": 4.49,
+   "event": "pantul_fib",
+   "meme": "termasuk meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 27,
+    "menang": 85.2,
+    "rata": 2.64,
+    "median": 1.94,
+    "pf": 3.32,
+    "t": 2.42
+   },
+   "p2": {
+    "n": 217,
+    "menang": 77.4,
+    "rata": 2.11,
+    "median": 1.91,
+    "pf": 2.1,
+    "t": 4.01
+   },
+   "futures": {
+    "n": 244,
+    "menang": 78.3,
+    "rata": 2.82,
+    "median": 2.4,
+    "pf": 2.62,
+    "t": 5.67
+   },
+   "lebih_acak": {
+    "n": 244,
+    "menang": 61.1,
+    "rata": 1.74,
+    "median": 1.4,
+    "pf": 1.93,
+    "t": 3.8
+   },
+   "hari": 11.3
+  },
+  {
+   "n": 244,
+   "menang": 66.8,
+   "rata": 1.2,
+   "median": 4.51,
+   "pf": 1.66,
+   "t": 3.98,
+   "event": "pantul_fib",
+   "meme": "termasuk meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 27,
+    "menang": 66.7,
+    "rata": 1.17,
+    "median": 4.48,
+    "pf": 1.64,
+    "t": 1.27
+   },
+   "p2": {
+    "n": 217,
+    "menang": 66.8,
+    "rata": 1.2,
+    "median": 4.51,
+    "pf": 1.66,
+    "t": 3.76
+   },
+   "futures": {
+    "n": 244,
+    "menang": 66.8,
+    "rata": 1.58,
+    "median": 4.9,
+    "pf": 1.93,
+    "t": 5.22
+   },
+   "lebih_acak": {
+    "n": 244,
+    "menang": 67.2,
+    "rata": 1.21,
+    "median": 3.08,
+    "pf": 1.77,
+    "t": 4.19
+   },
+   "hari": 2.2
+  },
+  {
+   "n": 244,
+   "menang": 57.0,
+   "rata": 8.21,
+   "median": 2.02,
+   "pf": 3.12,
+   "t": 6.58,
+   "event": "pantul_fib",
+   "meme": "termasuk meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 27,
+    "menang": 66.7,
+    "rata": 4.53,
+    "median": 2.53,
+    "pf": 3.02,
+    "t": 1.75
+   },
+   "p2": {
+    "n": 217,
+    "menang": 55.8,
+    "rata": 8.67,
+    "median": 1.88,
+    "pf": 3.13,
+    "t": 6.36
+   },
+   "futures": {
+    "n": 244,
+    "menang": 58.2,
+    "rata": 9.53,
+    "median": 2.64,
+    "pf": 3.64,
+    "t": 7.3
+   },
+   "lebih_acak": {
+    "n": 244,
+    "menang": 60.2,
+    "rata": 5.02,
+    "median": 3.18,
+    "pf": 2.06,
+    "t": 4.42
+   },
+   "hari": 34.0
+  },
+  {
+   "n": 420,
+   "menang": 70.7,
+   "rata": -0.47,
+   "median": 1.87,
+   "pf": 0.86,
+   "t": -1.13,
+   "event": "pantul_fib",
+   "meme": "termasuk meme",
+   "pasar": "semua kondisi",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 71,
+    "menang": 73.2,
+    "rata": -0.7,
+    "median": 1.91,
+    "pf": 0.78,
+    "t": -0.79
+   },
+   "p2": {
+    "n": 349,
+    "menang": 70.2,
+    "rata": -0.42,
+    "median": 1.85,
+    "pf": 0.88,
+    "t": -0.91
+   },
+   "futures": {
+    "n": 420,
+    "menang": 71.0,
+    "rata": 0.16,
+    "median": 2.4,
+    "pf": 1.05,
+    "t": 0.37
+   },
+   "lebih_acak": {
+    "n": 420,
+    "menang": 46.9,
+    "rata": 0.5,
+    "median": -0.1,
+    "pf": 1.21,
+    "t": 1.46
+   },
+   "hari": 10.4
+  },
+  {
+   "n": 420,
+   "menang": 62.6,
+   "rata": -0.44,
+   "median": 1.79,
+   "pf": 0.86,
+   "t": -1.22,
+   "event": "pantul_fib",
+   "meme": "termasuk meme",
+   "pasar": "semua kondisi",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 71,
+    "menang": 59.2,
+    "rata": -1.47,
+    "median": 1.82,
+    "pf": 0.57,
+    "t": -1.97
+   },
+   "p2": {
+    "n": 349,
+    "menang": 63.3,
+    "rata": -0.23,
+    "median": 1.79,
+    "pf": 0.93,
+    "t": -0.57
+   },
+   "futures": {
+    "n": 420,
+    "menang": 62.6,
+    "rata": 0.13,
+    "median": 2.4,
+    "pf": 1.04,
+    "t": 0.36
+   },
+   "lebih_acak": {
+    "n": 420,
+    "menang": 50.7,
+    "rata": 0.5,
+    "median": 0.14,
+    "pf": 1.23,
+    "t": 1.62
+   },
+   "hari": 8.9
+  },
+  {
+   "n": 420,
+   "menang": 53.6,
+   "rata": -0.12,
+   "median": 4.45,
+   "pf": 0.95,
+   "t": -0.48,
+   "event": "pantul_fib",
+   "meme": "termasuk meme",
+   "pasar": "semua kondisi",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 71,
+    "menang": 46.5,
+    "rata": -0.83,
+    "median": -5.45,
+    "pf": 0.72,
+    "t": -1.39
+   },
+   "p2": {
+    "n": 349,
+    "menang": 55.0,
+    "rata": 0.03,
+    "median": 4.48,
+    "pf": 1.01,
+    "t": 0.1
+   },
+   "futures": {
+    "n": 420,
+    "menang": 53.6,
+    "rata": 0.25,
+    "median": 4.9,
+    "pf": 1.11,
+    "t": 1.04
+   },
+   "lebih_acak": {
+    "n": 420,
+    "menang": 53.6,
+    "rata": 0.79,
+    "median": 2.42,
+    "pf": 1.48,
+    "t": 3.62
+   },
+   "hari": 2.0
+  },
+  {
+   "n": 420,
+   "menang": 43.6,
+   "rata": 3.17,
+   "median": -1.43,
+   "pf": 1.7,
+   "t": 3.9,
+   "event": "pantul_fib",
+   "meme": "termasuk meme",
+   "pasar": "semua kondisi",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 71,
+    "menang": 43.7,
+    "rata": -0.94,
+    "median": -1.46,
+    "pf": 0.79,
+    "t": -0.73
+   },
+   "p2": {
+    "n": 349,
+    "menang": 43.6,
+    "rata": 4.01,
+    "median": -1.4,
+    "pf": 1.88,
+    "t": 4.28
+   },
+   "futures": {
+    "n": 420,
+    "menang": 46.7,
+    "rata": 4.14,
+    "median": -0.98,
+    "pf": 1.98,
+    "t": 4.87
+   },
+   "lebih_acak": {
+    "n": 420,
+    "menang": 57.9,
+    "rata": 2.9,
+    "median": 2.15,
+    "pf": 1.72,
+    "t": 4.11
+   },
+   "hari": 22.0
+  },
+  {
+   "n": 12187,
+   "menang": 70.9,
+   "rata": -0.34,
+   "median": 2.0,
+   "pf": 0.91,
+   "t": -4.68,
+   "event": "acak",
+   "meme": "bukan meme",
+   "pasar": "BTC tren turun",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 5731,
+    "menang": 72.3,
+    "rata": -0.02,
+    "median": 2.03,
+    "pf": 0.99,
+    "t": -0.18
+   },
+   "p2": {
+    "n": 6456,
+    "menang": 69.7,
+    "rata": -0.62,
+    "median": 1.97,
+    "pf": 0.83,
+    "t": -6.24
+   },
+   "futures": {
+    "n": 12187,
+    "menang": 71.0,
+    "rata": 0.15,
+    "median": 2.4,
+    "pf": 1.04,
+    "t": 2.07
+   },
+   "lebih_acak": {
+    "n": 12187,
+    "menang": 61.5,
+    "rata": 0.0,
+    "median": 1.9,
+    "pf": 1.0,
+    "t": 0.0
+   },
+   "hari": 6.0
+  },
+  {
+   "n": 12187,
+   "menang": 61.6,
+   "rata": -0.43,
+   "median": 1.94,
+   "pf": 0.87,
+   "t": -7.05,
+   "event": "acak",
+   "meme": "bukan meme",
+   "pasar": "BTC tren turun",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 5731,
+    "menang": 63.3,
+    "rata": -0.11,
+    "median": 1.97,
+    "pf": 0.96,
+    "t": -1.29
+   },
+   "p2": {
+    "n": 6456,
+    "menang": 60.1,
+    "rata": -0.7,
+    "median": 1.94,
+    "pf": 0.79,
+    "t": -8.5
+   },
+   "futures": {
+    "n": 12187,
+    "menang": 61.6,
+    "rata": 0.02,
+    "median": 2.4,
+    "pf": 1.01,
+    "t": 0.4
+   },
+   "lebih_acak": {
+    "n": 12187,
+    "menang": 54.0,
+    "rata": 0.0,
+    "median": 0.94,
+    "pf": 1.0,
+    "t": 0.0
+   },
+   "hari": 4.7
+  },
+  {
+   "n": 12187,
+   "menang": 49.4,
+   "rata": -0.55,
+   "median": -5.45,
+   "pf": 0.8,
+   "t": -12.03,
+   "event": "acak",
+   "meme": "bukan meme",
+   "pasar": "BTC tren turun",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 5731,
+    "menang": 50.2,
+    "rata": -0.46,
+    "median": 4.03,
+    "pf": 0.83,
+    "t": -6.99
+   },
+   "p2": {
+    "n": 6456,
+    "menang": 48.6,
+    "rata": -0.62,
+    "median": -5.45,
+    "pf": 0.78,
+    "t": -9.95
+   },
+   "futures": {
+    "n": 12187,
+    "menang": 49.4,
+    "rata": -0.16,
+    "median": -5.1,
+    "pf": 0.94,
+    "t": -3.51
+   },
+   "lebih_acak": {
+    "n": 12187,
+    "menang": 50.2,
+    "rata": 0.0,
+    "median": 0.0,
+    "pf": 1.0,
+    "t": 0.0
+   },
+   "hari": 2.5
+  },
+  {
+   "n": 12187,
+   "menang": 30.3,
+   "rata": -2.53,
+   "median": -7.38,
+   "pf": 0.63,
+   "t": -20.28,
+   "event": "acak",
+   "meme": "bukan meme",
+   "pasar": "BTC tren turun",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 5731,
+    "menang": 31.9,
+    "rata": -2.01,
+    "median": -7.27,
+    "pf": 0.7,
+    "t": -10.49
+   },
+   "p2": {
+    "n": 6456,
+    "menang": 29.0,
+    "rata": -2.98,
+    "median": -7.44,
+    "pf": 0.57,
+    "t": -18.41
+   },
+   "futures": {
+    "n": 12187,
+    "menang": 32.6,
+    "rata": -1.57,
+    "median": -6.65,
+    "pf": 0.75,
+    "t": -12.14
+   },
+   "lebih_acak": {
+    "n": 12187,
+    "menang": 41.1,
+    "rata": -0.0,
+    "median": -1.54,
+    "pf": 1.0,
+    "t": -0.0
+   },
+   "hari": 21.5
+  },
+  {
+   "n": 17796,
+   "menang": 72.6,
+   "rata": -0.02,
+   "median": 2.0,
+   "pf": 0.99,
+   "t": -0.38,
+   "event": "acak",
+   "meme": "bukan meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 7456,
+    "menang": 73.3,
+    "rata": 0.2,
+    "median": 2.03,
+    "pf": 1.06,
+    "t": 2.18
+   },
+   "p2": {
+    "n": 10340,
+    "menang": 72.0,
+    "rata": -0.18,
+    "median": 2.0,
+    "pf": 0.95,
+    "t": -2.36
+   },
+   "futures": {
+    "n": 17796,
+    "menang": 72.6,
+    "rata": 0.46,
+    "median": 2.4,
+    "pf": 1.14,
+    "t": 7.83
+   },
+   "lebih_acak": {
+    "n": 17796,
+    "menang": 61.6,
+    "rata": 0.0,
+    "median": 1.96,
+    "pf": 1.0,
+    "t": 0.0
+   },
+   "hari": 5.9
+  },
+  {
+   "n": 17796,
+   "menang": 63.5,
+   "rata": -0.13,
+   "median": 1.97,
+   "pf": 0.96,
+   "t": -2.56,
+   "event": "acak",
+   "meme": "bukan meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 7456,
+    "menang": 64.0,
+    "rata": 0.04,
+    "median": 2.0,
+    "pf": 1.01,
+    "t": 0.52
+   },
+   "p2": {
+    "n": 10340,
+    "menang": 63.2,
+    "rata": -0.25,
+    "median": 1.94,
+    "pf": 0.92,
+    "t": -3.83
+   },
+   "futures": {
+    "n": 17796,
+    "menang": 63.6,
+    "rata": 0.32,
+    "median": 2.4,
+    "pf": 1.11,
+    "t": 6.48
+   },
+   "lebih_acak": {
+    "n": 17796,
+    "menang": 55.3,
+    "rata": 0.0,
+    "median": 1.41,
+    "pf": 1.0,
+    "t": 0.0
+   },
+   "hari": 4.7
+  },
+  {
+   "n": 17796,
+   "menang": 51.2,
+   "rata": -0.36,
+   "median": 4.3,
+   "pf": 0.86,
+   "t": -9.63,
+   "event": "acak",
+   "meme": "bukan meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 7456,
+    "menang": 51.3,
+    "rata": -0.35,
+    "median": 4.3,
+    "pf": 0.87,
+    "t": -6.12
+   },
+   "p2": {
+    "n": 10340,
+    "menang": 51.2,
+    "rata": -0.37,
+    "median": 4.3,
+    "pf": 0.86,
+    "t": -7.45
+   },
+   "futures": {
+    "n": 17796,
+    "menang": 51.2,
+    "rata": 0.03,
+    "median": 4.9,
+    "pf": 1.01,
+    "t": 0.69
+   },
+   "lebih_acak": {
+    "n": 17796,
+    "menang": 51.5,
+    "rata": 0.0,
+    "median": 1.3,
+    "pf": 1.0,
+    "t": 0.0
+   },
+   "hari": 2.6
+  },
+  {
+   "n": 17796,
+   "menang": 32.2,
+   "rata": -1.76,
+   "median": -5.8,
+   "pf": 0.72,
+   "t": -16.49,
+   "event": "acak",
+   "meme": "bukan meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 7456,
+    "menang": 34.2,
+    "rata": -1.23,
+    "median": -5.9,
+    "pf": 0.81,
+    "t": -7.06
+   },
+   "p2": {
+    "n": 10340,
+    "menang": 30.8,
+    "rata": -2.13,
+    "median": -5.73,
+    "pf": 0.66,
+    "t": -16.04
+   },
+   "futures": {
+    "n": 17796,
+    "menang": 34.8,
+    "rata": -0.82,
+    "median": -5.12,
+    "pf": 0.86,
+    "t": -7.4
+   },
+   "lebih_acak": {
+    "n": 17796,
+    "menang": 41.7,
+    "rata": -0.0,
+    "median": -1.75,
+    "pf": 1.0,
+    "t": -0.0
+   },
+   "hari": 20.9
+  },
+  {
+   "n": 32975,
+   "menang": 69.8,
+   "rata": -0.55,
+   "median": 2.0,
+   "pf": 0.85,
+   "t": -12.39,
+   "event": "acak",
+   "meme": "bukan meme",
+   "pasar": "semua kondisi",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 12320,
+    "menang": 70.4,
+    "rata": -0.38,
+    "median": 2.0,
+    "pf": 0.9,
+    "t": -5.22
+   },
+   "p2": {
+    "n": 20655,
+    "menang": 69.5,
+    "rata": -0.65,
+    "median": 1.97,
+    "pf": 0.83,
+    "t": -11.63
+   },
+   "futures": {
+    "n": 32975,
+    "menang": 69.9,
+    "rata": -0.07,
+    "median": 2.4,
+    "pf": 0.98,
+    "t": -1.67
+   },
+   "lebih_acak": {
+    "n": 32975,
+    "menang": 59.8,
+    "rata": -0.0,
+    "median": 1.97,
+    "pf": 1.0,
+    "t": -0.0
+   },
+   "hari": 5.6
+  },
+  {
+   "n": 32975,
+   "menang": 60.9,
+   "rata": -0.52,
+   "median": 1.94,
+   "pf": 0.84,
+   "t": -14.06,
+   "event": "acak",
+   "meme": "bukan meme",
+   "pasar": "semua kondisi",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 12320,
+    "menang": 61.4,
+    "rata": -0.38,
+    "median": 1.97,
+    "pf": 0.89,
+    "t": -6.22
+   },
+   "p2": {
+    "n": 20655,
+    "menang": 60.6,
+    "rata": -0.6,
+    "median": 1.94,
+    "pf": 0.82,
+    "t": -12.99
+   },
+   "futures": {
+    "n": 32975,
+    "menang": 61.0,
+    "rata": -0.07,
+    "median": 2.4,
+    "pf": 0.98,
+    "t": -2.0
+   },
+   "lebih_acak": {
+    "n": 32975,
+    "menang": 53.8,
+    "rata": 0.0,
+    "median": 1.11,
+    "pf": 1.0,
+    "t": 0.0
+   },
+   "hari": 4.5
+  },
+  {
+   "n": 32975,
+   "menang": 48.8,
+   "rata": -0.6,
+   "median": -5.45,
+   "pf": 0.79,
+   "t": -21.65,
+   "event": "acak",
+   "meme": "bukan meme",
+   "pasar": "semua kondisi",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 12320,
+    "menang": 49.0,
+    "rata": -0.58,
+    "median": -5.45,
+    "pf": 0.79,
+    "t": -12.79
+   },
+   "p2": {
+    "n": 20655,
+    "menang": 48.7,
+    "rata": -0.61,
+    "median": -5.45,
+    "pf": 0.78,
+    "t": -17.47
+   },
+   "futures": {
+    "n": 32975,
+    "menang": 48.9,
+    "rata": -0.21,
+    "median": -5.1,
+    "pf": 0.92,
+    "t": -7.73
+   },
+   "lebih_acak": {
+    "n": 32975,
+    "menang": 49.0,
+    "rata": -0.0,
+    "median": -0.86,
+    "pf": 1.0,
+    "t": -0.0
+   },
+   "hari": 2.4
+  },
+  {
+   "n": 32975,
+   "menang": 33.7,
+   "rata": -1.54,
+   "median": -4.2,
+   "pf": 0.73,
+   "t": -20.92,
+   "event": "acak",
+   "meme": "bukan meme",
+   "pasar": "semua kondisi",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 12320,
+    "menang": 34.1,
+    "rata": -1.58,
+    "median": -4.45,
+    "pf": 0.73,
+    "t": -12.89
+   },
+   "p2": {
+    "n": 20655,
+    "menang": 33.4,
+    "rata": -1.52,
+    "median": -4.09,
+    "pf": 0.73,
+    "t": -16.48
+   },
+   "futures": {
+    "n": 32975,
+    "menang": 36.1,
+    "rata": -0.75,
+    "median": -3.6,
+    "pf": 0.86,
+    "t": -9.76
+   },
+   "lebih_acak": {
+    "n": 32975,
+    "menang": 44.5,
+    "rata": -0.0,
+    "median": -1.18,
+    "pf": 1.0,
+    "t": -0.0
+   },
+   "hari": 16.1
+  },
+  {
+   "n": 12892,
+   "menang": 70.8,
+   "rata": -0.35,
+   "median": 2.0,
+   "pf": 0.9,
+   "t": -5.03,
+   "event": "acak",
+   "meme": "termasuk meme",
+   "pasar": "BTC tren turun",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 5915,
+    "menang": 72.3,
+    "rata": -0.02,
+    "median": 2.03,
+    "pf": 0.99,
+    "t": -0.21
+   },
+   "p2": {
+    "n": 6977,
+    "menang": 69.6,
+    "rata": -0.64,
+    "median": 2.0,
+    "pf": 0.83,
+    "t": -6.63
+   },
+   "futures": {
+    "n": 12892,
+    "menang": 70.9,
+    "rata": 0.13,
+    "median": 2.4,
+    "pf": 1.04,
+    "t": 1.89
+   },
+   "lebih_acak": {
+    "n": 12892,
+    "menang": 61.1,
+    "rata": 0.0,
+    "median": 1.85,
+    "pf": 1.0,
+    "t": 0.0
+   },
+   "hari": 5.9
+  },
+  {
+   "n": 12892,
+   "menang": 61.6,
+   "rata": -0.42,
+   "median": 1.94,
+   "pf": 0.87,
+   "t": -7.21,
+   "event": "acak",
+   "meme": "termasuk meme",
+   "pasar": "BTC tren turun",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 5915,
+    "menang": 63.3,
+    "rata": -0.1,
+    "median": 1.97,
+    "pf": 0.97,
+    "t": -1.18
+   },
+   "p2": {
+    "n": 6977,
+    "menang": 60.1,
+    "rata": -0.7,
+    "median": 1.94,
+    "pf": 0.79,
+    "t": -8.75
+   },
+   "futures": {
+    "n": 12892,
+    "menang": 61.6,
+    "rata": 0.03,
+    "median": 2.4,
+    "pf": 1.01,
+    "t": 0.44
+   },
+   "lebih_acak": {
+    "n": 12892,
+    "menang": 53.7,
+    "rata": 0.0,
+    "median": 0.92,
+    "pf": 1.0,
+    "t": 0.0
+   },
+   "hari": 4.7
+  },
+  {
+   "n": 12892,
+   "menang": 49.5,
+   "rata": -0.53,
+   "median": -5.45,
+   "pf": 0.81,
+   "t": -12.07,
+   "event": "acak",
+   "meme": "termasuk meme",
+   "pasar": "BTC tren turun",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 5915,
+    "menang": 50.3,
+    "rata": -0.46,
+    "median": 4.09,
+    "pf": 0.83,
+    "t": -7.01
+   },
+   "p2": {
+    "n": 6977,
+    "menang": 48.8,
+    "rata": -0.6,
+    "median": -5.45,
+    "pf": 0.79,
+    "t": -9.95
+   },
+   "futures": {
+    "n": 12892,
+    "menang": 49.5,
+    "rata": -0.15,
+    "median": -5.1,
+    "pf": 0.94,
+    "t": -3.31
+   },
+   "lebih_acak": {
+    "n": 12892,
+    "menang": 49.9,
+    "rata": 0.0,
+    "median": -0.0,
+    "pf": 1.0,
+    "t": 0.0
+   },
+   "hari": 2.5
+  },
+  {
+   "n": 12892,
+   "menang": 30.3,
+   "rata": -2.54,
+   "median": -7.44,
+   "pf": 0.63,
+   "t": -21.0,
+   "event": "acak",
+   "meme": "termasuk meme",
+   "pasar": "BTC tren turun",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 5915,
+    "menang": 32.0,
+    "rata": -1.98,
+    "median": -7.15,
+    "pf": 0.71,
+    "t": -10.49
+   },
+   "p2": {
+    "n": 6977,
+    "menang": 28.9,
+    "rata": -3.02,
+    "median": -7.64,
+    "pf": 0.56,
+    "t": -19.34
+   },
+   "futures": {
+    "n": 12892,
+    "menang": 32.6,
+    "rata": -1.59,
+    "median": -6.72,
+    "pf": 0.75,
+    "t": -12.6
+   },
+   "lebih_acak": {
+    "n": 12892,
+    "menang": 41.1,
+    "rata": 0.0,
+    "median": -1.61,
+    "pf": 1.0,
+    "t": 0.0
+   },
+   "hari": 21.5
+  },
+  {
+   "n": 18830,
+   "menang": 72.5,
+   "rata": -0.04,
+   "median": 2.0,
+   "pf": 0.99,
+   "t": -0.77,
+   "event": "acak",
+   "meme": "termasuk meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 7692,
+    "menang": 73.3,
+    "rata": 0.2,
+    "median": 2.03,
+    "pf": 1.06,
+    "t": 2.2
+   },
+   "p2": {
+    "n": 11138,
+    "menang": 71.9,
+    "rata": -0.21,
+    "median": 2.0,
+    "pf": 0.94,
+    "t": -2.83
+   },
+   "futures": {
+    "n": 18830,
+    "menang": 72.5,
+    "rata": 0.44,
+    "median": 2.4,
+    "pf": 1.14,
+    "t": 7.65
+   },
+   "lebih_acak": {
+    "n": 18830,
+    "menang": 61.3,
+    "rata": 0.0,
+    "median": 1.88,
+    "pf": 1.0,
+    "t": 0.0
+   },
+   "hari": 5.9
+  },
+  {
+   "n": 18830,
+   "menang": 63.5,
+   "rata": -0.14,
+   "median": 1.97,
+   "pf": 0.96,
+   "t": -2.83,
+   "event": "acak",
+   "meme": "termasuk meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 7692,
+    "menang": 64.0,
+    "rata": 0.04,
+    "median": 2.0,
+    "pf": 1.01,
+    "t": 0.57
+   },
+   "p2": {
+    "n": 11138,
+    "menang": 63.1,
+    "rata": -0.26,
+    "median": 1.94,
+    "pf": 0.92,
+    "t": -4.19
+   },
+   "futures": {
+    "n": 18830,
+    "menang": 63.5,
+    "rata": 0.31,
+    "median": 2.4,
+    "pf": 1.11,
+    "t": 6.46
+   },
+   "lebih_acak": {
+    "n": 18830,
+    "menang": 55.5,
+    "rata": 0.0,
+    "median": 1.38,
+    "pf": 1.0,
+    "t": 0.0
+   },
+   "hari": 4.7
+  },
+  {
+   "n": 18830,
+   "menang": 51.2,
+   "rata": -0.36,
+   "median": 4.3,
+   "pf": 0.87,
+   "t": -9.89,
+   "event": "acak",
+   "meme": "termasuk meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 7692,
+    "menang": 51.3,
+    "rata": -0.35,
+    "median": 4.3,
+    "pf": 0.87,
+    "t": -6.14
+   },
+   "p2": {
+    "n": 11138,
+    "menang": 51.2,
+    "rata": -0.37,
+    "median": 4.3,
+    "pf": 0.86,
+    "t": -7.76
+   },
+   "futures": {
+    "n": 18830,
+    "menang": 51.2,
+    "rata": 0.03,
+    "median": 4.9,
+    "pf": 1.01,
+    "t": 0.72
+   },
+   "lebih_acak": {
+    "n": 18830,
+    "menang": 51.5,
+    "rata": 0.0,
+    "median": 1.22,
+    "pf": 1.0,
+    "t": 0.0
+   },
+   "hari": 2.6
+  },
+  {
+   "n": 18830,
+   "menang": 32.2,
+   "rata": -1.78,
+   "median": -5.86,
+   "pf": 0.72,
+   "t": -17.22,
+   "event": "acak",
+   "meme": "termasuk meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 7692,
+    "menang": 34.4,
+    "rata": -1.21,
+    "median": -5.79,
+    "pf": 0.81,
+    "t": -7.03
+   },
+   "p2": {
+    "n": 11138,
+    "menang": 30.7,
+    "rata": -2.18,
+    "median": -5.89,
+    "pf": 0.66,
+    "t": -16.96
+   },
+   "futures": {
+    "n": 18830,
+    "menang": 34.8,
+    "rata": -0.84,
+    "median": -5.18,
+    "pf": 0.86,
+    "t": -7.83
+   },
+   "lebih_acak": {
+    "n": 18830,
+    "menang": 41.7,
+    "rata": -0.0,
+    "median": -1.8,
+    "pf": 1.0,
+    "t": -0.0
+   },
+   "hari": 20.9
+  },
+  {
+   "n": 34930,
+   "menang": 69.8,
+   "rata": -0.56,
+   "median": 2.0,
+   "pf": 0.85,
+   "t": -12.93,
+   "event": "acak",
+   "meme": "termasuk meme",
+   "pasar": "semua kondisi",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 12726,
+    "menang": 70.4,
+    "rata": -0.39,
+    "median": 2.0,
+    "pf": 0.9,
+    "t": -5.37
+   },
+   "p2": {
+    "n": 22204,
+    "menang": 69.4,
+    "rata": -0.66,
+    "median": 2.0,
+    "pf": 0.83,
+    "t": -12.15
+   },
+   "futures": {
+    "n": 34930,
+    "menang": 69.9,
+    "rata": -0.08,
+    "median": 2.4,
+    "pf": 0.98,
+    "t": -1.94
+   },
+   "lebih_acak": {
+    "n": 34930,
+    "menang": 60.0,
+    "rata": 0.0,
+    "median": 1.9,
+    "pf": 1.0,
+    "t": 0.0
+   },
+   "hari": 5.5
+  },
+  {
+   "n": 34930,
+   "menang": 60.9,
+   "rata": -0.52,
+   "median": 1.94,
+   "pf": 0.84,
+   "t": -14.45,
+   "event": "acak",
+   "meme": "termasuk meme",
+   "pasar": "semua kondisi",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 12726,
+    "menang": 61.4,
+    "rata": -0.38,
+    "median": 1.97,
+    "pf": 0.89,
+    "t": -6.31
+   },
+   "p2": {
+    "n": 22204,
+    "menang": 60.6,
+    "rata": -0.6,
+    "median": 1.94,
+    "pf": 0.82,
+    "t": -13.37
+   },
+   "futures": {
+    "n": 34930,
+    "menang": 60.9,
+    "rata": -0.07,
+    "median": 2.4,
+    "pf": 0.98,
+    "t": -2.06
+   },
+   "lebih_acak": {
+    "n": 34930,
+    "menang": 53.6,
+    "rata": -0.0,
+    "median": 1.1,
+    "pf": 1.0,
+    "t": -0.0
+   },
+   "hari": 4.4
+  },
+  {
+   "n": 34930,
+   "menang": 48.9,
+   "rata": -0.59,
+   "median": -5.45,
+   "pf": 0.79,
+   "t": -22.2,
+   "event": "acak",
+   "meme": "termasuk meme",
+   "pasar": "semua kondisi",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 12726,
+    "menang": 49.1,
+    "rata": -0.57,
+    "median": -5.45,
+    "pf": 0.79,
+    "t": -12.91
+   },
+   "p2": {
+    "n": 22204,
+    "menang": 48.7,
+    "rata": -0.61,
+    "median": -5.45,
+    "pf": 0.78,
+    "t": -18.07
+   },
+   "futures": {
+    "n": 34930,
+    "menang": 48.9,
+    "rata": -0.21,
+    "median": -5.1,
+    "pf": 0.92,
+    "t": -7.89
+   },
+   "lebih_acak": {
+    "n": 34930,
+    "menang": 48.9,
+    "rata": 0.0,
+    "median": -0.79,
+    "pf": 1.0,
+    "t": 0.0
+   },
+   "hari": 2.4
+  },
+  {
+   "n": 34930,
+   "menang": 33.8,
+   "rata": -1.5,
+   "median": -4.21,
+   "pf": 0.74,
+   "t": -20.9,
+   "event": "acak",
+   "meme": "termasuk meme",
+   "pasar": "semua kondisi",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 12726,
+    "menang": 34.2,
+    "rata": -1.56,
+    "median": -4.37,
+    "pf": 0.73,
+    "t": -12.97
+   },
+   "p2": {
+    "n": 22204,
+    "menang": 33.6,
+    "rata": -1.47,
+    "median": -4.14,
+    "pf": 0.74,
+    "t": -16.39
+   },
+   "futures": {
+    "n": 34930,
+    "menang": 36.3,
+    "rata": -0.71,
+    "median": -3.62,
+    "pf": 0.87,
+    "t": -9.46
+   },
+   "lebih_acak": {
+    "n": 34930,
+    "menang": 44.5,
+    "rata": -0.0,
+    "median": -1.18,
+    "pf": 1.0,
+    "t": -0.0
+   },
+   "hari": 16.2
+  }
+ ],
+ "lolos": [
+  {
+   "n": 225,
+   "menang": 56.4,
+   "rata": 8.21,
+   "median": 1.88,
+   "pf": 3.16,
+   "t": 6.28,
+   "event": "pantul_fib",
+   "meme": "bukan meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 27,
+    "menang": 66.7,
+    "rata": 4.53,
+    "median": 2.53,
+    "pf": 3.02,
+    "t": 1.75
+   },
+   "p2": {
+    "n": 198,
+    "menang": 55.1,
+    "rata": 8.71,
+    "median": 1.35,
+    "pf": 3.17,
+    "t": 6.05
+   },
+   "futures": {
+    "n": 225,
+    "menang": 57.8,
+    "rata": 9.53,
+    "median": 2.32,
+    "pf": 3.69,
+    "t": 6.97
+   },
+   "lebih_acak": {
+    "n": 225,
+    "menang": 60.4,
+    "rata": 5.44,
+    "median": 2.84,
+    "pf": 2.21,
+    "t": 4.58
+   },
+   "hari": 33.9
+  },
+  {
+   "n": 244,
+   "menang": 57.0,
+   "rata": 8.21,
+   "median": 2.02,
+   "pf": 3.12,
+   "t": 6.58,
+   "event": "pantul_fib",
+   "meme": "termasuk meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 27,
+    "menang": 66.7,
+    "rata": 4.53,
+    "median": 2.53,
+    "pf": 3.02,
+    "t": 1.75
+   },
+   "p2": {
+    "n": 217,
+    "menang": 55.8,
+    "rata": 8.67,
+    "median": 1.88,
+    "pf": 3.13,
+    "t": 6.36
+   },
+   "futures": {
+    "n": 244,
+    "menang": 58.2,
+    "rata": 9.53,
+    "median": 2.64,
+    "pf": 3.64,
+    "t": 7.3
+   },
+   "lebih_acak": {
+    "n": 244,
+    "menang": 60.2,
+    "rata": 5.02,
+    "median": 3.18,
+    "pf": 2.06,
+    "t": 4.42
+   },
+   "hari": 34.0
+  },
+  {
+   "n": 225,
+   "menang": 86.7,
+   "rata": 2.65,
+   "median": 1.94,
+   "pf": 2.77,
+   "t": 5.23,
+   "event": "pantul_fib",
+   "meme": "bukan meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 27,
+    "menang": 92.6,
+    "rata": 3.2,
+    "median": 1.94,
+    "pf": 5.86,
+    "t": 3.23
+   },
+   "p2": {
+    "n": 198,
+    "menang": 85.9,
+    "rata": 2.58,
+    "median": 1.93,
+    "pf": 2.6,
+    "t": 4.6
+   },
+   "futures": {
+    "n": 225,
+    "menang": 87.1,
+    "rata": 3.34,
+    "median": 2.4,
+    "pf": 3.35,
+    "t": 6.45
+   },
+   "lebih_acak": {
+    "n": 225,
+    "menang": 64.0,
+    "rata": 1.65,
+    "median": 0.68,
+    "pf": 2.0,
+    "t": 3.47
+   },
+   "hari": 12.7
+  },
+  {
+   "n": 244,
+   "menang": 86.1,
+   "rata": 2.6,
+   "median": 1.94,
+   "pf": 2.64,
+   "t": 5.27,
+   "event": "pantul_fib",
+   "meme": "termasuk meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 27,
+    "menang": 92.6,
+    "rata": 3.2,
+    "median": 1.94,
+    "pf": 5.86,
+    "t": 3.23
+   },
+   "p2": {
+    "n": 217,
+    "menang": 85.3,
+    "rata": 2.52,
+    "median": 1.94,
+    "pf": 2.48,
+    "t": 4.67
+   },
+   "futures": {
+    "n": 244,
+    "menang": 86.5,
+    "rata": 3.29,
+    "median": 2.4,
+    "pf": 3.17,
+    "t": 6.52
+   },
+   "lebih_acak": {
+    "n": 244,
+    "menang": 64.8,
+    "rata": 1.58,
+    "median": 0.73,
+    "pf": 1.91,
+    "t": 3.44
+   },
+   "hari": 12.7
+  },
+  {
+   "n": 244,
+   "menang": 78.3,
+   "rata": 2.17,
+   "median": 1.91,
+   "pf": 2.18,
+   "t": 4.49,
+   "event": "pantul_fib",
+   "meme": "termasuk meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 27,
+    "menang": 85.2,
+    "rata": 2.64,
+    "median": 1.94,
+    "pf": 3.32,
+    "t": 2.42
+   },
+   "p2": {
+    "n": 217,
+    "menang": 77.4,
+    "rata": 2.11,
+    "median": 1.91,
+    "pf": 2.1,
+    "t": 4.01
+   },
+   "futures": {
+    "n": 244,
+    "menang": 78.3,
+    "rata": 2.82,
+    "median": 2.4,
+    "pf": 2.62,
+    "t": 5.67
+   },
+   "lebih_acak": {
+    "n": 244,
+    "menang": 61.1,
+    "rata": 1.74,
+    "median": 1.4,
+    "pf": 1.93,
+    "t": 3.8
+   },
+   "hari": 11.3
+  },
+  {
+   "n": 225,
+   "menang": 78.2,
+   "rata": 2.11,
+   "median": 1.91,
+   "pf": 2.15,
+   "t": 4.2,
+   "event": "pantul_fib",
+   "meme": "bukan meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 27,
+    "menang": 85.2,
+    "rata": 2.64,
+    "median": 1.94,
+    "pf": 3.32,
+    "t": 2.42
+   },
+   "p2": {
+    "n": 198,
+    "menang": 77.3,
+    "rata": 2.04,
+    "median": 1.91,
+    "pf": 2.06,
+    "t": 3.69
+   },
+   "futures": {
+    "n": 225,
+    "menang": 78.2,
+    "rata": 2.76,
+    "median": 2.4,
+    "pf": 2.58,
+    "t": 5.33
+   },
+   "lebih_acak": {
+    "n": 225,
+    "menang": 59.6,
+    "rata": 1.73,
+    "median": 1.4,
+    "pf": 1.92,
+    "t": 3.61
+   },
+   "hari": 11.2
+  },
+  {
+   "n": 162,
+   "menang": 85.8,
+   "rata": 2.01,
+   "median": 1.91,
+   "pf": 2.27,
+   "t": 3.63,
+   "event": "pantul_fib",
+   "meme": "bukan meme",
+   "pasar": "BTC tren turun",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 22,
+    "menang": 90.9,
+    "rata": 2.23,
+    "median": 1.9,
+    "pf": 3.76,
+    "t": 2.14
+   },
+   "p2": {
+    "n": 140,
+    "menang": 85.0,
+    "rata": 1.97,
+    "median": 1.91,
+    "pf": 2.16,
+    "t": 3.19
+   },
+   "futures": {
+    "n": 162,
+    "menang": 86.4,
+    "rata": 2.68,
+    "median": 2.4,
+    "pf": 2.77,
+    "t": 4.73
+   },
+   "lebih_acak": {
+    "n": 162,
+    "menang": 72.8,
+    "rata": 1.62,
+    "median": 1.07,
+    "pf": 1.98,
+    "t": 2.96
+   },
+   "hari": 12.1
+  },
+  {
+   "n": 173,
+   "menang": 85.5,
+   "rata": 2.0,
+   "median": 1.91,
+   "pf": 2.23,
+   "t": 3.7,
+   "event": "pantul_fib",
+   "meme": "termasuk meme",
+   "pasar": "BTC tren turun",
+   "keluar": "rencana",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +12%",
+   "p1": {
+    "n": 22,
+    "menang": 90.9,
+    "rata": 2.23,
+    "median": 1.9,
+    "pf": 3.76,
+    "t": 2.14
+   },
+   "p2": {
+    "n": 151,
+    "menang": 84.8,
+    "rata": 1.97,
+    "median": 1.91,
+    "pf": 2.13,
+    "t": 3.27
+   },
+   "futures": {
+    "n": 173,
+    "menang": 86.1,
+    "rata": 2.67,
+    "median": 2.4,
+    "pf": 2.71,
+    "t": 4.83
+   },
+   "lebih_acak": {
+    "n": 173,
+    "menang": 73.4,
+    "rata": 1.63,
+    "median": 1.17,
+    "pf": 1.95,
+    "t": 3.04
+   },
+   "hari": 12.2
+  },
+  {
+   "n": 162,
+   "menang": 54.9,
+   "rata": 7.98,
+   "median": 1.43,
+   "pf": 2.98,
+   "t": 5.12,
+   "event": "pantul_fib",
+   "meme": "bukan meme",
+   "pasar": "BTC tren turun",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 22,
+    "menang": 63.6,
+    "rata": 1.78,
+    "median": 2.44,
+    "pf": 1.74,
+    "t": 0.83
+   },
+   "p2": {
+    "n": 140,
+    "menang": 53.6,
+    "rata": 8.95,
+    "median": 0.79,
+    "pf": 3.09,
+    "t": 5.09
+   },
+   "futures": {
+    "n": 162,
+    "menang": 56.8,
+    "rata": 9.36,
+    "median": 1.85,
+    "pf": 3.49,
+    "t": 5.73
+   },
+   "lebih_acak": {
+    "n": 162,
+    "menang": 61.7,
+    "rata": 5.33,
+    "median": 3.49,
+    "pf": 2.11,
+    "t": 3.73
+   },
+   "hari": 35.8
+  },
+  {
+   "n": 173,
+   "menang": 55.5,
+   "rata": 7.92,
+   "median": 1.91,
+   "pf": 2.95,
+   "t": 5.29,
+   "event": "pantul_fib",
+   "meme": "termasuk meme",
+   "pasar": "BTC tren turun",
+   "keluar": "ikuti",
+   "ket": "Ikuti siklus: tutup saat di atas MA50 atau SL +12% (maks 180 hari)",
+   "p1": {
+    "n": 22,
+    "menang": 63.6,
+    "rata": 1.78,
+    "median": 2.44,
+    "pf": 1.74,
+    "t": 0.83
+   },
+   "p2": {
+    "n": 151,
+    "menang": 54.3,
+    "rata": 8.81,
+    "median": 1.88,
+    "pf": 3.04,
+    "t": 5.26
+   },
+   "futures": {
+    "n": 173,
+    "menang": 57.2,
+    "rata": 9.3,
+    "median": 2.52,
+    "pf": 3.45,
+    "t": 5.93
+   },
+   "lebih_acak": {
+    "n": 173,
+    "menang": 61.3,
+    "rata": 4.77,
+    "median": 4.1,
+    "pf": 1.93,
+    "t": 3.45
+   },
+   "hari": 35.9
+  },
+  {
+   "n": 173,
+   "menang": 75.1,
+   "rata": 1.29,
+   "median": 1.88,
+   "pf": 1.62,
+   "t": 2.41,
+   "event": "pantul_fib",
+   "meme": "termasuk meme",
+   "pasar": "BTC tren turun",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 22,
+    "menang": 81.8,
+    "rata": 1.54,
+    "median": 1.9,
+    "pf": 2.1,
+    "t": 1.34
+   },
+   "p2": {
+    "n": 151,
+    "menang": 74.2,
+    "rata": 1.26,
+    "median": 1.88,
+    "pf": 1.57,
+    "t": 2.12
+   },
+   "futures": {
+    "n": 173,
+    "menang": 75.1,
+    "rata": 1.92,
+    "median": 2.4,
+    "pf": 1.97,
+    "t": 3.48
+   },
+   "lebih_acak": {
+    "n": 173,
+    "menang": 64.7,
+    "rata": 1.8,
+    "median": 2.59,
+    "pf": 1.91,
+    "t": 3.38
+   },
+   "hari": 10.7
+  },
+  {
+   "n": 244,
+   "menang": 66.8,
+   "rata": 1.2,
+   "median": 4.51,
+   "pf": 1.66,
+   "t": 3.98,
+   "event": "pantul_fib",
+   "meme": "termasuk meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 27,
+    "menang": 66.7,
+    "rata": 1.17,
+    "median": 4.48,
+    "pf": 1.64,
+    "t": 1.27
+   },
+   "p2": {
+    "n": 217,
+    "menang": 66.8,
+    "rata": 1.2,
+    "median": 4.51,
+    "pf": 1.66,
+    "t": 3.76
+   },
+   "futures": {
+    "n": 244,
+    "menang": 66.8,
+    "rata": 1.58,
+    "median": 4.9,
+    "pf": 1.93,
+    "t": 5.22
+   },
+   "lebih_acak": {
+    "n": 244,
+    "menang": 67.2,
+    "rata": 1.21,
+    "median": 3.08,
+    "pf": 1.77,
+    "t": 4.19
+   },
+   "hari": 2.2
+  },
+  {
+   "n": 162,
+   "menang": 74.7,
+   "rata": 1.2,
+   "median": 1.88,
+   "pf": 1.56,
+   "t": 2.17,
+   "event": "pantul_fib",
+   "meme": "bukan meme",
+   "pasar": "BTC tren turun",
+   "keluar": "sl8",
+   "ket": "TP1 −5% (tutup 50%), TP2 target/−10%, SL +8%",
+   "p1": {
+    "n": 22,
+    "menang": 81.8,
+    "rata": 1.54,
+    "median": 1.9,
+    "pf": 2.1,
+    "t": 1.34
+   },
+   "p2": {
+    "n": 140,
+    "menang": 73.6,
+    "rata": 1.15,
+    "median": 1.88,
+    "pf": 1.51,
+    "t": 1.86
+   },
+   "futures": {
+    "n": 162,
+    "menang": 74.7,
+    "rata": 1.83,
+    "median": 2.4,
+    "pf": 1.9,
+    "t": 3.2
+   },
+   "lebih_acak": {
+    "n": 162,
+    "menang": 63.6,
+    "rata": 1.71,
+    "median": 2.45,
+    "pf": 1.85,
+    "t": 3.1
+   },
+   "hari": 10.5
+  },
+  {
+   "n": 225,
+   "menang": 65.8,
+   "rata": 1.1,
+   "median": 4.51,
+   "pf": 1.59,
+   "t": 3.46,
+   "event": "pantul_fib",
+   "meme": "bukan meme",
+   "pasar": "BTC tidak tren naik",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 27,
+    "menang": 66.7,
+    "rata": 1.17,
+    "median": 4.48,
+    "pf": 1.64,
+    "t": 1.27
+   },
+   "p2": {
+    "n": 198,
+    "menang": 65.7,
+    "rata": 1.09,
+    "median": 4.51,
+    "pf": 1.58,
+    "t": 3.21
+   },
+   "futures": {
+    "n": 225,
+    "menang": 65.8,
+    "rata": 1.47,
+    "median": 4.9,
+    "pf": 1.84,
+    "t": 4.65
+   },
+   "lebih_acak": {
+    "n": 225,
+    "menang": 66.2,
+    "rata": 1.17,
+    "median": 3.03,
+    "pf": 1.72,
+    "t": 3.84
+   },
+   "hari": 2.2
+  },
+  {
+   "n": 173,
+   "menang": 63.0,
+   "rata": 0.82,
+   "median": 4.51,
+   "pf": 1.41,
+   "t": 2.23,
+   "event": "pantul_fib",
+   "meme": "termasuk meme",
+   "pasar": "BTC tren turun",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 22,
+    "menang": 63.6,
+    "rata": 0.86,
+    "median": 4.42,
+    "pf": 1.43,
+    "t": 0.82
+   },
+   "p2": {
+    "n": 151,
+    "menang": 62.9,
+    "rata": 0.81,
+    "median": 4.51,
+    "pf": 1.4,
+    "t": 2.07
+   },
+   "futures": {
+    "n": 173,
+    "menang": 63.0,
+    "rata": 1.19,
+    "median": 4.9,
+    "pf": 1.63,
+    "t": 3.24
+   },
+   "lebih_acak": {
+    "n": 173,
+    "menang": 63.0,
+    "rata": 1.77,
+    "median": 3.62,
+    "pf": 2.12,
+    "t": 4.73
+   },
+   "hari": 2.1
+  },
+  {
+   "n": 162,
+   "menang": 61.7,
+   "rata": 0.69,
+   "median": 4.51,
+   "pf": 1.33,
+   "t": 1.81,
+   "event": "pantul_fib",
+   "meme": "bukan meme",
+   "pasar": "BTC tren turun",
+   "keluar": "tetap_5_5",
+   "ket": "TP −5% / SL +5% (tutup semua)",
+   "p1": {
+    "n": 22,
+    "menang": 63.6,
+    "rata": 0.86,
+    "median": 4.42,
+    "pf": 1.43,
+    "t": 0.82
+   },
+   "p2": {
+    "n": 140,
+    "menang": 61.4,
+    "rata": 0.67,
+    "median": 4.51,
+    "pf": 1.32,
+    "t": 1.61
+   },
+   "futures": {
+    "n": 162,
+    "menang": 61.7,
+    "rata": 1.06,
+    "median": 4.9,
+    "pf": 1.55,
+    "t": 2.78
+   },
+   "lebih_acak": {
+    "n": 162,
+    "menang": 61.7,
+    "rata": 1.65,
+    "median": 3.29,
+    "pf": 2.02,
+    "t": 4.26
+   },
+   "hari": 2.1
+  }
+ ],
+ "radar": [
+  {
+   "n": 10,
+   "menang": 60.0,
+   "rata": -3.75,
+   "median": 1.85,
+   "pf": 0.24,
+   "t": -1.6,
+   "aturan": "pola_tp5_sl12",
+   "meme": "bukan meme",
+   "pasar": "BTC tren turun",
+   "p1": {
+    "n": 1,
+    "menang": 100.0,
+    "rata": 2.03,
+    "median": 2.03,
+    "pf": null,
+    "t": null
+   },
+   "p2": {
+    "n": 9,
+    "menang": 55.6,
+    "rata": -4.39,
+    "median": 1.73,
+    "pf": 0.2,
+    "t": -1.75
+   }
+  },
+  {
+   "n": 25,
+   "menang": 64.0,
+   "rata": -2.64,
+   "median": 1.94,
+   "pf": 0.39,
+   "t": -1.81,
+   "aturan": "pola_tp5_sl12",
+   "meme": "bukan meme",
+   "pasar": "BTC tidak tren naik",
+   "p1": {
+    "n": 9,
+    "menang": 77.8,
+    "rata": -0.74,
+    "median": 2.03,
+    "pf": 0.72,
+    "t": -0.35
+   },
+   "p2": {
+    "n": 16,
+    "menang": 56.2,
+    "rata": -3.71,
+    "median": 1.84,
+    "pf": 0.29,
+    "t": -1.91
+   }
+  },
+  {
+   "n": 52,
+   "menang": 50.0,
+   "rata": -3.12,
+   "median": -3.82,
+   "pf": 0.47,
+   "t": -2.2,
+   "aturan": "pola_tp5_sl12",
+   "meme": "bukan meme",
+   "pasar": "semua kondisi",
+   "p1": {
+    "n": 15,
+    "menang": 80.0,
+    "rata": 2.68,
+    "median": 2.03,
+    "pf": 2.11,
+    "t": 0.89
+   },
+   "p2": {
+    "n": 37,
+    "menang": 37.8,
+    "rata": -5.47,
+    "median": -10.72,
+    "pf": 0.25,
+    "t": -3.83
+   }
+  },
+  {
+   "n": 11,
+   "menang": 54.5,
+   "rata": -4.54,
+   "median": 1.73,
+   "pf": 0.19,
+   "t": -2.01,
+   "aturan": "pola_tp5_sl12",
+   "meme": "termasuk meme",
+   "pasar": "BTC tren turun",
+   "p1": {
+    "n": 1,
+    "menang": 100.0,
+    "rata": 2.03,
+    "median": 2.03,
+    "pf": null,
+    "t": null
+   },
+   "p2": {
+    "n": 10,
+    "menang": 50.0,
+    "rata": -5.2,
+    "median": -4.91,
+    "pf": 0.16,
+    "t": -2.18
+   }
+  },
+  {
+   "n": 26,
+   "menang": 61.5,
+   "rata": -3.02,
+   "median": 1.93,
+   "pf": 0.35,
+   "t": -2.08,
+   "aturan": "pola_tp5_sl12",
+   "meme": "termasuk meme",
+   "pasar": "BTC tidak tren naik",
+   "p1": {
+    "n": 9,
+    "menang": 77.8,
+    "rata": -0.74,
+    "median": 2.03,
+    "pf": 0.72,
+    "t": -0.35
+   },
+   "p2": {
+    "n": 17,
+    "menang": 52.9,
+    "rata": -4.23,
+    "median": 1.73,
+    "pf": 0.26,
+    "t": -2.22
+   }
+  },
+  {
+   "n": 54,
+   "menang": 50.0,
+   "rata": -3.2,
+   "median": -3.82,
+   "pf": 0.46,
+   "t": -2.32,
+   "aturan": "pola_tp5_sl12",
+   "meme": "termasuk meme",
+   "pasar": "semua kondisi",
+   "p1": {
+    "n": 16,
+    "menang": 81.2,
+    "rata": 2.64,
+    "median": 2.03,
+    "pf": 2.17,
+    "t": 0.94
+   },
+   "p2": {
+    "n": 38,
+    "menang": 36.8,
+    "rata": -5.65,
+    "median": -10.77,
+    "pf": 0.24,
+    "t": -4.04
+   }
+  },
+  {
+   "n": 10,
+   "menang": 20.0,
+   "rata": -8.87,
+   "median": -12.51,
+   "pf": 0.1,
+   "t": -3.84,
+   "aturan": "pola_sl12",
+   "meme": "bukan meme",
+   "pasar": "BTC tren turun",
+   "p1": {
+    "n": 1,
+    "menang": 0.0,
+    "rata": -10.61,
+    "median": -10.61,
+    "pf": 0.0,
+    "t": null
+   },
+   "p2": {
+    "n": 9,
+    "menang": 22.2,
+    "rata": -8.67,
+    "median": -12.51,
+    "pf": 0.11,
+    "t": -3.37
+   }
+  },
+  {
+   "n": 25,
+   "menang": 20.0,
+   "rata": -8.38,
+   "median": -12.51,
+   "pf": 0.15,
+   "t": -5.1,
+   "aturan": "pola_sl12",
+   "meme": "bukan meme",
+   "pasar": "BTC tidak tren naik",
+   "p1": {
+    "n": 9,
+    "menang": 22.2,
+    "rata": -8.06,
+    "median": -12.48,
+    "pf": 0.15,
+    "t": -2.88
+   },
+   "p2": {
+    "n": 16,
+    "menang": 18.8,
+    "rata": -8.55,
+    "median": -12.53,
+    "pf": 0.15,
+    "t": -4.08
+   }
+  },
+  {
+   "n": 52,
+   "menang": 21.2,
+   "rata": -5.38,
+   "median": -12.48,
+   "pf": 0.43,
+   "t": -2.57,
+   "aturan": "pola_sl12",
+   "meme": "bukan meme",
+   "pasar": "semua kondisi",
+   "p1": {
+    "n": 15,
+    "menang": 26.7,
+    "rata": -1.49,
+    "median": -12.48,
+    "pf": 0.83,
+    "t": -0.26
+   },
+   "p2": {
+    "n": 37,
+    "menang": 18.9,
+    "rata": -6.96,
+    "median": -12.48,
+    "pf": 0.28,
+    "t": -3.79
+   }
+  },
+  {
+   "n": 11,
+   "menang": 18.2,
+   "rata": -9.2,
+   "median": -12.51,
+   "pf": 0.09,
+   "t": -4.35,
+   "aturan": "pola_sl12",
+   "meme": "termasuk meme",
+   "pasar": "BTC tren turun",
+   "p1": {
+    "n": 1,
+    "menang": 0.0,
+    "rata": -10.61,
+    "median": -10.61,
+    "pf": 0.0,
+    "t": null
+   },
+   "p2": {
+    "n": 10,
+    "menang": 20.0,
+    "rata": -9.06,
+    "median": -12.51,
+    "pf": 0.1,
+    "t": -3.88
+   }
+  },
+  {
+   "n": 26,
+   "menang": 19.2,
+   "rata": -8.54,
+   "median": -12.51,
+   "pf": 0.14,
+   "t": -5.38,
+   "aturan": "pola_sl12",
+   "meme": "termasuk meme",
+   "pasar": "BTC tidak tren naik",
+   "p1": {
+    "n": 9,
+    "menang": 22.2,
+    "rata": -8.06,
+    "median": -12.48,
+    "pf": 0.15,
+    "t": -2.88
+   },
+   "p2": {
+    "n": 17,
+    "menang": 17.6,
+    "rata": -8.79,
+    "median": -12.51,
+    "pf": 0.14,
+    "t": -4.43
+   }
+  },
+  {
+   "n": 54,
+   "menang": 22.2,
+   "rata": -4.92,
+   "median": -12.48,
+   "pf": 0.47,
+   "t": -2.33,
+   "aturan": "pola_sl12",
+   "meme": "termasuk meme",
+   "pasar": "semua kondisi",
+   "p1": {
+    "n": 16,
+    "menang": 31.2,
+    "rata": 0.28,
+    "median": -11.81,
+    "pf": 1.03,
+    "t": 0.05
+   },
+   "p2": {
+    "n": 38,
+    "menang": 18.4,
+    "rata": -7.11,
+    "median": -12.5,
+    "pf": 0.27,
+    "t": -3.96
+   }
+  },
+  {
+   "n": 10,
+   "menang": 50.0,
+   "rata": -0.46,
+   "median": -0.47,
+   "pf": 0.83,
+   "t": -0.27,
+   "aturan": "tetap_5_5",
+   "meme": "bukan meme",
+   "pasar": "BTC tren turun",
+   "p1": {
+    "n": 1,
+    "menang": 100.0,
+    "rata": 4.57,
+    "median": 4.57,
+    "pf": null,
+    "t": null
+   },
+   "p2": {
+    "n": 9,
+    "menang": 44.4,
+    "rata": -1.02,
+    "median": -5.45,
+    "pf": 0.67,
+    "t": -0.58
+   }
+  },
+  {
+   "n": 25,
+   "menang": 40.0,
+   "rata": -1.51,
+   "median": -5.45,
+   "pf": 0.54,
+   "t": -1.5,
+   "aturan": "tetap_5_5",
+   "meme": "bukan meme",
+   "pasar": "BTC tidak tren naik",
+   "p1": {
+    "n": 9,
+    "menang": 44.4,
+    "rata": -1.06,
+    "median": -5.45,
+    "pf": 0.65,
+    "t": -0.61
+   },
+   "p2": {
+    "n": 16,
+    "menang": 37.5,
+    "rata": -1.76,
+    "median": -5.45,
+    "pf": 0.49,
+    "t": -1.4
+   }
+  },
+  {
+   "n": 52,
+   "menang": 36.5,
+   "rata": -1.85,
+   "median": -5.45,
+   "pf": 0.47,
+   "t": -2.72,
+   "aturan": "tetap_5_5",
+   "meme": "bukan meme",
+   "pasar": "semua kondisi",
+   "p1": {
+    "n": 15,
+    "menang": 53.3,
+    "rata": -0.15,
+    "median": 4.24,
+    "pf": 0.94,
+    "t": -0.11
+   },
+   "p2": {
+    "n": 37,
+    "menang": 29.7,
+    "rata": -2.53,
+    "median": -5.48,
+    "pf": 0.35,
+    "t": -3.29
+   }
+  },
+  {
+   "n": 11,
+   "menang": 45.5,
+   "rata": -0.91,
+   "median": -5.45,
+   "pf": 0.69,
+   "t": -0.58,
+   "aturan": "tetap_5_5",
+   "meme": "termasuk meme",
+   "pasar": "BTC tren turun",
+   "p1": {
+    "n": 1,
+    "menang": 100.0,
+    "rata": 4.57,
+    "median": 4.57,
+    "pf": null,
+    "t": null
+   },
+   "p2": {
+    "n": 10,
+    "menang": 40.0,
+    "rata": -1.46,
+    "median": -5.45,
+    "pf": 0.55,
+    "t": -0.89
+   }
+  },
+  {
+   "n": 26,
+   "menang": 38.5,
+   "rata": -1.66,
+   "median": -5.45,
+   "pf": 0.51,
+   "t": -1.7,
+   "aturan": "tetap_5_5",
+   "meme": "termasuk meme",
+   "pasar": "BTC tidak tren naik",
+   "p1": {
+    "n": 9,
+    "menang": 44.4,
+    "rata": -1.06,
+    "median": -5.45,
+    "pf": 0.65,
+    "t": -0.61
+   },
+   "p2": {
+    "n": 17,
+    "menang": 35.3,
+    "rata": -1.98,
+    "median": -5.45,
+    "pf": 0.45,
+    "t": -1.64
+   }
+  },
+  {
+   "n": 54,
+   "menang": 37.0,
+   "rata": -1.79,
+   "median": -5.45,
+   "pf": 0.48,
+   "t": -2.69,
+   "aturan": "tetap_5_5",
+   "meme": "termasuk meme",
+   "pasar": "semua kondisi",
+   "p1": {
+    "n": 16,
+    "menang": 56.2,
+    "rata": 0.14,
+    "median": 4.36,
+    "pf": 1.06,
+    "t": 0.11
+   },
+   "p2": {
+    "n": 38,
+    "menang": 28.9,
+    "rata": -2.61,
+    "median": -5.46,
+    "pf": 0.34,
+    "t": -3.47
+   }
+  },
+  {
+   "n": 10,
+   "menang": 70.0,
+   "rata": -5.63,
+   "median": 1.85,
+   "pf": 0.19,
+   "t": -1.3,
+   "aturan": "pola_tp5",
+   "meme": "bukan meme",
+   "pasar": "BTC tren turun",
+   "p1": {
+    "n": 1,
+    "menang": 100.0,
+    "rata": 2.03,
+    "median": 2.03,
+    "pf": null,
+    "t": null
+   },
+   "p2": {
+    "n": 9,
+    "menang": 66.7,
+    "rata": -6.48,
+    "median": 1.73,
+    "pf": 0.16,
+    "t": -1.36
+   }
+  },
+  {
+   "n": 25,
+   "menang": 72.0,
+   "rata": -2.92,
+   "median": 1.94,
+   "pf": 0.38,
+   "t": -1.42,
+   "aturan": "pola_tp5",
+   "meme": "bukan meme",
+   "pasar": "BTC tidak tren naik",
+   "p1": {
+    "n": 9,
+    "menang": 88.9,
+    "rata": 0.85,
+    "median": 2.03,
+    "pf": 1.69,
+    "t": 0.55
+   },
+   "p2": {
+    "n": 16,
+    "menang": 62.5,
+    "rata": -5.04,
+    "median": 1.84,
+    "pf": 0.25,
+    "t": -1.68
+   }
+  },
+  {
+   "n": 52,
+   "menang": 55.8,
+   "rata": -3.93,
+   "median": 1.78,
+   "pf": 0.42,
+   "t": -2.27,
+   "aturan": "pola_tp5",
+   "meme": "bukan meme",
+   "pasar": "semua kondisi",
+   "p1": {
+    "n": 15,
+    "menang": 86.7,
+    "rata": 3.6,
+    "median": 2.03,
+    "pf": 3.22,
+    "t": 1.28
+   },
+   "p2": {
+    "n": 37,
+    "menang": 43.2,
+    "rata": -6.99,
+    "median": -9.89,
+    "pf": 0.21,
+    "t": -3.57
+   }
+  },
+  {
+   "n": 11,
+   "menang": 72.7,
+   "rata": -4.95,
+   "median": 1.85,
+   "pf": 0.22,
+   "t": -1.24,
+   "aturan": "pola_tp5",
+   "meme": "termasuk meme",
+   "pasar": "BTC tren turun",
+   "p1": {
+    "n": 1,
+    "menang": 100.0,
+    "rata": 2.03,
+    "median": 2.03,
+    "pf": null,
+    "t": null
+   },
+   "p2": {
+    "n": 10,
+    "menang": 70.0,
+    "rata": -5.64,
+    "median": 1.79,
+    "pf": 0.19,
+    "t": -1.3
+   }
+  },
+  {
+   "n": 26,
+   "menang": 73.1,
+   "rata": -2.73,
+   "median": 1.93,
+   "pf": 0.4,
+   "t": -1.38,
+   "aturan": "pola_tp5",
+   "meme": "termasuk meme",
+   "pasar": "BTC tidak tren naik",
+   "p1": {
+    "n": 9,
+    "menang": 88.9,
+    "rata": 0.85,
+    "median": 2.03,
+    "pf": 1.69,
+    "t": 0.55
+   },
+   "p2": {
+    "n": 17,
+    "menang": 64.7,
+    "rata": -4.63,
+    "median": 1.85,
+    "pf": 0.26,
+    "t": -1.63
+   }
+  },
+  {
+   "n": 54,
+   "menang": 57.4,
+   "rata": -3.72,
+   "median": 1.82,
+   "pf": 0.43,
+   "t": -2.22,
+   "aturan": "pola_tp5",
+   "meme": "termasuk meme",
+   "pasar": "semua kondisi",
+   "p1": {
+    "n": 16,
+    "menang": 87.5,
+    "rata": 3.5,
+    "median": 2.03,
+    "pf": 3.3,
+    "t": 1.33
+   },
+   "p2": {
+    "n": 38,
+    "menang": 44.7,
+    "rata": -6.76,
+    "median": -9.67,
+    "pf": 0.22,
+    "t": -3.52
+   }
+  }
+ ]
+}
