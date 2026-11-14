@@ -13,25 +13,25 @@
   "model_aktif": true,
   "nama": "SANGAT LEMAH",
   "nilai": {
-   "alt_r30": -23.9,
-   "alt_rs": -7.5,
+   "alt_r30": -24.0,
+   "alt_rs": -7.6,
    "btc_r30": -16.4,
-   "d_lebar50": -3.8,
+   "d_lebar50": -3.7,
    "lebar50": 3.0,
-   "n_koin": 133.0,
+   "n_koin": 135.0,
    "s2": 3.1,
-   "s4": 24.8
+   "s4": 25.2
   },
   "skor": -5,
-  "ts": "2026-11-14T15:42:16+00:00"
+  "ts": "2026-11-14T16:44:22+00:00"
  },
  "last_summary": "2026-11-14",
  "pasar": {
-  "harga": 65484.0,
+  "harga": 65365.4,
   "ma": 80624.4102,
   "rezim": "turun",
   "teks": "BTC di bawah MA50 & MA50 menurun",
-  "ts": "2026-11-14T15:42:16+00:00"
+  "ts": "2026-11-14T16:44:22+00:00"
  },
  "ranking": {
   "data": [
@@ -2089,13 +2089,13 @@
    "base": "DEXE",
    "batal": 1.9593,
    "batal_pct": 38.6,
-   "btc_chg": -15.5,
+   "btc_chg": -15.65,
    "btc_harga": 77497.0,
    "bursa": "Binance",
-   "chg": -19.02,
+   "chg": -21.29,
    "harga": 1.414,
-   "harga_now": 1.145,
-   "hasil": "berjalan",
+   "harga_now": 1.113,
+   "hasil": "kena target",
    "hasil_rencana": "impas setelah TP1",
    "id": "DEXEUSDT|turun|2026-11-02T17:05:44+00:00",
    "isi_ulang": false,
@@ -2103,8 +2103,8 @@
    "maks": 1.449,
    "maks_pct": 2.48,
    "meme": false,
-   "min": 1.135,
-   "min_pct": -19.73,
+   "min": 1.105,
+   "min_pct": -21.85,
    "pnl_rencana": 1.5,
    "pnl_rencana_bersih": 1.09,
    "pola": "Head and Shoulders",
@@ -2128,8 +2128,8 @@
    "target": 1.113,
    "target_pct": -21.3,
    "ts": "2026-11-02T17:05:44+00:00",
-   "ts_hasil": null,
-   "ts_update": "2026-11-14T15:42:16+00:00"
+   "ts_hasil": "2026-11-14T16:00:00+00:00",
+   "ts_update": "2026-11-14T16:44:22+00:00"
   },
   {
    "base": "DASH",
@@ -2182,7 +2182,7 @@
  "short_kandidat": {
   "kandidat": [],
   "sinyal": [],
-  "ts": "2026-11-14T15:42:16+00:00"
+  "ts": "2026-11-14T16:44:22+00:00"
  },
  "siklus": {
   "btc": {
@@ -2194,10 +2194,10 @@
    "TRX"
   ],
   "jumlah": {
-   "1": 55,
+   "1": 56,
    "2": 4,
    "3": 38,
-   "4": 32
+   "4": 33
   },
   "persen_naik": 3,
   "persen_turun": 25,
@@ -2217,7 +2217,7 @@
    "PEPE",
    "HOT"
   ],
-  "ts": "2026-11-14T15:42:16+00:00"
+  "ts": "2026-11-14T16:44:22+00:00"
  },
  "stage2": {}
 }
