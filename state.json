@@ -2,11 +2,11 @@
  "alerts2": {},
  "last_summary": "2026-11-14",
  "pasar": {
-  "harga": 67016.4,
+  "harga": 67426.8,
   "ma": 80624.4102,
   "rezim": "turun",
   "teks": "BTC di bawah MA50 & MA50 menurun",
-  "ts": "2026-11-14T08:55:06+00:00"
+  "ts": "2026-11-14T09:49:30+00:00"
  },
  "ranking": {
   "data": [
@@ -1788,13 +1788,13 @@
    "base": "LINK",
    "batal": null,
    "batal_pct": null,
-   "btc_chg": -13.47,
+   "btc_chg": -12.94,
    "btc_harga": 77452.5,
    "bursa": "Binance",
-   "chg": -16.58,
+   "chg": -15.89,
    "harga": 11.469,
-   "harga_now": 9.567,
-   "hasil": "berjalan",
+   "harga_now": 9.647,
+   "hasil": "selesai",
    "hasil_rencana": "impas setelah TP1",
    "id": "LINKUSDT|naik|2026-10-31T09:42:02+00:00",
    "isi_ulang": true,
@@ -1827,8 +1827,8 @@
    "target": null,
    "target_pct": null,
    "ts": "2026-10-31T09:42:02+00:00",
-   "ts_hasil": null,
-   "ts_update": "2026-11-14T08:55:06+00:00"
+   "ts_hasil": "2026-11-14T09:49:30+00:00",
+   "ts_update": "2026-11-14T09:49:30+00:00"
   },
   {
    "base": "GLM",
@@ -2064,12 +2064,12 @@
    "base": "DEXE",
    "batal": 1.9593,
    "batal_pct": 38.6,
-   "btc_chg": -13.52,
+   "btc_chg": -12.99,
    "btc_harga": 77497.0,
    "bursa": "Binance",
-   "chg": -15.91,
+   "chg": -15.63,
    "harga": 1.414,
-   "harga_now": 1.189,
+   "harga_now": 1.193,
    "hasil": "berjalan",
    "hasil_rencana": "impas setelah TP1",
    "id": "DEXEUSDT|turun|2026-11-02T17:05:44+00:00",
@@ -2104,7 +2104,7 @@
    "target_pct": -21.3,
    "ts": "2026-11-02T17:05:44+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-14T08:55:06+00:00"
+   "ts_update": "2026-11-14T09:49:30+00:00"
   },
   {
    "base": "DASH",
@@ -2157,7 +2157,7 @@
  "short_kandidat": {
   "kandidat": [],
   "sinyal": [],
-  "ts": "2026-11-14T08:55:06+00:00"
+  "ts": "2026-11-14T09:49:30+00:00"
  },
  "siklus": {
   "btc": {
@@ -2192,7 +2192,7 @@
    "PEPE",
    "HOT"
   ],
-  "ts": "2026-11-14T08:55:06+00:00"
+  "ts": "2026-11-14T09:49:30+00:00"
  },
  "stage2": {}
 }
