@@ -60,7 +60,7 @@ jobs:
           fi
 
       - name: Siapkan dashboard
-        if: (github.event.inputs.mode || 'normal') == 'normal' && hashFiles('site/index.html') != ''
+        if: contains(fromJSON('["normal","ringkasan"]'), github.event.inputs.mode || 'normal') && hashFiles('site/index.html') != ''
         uses: actions/upload-pages-artifact@v5
         with:
           path: site
@@ -68,7 +68,7 @@ jobs:
 
   dashboard:
     needs: scan
-    if: needs.scan.result == 'success' && (github.event.inputs.mode || 'normal') == 'normal'
+    if: needs.scan.result == 'success' && contains(fromJSON('["normal","ringkasan"]'), github.event.inputs.mode || 'normal')
     runs-on: ubuntu-24.04
     continue-on-error: true   # kalau GitHub Pages belum diaktifkan, radar tetap dianggap sukses
     environment:
