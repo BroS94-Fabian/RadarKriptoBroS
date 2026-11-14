@@ -1,7 +1,7 @@
 {
  "versi": 2,
- "dibuat": "2026-11-14T10:10:26+00:00",
- "dibuat_wib": "14 Nov 2026 17:10 WIB",
+ "dibuat": "2026-11-14T10:14:34+00:00",
+ "dibuat_wib": "14 Nov 2026 17:14 WIB",
  "data": {
   "dibuat": "2026-11-14T09:34:50+00:00",
   "dibuat_wib": "14 Nov 2026 16:34 WIB",
@@ -1640,7 +1640,7 @@
     "total_min": 71.8,
     "total_maks": 232.3,
     "cagr": 24.2,
-    "maxdd": -25.35,
+    "maxdd": -25.4,
     "sharpe": 0.8,
     "per_tahun": {
      "2023": 25.9,
@@ -1655,11 +1655,11 @@
     "kandidat": 998
    },
    "Model BARU (aturan lama + batas skor pasar)": {
-    "total": 183.95,
+    "total": 183.9,
     "total_min": 120.3,
     "total_maks": 275.0,
-    "cagr": 30.95,
-    "maxdd": -23.95,
+    "cagr": 31.0,
+    "maxdd": -23.9,
     "sharpe": 1.04,
     "per_tahun": {
      "2023": 25.9,
@@ -1678,7 +1678,7 @@
     "total_min": 130.3,
     "total_maks": 354.9,
     "cagr": 35.6,
-    "maxdd": -23.95,
+    "maxdd": -23.9,
     "sharpe": 1.14,
     "per_tahun": {
      "2023": 25.9,
@@ -1693,7 +1693,7 @@
     "kandidat": 969
    },
    "LAMA — hanya beli": {
-    "total": 80.45,
+    "total": 80.4,
     "total_min": 34.4,
     "total_maks": 137.0,
     "cagr": 16.5,
@@ -1712,11 +1712,11 @@
     "kandidat": 790
    },
    "BARU — hanya beli": {
-    "total": 119.65,
+    "total": 119.7,
     "total_min": 71.6,
     "total_maks": 167.5,
-    "cagr": 22.55,
-    "maxdd": -23.15,
+    "cagr": 22.5,
+    "maxdd": -23.1,
     "sharpe": 0.77,
     "per_tahun": {
      "2023": 22.2,
@@ -1731,10 +1731,10 @@
     "kandidat": 635
    },
    "LAMA — hanya jual dulu (short)": {
-    "total": 27.85,
+    "total": 27.9,
     "total_min": 14.7,
     "total_maks": 42.8,
-    "cagr": 6.55,
+    "cagr": 6.5,
     "maxdd": -7.4,
     "sharpe": 0.89,
     "per_tahun": {
@@ -1750,10 +1750,10 @@
     "kandidat": 208
    },
    "BARU — hanya jual dulu (short)": {
-    "total": 27.85,
+    "total": 27.9,
     "total_min": 14.7,
     "total_maks": 42.8,
-    "cagr": 6.55,
+    "cagr": 6.5,
     "maxdd": -7.4,
     "sharpe": 0.89,
     "per_tahun": {
@@ -1788,7 +1788,7 @@
     "kandidat": 105
    },
    "Tanpa filter pasar (3 strategi live, semua kondisi)": {
-    "total": 8.25,
+    "total": 8.2,
     "total_min": -20.3,
     "total_maks": 82.0,
     "cagr": 2.1,
@@ -1902,7 +1902,7 @@
     "kandidat": 998
    },
    "Model BARU (aturan lama + batas skor pasar)": {
-    "total": 110.95,
+    "total": 111.0,
     "total_min": 94.0,
     "total_maks": 131.0,
     "cagr": 21.3,
@@ -1924,7 +1924,7 @@
     "total": 129.0,
     "total_min": 104.6,
     "total_maks": 171.8,
-    "cagr": 23.85,
+    "cagr": 23.9,
     "maxdd": -21.6,
     "sharpe": 0.99,
     "per_tahun": {
@@ -1942,10 +1942,10 @@
   },
   "portofolio_3": {
    "Model LAMA (aturan tetap BTC MA50)": {
-    "total": 168.55,
+    "total": 168.6,
     "total_min": 76.4,
     "total_maks": 292.7,
-    "cagr": 29.05,
+    "cagr": 29.1,
     "maxdd": -34.2,
     "sharpe": 0.83,
     "per_tahun": {
@@ -1964,7 +1964,7 @@
     "total": 242.3,
     "total_min": 113.1,
     "total_maks": 353.7,
-    "cagr": 37.45,
+    "cagr": 37.5,
     "maxdd": -23.2,
     "sharpe": 1.08,
     "per_tahun": {
@@ -1993,7 +1993,7 @@
     "total_min": 71.8,
     "total_maks": 232.3,
     "cagr": 24.2,
-    "maxdd": -25.35,
+    "maxdd": -25.4,
     "sharpe": 0.8,
     "per_tahun": {
      "2023": 25.9,
@@ -2027,7 +2027,7 @@
     "kandidat": 962
    },
    "4": {
-    "total": 189.55,
+    "total": 189.6,
     "total_min": 134.9,
     "total_maks": 270.0,
     "cagr": 31.6,
@@ -2049,7 +2049,7 @@
     "total": 195.8,
     "total_min": 147.5,
     "total_maks": 261.4,
-    "cagr": 32.35,
+    "cagr": 32.3,
     "maxdd": -13.2,
     "sharpe": 1.27,
     "per_tahun": {
@@ -2068,7 +2068,7 @@
     "total": 159.5,
     "total_min": 118.3,
     "total_maks": 196.2,
-    "cagr": 27.95,
+    "cagr": 27.9,
     "maxdd": -12.2,
     "sharpe": 1.51,
     "per_tahun": {
@@ -2088,7 +2088,7 @@
     "total_min": 71.4,
     "total_maks": 128.1,
     "cagr": 19.9,
-    "maxdd": -15.95,
+    "maxdd": -15.9,
     "sharpe": 1.21,
     "per_tahun": {
      "2023": 13.9,

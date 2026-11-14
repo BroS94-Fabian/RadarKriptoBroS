@@ -336,12 +336,12 @@ def metrik(kurva: pd.Series) -> dict:
 def uji_portofolio(T: pd.DataFrame, awal, akhir, maks=MAKS_POSISI) -> dict:
     runs = [portofolio(T, awal, akhir, maks, b) for b in range(BENIH)]
     ms = [metrik(r["kurva"]) for r in runs]
-    def med(k):
+    def med(k, nd=1):      # persen dibulatkan 1 desimal supaya laporan & dashboard menampilkan angka yang sama
         x = [m[k] for m in ms if np.isfinite(m[k])]
-        return round(float(np.median(x)), 2) if x else 0.0
+        return round(float(np.median(x)), nd) if x else 0.0
     tahun = sorted({y for m in ms for y in m["per_tahun"]})
     return dict(total=med("total"), total_min=round(min(m["total"] for m in ms), 1), total_maks=round(max(m["total"] for m in ms), 1),
-                cagr=med("cagr"), maxdd=med("maxdd"), sharpe=med("sharpe"),
+                cagr=med("cagr"), maxdd=med("maxdd"), sharpe=med("sharpe", 2),
                 per_tahun={y: round(float(np.median([m["per_tahun"].get(y, 0) for m in ms])), 1) for y in tahun},
                 transaksi=int(np.median([r["transaksi"] for r in runs])),
                 menang=round(float(np.median([r["menang"] for r in runs])), 1) if len(T) else None,
