@@ -41,6 +41,7 @@ import yaml
 
 from analisa import BULAN, analisa_koin, fmt_pct, fmt_price
 import rekam_jejak as rekam
+import pasar as PS
 import strategi as ST
 from grafik import buat_grafik
 
@@ -84,6 +85,7 @@ DEFAULT_CONFIG = {
     "stage2_filter_pasar": "ketat",
     "stage2_maks_grafik": 5,
     "stage2_jeda_hari": 10,
+    "model_pasar": "auto",
     "sinyal_short": True,
     "short_filter_pasar": "longgar",
     "short_maks_grafik": 5,
@@ -664,8 +666,9 @@ def caption_stage2(r: dict, cfg: dict, dash: str) -> str:
         L.append(f"🧭 Kalau mau menunggu pullback: zona Fibonacci {fmt_price(fb['f618'])}–{fmt_price(fb['f382'])}")
     if ck:
         L.append(f"☑️ Checklist {ck['cocok']}/6: {e(ck['teks'])}")
-    L.append("📈 <i>Backtest Okt 2024–Okt 2026 (BTC tren naik, bukan meme): 260 sinyal, menang 81%, "
-             "rata-rata bersih +1,85%; lebih baik ±1% dari beli acak di minggu yang sama.</i>")
+    L.append("📈 <i>" + e(r["stage2"].get("uji") or
+                          "Backtest Okt 2024–Okt 2026 (BTC tren naik, bukan meme): 260 sinyal, menang 81%, "
+                          "rata-rata bersih +1,85%; lebih baik ±1% dari beli acak di minggu yang sama.") + "</i>")
     links = []
     if r.get("link"):
         links.append(f'<a href="{e(r["link"])}">TradingView</a>')
@@ -704,8 +707,9 @@ def caption_short(r: dict, cfg: dict, dash: str) -> str:
         L.append(f"🔊 {e(vo['teks'])}")
     if ck:
         L.append(f"☑️ Checklist short {ck['cocok']}/6: {e(ck['teks'])}")
-    L.append("📈 <i>Backtest 2020–2026 (BTC tidak tren naik, bukan meme): 225 sinyal, menang 87%, rata-rata bersih "
-             "+2,65%; di luar crash Okt 2025 ±+1,5%. Biaya, pajak & funding sudah dihitung.</i>")
+    L.append("📈 <i>" + e(r["short"].get("uji") or
+                          "Backtest 2020–2026 (BTC tidak tren naik, bukan meme): 225 sinyal, menang 87%, rata-rata bersih "
+                          "+2,65%; di luar crash Okt 2025 ±+1,5%.") + " Biaya, pajak & funding sudah dihitung.</i>")
     links = []
     if r.get("link"):
         links.append(f'<a href="{e(r["link"])}">TradingView</a>')
@@ -719,6 +723,49 @@ def caption_short(r: dict, cfg: dict, dash: str) -> str:
 
 
 REZIM_IKON = {"naik": "📈 NAIK", "turun": "📉 TURUN", "netral": "➖ SIDEWAYS"}
+
+
+def kondisi_pasar(results, r_btc) -> dict | None:
+    """Skor pasar −6…+6 dari candle harian tutup (BTC + lebar pasar semua koin yang dianalisa)."""
+    if not r_btc:
+        return None
+    try:
+        koin = [dict(base=r["base"], close=r["_g"]["dc"]["close"].to_numpy(dtype=float),
+                     stage=(r.get("siklus") or {}).get("stage")) for r in results]
+        return PS.sekarang(r_btc["_g"]["dc"]["close"].to_numpy(dtype=float), koin)
+    except Exception as e:
+        print(f"  ! kondisi pasar gagal dihitung: {e}")
+        return None
+
+
+def teks_kondisi(kp: dict | None) -> str | None:
+    if not kp:
+        return None
+    return f"🌡️ Kondisi pasar: {kp['ikon']} <b>{html.escape(kp['nama'])}</b> (skor {PS.angka(kp['skor'])} dari ±6)"
+
+
+def teks_komponen(kp: dict) -> list[str]:
+    ik = {1: "🟢", 0: "⚪", -1: "🔴"}
+    return [f"   {ik[k['suara']]} {html.escape(k['nama'])}: {html.escape(k['teks'])}" for k in kp["komponen"]]
+
+
+def teks_model(model: dict | None, kp: dict | None, pakai: bool) -> list[str]:
+    """Baris 'apa yang boleh jalan sekarang' menurut model pasar."""
+    if not (pakai and model and kp):
+        return []
+    st = PS.status(model, kp)
+    f = lambda x: "✅ aktif" if x[0] else f"⏸ ditahan ({x[1]})"  # noqa: E731
+    return [f"🟢 Beli: {f(st['beli'])}", f"🔻 Jual dulu: {f(st['jual'])}"]
+
+
+def uji_teks(model: dict | None, strategi: str) -> str | None:
+    """Kalimat hasil uji strategi pada kondisi pasar yang diizinkan model (dari model.json)."""
+    a = ((model or {}).get("strategi") or {}).get(strategi) or {}
+    if not a.get("aktif") or not a.get("n"):
+        return None
+    g = model["beli" if a["sisi"] == "long" else "jual"]
+    angka = f"{a['n']} sinyal, menang {a['menang']:.0f}%, rata-rata bersih {a['rata']:+.2f}%".replace(".", ",")
+    return f"Uji {model['data'][:4]}–{model['data'][-10:-6]} saat {g['teks']}: {angka}."
 
 
 def peta_siklus(results) -> dict:
@@ -748,9 +795,14 @@ def teks_btc_stage(r_btc) -> str | None:
     return f"BTC: {sk['ikon']} <b>{html.escape(sk['nama'])}</b> — {html.escape(sk['teks'])}"
 
 
-def header_text(naik, turun, n_scan, src_rank, src_bursa, now, dash, rz=None, tertahan=0, ps=None, btc_st=None) -> str:
+def header_text(naik, turun, n_scan, src_rank, src_bursa, now, dash, rz=None, tertahan=0, ps=None, btc_st=None,
+                kp=None, model_baris=None) -> str:
     lines = [f"📡 <b>Radar Kripto</b> · {now_wib_str(now)}",
              f"Top {n_scan} koin ({html.escape(src_rank)}) · data {html.escape(src_bursa)}"]
+    if kp:
+        lines.append(teks_kondisi(kp))
+        if model_baris:
+            lines.append(html.escape(" · ".join(model_baris)))
     if rz:
         lines.append(f"Pasar BTC: <b>{REZIM_IKON.get(rz['rezim'], rz['rezim'])}</b> ({html.escape(rz['teks'])})")
     if btc_st:
@@ -777,12 +829,16 @@ def baris_ringkas(r: dict) -> str:
 
 
 def summary_text(results, now, src_rank, dash, rk=None, rz=None, ps=None, btc_st=None, stage2=None,
-                 shorts=None, kand_short=None) -> str:
+                 shorts=None, kand_short=None, kp=None, model_baris=None) -> str:
     w = now.astimezone(WIB)
     naik = sorted([r for r in results if r["kelas"] == "naik"], key=lambda r: -r["skor_naik"])
     turun = sorted([r for r in results if r["kelas"] == "turun"], key=lambda r: -r["skor_turun"])
     lines = [f"📋 <b>Ringkasan Harian Radar Kripto</b> — {w.day} {BULAN[w.month - 1]} {w.year}",
              f"{len(results)} koin top ({html.escape(src_rank)}) dianalisa."]
+    if kp:
+        lines.append(teks_kondisi(kp))
+        lines += teks_komponen(kp)
+        lines += [html.escape(x) for x in (model_baris or [])]
     if rz:
         lines.append(f"Pasar BTC: <b>{REZIM_IKON.get(rz['rezim'], rz['rezim'])}</b> ({html.escape(rz['teks'])})")
     if btc_st:
@@ -802,14 +858,14 @@ def summary_text(results, now, src_rank, dash, rk=None, rz=None, ps=None, btc_st
         lolos = [r for r in stage2 if not r["stage2"]["ditahan"]]
         lines.append(f"\n🟩 <b>Awal Stage 2 hari ini ({len(lolos)})</b>")
         lines += [f"• <b>{html.escape(r['base'])}</b> (#{r['rank']}) {fmt_price(r['price'])}" for r in lolos[:10]] or [
-            "• (belum ada" + (f"; {len(stage2)} koin ditahan karena BTC tidak tren naik)" if stage2 else ")")]
+            "• (belum ada" + (f"; {len(stage2)} koin ditahan filter pasar)" if stage2 else ")")]
     if shorts is not None:
         lolos = [r for r in shorts if not r["short"]["ditahan"]]
         lines.append(f"\n🔻 <b>Sinyal short hari ini ({len(lolos)})</b>")
         lines += [f"• <b>{html.escape(r['base'])}</b> (#{r['rank']}) {fmt_price(r['price'])} · TP1 "
                   f"{fmt_price(r['short']['rencana']['tp1'])} · SL {fmt_price(r['short']['rencana']['sl'])}"
                   for r in lolos[:10]] or [
-            "• (belum ada" + (f"; {len(shorts)} koin ditahan karena BTC tren naik)" if shorts else ")")]
+            "• (belum ada" + (f"; {len(shorts)} koin ditahan filter pasar)" if shorts else ")")]
         if kand_short:
             lines.append(f"⏳ Kandidat short, tunggu candle harian merah ({len(kand_short)}): "
                          + html.escape(", ".join(r["base"] for r in kand_short[:15])) + ("…" if len(kand_short) > 15 else ""))
@@ -946,6 +1002,10 @@ def tulis_dashboard(results, charts: dict[str, bytes], meta: dict) -> None:
     if os.path.exists(bt):
         shutil.copy(bt, os.path.join(SITE_DIR, "backtest.json"))
         data["ada_backtest"] = True
+    mpj = os.path.join(ROOT, "model_pasar", "hasil.json")
+    if os.path.exists(mpj):
+        shutil.copy(mpj, os.path.join(SITE_DIR, "model_pasar.json"))
+        data["ada_model_pasar"] = True
     s4 = os.path.join(ROOT, "siklus4")
     if os.path.exists(os.path.join(s4, "hasil.json")):
         os.makedirs(os.path.join(SITE_DIR, "siklus4"), exist_ok=True)
@@ -1053,6 +1113,12 @@ def main() -> int:
     rz = (ST.rezim_pasar(r_btc["_g"]["dc"]["close"].to_numpy(), price=r_btc["price"]) if r_btc
           else dict(rezim="netral", harga=None, ma=None, teks="data BTC tidak tersedia"))
     R = ST.cfg_rencana(cfg)
+    # Model kondisi pasar: skor pasar harian menentukan strategi mana yang boleh jalan (lihat pasar.py)
+    kp = kondisi_pasar(results, r_btc)
+    model = PS.muat_model()
+    mp = str(cfg.get("model_pasar", "auto")).lower()
+    pakai_model = bool(kp and model and model.get("versi") == 2
+                       and (mp == "true" or (mp == "auto" and model.get("pakai"))))
     tertahan = 0
     for r in results:
         arah = r["arah_utama"]
@@ -1060,10 +1126,22 @@ def main() -> int:
         r["rencana"] = ST.rencana(float(r["price"]), arah, t["harga"] if t else None, b["harga"] if b else None,
                                   r["indikator"].get("atr_pct"), R)
         k, alasan = ST.filter_sinyal(r, cfg, rz["rezim"])
+        if pakai_model and not alasan and k == "naik":      # aturan lama lolos → cek batas skor pasar dari model
+            ok, why = PS.izin(model, "radar_naik", kp)
+            if not ok:
+                k, alasan = "pantau-naik", "ditahan: " + why
         if alasan:
             r["kelas"], r["ditahan"] = k, alasan
             tertahan += 1
     print(f"Pasar BTC: {rz['rezim']} ({rz['teks']}) · {tertahan} sinyal ditahan filter")
+    model_baris = teks_model(model, kp, pakai_model)
+    if kp:
+        print(f"Kondisi pasar: skor {PS.angka(kp['skor'])} ({kp['nama']}) · model pasar {'AKTIF' if pakai_model else 'tidak dipakai'}"
+              + "".join(" · " + x for x in model_baris))
+        if os.environ.get("GITHUB_ACTIONS"):
+            print(f"::notice title=Kondisi pasar::skor {PS.angka(kp['skor'])} ({kp['nama']}) · "
+                  + " · ".join(f"{k['nama']} {k['suara']:+d}" for k in kp["komponen"])
+                  + f" · model {'aktif' if pakai_model else 'tidak dipakai'}" + "".join(" · " + x for x in model_baris))
     ps = peta_siklus(results)
     btc_st = teks_btc_stage(r_btc)
     # Sinyal 🟩 awal Stage 2 (hari pertama Stage 2 terkonfirmasi pada candle harian terakhir)
@@ -1081,8 +1159,12 @@ def main() -> int:
                 ditahan = "ditahan: pasar BTC tidak sedang tren naik"
             elif fp in ("true", "longgar") and rz["rezim"] == "turun":
                 ditahan = "ditahan: pasar BTC sedang tren turun"
+            if pakai_model and not ditahan:
+                ok, why = PS.izin(model, "awal_stage2", kp)
+                ditahan = None if ok else "ditahan: " + why
             tgl = str(r["_g"]["dc"]["time"].iloc[-1])[:10]
-            r["stage2"] = dict(rencana=plan, ditahan=ditahan, tanggal=tgl)
+            r["stage2"] = dict(rencana=plan, ditahan=ditahan, tanggal=tgl,
+                               uji=uji_teks(model, "awal_stage2") if pakai_model else None)
             stage2.append(r)
         stage2.sort(key=lambda r: r.get("rank") or 9999)
         print(f"Awal Stage 2: {len(stage2)} koin ({sum(1 for r in stage2 if not r['stage2']['ditahan'])} lolos filter pasar)")
@@ -1101,8 +1183,12 @@ def main() -> int:
                 ditahan = "ditahan: pasar BTC tidak sedang tren turun"
             elif fp in ("true", "longgar") and rz["rezim"] == "naik":
                 ditahan = "ditahan: pasar BTC sedang tren naik"
+            if pakai_model and not ditahan:
+                ok, why = PS.izin(model, "pantul_fib", kp)
+                ditahan = None if ok else "ditahan: " + why
             tgl = str(r["_g"]["dc"]["time"].iloc[-1])[:10]
-            r["short"] = dict(rencana=plan, ditahan=ditahan, tanggal=tgl)
+            r["short"] = dict(rencana=plan, ditahan=ditahan, tanggal=tgl,
+                              uji=uji_teks(model, "pantul_fib") if pakai_model else None)
             shorts.append(r)
         shorts.sort(key=lambda r: r.get("rank") or 9999)
         print(f"Sinyal short: {len(shorts)} koin ({sum(1 for r in shorts if not r['short']['ditahan'])} lolos filter pasar)")
@@ -1137,6 +1223,10 @@ def main() -> int:
             except Exception as ex:
                 print(f"  ! pantau {sym} gagal: {ex}")
     state["pasar"] = dict(rz, ts=now.isoformat(timespec="seconds"))
+    if kp and not demo:
+        state["kondisi_pasar"] = dict(skor=kp["skor"], kode=kp["kode"], nama=kp["nama"], model_aktif=pakai_model,
+                                      komponen={k["kode"]: k["suara"] for k in kp["komponen"]}, nilai=kp["nilai"],
+                                      ts=now.isoformat(timespec="seconds"))
     for r in results:
         if r.get("rencana"):
             r["rencana"].update(ST.ukuran_posisi(r["rencana"], cfg))
@@ -1174,7 +1264,8 @@ def main() -> int:
             print(f"  ! grafik {r['base']} gagal: {e}")
 
     if alerts:
-        tg.send_text(header_text(naik, turun, len(results), src_rank, src_harga, now, dash, rz, tertahan, ps, btc_st))
+        tg.send_text(header_text(naik, turun, len(results), src_rank, src_harga, now, dash, rz, tertahan, ps, btc_st, kp,
+                                 model_baris))
         maxg = int(cfg["maks_grafik_per_run"])
         for r in alerts[:maxg]:
             png = charts.get(r["symbol"]) or buat_grafik(r, cfg["quote"], src_harga, waktu)
@@ -1200,6 +1291,7 @@ def main() -> int:
         tg.send_text(f"🟩 <b>Sinyal Awal Stage 2</b> · {now_wib_str(now)}\n"
                      f"{len(alert2)} koin hari ini resmi masuk tren naik (Stage 1 → 2) saat BTC "
                      f"{REZIM_IKON.get(rz['rezim'], rz['rezim'])}.\n"
+                     + (f"{teks_kondisi(kp)}\n" if kp else "")
                      + (f"{btc_st}\n" if btc_st else "") + teks_peta(ps) +
                      "\n<i>Sinyal ini lolos uji historis, tapi bukan jaminan. Bukan ajakan beli/jual.</i>")
         m2 = int(cfg.get("stage2_maks_grafik", 5))
@@ -1225,6 +1317,7 @@ def main() -> int:
         tg.send_text(f"🔻 <b>Sinyal SHORT</b> · {now_wib_str(now)}\n"
                      f"{len(alertS)} koin di Stage 4 (tren turun) baru memantul ke zona Fibonacci lalu melemah lagi. "
                      f"BTC {REZIM_IKON.get(rz['rezim'], rz['rezim'])}.\n"
+                     + (f"{teks_kondisi(kp)}\n" if kp else "")
                      + (f"{btc_st}\n" if btc_st else "") +
                      "Jual dulu, beli kembali lebih murah. Punya koinnya → jual di spot. Tidak punya → buka posisi "
                      "short di futures (leverage rendah). Selalu pasang batas rugi.\n"
@@ -1258,7 +1351,7 @@ def main() -> int:
     if demo or (w.hour >= int(cfg["ringkasan_harian_jam_wib"]) and state.get("last_summary") != today):
         tg.send_text(summary_text(results, now, src_rank, dash, rk, rz, ps, btc_st,
                                   stage2 if cfg.get("sinyal_stage2", True) else None,
-                                  shorts if cfg.get("sinyal_short", True) else None, kand_short))
+                                  shorts if cfg.get("sinyal_short", True) else None, kand_short, kp, model_baris))
         if not demo:
             state["last_summary"] = today
 
@@ -1268,7 +1361,10 @@ def main() -> int:
                 ambang=dict(skor_min=cfg["skor_min"], selisih_min=cfg["selisih_min"]),
                 pasar=rz, tertahan=tertahan, siklus=ps, stage2_aktif=bool(cfg.get("sinyal_stage2", True)),
                 short_aktif=bool(cfg.get("sinyal_short", True)), short_leverage=cfg.get("short_leverage_maks", 2),
-                btc_siklus=(r_btc or {}).get("siklus"),
+                btc_siklus=(r_btc or {}).get("siklus"), kondisi_pasar=kp,
+                model_pasar=dict(aktif=pakai_model, baris=model_baris, pengaturan=mp,
+                                 putusan=model.get("putusan"), dibuat=model.get("dibuat_wib"),
+                                 beli=model.get("beli"), jual=model.get("jual")) if model else None,
                 filter=dict(pasar=cfg["filter_pasar"], meme=cfg["filter_meme"], breakout=cfg["wajib_breakout"],
                             min_rr=cfg["min_rr"], stage_naik=cfg["filter_stage_naik"],
                             stage_turun=cfg["filter_stage_turun"], min_checklist=cfg["min_checklist"]), rencana_cfg=R,

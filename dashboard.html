@@ -168,7 +168,7 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
                  3:["🟨","Stage 3 · Puncak","distribusi / pembentukan puncak"],4:["🟥","Stage 4 · Turun","tren turun (markdown)"]};
   const FASE = {"1":"membentuk dasar","1-akhir":"akhir dasar, siap tembus","1→2":"baru tembus dari dasar","2-awal":"awal naik","2":"naik berjalan",
                 "2-jenuh":"jenuh, rawan koreksi","3":"distribusi","3-akhir":"rawan jebol","3→4":"baru jebol dari puncak","4-awal":"awal turun","4":"turun berjalan"};
-  let BT = null, S4 = null;
+  let BT = null, S4 = null, MP = null;
   let DATA = null, tab = "naik", q = "", sortKey = "rank", sortDir = 1;
 
   // tema (disimpan per perangkat)
@@ -452,6 +452,99 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
       Kolom BTC = perubahan BTC sejak waktu alert (pembanding).</p>`;
   }
 
+  // ---- Model kondisi pasar ----
+  const sgn = x => (x > 0 ? "+" : "") + x;
+  function kondisiBlok(){
+    const kp = DATA.kondisi_pasar, mp = DATA.model_pasar;
+    if (!kp) return "";
+    const ik = {1:"🟢", 0:"⚪", "-1":"🔴"};
+    return `<div class="pasar" style="margin:0 0 12px">🌡️ Kondisi pasar: ${kp.ikon} <b>${esc(kp.nama)}</b> (skor ${sgn(kp.skor)} dari ±6)
+      ${mp ? ` · model pasar <b>${mp.aktif ? "aktif" : "tidak dipakai"}</b>` : ""}
+      <div class="ck" style="margin-top:6px">${kp.komponen.map(k => `<span>${ik[k.suara]} ${esc(k.nama)}: ${esc(k.teks)}</span>`).join("")}</div>
+      ${mp && mp.baris && mp.baris.length ? `<div style="margin-top:6px">${mp.baris.map(esc).join("<br>")}</div>` : ""}</div>`;
+  }
+  function skorChart(rows){
+    if (!rows || rows.length < 30) return "";
+    const W = 800, Ht = 230, L = 8, T = 8, B = 26;
+    const lb = rows.map(r => Math.log(r.b)), mn = Math.min(...lb), mx = Math.max(...lb);
+    const x = i => L + i * (W - 2 * L) / (rows.length - 1), y = v => T + (mx - v) * (Ht - T - B) / ((mx - mn) || 1);
+    const kode = s => s >= 4 ? 4 : s >= 2 ? 3 : s >= -1 ? 2 : s >= -3 ? 1 : 0;
+    const warna = ["var(--crit)", "var(--crit)", "var(--warn)", "var(--good)", "var(--good)"], op = [0.38, 0.16, 0.14, 0.16, 0.38];
+    let blok = "", a = 0;
+    for (let i = 1; i <= rows.length; i++) {
+      if (i === rows.length || kode(rows[i].s) !== kode(rows[a].s)) {
+        const k = kode(rows[a].s);
+        blok += `<rect x="${x(a).toFixed(1)}" y="${T}" width="${Math.max(1, x(Math.min(i, rows.length - 1)) - x(a)).toFixed(1)}" height="${Ht - T - B}" fill="${warna[k]}" opacity="${op[k]}"/>`;
+        a = i;
+      }
+    }
+    const garis = rows.map((r, i) => `${i ? "L" : "M"}${x(i).toFixed(1)} ${y(lb[i]).toFixed(1)}`).join(" ");
+    const tik = [0, Math.floor(rows.length / 3), Math.floor(rows.length * 2 / 3), rows.length - 1];
+    const usd = v => "$" + num(v, 0);
+    return `<svg class="cycle" viewBox="0 0 ${W} ${Ht}" role="img" aria-label="Harga BTC dengan latar kondisi pasar harian">
+      ${blok}<path d="${garis}" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
+      ${tik.map(i => `<text x="${x(i).toFixed(1)}" y="${Ht - 8}" font-size="11" fill="var(--ink-2)" text-anchor="${i === 0 ? "start" : i === rows.length - 1 ? "end" : "middle"}">${esc(rows[i].t)}</text>`).join("")}
+      <text x="${L + 4}" y="${T + 14}" font-size="11" fill="var(--ink-2)">BTC ${usd(Math.exp(mx))}</text>
+      <text x="${L + 4}" y="${Ht - B - 6}" font-size="11" fill="var(--ink-2)">${usd(Math.exp(mn))}</text>
+    </svg><p class="sub" style="margin-top:-6px">Garis = harga BTC (2 tahun terakhir). Latar: <b style="color:var(--good)">hijau</b> = naik/bull, <b style="color:var(--warn)">kuning</b> = netral, <b style="color:var(--crit)">merah</b> = turun/bear (makin pekat makin kuat).</p>`;
+  }
+  function modelPasarView(){
+    let h = kondisiBlok();
+    if (!MP) return h + `<div class="empty">Memuat hasil uji model pasar…</div>`;
+    const O = MP.oos, M = MP.model, modes = Object.keys(MP.hari_per_mode);
+    const per = r => r && r.n ? `<span class="${cls(r.rata)}">${pct(r.rata)}</span> <span class="sub">(${r.n}, menang ${num(r.menang,0)}%)</span>` : "-";
+    const thn = r => Object.entries(r.per_tahun).map(([y, v]) => `${y}: <span class="${cls(v)}">${pct(v)}</span>`).join(" · ");
+    const baris = (nm, r) => !r.kandidat ? `<tr><td>${esc(nm)}</td><td colspan="7">tidak ada sinyal</td></tr>` :
+      `<tr><td>${esc(nm)}</td><td class="${cls(r.total)}"><b>${pct(r.total)}</b> <span class="sub">(${pct(r.total_min)}…${pct(r.total_maks)})</span></td>
+       <td>${thn(r)}</td><td class="neg">${pct(r.maxdd)}</td><td>${num(r.sharpe,2)}</td><td>${r.transaksi}</td><td>${num(r.menang,0)}%</td><td class="${cls(r.rata)}">${pct(r.rata)}</td></tr>`;
+    const bp = O.berpasangan || {};
+    h += skorChart(MP.riwayat_skor);
+    h += `<p class="sub">Uji dibuat ${esc(MP.dibuat_wib)} · ${MP.data.koin} koin · sinyal ${esc(MP.dari)} s/d ${esc(MP.sampai)} · meme coin tidak ikut.
+      Skor pasar = 6 suara: BTC vs MA50, BTC vs MA200, % koin di atas MA50, Stage 2 vs Stage 4, arah lebar pasar, altcoin vs BTC.
+      Skor tinggi bukan berarti "waktunya beli" — lihat tabel "Kenapa" di bawah.</p>
+      <div class="pasar" style="margin:0 0 12px"><b>${MP.putusan.pakai ? "✅ Model baru dipakai radar" : "❌ Model baru tidak dipakai (radar memakai aturan lama)"}</b> — ${esc(MP.putusan.alasan)}.<br>
+        🟢 Beli boleh jalan saat: <b>${esc(M.beli.teks)}</b><br>🔻 Jual dulu boleh jalan saat: <b>${esc(M.jual.teks)}</b></div>
+      <h3>Uji portofolio di luar sampel (${esc(O.dari)} s/d ${esc(O.sampai)})</h3>
+      <p class="sub">Maks ${MP.maks_posisi} posisi sekaligus, modal dibagi rata, tanpa leverage. Batas skor tiap tahun uji dipilih hanya dari data tahun-tahun sebelumnya. Dalam kurung = hasil terendah…tertinggi dari berbagai urutan acak saat slot penuh.</p>
+      <div class="tbl-wrap"><table class="jj"><thead><tr><th>Susunan</th><th>Total</th><th>Per tahun</th><th>Maks turun</th><th>Sharpe</th><th>Transaksi</th><th>Menang</th><th>Rata-rata</th></tr></thead><tbody>
+      ${Object.entries(O.portofolio).map(([nm, r]) => baris(nm, r)).join("")}
+      <tr><td>Pembanding: beli &amp; tahan BTC</td><td class="${cls(O.btc.total)}"><b>${pct(O.btc.total)}</b></td><td>${thn(O.btc)}</td>
+        <td class="neg">${pct(O.btc.maxdd)}</td><td>${num(O.btc.sharpe,2)}</td><td>-</td><td>-</td><td>-</td></tr>
+      </tbody></table></div>
+      ${bp.benih ? `<p class="sub">Dengan urutan acak yang sama untuk kedua model (${bp.benih} urutan): model baru lebih untung di <b>${bp.total_lebih_baik} dari ${bp.benih}</b>, Sharpe lebih tinggi di ${bp.sharpe_lebih_baik}, penurunan maksimum lebih kecil di ${bp.maxdd_lebih_baik}.</p>` : ""}
+      <h3>Kenapa: hasil sinyal menurut kondisi pasar (2020–2026)</h3>
+      <div class="tbl-wrap"><table class="jj"><thead><tr><th></th>${modes.map(m => `<th>${esc(m)}</th>`).join("")}</tr></thead><tbody>
+      ${[["beli", "Sinyal beli saat BTC tren naik", "beli acak"], ["jual", "Sinyal jual dulu saat BTC tidak tren naik", "short acak"]].map(([k, judul, ac]) => {
+        const x = MP.inti[k];
+        return `<tr><td><b>${judul}</b></td>${modes.map(m => `<td>${per(x.sinyal[m])}</td>`).join("")}</tr>
+          <tr><td class="sub">↳ pembanding: ${ac}</td>${modes.map(m => `<td>${per(x.acak[m])}</td>`).join("")}</tr>
+          <tr><td class="sub">↳ jumlah hari</td>${modes.map(m => `<td>${x.hari[m]}</td>`).join("")}</tr>`; }).join("")}
+      </tbody></table></div>
+      <p class="sub">Sinyal beli paling untung saat BTC sudah tren naik tetapi pasar luas belum ikut naik; saat hampir semua sudah hijau (skor +5/+6) sinyal beli baru nyaris tidak untung.</p>
+      <h3>Batas yang terpilih tiap tahun uji (dari data sebelumnya)</h3>
+      <div class="tbl-wrap"><table class="jj"><thead><tr><th>Tahun uji</th><th>Sisi</th><th>Batas terpilih</th><th>Hasil di tahun uji</th><th>Bila tanpa batas (aturan lama)</th></tr></thead><tbody>
+      ${Object.entries(MP.walk).map(([th, sl]) => ["long", "short"].map(sisi => { const x = sl[sisi];
+        return `<tr><td>${th}</td><td>${sisi === "long" ? "beli" : "jual dulu"}</td><td>${x.batas < 6 ? "skor pasar ≤ " + sgn(x.batas) : "tanpa batas"}</td><td>${per(x.uji)}</td><td>${per(x.uji_lama)}</td></tr>`; }).join("")).join("")}
+      </tbody></table></div>
+      <h3>Uji kepekaan: batas beli dipasang tetap (bukan walk-forward)</h3>
+      <div class="tbl-wrap"><table class="jj"><thead><tr><th>Beli hanya bila skor pasar</th><th>Total</th><th>Per tahun</th><th>Maks turun</th><th>Sharpe</th><th>Transaksi</th><th>Menang</th><th>Rata-rata</th></tr></thead><tbody>
+      ${Object.entries(O.kepekaan).map(([b, r]) => `<tr><td>${b === "6" ? "tanpa batas (= model lama)" : "≤ " + sgn(+b)}</td><td class="${cls(r.total)}"><b>${pct(r.total)}</b></td><td>${thn(r)}</td>
+        <td class="neg">${pct(r.maxdd)}</td><td>${num(r.sharpe,2)}</td><td>${r.transaksi}</td><td>${num(r.menang,0)}%</td><td class="${cls(r.rata)}">${pct(r.rata)}</td></tr>`).join("")}
+      </tbody></table></div>
+      <h3>Strategi pada kondisi yang diizinkan model (seluruh data)</h3>
+      <div class="tbl-wrap"><table class="jj"><thead><tr><th>Strategi</th><th>Sisi</th><th>Status</th><th>Sinyal</th><th>Menang</th><th>Rata-rata bersih</th></tr></thead><tbody>
+      ${Object.values(M.strategi).map(a => `<tr><td>${esc(a.nama)}</td><td>${a.sisi === "long" ? "beli" : "jual dulu"}</td><td>${a.aktif ? "✅ aktif" : "✖ tidak aktif"}</td>
+        <td>${a.n ?? 0}</td><td>${a.n ? num(a.menang,0) + "%" : "-"}</td><td class="${cls(a.rata)}">${a.n ? pct(a.rata) : "-"}</td></tr>`).join("")}</tbody></table></div>
+      <h3>Hasil tiap strategi menurut kondisi pasar (semua arah BTC)</h3>
+      <div class="tbl-wrap"><table class="jj"><thead><tr><th>Strategi</th>${modes.map(k => `<th>${esc(k)}</th>`).join("")}<th>Semua</th></tr></thead><tbody>
+      ${Object.entries(MP.per_mode).map(([k, x]) => `<tr><td>${esc((M.strategi[k] || {}).nama || (k === "acak_long" ? "Pembanding: beli acak" : "Pembanding: short acak"))}</td>
+        ${modes.map(m => `<td>${per(x[m])}</td>`).join("")}<td>${per(x.semua)}</td></tr>`).join("")}</tbody></table></div>
+      <p class="sub"><b>Catatan jujur.</b> Rancangan pertama (tiap strategi boleh jalan mulai skor tertentu, dengan syarat statistik ketat) gagal — lihat baris "Percobaan 1".
+      Model yang dipakai sekarang dirancang setelah melihat hasil itu, jadi angka ujinya tidak sebersih uji buta. Model lama disetel memakai data 2024–2026, jadi di uji ini model lama diuntungkan.
+      Daftar koin = top CMC saat ini (survivorship bias). Untung-rugi dicatat saat posisi ditutup. Statistik masa lalu, bukan jaminan.</p>`;
+    return h;
+  }
+
   function btTabel(rows, judul){
     const r2 = (rows || []).filter(r => r.n);
     if (!r2.length) return "";
@@ -497,7 +590,9 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
     renderStats(); renderTabs();
     const list = filtered();
     let html = "";
-    if (tab === "backtest") {
+    if (tab === "modelpasar") {
+      html = modelPasarView();
+    } else if (tab === "backtest") {
       html = backtest();
     } else if (tab === "jejak") {
       html = jejak();
@@ -547,13 +642,18 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
       const ik = {"naik":"📈 NAIK","turun":"📉 TURUN","netral":"➖ SIDEWAYS"}[d.pasar.rezim] || d.pasar.rezim;
       const f = d.filter || {};
       $("#pasar").hidden = false;
-      $("#pasar").innerHTML = `Pasar BTC: <b>${ik}</b> (${esc(d.pasar.teks)})${d.tertahan ? ` · ⏸ ${d.tertahan} sinyal ditahan filter` : ""}
+      const kp = d.kondisi_pasar, mp = d.model_pasar;
+      $("#pasar").innerHTML = `${kp ? `🌡️ Kondisi pasar: ${kp.ikon} <b>${esc(kp.nama)}</b> (skor ${sgn(kp.skor)} dari ±6)${mp && mp.aktif && mp.baris ? " · " + mp.baris.map(esc).join(" · ") : ""}<br>` : ""}Pasar BTC: <b>${ik}</b> (${esc(d.pasar.teks)})${d.tertahan ? ` · ⏸ ${d.tertahan} sinyal ditahan filter` : ""}
         ${d.siklus ? `<br>🔄 Peta siklus: 🟦 Dasar ${d.siklus.jumlah["1"]} · 🟩 Naik ${d.siklus.jumlah["2"]} · 🟨 Puncak ${d.siklus.jumlah["3"]} · 🟥 Turun ${d.siklus.jumlah["4"]}` : ""}
         ${d.btc_siklus && d.btc_siklus.stage ? ` · BTC ${STAGE[d.btc_siklus.stage][0]} ${esc(d.btc_siklus.nama)}` : ""}
         <span class="sub"> · Filter: pasar ${f.pasar === false ? "mati" : f.pasar === true ? "aktif" : esc(String(f.pasar))}, meme ${f.meme === false ? "mati" : esc(String(f.meme))}${f.breakout ? ", wajib breakout" : ""}${f.min_rr ? ", rasio ≥ " + f.min_rr : ""}</span>`;
     }
     if (d.ada_siklus4) {
       fetch("siklus4/hasil.json?t=" + Date.now()).then(r => r.json()).then(x => { S4 = x; if (tab === "siklus") render(); }).catch(() => {});
+    }
+    if (d.ada_model_pasar) {
+      TABS.push(["modelpasar","🌡️ Model pasar"]);
+      fetch("model_pasar.json?t=" + Date.now()).then(r => r.json()).then(x => { MP = x; if (tab === "modelpasar") render(); }).catch(() => {});
     }
     if (d.ada_backtest) {
       TABS.push(["backtest","🧪 Backtest"]);

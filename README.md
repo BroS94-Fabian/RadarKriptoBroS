@@ -83,6 +83,20 @@ Kalau tidak ada pola: dipakai target Elliott Wave, atau resistance/support terde
 - **Rekam jejak** (tab 📈): setiap alert dicatat harganya, lalu tiap jam dihitung hasilnya: perubahan, kena target/batal,
   hasil bila mengikuti rencana jual (bersih setelah biaya & pajak), dan perubahan BTC di periode yang sama.
 
+## Model kondisi pasar (🌡️ skor pasar)
+Setiap hari pasar diberi **skor −6 … +6** dari 6 suara: BTC vs MA50, BTC vs MA200, % koin di atas MA50,
+jumlah koin Stage 2 vs Stage 4, arah lebar pasar 10 hari, dan altcoin vs BTC 30 hari (`pasar.py`).
+Skor tinggi bukan berarti "waktunya beli": sinyal beli terbaik muncul saat BTC baru tren naik tetapi pasar luas
+belum ikut naik; saat hampir semua sudah hijau (skor +5/+6, pasar kepanasan) sinyal beli baru nyaris tidak untung.
+
+**Model pasar** = aturan lama + batas skor: *beli* hanya saat BTC tren naik **dan** skor pasar ≤ batas beli;
+*jual dulu* hanya saat BTC tidak tren naik **dan** skor pasar ≤ batas jual. `backtest_pasar.py` menguji semua
+strategi pada data harian sejak 2020, memilih batas itu secara walk-forward (batas tiap tahun hanya dipilih dari
+data tahun-tahun sebelumnya), lalu membandingkan portofolio (maks 5 posisi) model lama vs baru di luar sampel.
+Hasil: `model_pasar/LAPORAN.md`, `model_pasar/model.json` dan tab 🌡️ Model pasar di dashboard.
+Radar membaca `model.json`; dengan `model_pasar: auto` (bawaan) batas skor hanya dipakai bila model baru menang di uji itu.
+Jalankan ulang: **Actions → Model Kondisi Pasar → Run workflow** (otomatis tiap tanggal 1).
+
 ## Backtest
 Menguji mesin analisa yang sama pada data harian ±2,7 tahun (top 200 CMC di Binance), membandingkan 12 aturan jual
 dan efek tiap filter. Jalankan: **Actions → Backtest Radar → Run workflow**. Hasil: `backtest/LAPORAN.md`

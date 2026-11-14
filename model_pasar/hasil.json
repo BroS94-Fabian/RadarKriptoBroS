@@ -1,6 +1,7 @@
 {
- "dibuat": "2026-11-14T09:43:03+00:00",
- "dibuat_wib": "14 Nov 2026 16:43 WIB",
+ "versi": 2,
+ "dibuat": "2026-11-14T10:06:20+00:00",
+ "dibuat_wib": "14 Nov 2026 17:06 WIB",
  "data": {
   "dibuat": "2026-11-14T09:34:50+00:00",
   "dibuat_wib": "14 Nov 2026 16:34 WIB",
@@ -14,14 +15,9 @@
  "dari": "2020-09-17",
  "sampai": "2026-10-14",
  "maks_posisi": 5,
- "syarat": {
-  "min_n": 40,
-  "min_bulan": 12,
-  "min_t": 2.0
- },
  "per_mode": {
   "radar_naik": {
-   "bear (≤−4)": {
+   "sangat lemah (≤−4)": {
     "n": 139,
     "bulan": 28,
     "menang": 59.7,
@@ -29,7 +25,7 @@
     "median": 2.08,
     "t": -1.77
    },
-   "turun (−3…−2)": {
+   "lemah (−3…−2)": {
     "n": 121,
     "bulan": 34,
     "menang": 72.7,
@@ -37,7 +33,7 @@
     "median": 2.08,
     "t": 0.86
    },
-   "netral (−1…+1)": {
+   "campuran (−1…+1)": {
     "n": 136,
     "bulan": 37,
     "menang": 69.1,
@@ -45,7 +41,7 @@
     "median": 2.08,
     "t": 0.82
    },
-   "naik (+2…+3)": {
+   "kuat (+2…+3)": {
     "n": 113,
     "bulan": 28,
     "menang": 72.6,
@@ -53,7 +49,7 @@
     "median": 2.08,
     "t": 0.65
    },
-   "bull (≥+4)": {
+   "sangat kuat (≥+4)": {
     "n": 70,
     "bulan": 25,
     "menang": 61.4,
@@ -71,7 +67,7 @@
    }
   },
   "awal_stage2": {
-   "bear (≤−4)": {
+   "sangat lemah (≤−4)": {
     "n": 53,
     "bulan": 23,
     "menang": 71.7,
@@ -79,7 +75,7 @@
     "median": 2.08,
     "t": -0.01
    },
-   "turun (−3…−2)": {
+   "lemah (−3…−2)": {
     "n": 44,
     "bulan": 25,
     "menang": 65.9,
@@ -87,7 +83,7 @@
     "median": 2.08,
     "t": -1.08
    },
-   "netral (−1…+1)": {
+   "campuran (−1…+1)": {
     "n": 118,
     "bulan": 38,
     "menang": 76.3,
@@ -95,7 +91,7 @@
     "median": 2.08,
     "t": 1.17
    },
-   "naik (+2…+3)": {
+   "kuat (+2…+3)": {
     "n": 201,
     "bulan": 38,
     "menang": 79.1,
@@ -103,7 +99,7 @@
     "median": 2.08,
     "t": 2.03
    },
-   "bull (≥+4)": {
+   "sangat kuat (≥+4)": {
     "n": 446,
     "bulan": 31,
     "menang": 72.0,
@@ -121,7 +117,7 @@
    }
   },
   "tembus_dasar": {
-   "bear (≤−4)": {
+   "sangat lemah (≤−4)": {
     "n": 11,
     "bulan": 10,
     "menang": 45.5,
@@ -129,7 +125,7 @@
     "median": -12.37,
     "t": -1.91
    },
-   "turun (−3…−2)": {
+   "lemah (−3…−2)": {
     "n": 11,
     "bulan": 9,
     "menang": 90.9,
@@ -137,7 +133,7 @@
     "median": 2.08,
     "t": 2.14
    },
-   "netral (−1…+1)": {
+   "campuran (−1…+1)": {
     "n": 39,
     "bulan": 17,
     "menang": 84.6,
@@ -145,7 +141,7 @@
     "median": 2.08,
     "t": 2.03
    },
-   "naik (+2…+3)": {
+   "kuat (+2…+3)": {
     "n": 98,
     "bulan": 15,
     "menang": 79.6,
@@ -153,7 +149,7 @@
     "median": 2.08,
     "t": 1.63
    },
-   "bull (≥+4)": {
+   "sangat kuat (≥+4)": {
     "n": 156,
     "bulan": 19,
     "menang": 71.8,
@@ -171,7 +167,7 @@
    }
   },
   "pullback_fib": {
-   "bear (≤−4)": {
+   "sangat lemah (≤−4)": {
     "n": 57,
     "bulan": 23,
     "menang": 68.4,
@@ -179,7 +175,7 @@
     "median": 2.08,
     "t": -1.06
    },
-   "turun (−3…−2)": {
+   "lemah (−3…−2)": {
     "n": 92,
     "bulan": 22,
     "menang": 73.9,
@@ -187,7 +183,7 @@
     "median": 2.08,
     "t": 0.17
    },
-   "netral (−1…+1)": {
+   "campuran (−1…+1)": {
     "n": 223,
     "bulan": 33,
     "menang": 66.8,
@@ -195,7 +191,7 @@
     "median": 2.08,
     "t": -0.65
    },
-   "naik (+2…+3)": {
+   "kuat (+2…+3)": {
     "n": 188,
     "bulan": 35,
     "menang": 79.8,
@@ -203,7 +199,7 @@
     "median": 2.08,
     "t": 1.15
    },
-   "bull (≥+4)": {
+   "sangat kuat (≥+4)": {
     "n": 264,
     "bulan": 23,
     "menang": 65.2,
@@ -221,7 +217,7 @@
    }
   },
   "pantul_fib": {
-   "bear (≤−4)": {
+   "sangat lemah (≤−4)": {
     "n": 131,
     "bulan": 18,
     "menang": 81.7,
@@ -229,7 +225,7 @@
     "median": 1.88,
     "t": 1.81
    },
-   "turun (−3…−2)": {
+   "lemah (−3…−2)": {
     "n": 83,
     "bulan": 20,
     "menang": 94.0,
@@ -237,7 +233,7 @@
     "median": 1.97,
     "t": 5.32
    },
-   "netral (−1…+1)": {
+   "campuran (−1…+1)": {
     "n": 59,
     "bulan": 23,
     "menang": 57.6,
@@ -245,7 +241,7 @@
     "median": 1.73,
     "t": -1.29
    },
-   "naik (+2…+3)": {
+   "kuat (+2…+3)": {
     "n": 104,
     "bulan": 17,
     "menang": 44.2,
@@ -253,7 +249,7 @@
     "median": -8.7,
     "t": -2.36
    },
-   "bull (≥+4)": {
+   "sangat kuat (≥+4)": {
     "n": 24,
     "bulan": 9,
     "menang": 75.0,
@@ -271,7 +267,7 @@
    }
   },
   "awal_stage4": {
-   "bear (≤−4)": {
+   "sangat lemah (≤−4)": {
     "n": 748,
     "bulan": 38,
     "menang": 68.4,
@@ -279,7 +275,7 @@
     "median": 2.0,
     "t": -1.0
    },
-   "turun (−3…−2)": {
+   "lemah (−3…−2)": {
     "n": 521,
     "bulan": 40,
     "menang": 78.5,
@@ -287,7 +283,7 @@
     "median": 2.0,
     "t": 0.93
    },
-   "netral (−1…+1)": {
+   "campuran (−1…+1)": {
     "n": 250,
     "bulan": 39,
     "menang": 66.8,
@@ -295,7 +291,7 @@
     "median": 1.97,
     "t": -0.84
    },
-   "naik (+2…+3)": {
+   "kuat (+2…+3)": {
     "n": 34,
     "bulan": 22,
     "menang": 70.6,
@@ -303,7 +299,7 @@
     "median": 1.99,
     "t": -0.08
    },
-   "bull (≥+4)": {
+   "sangat kuat (≥+4)": {
     "n": 26,
     "bulan": 13,
     "menang": 84.6,
@@ -321,7 +317,7 @@
    }
   },
   "jebol_puncak": {
-   "bear (≤−4)": {
+   "sangat lemah (≤−4)": {
     "n": 27,
     "bulan": 10,
     "menang": 74.1,
@@ -329,7 +325,7 @@
     "median": 1.91,
     "t": 0.04
    },
-   "turun (−3…−2)": {
+   "lemah (−3…−2)": {
     "n": 10,
     "bulan": 6,
     "menang": 70.0,
@@ -337,7 +333,7 @@
     "median": 1.97,
     "t": -0.35
    },
-   "netral (−1…+1)": {
+   "campuran (−1…+1)": {
     "n": 32,
     "bulan": 6,
     "menang": 75.0,
@@ -345,7 +341,7 @@
     "median": 1.87,
     "t": -0.13
    },
-   "naik (+2…+3)": {
+   "kuat (+2…+3)": {
     "n": 1,
     "bulan": 1,
     "menang": 100.0,
@@ -353,7 +349,7 @@
     "median": 2.03,
     "t": null
    },
-   "bull (≥+4)": {
+   "sangat kuat (≥+4)": {
     "n": 0
    },
    "semua": {
@@ -366,7 +362,7 @@
    }
   },
   "radar_turun": {
-   "bear (≤−4)": {
+   "sangat lemah (≤−4)": {
     "n": 44,
     "bulan": 23,
     "menang": 59.1,
@@ -374,7 +370,7 @@
     "median": 1.73,
     "t": -1.77
    },
-   "turun (−3…−2)": {
+   "lemah (−3…−2)": {
     "n": 27,
     "bulan": 14,
     "menang": 51.9,
@@ -382,7 +378,7 @@
     "median": 1.64,
     "t": -0.88
    },
-   "netral (−1…+1)": {
+   "campuran (−1…+1)": {
     "n": 34,
     "bulan": 17,
     "menang": 64.7,
@@ -390,7 +386,7 @@
     "median": 1.97,
     "t": -0.21
    },
-   "naik (+2…+3)": {
+   "kuat (+2…+3)": {
     "n": 14,
     "bulan": 8,
     "menang": 57.1,
@@ -398,7 +394,7 @@
     "median": 1.84,
     "t": -0.29
    },
-   "bull (≥+4)": {
+   "sangat kuat (≥+4)": {
     "n": 16,
     "bulan": 10,
     "menang": 75.0,
@@ -416,7 +412,7 @@
    }
   },
   "acak_long": {
-   "bear (≤−4)": {
+   "sangat lemah (≤−4)": {
     "n": 9932,
     "bulan": 41,
     "menang": 68.9,
@@ -424,7 +420,7 @@
     "median": 2.08,
     "t": -1.23
    },
-   "turun (−3…−2)": {
+   "lemah (−3…−2)": {
     "n": 6409,
     "bulan": 49,
     "menang": 66.7,
@@ -432,7 +428,7 @@
     "median": 2.08,
     "t": -1.58
    },
-   "netral (−1…+1)": {
+   "campuran (−1…+1)": {
     "n": 6757,
     "bulan": 52,
     "menang": 70.1,
@@ -440,7 +436,7 @@
     "median": 2.08,
     "t": -0.4
    },
-   "naik (+2…+3)": {
+   "kuat (+2…+3)": {
     "n": 4902,
     "bulan": 46,
     "menang": 70.8,
@@ -448,7 +444,7 @@
     "median": 2.08,
     "t": -0.31
    },
-   "bull (≥+4)": {
+   "sangat kuat (≥+4)": {
     "n": 5435,
     "bulan": 32,
     "menang": 67.7,
@@ -466,7 +462,7 @@
    }
   },
   "acak_short": {
-   "bear (≤−4)": {
+   "sangat lemah (≤−4)": {
     "n": 9932,
     "bulan": 41,
     "menang": 70.4,
@@ -474,7 +470,7 @@
     "median": 1.97,
     "t": -1.47
    },
-   "turun (−3…−2)": {
+   "lemah (−3…−2)": {
     "n": 6409,
     "bulan": 49,
     "menang": 71.3,
@@ -482,7 +478,7 @@
     "median": 2.0,
     "t": -0.37
    },
-   "netral (−1…+1)": {
+   "campuran (−1…+1)": {
     "n": 6757,
     "bulan": 52,
     "menang": 68.2,
@@ -490,7 +486,7 @@
     "median": 1.97,
     "t": -1.49
    },
-   "naik (+2…+3)": {
+   "kuat (+2…+3)": {
     "n": 4902,
     "bulan": 46,
     "menang": 65.6,
@@ -498,7 +494,7 @@
     "median": 1.97,
     "t": -1.69
    },
-   "bull (≥+4)": {
+   "sangat kuat (≥+4)": {
     "n": 5435,
     "bulan": 32,
     "menang": 73.0,
@@ -517,13 +513,798 @@
   }
  },
  "hari_per_mode": {
-  "bear (≤−4)": 641,
-  "turun (−3…−2)": 452,
-  "netral (−1…+1)": 560,
-  "naik (+2…+3)": 395,
-  "bull (≥+4)": 461
+  "sangat lemah (≤−4)": 641,
+  "lemah (−3…−2)": 452,
+  "campuran (−1…+1)": 560,
+  "kuat (+2…+3)": 395,
+  "sangat kuat (≥+4)": 461
+ },
+ "inti": {
+  "beli": {
+   "sinyal": {
+    "sangat lemah (≤−4)": {
+     "n": 0
+    },
+    "lemah (−3…−2)": {
+     "n": 35,
+     "bulan": 10,
+     "menang": 71.4,
+     "rata": 4.1,
+     "median": 2.08,
+     "t": 1.21
+    },
+    "campuran (−1…+1)": {
+     "n": 145,
+     "bulan": 33,
+     "menang": 80.7,
+     "rata": 2.86,
+     "median": 2.08,
+     "t": 2.88
+    },
+    "kuat (+2…+3)": {
+     "n": 277,
+     "bulan": 39,
+     "menang": 80.1,
+     "rata": 2.15,
+     "median": 2.08,
+     "t": 1.88
+    },
+    "sangat kuat (≥+4)": {
+     "n": 510,
+     "bulan": 31,
+     "menang": 71.4,
+     "rata": 0.27,
+     "median": 2.08,
+     "t": 0.42
+    }
+   },
+   "acak": {
+    "sangat lemah (≤−4)": {
+     "n": 31,
+     "bulan": 1,
+     "menang": 90.3,
+     "rata": 3.42,
+     "median": 7.07,
+     "t": null
+    },
+    "lemah (−3…−2)": {
+     "n": 1478,
+     "bulan": 15,
+     "menang": 76.3,
+     "rata": 1.04,
+     "median": 2.08,
+     "t": 0.78
+    },
+    "campuran (−1…+1)": {
+     "n": 4114,
+     "bulan": 39,
+     "menang": 72.3,
+     "rata": 0.22,
+     "median": 2.08,
+     "t": 0.27
+    },
+    "kuat (+2…+3)": {
+     "n": 4445,
+     "bulan": 42,
+     "menang": 72.7,
+     "rata": 0.14,
+     "median": 2.08,
+     "t": 0.21
+    },
+    "sangat kuat (≥+4)": {
+     "n": 5341,
+     "bulan": 31,
+     "menang": 67.9,
+     "rata": -0.74,
+     "median": 2.08,
+     "t": -1.3
+    }
+   },
+   "hari": {
+    "sangat lemah (≤−4)": 3,
+    "lemah (−3…−2)": 70,
+    "campuran (−1…+1)": 287,
+    "kuat (+2…+3)": 332,
+    "sangat kuat (≥+4)": 445
+   }
+  },
+  "jual": {
+   "sinyal": {
+    "sangat lemah (≤−4)": {
+     "n": 131,
+     "bulan": 18,
+     "menang": 81.7,
+     "rata": 1.54,
+     "median": 1.88,
+     "t": 1.81
+    },
+    "lemah (−3…−2)": {
+     "n": 75,
+     "bulan": 15,
+     "menang": 93.3,
+     "rata": 4.2,
+     "median": 1.94,
+     "t": 4.76
+    },
+    "campuran (−1…+1)": {
+     "n": 17,
+     "bulan": 10,
+     "menang": 94.1,
+     "rata": 5.85,
+     "median": 2.0,
+     "t": 2.44
+    },
+    "kuat (+2…+3)": {
+     "n": 3,
+     "bulan": 2,
+     "menang": 100.0,
+     "rata": 1.95,
+     "median": 1.91,
+     "t": 73.22
+    },
+    "sangat kuat (≥+4)": {
+     "n": 0
+    }
+   },
+   "acak": {
+    "sangat lemah (≤−4)": {
+     "n": 9901,
+     "bulan": 40,
+     "menang": 70.5,
+     "rata": -0.48,
+     "median": 2.0,
+     "t": -1.42
+    },
+    "lemah (−3…−2)": {
+     "n": 4931,
+     "bulan": 45,
+     "menang": 75.4,
+     "rata": 0.58,
+     "median": 2.03,
+     "t": 1.14
+    },
+    "campuran (−1…+1)": {
+     "n": 2643,
+     "bulan": 35,
+     "menang": 73.7,
+     "rata": 0.24,
+     "median": 2.0,
+     "t": 0.35
+    },
+    "kuat (+2…+3)": {
+     "n": 457,
+     "bulan": 10,
+     "menang": 79.9,
+     "rata": 1.66,
+     "median": 6.71,
+     "t": 1.72
+    },
+    "sangat kuat (≥+4)": {
+     "n": 94,
+     "bulan": 4,
+     "menang": 75.5,
+     "rata": 0.58,
+     "median": 2.03,
+     "t": 0.23
+    }
+   },
+   "hari": {
+    "sangat lemah (≤−4)": 638,
+    "lemah (−3…−2)": 382,
+    "campuran (−1…+1)": 273,
+    "kuat (+2…+3)": 63,
+    "sangat kuat (≥+4)": 16
+   }
+  }
  },
  "walk": {
+  "2023": {
+   "long": {
+    "batas": 6,
+    "sharpe": 2.12,
+    "n": 177,
+    "rata": 2.52,
+    "kandidat": [
+     {
+      "batas": 6,
+      "n": 177,
+      "rata": 2.52,
+      "sharpe": 2.12,
+      "total": 107.2
+     },
+     {
+      "batas": 5,
+      "n": 172,
+      "rata": 2.65,
+      "sharpe": 2.19,
+      "total": 111.0
+     },
+     {
+      "batas": 4,
+      "n": 114,
+      "rata": 3.66,
+      "sharpe": 1.99,
+      "total": 100.9
+     },
+     {
+      "batas": 3,
+      "n": 67,
+      "rata": 4.42,
+      "sharpe": 2.16,
+      "total": 74.4
+     },
+     {
+      "batas": 2,
+      "n": 32,
+      "rata": 5.42,
+      "sharpe": 1.97,
+      "total": 39.6
+     }
+    ],
+    "strategi": [
+     "radar_naik",
+     "awal_stage2"
+    ],
+    "pendatang": {
+     "tembus_dasar": {
+      "n": 8,
+      "rata": 1.66,
+      "masuk": false
+     },
+     "pullback_fib": {
+      "n": 110,
+      "rata": 3.4,
+      "masuk": false,
+      "sharpe_gabung": 2.06
+     }
+    },
+    "uji": {
+     "n": 267,
+     "bulan": 10,
+     "menang": 70.0,
+     "rata": -0.02,
+     "median": 2.08,
+     "t": -0.02
+    },
+    "uji_lama": {
+     "n": 267,
+     "bulan": 10,
+     "menang": 70.0,
+     "rata": -0.02,
+     "median": 2.08,
+     "t": -0.02
+    }
+   },
+   "short": {
+    "batas": 6,
+    "sharpe": null,
+    "n": 18,
+    "rata": null,
+    "kandidat": [],
+    "strategi": [
+     "pantul_fib"
+    ],
+    "pendatang": {
+     "awal_stage4": {
+      "n": 352,
+      "rata": 0.81,
+      "masuk": false
+     },
+     "jebol_puncak": {
+      "n": 6,
+      "rata": 1.99,
+      "masuk": false
+     },
+     "radar_turun": {
+      "n": 30,
+      "rata": -2.05,
+      "masuk": false
+     }
+    },
+    "uji": {
+     "n": 13,
+     "bulan": 5,
+     "menang": 92.3,
+     "rata": 1.79,
+     "median": 1.85,
+     "t": 2.08
+    },
+    "uji_lama": {
+     "n": 13,
+     "bulan": 5,
+     "menang": 92.3,
+     "rata": 1.79,
+     "median": 1.85,
+     "t": 2.08
+    }
+   }
+  },
+  "2024": {
+   "long": {
+    "batas": 4,
+    "sharpe": 1.59,
+    "n": 295,
+    "rata": 1.58,
+    "kandidat": [
+     {
+      "batas": 6,
+      "n": 439,
+      "rata": 1.0,
+      "sharpe": 1.45,
+      "total": 144.9
+     },
+     {
+      "batas": 5,
+      "n": 428,
+      "rata": 1.11,
+      "sharpe": 1.54,
+      "total": 163.5
+     },
+     {
+      "batas": 4,
+      "n": 295,
+      "rata": 1.58,
+      "sharpe": 1.59,
+      "total": 156.2
+     },
+     {
+      "batas": 3,
+      "n": 179,
+      "rata": 2.57,
+      "sharpe": 1.67,
+      "total": 134.9
+     },
+     {
+      "batas": 2,
+      "n": 100,
+      "rata": 2.69,
+      "sharpe": 1.67,
+      "total": 71.6
+     },
+     {
+      "batas": 1,
+      "n": 67,
+      "rata": 2.58,
+      "sharpe": 1.07,
+      "total": 40.9
+     }
+    ],
+    "strategi": [
+     "radar_naik",
+     "awal_stage2",
+     "tembus_dasar"
+    ],
+    "pendatang": {
+     "tembus_dasar": {
+      "n": 68,
+      "rata": 2.9,
+      "masuk": true,
+      "sharpe_gabung": 1.7
+     },
+     "pullback_fib": {
+      "n": 147,
+      "rata": 1.82,
+      "masuk": false,
+      "sharpe_gabung": 1.73
+     }
+    },
+    "uji": {
+     "n": 194,
+     "bulan": 10,
+     "menang": 84.0,
+     "rata": 3.77,
+     "median": 7.07,
+     "t": 2.2
+    },
+    "uji_lama": {
+     "n": 252,
+     "bulan": 11,
+     "menang": 81.0,
+     "rata": 2.84,
+     "median": 2.08,
+     "t": 1.61
+    }
+   },
+   "short": {
+    "batas": 6,
+    "sharpe": 1.69,
+    "n": 31,
+    "rata": 3.83,
+    "kandidat": [
+     {
+      "batas": 6,
+      "n": 31,
+      "rata": 3.83,
+      "sharpe": 1.69,
+      "total": 25.4
+     },
+     {
+      "batas": 1,
+      "n": 31,
+      "rata": 3.83,
+      "sharpe": 1.69,
+      "total": 25.4
+     },
+     {
+      "batas": -1,
+      "n": 30,
+      "rata": 3.51,
+      "sharpe": 1.55,
+      "total": 22.1
+     }
+    ],
+    "strategi": [
+     "pantul_fib"
+    ],
+    "pendatang": {
+     "awal_stage4": {
+      "n": 496,
+      "rata": 0.99,
+      "masuk": false,
+      "sharpe_gabung": 0.67
+     },
+     "jebol_puncak": {
+      "n": 17,
+      "rata": 1.35,
+      "masuk": false
+     },
+     "radar_turun": {
+      "n": 42,
+      "rata": -1.16,
+      "masuk": false
+     }
+    },
+    "uji": {
+     "n": 23,
+     "bulan": 8,
+     "menang": 73.9,
+     "rata": 1.13,
+     "median": 1.82,
+     "t": 0.41
+    },
+    "uji_lama": {
+     "n": 23,
+     "bulan": 8,
+     "menang": 73.9,
+     "rata": 1.13,
+     "median": 1.82,
+     "t": 0.41
+    }
+   }
+  },
+  "2025": {
+   "long": {
+    "batas": 3,
+    "sharpe": 1.47,
+    "n": 310,
+    "rata": 3.3,
+    "kandidat": [
+     {
+      "batas": 6,
+      "n": 696,
+      "rata": 1.66,
+      "sharpe": 1.19,
+      "total": 216.3
+     },
+     {
+      "batas": 5,
+      "n": 679,
+      "rata": 1.77,
+      "sharpe": 1.24,
+      "total": 235.6
+     },
+     {
+      "batas": 4,
+      "n": 489,
+      "rata": 2.45,
+      "sharpe": 1.33,
+      "total": 251.5
+     },
+     {
+      "batas": 3,
+      "n": 310,
+      "rata": 3.3,
+      "sharpe": 1.47,
+      "total": 224.8
+     },
+     {
+      "batas": 2,
+      "n": 184,
+      "rata": 3.94,
+      "sharpe": 1.37,
+      "total": 107.3
+     },
+     {
+      "batas": 1,
+      "n": 113,
+      "rata": 3.76,
+      "sharpe": 1.06,
+      "total": 60.1
+     }
+    ],
+    "strategi": [
+     "radar_naik",
+     "awal_stage2"
+    ],
+    "pendatang": {
+     "tembus_dasar": {
+      "n": 76,
+      "rata": 2.29,
+      "masuk": false,
+      "sharpe_gabung": 1.49
+     },
+     "pullback_fib": {
+      "n": 214,
+      "rata": 0.73,
+      "masuk": false,
+      "sharpe_gabung": 1.19
+     }
+    },
+    "uji": {
+     "n": 73,
+     "bulan": 8,
+     "menang": 63.0,
+     "rata": -1.55,
+     "median": 2.08,
+     "t": -0.89
+    },
+    "uji_lama": {
+     "n": 105,
+     "bulan": 8,
+     "menang": 63.8,
+     "rata": -1.55,
+     "median": 2.08,
+     "t": -1.15
+    }
+   },
+   "short": {
+    "batas": 6,
+    "sharpe": 1.15,
+    "n": 54,
+    "rata": 2.68,
+    "kandidat": [
+     {
+      "batas": 6,
+      "n": 54,
+      "rata": 2.68,
+      "sharpe": 1.15,
+      "total": 26.2
+     },
+     {
+      "batas": 1,
+      "n": 54,
+      "rata": 2.68,
+      "sharpe": 1.15,
+      "total": 26.2
+     },
+     {
+      "batas": -1,
+      "n": 46,
+      "rata": 1.64,
+      "sharpe": 0.78,
+      "total": 14.9
+     },
+     {
+      "batas": -2,
+      "n": 39,
+      "rata": 1.55,
+      "sharpe": 0.64,
+      "total": 11.5
+     },
+     {
+      "batas": -3,
+      "n": 37,
+      "rata": 1.92,
+      "sharpe": 0.78,
+      "total": 13.9
+     }
+    ],
+    "strategi": [
+     "pantul_fib"
+    ],
+    "pendatang": {
+     "awal_stage4": {
+      "n": 653,
+      "rata": 0.02,
+      "masuk": false,
+      "sharpe_gabung": 0.12
+     },
+     "jebol_puncak": {
+      "n": 36,
+      "rata": -0.68,
+      "masuk": false
+     },
+     "radar_turun": {
+      "n": 46,
+      "rata": -1.18,
+      "masuk": false
+     }
+    },
+    "uji": {
+     "n": 133,
+     "bulan": 9,
+     "menang": 91.7,
+     "rata": 3.57,
+     "median": 1.91,
+     "t": 7.74
+    },
+    "uji_lama": {
+     "n": 133,
+     "bulan": 9,
+     "menang": 91.7,
+     "rata": 3.57,
+     "median": 1.91,
+     "t": 7.74
+    }
+   }
+  },
+  "2026": {
+   "long": {
+    "batas": 4,
+    "sharpe": 1.17,
+    "n": 575,
+    "rata": 1.9,
+    "kandidat": [
+     {
+      "batas": 6,
+      "n": 801,
+      "rata": 1.24,
+      "sharpe": 1.03,
+      "total": 212.2
+     },
+     {
+      "batas": 5,
+      "n": 783,
+      "rata": 1.35,
+      "sharpe": 1.05,
+      "total": 229.4
+     },
+     {
+      "batas": 4,
+      "n": 575,
+      "rata": 1.9,
+      "sharpe": 1.17,
+      "total": 265.6
+     },
+     {
+      "batas": 3,
+      "n": 383,
+      "rata": 2.38,
+      "sharpe": 1.27,
+      "total": 234.5
+     },
+     {
+      "batas": 2,
+      "n": 231,
+      "rata": 3.38,
+      "sharpe": 1.23,
+      "total": 127.6
+     },
+     {
+      "batas": 1,
+      "n": 147,
+      "rata": 3.18,
+      "sharpe": 0.94,
+      "total": 72.3
+     }
+    ],
+    "strategi": [
+     "radar_naik",
+     "awal_stage2",
+     "tembus_dasar"
+    ],
+    "pendatang": {
+     "tembus_dasar": {
+      "n": 143,
+      "rata": 1.91,
+      "masuk": true,
+      "sharpe_gabung": 1.28
+     },
+     "pullback_fib": {
+      "n": 374,
+      "rata": -0.22,
+      "masuk": false
+     }
+    },
+    "uji": {
+     "n": 101,
+     "bulan": 7,
+     "menang": 80.2,
+     "rata": 2.6,
+     "median": 2.08,
+     "t": 1.82
+    },
+    "uji_lama": {
+     "n": 166,
+     "bulan": 7,
+     "menang": 76.5,
+     "rata": 1.78,
+     "median": 2.08,
+     "t": 1.5
+    }
+   },
+   "short": {
+    "batas": 6,
+    "sharpe": 1.07,
+    "n": 187,
+    "rata": 3.31,
+    "kandidat": [
+     {
+      "batas": 6,
+      "n": 187,
+      "rata": 3.31,
+      "sharpe": 1.07,
+      "total": 42.0
+     },
+     {
+      "batas": 1,
+      "n": 184,
+      "rata": 3.33,
+      "sharpe": 1.03,
+      "total": 40.4
+     },
+     {
+      "batas": -1,
+      "n": 176,
+      "rata": 3.09,
+      "sharpe": 0.78,
+      "total": 27.8
+     },
+     {
+      "batas": -2,
+      "n": 168,
+      "rata": 3.07,
+      "sharpe": 0.62,
+      "total": 20.9
+     },
+     {
+      "batas": -3,
+      "n": 136,
+      "rata": 2.63,
+      "sharpe": 0.97,
+      "total": 31.3
+     }
+    ],
+    "strategi": [
+     "pantul_fib"
+    ],
+    "pendatang": {
+     "awal_stage4": {
+      "n": 965,
+      "rata": -0.07,
+      "masuk": false
+     },
+     "jebol_puncak": {
+      "n": 55,
+      "rata": -1.26,
+      "masuk": false
+     },
+     "radar_turun": {
+      "n": 57,
+      "rata": -1.26,
+      "masuk": false
+     }
+    },
+    "uji": {
+     "n": 39,
+     "bulan": 5,
+     "menang": 71.8,
+     "rata": 0.06,
+     "median": 2.0,
+     "t": 0.05
+    },
+    "uji_lama": {
+     "n": 39,
+     "bulan": 5,
+     "menang": 71.8,
+     "rata": 0.06,
+     "median": 2.0,
+     "t": 0.05
+    }
+   }
+  }
+ },
+ "walk_percobaan1": {
   "2023": {
    "radar_naik": {
     "n": 79,
@@ -855,134 +1636,172 @@
   "sampai": "2026-10-14",
   "portofolio": {
    "Model LAMA (aturan tetap BTC MA50)": {
-    "total": 134.8,
-    "total_min": 93.9,
-    "total_maks": 187.3,
-    "cagr": 24.7,
-    "maxdd": -24.9,
-    "sharpe": 0.83,
+    "total": 131.1,
+    "total_min": 71.8,
+    "total_maks": 232.3,
+    "cagr": 24.2,
+    "maxdd": -25.35,
+    "sharpe": 0.8,
     "per_tahun": {
-     "2023": 31.4,
-     "2024": 20.3,
-     "2025": 11.9,
-     "2026": 36.0
+     "2023": 25.9,
+     "2024": 21.4,
+     "2025": 10.6,
+     "2026": 35.0
     },
-    "transaksi": 519,
+    "transaksi": 522,
     "menang": 74.5,
-    "rata": 0.97,
+    "rata": 0.94,
     "terisi": 82.0,
     "kandidat": 998
    },
-   "Model BARU (mengikuti skor pasar)": {
-    "total": -29.9,
-    "total_min": -35.4,
-    "total_maks": -23.5,
-    "cagr": -8.75,
-    "maxdd": -30.6,
-    "sharpe": -0.78,
+   "Model BARU (aturan lama + batas skor pasar)": {
+    "total": 183.95,
+    "total_min": 120.3,
+    "total_maks": 275.0,
+    "cagr": 30.95,
+    "maxdd": -23.95,
+    "sharpe": 1.04,
     "per_tahun": {
-     "2023": 0.0,
-     "2024": -29.5,
-     "2025": 0.0,
-     "2026": -0.7
+     "2023": 25.9,
+     "2024": 36.0,
+     "2025": 16.0,
+     "2026": 38.3
     },
-    "transaksi": 61,
-    "menang": 55.7,
-    "rata": -2.71,
-    "terisi": 10.0,
-    "kandidat": 105
+    "transaksi": 442,
+    "menang": 76.1,
+    "rata": 1.32,
+    "terisi": 79.0,
+    "kandidat": 843
+   },
+   "Model BARU + strategi pendatang": {
+    "total": 224.6,
+    "total_min": 130.3,
+    "total_maks": 354.9,
+    "cagr": 35.6,
+    "maxdd": -23.95,
+    "sharpe": 1.14,
+    "per_tahun": {
+     "2023": 25.9,
+     "2024": 51.4,
+     "2025": 16.0,
+     "2026": 45.0
+    },
+    "transaksi": 470,
+    "menang": 76.7,
+    "rata": 1.4,
+    "terisi": 79.0,
+    "kandidat": 969
    },
    "LAMA — hanya beli": {
-    "total": 76.2,
-    "total_min": 40.2,
-    "total_maks": 126.3,
-    "cagr": 15.8,
-    "maxdd": -24.0,
-    "sharpe": 0.56,
+    "total": 80.45,
+    "total_min": 34.4,
+    "total_maks": 137.0,
+    "cagr": 16.5,
+    "maxdd": -24.4,
+    "sharpe": 0.55,
     "per_tahun": {
-     "2023": 28.4,
-     "2024": 22.0,
-     "2025": -3.3,
-     "2026": 21.2
+     "2023": 22.2,
+     "2024": 22.9,
+     "2025": -1.9,
+     "2026": 20.9
     },
-    "transaksi": 428,
-    "menang": 72.7,
-    "rata": 0.83,
+    "transaksi": 427,
+    "menang": 72.8,
+    "rata": 0.86,
     "terisi": 54.0,
     "kandidat": 790
    },
    "BARU — hanya beli": {
-    "total": -29.45,
-    "total_min": -34.9,
-    "total_maks": -23.0,
-    "cagr": -8.65,
-    "maxdd": -30.6,
-    "sharpe": -0.76,
+    "total": 119.65,
+    "total_min": 71.6,
+    "total_maks": 167.5,
+    "cagr": 22.55,
+    "maxdd": -23.15,
+    "sharpe": 0.77,
     "per_tahun": {
-     "2023": 0.0,
-     "2024": -29.5,
-     "2025": 0.0,
-     "2026": 0.0
+     "2023": 22.2,
+     "2024": 37.2,
+     "2025": 1.5,
+     "2026": 25.2
     },
-    "transaksi": 60,
-    "menang": 56.7,
-    "rata": -2.69,
-    "terisi": 8.0,
-    "kandidat": 104
+    "transaksi": 348,
+    "menang": 74.5,
+    "rata": 1.3,
+    "terisi": 51.0,
+    "kandidat": 635
    },
    "LAMA — hanya jual dulu (short)": {
-    "total": 27.75,
-    "total_min": 13.8,
-    "total_maks": 35.7,
+    "total": 27.85,
+    "total_min": 14.7,
+    "total_maks": 42.8,
     "cagr": 6.55,
     "maxdd": -7.4,
-    "sharpe": 0.94,
+    "sharpe": 0.89,
     "per_tahun": {
      "2023": 4.3,
      "2024": 0.6,
-     "2025": 11.3,
-     "2026": 10.2
+     "2025": 12.1,
+     "2026": 9.9
     },
     "transaksi": 100,
-    "menang": 81.0,
-    "rata": 1.29,
+    "menang": 80.8,
+    "rata": 1.33,
     "terisi": 35.0,
     "kandidat": 208
    },
    "BARU — hanya jual dulu (short)": {
-    "total": -0.7,
-    "total_min": -0.7,
-    "total_maks": -0.7,
-    "cagr": -0.2,
-    "maxdd": -0.7,
-    "sharpe": -0.51,
+    "total": 27.85,
+    "total_min": 14.7,
+    "total_maks": 42.8,
+    "cagr": 6.55,
+    "maxdd": -7.4,
+    "sharpe": 0.89,
+    "per_tahun": {
+     "2023": 4.3,
+     "2024": 0.6,
+     "2025": 12.1,
+     "2026": 9.9
+    },
+    "transaksi": 100,
+    "menang": 80.8,
+    "rata": 1.33,
+    "terisi": 35.0,
+    "kandidat": 208
+   },
+   "Percobaan 1 (ambang skor per strategi, syarat t ≥ 2) — gagal": {
+    "total": -30.7,
+    "total_min": -37.4,
+    "total_maks": -21.0,
+    "cagr": -9.0,
+    "maxdd": -32.3,
+    "sharpe": -0.77,
     "per_tahun": {
      "2023": 0.0,
-     "2024": 0.0,
+     "2024": -30.2,
      "2025": 0.0,
      "2026": -0.7
     },
-    "transaksi": 1,
-    "menang": 0.0,
-    "rata": -3.47,
-    "terisi": 2.0,
-    "kandidat": 1
+    "transaksi": 61,
+    "menang": 55.0,
+    "rata": -2.8,
+    "terisi": 10.0,
+    "kandidat": 105
    },
    "Tanpa filter pasar (3 strategi live, semua kondisi)": {
-    "total": 9.4,
-    "total_min": -10.4,
-    "total_maks": 48.1,
-    "cagr": 2.35,
-    "maxdd": -40.8,
-    "sharpe": 0.13,
+    "total": 8.25,
+    "total_min": -20.3,
+    "total_maks": 82.0,
+    "cagr": 2.1,
+    "maxdd": -41.1,
+    "sharpe": 0.1,
     "per_tahun": {
-     "2023": -11.5,
-     "2024": 17.2,
-     "2025": -16.2,
-     "2026": 24.6
+     "2023": -9.0,
+     "2024": 14.3,
+     "2025": -17.0,
+     "2026": 21.9
     },
-    "transaksi": 714,
-    "menang": 70.6,
+    "transaksi": 716,
+    "menang": 70.7,
     "rata": 0.19,
     "terisi": 95.0,
     "kandidat": 1514
@@ -997,13 +1816,21 @@
     "median": 2.08,
     "t": 1.9
    },
-   "Model BARU (mengikuti skor pasar)": {
-    "n": 105,
-    "bulan": 10,
-    "menang": 42.9,
-    "rata": -4.98,
-    "median": -12.37,
-    "t": -2.16
+   "Model BARU (aturan lama + batas skor pasar)": {
+    "n": 843,
+    "bulan": 46,
+    "menang": 77.8,
+    "rata": 1.66,
+    "median": 2.08,
+    "t": 2.18
+   },
+   "Model BARU + strategi pendatang": {
+    "n": 969,
+    "bulan": 46,
+    "menang": 77.5,
+    "rata": 1.61,
+    "median": 2.08,
+    "t": 2.37
    },
    "LAMA — hanya beli": {
     "n": 790,
@@ -1014,12 +1841,12 @@
     "t": 1.22
    },
    "BARU — hanya beli": {
-    "n": 104,
-    "bulan": 9,
-    "menang": 43.3,
-    "rata": -4.99,
-    "median": -12.37,
-    "t": -2.13
+    "n": 635,
+    "bulan": 35,
+    "menang": 75.1,
+    "rata": 1.38,
+    "median": 2.08,
+    "t": 1.42
    },
    "LAMA — hanya jual dulu (short)": {
     "n": 208,
@@ -1030,12 +1857,20 @@
     "t": 2.81
    },
    "BARU — hanya jual dulu (short)": {
-    "n": 1,
-    "bulan": 1,
-    "menang": 0.0,
-    "rata": -3.47,
-    "median": -3.47,
-    "t": null
+    "n": 208,
+    "bulan": 27,
+    "menang": 86.1,
+    "rata": 2.53,
+    "median": 1.91,
+    "t": 2.81
+   },
+   "Percobaan 1 (ambang skor per strategi, syarat t ≥ 2) — gagal": {
+    "n": 105,
+    "bulan": 10,
+    "menang": 42.9,
+    "rata": -4.98,
+    "median": -12.37,
+    "t": -2.16
    },
    "Tanpa filter pasar (3 strategi live, semua kondisi)": {
     "n": 1514,
@@ -1048,42 +1883,224 @@
   },
   "portofolio_10": {
    "Model LAMA (aturan tetap BTC MA50)": {
-    "total": 98.0,
-    "total_min": 84.9,
-    "total_maks": 114.3,
-    "cagr": 19.3,
+    "total": 94.9,
+    "total_min": 77.2,
+    "total_maks": 123.1,
+    "cagr": 18.8,
     "maxdd": -21.6,
-    "sharpe": 0.76,
+    "sharpe": 0.74,
     "per_tahun": {
-     "2023": 10.9,
-     "2024": 38.2,
-     "2025": 7.2,
-     "2026": 20.6
+     "2023": 9.8,
+     "2024": 37.1,
+     "2025": 6.1,
+     "2026": 21.0
     },
     "transaksi": 725,
     "menang": 74.9,
-    "rata": 1.06,
+    "rata": 1.05,
     "terisi": 83.0,
     "kandidat": 998
    },
-   "Model BARU (mengikuti skor pasar)": {
-    "total": -30.55,
-    "total_min": -34.5,
-    "total_maks": -28.5,
-    "cagr": -8.95,
-    "maxdd": -30.55,
-    "sharpe": -0.98,
+   "Model BARU (aturan lama + batas skor pasar)": {
+    "total": 110.95,
+    "total_min": 94.0,
+    "total_maks": 131.0,
+    "cagr": 21.3,
+    "maxdd": -21.6,
+    "sharpe": 0.91,
     "per_tahun": {
-     "2023": 0.0,
-     "2024": -30.2,
-     "2025": 0.0,
-     "2026": -0.3
+     "2023": 9.8,
+     "2024": 43.7,
+     "2025": 9.4,
+     "2026": 21.6
     },
-    "transaksi": 87,
-    "menang": 49.4,
-    "rata": -3.96,
-    "terisi": 11.0,
-    "kandidat": 105
+    "transaksi": 604,
+    "menang": 76.3,
+    "rata": 1.37,
+    "terisi": 80.0,
+    "kandidat": 843
+   },
+   "Model BARU + strategi pendatang": {
+    "total": 129.0,
+    "total_min": 104.6,
+    "total_maks": 171.8,
+    "cagr": 23.85,
+    "maxdd": -21.6,
+    "sharpe": 0.99,
+    "per_tahun": {
+     "2023": 9.8,
+     "2024": 50.8,
+     "2025": 9.4,
+     "2026": 25.9
+    },
+    "transaksi": 655,
+    "menang": 76.8,
+    "rata": 1.39,
+    "terisi": 81.0,
+    "kandidat": 969
+   }
+  },
+  "portofolio_3": {
+   "Model LAMA (aturan tetap BTC MA50)": {
+    "total": 168.55,
+    "total_min": 76.4,
+    "total_maks": 292.7,
+    "cagr": 29.05,
+    "maxdd": -34.2,
+    "sharpe": 0.83,
+    "per_tahun": {
+     "2023": 57.0,
+     "2024": 10.0,
+     "2025": 5.2,
+     "2026": 46.9
+    },
+    "transaksi": 364,
+    "menang": 75.0,
+    "rata": 0.99,
+    "terisi": 81.0,
+    "kandidat": 998
+   },
+   "Model BARU (aturan lama + batas skor pasar)": {
+    "total": 242.3,
+    "total_min": 113.1,
+    "total_maks": 353.7,
+    "cagr": 37.45,
+    "maxdd": -23.2,
+    "sharpe": 1.08,
+    "per_tahun": {
+     "2023": 57.0,
+     "2024": 29.8,
+     "2025": 7.5,
+     "2026": 52.0
+    },
+    "transaksi": 311,
+    "menang": 76.4,
+    "rata": 1.35,
+    "terisi": 77.0,
+    "kandidat": 843
+   }
+  },
+  "berpasangan": {
+   "benih": 100,
+   "total_lebih_baik": 100,
+   "sharpe_lebih_baik": 100,
+   "maxdd_lebih_baik": 53,
+   "selisih_total_median": 48.5
+  },
+  "kepekaan": {
+   "6": {
+    "total": 131.1,
+    "total_min": 71.8,
+    "total_maks": 232.3,
+    "cagr": 24.2,
+    "maxdd": -25.35,
+    "sharpe": 0.8,
+    "per_tahun": {
+     "2023": 25.9,
+     "2024": 21.4,
+     "2025": 10.6,
+     "2026": 35.0
+    },
+    "transaksi": 522,
+    "menang": 74.5,
+    "rata": 0.94,
+    "terisi": 82.0,
+    "kandidat": 998
+   },
+   "5": {
+    "total": 144.7,
+    "total_min": 89.0,
+    "total_maks": 234.8,
+    "cagr": 26.0,
+    "maxdd": -24.0,
+    "sharpe": 0.86,
+    "per_tahun": {
+     "2023": 29.1,
+     "2024": 22.1,
+     "2025": 10.6,
+     "2026": 37.3
+    },
+    "transaksi": 518,
+    "menang": 74.6,
+    "rata": 1.01,
+    "terisi": 82.0,
+    "kandidat": 962
+   },
+   "4": {
+    "total": 189.55,
+    "total_min": 134.9,
+    "total_maks": 270.0,
+    "cagr": 31.6,
+    "maxdd": -20.5,
+    "sharpe": 1.12,
+    "per_tahun": {
+     "2023": 31.1,
+     "2024": 36.0,
+     "2025": 17.1,
+     "2026": 38.3
+    },
+    "transaksi": 425,
+    "menang": 76.5,
+    "rata": 1.4,
+    "terisi": 76.0,
+    "kandidat": 770
+   },
+   "3": {
+    "total": 195.8,
+    "total_min": 147.5,
+    "total_maks": 261.4,
+    "cagr": 32.35,
+    "maxdd": -13.2,
+    "sharpe": 1.27,
+    "per_tahun": {
+     "2023": 38.5,
+     "2024": 36.3,
+     "2025": 16.0,
+     "2026": 34.0
+    },
+    "transaksi": 349,
+    "menang": 77.9,
+    "rata": 1.69,
+    "terisi": 72.0,
+    "kandidat": 598
+   },
+   "2": {
+    "total": 159.5,
+    "total_min": 118.3,
+    "total_maks": 196.2,
+    "cagr": 27.95,
+    "maxdd": -12.2,
+    "sharpe": 1.51,
+    "per_tahun": {
+     "2023": 25.9,
+     "2024": 19.0,
+     "2025": 25.0,
+     "2026": 37.2
+    },
+    "transaksi": 269,
+    "menang": 79.2,
+    "rata": 1.91,
+    "terisi": 65.0,
+    "kandidat": 461
+   },
+   "1": {
+    "total": 101.7,
+    "total_min": 71.4,
+    "total_maks": 128.1,
+    "cagr": 19.9,
+    "maxdd": -15.95,
+    "sharpe": 1.21,
+    "per_tahun": {
+     "2023": 13.9,
+     "2024": 14.4,
+     "2025": 22.6,
+     "2026": 26.0
+    },
+    "transaksi": 228,
+    "menang": 77.7,
+    "rata": 1.67,
+    "terisi": 61.0,
+    "kandidat": 369
    }
   },
   "btc": {
@@ -1102,7 +2119,20 @@
   "per_strategi": {
    "radar_naik": {
     "baru": {
-     "n": 0
+     "n": 217,
+     "bulan": 30,
+     "menang": 71.4,
+     "rata": 2.06,
+     "median": 2.08,
+     "t": 1.21
+    },
+    "baru_b": {
+     "n": 217,
+     "bulan": 30,
+     "menang": 71.4,
+     "rata": 2.06,
+     "median": 2.08,
+     "t": 1.21
     },
     "lama": {
      "n": 238,
@@ -1123,7 +2153,20 @@
    },
    "awal_stage2": {
     "baru": {
-     "n": 0
+     "n": 418,
+     "bulan": 31,
+     "menang": 77.0,
+     "rata": 1.03,
+     "median": 2.08,
+     "t": 1.33
+    },
+    "baru_b": {
+     "n": 418,
+     "bulan": 31,
+     "menang": 77.0,
+     "rata": 1.03,
+     "median": 2.08,
+     "t": 1.33
     },
     "lama": {
      "n": 552,
@@ -1144,12 +2187,15 @@
    },
    "tembus_dasar": {
     "baru": {
-     "n": 23,
-     "bulan": 7,
-     "menang": 73.9,
-     "rata": -0.08,
+     "n": 0
+    },
+    "baru_b": {
+     "n": 126,
+     "bulan": 11,
+     "menang": 75.4,
+     "rata": 1.22,
      "median": 2.08,
-     "t": -0.05
+     "t": 2.09
     },
     "lama": {
      "n": 0
@@ -1165,12 +2211,10 @@
    },
    "pullback_fib": {
     "baru": {
-     "n": 81,
-     "bulan": 7,
-     "menang": 34.6,
-     "rata": -6.39,
-     "median": -12.37,
-     "t": -3.37
+     "n": 0
+    },
+    "baru_b": {
+     "n": 0
     },
     "lama": {
      "n": 0
@@ -1186,12 +2230,20 @@
    },
    "pantul_fib": {
     "baru": {
-     "n": 1,
-     "bulan": 1,
-     "menang": 0.0,
-     "rata": -3.47,
-     "median": -3.47,
-     "t": null
+     "n": 208,
+     "bulan": 27,
+     "menang": 86.1,
+     "rata": 2.53,
+     "median": 1.91,
+     "t": 2.81
+    },
+    "baru_b": {
+     "n": 208,
+     "bulan": 27,
+     "menang": 86.1,
+     "rata": 2.53,
+     "median": 1.91,
+     "t": 2.81
     },
     "lama": {
      "n": 208,
@@ -1214,6 +2266,9 @@
     "baru": {
      "n": 0
     },
+    "baru_b": {
+     "n": 0
+    },
     "lama": {
      "n": 0
     },
@@ -1228,6 +2283,9 @@
    },
    "jebol_puncak": {
     "baru": {
+     "n": 0
+    },
+    "baru_b": {
      "n": 0
     },
     "lama": {
@@ -1246,6 +2304,9 @@
     "baru": {
      "n": 0
     },
+    "baru_b": {
+     "n": 0
+    },
     "lama": {
      "n": 0
     },
@@ -1261,14 +2322,17 @@
   }
  },
  "putusan": {
-  "pakai": false,
-  "alasan": "di luar sampel 2023-01-01–2026-10-14: BARU -29.9% (maks turun -30.6%, Sharpe -0.78) vs LAMA +134.8% (maks turun -24.9%, Sharpe 0.83)"
+  "pakai": true,
+  "versi": "Model BARU (aturan lama + batas skor pasar)",
+  "pendatang": false,
+  "alasan": "di luar sampel 2023-01-01 s/d 2026-10-14: BARU +183.9% (maks turun -23.9%, Sharpe 1.04) vs LAMA +131.1% (maks turun -25.4%, Sharpe 0.8)"
  },
  "sekarang": {
   "tanggal": "2026-11-13",
   "skor": -5,
+  "rezim": "turun",
   "kode": "bear",
-  "nama": "BEAR KUAT",
+  "nama": "SANGAT LEMAH",
   "ikon": "🔴🔴",
   "komponen": {
    "btc_ma50": -1,
@@ -1282,93 +2346,3900 @@
   "s2": 3.053,
   "s4": 22.901
  },
+ "riwayat_skor": [
+  {
+   "t": "2024-11-14",
+   "s": 3,
+   "b": 87326.0
+  },
+  {
+   "t": "2024-11-15",
+   "s": 4,
+   "b": 91032.0
+  },
+  {
+   "t": "2024-11-16",
+   "s": 4,
+   "b": 90587.0
+  },
+  {
+   "t": "2024-11-17",
+   "s": 4,
+   "b": 89856.0
+  },
+  {
+   "t": "2024-11-18",
+   "s": 4,
+   "b": 90464.0
+  },
+  {
+   "t": "2024-11-19",
+   "s": 3,
+   "b": 92311.0
+  },
+  {
+   "t": "2024-11-20",
+   "s": 3,
+   "b": 94287.0
+  },
+  {
+   "t": "2024-11-21",
+   "s": 3,
+   "b": 98317.0
+  },
+  {
+   "t": "2024-11-22",
+   "s": 3,
+   "b": 98892.0
+  },
+  {
+   "t": "2024-11-23",
+   "s": 3,
+   "b": 97672.0
+  },
+  {
+   "t": "2024-11-24",
+   "s": 6,
+   "b": 97900.0
+  },
+  {
+   "t": "2024-11-25",
+   "s": 5,
+   "b": 93010.0
+  },
+  {
+   "t": "2024-11-26",
+   "s": 5,
+   "b": 91965.0
+  },
+  {
+   "t": "2024-11-27",
+   "s": 5,
+   "b": 95863.0
+  },
+  {
+   "t": "2024-11-28",
+   "s": 5,
+   "b": 95644.0
+  },
+  {
+   "t": "2024-11-29",
+   "s": 5,
+   "b": 97460.0
+  },
+  {
+   "t": "2024-11-30",
+   "s": 6,
+   "b": 96408.0
+  },
+  {
+   "t": "2024-12-01",
+   "s": 5,
+   "b": 97185.0
+  },
+  {
+   "t": "2024-12-02",
+   "s": 5,
+   "b": 95841.0
+  },
+  {
+   "t": "2024-12-03",
+   "s": 5,
+   "b": 95850.0
+  },
+  {
+   "t": "2024-12-04",
+   "s": 5,
+   "b": 98587.0
+  },
+  {
+   "t": "2024-12-05",
+   "s": 5,
+   "b": 96946.0
+  },
+  {
+   "t": "2024-12-06",
+   "s": 5,
+   "b": 99741.0
+  },
+  {
+   "t": "2024-12-07",
+   "s": 5,
+   "b": 99832.0
+  },
+  {
+   "t": "2024-12-08",
+   "s": 5,
+   "b": 101110.0
+  },
+  {
+   "t": "2024-12-09",
+   "s": 5,
+   "b": 97276.0
+  },
+  {
+   "t": "2024-12-10",
+   "s": 5,
+   "b": 96593.0
+  },
+  {
+   "t": "2024-12-11",
+   "s": 5,
+   "b": 101125.0
+  },
+  {
+   "t": "2024-12-12",
+   "s": 5,
+   "b": 100004.0
+  },
+  {
+   "t": "2024-12-13",
+   "s": 5,
+   "b": 101424.0
+  },
+  {
+   "t": "2024-12-14",
+   "s": 5,
+   "b": 101420.0
+  },
+  {
+   "t": "2024-12-15",
+   "s": 5,
+   "b": 104464.0
+  },
+  {
+   "t": "2024-12-16",
+   "s": 5,
+   "b": 106059.0
+  },
+  {
+   "t": "2024-12-17",
+   "s": 5,
+   "b": 106134.0
+  },
+  {
+   "t": "2024-12-18",
+   "s": 3,
+   "b": 100204.0
+  },
+  {
+   "t": "2024-12-19",
+   "s": 1,
+   "b": 97462.0
+  },
+  {
+   "t": "2024-12-20",
+   "s": 3,
+   "b": 97805.0
+  },
+  {
+   "t": "2024-12-21",
+   "s": 2,
+   "b": 97292.0
+  },
+  {
+   "t": "2024-12-22",
+   "s": 1,
+   "b": 95186.0
+  },
+  {
+   "t": "2024-12-23",
+   "s": 2,
+   "b": 94881.0
+  },
+  {
+   "t": "2024-12-24",
+   "s": 2,
+   "b": 98664.0
+  },
+  {
+   "t": "2024-12-25",
+   "s": 1,
+   "b": 99430.0
+  },
+  {
+   "t": "2024-12-26",
+   "s": 0,
+   "b": 95792.0
+  },
+  {
+   "t": "2024-12-27",
+   "s": -1,
+   "b": 94299.0
+  },
+  {
+   "t": "2024-12-28",
+   "s": -1,
+   "b": 95300.0
+  },
+  {
+   "t": "2024-12-29",
+   "s": 0,
+   "b": 93738.0
+  },
+  {
+   "t": "2024-12-30",
+   "s": -1,
+   "b": 92792.0
+  },
+  {
+   "t": "2024-12-31",
+   "s": -1,
+   "b": 93576.0
+  },
+  {
+   "t": "2025-01-01",
+   "s": 0,
+   "b": 94592.0
+  },
+  {
+   "t": "2025-01-02",
+   "s": 1,
+   "b": 96985.0
+  },
+  {
+   "t": "2025-01-03",
+   "s": 2,
+   "b": 98174.0
+  },
+  {
+   "t": "2025-01-04",
+   "s": 2,
+   "b": 98220.0
+  },
+  {
+   "t": "2025-01-05",
+   "s": 3,
+   "b": 98364.0
+  },
+  {
+   "t": "2025-01-06",
+   "s": 3,
+   "b": 102236.0
+  },
+  {
+   "t": "2025-01-07",
+   "s": -1,
+   "b": 96955.0
+  },
+  {
+   "t": "2025-01-08",
+   "s": -1,
+   "b": 95061.0
+  },
+  {
+   "t": "2025-01-09",
+   "s": -1,
+   "b": 92552.0
+  },
+  {
+   "t": "2025-01-10",
+   "s": 0,
+   "b": 94726.0
+  },
+  {
+   "t": "2025-01-11",
+   "s": -2,
+   "b": 94600.0
+  },
+  {
+   "t": "2025-01-12",
+   "s": -2,
+   "b": 94545.0
+  },
+  {
+   "t": "2025-01-13",
+   "s": -2,
+   "b": 94536.0
+  },
+  {
+   "t": "2025-01-14",
+   "s": -2,
+   "b": 96561.0
+  },
+  {
+   "t": "2025-01-15",
+   "s": 0,
+   "b": 100497.0
+  },
+  {
+   "t": "2025-01-16",
+   "s": 0,
+   "b": 99987.0
+  },
+  {
+   "t": "2025-01-17",
+   "s": 3,
+   "b": 104077.0
+  },
+  {
+   "t": "2025-01-18",
+   "s": 2,
+   "b": 104556.0
+  },
+  {
+   "t": "2025-01-19",
+   "s": 1,
+   "b": 101332.0
+  },
+  {
+   "t": "2025-01-20",
+   "s": 1,
+   "b": 102260.0
+  },
+  {
+   "t": "2025-01-21",
+   "s": 1,
+   "b": 106144.0
+  },
+  {
+   "t": "2025-01-22",
+   "s": 1,
+   "b": 103707.0
+  },
+  {
+   "t": "2025-01-23",
+   "s": 0,
+   "b": 103910.0
+  },
+  {
+   "t": "2025-01-24",
+   "s": 0,
+   "b": 104870.0
+  },
+  {
+   "t": "2025-01-25",
+   "s": 0,
+   "b": 104747.0
+  },
+  {
+   "t": "2025-01-26",
+   "s": 0,
+   "b": 102620.0
+  },
+  {
+   "t": "2025-01-27",
+   "s": -1,
+   "b": 102083.0
+  },
+  {
+   "t": "2025-01-28",
+   "s": 0,
+   "b": 101336.0
+  },
+  {
+   "t": "2025-01-29",
+   "s": 0,
+   "b": 103733.0
+  },
+  {
+   "t": "2025-01-30",
+   "s": 0,
+   "b": 104723.0
+  },
+  {
+   "t": "2025-01-31",
+   "s": 0,
+   "b": 102430.0
+  },
+  {
+   "t": "2025-02-01",
+   "s": 0,
+   "b": 100636.0
+  },
+  {
+   "t": "2025-02-02",
+   "s": -1,
+   "b": 97701.0
+  },
+  {
+   "t": "2025-02-03",
+   "s": -1,
+   "b": 101329.0
+  },
+  {
+   "t": "2025-02-04",
+   "s": -3,
+   "b": 97763.0
+  },
+  {
+   "t": "2025-02-05",
+   "s": -3,
+   "b": 96612.0
+  },
+  {
+   "t": "2025-02-06",
+   "s": -3,
+   "b": 96554.0
+  },
+  {
+   "t": "2025-02-07",
+   "s": -3,
+   "b": 96507.0
+  },
+  {
+   "t": "2025-02-08",
+   "s": -3,
+   "b": 96445.0
+  },
+  {
+   "t": "2025-02-09",
+   "s": -3,
+   "b": 96463.0
+  },
+  {
+   "t": "2025-02-10",
+   "s": -3,
+   "b": 97431.0
+  },
+  {
+   "t": "2025-02-11",
+   "s": -3,
+   "b": 95778.0
+  },
+  {
+   "t": "2025-02-12",
+   "s": -2,
+   "b": 97870.0
+  },
+  {
+   "t": "2025-02-13",
+   "s": -3,
+   "b": 96608.0
+  },
+  {
+   "t": "2025-02-14",
+   "s": -2,
+   "b": 97500.0
+  },
+  {
+   "t": "2025-02-15",
+   "s": -2,
+   "b": 97570.0
+  },
+  {
+   "t": "2025-02-16",
+   "s": -2,
+   "b": 96118.0
+  },
+  {
+   "t": "2025-02-17",
+   "s": -2,
+   "b": 95780.0
+  },
+  {
+   "t": "2025-02-18",
+   "s": -2,
+   "b": 95672.0
+  },
+  {
+   "t": "2025-02-19",
+   "s": -2,
+   "b": 96644.0
+  },
+  {
+   "t": "2025-02-20",
+   "s": -2,
+   "b": 98305.0
+  },
+  {
+   "t": "2025-02-21",
+   "s": -2,
+   "b": 96182.0
+  },
+  {
+   "t": "2025-02-22",
+   "s": -2,
+   "b": 96551.0
+  },
+  {
+   "t": "2025-02-23",
+   "s": -2,
+   "b": 96258.0
+  },
+  {
+   "t": "2025-02-24",
+   "s": -3,
+   "b": 91553.0
+  },
+  {
+   "t": "2025-02-25",
+   "s": -3,
+   "b": 88680.0
+  },
+  {
+   "t": "2025-02-26",
+   "s": -3,
+   "b": 84250.0
+  },
+  {
+   "t": "2025-02-27",
+   "s": -3,
+   "b": 84709.0
+  },
+  {
+   "t": "2025-02-28",
+   "s": -3,
+   "b": 84350.0
+  },
+  {
+   "t": "2025-03-01",
+   "s": -3,
+   "b": 86065.0
+  },
+  {
+   "t": "2025-03-02",
+   "s": -3,
+   "b": 94270.0
+  },
+  {
+   "t": "2025-03-03",
+   "s": -3,
+   "b": 86221.0
+  },
+  {
+   "t": "2025-03-04",
+   "s": -3,
+   "b": 87282.0
+  },
+  {
+   "t": "2025-03-05",
+   "s": -3,
+   "b": 90606.0
+  },
+  {
+   "t": "2025-03-06",
+   "s": -3,
+   "b": 89932.0
+  },
+  {
+   "t": "2025-03-07",
+   "s": -3,
+   "b": 86802.0
+  },
+  {
+   "t": "2025-03-08",
+   "s": -2,
+   "b": 86222.0
+  },
+  {
+   "t": "2025-03-09",
+   "s": -4,
+   "b": 80734.0
+  },
+  {
+   "t": "2025-03-10",
+   "s": -5,
+   "b": 78596.0
+  },
+  {
+   "t": "2025-03-11",
+   "s": -5,
+   "b": 82933.0
+  },
+  {
+   "t": "2025-03-12",
+   "s": -3,
+   "b": 83680.0
+  },
+  {
+   "t": "2025-03-13",
+   "s": -5,
+   "b": 81116.0
+  },
+  {
+   "t": "2025-03-14",
+   "s": -3,
+   "b": 83983.0
+  },
+  {
+   "t": "2025-03-15",
+   "s": -3,
+   "b": 84338.0
+  },
+  {
+   "t": "2025-03-16",
+   "s": -5,
+   "b": 82575.0
+  },
+  {
+   "t": "2025-03-17",
+   "s": -5,
+   "b": 84010.0
+  },
+  {
+   "t": "2025-03-18",
+   "s": -5,
+   "b": 82715.0
+  },
+  {
+   "t": "2025-03-19",
+   "s": -3,
+   "b": 86846.0
+  },
+  {
+   "t": "2025-03-20",
+   "s": -5,
+   "b": 84223.0
+  },
+  {
+   "t": "2025-03-21",
+   "s": -5,
+   "b": 84089.0
+  },
+  {
+   "t": "2025-03-22",
+   "s": -5,
+   "b": 83841.0
+  },
+  {
+   "t": "2025-03-23",
+   "s": -3,
+   "b": 86082.0
+  },
+  {
+   "t": "2025-03-24",
+   "s": -3,
+   "b": 87498.0
+  },
+  {
+   "t": "2025-03-25",
+   "s": -2,
+   "b": 87393.0
+  },
+  {
+   "t": "2025-03-26",
+   "s": -1,
+   "b": 86909.0
+  },
+  {
+   "t": "2025-03-27",
+   "s": -2,
+   "b": 87232.0
+  },
+  {
+   "t": "2025-03-28",
+   "s": -5,
+   "b": 84424.0
+  },
+  {
+   "t": "2025-03-29",
+   "s": -5,
+   "b": 82649.0
+  },
+  {
+   "t": "2025-03-30",
+   "s": -5,
+   "b": 82390.0
+  },
+  {
+   "t": "2025-03-31",
+   "s": -5,
+   "b": 82550.0
+  },
+  {
+   "t": "2025-04-01",
+   "s": -5,
+   "b": 85158.0
+  },
+  {
+   "t": "2025-04-02",
+   "s": -5,
+   "b": 82516.0
+  },
+  {
+   "t": "2025-04-03",
+   "s": -5,
+   "b": 83213.0
+  },
+  {
+   "t": "2025-04-04",
+   "s": -6,
+   "b": 83890.0
+  },
+  {
+   "t": "2025-04-05",
+   "s": -5,
+   "b": 83538.0
+  },
+  {
+   "t": "2025-04-06",
+   "s": -6,
+   "b": 78430.0
+  },
+  {
+   "t": "2025-04-07",
+   "s": -5,
+   "b": 79163.0
+  },
+  {
+   "t": "2025-04-08",
+   "s": -5,
+   "b": 76322.0
+  },
+  {
+   "t": "2025-04-09",
+   "s": -5,
+   "b": 82615.0
+  },
+  {
+   "t": "2025-04-10",
+   "s": -5,
+   "b": 79607.0
+  },
+  {
+   "t": "2025-04-11",
+   "s": -5,
+   "b": 83424.0
+  },
+  {
+   "t": "2025-04-12",
+   "s": -4,
+   "b": 85277.0
+  },
+  {
+   "t": "2025-04-13",
+   "s": -5,
+   "b": 83760.0
+  },
+  {
+   "t": "2025-04-14",
+   "s": -4,
+   "b": 84592.0
+  },
+  {
+   "t": "2025-04-15",
+   "s": -5,
+   "b": 83644.0
+  },
+  {
+   "t": "2025-04-16",
+   "s": -5,
+   "b": 84030.0
+  },
+  {
+   "t": "2025-04-17",
+   "s": -4,
+   "b": 84948.0
+  },
+  {
+   "t": "2025-04-18",
+   "s": -3,
+   "b": 84475.0
+  },
+  {
+   "t": "2025-04-19",
+   "s": -4,
+   "b": 85077.0
+  },
+  {
+   "t": "2025-04-20",
+   "s": -3,
+   "b": 85179.0
+  },
+  {
+   "t": "2025-04-21",
+   "s": -3,
+   "b": 87516.0
+  },
+  {
+   "t": "2025-04-22",
+   "s": 1,
+   "b": 93443.0
+  },
+  {
+   "t": "2025-04-23",
+   "s": 2,
+   "b": 93691.0
+  },
+  {
+   "t": "2025-04-24",
+   "s": 2,
+   "b": 93980.0
+  },
+  {
+   "t": "2025-04-25",
+   "s": 2,
+   "b": 94639.0
+  },
+  {
+   "t": "2025-04-26",
+   "s": 2,
+   "b": 94628.0
+  },
+  {
+   "t": "2025-04-27",
+   "s": 2,
+   "b": 93749.0
+  },
+  {
+   "t": "2025-04-28",
+   "s": 2,
+   "b": 95011.0
+  },
+  {
+   "t": "2025-04-29",
+   "s": 2,
+   "b": 94257.0
+  },
+  {
+   "t": "2025-04-30",
+   "s": 2,
+   "b": 94172.0
+  },
+  {
+   "t": "2025-05-01",
+   "s": 3,
+   "b": 96490.0
+  },
+  {
+   "t": "2025-05-02",
+   "s": 3,
+   "b": 96887.0
+  },
+  {
+   "t": "2025-05-03",
+   "s": 1,
+   "b": 95856.0
+  },
+  {
+   "t": "2025-05-04",
+   "s": -1,
+   "b": 94278.0
+  },
+  {
+   "t": "2025-05-05",
+   "s": -1,
+   "b": 94734.0
+  },
+  {
+   "t": "2025-05-06",
+   "s": -1,
+   "b": 96834.0
+  },
+  {
+   "t": "2025-05-07",
+   "s": -1,
+   "b": 97030.0
+  },
+  {
+   "t": "2025-05-08",
+   "s": 2,
+   "b": 103262.0
+  },
+  {
+   "t": "2025-05-09",
+   "s": 3,
+   "b": 102972.0
+  },
+  {
+   "t": "2025-05-10",
+   "s": 5,
+   "b": 104810.0
+  },
+  {
+   "t": "2025-05-11",
+   "s": 5,
+   "b": 104118.0
+  },
+  {
+   "t": "2025-05-12",
+   "s": 5,
+   "b": 102791.0
+  },
+  {
+   "t": "2025-05-13",
+   "s": 5,
+   "b": 104104.0
+  },
+  {
+   "t": "2025-05-14",
+   "s": 5,
+   "b": 103508.0
+  },
+  {
+   "t": "2025-05-15",
+   "s": 4,
+   "b": 103764.0
+  },
+  {
+   "t": "2025-05-16",
+   "s": 4,
+   "b": 103464.0
+  },
+  {
+   "t": "2025-05-17",
+   "s": 4,
+   "b": 103127.0
+  },
+  {
+   "t": "2025-05-18",
+   "s": 3,
+   "b": 106454.0
+  },
+  {
+   "t": "2025-05-19",
+   "s": 3,
+   "b": 105574.0
+  },
+  {
+   "t": "2025-05-20",
+   "s": 3,
+   "b": 106850.0
+  },
+  {
+   "t": "2025-05-21",
+   "s": 3,
+   "b": 109644.0
+  },
+  {
+   "t": "2025-05-22",
+   "s": 3,
+   "b": 111696.0
+  },
+  {
+   "t": "2025-05-23",
+   "s": 2,
+   "b": 107318.0
+  },
+  {
+   "t": "2025-05-24",
+   "s": 2,
+   "b": 107762.0
+  },
+  {
+   "t": "2025-05-25",
+   "s": 2,
+   "b": 109004.0
+  },
+  {
+   "t": "2025-05-26",
+   "s": 2,
+   "b": 109435.0
+  },
+  {
+   "t": "2025-05-27",
+   "s": 2,
+   "b": 108938.0
+  },
+  {
+   "t": "2025-05-28",
+   "s": 2,
+   "b": 107782.0
+  },
+  {
+   "t": "2025-05-29",
+   "s": 2,
+   "b": 105590.0
+  },
+  {
+   "t": "2025-05-30",
+   "s": 0,
+   "b": 103985.0
+  },
+  {
+   "t": "2025-05-31",
+   "s": 0,
+   "b": 104592.0
+  },
+  {
+   "t": "2025-06-01",
+   "s": -1,
+   "b": 105643.0
+  },
+  {
+   "t": "2025-06-02",
+   "s": -2,
+   "b": 105858.0
+  },
+  {
+   "t": "2025-06-03",
+   "s": -2,
+   "b": 105377.0
+  },
+  {
+   "t": "2025-06-04",
+   "s": -2,
+   "b": 104697.0
+  },
+  {
+   "t": "2025-06-05",
+   "s": -2,
+   "b": 101509.0
+  },
+  {
+   "t": "2025-06-06",
+   "s": -2,
+   "b": 104288.0
+  },
+  {
+   "t": "2025-06-07",
+   "s": -2,
+   "b": 105552.0
+  },
+  {
+   "t": "2025-06-08",
+   "s": -2,
+   "b": 105734.0
+  },
+  {
+   "t": "2025-06-09",
+   "s": -1,
+   "b": 110263.0
+  },
+  {
+   "t": "2025-06-10",
+   "s": 1,
+   "b": 110274.0
+  },
+  {
+   "t": "2025-06-11",
+   "s": -1,
+   "b": 108645.0
+  },
+  {
+   "t": "2025-06-12",
+   "s": -1,
+   "b": 105672.0
+  },
+  {
+   "t": "2025-06-13",
+   "s": -2,
+   "b": 106067.0
+  },
+  {
+   "t": "2025-06-14",
+   "s": -2,
+   "b": 105415.0
+  },
+  {
+   "t": "2025-06-15",
+   "s": -1,
+   "b": 105594.0
+  },
+  {
+   "t": "2025-06-16",
+   "s": -1,
+   "b": 106795.0
+  },
+  {
+   "t": "2025-06-17",
+   "s": -2,
+   "b": 104551.0
+  },
+  {
+   "t": "2025-06-18",
+   "s": -2,
+   "b": 104887.0
+  },
+  {
+   "t": "2025-06-19",
+   "s": -2,
+   "b": 104659.0
+  },
+  {
+   "t": "2025-06-20",
+   "s": -3,
+   "b": 103298.0
+  },
+  {
+   "t": "2025-06-21",
+   "s": -3,
+   "b": 102120.0
+  },
+  {
+   "t": "2025-06-22",
+   "s": -3,
+   "b": 100964.0
+  },
+  {
+   "t": "2025-06-23",
+   "s": -1,
+   "b": 105334.0
+  },
+  {
+   "t": "2025-06-24",
+   "s": -1,
+   "b": 106083.0
+  },
+  {
+   "t": "2025-06-25",
+   "s": -1,
+   "b": 107341.0
+  },
+  {
+   "t": "2025-06-26",
+   "s": -1,
+   "b": 106947.0
+  },
+  {
+   "t": "2025-06-27",
+   "s": -1,
+   "b": 107048.0
+  },
+  {
+   "t": "2025-06-28",
+   "s": -1,
+   "b": 107297.0
+  },
+  {
+   "t": "2025-06-29",
+   "s": -1,
+   "b": 108357.0
+  },
+  {
+   "t": "2025-06-30",
+   "s": -1,
+   "b": 107146.0
+  },
+  {
+   "t": "2025-07-01",
+   "s": -2,
+   "b": 105681.0
+  },
+  {
+   "t": "2025-07-02",
+   "s": -1,
+   "b": 108850.0
+  },
+  {
+   "t": "2025-07-03",
+   "s": -1,
+   "b": 109585.0
+  },
+  {
+   "t": "2025-07-04",
+   "s": -1,
+   "b": 107984.0
+  },
+  {
+   "t": "2025-07-05",
+   "s": -1,
+   "b": 108198.0
+  },
+  {
+   "t": "2025-07-06",
+   "s": -1,
+   "b": 109204.0
+  },
+  {
+   "t": "2025-07-07",
+   "s": -1,
+   "b": 108263.0
+  },
+  {
+   "t": "2025-07-08",
+   "s": -1,
+   "b": 108923.0
+  },
+  {
+   "t": "2025-07-09",
+   "s": 1,
+   "b": 111234.0
+  },
+  {
+   "t": "2025-07-10",
+   "s": 2,
+   "b": 116010.0
+  },
+  {
+   "t": "2025-07-11",
+   "s": 2,
+   "b": 117528.0
+  },
+  {
+   "t": "2025-07-12",
+   "s": 2,
+   "b": 117420.0
+  },
+  {
+   "t": "2025-07-13",
+   "s": 3,
+   "b": 119087.0
+  },
+  {
+   "t": "2025-07-14",
+   "s": 3,
+   "b": 119841.0
+  },
+  {
+   "t": "2025-07-15",
+   "s": 3,
+   "b": 117758.0
+  },
+  {
+   "t": "2025-07-16",
+   "s": 4,
+   "b": 118630.0
+  },
+  {
+   "t": "2025-07-17",
+   "s": 4,
+   "b": 119178.0
+  },
+  {
+   "t": "2025-07-18",
+   "s": 4,
+   "b": 117925.0
+  },
+  {
+   "t": "2025-07-19",
+   "s": 4,
+   "b": 117840.0
+  },
+  {
+   "t": "2025-07-20",
+   "s": 4,
+   "b": 117265.0
+  },
+  {
+   "t": "2025-07-21",
+   "s": 4,
+   "b": 117380.0
+  },
+  {
+   "t": "2025-07-22",
+   "s": 4,
+   "b": 119954.0
+  },
+  {
+   "t": "2025-07-23",
+   "s": 4,
+   "b": 118756.0
+  },
+  {
+   "t": "2025-07-24",
+   "s": 4,
+   "b": 118341.0
+  },
+  {
+   "t": "2025-07-25",
+   "s": 5,
+   "b": 117614.0
+  },
+  {
+   "t": "2025-07-26",
+   "s": 5,
+   "b": 117920.0
+  },
+  {
+   "t": "2025-07-27",
+   "s": 5,
+   "b": 119416.0
+  },
+  {
+   "t": "2025-07-28",
+   "s": 5,
+   "b": 118062.0
+  },
+  {
+   "t": "2025-07-29",
+   "s": 5,
+   "b": 117951.0
+  },
+  {
+   "t": "2025-07-30",
+   "s": 4,
+   "b": 117840.0
+  },
+  {
+   "t": "2025-07-31",
+   "s": 3,
+   "b": 115764.0
+  },
+  {
+   "t": "2025-08-01",
+   "s": 2,
+   "b": 113298.0
+  },
+  {
+   "t": "2025-08-02",
+   "s": 0,
+   "b": 112546.0
+  },
+  {
+   "t": "2025-08-03",
+   "s": 1,
+   "b": 114209.0
+  },
+  {
+   "t": "2025-08-04",
+   "s": 3,
+   "b": 115055.0
+  },
+  {
+   "t": "2025-08-05",
+   "s": 1,
+   "b": 114130.0
+  },
+  {
+   "t": "2025-08-06",
+   "s": 1,
+   "b": 114992.0
+  },
+  {
+   "t": "2025-08-07",
+   "s": 4,
+   "b": 117472.0
+  },
+  {
+   "t": "2025-08-08",
+   "s": 4,
+   "b": 116675.0
+  },
+  {
+   "t": "2025-08-09",
+   "s": 4,
+   "b": 116462.0
+  },
+  {
+   "t": "2025-08-10",
+   "s": 5,
+   "b": 119294.0
+  },
+  {
+   "t": "2025-08-11",
+   "s": 4,
+   "b": 118686.0
+  },
+  {
+   "t": "2025-08-12",
+   "s": 5,
+   "b": 120134.0
+  },
+  {
+   "t": "2025-08-13",
+   "s": 6,
+   "b": 123306.0
+  },
+  {
+   "t": "2025-08-14",
+   "s": 4,
+   "b": 118295.0
+  },
+  {
+   "t": "2025-08-15",
+   "s": 5,
+   "b": 117342.0
+  },
+  {
+   "t": "2025-08-16",
+   "s": 4,
+   "b": 117381.0
+  },
+  {
+   "t": "2025-08-17",
+   "s": 3,
+   "b": 117405.0
+  },
+  {
+   "t": "2025-08-18",
+   "s": 0,
+   "b": 116227.0
+  },
+  {
+   "t": "2025-08-19",
+   "s": -2,
+   "b": 112873.0
+  },
+  {
+   "t": "2025-08-20",
+   "s": -1,
+   "b": 114271.0
+  },
+  {
+   "t": "2025-08-21",
+   "s": -2,
+   "b": 112500.0
+  },
+  {
+   "t": "2025-08-22",
+   "s": 3,
+   "b": 116936.0
+  },
+  {
+   "t": "2025-08-23",
+   "s": 2,
+   "b": 115438.0
+  },
+  {
+   "t": "2025-08-24",
+   "s": 1,
+   "b": 113494.0
+  },
+  {
+   "t": "2025-08-25",
+   "s": -1,
+   "b": 110112.0
+  },
+  {
+   "t": "2025-08-26",
+   "s": -1,
+   "b": 111763.0
+  },
+  {
+   "t": "2025-08-27",
+   "s": -1,
+   "b": 111262.0
+  },
+  {
+   "t": "2025-08-28",
+   "s": 0,
+   "b": 112567.0
+  },
+  {
+   "t": "2025-08-29",
+   "s": 0,
+   "b": 108377.0
+  },
+  {
+   "t": "2025-08-30",
+   "s": -1,
+   "b": 108816.0
+  },
+  {
+   "t": "2025-08-31",
+   "s": 0,
+   "b": 108246.0
+  },
+  {
+   "t": "2025-09-01",
+   "s": -1,
+   "b": 109237.0
+  },
+  {
+   "t": "2025-09-02",
+   "s": -1,
+   "b": 111240.0
+  },
+  {
+   "t": "2025-09-03",
+   "s": -2,
+   "b": 111706.0
+  },
+  {
+   "t": "2025-09-04",
+   "s": -1,
+   "b": 110731.0
+  },
+  {
+   "t": "2025-09-05",
+   "s": -2,
+   "b": 110660.0
+  },
+  {
+   "t": "2025-09-06",
+   "s": -2,
+   "b": 110188.0
+  },
+  {
+   "t": "2025-09-07",
+   "s": -2,
+   "b": 111137.0
+  },
+  {
+   "t": "2025-09-08",
+   "s": -2,
+   "b": 112065.0
+  },
+  {
+   "t": "2025-09-09",
+   "s": 0,
+   "b": 111546.0
+  },
+  {
+   "t": "2025-09-10",
+   "s": 1,
+   "b": 113960.0
+  },
+  {
+   "t": "2025-09-11",
+   "s": 3,
+   "b": 115483.0
+  },
+  {
+   "t": "2025-09-12",
+   "s": 3,
+   "b": 116029.0
+  },
+  {
+   "t": "2025-09-13",
+   "s": 4,
+   "b": 115918.0
+  },
+  {
+   "t": "2025-09-14",
+   "s": 3,
+   "b": 115268.0
+  },
+  {
+   "t": "2025-09-15",
+   "s": 2,
+   "b": 115350.0
+  },
+  {
+   "t": "2025-09-16",
+   "s": 2,
+   "b": 116789.0
+  },
+  {
+   "t": "2025-09-17",
+   "s": 3,
+   "b": 116448.0
+  },
+  {
+   "t": "2025-09-18",
+   "s": 4,
+   "b": 117074.0
+  },
+  {
+   "t": "2025-09-19",
+   "s": 1,
+   "b": 115632.0
+  },
+  {
+   "t": "2025-09-20",
+   "s": 2,
+   "b": 115686.0
+  },
+  {
+   "t": "2025-09-21",
+   "s": 1,
+   "b": 115232.0
+  },
+  {
+   "t": "2025-09-22",
+   "s": -2,
+   "b": 112651.0
+  },
+  {
+   "t": "2025-09-23",
+   "s": -2,
+   "b": 111999.0
+  },
+  {
+   "t": "2025-09-24",
+   "s": -3,
+   "b": 113307.0
+  },
+  {
+   "t": "2025-09-25",
+   "s": -3,
+   "b": 108994.0
+  },
+  {
+   "t": "2025-09-26",
+   "s": -3,
+   "b": 109643.0
+  },
+  {
+   "t": "2025-09-27",
+   "s": -3,
+   "b": 109636.0
+  },
+  {
+   "t": "2025-09-28",
+   "s": -3,
+   "b": 112164.0
+  },
+  {
+   "t": "2025-09-29",
+   "s": -2,
+   "b": 114312.0
+  },
+  {
+   "t": "2025-09-30",
+   "s": -2,
+   "b": 114049.0
+  },
+  {
+   "t": "2025-10-01",
+   "s": -1,
+   "b": 118595.0
+  },
+  {
+   "t": "2025-10-02",
+   "s": 1,
+   "b": 120529.0
+  },
+  {
+   "t": "2025-10-03",
+   "s": 1,
+   "b": 122232.0
+  },
+  {
+   "t": "2025-10-04",
+   "s": 1,
+   "b": 122391.0
+  },
+  {
+   "t": "2025-10-05",
+   "s": 1,
+   "b": 123482.0
+  },
+  {
+   "t": "2025-10-06",
+   "s": 2,
+   "b": 124659.0
+  },
+  {
+   "t": "2025-10-07",
+   "s": 1,
+   "b": 121333.0
+  },
+  {
+   "t": "2025-10-08",
+   "s": 1,
+   "b": 123306.0
+  },
+  {
+   "t": "2025-10-09",
+   "s": 0,
+   "b": 121662.0
+  },
+  {
+   "t": "2025-10-10",
+   "s": -1,
+   "b": 112774.0
+  },
+  {
+   "t": "2025-10-11",
+   "s": -2,
+   "b": 110644.0
+  },
+  {
+   "t": "2025-10-12",
+   "s": -2,
+   "b": 114959.0
+  },
+  {
+   "t": "2025-10-13",
+   "s": -2,
+   "b": 115166.0
+  },
+  {
+   "t": "2025-10-14",
+   "s": -4,
+   "b": 113028.0
+  },
+  {
+   "t": "2025-10-15",
+   "s": -4,
+   "b": 110763.0
+  },
+  {
+   "t": "2025-10-16",
+   "s": -3,
+   "b": 108194.0
+  },
+  {
+   "t": "2025-10-17",
+   "s": -6,
+   "b": 106432.0
+  },
+  {
+   "t": "2025-10-18",
+   "s": -6,
+   "b": 107185.0
+  },
+  {
+   "t": "2025-10-19",
+   "s": -4,
+   "b": 108643.0
+  },
+  {
+   "t": "2025-10-20",
+   "s": -3,
+   "b": 110532.0
+  },
+  {
+   "t": "2025-10-21",
+   "s": -3,
+   "b": 108298.0
+  },
+  {
+   "t": "2025-10-22",
+   "s": -5,
+   "b": 107567.0
+  },
+  {
+   "t": "2025-10-23",
+   "s": -3,
+   "b": 110078.0
+  },
+  {
+   "t": "2025-10-24",
+   "s": -3,
+   "b": 111005.0
+  },
+  {
+   "t": "2025-10-25",
+   "s": -3,
+   "b": 111646.0
+  },
+  {
+   "t": "2025-10-26",
+   "s": -1,
+   "b": 114559.0
+  },
+  {
+   "t": "2025-10-27",
+   "s": -2,
+   "b": 114108.0
+  },
+  {
+   "t": "2025-10-28",
+   "s": -2,
+   "b": 112898.0
+  },
+  {
+   "t": "2025-10-29",
+   "s": -2,
+   "b": 110021.0
+  },
+  {
+   "t": "2025-10-30",
+   "s": -4,
+   "b": 108323.0
+  },
+  {
+   "t": "2025-10-31",
+   "s": -3,
+   "b": 109608.0
+  },
+  {
+   "t": "2025-11-01",
+   "s": -2,
+   "b": 110098.0
+  },
+  {
+   "t": "2025-11-02",
+   "s": -2,
+   "b": 110541.0
+  },
+  {
+   "t": "2025-11-03",
+   "s": -4,
+   "b": 106583.0
+  },
+  {
+   "t": "2025-11-04",
+   "s": -4,
+   "b": 101497.0
+  },
+  {
+   "t": "2025-11-05",
+   "s": -4,
+   "b": 103885.0
+  },
+  {
+   "t": "2025-11-06",
+   "s": -4,
+   "b": 101346.0
+  },
+  {
+   "t": "2025-11-07",
+   "s": -4,
+   "b": 103339.0
+  },
+  {
+   "t": "2025-11-08",
+   "s": -4,
+   "b": 102313.0
+  },
+  {
+   "t": "2025-11-09",
+   "s": -2,
+   "b": 104723.0
+  },
+  {
+   "t": "2025-11-10",
+   "s": -2,
+   "b": 106011.0
+  },
+  {
+   "t": "2025-11-11",
+   "s": -3,
+   "b": 103059.0
+  },
+  {
+   "t": "2025-11-12",
+   "s": -4,
+   "b": 101654.0
+  },
+  {
+   "t": "2025-11-13",
+   "s": -4,
+   "b": 99692.0
+  },
+  {
+   "t": "2025-11-14",
+   "s": -4,
+   "b": 94594.0
+  },
+  {
+   "t": "2025-11-15",
+   "s": -4,
+   "b": 95596.0
+  },
+  {
+   "t": "2025-11-16",
+   "s": -4,
+   "b": 94261.0
+  },
+  {
+   "t": "2025-11-17",
+   "s": -4,
+   "b": 92215.0
+  },
+  {
+   "t": "2025-11-18",
+   "s": -4,
+   "b": 92961.0
+  },
+  {
+   "t": "2025-11-19",
+   "s": -4,
+   "b": 91555.0
+  },
+  {
+   "t": "2025-11-20",
+   "s": -4,
+   "b": 86637.0
+  },
+  {
+   "t": "2025-11-21",
+   "s": -4,
+   "b": 85129.0
+  },
+  {
+   "t": "2025-11-22",
+   "s": -4,
+   "b": 84740.0
+  },
+  {
+   "t": "2025-11-23",
+   "s": -4,
+   "b": 86830.0
+  },
+  {
+   "t": "2025-11-24",
+   "s": -4,
+   "b": 88300.0
+  },
+  {
+   "t": "2025-11-25",
+   "s": -4,
+   "b": 87370.0
+  },
+  {
+   "t": "2025-11-26",
+   "s": -4,
+   "b": 90484.0
+  },
+  {
+   "t": "2025-11-27",
+   "s": -4,
+   "b": 91334.0
+  },
+  {
+   "t": "2025-11-28",
+   "s": -4,
+   "b": 90891.0
+  },
+  {
+   "t": "2025-11-29",
+   "s": -4,
+   "b": 90802.0
+  },
+  {
+   "t": "2025-11-30",
+   "s": -4,
+   "b": 90360.0
+  },
+  {
+   "t": "2025-12-01",
+   "s": -5,
+   "b": 86286.0
+  },
+  {
+   "t": "2025-12-02",
+   "s": -5,
+   "b": 91278.0
+  },
+  {
+   "t": "2025-12-03",
+   "s": -4,
+   "b": 93430.0
+  },
+  {
+   "t": "2025-12-04",
+   "s": -4,
+   "b": 92078.0
+  },
+  {
+   "t": "2025-12-05",
+   "s": -4,
+   "b": 89330.0
+  },
+  {
+   "t": "2025-12-06",
+   "s": -4,
+   "b": 89237.0
+  },
+  {
+   "t": "2025-12-07",
+   "s": -5,
+   "b": 90395.0
+  },
+  {
+   "t": "2025-12-08",
+   "s": -5,
+   "b": 90634.0
+  },
+  {
+   "t": "2025-12-09",
+   "s": -5,
+   "b": 92679.0
+  },
+  {
+   "t": "2025-12-10",
+   "s": -5,
+   "b": 92015.0
+  },
+  {
+   "t": "2025-12-11",
+   "s": -5,
+   "b": 92513.0
+  },
+  {
+   "t": "2025-12-12",
+   "s": -5,
+   "b": 90268.0
+  },
+  {
+   "t": "2025-12-13",
+   "s": -5,
+   "b": 90240.0
+  },
+  {
+   "t": "2025-12-14",
+   "s": -5,
+   "b": 88172.0
+  },
+  {
+   "t": "2025-12-15",
+   "s": -5,
+   "b": 86432.0
+  },
+  {
+   "t": "2025-12-16",
+   "s": -5,
+   "b": 87863.0
+  },
+  {
+   "t": "2025-12-17",
+   "s": -5,
+   "b": 86243.0
+  },
+  {
+   "t": "2025-12-18",
+   "s": -5,
+   "b": 85516.0
+  },
+  {
+   "t": "2025-12-19",
+   "s": -5,
+   "b": 88137.0
+  },
+  {
+   "t": "2025-12-20",
+   "s": -5,
+   "b": 88361.0
+  },
+  {
+   "t": "2025-12-21",
+   "s": -5,
+   "b": 88659.0
+  },
+  {
+   "t": "2025-12-22",
+   "s": -5,
+   "b": 88621.0
+  },
+  {
+   "t": "2025-12-23",
+   "s": -5,
+   "b": 87486.0
+  },
+  {
+   "t": "2025-12-24",
+   "s": -5,
+   "b": 87669.0
+  },
+  {
+   "t": "2025-12-25",
+   "s": -5,
+   "b": 87225.0
+  },
+  {
+   "t": "2025-12-26",
+   "s": -5,
+   "b": 87370.0
+  },
+  {
+   "t": "2025-12-27",
+   "s": -5,
+   "b": 87877.0
+  },
+  {
+   "t": "2025-12-28",
+   "s": -5,
+   "b": 87953.0
+  },
+  {
+   "t": "2025-12-29",
+   "s": -5,
+   "b": 87237.0
+  },
+  {
+   "t": "2025-12-30",
+   "s": -5,
+   "b": 88485.0
+  },
+  {
+   "t": "2025-12-31",
+   "s": -5,
+   "b": 87648.0
+  },
+  {
+   "t": "2026-01-01",
+   "s": -5,
+   "b": 88839.0
+  },
+  {
+   "t": "2026-01-02",
+   "s": -3,
+   "b": 89995.0
+  },
+  {
+   "t": "2026-01-03",
+   "s": -3,
+   "b": 90628.0
+  },
+  {
+   "t": "2026-01-04",
+   "s": -1,
+   "b": 91530.0
+  },
+  {
+   "t": "2026-01-05",
+   "s": 0,
+   "b": 93860.0
+  },
+  {
+   "t": "2026-01-06",
+   "s": 0,
+   "b": 93748.0
+  },
+  {
+   "t": "2026-01-07",
+   "s": 0,
+   "b": 91364.0
+  },
+  {
+   "t": "2026-01-08",
+   "s": -2,
+   "b": 91100.0
+  },
+  {
+   "t": "2026-01-09",
+   "s": 0,
+   "b": 90641.0
+  },
+  {
+   "t": "2026-01-10",
+   "s": 0,
+   "b": 90505.0
+  },
+  {
+   "t": "2026-01-11",
+   "s": 0,
+   "b": 91014.0
+  },
+  {
+   "t": "2026-01-12",
+   "s": -2,
+   "b": 91296.0
+  },
+  {
+   "t": "2026-01-13",
+   "s": 1,
+   "b": 95414.0
+  },
+  {
+   "t": "2026-01-14",
+   "s": 1,
+   "b": 96952.0
+  },
+  {
+   "t": "2026-01-15",
+   "s": 0,
+   "b": 95605.0
+  },
+  {
+   "t": "2026-01-16",
+   "s": 0,
+   "b": 95551.0
+  },
+  {
+   "t": "2026-01-17",
+   "s": 1,
+   "b": 95148.0
+  },
+  {
+   "t": "2026-01-18",
+   "s": -1,
+   "b": 93673.0
+  },
+  {
+   "t": "2026-01-19",
+   "s": -2,
+   "b": 92631.0
+  },
+  {
+   "t": "2026-01-20",
+   "s": -4,
+   "b": 88428.0
+  },
+  {
+   "t": "2026-01-21",
+   "s": -4,
+   "b": 89455.0
+  },
+  {
+   "t": "2026-01-22",
+   "s": -3,
+   "b": 89560.0
+  },
+  {
+   "t": "2026-01-23",
+   "s": -5,
+   "b": 89600.0
+  },
+  {
+   "t": "2026-01-24",
+   "s": -5,
+   "b": 89225.0
+  },
+  {
+   "t": "2026-01-25",
+   "s": -5,
+   "b": 86670.0
+  },
+  {
+   "t": "2026-01-26",
+   "s": -5,
+   "b": 88347.0
+  },
+  {
+   "t": "2026-01-27",
+   "s": -5,
+   "b": 89250.0
+  },
+  {
+   "t": "2026-01-28",
+   "s": -5,
+   "b": 89300.0
+  },
+  {
+   "t": "2026-01-29",
+   "s": -5,
+   "b": 84650.0
+  },
+  {
+   "t": "2026-01-30",
+   "s": -4,
+   "b": 84260.0
+  },
+  {
+   "t": "2026-01-31",
+   "s": -6,
+   "b": 78741.0
+  },
+  {
+   "t": "2026-02-01",
+   "s": -6,
+   "b": 76968.0
+  },
+  {
+   "t": "2026-02-02",
+   "s": -6,
+   "b": 78739.0
+  },
+  {
+   "t": "2026-02-03",
+   "s": -6,
+   "b": 75770.0
+  },
+  {
+   "t": "2026-02-04",
+   "s": -5,
+   "b": 73166.0
+  },
+  {
+   "t": "2026-02-05",
+   "s": -6,
+   "b": 62910.0
+  },
+  {
+   "t": "2026-02-06",
+   "s": -6,
+   "b": 70580.0
+  },
+  {
+   "t": "2026-02-07",
+   "s": -6,
+   "b": 69289.0
+  },
+  {
+   "t": "2026-02-08",
+   "s": -5,
+   "b": 70330.0
+  },
+  {
+   "t": "2026-02-09",
+   "s": -5,
+   "b": 70138.0
+  },
+  {
+   "t": "2026-02-10",
+   "s": -5,
+   "b": 68841.0
+  },
+  {
+   "t": "2026-02-11",
+   "s": -5,
+   "b": 67083.0
+  },
+  {
+   "t": "2026-02-12",
+   "s": -5,
+   "b": 66272.0
+  },
+  {
+   "t": "2026-02-13",
+   "s": -5,
+   "b": 68854.0
+  },
+  {
+   "t": "2026-02-14",
+   "s": -4,
+   "b": 69823.0
+  },
+  {
+   "t": "2026-02-15",
+   "s": -5,
+   "b": 68833.0
+  },
+  {
+   "t": "2026-02-16",
+   "s": -5,
+   "b": 68892.0
+  },
+  {
+   "t": "2026-02-17",
+   "s": -4,
+   "b": 67504.0
+  },
+  {
+   "t": "2026-02-18",
+   "s": -4,
+   "b": 66461.0
+  },
+  {
+   "t": "2026-02-19",
+   "s": -4,
+   "b": 67004.0
+  },
+  {
+   "t": "2026-02-20",
+   "s": -4,
+   "b": 68020.0
+  },
+  {
+   "t": "2026-02-21",
+   "s": -4,
+   "b": 67976.0
+  },
+  {
+   "t": "2026-02-22",
+   "s": -4,
+   "b": 67643.0
+  },
+  {
+   "t": "2026-02-23",
+   "s": -4,
+   "b": 64656.0
+  },
+  {
+   "t": "2026-02-24",
+   "s": -4,
+   "b": 64058.0
+  },
+  {
+   "t": "2026-02-25",
+   "s": -4,
+   "b": 67988.0
+  },
+  {
+   "t": "2026-02-26",
+   "s": -4,
+   "b": 67485.0
+  },
+  {
+   "t": "2026-02-27",
+   "s": -4,
+   "b": 65872.0
+  },
+  {
+   "t": "2026-02-28",
+   "s": -4,
+   "b": 66973.0
+  },
+  {
+   "t": "2026-03-01",
+   "s": -4,
+   "b": 65776.0
+  },
+  {
+   "t": "2026-03-02",
+   "s": -4,
+   "b": 68830.0
+  },
+  {
+   "t": "2026-03-03",
+   "s": -4,
+   "b": 68338.0
+  },
+  {
+   "t": "2026-03-04",
+   "s": -4,
+   "b": 72667.0
+  },
+  {
+   "t": "2026-03-05",
+   "s": -5,
+   "b": 70891.0
+  },
+  {
+   "t": "2026-03-06",
+   "s": -4,
+   "b": 68114.0
+  },
+  {
+   "t": "2026-03-07",
+   "s": -5,
+   "b": 67263.0
+  },
+  {
+   "t": "2026-03-08",
+   "s": -4,
+   "b": 65971.0
+  },
+  {
+   "t": "2026-03-09",
+   "s": -5,
+   "b": 68432.0
+  },
+  {
+   "t": "2026-03-10",
+   "s": -4,
+   "b": 69949.0
+  },
+  {
+   "t": "2026-03-11",
+   "s": -4,
+   "b": 70192.0
+  },
+  {
+   "t": "2026-03-12",
+   "s": -4,
+   "b": 70541.0
+  },
+  {
+   "t": "2026-03-13",
+   "s": -4,
+   "b": 70930.0
+  },
+  {
+   "t": "2026-03-14",
+   "s": -5,
+   "b": 71212.0
+  },
+  {
+   "t": "2026-03-15",
+   "s": -2,
+   "b": 72815.0
+  },
+  {
+   "t": "2026-03-16",
+   "s": -1,
+   "b": 74885.0
+  },
+  {
+   "t": "2026-03-17",
+   "s": -2,
+   "b": 73909.0
+  },
+  {
+   "t": "2026-03-18",
+   "s": -3,
+   "b": 71247.0
+  },
+  {
+   "t": "2026-03-19",
+   "s": -4,
+   "b": 69930.0
+  },
+  {
+   "t": "2026-03-20",
+   "s": -3,
+   "b": 70511.0
+  },
+  {
+   "t": "2026-03-21",
+   "s": -5,
+   "b": 68918.0
+  },
+  {
+   "t": "2026-03-22",
+   "s": -5,
+   "b": 67859.0
+  },
+  {
+   "t": "2026-03-23",
+   "s": -4,
+   "b": 70906.0
+  },
+  {
+   "t": "2026-03-24",
+   "s": -2,
+   "b": 70557.0
+  },
+  {
+   "t": "2026-03-25",
+   "s": -3,
+   "b": 71337.0
+  },
+  {
+   "t": "2026-03-26",
+   "s": -6,
+   "b": 68820.0
+  },
+  {
+   "t": "2026-03-27",
+   "s": -6,
+   "b": 66407.0
+  },
+  {
+   "t": "2026-03-28",
+   "s": -6,
+   "b": 66377.0
+  },
+  {
+   "t": "2026-03-29",
+   "s": -6,
+   "b": 66011.0
+  },
+  {
+   "t": "2026-03-30",
+   "s": -6,
+   "b": 66797.0
+  },
+  {
+   "t": "2026-03-31",
+   "s": -5,
+   "b": 68284.0
+  },
+  {
+   "t": "2026-04-01",
+   "s": -5,
+   "b": 68114.0
+  },
+  {
+   "t": "2026-04-02",
+   "s": -6,
+   "b": 66902.0
+  },
+  {
+   "t": "2026-04-03",
+   "s": -5,
+   "b": 66964.0
+  },
+  {
+   "t": "2026-04-04",
+   "s": -5,
+   "b": 67300.0
+  },
+  {
+   "t": "2026-04-05",
+   "s": -4,
+   "b": 69034.0
+  },
+  {
+   "t": "2026-04-06",
+   "s": -4,
+   "b": 68854.0
+  },
+  {
+   "t": "2026-04-07",
+   "s": 0,
+   "b": 71924.0
+  },
+  {
+   "t": "2026-04-08",
+   "s": -3,
+   "b": 71070.0
+  },
+  {
+   "t": "2026-04-09",
+   "s": -1,
+   "b": 71788.0
+  },
+  {
+   "t": "2026-04-10",
+   "s": -1,
+   "b": 72963.0
+  },
+  {
+   "t": "2026-04-11",
+   "s": -1,
+   "b": 73043.0
+  },
+  {
+   "t": "2026-04-12",
+   "s": -3,
+   "b": 70741.0
+  },
+  {
+   "t": "2026-04-13",
+   "s": -1,
+   "b": 74418.0
+  },
+  {
+   "t": "2026-04-14",
+   "s": -3,
+   "b": 74132.0
+  },
+  {
+   "t": "2026-04-15",
+   "s": -1,
+   "b": 74810.0
+  },
+  {
+   "t": "2026-04-16",
+   "s": 1,
+   "b": 75154.0
+  },
+  {
+   "t": "2026-04-17",
+   "s": 0,
+   "b": 77072.0
+  },
+  {
+   "t": "2026-04-18",
+   "s": 0,
+   "b": 75692.0
+  },
+  {
+   "t": "2026-04-19",
+   "s": -2,
+   "b": 73802.0
+  },
+  {
+   "t": "2026-04-20",
+   "s": 0,
+   "b": 75841.0
+  },
+  {
+   "t": "2026-04-21",
+   "s": 0,
+   "b": 76336.0
+  },
+  {
+   "t": "2026-04-22",
+   "s": 0,
+   "b": 78178.0
+  },
+  {
+   "t": "2026-04-23",
+   "s": 0,
+   "b": 78257.0
+  },
+  {
+   "t": "2026-04-24",
+   "s": 0,
+   "b": 77437.0
+  },
+  {
+   "t": "2026-04-25",
+   "s": 0,
+   "b": 77625.0
+  },
+  {
+   "t": "2026-04-26",
+   "s": -1,
+   "b": 78658.0
+  },
+  {
+   "t": "2026-04-27",
+   "s": -2,
+   "b": 77371.0
+  },
+  {
+   "t": "2026-04-28",
+   "s": 0,
+   "b": 76343.0
+  },
+  {
+   "t": "2026-04-29",
+   "s": 0,
+   "b": 75780.0
+  },
+  {
+   "t": "2026-04-30",
+   "s": -2,
+   "b": 76347.0
+  },
+  {
+   "t": "2026-05-01",
+   "s": -1,
+   "b": 78231.0
+  },
+  {
+   "t": "2026-05-02",
+   "s": -1,
+   "b": 78687.0
+  },
+  {
+   "t": "2026-05-03",
+   "s": 0,
+   "b": 78569.0
+  },
+  {
+   "t": "2026-05-04",
+   "s": 0,
+   "b": 79861.0
+  },
+  {
+   "t": "2026-05-05",
+   "s": 0,
+   "b": 80906.0
+  },
+  {
+   "t": "2026-05-06",
+   "s": 1,
+   "b": 81447.0
+  },
+  {
+   "t": "2026-05-07",
+   "s": 2,
+   "b": 80006.0
+  },
+  {
+   "t": "2026-05-08",
+   "s": 3,
+   "b": 80193.0
+  },
+  {
+   "t": "2026-05-09",
+   "s": 2,
+   "b": 80678.0
+  },
+  {
+   "t": "2026-05-10",
+   "s": 3,
+   "b": 82210.0
+  },
+  {
+   "t": "2026-05-11",
+   "s": 3,
+   "b": 81746.0
+  },
+  {
+   "t": "2026-05-12",
+   "s": 3,
+   "b": 80504.0
+  },
+  {
+   "t": "2026-05-13",
+   "s": 2,
+   "b": 79314.0
+  },
+  {
+   "t": "2026-05-14",
+   "s": 3,
+   "b": 81090.0
+  },
+  {
+   "t": "2026-05-15",
+   "s": 1,
+   "b": 79113.0
+  },
+  {
+   "t": "2026-05-16",
+   "s": -2,
+   "b": 78148.0
+  },
+  {
+   "t": "2026-05-17",
+   "s": -3,
+   "b": 77458.0
+  },
+  {
+   "t": "2026-05-18",
+   "s": -2,
+   "b": 77002.0
+  },
+  {
+   "t": "2026-05-19",
+   "s": -3,
+   "b": 76834.0
+  },
+  {
+   "t": "2026-05-20",
+   "s": -2,
+   "b": 77552.0
+  },
+  {
+   "t": "2026-05-21",
+   "s": -2,
+   "b": 77616.0
+  },
+  {
+   "t": "2026-05-22",
+   "s": -4,
+   "b": 75540.0
+  },
+  {
+   "t": "2026-05-23",
+   "s": -2,
+   "b": 76752.0
+  },
+  {
+   "t": "2026-05-24",
+   "s": -3,
+   "b": 77065.0
+  },
+  {
+   "t": "2026-05-25",
+   "s": -2,
+   "b": 77322.0
+  },
+  {
+   "t": "2026-05-26",
+   "s": -4,
+   "b": 75930.0
+  },
+  {
+   "t": "2026-05-27",
+   "s": -3,
+   "b": 74449.0
+  },
+  {
+   "t": "2026-05-28",
+   "s": -4,
+   "b": 73618.0
+  },
+  {
+   "t": "2026-05-29",
+   "s": -3,
+   "b": 73461.0
+  },
+  {
+   "t": "2026-05-30",
+   "s": -4,
+   "b": 73884.0
+  },
+  {
+   "t": "2026-05-31",
+   "s": -4,
+   "b": 73674.0
+  },
+  {
+   "t": "2026-06-01",
+   "s": -3,
+   "b": 71409.0
+  },
+  {
+   "t": "2026-06-02",
+   "s": -5,
+   "b": 66761.0
+  },
+  {
+   "t": "2026-06-03",
+   "s": -4,
+   "b": 64143.0
+  },
+  {
+   "t": "2026-06-04",
+   "s": -5,
+   "b": 63886.0
+  },
+  {
+   "t": "2026-06-05",
+   "s": -5,
+   "b": 61056.0
+  },
+  {
+   "t": "2026-06-06",
+   "s": -6,
+   "b": 60885.0
+  },
+  {
+   "t": "2026-06-07",
+   "s": -6,
+   "b": 63332.0
+  },
+  {
+   "t": "2026-06-08",
+   "s": -6,
+   "b": 63086.0
+  },
+  {
+   "t": "2026-06-09",
+   "s": -6,
+   "b": 61730.0
+  },
+  {
+   "t": "2026-06-10",
+   "s": -6,
+   "b": 61511.0
+  },
+  {
+   "t": "2026-06-11",
+   "s": -6,
+   "b": 63626.0
+  },
+  {
+   "t": "2026-06-12",
+   "s": -4,
+   "b": 63580.0
+  },
+  {
+   "t": "2026-06-13",
+   "s": -4,
+   "b": 64458.0
+  },
+  {
+   "t": "2026-06-14",
+   "s": -4,
+   "b": 65746.0
+  },
+  {
+   "t": "2026-06-15",
+   "s": -4,
+   "b": 66329.0
+  },
+  {
+   "t": "2026-06-16",
+   "s": -4,
+   "b": 65675.0
+  },
+  {
+   "t": "2026-06-17",
+   "s": -4,
+   "b": 64509.0
+  },
+  {
+   "t": "2026-06-18",
+   "s": -4,
+   "b": 62958.0
+  },
+  {
+   "t": "2026-06-19",
+   "s": -4,
+   "b": 63544.0
+  },
+  {
+   "t": "2026-06-20",
+   "s": -4,
+   "b": 64298.0
+  },
+  {
+   "t": "2026-06-21",
+   "s": -4,
+   "b": 63312.0
+  },
+  {
+   "t": "2026-06-22",
+   "s": -4,
+   "b": 64020.0
+  },
+  {
+   "t": "2026-06-23",
+   "s": -4,
+   "b": 62735.0
+  },
+  {
+   "t": "2026-06-24",
+   "s": -4,
+   "b": 61078.0
+  },
+  {
+   "t": "2026-06-25",
+   "s": -4,
+   "b": 59794.0
+  },
+  {
+   "t": "2026-06-26",
+   "s": -4,
+   "b": 60097.0
+  },
+  {
+   "t": "2026-06-27",
+   "s": -4,
+   "b": 60029.0
+  },
+  {
+   "t": "2026-06-28",
+   "s": -4,
+   "b": 59577.0
+  },
+  {
+   "t": "2026-06-29",
+   "s": -4,
+   "b": 60260.0
+  },
+  {
+   "t": "2026-06-30",
+   "s": -4,
+   "b": 58625.0
+  },
+  {
+   "t": "2026-07-01",
+   "s": -4,
+   "b": 60024.0
+  },
+  {
+   "t": "2026-07-02",
+   "s": -5,
+   "b": 61560.0
+  },
+  {
+   "t": "2026-07-03",
+   "s": -5,
+   "b": 62583.0
+  },
+  {
+   "t": "2026-07-04",
+   "s": -3,
+   "b": 63144.0
+  },
+  {
+   "t": "2026-07-05",
+   "s": -4,
+   "b": 63650.0
+  },
+  {
+   "t": "2026-07-06",
+   "s": -4,
+   "b": 64042.0
+  },
+  {
+   "t": "2026-07-07",
+   "s": -4,
+   "b": 63364.0
+  },
+  {
+   "t": "2026-07-08",
+   "s": -4,
+   "b": 62290.0
+  },
+  {
+   "t": "2026-07-09",
+   "s": -4,
+   "b": 63230.0
+  },
+  {
+   "t": "2026-07-10",
+   "s": -3,
+   "b": 64162.0
+  },
+  {
+   "t": "2026-07-11",
+   "s": -3,
+   "b": 63819.0
+  },
+  {
+   "t": "2026-07-12",
+   "s": -3,
+   "b": 63780.0
+  },
+  {
+   "t": "2026-07-13",
+   "s": -4,
+   "b": 62335.0
+  },
+  {
+   "t": "2026-07-14",
+   "s": -3,
+   "b": 65044.0
+  },
+  {
+   "t": "2026-07-15",
+   "s": -3,
+   "b": 64756.0
+  },
+  {
+   "t": "2026-07-16",
+   "s": -5,
+   "b": 63830.0
+  },
+  {
+   "t": "2026-07-17",
+   "s": -4,
+   "b": 63932.0
+  },
+  {
+   "t": "2026-07-18",
+   "s": -4,
+   "b": 64834.0
+  },
+  {
+   "t": "2026-07-19",
+   "s": -4,
+   "b": 64723.0
+  },
+  {
+   "t": "2026-07-20",
+   "s": -4,
+   "b": 65256.0
+  },
+  {
+   "t": "2026-07-21",
+   "s": -2,
+   "b": 66556.0
+  },
+  {
+   "t": "2026-07-22",
+   "s": -2,
+   "b": 66114.0
+  },
+  {
+   "t": "2026-07-23",
+   "s": -4,
+   "b": 65099.0
+  },
+  {
+   "t": "2026-07-24",
+   "s": -4,
+   "b": 64140.0
+  },
+  {
+   "t": "2026-07-25",
+   "s": -4,
+   "b": 64375.0
+  },
+  {
+   "t": "2026-07-26",
+   "s": -3,
+   "b": 65400.0
+  },
+  {
+   "t": "2026-07-27",
+   "s": -3,
+   "b": 63756.0
+  },
+  {
+   "t": "2026-07-28",
+   "s": -3,
+   "b": 63915.0
+  },
+  {
+   "t": "2026-07-29",
+   "s": -3,
+   "b": 63984.0
+  },
+  {
+   "t": "2026-07-30",
+   "s": -3,
+   "b": 64780.0
+  },
+  {
+   "t": "2026-07-31",
+   "s": -5,
+   "b": 62888.0
+  },
+  {
+   "t": "2026-08-01",
+   "s": -5,
+   "b": 62824.0
+  },
+  {
+   "t": "2026-08-02",
+   "s": -3,
+   "b": 63570.0
+  },
+  {
+   "t": "2026-08-03",
+   "s": -4,
+   "b": 63520.0
+  },
+  {
+   "t": "2026-08-04",
+   "s": -4,
+   "b": 64107.0
+  },
+  {
+   "t": "2026-08-05",
+   "s": -4,
+   "b": 64665.0
+  },
+  {
+   "t": "2026-08-06",
+   "s": -4,
+   "b": 64324.0
+  },
+  {
+   "t": "2026-08-07",
+   "s": -4,
+   "b": 64923.0
+  },
+  {
+   "t": "2026-08-08",
+   "s": -4,
+   "b": 64963.0
+  },
+  {
+   "t": "2026-08-09",
+   "s": -3,
+   "b": 64902.0
+  },
+  {
+   "t": "2026-08-10",
+   "s": -3,
+   "b": 63970.0
+  },
+  {
+   "t": "2026-08-11",
+   "s": -3,
+   "b": 63600.0
+  },
+  {
+   "t": "2026-08-12",
+   "s": -3,
+   "b": 63480.0
+  },
+  {
+   "t": "2026-08-13",
+   "s": -3,
+   "b": 63491.0
+  },
+  {
+   "t": "2026-08-14",
+   "s": -4,
+   "b": 63044.0
+  },
+  {
+   "t": "2026-08-15",
+   "s": -4,
+   "b": 63086.0
+  },
+  {
+   "t": "2026-08-16",
+   "s": -4,
+   "b": 62900.0
+  },
+  {
+   "t": "2026-08-17",
+   "s": -3,
+   "b": 64532.0
+  },
+  {
+   "t": "2026-08-18",
+   "s": -3,
+   "b": 64725.0
+  },
+  {
+   "t": "2026-08-19",
+   "s": 1,
+   "b": 69335.0
+  },
+  {
+   "t": "2026-08-20",
+   "s": 2,
+   "b": 73025.0
+  },
+  {
+   "t": "2026-08-21",
+   "s": 2,
+   "b": 78338.0
+  },
+  {
+   "t": "2026-08-22",
+   "s": 2,
+   "b": 77075.0
+  },
+  {
+   "t": "2026-08-23",
+   "s": 2,
+   "b": 77734.0
+  },
+  {
+   "t": "2026-08-24",
+   "s": 2,
+   "b": 78993.0
+  },
+  {
+   "t": "2026-08-25",
+   "s": 2,
+   "b": 78539.0
+  },
+  {
+   "t": "2026-08-26",
+   "s": 2,
+   "b": 79024.0
+  },
+  {
+   "t": "2026-08-27",
+   "s": 3,
+   "b": 80250.0
+  },
+  {
+   "t": "2026-08-28",
+   "s": 3,
+   "b": 77846.0
+  },
+  {
+   "t": "2026-08-29",
+   "s": 3,
+   "b": 78230.0
+  },
+  {
+   "t": "2026-08-30",
+   "s": 2,
+   "b": 77682.0
+  },
+  {
+   "t": "2026-08-31",
+   "s": 2,
+   "b": 78581.0
+  },
+  {
+   "t": "2026-09-01",
+   "s": 2,
+   "b": 77439.0
+  },
+  {
+   "t": "2026-09-02",
+   "s": 3,
+   "b": 77340.0
+  },
+  {
+   "t": "2026-09-03",
+   "s": 3,
+   "b": 81270.0
+  },
+  {
+   "t": "2026-09-04",
+   "s": 3,
+   "b": 79661.0
+  },
+  {
+   "t": "2026-09-05",
+   "s": 4,
+   "b": 79832.0
+  },
+  {
+   "t": "2026-09-06",
+   "s": 4,
+   "b": 80342.0
+  },
+  {
+   "t": "2026-09-07",
+   "s": 4,
+   "b": 79112.0
+  },
+  {
+   "t": "2026-09-08",
+   "s": 4,
+   "b": 78456.0
+  },
+  {
+   "t": "2026-09-09",
+   "s": 5,
+   "b": 78306.0
+  },
+  {
+   "t": "2026-09-10",
+   "s": 4,
+   "b": 76569.0
+  },
+  {
+   "t": "2026-09-11",
+   "s": 4,
+   "b": 77226.0
+  },
+  {
+   "t": "2026-09-12",
+   "s": 4,
+   "b": 77279.0
+  },
+  {
+   "t": "2026-09-13",
+   "s": 4,
+   "b": 76842.0
+  },
+  {
+   "t": "2026-09-14",
+   "s": 4,
+   "b": 78189.0
+  },
+  {
+   "t": "2026-09-15",
+   "s": 3,
+   "b": 75644.0
+  },
+  {
+   "t": "2026-09-16",
+   "s": 3,
+   "b": 76206.0
+  },
+  {
+   "t": "2026-09-17",
+   "s": 5,
+   "b": 76417.0
+  },
+  {
+   "t": "2026-09-18",
+   "s": 5,
+   "b": 80884.0
+  },
+  {
+   "t": "2026-09-19",
+   "s": 5,
+   "b": 81250.0
+  },
+  {
+   "t": "2026-09-20",
+   "s": 6,
+   "b": 81178.0
+  },
+  {
+   "t": "2026-09-21",
+   "s": 6,
+   "b": 86620.0
+  },
+  {
+   "t": "2026-09-22",
+   "s": 6,
+   "b": 86209.0
+  },
+  {
+   "t": "2026-09-23",
+   "s": 5,
+   "b": 84398.0
+  },
+  {
+   "t": "2026-09-24",
+   "s": 5,
+   "b": 84410.0
+  },
+  {
+   "t": "2026-09-25",
+   "s": 6,
+   "b": 84100.0
+  },
+  {
+   "t": "2026-09-26",
+   "s": 6,
+   "b": 84433.0
+  },
+  {
+   "t": "2026-09-27",
+   "s": 5,
+   "b": 84472.0
+  },
+  {
+   "t": "2026-09-28",
+   "s": 5,
+   "b": 83500.0
+  },
+  {
+   "t": "2026-09-29",
+   "s": 5,
+   "b": 83664.0
+  },
+  {
+   "t": "2026-09-30",
+   "s": 5,
+   "b": 83624.0
+  },
+  {
+   "t": "2026-10-01",
+   "s": 5,
+   "b": 84880.0
+  },
+  {
+   "t": "2026-10-02",
+   "s": 5,
+   "b": 84518.0
+  },
+  {
+   "t": "2026-10-03",
+   "s": 5,
+   "b": 84754.0
+  },
+  {
+   "t": "2026-10-04",
+   "s": 5,
+   "b": 86530.0
+  },
+  {
+   "t": "2026-10-05",
+   "s": 5,
+   "b": 85767.0
+  },
+  {
+   "t": "2026-10-06",
+   "s": 5,
+   "b": 85550.0
+  },
+  {
+   "t": "2026-10-07",
+   "s": 5,
+   "b": 83322.0
+  },
+  {
+   "t": "2026-10-08",
+   "s": 3,
+   "b": 81754.0
+  },
+  {
+   "t": "2026-10-09",
+   "s": 4,
+   "b": 82636.0
+  },
+  {
+   "t": "2026-10-10",
+   "s": 5,
+   "b": 82988.0
+  },
+  {
+   "t": "2026-10-11",
+   "s": 5,
+   "b": 83773.0
+  },
+  {
+   "t": "2026-10-12",
+   "s": 4,
+   "b": 81850.0
+  },
+  {
+   "t": "2026-10-13",
+   "s": 4,
+   "b": 83169.0
+  },
+  {
+   "t": "2026-10-14",
+   "s": 3,
+   "b": 81682.0
+  },
+  {
+   "t": "2026-10-15",
+   "s": 3,
+   "b": 82246.0
+  },
+  {
+   "t": "2026-10-16",
+   "s": 3,
+   "b": 81616.0
+  },
+  {
+   "t": "2026-10-17",
+   "s": 2,
+   "b": 81491.0
+  },
+  {
+   "t": "2026-10-18",
+   "s": 2,
+   "b": 82116.0
+  },
+  {
+   "t": "2026-10-19",
+   "s": 2,
+   "b": 81938.0
+  },
+  {
+   "t": "2026-10-20",
+   "s": 2,
+   "b": 83028.0
+  },
+  {
+   "t": "2026-10-21",
+   "s": 2,
+   "b": 84093.0
+  },
+  {
+   "t": "2026-10-22",
+   "s": 0,
+   "b": 81416.0
+  },
+  {
+   "t": "2026-10-23",
+   "s": 0,
+   "b": 81189.0
+  },
+  {
+   "t": "2026-10-24",
+   "s": -1,
+   "b": 80888.0
+  },
+  {
+   "t": "2026-10-25",
+   "s": -1,
+   "b": 80154.0
+  },
+  {
+   "t": "2026-10-26",
+   "s": -1,
+   "b": 80151.0
+  },
+  {
+   "t": "2026-10-27",
+   "s": -1,
+   "b": 80910.0
+  },
+  {
+   "t": "2026-10-28",
+   "s": -1,
+   "b": 81344.0
+  },
+  {
+   "t": "2026-10-29",
+   "s": -1,
+   "b": 77992.0
+  },
+  {
+   "t": "2026-10-30",
+   "s": -1,
+   "b": 77369.0
+  },
+  {
+   "t": "2026-10-31",
+   "s": -1,
+   "b": 77582.0
+  },
+  {
+   "t": "2026-11-01",
+   "s": -2,
+   "b": 78354.0
+  },
+  {
+   "t": "2026-11-02",
+   "s": -2,
+   "b": 76816.0
+  },
+  {
+   "t": "2026-11-03",
+   "s": -1,
+   "b": 77454.0
+  },
+  {
+   "t": "2026-11-04",
+   "s": -1,
+   "b": 80504.0
+  },
+  {
+   "t": "2026-11-05",
+   "s": -1,
+   "b": 76088.0
+  },
+  {
+   "t": "2026-11-06",
+   "s": -1,
+   "b": 75844.0
+  },
+  {
+   "t": "2026-11-07",
+   "s": -3,
+   "b": 75868.0
+  },
+  {
+   "t": "2026-11-08",
+   "s": -2,
+   "b": 74851.0
+  },
+  {
+   "t": "2026-11-09",
+   "s": -2,
+   "b": 75368.0
+  },
+  {
+   "t": "2026-11-10",
+   "s": -3,
+   "b": 73796.0
+  },
+  {
+   "t": "2026-11-11",
+   "s": -3,
+   "b": 74015.0
+  },
+  {
+   "t": "2026-11-12",
+   "s": -5,
+   "b": 71460.0
+  },
+  {
+   "t": "2026-11-13",
+   "s": -5,
+   "b": 68314.0
+  }
+ ],
  "model": {
-  "radar_naik": {
-   "n": 440,
-   "bulan": 61,
-   "menang": 69.8,
-   "rata": 0.96,
-   "median": 2.08,
-   "t": 0.95,
-   "skor_batas": -3,
-   "rs": false,
-   "aktif": false,
-   "alasan": "t 0.95 < 2.0",
-   "sisi": "long",
-   "nama": "🟢 Sinyal radar (skor ≥55)"
+  "beli": {
+   "rezim": "naik",
+   "skor_maks": 4,
+   "teks": "BTC tren naik & skor pasar ≤ +4"
   },
-  "awal_stage2": {
-   "n": 862,
-   "bulan": 69,
-   "menang": 73.9,
-   "rata": 0.52,
-   "median": 2.08,
-   "t": 1.05,
-   "skor_batas": -6,
-   "rs": false,
-   "aktif": false,
-   "alasan": "t 1.05 < 2.0",
-   "sisi": "long",
-   "nama": "🟩 Awal Stage 2"
+  "jual": {
+   "rezim_bukan": "naik",
+   "skor_maks": 6,
+   "teks": "BTC tidak tren naik (tanpa batas skor)"
   },
-  "tembus_dasar": {
-   "n": 315,
-   "bulan": 43,
-   "menang": 75.6,
-   "rata": 0.85,
-   "median": 2.08,
-   "t": 1.65,
-   "skor_batas": -6,
-   "rs": false,
-   "aktif": false,
-   "alasan": "t 1.65 < 2.0",
-   "sisi": "long",
-   "nama": "Tembus atap dasar + volume"
+  "strategi": {
+   "radar_naik": {
+    "aktif": true,
+    "sisi": "long",
+    "nama": "🟢 Sinyal radar (skor ≥55)",
+    "live": true,
+    "n": 241,
+    "bulan": 40,
+    "menang": 74.3,
+    "rata": 2.36,
+    "median": 2.08,
+    "t": 1.53
+   },
+   "awal_stage2": {
+    "aktif": true,
+    "sisi": "long",
+    "nama": "🟩 Awal Stage 2",
+    "live": true,
+    "n": 435,
+    "bulan": 44,
+    "menang": 80.7,
+    "rata": 1.81,
+    "median": 2.08,
+    "t": 2.82
+   },
+   "tembus_dasar": {
+    "aktif": false,
+    "sisi": "long",
+    "nama": "Tembus atap dasar + volume",
+    "live": false,
+    "n": 208,
+    "bulan": 26,
+    "menang": 78.4,
+    "rata": 1.62,
+    "median": 2.08,
+    "t": 2.71
+   },
+   "pullback_fib": {
+    "aktif": false,
+    "sisi": "long",
+    "nama": "Pullback Stage 2 ke Fibonacci",
+    "live": false,
+    "n": 438,
+    "bulan": 43,
+    "menang": 71.2,
+    "rata": 0.2,
+    "median": 2.08,
+    "t": 0.18
+   },
+   "pantul_fib": {
+    "aktif": true,
+    "sisi": "short",
+    "nama": "🔻 Pantulan Stage 4 ke Fibonacci",
+    "live": true,
+    "n": 226,
+    "bulan": 37,
+    "menang": 86.7,
+    "rata": 2.75,
+    "median": 1.94,
+    "t": 3.61
+   },
+   "awal_stage4": {
+    "aktif": false,
+    "sisi": "short",
+    "nama": "Awal Stage 4",
+    "live": false,
+    "n": 1156,
+    "bulan": 53,
+    "menang": 73.5,
+    "rata": -0.05,
+    "median": 2.0,
+    "t": -0.09
+   },
+   "jebol_puncak": {
+    "aktif": false,
+    "sisi": "short",
+    "nama": "Jebol lantai puncak + volume",
+    "live": false,
+    "n": 60,
+    "bulan": 17,
+    "menang": 71.7,
+    "rata": -1.0,
+    "median": 1.88,
+    "t": -0.89
+   },
+   "radar_turun": {
+    "aktif": false,
+    "sisi": "short",
+    "nama": "🔴 Sinyal radar turun",
+    "live": false,
+    "n": 71,
+    "bulan": 34,
+    "menang": 64.8,
+    "rata": -1.7,
+    "median": 1.91,
+    "t": -1.58
+   }
   },
-  "pullback_fib": {
-   "n": 602,
-   "bulan": 47,
-   "menang": 71.8,
-   "rata": 0.24,
-   "median": 2.08,
-   "t": 0.24,
-   "skor_batas": 0,
-   "rs": false,
-   "aktif": false,
-   "alasan": "t 0.24 < 2.0",
-   "sisi": "long",
-   "nama": "Pullback Stage 2 ke Fibonacci"
-  },
-  "pantul_fib": {
-   "n": 133,
-   "bulan": 15,
-   "menang": 91.0,
-   "rata": 3.84,
-   "median": 1.91,
-   "t": 12.19,
-   "skor_batas": -2,
-   "rs": true,
-   "aktif": true,
-   "sisi": "short",
-   "nama": "🔻 Pantulan Stage 4 ke Fibonacci"
-  },
-  "awal_stage4": {
-   "aktif": false,
-   "alasan": "sinyal latih kurang / rata-rata tidak positif",
-   "sisi": "short",
-   "nama": "Awal Stage 4"
-  },
-  "jebol_puncak": {
-   "aktif": false,
-   "alasan": "sinyal latih kurang / rata-rata tidak positif",
-   "sisi": "short",
-   "nama": "Jebol lantai puncak + volume"
-  },
-  "radar_turun": {
-   "aktif": false,
-   "alasan": "sinyal latih kurang / rata-rata tidak positif",
-   "sisi": "short",
-   "nama": "🔴 Sinyal radar turun"
+  "pilihan": {
+   "long": {
+    "batas": 4,
+    "sharpe": 1.21,
+    "n": 676,
+    "rata": 2.0,
+    "kandidat": [
+     {
+      "batas": 6,
+      "n": 967,
+      "rata": 1.34,
+      "sharpe": 1.01,
+      "total": 264.5
+     },
+     {
+      "batas": 5,
+      "n": 926,
+      "rata": 1.42,
+      "sharpe": 1.07,
+      "total": 294.6
+     },
+     {
+      "batas": 4,
+      "n": 676,
+      "rata": 2.0,
+      "sharpe": 1.21,
+      "total": 353.8
+     },
+     {
+      "batas": 3,
+      "n": 457,
+      "rata": 2.52,
+      "sharpe": 1.29,
+      "total": 302.4
+     },
+     {
+      "batas": 2,
+      "n": 285,
+      "rata": 3.41,
+      "sharpe": 1.29,
+      "total": 181.8
+     },
+     {
+      "batas": 1,
+      "n": 180,
+      "rata": 3.1,
+      "sharpe": 1.02,
+      "total": 93.8
+     }
+    ],
+    "strategi": [
+     "radar_naik",
+     "awal_stage2",
+     "tembus_dasar"
+    ],
+    "pendatang": {
+     "tembus_dasar": {
+      "n": 208,
+      "rata": 1.62,
+      "masuk": true,
+      "sharpe_gabung": 1.3
+     },
+     "pullback_fib": {
+      "n": 438,
+      "rata": 0.2,
+      "masuk": false,
+      "sharpe_gabung": 0.88
+     }
+    }
+   },
+   "short": {
+    "batas": 6,
+    "sharpe": 1.13,
+    "n": 226,
+    "rata": 2.75,
+    "kandidat": [
+     {
+      "batas": 6,
+      "n": 226,
+      "rata": 2.75,
+      "sharpe": 1.13,
+      "total": 55.0
+     },
+     {
+      "batas": 1,
+      "n": 223,
+      "rata": 2.76,
+      "sharpe": 1.1,
+      "total": 53.2
+     },
+     {
+      "batas": -1,
+      "n": 215,
+      "rata": 2.54,
+      "sharpe": 0.9,
+      "total": 39.4
+     },
+     {
+      "batas": -2,
+      "n": 206,
+      "rata": 2.51,
+      "sharpe": 0.76,
+      "total": 31.4
+     },
+     {
+      "batas": -3,
+      "n": 172,
+      "rata": 2.06,
+      "sharpe": 0.97,
+      "total": 37.5
+     }
+    ],
+    "strategi": [
+     "pantul_fib"
+    ],
+    "pendatang": {
+     "awal_stage4": {
+      "n": 1156,
+      "rata": -0.05,
+      "masuk": false
+     },
+     "jebol_puncak": {
+      "n": 60,
+      "rata": -1.0,
+      "masuk": false
+     },
+     "radar_turun": {
+      "n": 71,
+      "rata": -1.7,
+      "masuk": false
+     }
+    }
+   }
   }
  }
 }

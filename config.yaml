@@ -60,6 +60,16 @@ min_checklist: 0                # minimal butir checklist yang cocok (Siklus, Tr
 # Hasil backtest Okt 2024–Okt 2026: filter stage di atas justru MENURUNKAN hasil sinyal 🟢 radar
 # (+2,2% → ±0% per sinyal), karena sinyal radar terbaik muncul di awal Stage 4 (pantulan). Jadi dibiarkan kosong.
 
+# ---- 🌡️ Model kondisi pasar ----
+# Skor pasar harian −6…+6 (lihat pasar.py). Model = filter BTC di bawah ini TETAP berlaku, DITAMBAH batas skor pasar:
+#   beli (🟢 radar, 🟩 awal Stage 2) hanya bila skor pasar ≤ batas beli  → tidak membeli saat pasar kepanasan
+#   jual dulu (🔻) hanya bila skor pasar ≤ batas jual
+# Batasnya ada di model_pasar/model.json (hasil backtest_pasar.py, diperbarui otomatis tiap tanggal 1).
+# Uji di luar sampel 2023–Okt 2026 (maks 5 posisi): model lama +131% (Sharpe 0,80) → dengan batas skor +184% (Sharpe 1,04).
+#   auto  = pakai batas skor hanya bila model baru menang di uji luar sampel (model.json "pakai": true)
+#   true  = selalu pakai · false = tidak pakai (hanya filter BTC lama)
+model_pasar: auto
+
 # ---- Sinyal 🟩 AWAL STAGE 2 (alert terpisah dari sinyal 🟢 skor) ----
 # Koin yang HARI INI resmi masuk Stage 2 (tren naik terkonfirmasi), bukan meme, saat BTC tren naik.
 # Rencana jual = bagian "rencana" di bawah (bawaan: 50% di +5%, sisa di +10%, SL −12%, maks 30 hari).

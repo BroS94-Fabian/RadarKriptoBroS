@@ -1,96 +1,96 @@
 # 🌡️ Model Kondisi Pasar
 
-Dibuat 14 Nov 2026 16:43 WIB · 133 koin · sinyal 2020-09-17 s/d 2026-10-14 · meme coin tidak ikut
+Dibuat 14 Nov 2026 17:06 WIB · 133 koin · sinyal 2020-09-17 s/d 2026-10-14 · meme coin tidak ikut
 
 ## Putusan
 
-**❌ Model BARU tidak dipakai (radar tetap memakai aturan lama)** — di luar sampel 2023-01-01–2026-10-14: BARU -29.9% (maks turun -30.6%, Sharpe -0.78) vs LAMA +134.8% (maks turun -24.9%, Sharpe 0.83).
+**✅ Model BARU dipakai radar** — di luar sampel 2023-01-01 s/d 2026-10-14: BARU +183.9% (maks turun -23.9%, Sharpe 1.04) vs LAMA +131.1% (maks turun -25.4%, Sharpe 0.8).
+
+Model baru = aturan lama (beli hanya saat BTC tren naik, jual dulu hanya saat BTC tidak tren naik) **ditambah batas skor pasar** yang dipilih dari data: beli → BTC tren naik & skor pasar ≤ +4; jual dulu → BTC tidak tren naik (tanpa batas skor).
 
 ## Uji portofolio di luar sampel (2023-01-01 s/d 2026-10-14)
 
-Maks 5 posisi sekaligus, tiap posisi = modal ÷ 5, tanpa leverage. Aturan model baru untuk tiap tahun dipilih hanya dari data tahun-tahun sebelumnya. Saat slot penuh, sinyal dipilih acak (median dari 20 urutan).
+Maks 5 posisi sekaligus, tiap posisi = modal ÷ 5, tanpa leverage. Batas skor untuk tiap tahun uji dipilih hanya dari data tahun-tahun sebelumnya (walk-forward). Saat slot penuh, sinyal dipilih acak (median dari 100 urutan; dalam kurung = terendah…tertinggi).
 
 | Susunan | Total | Per tahun | Maks turun | Sharpe | Transaksi | Menang | Rata-rata/transaksi | Hari ada posisi |
 |---|---|---|---|---|---|---|---|---|
-| Model LAMA (aturan tetap BTC MA50) | **+134.8%** (+94…+187) | 2023: +31% · 2024: +20% · 2025: +12% · 2026: +36% | -24.9% | 0.83 | 519 dari 998 | 74.5% | +0.97% | 82% |
-| Model BARU (mengikuti skor pasar) | **-29.9%** (-35…-24) | 2023: +0% · 2024: -30% · 2025: +0% · 2026: -1% | -30.6% | -0.78 | 61 dari 105 | 55.7% | -2.71% | 10% |
-| LAMA — hanya beli | **+76.2%** (+40…+126) | 2023: +28% · 2024: +22% · 2025: -3% · 2026: +21% | -24.0% | 0.56 | 428 dari 790 | 72.7% | +0.83% | 54% |
-| BARU — hanya beli | **-29.4%** (-35…-23) | 2023: +0% · 2024: -30% · 2025: +0% · 2026: +0% | -30.6% | -0.76 | 60 dari 104 | 56.7% | -2.69% | 8% |
-| LAMA — hanya jual dulu (short) | **+27.8%** (+14…+36) | 2023: +4% · 2024: +1% · 2025: +11% · 2026: +10% | -7.4% | 0.94 | 100 dari 208 | 81.0% | +1.29% | 35% |
-| BARU — hanya jual dulu (short) | **-0.7%** (-1…-1) | 2023: +0% · 2024: +0% · 2025: +0% · 2026: -1% | -0.7% | -0.51 | 1 dari 1 | 0.0% | -3.47% | 2% |
-| Tanpa filter pasar (3 strategi live, semua kondisi) | **+9.4%** (-10…+48) | 2023: -12% · 2024: +17% · 2025: -16% · 2026: +25% | -40.8% | 0.13 | 714 dari 1514 | 70.6% | +0.19% | 95% |
+| Model LAMA (aturan tetap BTC MA50) | **+131.1%** (+72…+232) | 2023: +26% · 2024: +21% · 2025: +11% · 2026: +35% | -25.4% | 0.8 | 522 dari 998 | 74.5% | +0.94% | 82% |
+| Model BARU (aturan lama + batas skor pasar) | **+183.9%** (+120…+275) | 2023: +26% · 2024: +36% · 2025: +16% · 2026: +38% | -23.9% | 1.04 | 442 dari 843 | 76.1% | +1.32% | 79% |
+| Model BARU + strategi pendatang | **+224.6%** (+130…+355) | 2023: +26% · 2024: +51% · 2025: +16% · 2026: +45% | -23.9% | 1.14 | 470 dari 969 | 76.7% | +1.40% | 79% |
+| LAMA — hanya beli | **+80.5%** (+34…+137) | 2023: +22% · 2024: +23% · 2025: -2% · 2026: +21% | -24.4% | 0.55 | 427 dari 790 | 72.8% | +0.86% | 54% |
+| BARU — hanya beli | **+119.7%** (+72…+168) | 2023: +22% · 2024: +37% · 2025: +2% · 2026: +25% | -23.1% | 0.77 | 348 dari 635 | 74.5% | +1.30% | 51% |
+| LAMA — hanya jual dulu (short) | **+27.9%** (+15…+43) | 2023: +4% · 2024: +1% · 2025: +12% · 2026: +10% | -7.4% | 0.89 | 100 dari 208 | 80.8% | +1.33% | 35% |
+| BARU — hanya jual dulu (short) | **+27.9%** (+15…+43) | 2023: +4% · 2024: +1% · 2025: +12% · 2026: +10% | -7.4% | 0.89 | 100 dari 208 | 80.8% | +1.33% | 35% |
+| Percobaan 1 (ambang skor per strategi, syarat t ≥ 2) — gagal | **-30.7%** (-37…-21) | 2023: +0% · 2024: -30% · 2025: +0% · 2026: -1% | -32.3% | -0.77 | 61 dari 105 | 55.0% | -2.80% | 10% |
+| Tanpa filter pasar (3 strategi live, semua kondisi) | **+8.2%** (-20…+82) | 2023: -9% · 2024: +14% · 2025: -17% · 2026: +22% | -41.1% | 0.1 | 716 dari 1514 | 70.7% | +0.19% | 95% |
 | Pembanding: beli & tahan BTC | +311.1% | 2023: +154% · 2024: +112% · 2025: -7% · 2026: -23% | -53.0% | 0.81 | - | - | - | 100% |
 
-Dengan maks 10 posisi: Model LAMA +98.0% (maks turun -21.6%) · Model BARU -30.6% (maks turun -30.6%)
+Perbandingan berpasangan (urutan acak yang sama untuk kedua model, 100 urutan): model baru lebih tinggi total untungnya di **100 dari 100**, Sharpe lebih tinggi di 100, penurunan maksimum lebih kecil di 53; selisih total (median) +48.5 poin.
 
-### Per sinyal di luar sampel (tanpa batas slot)
+Dengan maks 3 posisi: Model LAMA +168.6% (maks turun -34.2%, Sharpe 0.83) · Model BARU +242.3% (maks turun -23.2%, Sharpe 1.08)
 
-| Strategi | Model baru | Model lama | Semua sinyal (tanpa filter) |
-|---|---|---|---|
-| 🟢 Sinyal radar (skor ≥55) (beli) | - | +1.70% (238, menang 70.6%) | +0.37% (452, menang 66.2%) |
-| 🟩 Awal Stage 2 (beli) | - | +0.80% (552, menang 75.5%) | +0.56% (686, menang 74.5%) |
-| Tembus atap dasar + volume (beli) | -0.08% (23, menang 73.9%) | - | +0.85% (298, menang 75.5%) |
-| Pullback Stage 2 ke Fibonacci (beli) | -6.39% (81, menang 34.6%) | - | -0.78% (626, menang 68.2%) |
-| 🔻 Pantulan Stage 4 ke Fibonacci (jual dulu) | -3.47% (1, menang 0.0%) | +2.53% (208, menang 86.1%) | -0.75% (376, menang 69.4%) |
-| Awal Stage 4 (jual dulu) | - | - | -0.62% (1200, menang 70.2%) |
-| Jebol lantai puncak + volume (jual dulu) | - | - | -0.38% (64, menang 71.9%) |
-| 🔴 Sinyal radar turun (jual dulu) | - | - | -1.31% (87, menang 58.6%) |
+Dengan maks 10 posisi: Model LAMA +94.9% (maks turun -21.6%, Sharpe 0.74) · Model BARU +111.0% (maks turun -21.6%, Sharpe 0.91) · Model BARU + strategi pendatang +129.0% (maks turun -21.6%, Sharpe 0.99)
 
-## Aturan yang terpilih tiap tahun uji (walk-forward)
+### Aturan yang terpilih tiap tahun uji
 
-| Tahun uji | Strategi | Aturan dari data sebelumnya | Hasil latih | Hasil di tahun uji |
-|---|---|---|---|---|
-| 2023 | 🟢 Sinyal radar (skor ≥55) | ✖ tidak aktif (t 1.55 < 2.0) | +2.24% (79, menang 79.7%) | - |
-| 2023 | 🟩 Awal Stage 2 | ✖ tidak aktif (t 1.44 < 2.0) | +1.15% (156, menang 75.6%) | - |
-| 2023 | Tembus atap dasar + volume | ✖ tidak aktif (sinyal latih kurang / rata-rata tidak positif) | - | - |
-| 2023 | Pullback Stage 2 ke Fibonacci | ✖ tidak aktif (t 1.43 < 2.0) | +2.19% (189, menang 77.2%) | - |
-| 2023 | 🔻 Pantulan Stage 4 ke Fibonacci | ✖ tidak aktif (sinyal latih kurang / rata-rata tidak positif) | - | - |
-| 2023 | Awal Stage 4 | ✖ tidak aktif (t 1.4 < 2.0) | +1.01% (287, menang 79.1%) | - |
-| 2023 | Jebol lantai puncak + volume | ✖ tidak aktif (sinyal latih kurang / rata-rata tidak positif) | - | - |
-| 2023 | 🔴 Sinyal radar turun | ✖ tidak aktif (sinyal latih kurang / rata-rata tidak positif) | - | - |
-| 2024 | 🟢 Sinyal radar (skor ≥55) | ✖ tidak aktif (t 1.24 < 2.0) | +1.28% (153, menang 71.9%) | - |
-| 2024 | 🟩 Awal Stage 2 | ✖ tidak aktif (t 0.07 < 2.0) | +0.04% (362, menang 71.3%) | - |
-| 2024 | Tembus atap dasar + volume | skor pasar ≥ -4 + koin lebih kuat dari BTC | +2.00% (62, menang 82.3%) · t 2.34 | -0.08% (23, menang 73.9%) |
-| 2024 | Pullback Stage 2 ke Fibonacci | skor pasar ≥ +4 | +2.54% (124, menang 83.1%) · t 3.12 | -6.39% (81, menang 34.6%) |
-| 2024 | 🔻 Pantulan Stage 4 ke Fibonacci | ✖ tidak aktif (t 0.07 < 2.0) | +0.12% (55, menang 74.5%) | - |
-| 2024 | Awal Stage 4 | ✖ tidak aktif (t 0.94 < 2.0) | +0.53% (566, menang 77.2%) | - |
-| 2024 | Jebol lantai puncak + volume | ✖ tidak aktif (sinyal latih kurang / rata-rata tidak positif) | - | - |
-| 2024 | 🔴 Sinyal radar turun | ✖ tidak aktif (sinyal latih kurang / rata-rata tidak positif) | - | - |
-| 2025 | 🟢 Sinyal radar (skor ≥55) | ✖ tidak aktif (t 1.56 < 2.0) | +1.97% (294, menang 73.8%) | - |
-| 2025 | 🟩 Awal Stage 2 | ✖ tidak aktif (t 0.62 < 2.0) | +0.41% (605, menang 73.2%) | - |
-| 2025 | Tembus atap dasar + volume | ✖ tidak aktif (t 1.86 < 2.0) | +1.29% (183, menang 77.6%) | - |
-| 2025 | Pullback Stage 2 ke Fibonacci | ✖ tidak aktif (t 0.04 < 2.0) | +0.05% (463, menang 70.2%) | - |
-| 2025 | 🔻 Pantulan Stage 4 ke Fibonacci | ✖ tidak aktif (t 1.71 < 2.0) | +1.86% (45, menang 84.4%) | - |
-| 2025 | Awal Stage 4 | ✖ tidak aktif (sinyal latih kurang / rata-rata tidak positif) | - | - |
-| 2025 | Jebol lantai puncak + volume | ✖ tidak aktif (sinyal latih kurang / rata-rata tidak positif) | - | - |
-| 2025 | 🔴 Sinyal radar turun | ✖ tidak aktif (sinyal latih kurang / rata-rata tidak positif) | - | - |
-| 2026 | 🟢 Sinyal radar (skor ≥55) | ✖ tidak aktif (t 0.8 < 2.0) | +0.88% (394, menang 70.1%) | - |
-| 2026 | 🟩 Awal Stage 2 | ✖ tidak aktif (t 0.5 < 2.0) | +0.29% (714, menang 72.8%) | - |
-| 2026 | Tembus atap dasar + volume | ✖ tidak aktif (t 1.87 < 2.0) | +1.16% (214, menang 77.1%) | - |
-| 2026 | Pullback Stage 2 ke Fibonacci | ✖ tidak aktif (t 0.09 < 2.0) | +0.09% (470, menang 71.1%) | - |
-| 2026 | 🔻 Pantulan Stage 4 ke Fibonacci | skor pasar ≤ -2 + koin lebih lemah dari BTC | +3.89% (132, menang 91.7%) · t 13.34 | -3.47% (1, menang 0.0%) |
-| 2026 | Awal Stage 4 | ✖ tidak aktif (sinyal latih kurang / rata-rata tidak positif) | - | - |
-| 2026 | Jebol lantai puncak + volume | ✖ tidak aktif (sinyal latih kurang / rata-rata tidak positif) | - | - |
-| 2026 | 🔴 Sinyal radar turun | ✖ tidak aktif (t 0.1 < 2.0) | +0.10% (95, menang 68.4%) | - |
-
-## Model akhir (dilatih dari semua data, dipakai radar bila putusan ✅)
-
-| Strategi | Sisi | Aturan | Sinyal | Menang | Rata-rata | t (kluster bulan) |
+| Tahun uji | Sisi | Batas terpilih dari data sebelumnya | Sharpe latih tiap batas | Hasil di tahun uji (model baru) | Bila tanpa batas (aturan lama) | Pendatang yang masuk |
 |---|---|---|---|---|---|---|
-| 🟢 Sinyal radar (skor ≥55) | beli | ✖ tidak aktif (t 0.95 < 2.0) | 440 | - | - | 0.95 |
-| 🟩 Awal Stage 2 | beli | ✖ tidak aktif (t 1.05 < 2.0) | 862 | - | - | 1.05 |
-| Tembus atap dasar + volume | beli | ✖ tidak aktif (t 1.65 < 2.0) | 315 | - | - | 1.65 |
-| Pullback Stage 2 ke Fibonacci | beli | ✖ tidak aktif (t 0.24 < 2.0) | 602 | - | - | 0.24 |
-| 🔻 Pantulan Stage 4 ke Fibonacci | jual dulu | skor pasar ≤ -2 + koin lebih lemah dari BTC | 133 | 91.0% | +3.84% | 12.19 |
-| Awal Stage 4 | jual dulu | ✖ tidak aktif (sinyal latih kurang / rata-rata tidak positif) | - | - | - | - |
-| Jebol lantai puncak + volume | jual dulu | ✖ tidak aktif (sinyal latih kurang / rata-rata tidak positif) | - | - | - | - |
-| 🔴 Sinyal radar turun | jual dulu | ✖ tidak aktif (sinyal latih kurang / rata-rata tidak positif) | - | - | - | - |
+| 2023 | beli | BTC tren naik (tanpa batas skor) | tanpa: 2.12 · ≤+5: 2.19 · ≤+4: 1.99 · ≤+3: 2.16 · ≤+2: 1.97 | -0.02% (267, menang 70.0%) | -0.02% (267, menang 70.0%) | - |
+| 2023 | jual dulu | BTC tidak tren naik (tanpa batas skor) | data latih kurang | +1.79% (13, menang 92.3%) | +1.79% (13, menang 92.3%) | - |
+| 2024 | beli | BTC tren naik & skor pasar ≤ +4 | tanpa: 1.45 · ≤+5: 1.54 · ≤+4: 1.59 · ≤+3: 1.67 · ≤+2: 1.67 · ≤+1: 1.07 | +3.77% (194, menang 84.0%) | +2.84% (252, menang 81.0%) | Tembus atap dasar + volume |
+| 2024 | jual dulu | BTC tidak tren naik (tanpa batas skor) | tanpa: 1.69 · ≤+1: 1.69 · ≤-1: 1.55 | +1.13% (23, menang 73.9%) | +1.13% (23, menang 73.9%) | - |
+| 2025 | beli | BTC tren naik & skor pasar ≤ +3 | tanpa: 1.19 · ≤+5: 1.24 · ≤+4: 1.33 · ≤+3: 1.47 · ≤+2: 1.37 · ≤+1: 1.06 | -1.55% (73, menang 63.0%) | -1.55% (105, menang 63.8%) | - |
+| 2025 | jual dulu | BTC tidak tren naik (tanpa batas skor) | tanpa: 1.15 · ≤+1: 1.15 · ≤-1: 0.78 · ≤-2: 0.64 · ≤-3: 0.78 | +3.57% (133, menang 91.7%) | +3.57% (133, menang 91.7%) | - |
+| 2026 | beli | BTC tren naik & skor pasar ≤ +4 | tanpa: 1.03 · ≤+5: 1.05 · ≤+4: 1.17 · ≤+3: 1.27 · ≤+2: 1.23 · ≤+1: 0.94 | +2.60% (101, menang 80.2%) | +1.78% (166, menang 76.5%) | Tembus atap dasar + volume |
+| 2026 | jual dulu | BTC tidak tren naik (tanpa batas skor) | tanpa: 1.07 · ≤+1: 1.03 · ≤-1: 0.78 · ≤-2: 0.62 · ≤-3: 0.97 | +0.06% (39, menang 71.8%) | +0.06% (39, menang 71.8%) | - |
 
-## Hasil tiap strategi menurut kondisi pasar (seluruh data, deskriptif)
+### Uji kepekaan: batas beli dipasang tetap sepanjang 2023–2026 (BUKAN walk-forward)
 
-Jumlah hari per kondisi: bear (≤−4) 641 · turun (−3…−2) 452 · netral (−1…+1) 560 · naik (+2…+3) 395 · bull (≥+4) 461
+Untuk melihat apakah hasil bergantung pada satu angka batas saja. Sisi jual dulu memakai aturan lama.
 
-| Strategi | bear (≤−4) | turun (−3…−2) | netral (−1…+1) | naik (+2…+3) | bull (≥+4) | Semua |
+| Beli hanya bila skor pasar | Total | Per tahun | Maks turun | Sharpe | Transaksi | Menang | Rata-rata/transaksi |
+|---|---|---|---|---|---|---|---|
+| tanpa batas (= model lama) | +131.1% | 2023: +26% · 2024: +21% · 2025: +11% · 2026: +35% | -25.4% | 0.8 | 522 | 74.5% | +0.94% |
+| ≤ +5 | +144.7% | 2023: +29% · 2024: +22% · 2025: +11% · 2026: +37% | -24.0% | 0.86 | 518 | 74.6% | +1.01% |
+| ≤ +4 | +189.6% | 2023: +31% · 2024: +36% · 2025: +17% · 2026: +38% | -20.5% | 1.12 | 425 | 76.5% | +1.40% |
+| ≤ +3 | +195.8% | 2023: +38% · 2024: +36% · 2025: +16% · 2026: +34% | -13.2% | 1.27 | 349 | 77.9% | +1.69% |
+| ≤ +2 | +159.5% | 2023: +26% · 2024: +19% · 2025: +25% · 2026: +37% | -12.2% | 1.51 | 269 | 79.2% | +1.91% |
+| ≤ +1 | +101.7% | 2023: +14% · 2024: +14% · 2025: +23% · 2026: +26% | -15.9% | 1.21 | 228 | 77.7% | +1.67% |
+
+## Kenapa: hasil sinyal menurut kondisi pasar (seluruh data 2020–2026)
+
+Sinyal beli live (🟢 radar + 🟩 awal Stage 2) **saat BTC tren naik**, dan sinyal 🔻 jual dulu **saat BTC tidak tren naik**:
+
+| | sangat lemah (≤−4) | lemah (−3…−2) | campuran (−1…+1) | kuat (+2…+3) | sangat kuat (≥+4) |
+|---|---|---|---|---|---|
+| Sinyal beli | - | +4.10% (35, menang 71.4%) | +2.86% (145, menang 80.7%) | +2.15% (277, menang 80.1%) | +0.27% (510, menang 71.4%) |
+| ↳ pembanding: beli acak | +3.42% (31, menang 90.3%) | +1.04% (1478, menang 76.3%) | +0.22% (4114, menang 72.3%) | +0.14% (4445, menang 72.7%) | -0.74% (5341, menang 67.9%) |
+| ↳ jumlah hari | 3 | 70 | 287 | 332 | 445 |
+| Sinyal jual dulu | +1.54% (131, menang 81.7%) | +4.20% (75, menang 93.3%) | +5.85% (17, menang 94.1%) | +1.95% (3, menang 100.0%) | - |
+| ↳ pembanding: short acak | -0.48% (9901, menang 70.5%) | +0.58% (4931, menang 75.4%) | +0.24% (2643, menang 73.7%) | +1.66% (457, menang 79.9%) | +0.58% (94, menang 75.5%) |
+| ↳ jumlah hari | 638 | 382 | 273 | 63 | 16 |
+
+## Model akhir (dilatih dari semua data)
+
+- **Beli** boleh jalan saat: BTC tren naik & skor pasar ≤ +4
+- **Jual dulu** boleh jalan saat: BTC tidak tren naik (tanpa batas skor)
+
+| Strategi | Sisi | Status | Sinyal di kondisi yang diizinkan | Menang | Rata-rata bersih |
+|---|---|---|---|---|---|
+| 🟢 Sinyal radar (skor ≥55) | beli | ✅ aktif | 241 | 74.3% | +2.36% |
+| 🟩 Awal Stage 2 | beli | ✅ aktif | 435 | 80.7% | +1.81% |
+| Tembus atap dasar + volume | beli | ✖ tidak aktif | 208 | 78.4% | +1.62% |
+| Pullback Stage 2 ke Fibonacci | beli | ✖ tidak aktif | 438 | 71.2% | +0.20% |
+| 🔻 Pantulan Stage 4 ke Fibonacci | jual dulu | ✅ aktif | 226 | 86.7% | +2.75% |
+| Awal Stage 4 | jual dulu | ✖ tidak aktif | 1156 | 73.5% | -0.05% |
+| Jebol lantai puncak + volume | jual dulu | ✖ tidak aktif | 60 | 71.7% | -1.00% |
+| 🔴 Sinyal radar turun | jual dulu | ✖ tidak aktif | 71 | 64.8% | -1.70% |
+
+## Hasil tiap strategi menurut kondisi pasar (semua arah BTC, deskriptif)
+
+Jumlah hari per kondisi: sangat lemah (≤−4) 641 · lemah (−3…−2) 452 · campuran (−1…+1) 560 · kuat (+2…+3) 395 · sangat kuat (≥+4) 461
+
+| Strategi | sangat lemah (≤−4) | lemah (−3…−2) | campuran (−1…+1) | kuat (+2…+3) | sangat kuat (≥+4) | Semua |
 |---|---|---|---|---|---|---|
 | 🟢 Sinyal radar (skor ≥55) | -1.55% (139, menang 59.7%) | +1.20% (121, menang 72.7%) | +0.89% (136, menang 69.1%) | +1.35% (113, menang 72.6%) | +0.08% (70, menang 61.4%) | +0.36% (579, menang 67.4%) |
 | 🟩 Awal Stage 2 | -0.01% (53, menang 71.7%) | -1.27% (44, menang 65.9%) | +1.01% (118, menang 76.3%) | +1.61% (201, menang 79.1%) | +0.14% (446, menang 72.0%) | +0.52% (862, menang 73.9%) |
@@ -105,11 +105,12 @@ Jumlah hari per kondisi: bear (≤−4) 641 · turun (−3…−2) 452 · netral
 
 ## Kondisi pasar pada akhir data
 
-2026-11-13: skor **-5** (🔴🔴 BEAR KUAT) · koin di atas MA50 3% · Stage 2 3% · Stage 4 23%
+2026-11-13: skor **-5** (🔴🔴 SANGAT LEMAH) · BTC turun · koin di atas MA50 3% · Stage 2 3% · Stage 4 23%
 
-## Catatan
+## Catatan jujur
 
-- Skor pasar memakai ambang bulat yang ditetapkan di muka; yang dipilih dari data hanya batas skor tiap strategi.
+- **Percobaan 1 gagal.** Rancangan pertama (tiap strategi boleh jalan mulai skor tertentu, dengan syarat statistik ketat) hampir tidak pernah bertransaksi dan rugi; hasilnya tetap dicantumkan di tabel. Model versi 2 dirancang SETELAH melihat hasil itu, jadi angka ujinya tidak sebersih uji buta. Pegangannya: batas dipilih walk-forward, hasilnya mirip untuk batas +2, +3 dan +4, dan polanya sama di data 2020–2022 yang tidak dipakai sebagai tahun uji.
+- Skor pasar memakai ambang bulat yang ditetapkan di muka; yang dipilih dari data hanya batas skor per sisi.
 - Model lama disetel memakai data 2024–2026 (beli) dan 2020–2026 (short), jadi di uji ini model lama diuntungkan.
 - Daftar koin = top CMC saat ini (koin yang sudah mati tidak ikut): hasil beli cenderung terlalu bagus, hasil short terlalu jelek.
 - Untung-rugi dicatat saat posisi ditutup; penurunan sementara di tengah posisi tidak terlihat di 'maks turun'.

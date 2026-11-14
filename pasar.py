@@ -12,8 +12,13 @@ Skor pasar −6 … +6 = jumlah 6 suara (+1 mendukung naik / 0 netral / −1 men
   6. alt_rs      median kenaikan 30 hari altcoin − BTC ≥ +5 poin (+1) / ≤ −5 poin (−1)
 
 Ambang di atas angka bulat yang ditetapkan di muka (tidak dicocok-cocokkan dengan data).
-Yang DIPILIH dari data (walk-forward, lihat backtest_pasar.py) hanyalah: tiap strategi boleh
-jalan mulai skor berapa. Hasil pilihan itu disimpan di model_pasar/model.json dan dibaca radar.
+Skor tinggi BUKAN berarti "waktunya beli": di data 2020–2026 sinyal beli terbaik muncul saat BTC baru
+tren naik tetapi pasar luas belum ikut naik (skor rendah–sedang), dan hampir tidak untung saat semua
+sudah hijau (skor +5/+6 = pasar kepanasan).
+
+Model pasar (model_pasar/model.json, hasil backtest_pasar.py) = aturan lama + batas skor:
+  BELI      : BTC tren naik        DAN skor pasar ≤ batas beli   (batas dipilih walk-forward dari data)
+  JUAL DULU : BTC tidak tren naik  DAN skor pasar ≤ batas jual
 
 Semua fungsi hanya memakai candle harian yang sudah tutup → sama persis untuk radar & backtest.
 """
@@ -36,15 +41,21 @@ MIN_KOIN = 20   # minimal koin dengan data cukup supaya angka "lebar pasar" bera
 
 
 def mode(skor: int) -> dict:
+    """Kondisi pasar luas (bukan perintah beli/jual — itu ditentukan model, lihat status())."""
     if skor >= 4:
-        return dict(kode="bull", nama="BULL KUAT", ikon="🟢🟢")
+        return dict(kode="bull", nama="SANGAT KUAT", ikon="🟢🟢")
     if skor >= 2:
-        return dict(kode="naik", nama="NAIK", ikon="🟢")
+        return dict(kode="naik", nama="KUAT", ikon="🟢")
     if skor >= -1:
-        return dict(kode="netral", nama="NETRAL / SIDEWAYS", ikon="🟡")
+        return dict(kode="netral", nama="CAMPURAN", ikon="🟡")
     if skor >= -3:
-        return dict(kode="turun", nama="TURUN", ikon="🔴")
-    return dict(kode="bear", nama="BEAR KUAT", ikon="🔴🔴")
+        return dict(kode="turun", nama="LEMAH", ikon="🔴")
+    return dict(kode="bear", nama="SANGAT LEMAH", ikon="🔴🔴")
+
+
+def angka(x: int) -> str:
+    """+3 / −5 (dengan tanda minus tipografi)."""
+    return f"{int(x):+d}".replace("-", "−")
 
 
 # --------------------------------------------------------------------------- #
@@ -148,6 +159,7 @@ def sekarang(btc_close, koin: list[dict]) -> dict:
         "alt_rs": {x: (f"altcoin {alt_r30:+.0f}% vs BTC {btc_r30:+.0f}% (30 hari)" if np.isfinite(alt_r30 - btc_r30)
                        else "data kurang") for x in (1, 0, -1)},
     }
+    ket = {k: {x: t.replace("-", "−") for x, t in d.items()} for k, d in ket.items()}
     komp = [dict(kode=k, nama=nm, suara=int(v[f"v_{k}"]), teks=ket[k][int(v[f"v_{k}"])]) for k, nm in KOMPONEN]
     out = dict(skor=skor, komponen=komp, **mode(skor))
     out["nilai"] = {k: (None if not np.isfinite(x) else round(float(x), 1)) for k, x in nilai.items()}
@@ -166,20 +178,38 @@ def muat_model(path: str = MODEL_PATH) -> dict | None:
         return None
 
 
-def izin(model: dict | None, strategi: str, skor: int, rs30=None) -> tuple[bool, str | None]:
-    """Boleh tidaknya sebuah strategi jalan pada skor pasar ini. → (boleh, alasan bila tidak)."""
+def rezim_tutup(kp: dict) -> str:
+    """Arah BTC dari candle harian yang sudah tutup (suara komponen btc_ma50)."""
+    v = next((k["suara"] for k in kp.get("komponen", []) if k["kode"] == "btc_ma50"), 0)
+    return {1: "naik", 0: "netral", -1: "turun"}[int(v)]
+
+
+def status(model: dict | None, kp: dict | None) -> dict:
+    """Menurut model pasar: sisi mana yang boleh jalan sekarang. → {"beli": (boleh, alasan), "jual": (boleh, alasan)}"""
+    if not model or not kp:
+        return {}
+    rz, skor = rezim_tutup(kp), int(kp["skor"])
+    b, j = model["beli"], model["jual"]
+    if rz != "naik":
+        beli = (False, "BTC belum tren naik")
+    elif skor > b["skor_maks"]:
+        beli = (False, f"pasar sudah kepanasan: skor {angka(skor)}, batas {angka(b['skor_maks'])}")
+    else:
+        beli = (True, None)
+    if rz == "naik":
+        jual = (False, "BTC sedang tren naik")
+    elif skor > j["skor_maks"]:
+        jual = (False, f"pasar belum cukup lemah: skor {angka(skor)}, batas {angka(j['skor_maks'])}")
+    else:
+        jual = (True, None)
+    return dict(beli=beli, jual=jual)
+
+
+def izin(model: dict | None, strategi: str, kp: dict | None) -> tuple[bool, str | None]:
+    """Boleh tidaknya sebuah strategi jalan pada kondisi pasar ini. → (boleh, alasan bila tidak)."""
     a = ((model or {}).get("strategi") or {}).get(strategi)
-    if not a:
+    if not a or not kp:
         return False, "strategi tidak ada di model pasar"
     if not a.get("aktif"):
-        return False, "strategi tidak lolos uji model pasar"
-    if a["sisi"] == "long" and skor < a["skor_batas"]:
-        return False, f"skor pasar {skor:+d} di bawah batas {a['skor_batas']:+d}"
-    if a["sisi"] == "short" and skor > a["skor_batas"]:
-        return False, f"skor pasar {skor:+d} di atas batas {a['skor_batas']:+d}"
-    if a.get("rs") and rs30 is not None and np.isfinite(rs30):
-        if a["sisi"] == "long" and rs30 <= 0:
-            return False, "koin lebih lemah dari BTC (30 hari)"
-        if a["sisi"] == "short" and rs30 >= 0:
-            return False, "koin lebih kuat dari BTC (30 hari)"
-    return True, None
+        return False, "strategi tidak aktif di model pasar"
+    return status(model, kp)["beli" if a["sisi"] == "long" else "jual"]

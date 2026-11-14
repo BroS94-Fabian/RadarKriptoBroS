@@ -249,6 +249,45 @@ def short_fib(o, h, l, c, F: dict, j: int, wajib_merah: bool = True) -> dict | N
                 f786=lo + (hi - lo) * 0.786, target=lo, batal=lo + (hi - lo) * 0.786)
 
 
+def event_beli(o, h, l, c, F: dict, j: int) -> dict:
+    """Event beli berbasis stage pada candle j → {nama: (target, batal)}. Logika sama dengan backtest."""
+    st = F["stage"]
+    ev = {}
+    if j < 1 or "ma_l" not in F or st[j] == 0:
+        return ev
+    R, S, vr, ma = F["R"], F["S"], F["vol_rel"], F["ma_l"]
+    was1 = bool((st[max(0, j - 10):j + 1] == 1).any())
+    if (was1 and st[j] in (1, 2) and np.isfinite(R[j]) and np.isfinite(R[j - 1]) and c[j] > R[j]
+            and c[j - 1] <= R[j - 1] and vr[j] >= 1.5 and c[j] > ma[j] and R[j] / S[j] - 1 <= 0.6):
+        ev["tembus_dasar"] = (float(R[j] + (R[j] - S[j])), float(S[j]))
+    if st[j] == 2 and st[j - 1] != 2:
+        ev["awal_stage2"] = (None, None)
+    if st[j] == 2 and c[j] / ma[j] - 1 < 0.8 and c[j] > o[j]:
+        fb = fibonacci(h, l, j, c[j])
+        if fb and fb["posisi"] == "zona":
+            ev["pullback_fib"] = (fb["swing_high"], fb["swing_low"] + (fb["swing_high"] - fb["swing_low"]) * 0.214)
+    return ev
+
+
+def event_jual(o, h, l, c, F: dict, j: int) -> dict:
+    """Event jual dulu (short) berbasis stage pada candle j → {nama: (target, batal)}. Logika sama dengan backtest."""
+    st = F["stage"]
+    ev = {}
+    if j < 1 or "ma_l" not in F or st[j] == 0:
+        return ev
+    R, S, vr, ma = F["R"], F["S"], F["vol_rel"], F["ma_l"]
+    if st[j] == 4 and st[j - 1] != 4:
+        ev["awal_stage4"] = (None, None)
+    was3 = bool((st[max(0, j - 10):j + 1] == 3).any())
+    if (was3 and st[j] in (3, 4) and np.isfinite(S[j]) and np.isfinite(S[j - 1]) and c[j] < S[j]
+            and c[j - 1] >= S[j - 1] and vr[j] >= 1.5 and c[j] < ma[j] and R[j] / S[j] - 1 <= 0.6):
+        ev["jebol_puncak"] = (float(S[j] - (R[j] - S[j])), float(R[j]))
+    sf = short_fib(o, h, l, c, F, j)
+    if sf:
+        ev["pantul_fib"] = (sf["target"], sf["batal"])
+    return ev
+
+
 def analisa(o, h, l, c, v, price: float) -> dict:
     """Ringkasan siklus untuk candle terakhir (dipakai analisa_koin)."""
     o, h, l, c, v = (np.asarray(a, dtype=float) for a in (o, h, l, c, v))
