@@ -23,15 +23,15 @@
    "s4": 25.2
   },
   "skor": -5,
-  "ts": "2026-11-14T10:11:43+00:00"
+  "ts": "2026-11-14T10:16:22+00:00"
  },
  "last_summary": "2026-11-14",
  "pasar": {
-  "harga": 67281.6,
+  "harga": 67277.7,
   "ma": 80624.4102,
   "rezim": "turun",
   "teks": "BTC di bawah MA50 & MA50 menurun",
-  "ts": "2026-11-14T10:11:43+00:00"
+  "ts": "2026-11-14T10:16:22+00:00"
  },
  "ranking": {
   "data": [
@@ -2089,12 +2089,12 @@
    "base": "DEXE",
    "batal": 1.9593,
    "batal_pct": 38.6,
-   "btc_chg": -13.18,
+   "btc_chg": -13.19,
    "btc_harga": 77497.0,
    "bursa": "Binance",
-   "chg": -15.98,
+   "chg": -16.12,
    "harga": 1.414,
-   "harga_now": 1.188,
+   "harga_now": 1.186,
    "hasil": "berjalan",
    "hasil_rencana": "impas setelah TP1",
    "id": "DEXEUSDT|turun|2026-11-02T17:05:44+00:00",
@@ -2129,7 +2129,7 @@
    "target_pct": -21.3,
    "ts": "2026-11-02T17:05:44+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-14T10:11:43+00:00"
+   "ts_update": "2026-11-14T10:16:22+00:00"
   },
   {
    "base": "DASH",
@@ -2182,7 +2182,7 @@
  "short_kandidat": {
   "kandidat": [],
   "sinyal": [],
-  "ts": "2026-11-14T10:11:43+00:00"
+  "ts": "2026-11-14T10:16:22+00:00"
  },
  "siklus": {
   "btc": {
@@ -2217,7 +2217,7 @@
    "PEPE",
    "HOT"
   ],
-  "ts": "2026-11-14T10:11:43+00:00"
+  "ts": "2026-11-14T10:16:22+00:00"
  },
  "stage2": {}
 }
