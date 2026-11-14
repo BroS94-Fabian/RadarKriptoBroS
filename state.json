@@ -18,20 +18,20 @@
    "btc_r30": -16.4,
    "d_lebar50": -3.1,
    "lebar50": 3.1,
-   "n_koin": 131.0,
-   "s2": 3.1,
-   "s4": 25.2
+   "n_koin": 130.0,
+   "s2": 3.2,
+   "s4": 24.6
   },
   "skor": -5,
-  "ts": "2026-11-14T12:53:04+00:00"
+  "ts": "2026-11-14T13:54:35+00:00"
  },
  "last_summary": "2026-11-14",
  "pasar": {
-  "harga": 67090.7,
+  "harga": 66804.9,
   "ma": 80624.4102,
   "rezim": "turun",
   "teks": "BTC di bawah MA50 & MA50 menurun",
-  "ts": "2026-11-14T12:53:04+00:00"
+  "ts": "2026-11-14T13:54:35+00:00"
  },
  "ranking": {
   "data": [
@@ -2089,12 +2089,12 @@
    "base": "DEXE",
    "batal": 1.9593,
    "batal_pct": 38.6,
-   "btc_chg": -13.43,
+   "btc_chg": -13.8,
    "btc_harga": 77497.0,
    "bursa": "Binance",
-   "chg": -16.97,
+   "chg": -17.19,
    "harga": 1.414,
-   "harga_now": 1.174,
+   "harga_now": 1.171,
    "hasil": "berjalan",
    "hasil_rencana": "impas setelah TP1",
    "id": "DEXEUSDT|turun|2026-11-02T17:05:44+00:00",
@@ -2103,8 +2103,8 @@
    "maks": 1.449,
    "maks_pct": 2.48,
    "meme": false,
-   "min": 1.173,
-   "min_pct": -17.04,
+   "min": 1.17,
+   "min_pct": -17.26,
    "pnl_rencana": 1.5,
    "pnl_rencana_bersih": 1.09,
    "pola": "Head and Shoulders",
@@ -2129,7 +2129,7 @@
    "target_pct": -21.3,
    "ts": "2026-11-02T17:05:44+00:00",
    "ts_hasil": null,
-   "ts_update": "2026-11-14T12:53:04+00:00"
+   "ts_update": "2026-11-14T13:54:35+00:00"
   },
   {
    "base": "DASH",
@@ -2182,7 +2182,7 @@
  "short_kandidat": {
   "kandidat": [],
   "sinyal": [],
-  "ts": "2026-11-14T12:53:04+00:00"
+  "ts": "2026-11-14T13:54:35+00:00"
  },
  "siklus": {
   "btc": {
@@ -2197,7 +2197,7 @@
    "1": 54,
    "2": 4,
    "3": 37,
-   "4": 32
+   "4": 31
   },
   "persen_naik": 3,
   "persen_turun": 25,
@@ -2217,7 +2217,7 @@
    "PEPE",
    "HOT"
   ],
-  "ts": "2026-11-14T12:53:04+00:00"
+  "ts": "2026-11-14T13:54:35+00:00"
  },
  "stage2": {}
 }
