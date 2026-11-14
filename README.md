@@ -67,6 +67,7 @@ Kalau tidak ada pola: dipakai target Elliott Wave, atau resistance/support terde
 4. **Settings → Actions → General → Workflow permissions → Read and write permissions**.
 5. **Settings → Pages → Source: GitHub Actions**.
 6. **Actions → Run workflow**: `tes-telegram` → `demo` (contoh tampilan) → `normal`.
+   Pilihan `ringkasan` = jalan normal + kirim ringkasan harian saat itu juga (biasanya sekali sehari jam 08 WIB).
 
 ## Mengatur radar (`config.yaml`)
 - `skor_min` — naikkan ke 55–60 kalau alert terlalu banyak, turunkan ke 45 kalau terlalu sedikit.

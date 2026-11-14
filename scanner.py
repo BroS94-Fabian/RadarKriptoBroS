@@ -18,6 +18,7 @@ Cara jalan:
   python scanner.py                      # mode normal
   python scanner.py --mode demo          # uji dengan data simulasi (tanpa internet)
   python scanner.py --mode tes-telegram  # cek sambungan Telegram
+  python scanner.py --mode ringkasan     # mode normal + kirim ringkasan harian sekarang juga
 
 BUKAN NASIHAT INVESTASI. Target = proyeksi pola teknikal, bukan jaminan.
 """
@@ -1061,7 +1062,7 @@ def write_step_summary(results, meta, path) -> None:
 # --------------------------------------------------------------------------- #
 def main() -> int:
     ap = argparse.ArgumentParser(description="Radar Kripto")
-    ap.add_argument("--mode", default="normal", choices=["normal", "demo", "tes-telegram"])
+    ap.add_argument("--mode", default="normal", choices=["normal", "demo", "tes-telegram", "ringkasan"])
     args = ap.parse_args()
     cfg = load_config()
     tg = Telegram.from_env()
@@ -1348,7 +1349,8 @@ def main() -> int:
 
     w = now.astimezone(WIB)
     today = w.date().isoformat()
-    if demo or (w.hour >= int(cfg["ringkasan_harian_jam_wib"]) and state.get("last_summary") != today):
+    if demo or args.mode == "ringkasan" or (w.hour >= int(cfg["ringkasan_harian_jam_wib"])
+                                            and state.get("last_summary") != today):
         tg.send_text(summary_text(results, now, src_rank, dash, rk, rz, ps, btc_st,
                                   stage2 if cfg.get("sinyal_stage2", True) else None,
                                   shorts if cfg.get("sinyal_short", True) else None, kand_short, kp, model_baris))

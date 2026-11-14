@@ -13,7 +13,7 @@ on:
       mode:
         description: "Mode jalan"
         type: choice
-        options: [normal, tes-telegram, demo]
+        options: [normal, ringkasan, tes-telegram, demo]
         default: normal
 
 permissions:
