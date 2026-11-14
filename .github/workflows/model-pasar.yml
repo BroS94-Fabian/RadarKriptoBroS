@@ -1,0 +1,48 @@
+name: Model Kondisi Pasar
+
+on:
+  workflow_dispatch:
+    inputs:
+      tahap:
+        description: "data = bangun ulang data · model = pilih model dari data yang ada · semua"
+        default: "semua"
+      mulai:
+        description: "Data mulai (YYYY-MM-DD)"
+        default: "2020-01-01"
+  schedule:
+    - cron: "17 2 1 * *"   # tiap tanggal 1, 09.17 WIB: data & model diperbarui
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radar-model-pasar
+  cancel-in-progress: false
+
+jobs:
+  model:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Pasang library
+        run: pip install -r requirements.txt
+
+      - name: Uji & pilih model
+        env:
+          CMC_API_KEY: ${{ secrets.CMC_API_KEY }}
+        run: python backtest_pasar.py "${{ github.event.inputs.tahap || 'semua' }}" --mulai "${{ github.event.inputs.mulai || '2020-01-01' }}"
+
+      - name: Simpan hasil
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add model_pasar/
+          git commit -m "model pasar: perbarui data & model" || exit 0
+          for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done
