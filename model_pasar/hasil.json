@@ -1,0 +1,1374 @@
+{
+ "dibuat": "2026-11-14T09:43:03+00:00",
+ "dibuat_wib": "14 Nov 2026 16:43 WIB",
+ "data": {
+  "dibuat": "2026-11-14T09:34:50+00:00",
+  "dibuat_wib": "14 Nov 2026 16:34 WIB",
+  "ranking": "CoinMarketCap",
+  "koin": 133,
+  "mulai": "2020-01-01",
+  "radar": 744,
+  "event": 75040,
+  "durasi_detik": 492
+ },
+ "dari": "2020-09-17",
+ "sampai": "2026-10-14",
+ "maks_posisi": 5,
+ "syarat": {
+  "min_n": 40,
+  "min_bulan": 12,
+  "min_t": 2.0
+ },
+ "per_mode": {
+  "radar_naik": {
+   "bear (≤−4)": {
+    "n": 139,
+    "bulan": 28,
+    "menang": 59.7,
+    "rata": -1.55,
+    "median": 2.08,
+    "t": -1.77
+   },
+   "turun (−3…−2)": {
+    "n": 121,
+    "bulan": 34,
+    "menang": 72.7,
+    "rata": 1.2,
+    "median": 2.08,
+    "t": 0.86
+   },
+   "netral (−1…+1)": {
+    "n": 136,
+    "bulan": 37,
+    "menang": 69.1,
+    "rata": 0.89,
+    "median": 2.08,
+    "t": 0.82
+   },
+   "naik (+2…+3)": {
+    "n": 113,
+    "bulan": 28,
+    "menang": 72.6,
+    "rata": 1.35,
+    "median": 2.08,
+    "t": 0.65
+   },
+   "bull (≥+4)": {
+    "n": 70,
+    "bulan": 25,
+    "menang": 61.4,
+    "rata": 0.08,
+    "median": 2.08,
+    "t": 0.05
+   },
+   "semua": {
+    "n": 579,
+    "bulan": 70,
+    "menang": 67.4,
+    "rata": 0.36,
+    "median": 2.08,
+    "t": 0.44
+   }
+  },
+  "awal_stage2": {
+   "bear (≤−4)": {
+    "n": 53,
+    "bulan": 23,
+    "menang": 71.7,
+    "rata": -0.01,
+    "median": 2.08,
+    "t": -0.01
+   },
+   "turun (−3…−2)": {
+    "n": 44,
+    "bulan": 25,
+    "menang": 65.9,
+    "rata": -1.27,
+    "median": 2.08,
+    "t": -1.08
+   },
+   "netral (−1…+1)": {
+    "n": 118,
+    "bulan": 38,
+    "menang": 76.3,
+    "rata": 1.01,
+    "median": 2.08,
+    "t": 1.17
+   },
+   "naik (+2…+3)": {
+    "n": 201,
+    "bulan": 38,
+    "menang": 79.1,
+    "rata": 1.61,
+    "median": 2.08,
+    "t": 2.03
+   },
+   "bull (≥+4)": {
+    "n": 446,
+    "bulan": 31,
+    "menang": 72.0,
+    "rata": 0.14,
+    "median": 2.08,
+    "t": 0.2
+   },
+   "semua": {
+    "n": 862,
+    "bulan": 69,
+    "menang": 73.9,
+    "rata": 0.52,
+    "median": 2.08,
+    "t": 1.05
+   }
+  },
+  "tembus_dasar": {
+   "bear (≤−4)": {
+    "n": 11,
+    "bulan": 10,
+    "menang": 45.5,
+    "rata": -5.35,
+    "median": -12.37,
+    "t": -1.91
+   },
+   "turun (−3…−2)": {
+    "n": 11,
+    "bulan": 9,
+    "menang": 90.9,
+    "rata": 5.74,
+    "median": 2.08,
+    "t": 2.14
+   },
+   "netral (−1…+1)": {
+    "n": 39,
+    "bulan": 17,
+    "menang": 84.6,
+    "rata": 2.96,
+    "median": 2.08,
+    "t": 2.03
+   },
+   "naik (+2…+3)": {
+    "n": 98,
+    "bulan": 15,
+    "menang": 79.6,
+    "rata": 1.62,
+    "median": 2.08,
+    "t": 1.63
+   },
+   "bull (≥+4)": {
+    "n": 156,
+    "bulan": 19,
+    "menang": 71.8,
+    "rata": -0.07,
+    "median": 2.08,
+    "t": -0.08
+   },
+   "semua": {
+    "n": 315,
+    "bulan": 43,
+    "menang": 75.6,
+    "rata": 0.85,
+    "median": 2.08,
+    "t": 1.65
+   }
+  },
+  "pullback_fib": {
+   "bear (≤−4)": {
+    "n": 57,
+    "bulan": 23,
+    "menang": 68.4,
+    "rata": -1.26,
+    "median": 2.08,
+    "t": -1.06
+   },
+   "turun (−3…−2)": {
+    "n": 92,
+    "bulan": 22,
+    "menang": 73.9,
+    "rata": 0.15,
+    "median": 2.08,
+    "t": 0.17
+   },
+   "netral (−1…+1)": {
+    "n": 223,
+    "bulan": 33,
+    "menang": 66.8,
+    "rata": -0.65,
+    "median": 2.08,
+    "t": -0.65
+   },
+   "naik (+2…+3)": {
+    "n": 188,
+    "bulan": 35,
+    "menang": 79.8,
+    "rata": 1.75,
+    "median": 2.08,
+    "t": 1.15
+   },
+   "bull (≥+4)": {
+    "n": 264,
+    "bulan": 23,
+    "menang": 65.2,
+    "rata": -0.84,
+    "median": 2.08,
+    "t": -0.51
+   },
+   "semua": {
+    "n": 824,
+    "bulan": 65,
+    "menang": 70.1,
+    "rata": -0.11,
+    "median": 2.08,
+    "t": -0.16
+   }
+  },
+  "pantul_fib": {
+   "bear (≤−4)": {
+    "n": 131,
+    "bulan": 18,
+    "menang": 81.7,
+    "rata": 1.54,
+    "median": 1.88,
+    "t": 1.81
+   },
+   "turun (−3…−2)": {
+    "n": 83,
+    "bulan": 20,
+    "menang": 94.0,
+    "rata": 4.21,
+    "median": 1.97,
+    "t": 5.32
+   },
+   "netral (−1…+1)": {
+    "n": 59,
+    "bulan": 23,
+    "menang": 57.6,
+    "rata": -2.64,
+    "median": 1.73,
+    "t": -1.29
+   },
+   "naik (+2…+3)": {
+    "n": 104,
+    "bulan": 17,
+    "menang": 44.2,
+    "rata": -5.43,
+    "median": -8.7,
+    "t": -2.36
+   },
+   "bull (≥+4)": {
+    "n": 24,
+    "bulan": 9,
+    "menang": 75.0,
+    "rata": -0.89,
+    "median": 1.82,
+    "t": -1.21
+   },
+   "semua": {
+    "n": 401,
+    "bulan": 53,
+    "menang": 70.6,
+    "rata": -0.48,
+    "median": 1.85,
+    "t": -0.28
+   }
+  },
+  "awal_stage4": {
+   "bear (≤−4)": {
+    "n": 748,
+    "bulan": 38,
+    "menang": 68.4,
+    "rata": -0.83,
+    "median": 2.0,
+    "t": -1.0
+   },
+   "turun (−3…−2)": {
+    "n": 521,
+    "bulan": 40,
+    "menang": 78.5,
+    "rata": 0.58,
+    "median": 2.0,
+    "t": 0.93
+   },
+   "netral (−1…+1)": {
+    "n": 250,
+    "bulan": 39,
+    "menang": 66.8,
+    "rata": -1.08,
+    "median": 1.97,
+    "t": -0.84
+   },
+   "naik (+2…+3)": {
+    "n": 34,
+    "bulan": 22,
+    "menang": 70.6,
+    "rata": -0.14,
+    "median": 1.99,
+    "t": -0.08
+   },
+   "bull (≥+4)": {
+    "n": 26,
+    "bulan": 13,
+    "menang": 84.6,
+    "rata": 1.65,
+    "median": 1.99,
+    "t": 1.16
+   },
+   "semua": {
+    "n": 1579,
+    "bulan": 69,
+    "menang": 71.8,
+    "rata": -0.35,
+    "median": 2.0,
+    "t": -0.63
+   }
+  },
+  "jebol_puncak": {
+   "bear (≤−4)": {
+    "n": 27,
+    "bulan": 10,
+    "menang": 74.1,
+    "rata": 0.07,
+    "median": 1.91,
+    "t": 0.04
+   },
+   "turun (−3…−2)": {
+    "n": 10,
+    "bulan": 6,
+    "menang": 70.0,
+    "rata": -0.83,
+    "median": 1.97,
+    "t": -0.35
+   },
+   "netral (−1…+1)": {
+    "n": 32,
+    "bulan": 6,
+    "menang": 75.0,
+    "rata": -0.24,
+    "median": 1.87,
+    "t": -0.13
+   },
+   "naik (+2…+3)": {
+    "n": 1,
+    "bulan": 1,
+    "menang": 100.0,
+    "rata": 2.03,
+    "median": 2.03,
+    "t": null
+   },
+   "bull (≥+4)": {
+    "n": 0
+   },
+   "semua": {
+    "n": 70,
+    "bulan": 19,
+    "menang": 74.3,
+    "rata": -0.17,
+    "median": 1.88,
+    "t": -0.14
+   }
+  },
+  "radar_turun": {
+   "bear (≤−4)": {
+    "n": 44,
+    "bulan": 23,
+    "menang": 59.1,
+    "rata": -2.71,
+    "median": 1.73,
+    "t": -1.77
+   },
+   "turun (−3…−2)": {
+    "n": 27,
+    "bulan": 14,
+    "menang": 51.9,
+    "rata": -2.15,
+    "median": 1.64,
+    "t": -0.88
+   },
+   "netral (−1…+1)": {
+    "n": 34,
+    "bulan": 17,
+    "menang": 64.7,
+    "rata": -0.4,
+    "median": 1.97,
+    "t": -0.21
+   },
+   "naik (+2…+3)": {
+    "n": 14,
+    "bulan": 8,
+    "menang": 57.1,
+    "rata": -0.98,
+    "median": 1.84,
+    "t": -0.29
+   },
+   "bull (≥+4)": {
+    "n": 16,
+    "bulan": 10,
+    "menang": 75.0,
+    "rata": 1.87,
+    "median": 2.0,
+    "t": 0.62
+   },
+   "semua": {
+    "n": 135,
+    "bulan": 51,
+    "menang": 60.7,
+    "rata": -1.29,
+    "median": 1.91,
+    "t": -1.15
+   }
+  },
+  "acak_long": {
+   "bear (≤−4)": {
+    "n": 9932,
+    "bulan": 41,
+    "menang": 68.9,
+    "rata": -0.51,
+    "median": 2.08,
+    "t": -1.23
+   },
+   "turun (−3…−2)": {
+    "n": 6409,
+    "bulan": 49,
+    "menang": 66.7,
+    "rata": -0.86,
+    "median": 2.08,
+    "t": -1.58
+   },
+   "netral (−1…+1)": {
+    "n": 6757,
+    "bulan": 52,
+    "menang": 70.1,
+    "rata": -0.23,
+    "median": 2.08,
+    "t": -0.4
+   },
+   "naik (+2…+3)": {
+    "n": 4902,
+    "bulan": 46,
+    "menang": 70.8,
+    "rata": -0.2,
+    "median": 2.08,
+    "t": -0.31
+   },
+   "bull (≥+4)": {
+    "n": 5435,
+    "bulan": 32,
+    "menang": 67.7,
+    "rata": -0.78,
+    "median": 2.08,
+    "t": -1.39
+   },
+   "semua": {
+    "n": 33435,
+    "bulan": 74,
+    "menang": 68.8,
+    "rata": -0.52,
+    "median": 2.08,
+    "t": -1.71
+   }
+  },
+  "acak_short": {
+   "bear (≤−4)": {
+    "n": 9932,
+    "bulan": 41,
+    "menang": 70.4,
+    "rata": -0.5,
+    "median": 1.97,
+    "t": -1.47
+   },
+   "turun (−3…−2)": {
+    "n": 6409,
+    "bulan": 49,
+    "menang": 71.3,
+    "rata": -0.21,
+    "median": 2.0,
+    "t": -0.37
+   },
+   "netral (−1…+1)": {
+    "n": 6757,
+    "bulan": 52,
+    "menang": 68.2,
+    "rata": -0.83,
+    "median": 1.97,
+    "t": -1.49
+   },
+   "naik (+2…+3)": {
+    "n": 4902,
+    "bulan": 46,
+    "menang": 65.6,
+    "rata": -1.24,
+    "median": 1.97,
+    "t": -1.69
+   },
+   "bull (≥+4)": {
+    "n": 5435,
+    "bulan": 32,
+    "menang": 73.0,
+    "rata": -0.1,
+    "median": 2.0,
+    "t": -0.23
+   },
+   "semua": {
+    "n": 33435,
+    "bulan": 74,
+    "menang": 69.9,
+    "rata": -0.55,
+    "median": 2.0,
+    "t": -1.86
+   }
+  }
+ },
+ "hari_per_mode": {
+  "bear (≤−4)": 641,
+  "turun (−3…−2)": 452,
+  "netral (−1…+1)": 560,
+  "naik (+2…+3)": 395,
+  "bull (≥+4)": 461
+ },
+ "walk": {
+  "2023": {
+   "radar_naik": {
+    "n": 79,
+    "bulan": 20,
+    "menang": 79.7,
+    "rata": 2.24,
+    "median": 2.08,
+    "t": 1.55,
+    "skor_batas": -3,
+    "rs": false,
+    "aktif": false,
+    "alasan": "t 1.55 < 2.0"
+   },
+   "awal_stage2": {
+    "n": 156,
+    "bulan": 17,
+    "menang": 75.6,
+    "rata": 1.15,
+    "median": 7.07,
+    "t": 1.44,
+    "skor_batas": -1,
+    "rs": false,
+    "aktif": false,
+    "alasan": "t 1.44 < 2.0"
+   },
+   "tembus_dasar": {
+    "aktif": false,
+    "alasan": "sinyal latih kurang / rata-rata tidak positif"
+   },
+   "pullback_fib": {
+    "n": 189,
+    "bulan": 22,
+    "menang": 77.2,
+    "rata": 2.19,
+    "median": 2.08,
+    "t": 1.43,
+    "skor_batas": -4,
+    "rs": false,
+    "aktif": false,
+    "alasan": "t 1.43 < 2.0"
+   },
+   "pantul_fib": {
+    "aktif": false,
+    "alasan": "sinyal latih kurang / rata-rata tidak positif"
+   },
+   "awal_stage4": {
+    "n": 287,
+    "bulan": 15,
+    "menang": 79.1,
+    "rata": 1.01,
+    "median": 2.03,
+    "t": 1.4,
+    "skor_batas": -4,
+    "rs": false,
+    "aktif": false,
+    "alasan": "t 1.4 < 2.0"
+   },
+   "jebol_puncak": {
+    "aktif": false,
+    "alasan": "sinyal latih kurang / rata-rata tidak positif"
+   },
+   "radar_turun": {
+    "aktif": false,
+    "alasan": "sinyal latih kurang / rata-rata tidak positif"
+   }
+  },
+  "2024": {
+   "radar_naik": {
+    "n": 153,
+    "bulan": 30,
+    "menang": 71.9,
+    "rata": 1.28,
+    "median": 2.08,
+    "t": 1.24,
+    "skor_batas": -2,
+    "rs": false,
+    "aktif": false,
+    "alasan": "t 1.24 < 2.0"
+   },
+   "awal_stage2": {
+    "n": 362,
+    "bulan": 30,
+    "menang": 71.3,
+    "rata": 0.04,
+    "median": 2.08,
+    "t": 0.07,
+    "skor_batas": -3,
+    "rs": false,
+    "aktif": false,
+    "alasan": "t 0.07 < 2.0"
+   },
+   "tembus_dasar": {
+    "n": 62,
+    "bulan": 14,
+    "menang": 82.3,
+    "rata": 2.0,
+    "median": 2.08,
+    "t": 2.34,
+    "skor_batas": -4,
+    "rs": true,
+    "aktif": true,
+    "uji": {
+     "n": 23,
+     "bulan": 7,
+     "menang": 73.9,
+     "rata": -0.08,
+     "median": 2.08,
+     "t": -0.05
+    }
+   },
+   "pullback_fib": {
+    "n": 124,
+    "bulan": 13,
+    "menang": 83.1,
+    "rata": 2.54,
+    "median": 2.08,
+    "t": 3.12,
+    "skor_batas": 4,
+    "rs": false,
+    "aktif": true,
+    "uji": {
+     "n": 81,
+     "bulan": 7,
+     "menang": 34.6,
+     "rata": -6.39,
+     "median": -12.37,
+     "t": -3.37
+    }
+   },
+   "pantul_fib": {
+    "n": 55,
+    "bulan": 20,
+    "menang": 74.5,
+    "rata": 0.12,
+    "median": 1.94,
+    "t": 0.07,
+    "skor_batas": 1,
+    "rs": false,
+    "aktif": false,
+    "alasan": "t 0.07 < 2.0"
+   },
+   "awal_stage4": {
+    "n": 566,
+    "bulan": 35,
+    "menang": 77.2,
+    "rata": 0.53,
+    "median": 2.02,
+    "t": 0.94,
+    "skor_batas": 6,
+    "rs": false,
+    "aktif": false,
+    "alasan": "t 0.94 < 2.0"
+   },
+   "jebol_puncak": {
+    "aktif": false,
+    "alasan": "sinyal latih kurang / rata-rata tidak positif"
+   },
+   "radar_turun": {
+    "aktif": false,
+    "alasan": "sinyal latih kurang / rata-rata tidak positif"
+   }
+  },
+  "2025": {
+   "radar_naik": {
+    "n": 294,
+    "bulan": 44,
+    "menang": 73.8,
+    "rata": 1.97,
+    "median": 2.08,
+    "t": 1.56,
+    "skor_batas": -3,
+    "rs": false,
+    "aktif": false,
+    "alasan": "t 1.56 < 2.0"
+   },
+   "awal_stage2": {
+    "n": 605,
+    "bulan": 47,
+    "menang": 73.2,
+    "rata": 0.41,
+    "median": 2.08,
+    "t": 0.62,
+    "skor_batas": -6,
+    "rs": false,
+    "aktif": false,
+    "alasan": "t 0.62 < 2.0"
+   },
+   "tembus_dasar": {
+    "n": 183,
+    "bulan": 27,
+    "menang": 77.6,
+    "rata": 1.29,
+    "median": 2.08,
+    "t": 1.86,
+    "skor_batas": -6,
+    "rs": false,
+    "aktif": false,
+    "alasan": "t 1.86 < 2.0"
+   },
+   "pullback_fib": {
+    "n": 463,
+    "bulan": 38,
+    "menang": 70.2,
+    "rata": 0.05,
+    "median": 2.08,
+    "t": 0.04,
+    "skor_batas": 0,
+    "rs": false,
+    "aktif": false,
+    "alasan": "t 0.04 < 2.0"
+   },
+   "pantul_fib": {
+    "n": 45,
+    "bulan": 19,
+    "menang": 84.4,
+    "rata": 1.86,
+    "median": 1.94,
+    "t": 1.71,
+    "skor_batas": -2,
+    "rs": false,
+    "aktif": false,
+    "alasan": "t 1.71 < 2.0"
+   },
+   "awal_stage4": {
+    "aktif": false,
+    "alasan": "sinyal latih kurang / rata-rata tidak positif"
+   },
+   "jebol_puncak": {
+    "aktif": false,
+    "alasan": "sinyal latih kurang / rata-rata tidak positif"
+   },
+   "radar_turun": {
+    "aktif": false,
+    "alasan": "sinyal latih kurang / rata-rata tidak positif"
+   }
+  },
+  "2026": {
+   "radar_naik": {
+    "n": 394,
+    "bulan": 53,
+    "menang": 70.1,
+    "rata": 0.88,
+    "median": 2.08,
+    "t": 0.8,
+    "skor_batas": -3,
+    "rs": false,
+    "aktif": false,
+    "alasan": "t 0.8 < 2.0"
+   },
+   "awal_stage2": {
+    "n": 714,
+    "bulan": 59,
+    "menang": 72.8,
+    "rata": 0.29,
+    "median": 2.08,
+    "t": 0.5,
+    "skor_batas": -6,
+    "rs": false,
+    "aktif": false,
+    "alasan": "t 0.5 < 2.0"
+   },
+   "tembus_dasar": {
+    "n": 214,
+    "bulan": 34,
+    "menang": 77.1,
+    "rata": 1.16,
+    "median": 2.08,
+    "t": 1.87,
+    "skor_batas": -6,
+    "rs": false,
+    "aktif": false,
+    "alasan": "t 1.87 < 2.0"
+   },
+   "pullback_fib": {
+    "n": 470,
+    "bulan": 39,
+    "menang": 71.1,
+    "rata": 0.09,
+    "median": 2.08,
+    "t": 0.09,
+    "skor_batas": 1,
+    "rs": false,
+    "aktif": false,
+    "alasan": "t 0.09 < 2.0"
+   },
+   "pantul_fib": {
+    "n": 132,
+    "bulan": 14,
+    "menang": 91.7,
+    "rata": 3.89,
+    "median": 1.91,
+    "t": 13.34,
+    "skor_batas": -2,
+    "rs": true,
+    "aktif": true,
+    "uji": {
+     "n": 1,
+     "bulan": 1,
+     "menang": 0.0,
+     "rata": -3.47,
+     "median": -3.47,
+     "t": null
+    }
+   },
+   "awal_stage4": {
+    "aktif": false,
+    "alasan": "sinyal latih kurang / rata-rata tidak positif"
+   },
+   "jebol_puncak": {
+    "aktif": false,
+    "alasan": "sinyal latih kurang / rata-rata tidak positif"
+   },
+   "radar_turun": {
+    "n": 95,
+    "bulan": 42,
+    "menang": 68.4,
+    "rata": 0.1,
+    "median": 1.94,
+    "t": 0.1,
+    "skor_batas": 6,
+    "rs": false,
+    "aktif": false,
+    "alasan": "t 0.1 < 2.0"
+   }
+  }
+ },
+ "oos": {
+  "dari": "2023-01-01",
+  "sampai": "2026-10-14",
+  "portofolio": {
+   "Model LAMA (aturan tetap BTC MA50)": {
+    "total": 134.8,
+    "total_min": 93.9,
+    "total_maks": 187.3,
+    "cagr": 24.7,
+    "maxdd": -24.9,
+    "sharpe": 0.83,
+    "per_tahun": {
+     "2023": 31.4,
+     "2024": 20.3,
+     "2025": 11.9,
+     "2026": 36.0
+    },
+    "transaksi": 519,
+    "menang": 74.5,
+    "rata": 0.97,
+    "terisi": 82.0,
+    "kandidat": 998
+   },
+   "Model BARU (mengikuti skor pasar)": {
+    "total": -29.9,
+    "total_min": -35.4,
+    "total_maks": -23.5,
+    "cagr": -8.75,
+    "maxdd": -30.6,
+    "sharpe": -0.78,
+    "per_tahun": {
+     "2023": 0.0,
+     "2024": -29.5,
+     "2025": 0.0,
+     "2026": -0.7
+    },
+    "transaksi": 61,
+    "menang": 55.7,
+    "rata": -2.71,
+    "terisi": 10.0,
+    "kandidat": 105
+   },
+   "LAMA — hanya beli": {
+    "total": 76.2,
+    "total_min": 40.2,
+    "total_maks": 126.3,
+    "cagr": 15.8,
+    "maxdd": -24.0,
+    "sharpe": 0.56,
+    "per_tahun": {
+     "2023": 28.4,
+     "2024": 22.0,
+     "2025": -3.3,
+     "2026": 21.2
+    },
+    "transaksi": 428,
+    "menang": 72.7,
+    "rata": 0.83,
+    "terisi": 54.0,
+    "kandidat": 790
+   },
+   "BARU — hanya beli": {
+    "total": -29.45,
+    "total_min": -34.9,
+    "total_maks": -23.0,
+    "cagr": -8.65,
+    "maxdd": -30.6,
+    "sharpe": -0.76,
+    "per_tahun": {
+     "2023": 0.0,
+     "2024": -29.5,
+     "2025": 0.0,
+     "2026": 0.0
+    },
+    "transaksi": 60,
+    "menang": 56.7,
+    "rata": -2.69,
+    "terisi": 8.0,
+    "kandidat": 104
+   },
+   "LAMA — hanya jual dulu (short)": {
+    "total": 27.75,
+    "total_min": 13.8,
+    "total_maks": 35.7,
+    "cagr": 6.55,
+    "maxdd": -7.4,
+    "sharpe": 0.94,
+    "per_tahun": {
+     "2023": 4.3,
+     "2024": 0.6,
+     "2025": 11.3,
+     "2026": 10.2
+    },
+    "transaksi": 100,
+    "menang": 81.0,
+    "rata": 1.29,
+    "terisi": 35.0,
+    "kandidat": 208
+   },
+   "BARU — hanya jual dulu (short)": {
+    "total": -0.7,
+    "total_min": -0.7,
+    "total_maks": -0.7,
+    "cagr": -0.2,
+    "maxdd": -0.7,
+    "sharpe": -0.51,
+    "per_tahun": {
+     "2023": 0.0,
+     "2024": 0.0,
+     "2025": 0.0,
+     "2026": -0.7
+    },
+    "transaksi": 1,
+    "menang": 0.0,
+    "rata": -3.47,
+    "terisi": 2.0,
+    "kandidat": 1
+   },
+   "Tanpa filter pasar (3 strategi live, semua kondisi)": {
+    "total": 9.4,
+    "total_min": -10.4,
+    "total_maks": 48.1,
+    "cagr": 2.35,
+    "maxdd": -40.8,
+    "sharpe": 0.13,
+    "per_tahun": {
+     "2023": -11.5,
+     "2024": 17.2,
+     "2025": -16.2,
+     "2026": 24.6
+    },
+    "transaksi": 714,
+    "menang": 70.6,
+    "rata": 0.19,
+    "terisi": 95.0,
+    "kandidat": 1514
+   }
+  },
+  "per_sinyal": {
+   "Model LAMA (aturan tetap BTC MA50)": {
+    "n": 998,
+    "bulan": 46,
+    "menang": 76.6,
+    "rata": 1.37,
+    "median": 2.08,
+    "t": 1.9
+   },
+   "Model BARU (mengikuti skor pasar)": {
+    "n": 105,
+    "bulan": 10,
+    "menang": 42.9,
+    "rata": -4.98,
+    "median": -12.37,
+    "t": -2.16
+   },
+   "LAMA — hanya beli": {
+    "n": 790,
+    "bulan": 36,
+    "menang": 74.1,
+    "rata": 1.07,
+    "median": 2.08,
+    "t": 1.22
+   },
+   "BARU — hanya beli": {
+    "n": 104,
+    "bulan": 9,
+    "menang": 43.3,
+    "rata": -4.99,
+    "median": -12.37,
+    "t": -2.13
+   },
+   "LAMA — hanya jual dulu (short)": {
+    "n": 208,
+    "bulan": 27,
+    "menang": 86.1,
+    "rata": 2.53,
+    "median": 1.91,
+    "t": 2.81
+   },
+   "BARU — hanya jual dulu (short)": {
+    "n": 1,
+    "bulan": 1,
+    "menang": 0.0,
+    "rata": -3.47,
+    "median": -3.47,
+    "t": null
+   },
+   "Tanpa filter pasar (3 strategi live, semua kondisi)": {
+    "n": 1514,
+    "bulan": 46,
+    "menang": 70.7,
+    "rata": 0.17,
+    "median": 2.08,
+    "t": 0.28
+   }
+  },
+  "portofolio_10": {
+   "Model LAMA (aturan tetap BTC MA50)": {
+    "total": 98.0,
+    "total_min": 84.9,
+    "total_maks": 114.3,
+    "cagr": 19.3,
+    "maxdd": -21.6,
+    "sharpe": 0.76,
+    "per_tahun": {
+     "2023": 10.9,
+     "2024": 38.2,
+     "2025": 7.2,
+     "2026": 20.6
+    },
+    "transaksi": 725,
+    "menang": 74.9,
+    "rata": 1.06,
+    "terisi": 83.0,
+    "kandidat": 998
+   },
+   "Model BARU (mengikuti skor pasar)": {
+    "total": -30.55,
+    "total_min": -34.5,
+    "total_maks": -28.5,
+    "cagr": -8.95,
+    "maxdd": -30.55,
+    "sharpe": -0.98,
+    "per_tahun": {
+     "2023": 0.0,
+     "2024": -30.2,
+     "2025": 0.0,
+     "2026": -0.3
+    },
+    "transaksi": 87,
+    "menang": 49.4,
+    "rata": -3.96,
+    "terisi": 11.0,
+    "kandidat": 105
+   }
+  },
+  "btc": {
+   "total": 311.1,
+   "cagr": 44.2,
+   "maxdd": -53.0,
+   "sharpe": 0.81,
+   "per_tahun": {
+    "2023": 154.5,
+    "2024": 111.8,
+    "2025": -7.3,
+    "2026": -23.1
+   },
+   "bulan_rugi": 41.0
+  },
+  "per_strategi": {
+   "radar_naik": {
+    "baru": {
+     "n": 0
+    },
+    "lama": {
+     "n": 238,
+     "bulan": 30,
+     "menang": 70.6,
+     "rata": 1.7,
+     "median": 2.08,
+     "t": 1.03
+    },
+    "semua": {
+     "n": 452,
+     "bulan": 45,
+     "menang": 66.2,
+     "rata": 0.37,
+     "median": 2.08,
+     "t": 0.37
+    }
+   },
+   "awal_stage2": {
+    "baru": {
+     "n": 0
+    },
+    "lama": {
+     "n": 552,
+     "bulan": 34,
+     "menang": 75.5,
+     "rata": 0.8,
+     "median": 2.08,
+     "t": 1.16
+    },
+    "semua": {
+     "n": 686,
+     "bulan": 46,
+     "menang": 74.5,
+     "rata": 0.56,
+     "median": 2.08,
+     "t": 0.94
+    }
+   },
+   "tembus_dasar": {
+    "baru": {
+     "n": 23,
+     "bulan": 7,
+     "menang": 73.9,
+     "rata": -0.08,
+     "median": 2.08,
+     "t": -0.05
+    },
+    "lama": {
+     "n": 0
+    },
+    "semua": {
+     "n": 298,
+     "bulan": 35,
+     "menang": 75.5,
+     "rata": 0.85,
+     "median": 2.08,
+     "t": 1.61
+    }
+   },
+   "pullback_fib": {
+    "baru": {
+     "n": 81,
+     "bulan": 7,
+     "menang": 34.6,
+     "rata": -6.39,
+     "median": -12.37,
+     "t": -3.37
+    },
+    "lama": {
+     "n": 0
+    },
+    "semua": {
+     "n": 626,
+     "bulan": 41,
+     "menang": 68.2,
+     "rata": -0.78,
+     "median": 2.08,
+     "t": -0.98
+    }
+   },
+   "pantul_fib": {
+    "baru": {
+     "n": 1,
+     "bulan": 1,
+     "menang": 0.0,
+     "rata": -3.47,
+     "median": -3.47,
+     "t": null
+    },
+    "lama": {
+     "n": 208,
+     "bulan": 27,
+     "menang": 86.1,
+     "rata": 2.53,
+     "median": 1.91,
+     "t": 2.81
+    },
+    "semua": {
+     "n": 376,
+     "bulan": 41,
+     "menang": 69.4,
+     "rata": -0.75,
+     "median": 1.85,
+     "t": -0.42
+    }
+   },
+   "awal_stage4": {
+    "baru": {
+     "n": 0
+    },
+    "lama": {
+     "n": 0
+    },
+    "semua": {
+     "n": 1200,
+     "bulan": 45,
+     "menang": 70.2,
+     "rata": -0.62,
+     "median": 1.97,
+     "t": -0.87
+    }
+   },
+   "jebol_puncak": {
+    "baru": {
+     "n": 0
+    },
+    "lama": {
+     "n": 0
+    },
+    "semua": {
+     "n": 64,
+     "bulan": 16,
+     "menang": 71.9,
+     "rata": -0.38,
+     "median": 1.88,
+     "t": -0.27
+    }
+   },
+   "radar_turun": {
+    "baru": {
+     "n": 0
+    },
+    "lama": {
+     "n": 0
+    },
+    "semua": {
+     "n": 87,
+     "bulan": 32,
+     "menang": 58.6,
+     "rata": -1.31,
+     "median": 1.82,
+     "t": -0.83
+    }
+   }
+  }
+ },
+ "putusan": {
+  "pakai": false,
+  "alasan": "di luar sampel 2023-01-01–2026-10-14: BARU -29.9% (maks turun -30.6%, Sharpe -0.78) vs LAMA +134.8% (maks turun -24.9%, Sharpe 0.83)"
+ },
+ "sekarang": {
+  "tanggal": "2026-11-13",
+  "skor": -5,
+  "kode": "bear",
+  "nama": "BEAR KUAT",
+  "ikon": "🔴🔴",
+  "komponen": {
+   "btc_ma50": -1,
+   "btc_ma200": -1,
+   "lebar50": -1,
+   "lebar_stage": -1,
+   "momentum": 0,
+   "alt_rs": -1
+  },
+  "lebar50": 3.008,
+  "s2": 3.053,
+  "s4": 22.901
+ },
+ "model": {
+  "radar_naik": {
+   "n": 440,
+   "bulan": 61,
+   "menang": 69.8,
+   "rata": 0.96,
+   "median": 2.08,
+   "t": 0.95,
+   "skor_batas": -3,
+   "rs": false,
+   "aktif": false,
+   "alasan": "t 0.95 < 2.0",
+   "sisi": "long",
+   "nama": "🟢 Sinyal radar (skor ≥55)"
+  },
+  "awal_stage2": {
+   "n": 862,
+   "bulan": 69,
+   "menang": 73.9,
+   "rata": 0.52,
+   "median": 2.08,
+   "t": 1.05,
+   "skor_batas": -6,
+   "rs": false,
+   "aktif": false,
+   "alasan": "t 1.05 < 2.0",
+   "sisi": "long",
+   "nama": "🟩 Awal Stage 2"
+  },
+  "tembus_dasar": {
+   "n": 315,
+   "bulan": 43,
+   "menang": 75.6,
+   "rata": 0.85,
+   "median": 2.08,
+   "t": 1.65,
+   "skor_batas": -6,
+   "rs": false,
+   "aktif": false,
+   "alasan": "t 1.65 < 2.0",
+   "sisi": "long",
+   "nama": "Tembus atap dasar + volume"
+  },
+  "pullback_fib": {
+   "n": 602,
+   "bulan": 47,
+   "menang": 71.8,
+   "rata": 0.24,
+   "median": 2.08,
+   "t": 0.24,
+   "skor_batas": 0,
+   "rs": false,
+   "aktif": false,
+   "alasan": "t 0.24 < 2.0",
+   "sisi": "long",
+   "nama": "Pullback Stage 2 ke Fibonacci"
+  },
+  "pantul_fib": {
+   "n": 133,
+   "bulan": 15,
+   "menang": 91.0,
+   "rata": 3.84,
+   "median": 1.91,
+   "t": 12.19,
+   "skor_batas": -2,
+   "rs": true,
+   "aktif": true,
+   "sisi": "short",
+   "nama": "🔻 Pantulan Stage 4 ke Fibonacci"
+  },
+  "awal_stage4": {
+   "aktif": false,
+   "alasan": "sinyal latih kurang / rata-rata tidak positif",
+   "sisi": "short",
+   "nama": "Awal Stage 4"
+  },
+  "jebol_puncak": {
+   "aktif": false,
+   "alasan": "sinyal latih kurang / rata-rata tidak positif",
+   "sisi": "short",
+   "nama": "Jebol lantai puncak + volume"
+  },
+  "radar_turun": {
+   "aktif": false,
+   "alasan": "sinyal latih kurang / rata-rata tidak positif",
+   "sisi": "short",
+   "nama": "🔴 Sinyal radar turun"
+  }
+ }
+}
