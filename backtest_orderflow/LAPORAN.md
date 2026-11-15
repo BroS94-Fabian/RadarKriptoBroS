@@ -1,6 +1,6 @@
 # 📊 Uji Order Flow & Market Profile
 
-Dibuat 16 Nov 2026 00:10 WIB · 128 koin · 5,134,855 candle 1 jam (2020-01-01 s/d 2026-11-14) · sinyal 2020-09-17 s/d 2026-10-14 · meme coin tidak ikut
+Dibuat 16 Nov 2026 00:12 WIB · 128 koin · 5,134,855 candle 1 jam (2020-01-01 s/d 2026-11-14) · sinyal 2020-09-17 s/d 2026-10-14 · meme coin tidak ikut
 
 ## Putusan
 
