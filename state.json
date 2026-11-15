@@ -13,25 +13,25 @@
   "model_aktif": true,
   "nama": "SANGAT LEMAH",
   "nilai": {
-   "alt_r30": -24.0,
-   "alt_rs": -7.6,
-   "btc_r30": -16.4,
-   "d_lebar50": -3.6,
-   "lebar50": 2.9,
+   "alt_r30": -32.3,
+   "alt_rs": -10.3,
+   "btc_r30": -22.0,
+   "d_lebar50": -6.6,
+   "lebar50": 2.2,
    "n_koin": 137.0,
    "s2": 3.0,
-   "s4": 25.6
+   "s4": 27.1
   },
   "skor": -5,
-  "ts": "2026-11-14T23:39:31+00:00"
+  "ts": "2026-11-15T00:34:31+00:00"
  },
  "last_summary": "2026-11-14",
  "pasar": {
-  "harga": 63472.8,
-  "ma": 80624.4102,
+  "harga": 63863.4,
+  "ma": 80225.4104,
   "rezim": "turun",
   "teks": "BTC di bawah MA50 & MA50 menurun",
-  "ts": "2026-11-14T23:39:31+00:00"
+  "ts": "2026-11-15T00:34:31+00:00"
  },
  "ranking": {
   "data": [
@@ -2182,7 +2182,7 @@
  "short_kandidat": {
   "kandidat": [],
   "sinyal": [],
-  "ts": "2026-11-14T23:39:31+00:00"
+  "ts": "2026-11-15T00:34:31+00:00"
  },
  "siklus": {
   "btc": {
@@ -2194,30 +2194,22 @@
    "TRX"
   ],
   "jumlah": {
-   "1": 56,
+   "1": 54,
    "2": 4,
    "3": 39,
-   "4": 34
+   "4": 36
   },
   "persen_naik": 3,
-  "persen_turun": 26,
+  "persen_turun": 27,
   "siap_tembus": [
-   "AVAX",
-   "ICP",
    "ZRO",
-   "STRK",
-   "COMP",
-   "BAT",
-   "SENT",
-   "S",
-   "PLUME",
-   "RED"
+   "SENT"
   ],
   "tembus_dasar": [
    "PEPE",
    "HOT"
   ],
-  "ts": "2026-11-14T23:39:31+00:00"
+  "ts": "2026-11-15T00:34:31+00:00"
  },
  "stage2": {}
 }
