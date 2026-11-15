@@ -13,25 +13,25 @@
   "model_aktif": true,
   "nama": "SANGAT LEMAH",
   "nilai": {
-   "alt_r30": -32.4,
-   "alt_rs": -10.4,
+   "alt_r30": -32.7,
+   "alt_rs": -10.7,
    "btc_r30": -22.0,
    "d_lebar50": -4.5,
-   "lebar50": 2.2,
-   "n_koin": 134.0,
+   "lebar50": 2.3,
+   "n_koin": 132.0,
    "s2": 2.3,
-   "s4": 28.5
+   "s4": 27.3
   },
   "skor": -5,
-  "ts": "2026-11-15T22:43:47+00:00"
+  "ts": "2026-11-15T23:49:55+00:00"
  },
  "last_summary": "2026-11-15",
  "pasar": {
-  "harga": 65155.0,
+  "harga": 65300.0,
   "ma": 80225.4104,
   "rezim": "turun",
   "teks": "BTC di bawah MA50 & MA50 menurun",
-  "ts": "2026-11-15T22:43:47+00:00"
+  "ts": "2026-11-15T23:49:55+00:00"
  },
  "ranking": {
   "data": [
@@ -2182,7 +2182,7 @@
  "short_kandidat": {
   "kandidat": [],
   "sinyal": [],
-  "ts": "2026-11-15T22:43:47+00:00"
+  "ts": "2026-11-15T23:49:55+00:00"
  },
  "siklus": {
   "btc": {
@@ -2197,10 +2197,10 @@
    "1": 53,
    "2": 3,
    "3": 37,
-   "4": 37
+   "4": 35
   },
   "persen_naik": 2,
-  "persen_turun": 28,
+  "persen_turun": 27,
   "siap_tembus": [
    "ZRO",
    "SENT"
@@ -2208,7 +2208,7 @@
   "tembus_dasar": [
    "PEPE"
   ],
-  "ts": "2026-11-15T22:43:47+00:00"
+  "ts": "2026-11-15T23:49:55+00:00"
  },
  "stage2": {}
 }
