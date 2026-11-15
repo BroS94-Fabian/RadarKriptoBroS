@@ -168,7 +168,7 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
                  3:["🟨","Stage 3 · Puncak","distribusi / pembentukan puncak"],4:["🟥","Stage 4 · Turun","tren turun (markdown)"]};
   const FASE = {"1":"membentuk dasar","1-akhir":"akhir dasar, siap tembus","1→2":"baru tembus dari dasar","2-awal":"awal naik","2":"naik berjalan",
                 "2-jenuh":"jenuh, rawan koreksi","3":"distribusi","3-akhir":"rawan jebol","3→4":"baru jebol dari puncak","4-awal":"awal turun","4":"turun berjalan"};
-  let BT = null, S4 = null, MP = null;
+  let BT = null, S4 = null, MP = null, OFX = null;
   let DATA = null, tab = "naik", q = "", sortKey = "rank", sortDir = 1;
 
   // tema (disimpan per perangkat)
@@ -542,6 +542,47 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
       <p class="sub"><b>Catatan jujur.</b> Rancangan pertama (tiap strategi boleh jalan mulai skor tertentu, dengan syarat statistik ketat) gagal — lihat baris "Percobaan 1".
       Model yang dipakai sekarang dirancang setelah melihat hasil itu, jadi angka ujinya tidak sebersih uji buta. Model lama disetel memakai data 2024–2026, jadi di uji ini model lama diuntungkan.
       Daftar koin = top CMC saat ini (survivorship bias). Untung-rugi dicatat saat posisi ditutup. Statistik masa lalu, bukan jaminan.</p>`;
+    return h + orderflowBlok();
+  }
+  function orderflowBlok(){
+    const X = OFX;
+    if (!X || !X.oos || !X.per_konfirmasi) return "";
+    const per = r => r && r.n ? `<span class="${cls(r.rata)}">${pct(r.rata)}</span> <span class="sub">· menang ${num(r.menang,0)}% (${r.n})</span>` : "-";
+    const sel = (v, nd) => v == null ? "-" : `<span class="${cls(v)}">${v > 0 ? "+" : v < 0 ? "−" : ""}${num(Math.abs(v), nd)}</span>`;
+    const P = X.oos.portofolio, nmP = Object.keys(P), d0 = P[nmP[0]], sl = X.sl || {}, sp = sl.portofolio;
+    const brs = (nm, r) => `<tr><td>${esc(nm)}</td><td class="${cls(r.total)}"><b>${pct(r.total)}</b></td><td class="neg">${pct(r.maxdd)}</td><td>${num(r.sharpe,2)}</td>
+      <td>${r.transaksi}</td><td>${num(r.menang,1)}%</td><td class="${cls(r.rata)}">${pct(r.rata)}</td></tr>`;
+    const nama = {radar_naik: "🟢 Sinyal radar", awal_stage2: "🟩 Awal Stage 2", pantul_fib: "🔻 Jual dulu (pantulan Stage 4)"};
+    const kode = Object.keys(X.konfirmasi);
+    let h = `<h3 style="font-size:17px;margin-top:30px;padding-top:16px;border-top:1px solid var(--line)">📊 Uji order flow &amp; market profile</h3>
+      <p class="sub">Dibuat ${esc(X.dibuat_wib)} · ${X.data.koin} koin · ${num(X.data.candle_jam / 1e6, 1)} juta candle 1 jam sejak ${esc(X.data.mulai)}.
+      Pertanyaannya: apakah sinyal yang dikonfirmasi delta (beli agresif − jual agresif), arah CVD 3 hari, POC dan zona nilai 30 hari hasilnya lebih baik?
+      Sinyal &amp; hasilnya sama persis dengan uji model pasar; aturan uji ditulis sebelum data ditarik.</p>
+      <div class="pasar" style="margin:0 0 12px"><b>${X.putusan.pakai ? "✅ Konfirmasi dipasang ke radar" : "❌ Tidak dipasang — tidak lebih baik dari model sekarang"}</b><br>
+        Syarat pasang: total &gt; dasar, Sharpe ≥ dasar + 0,15, penurunan maksimum tidak lebih buruk dari 5 poin.
+        ${X.bonferroni ? `Dari ${X.bonferroni.jumlah_uji} perbandingan di bawah, tidak ada yang selisihnya bisa dibedakan dari kebetulan (perlu p &lt; ${num(X.bonferroni.ambang, 4)}).` : ""}</div>
+      <h3>Portofolio di luar sampel (${esc(X.oos.dari)} s/d ${esc(X.oos.sampai)})</h3>
+      <p class="sub">"Dasar + konfirmasi" = konfirmasi tiap tahun dipilih hanya dari data tahun-tahun sebelumnya (walk-forward). SL = stop loss.</p>
+      <div class="tbl-wrap"><table class="jj"><thead><tr><th>Susunan</th><th>Total</th><th>Maks turun</th><th>Sharpe</th><th>Transaksi</th><th>Menang</th><th>Rata-rata</th></tr></thead><tbody>
+      ${nmP.map((nm, i) => brs(["Dasar (model sekarang)", "Dasar + konfirmasi"][i] || nm, P[nm])).join("")}
+      ${sp ? brs("Dasar + SL di zona nilai", sp.zona) : ""}
+      </tbody></table></div>
+      <h3>Dengan vs tanpa konfirmasi (2020–2026, sinyal yang lolos gerbang pasar)</h3>
+      <p class="sub">Isi sel: rata-rata bersih per transaksi · tingkat menang (jumlah sinyal). Selisih menang dalam poin persen. p = peluang selisih di kolom kirinya muncul kebetulan (makin kecil makin meyakinkan).</p>`;
+    for (const s of Object.keys(nama)) {
+      const x = X.per_konfirmasi[s]; if (!x) continue;
+      h += `<p style="margin:14px 0 6px"><b>${nama[s]}</b> <span class="sub">— semua sinyal:</span> ${per(x.semua)}</p>
+        <div class="tbl-wrap"><table class="jj"><thead><tr><th>Konfirmasi</th><th>Terkonfirmasi</th><th>Tidak</th><th>Selisih menang</th><th>p</th><th>Selisih rata-rata</th><th>p</th></tr></thead><tbody>
+        ${kode.map(k => { const y = x[k] || {}; return `<tr><td title="${esc(s === "pantul_fib" ? X.konfirmasi[k].jual : X.konfirmasi[k].beli)}">${esc(X.konfirmasi[k].nama)}</td>
+          <td>${per(y.ya)}</td><td>${per(y.tidak)}</td><td>${sel(y.selisih_menang, 1)}</td><td class="sub">${y.p_menang == null ? "-" : num(y.p_menang, 3)}</td><td>${sel(y.selisih_rata, 2)}</td><td class="sub">${y.p == null ? "-" : num(y.p, 3)}</td></tr>`; }).join("")}
+        </tbody></table></div>`;
+    }
+    const tt = Object.values(X.tetap || {}).flatMap(o => Object.values(o).map(r => r.total));
+    const pr = Object.values(X.prioritas || {});
+    h += `<p class="sub">${tt.length ? `Bila satu konfirmasi dipasang tetap sebagai saringan (24 susunan, melihat ke belakang): total ${pct(Math.min(...tt))} … ${pct(Math.max(...tt))} — dasar ${pct(d0.total)}. ` : ""}
+      ${pr.length ? `Bila dipakai sebagai urutan prioritas saat slot penuh: total ${pct(Math.min(...pr.map(r => r.total)))} … ${pct(Math.max(...pr.map(r => r.total)))}, menang ${num(Math.min(...pr.map(r => r.menang)),1)}–${num(Math.max(...pr.map(r => r.menang)),1)}%. ` : ""}
+      <b>Catatan.</b> Ini bukan order flow penuh: data gratis hanya memberi volume beli/jual agresif per candle 1 jam; order book, footprint dan absorption tidak ada datanya.
+      Radar 🟢 sudah memakai porsi beli agresif 24 jam dan posisi harga terhadap zona akumulasi di dalam skornya. Laporan lengkap: <code>backtest_orderflow/LAPORAN.md</code> di GitHub.</p>`;
     return h;
   }
 
@@ -654,6 +695,7 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
     if (d.ada_model_pasar) {
       TABS.push(["modelpasar","🌡️ Model pasar"]);
       fetch("model_pasar.json?t=" + Date.now()).then(r => r.json()).then(x => { MP = x; if (tab === "modelpasar") render(); }).catch(() => {});
+      if (d.ada_orderflow) fetch("orderflow.json?t=" + Date.now()).then(r => r.json()).then(x => { OFX = x; if (tab === "modelpasar") render(); }).catch(() => {});
     }
     if (d.ada_backtest) {
       TABS.push(["backtest","🧪 Backtest"]);

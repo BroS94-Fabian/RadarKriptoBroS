@@ -28,6 +28,9 @@ ATURAN YANG DITETAPKAN DI MUKA (ditulis & di-commit sebelum data per jam ditarik
   Tabel "dipasang tetap" (bukan walk-forward), varian TPO / 90 hari, dan uji permutasi hanya untuk penjelasan —
   tidak ikut menentukan putusan.
 
+TAMBAHAN SETELAH HASIL PERTAMA KELUAR (16 Nov 2026) — eksplorasi, tidak ikut menentukan putusan:
+  konfirmasi dipakai sebagai URUTAN PRIORITAS saat slot penuh (sinyal terkonfirmasi diambil lebih dulu), bukan saringan.
+
 Hasil: backtest_orderflow/LAPORAN.md, hasil.json, model.json, meta.json, kurva.csv
 """
 from __future__ import annotations
@@ -170,10 +173,13 @@ def muat(cfg: dict) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     return U, ph, F
 
 
-def p_permutasi(d: pd.DataFrame, kol: str, n_perm: int = N_PERM, seed: int = 0) -> float | None:
+def p_permutasi(d: pd.DataFrame, kol: str, n_perm: int = N_PERM, seed: int = 0, menang: bool = False) -> float | None:
     """Uji permutasi dua sisi untuk selisih rata-rata (terkonfirmasi − tidak); label diacak DI DALAM bulan yang sama,
-    supaya konfirmasi yang cuma kebetulan muncul di bulan-bulan bagus tidak dianggap berguna."""
+    supaya konfirmasi yang cuma kebetulan muncul di bulan-bulan bagus tidak dianggap berguna.
+    menang=True → yang diuji selisih TINGKAT MENANG (bukan rata-rata untung)."""
     x, k = d["net"].to_numpy(dtype=float), d[kol].to_numpy(dtype=bool)
+    if menang:
+        x = (x > 0).astype(float)
     if k.sum() < 10 or (~k).sum() < 10:
         return None
     obs = x[k].mean() - x[~k].mean()
@@ -196,6 +202,7 @@ def banding(d: pd.DataFrame, kol: str, perm: bool = True) -> dict:
         out["selisih_menang"] = round(ya["menang"] - tdk["menang"], 1)
         if perm:
             out["p"] = p_permutasi(d, kol)
+            out["p_menang"] = p_permutasi(d, kol, menang=True)
     return out
 
 
@@ -339,7 +346,6 @@ def tahap_model(args) -> int:
 
     # 1) deskriptif: dengan vs tanpa konfirmasi (seluruh data, sinyal live yang lolos gerbang pasar)
     H["per_konfirmasi"] = {}
-    awal_uji = U["ts"] >= oos_awal
     for sisi in ("long", "short"):
         for s in LIVE[sisi]:
             d = G[G["strategi"] == s]
@@ -392,6 +398,12 @@ def tahap_model(args) -> int:
                 d = Td[(Td["strategi"] != s) | kk]
                 H["varian"][jenis]["hasil"][f"{s}|{k}"] = dict(bersih_(BP.uji_portofolio(d, oos_awal, oos_akhir)),
                                                               sinyal=BP.ringkas(d[d["strategi"] == s]))
+
+    # 3b) EKSPLORASI (dirancang setelah hasil pertama keluar): konfirmasi sebagai urutan prioritas saat slot penuh
+    H["prioritas"] = {}
+    for k in OF.KODE:
+        r = BP.uji_portofolio(Td, oos_awal, oos_akhir, pri="k_" + k)
+        H["prioritas"][k] = dict(bersih_(r), total_lebih_baik=int((np.array(r["_total"]) > np.array(rd["_total"])).sum()))
 
     # 4) uji tambahan: stop loss di batas zona nilai
     R = simulasi_ulang(G, F, cfg)
@@ -447,6 +459,27 @@ def tahap_model(args) -> int:
         judul = "❌ Tidak dipasang — tidak ada satu pun konfirmasi yang terpilih dari data latih"
     else:
         judul = "❌ Tidak dipasang — di luar sampel tidak memenuhi syarat"
+    PK = H["per_konfirmasi"]
+    jawab = []
+    for s in sum(LIVE.values(), []):
+        sm = [PK[s][k]["selisih_menang"] for k in OF.KODE if "selisih_menang" in PK[s][k]]
+        sr = [PK[s][k]["selisih_rata"] for k in OF.KODE if "selisih_rata" in PK[s][k]]
+        sisa = [PK[s][k]["ya"].get("n", 0) / max(1, PK[s]["semua"]["n"]) * 100 for k in OF.KODE]
+        jawab.append(f"- {NAMA_S[s]} (tanpa konfirmasi: menang {PK[s]['semua']['menang']}%, rata-rata {PK[s]['semua']['rata']:+.2f}%): "
+                     f"sinyal yang terkonfirmasi menangnya {min(sm):+.1f}…{max(sm):+.1f} poin dibanding yang tidak, rata-rata untungnya "
+                     f"{min(sr):+.2f}…{max(sr):+.2f} poin; sinyal yang tersisa tinggal {min(sisa):.0f}–{max(sisa):.0f}%.")
+    ps = [PK[s][k]["p"] for s in sum(LIVE.values(), []) for k in OF.KODE if PK[s][k].get("p") is not None]
+    tt = [r["total"] for x in H["tetap"].values() for r in x.values()]
+    ts_ = [r["sharpe"] for x in H["tetap"].values() for r in x.values()]
+    pr = list(H["prioritas"].values())
+    pm_ = [PK[s][k]["p_menang"] for s in sum(LIVE.values(), []) for k in OF.KODE if PK[s][k].get("p_menang") is not None]
+    jawab += [f"- Dari {H['bonferroni']['jumlah_uji']} perbandingan, p terkecil {min(pm_):.3f} untuk tingkat menang dan {min(ps):.3f} untuk rata-rata untung "
+              f"(batas layak disebut nyata: {H['bonferroni']['ambang']}) → "
+              f"{'ada' if min(ps + pm_) < H['bonferroni']['ambang'] else 'tidak ada satu pun'} selisih yang bisa dibedakan dari kebetulan.",
+              f"- Dipakai sebagai saringan tetap (24 susunan, melihat ke belakang): total {min(tt):+.1f}…{max(tt):+.1f}%, Sharpe {min(ts_)}…{max(ts_)} — "
+              f"DASAR {rd['total']:+.1f}%, Sharpe {rd['sharpe']}. Sinyal yang tersaring tidak cukup lebih bagus untuk menutup berkurangnya transaksi.",
+              f"- Dipakai sebagai urutan prioritas saat slot penuh (eksplorasi): total {min(x['total'] for x in pr):+.1f}…{max(x['total'] for x in pr):+.1f}%, "
+              f"menang {min(x['menang'] for x in pr)}…{max(x['menang'] for x in pr)}% — DASAR {rd['total']:+.1f}%, menang {rd['menang']}%."]
     L = ["# 📊 Uji Order Flow & Market Profile", "",
          f"Dibuat {H['dibuat_wib']} · {meta.get('koin', '?')} koin · {meta.get('candle_jam', 0):,} candle 1 jam "
          f"({meta.get('dari', '?')} s/d {meta.get('sampai', '?')}) · sinyal {H['dari']} s/d {H['sampai']} · meme coin tidak ikut", "",
@@ -454,6 +487,7 @@ def tahap_model(args) -> int:
          f"- Dengan konfirmasi (dipilih walk-forward): {f_p(rb)}", f"- DASAR (model pasar sekarang): {f_p(rd)}",
          f"- Syarat pasang (ditetapkan di muka): total > DASAR, Sharpe ≥ DASAR + {SELISIH_PAKAI}, maks turun tidak lebih buruk dari DASAR − 5 poin.",
          f"- Stop loss di batas zona nilai: **{'✅ dipakai' if pakai_sl else '❌ tidak dipakai'}** — {f_p(s1)} vs stop loss biasa {f_p(s0)}.", "",
+         "## Jawaban singkat: apakah tingkat menang naik?", ""] + jawab + ["",
          "## Yang diuji", "",
          "Sinyal dan hasilnya sama persis dengan uji model pasar (🟢 radar, 🟩 awal Stage 2, 🔻 jual dulu pantulan Stage 4; "
          "rencana jual TP1 5% / SL 12% / maks 30 hari; biaya & pajak sudah dipotong). Bedanya: tiap sinyal diberi fitur dari "
@@ -467,19 +501,21 @@ def tahap_model(args) -> int:
 
     L += ["", "## Dengan vs tanpa konfirmasi (seluruh data 2020–2026, sinyal live yang lolos gerbang pasar)", "",
           "Isi sel: rata-rata bersih per transaksi · tingkat menang (jumlah sinyal). p = peluang selisih sebesar itu muncul kebetulan "
-          f"(uji permutasi di dalam bulan yang sama). Ada {H['bonferroni']['jumlah_uji']} perbandingan, jadi baru layak disebut nyata bila p < {H['bonferroni']['ambang']}."]
+          f"(uji permutasi di dalam bulan yang sama; 'p menang' untuk selisih tingkat menang, 'p rata-rata' untuk selisih untung). "
+          f"Ada {H['bonferroni']['jumlah_uji']} perbandingan, jadi baru layak disebut nyata bila p < {H['bonferroni']['ambang']}."]
     for s in sum(LIVE.values(), []):
         x = H["per_konfirmasi"][s]
         L += ["", f"### {NAMA_S[s]} — semua: {f_r(x['semua'])}", "",
-              "| Konfirmasi | Terkonfirmasi | Tidak | Selisih rata-rata | Selisih menang | p | Selisih 2020–22 | Selisih 2023–26 |", "|---|---|---|---|---|---|---|---|"]
+              "| Konfirmasi | Terkonfirmasi | Tidak | Selisih menang | p menang | Selisih rata-rata | p rata-rata | Selisih rata-rata 2020–22 | 2023–26 |", "|---|---|---|---|---|---|---|---|---|"]
         for k in OF.KODE:
             y = x[k]
             sr = f"{y['selisih_rata']:+.2f}" if "selisih_rata" in y else "-"
             sm = f"{y['selisih_menang']:+.1f}" if "selisih_menang" in y else "-"
             p = f"{y['p']:.3f}" if y.get("p") is not None else "-"
+            pm = f"{y['p_menang']:.3f}" if y.get("p_menang") is not None else "-"
             sa = f"{y['awal']['selisih_rata']:+.2f}" if "selisih_rata" in y["awal"] else "-"
             sb = f"{y['akhir']['selisih_rata']:+.2f}" if "selisih_rata" in y["akhir"] else "-"
-            L.append(f"| {OF.KONFIRMASI[k][0]} | {f_r(y['ya'])} | {f_r(y['tidak'])} | {sr} | {sm} | {p} | {sa} | {sb} |")
+            L.append(f"| {OF.KONFIRMASI[k][0]} | {f_r(y['ya'])} | {f_r(y['tidak'])} | {sm} | {pm} | {sr} | {p} | {sa} | {sb} |")
     L += ["", "Pembanding — beli / short di hari ACAK pada kondisi pasar yang sama (apakah konfirmasi itu memang menandai hari yang lebih baik?):", "",
           "| Konfirmasi | Beli acak: terkonfirmasi | tidak | Short acak: terkonfirmasi | tidak |", "|---|---|---|---|---|"]
     for k in OF.KODE:
@@ -521,6 +557,12 @@ def tahap_model(args) -> int:
             s, k = key.split("|")
             L.append(f"| {v['nama']} | {NAMA_S[s]} | {OF.KONFIRMASI[k][0]} | {r['total']:+.1f}% | {r['maxdd']:.1f}% | {r['sharpe']} | {f_r(r['sinyal'])} |")
 
+    L += ["", "### Eksplorasi: konfirmasi sebagai urutan prioritas saat slot penuh (dirancang SETELAH hasil di atas keluar)", "",
+          "Semua sinyal DASAR tetap boleh diambil; bedanya, saat slot penuh sinyal yang terkonfirmasi didahulukan. Tidak ikut menentukan putusan.", "",
+          "| Didahulukan bila | Total | Maks turun | Sharpe | Menang | Rata-rata/transaksi | Lebih tinggi dari DASAR di … dari 100 urutan |", "|---|---|---|---|---|---|---|",
+          f"| (DASAR: urutan acak) | {rd['total']:+.1f}% | {rd['maxdd']:.1f}% | {rd['sharpe']} | {rd['menang']}% | {rd['rata']:+.2f}% | - |"]
+    for k, r in H["prioritas"].items():
+        L.append(f"| {OF.KONFIRMASI[k][0]} | {r['total']:+.1f}% | {r['maxdd']:.1f}% | {r['sharpe']} | {r['menang']}% | {r['rata']:+.2f}% | {r['total_lebih_baik']} |")
     sl = H["sl"]
     L += ["", "## Uji tambahan: stop loss di batas zona nilai", "",
           f"Beli: stop loss 1% di bawah batas bawah zona nilai; jual dulu: 1% di atas batas atas. Hanya dipakai bila jaraknya "
@@ -542,7 +584,7 @@ def tahap_model(args) -> int:
           "- Radar 🟢 sudah memakai porsi beli agresif 24 jam dan posisi harga terhadap zona akumulasi di dalam skornya, jadi untuk "
           "sinyal 🟢 sebagian informasi ini sudah terpakai.",
           "- Daftar konfirmasi, cara memilih dan syarat pasang ditulis sebelum data per jam ditarik. Tabel 'dipasang tetap' melihat ke "
-          "belakang dan tidak dipakai untuk memutuskan.",
+          "belakang dan tidak dipakai untuk memutuskan. Uji 'urutan prioritas' ditambahkan setelah hasil pertama keluar (eksplorasi).",
           "- Daftar koin = koin top CMC saat ini (yang sudah mati tidak ikut); untung-rugi dicatat saat posisi ditutup.",
           "- Statistik masa lalu, bukan jaminan. Bukan ajakan beli/jual."]
     os.makedirs(OUT, exist_ok=True)

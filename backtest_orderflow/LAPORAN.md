@@ -1,6 +1,6 @@
 # 📊 Uji Order Flow & Market Profile
 
-Dibuat 16 Nov 2026 00:02 WIB · 128 koin · 5,134,855 candle 1 jam (2020-01-01 s/d 2026-11-14) · sinyal 2020-09-17 s/d 2026-10-14 · meme coin tidak ikut
+Dibuat 16 Nov 2026 00:10 WIB · 128 koin · 5,134,855 candle 1 jam (2020-01-01 s/d 2026-11-14) · sinyal 2020-09-17 s/d 2026-10-14 · meme coin tidak ikut
 
 ## Putusan
 
@@ -10,6 +10,15 @@ Dibuat 16 Nov 2026 00:02 WIB · 128 koin · 5,134,855 candle 1 jam (2020-01-01 s
 - DASAR (model pasar sekarang): +183.9% · maks turun -23.9% · Sharpe 1.04 · menang 76.1% · 442 transaksi
 - Syarat pasang (ditetapkan di muka): total > DASAR, Sharpe ≥ DASAR + 0.15, maks turun tidak lebih buruk dari DASAR − 5 poin.
 - Stop loss di batas zona nilai: **❌ tidak dipakai** — +132.1% · maks turun -32.2% · Sharpe 0.84 · menang 72.7% · 457 transaksi vs stop loss biasa +183.9% · maks turun -23.9% · Sharpe 1.04 · menang 76.1% · 442 transaksi.
+
+## Jawaban singkat: apakah tingkat menang naik?
+
+- 🟢 Sinyal radar (skor ≥55) (tanpa konfirmasi: menang 74.3%, rata-rata +2.36%): sinyal yang terkonfirmasi menangnya +3.3…+16.4 poin dibanding yang tidak, rata-rata untungnya -0.74…+1.68 poin; sinyal yang tersisa tinggal 4–53%.
+- 🟩 Awal Stage 2 (tanpa konfirmasi: menang 80.7%, rata-rata +1.81%): sinyal yang terkonfirmasi menangnya -3.3…+0.4 poin dibanding yang tidak, rata-rata untungnya -0.46…+0.51 poin; sinyal yang tersisa tinggal 25–86%.
+- 🔻 Pantulan Stage 4 ke Fibonacci (tanpa konfirmasi: menang 86.7%, rata-rata +2.75%): sinyal yang terkonfirmasi menangnya -0.3…+8.2 poin dibanding yang tidak, rata-rata untungnya -1.96…+0.41 poin; sinyal yang tersisa tinggal 24–73%.
+- Dari 24 perbandingan, p terkecil 0.071 untuk tingkat menang dan 0.081 untuk rata-rata untung (batas layak disebut nyata: 0.0021) → tidak ada satu pun selisih yang bisa dibedakan dari kebetulan.
+- Dipakai sebagai saringan tetap (24 susunan, melihat ke belakang): total +79.2…+149.6%, Sharpe 0.76…0.96 — DASAR +183.9%, Sharpe 1.04. Sinyal yang tersaring tidak cukup lebih bagus untuk menutup berkurangnya transaksi.
+- Dipakai sebagai urutan prioritas saat slot penuh (eksplorasi): total +161.9…+186.7%, menang 75.9…76.4% — DASAR +183.9%, menang 76.1%.
 
 ## Yang diuji
 
@@ -30,46 +39,46 @@ Sinyal live yang lolos gerbang pasar: 902 · punya fitur lengkap: 100.0%. Cek da
 
 ## Dengan vs tanpa konfirmasi (seluruh data 2020–2026, sinyal live yang lolos gerbang pasar)
 
-Isi sel: rata-rata bersih per transaksi · tingkat menang (jumlah sinyal). p = peluang selisih sebesar itu muncul kebetulan (uji permutasi di dalam bulan yang sama). Ada 24 perbandingan, jadi baru layak disebut nyata bila p < 0.0021.
+Isi sel: rata-rata bersih per transaksi · tingkat menang (jumlah sinyal). p = peluang selisih sebesar itu muncul kebetulan (uji permutasi di dalam bulan yang sama; 'p menang' untuk selisih tingkat menang, 'p rata-rata' untuk selisih untung). Ada 24 perbandingan, jadi baru layak disebut nyata bila p < 0.0021.
 
 ### 🟢 Sinyal radar (skor ≥55) — semua: +2.36% · menang 74.3% (241)
 
-| Konfirmasi | Terkonfirmasi | Tidak | Selisih rata-rata | Selisih menang | p | Selisih 2020–22 | Selisih 2023–26 |
-|---|---|---|---|---|---|---|---|
-| Tutup di luar zona nilai | +1.97% · menang 82.4% (17) | +2.39% · menang 73.7% (224) | -0.42 | +8.7 | 0.802 | -2.59 | -0.12 |
-| Tutup melewati POC | +3.09% · menang 81.0% (105) | +1.79% · menang 69.1% (136) | +1.30 | +11.9 | 0.688 | +3.24 | +0.93 |
-| Delta hari sinyal searah | +2.01% · menang 77.3% (128) | +2.75% · menang 70.8% (113) | -0.74 | +6.5 | 0.360 | -4.76 | -0.36 |
-| Delta 3 hari searah (CVD) | +2.26% · menang 76.2% (101) | +2.43% · menang 72.9% (140) | -0.17 | +3.3 | 0.847 | -6.12 | +0.49 |
-| Di luar zona nilai + delta hari sinyal | +2.39% · menang 84.6% (13) | +2.35% · menang 73.7% (228) | +0.04 | +10.9 | 0.980 | -2.59 | +0.45 |
-| Melewati POC + delta 3 hari | +3.63% · menang 84.5% (58) | +1.95% · menang 71.0% (183) | +1.68 | +13.5 | 0.432 | -1.11 | +2.03 |
-| Uji zona nilai + delta hari sinyal | +3.31% · menang 84.1% (63) | +2.02% · menang 70.8% (178) | +1.29 | +13.3 | 0.609 | -1.39 | +1.59 |
-| Delta saat harga di luar zona nilai | +3.93% · menang 90.0% (10) | +2.29% · menang 73.6% (231) | +1.64 | +16.4 | 0.537 | -2.50 | +2.42 |
+| Konfirmasi | Terkonfirmasi | Tidak | Selisih menang | p menang | Selisih rata-rata | p rata-rata | Selisih rata-rata 2020–22 | 2023–26 |
+|---|---|---|---|---|---|---|---|---|
+| Tutup di luar zona nilai | +1.97% · menang 82.4% (17) | +2.39% · menang 73.7% (224) | +8.7 | 0.559 | -0.42 | 0.802 | -2.59 | -0.12 |
+| Tutup melewati POC | +3.09% · menang 81.0% (105) | +1.79% · menang 69.1% (136) | +11.9 | 0.376 | +1.30 | 0.688 | +3.24 | +0.93 |
+| Delta hari sinyal searah | +2.01% · menang 77.3% (128) | +2.75% · menang 70.8% (113) | +6.5 | 0.188 | -0.74 | 0.360 | -4.76 | -0.36 |
+| Delta 3 hari searah (CVD) | +2.26% · menang 76.2% (101) | +2.43% · menang 72.9% (140) | +3.3 | 0.560 | -0.17 | 0.847 | -6.12 | +0.49 |
+| Di luar zona nilai + delta hari sinyal | +2.39% · menang 84.6% (13) | +2.35% · menang 73.7% (228) | +10.9 | 0.489 | +0.04 | 0.980 | -2.59 | +0.45 |
+| Melewati POC + delta 3 hari | +3.63% · menang 84.5% (58) | +1.95% · menang 71.0% (183) | +13.5 | 0.234 | +1.68 | 0.432 | -1.11 | +2.03 |
+| Uji zona nilai + delta hari sinyal | +3.31% · menang 84.1% (63) | +2.02% · menang 70.8% (178) | +13.3 | 0.201 | +1.29 | 0.609 | -1.39 | +1.59 |
+| Delta saat harga di luar zona nilai | +3.93% · menang 90.0% (10) | +2.29% · menang 73.6% (231) | +16.4 | 0.549 | +1.64 | 0.537 | -2.50 | +2.42 |
 
 ### 🟩 Awal Stage 2 — semua: +1.81% · menang 80.7% (435)
 
-| Konfirmasi | Terkonfirmasi | Tidak | Selisih rata-rata | Selisih menang | p | Selisih 2020–22 | Selisih 2023–26 |
-|---|---|---|---|---|---|---|---|
-| Tutup di luar zona nilai | +1.64% · menang 79.2% (231) | +2.00% · menang 82.4% (204) | -0.36 | -3.2 | 0.591 | +1.06 | -0.56 |
-| Tutup melewati POC | +1.88% · menang 80.7% (374) | +1.37% · menang 80.3% (61) | +0.51 | +0.4 | 0.636 | +3.77 | -0.36 |
-| Delta hari sinyal searah | +1.82% · menang 80.6% (165) | +1.80% · menang 80.7% (270) | +0.02 | -0.1 | 0.984 | +0.84 | -0.24 |
-| Delta 3 hari searah (CVD) | +1.79% · menang 80.2% (192) | +1.82% · menang 81.1% (243) | -0.03 | -0.9 | 0.969 | -0.42 | -0.07 |
-| Di luar zona nilai + delta hari sinyal | +1.46% · menang 78.2% (110) | +1.92% · menang 81.5% (325) | -0.46 | -3.3 | 0.591 | +0.54 | -0.68 |
-| Melewati POC + delta 3 hari | +1.83% · menang 80.0% (170) | +1.79% · menang 81.1% (265) | +0.04 | -1.1 | 0.957 | +0.84 | -0.18 |
-| Uji zona nilai + delta hari sinyal | +1.83% · menang 80.3% (127) | +1.80% · menang 80.8% (308) | +0.03 | -0.5 | 0.968 | +2.11 | -0.41 |
-| Delta saat harga di luar zona nilai | +1.67% · menang 79.3% (116) | +1.86% · menang 81.2% (319) | -0.19 | -1.9 | 0.806 | +0.75 | -0.40 |
+| Konfirmasi | Terkonfirmasi | Tidak | Selisih menang | p menang | Selisih rata-rata | p rata-rata | Selisih rata-rata 2020–22 | 2023–26 |
+|---|---|---|---|---|---|---|---|---|
+| Tutup di luar zona nilai | +1.64% · menang 79.2% (231) | +2.00% · menang 82.4% (204) | -3.2 | 0.442 | -0.36 | 0.591 | +1.06 | -0.56 |
+| Tutup melewati POC | +1.88% · menang 80.7% (374) | +1.37% · menang 80.3% (61) | +0.4 | 1.000 | +0.51 | 0.636 | +3.77 | -0.36 |
+| Delta hari sinyal searah | +1.82% · menang 80.6% (165) | +1.80% · menang 80.7% (270) | -0.1 | 1.000 | +0.02 | 0.984 | +0.84 | -0.24 |
+| Delta 3 hari searah (CVD) | +1.79% · menang 80.2% (192) | +1.82% · menang 81.1% (243) | -0.9 | 0.892 | -0.03 | 0.969 | -0.42 | -0.07 |
+| Di luar zona nilai + delta hari sinyal | +1.46% · menang 78.2% (110) | +1.92% · menang 81.5% (325) | -3.3 | 0.475 | -0.46 | 0.591 | +0.54 | -0.68 |
+| Melewati POC + delta 3 hari | +1.83% · menang 80.0% (170) | +1.79% · menang 81.1% (265) | -1.1 | 0.786 | +0.04 | 0.957 | +0.84 | -0.18 |
+| Uji zona nilai + delta hari sinyal | +1.83% · menang 80.3% (127) | +1.80% · menang 80.8% (308) | -0.5 | 1.000 | +0.03 | 0.968 | +2.11 | -0.41 |
+| Delta saat harga di luar zona nilai | +1.67% · menang 79.3% (116) | +1.86% · menang 81.2% (319) | -1.9 | 0.649 | -0.19 | 0.806 | +0.75 | -0.40 |
 
 ### 🔻 Pantulan Stage 4 ke Fibonacci — semua: +2.75% · menang 86.7% (226)
 
-| Konfirmasi | Terkonfirmasi | Tidak | Selisih rata-rata | Selisih menang | p | Selisih 2020–22 | Selisih 2023–26 |
-|---|---|---|---|---|---|---|---|
-| Tutup di luar zona nilai | +2.34% · menang 86.5% (74) | +2.95% · menang 86.8% (152) | -0.61 | -0.3 | 0.816 | +5.87 | -0.93 |
-| Tutup melewati POC | +2.92% · menang 89.3% (131) | +2.51% · menang 83.2% (95) | +0.41 | +6.1 | 0.788 | +0.75 | +0.52 |
-| Delta hari sinyal searah | +2.23% · menang 86.7% (166) | +4.19% · menang 86.7% (60) | -1.96 | +0.0 | 0.148 | -3.57 | -1.57 |
-| Delta 3 hari searah (CVD) | +2.40% · menang 87.2% (133) | +3.25% · menang 86.0% (93) | -0.85 | +1.2 | 0.357 | -2.89 | -0.46 |
-| Di luar zona nilai + delta hari sinyal | +2.03% · menang 89.1% (55) | +2.98% · menang 86.0% (171) | -0.95 | +3.1 | 0.409 | -2.61 | -0.71 |
-| Melewati POC + delta 3 hari | +1.79% · menang 87.4% (87) | +3.35% · menang 86.3% (139) | -1.56 | +1.1 | 0.081 | -3.63 | -1.29 |
-| Uji zona nilai + delta hari sinyal | +2.33% · menang 92.5% (67) | +2.93% · menang 84.3% (159) | -0.60 | +8.2 | 0.596 | -3.79 | -0.27 |
-| Delta saat harga di luar zona nilai | +2.46% · menang 88.9% (54) | +2.84% · menang 86.0% (172) | -0.38 | +2.9 | 0.814 | +5.98 | -0.70 |
+| Konfirmasi | Terkonfirmasi | Tidak | Selisih menang | p menang | Selisih rata-rata | p rata-rata | Selisih rata-rata 2020–22 | 2023–26 |
+|---|---|---|---|---|---|---|---|---|
+| Tutup di luar zona nilai | +2.34% · menang 86.5% (74) | +2.95% · menang 86.8% (152) | -0.3 | 1.000 | -0.61 | 0.816 | +5.87 | -0.93 |
+| Tutup melewati POC | +2.92% · menang 89.3% (131) | +2.51% · menang 83.2% (95) | +6.1 | 0.590 | +0.41 | 0.788 | +0.75 | +0.52 |
+| Delta hari sinyal searah | +2.23% · menang 86.7% (166) | +4.19% · menang 86.7% (60) | +0.0 | 1.000 | -1.96 | 0.148 | -3.57 | -1.57 |
+| Delta 3 hari searah (CVD) | +2.40% · menang 87.2% (133) | +3.25% · menang 86.0% (93) | +1.2 | 0.873 | -0.85 | 0.357 | -2.89 | -0.46 |
+| Di luar zona nilai + delta hari sinyal | +2.03% · menang 89.1% (55) | +2.98% · menang 86.0% (171) | +3.1 | 0.689 | -0.95 | 0.409 | -2.61 | -0.71 |
+| Melewati POC + delta 3 hari | +1.79% · menang 87.4% (87) | +3.35% · menang 86.3% (139) | +1.1 | 0.873 | -1.56 | 0.081 | -3.63 | -1.29 |
+| Uji zona nilai + delta hari sinyal | +2.33% · menang 92.5% (67) | +2.93% · menang 84.3% (159) | +8.2 | 0.071 | -0.60 | 0.596 | -3.79 | -0.27 |
+| Delta saat harga di luar zona nilai | +2.46% · menang 88.9% (54) | +2.84% · menang 86.0% (172) | +2.9 | 0.701 | -0.38 | 0.814 | +5.98 | -0.70 |
 
 Pembanding — beli / short di hari ACAK pada kondisi pasar yang sama (apakah konfirmasi itu memang menandai hari yang lebih baik?):
 
@@ -160,6 +169,22 @@ Varian level (konfirmasi berbasis level dihitung dari profil lain):
 | profil volume 90 hari | 🟩 Awal Stage 2 | Tutup melewati POC | +183.9% | -22.8% | 1.08 | +1.04% · menang 77.0% (383) |
 | profil volume 90 hari | 🔻 Pantulan Stage 4 ke Fibonacci | Tutup melewati POC | +166.8% | -22.0% | 0.98 | +2.85% · menang 87.8% (180) |
 
+### Eksplorasi: konfirmasi sebagai urutan prioritas saat slot penuh (dirancang SETELAH hasil di atas keluar)
+
+Semua sinyal DASAR tetap boleh diambil; bedanya, saat slot penuh sinyal yang terkonfirmasi didahulukan. Tidak ikut menentukan putusan.
+
+| Didahulukan bila | Total | Maks turun | Sharpe | Menang | Rata-rata/transaksi | Lebih tinggi dari DASAR di … dari 100 urutan |
+|---|---|---|---|---|---|---|
+| (DASAR: urutan acak) | +183.9% | -23.9% | 1.04 | 76.1% | +1.32% | - |
+| Tutup di luar zona nilai | +186.7% | -24.9% | 1.08 | 76.4% | +1.33% | 61 |
+| Tutup melewati POC | +183.9% | -22.7% | 1.06 | 76.4% | +1.30% | 58 |
+| Delta hari sinyal searah | +161.9% | -20.7% | 0.99 | 75.9% | +1.22% | 26 |
+| Delta 3 hari searah (CVD) | +171.6% | -22.8% | 0.99 | 76.0% | +1.27% | 38 |
+| Di luar zona nilai + delta hari sinyal | +184.4% | -23.7% | 1.06 | 76.1% | +1.34% | 60 |
+| Melewati POC + delta 3 hari | +182.7% | -23.4% | 1.0 | 76.2% | +1.33% | 48 |
+| Uji zona nilai + delta hari sinyal | +167.8% | -21.4% | 1.0 | 75.9% | +1.24% | 22 |
+| Delta saat harga di luar zona nilai | +184.7% | -23.7% | 1.06 | 76.0% | +1.34% | 58 |
+
 ## Uji tambahan: stop loss di batas zona nilai
 
 Beli: stop loss 1% di bawah batas bawah zona nilai; jual dulu: 1% di atas batas atas. Hanya dipakai bila jaraknya 3–12% dari harga masuk dan lebih dekat daripada stop loss biasa. Cek simulasi ulang: 100.0% sinyal hasilnya sama dengan data tersimpan (selisih rata-rata 0.002 poin).
@@ -181,6 +206,6 @@ Berpasangan: SL zona nilai lebih tinggi totalnya di 0 dari 100 urutan, Sharpe le
 - Ini bukan order flow penuh. Data gratis hanya memberi volume beli/jual agresif per candle 1 jam; order book, footprint per harga, absorption dan iceberg tidak ada datanya, jadi tidak diuji.
 - Zona nilai memakai rumus yang sama dengan zona akumulasi radar (48 tingkat harga, 70% volume di sekitar POC), dari 30 hari sebelum hari sinyal.
 - Radar 🟢 sudah memakai porsi beli agresif 24 jam dan posisi harga terhadap zona akumulasi di dalam skornya, jadi untuk sinyal 🟢 sebagian informasi ini sudah terpakai.
-- Daftar konfirmasi, cara memilih dan syarat pasang ditulis sebelum data per jam ditarik. Tabel 'dipasang tetap' melihat ke belakang dan tidak dipakai untuk memutuskan.
+- Daftar konfirmasi, cara memilih dan syarat pasang ditulis sebelum data per jam ditarik. Tabel 'dipasang tetap' melihat ke belakang dan tidak dipakai untuk memutuskan. Uji 'urutan prioritas' ditambahkan setelah hasil pertama keluar (eksplorasi).
 - Daftar koin = koin top CMC saat ini (yang sudah mati tidak ikut); untung-rugi dicatat saat posisi ditutup.
 - Statistik masa lalu, bukan jaminan. Bukan ajakan beli/jual.

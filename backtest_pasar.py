@@ -277,9 +277,11 @@ def pilih(latih: pd.DataFrame, sisi: str, kol: str = "skor", maks: int = 6) -> d
     return best
 
 
-def portofolio(T: pd.DataFrame, awal: pd.Timestamp, akhir: pd.Timestamp, maks: int = MAKS_POSISI, benih: int = 0) -> dict:
+def portofolio(T: pd.DataFrame, awal: pd.Timestamp, akhir: pd.Timestamp, maks: int = MAKS_POSISI, benih: int = 0,
+               pri: str | None = None) -> dict:
     """Simulasi portofolio: maks `maks` posisi, tiap posisi = modal saat itu / maks, untung-rugi dicatat saat tutup.
-    Tiap hari: tutup dulu posisi yang jatuh tempo, lalu buka sinyal hari itu selama slot masih ada (satu koin satu posisi)."""
+    Tiap hari: tutup dulu posisi yang jatuh tempo, lalu buka sinyal hari itu selama slot masih ada (satu koin satu posisi).
+    pri = nama kolom bool: sinyal yang nilainya True didahulukan saat slot penuh (bawaan: urutan acak saja)."""
     hari = pd.date_range(awal, akhir, freq="D")
     n = len(hari)
     eq = np.ones(n)
@@ -288,6 +290,8 @@ def portofolio(T: pd.DataFrame, awal: pd.Timestamp, akhir: pd.Timestamp, maks: i
     # urutan prioritas acak tapi "berpasangan": sinyal yang sama mendapat angka yang sama di model mana pun
     kunci = [k for k in ("tanggal", "symbol", "strategi") if k in T.columns] or ["symbol"]
     u = pd.util.hash_pandas_object(T[kunci].assign(_b=benih), index=False).to_numpy(dtype=np.uint64) / np.float64(2 ** 64)
+    if pri:
+        u = u - T[pri].to_numpy(dtype=float)
     d0 = np.datetime64(pd.Timestamp(awal).to_datetime64(), "D")
     ti = (T["ts"].to_numpy().astype("datetime64[D]") - d0).astype(np.int64)
     ki = (T["keluar"].to_numpy().astype("datetime64[D]") - d0).astype(np.int64)
@@ -333,8 +337,8 @@ def metrik(kurva: pd.Series) -> dict:
                 per_tahun=per_th, bulan_rugi=round(float((bl < 0).mean() * 100), 0) if len(bl) else None)
 
 
-def uji_portofolio(T: pd.DataFrame, awal, akhir, maks=MAKS_POSISI) -> dict:
-    runs = [portofolio(T, awal, akhir, maks, b) for b in range(BENIH)]
+def uji_portofolio(T: pd.DataFrame, awal, akhir, maks=MAKS_POSISI, pri: str | None = None) -> dict:
+    runs = [portofolio(T, awal, akhir, maks, b, pri) for b in range(BENIH)]
     ms = [metrik(r["kurva"]) for r in runs]
     def med(k, nd=1):      # persen dibulatkan 1 desimal supaya laporan & dashboard menampilkan angka yang sama
         x = [m[k] for m in ms if np.isfinite(m[k])]

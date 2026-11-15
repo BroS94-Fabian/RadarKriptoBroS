@@ -98,6 +98,15 @@ Hasil: `model_pasar/LAPORAN.md`, `model_pasar/model.json` dan tab 🌡️ Model 
 Radar membaca `model.json`; dengan `model_pasar: auto` (bawaan) batas skor hanya dipakai bila model baru menang di uji itu.
 Jalankan ulang: **Actions → Model Kondisi Pasar → Run workflow** (otomatis tiap tanggal 1).
 
+## Uji order flow & market profile
+`backtest_orderflow.py` menguji apakah konfirmasi dari candle 1 jam — delta (beli agresif − jual agresif), arah CVD 3 hari,
+POC dan zona nilai 30 hari (`orderflow.py`) — memperbaiki hasil sinyal live. Sinyal dan hasilnya sama persis dengan uji
+model pasar; konfirmasi dipilih walk-forward dan hanya dipasang bila di luar sampel total > dasar, Sharpe ≥ dasar + 0,15 dan
+penurunan maksimum tidak lebih buruk dari 5 poin (aturan ini ditulis sebelum data ditarik).
+Hasil 16 Nov 2026: **tidak dipasang** — tidak ada konfirmasi yang selisihnya bisa dibedakan dari kebetulan, dan sebagai saringan
+total portofolio justru turun. Rinciannya di `backtest_orderflow/LAPORAN.md` dan di bagian bawah tab 🌡️ Model pasar.
+Jalankan ulang: **Actions → Uji Order Flow & Market Profile → Run workflow** (berkas fitur ±12 MB disimpan di cabang `data-orderflow`).
+
 ## Backtest
 Menguji mesin analisa yang sama pada data harian ±2,7 tahun (top 200 CMC di Binance), membandingkan 12 aturan jual
 dan efek tiap filter. Jalankan: **Actions → Backtest Radar → Run workflow**. Hasil: `backtest/LAPORAN.md`

@@ -1,7 +1,7 @@
 {
  "versi": 1,
- "dibuat": "2026-11-15T17:02:37+00:00",
- "dibuat_wib": "16 Nov 2026 00:02 WIB",
+ "dibuat": "2026-11-15T17:10:24+00:00",
+ "dibuat_wib": "16 Nov 2026 00:10 WIB",
  "data": {
   "dibuat": "2026-11-15T17:00:05+00:00",
   "dibuat_wib": "16 Nov 2026 00:00 WIB",
@@ -100,6 +100,7 @@
     "selisih_rata": -0.42,
     "selisih_menang": 8.7,
     "p": 0.8015992003998001,
+    "p_menang": 0.55872063968016,
     "awal": {
      "ya": {
       "n": 3,
@@ -161,6 +162,7 @@
     "selisih_rata": 1.3,
     "selisih_menang": 11.9,
     "p": 0.6881559220389805,
+    "p_menang": 0.3758120939530235,
     "awal": {
      "ya": {
       "n": 15,
@@ -222,6 +224,7 @@
     "selisih_rata": -0.74,
     "selisih_menang": 6.5,
     "p": 0.3598200899550225,
+    "p_menang": 0.18790604697651175,
     "awal": {
      "ya": {
       "n": 19,
@@ -283,6 +286,7 @@
     "selisih_rata": -0.17,
     "selisih_menang": 3.3,
     "p": 0.8470764617691154,
+    "p_menang": 0.5602198900549725,
     "awal": {
      "ya": {
       "n": 17,
@@ -344,6 +348,7 @@
     "selisih_rata": 0.04,
     "selisih_menang": 10.9,
     "p": 0.9800099950024987,
+    "p_menang": 0.48875562218890556,
     "awal": {
      "ya": {
       "n": 3,
@@ -405,6 +410,7 @@
     "selisih_rata": 1.68,
     "selisih_menang": 13.5,
     "p": 0.43228385807096453,
+    "p_menang": 0.23388305847076463,
     "awal": {
      "ya": {
       "n": 10,
@@ -466,6 +472,7 @@
     "selisih_rata": 1.29,
     "selisih_menang": 13.3,
     "p": 0.6091954022988506,
+    "p_menang": 0.2013993003498251,
     "awal": {
      "ya": {
       "n": 11,
@@ -527,6 +534,7 @@
     "selisih_rata": 1.64,
     "selisih_menang": 16.4,
     "p": 0.5367316341829086,
+    "p_menang": 0.5492253873063468,
     "awal": {
      "ya": {
       "n": 2,
@@ -598,6 +606,7 @@
     "selisih_rata": -0.36,
     "selisih_menang": -3.2,
     "p": 0.5907046476761619,
+    "p_menang": 0.44227886056971516,
     "awal": {
      "ya": {
       "n": 38,
@@ -659,6 +668,7 @@
     "selisih_rata": 0.51,
     "selisih_menang": 0.4,
     "p": 0.6356821589205397,
+    "p_menang": 1.0,
     "awal": {
      "ya": {
       "n": 68,
@@ -720,6 +730,7 @@
     "selisih_rata": 0.02,
     "selisih_menang": -0.1,
     "p": 0.9835082458770614,
+    "p_menang": 1.0,
     "awal": {
      "ya": {
       "n": 34,
@@ -781,6 +792,7 @@
     "selisih_rata": -0.03,
     "selisih_menang": -0.9,
     "p": 0.9685157421289355,
+    "p_menang": 0.8920539730134932,
     "awal": {
      "ya": {
       "n": 43,
@@ -842,6 +854,7 @@
     "selisih_rata": -0.46,
     "selisih_menang": -3.3,
     "p": 0.5907046476761619,
+    "p_menang": 0.4752623688155922,
     "awal": {
      "ya": {
       "n": 21,
@@ -903,6 +916,7 @@
     "selisih_rata": 0.04,
     "selisih_menang": -1.1,
     "p": 0.9570214892553723,
+    "p_menang": 0.7856071964017991,
     "awal": {
      "ya": {
       "n": 34,
@@ -964,6 +978,7 @@
     "selisih_rata": 0.03,
     "selisih_menang": -0.5,
     "p": 0.9675162418790605,
+    "p_menang": 1.0,
     "awal": {
      "ya": {
       "n": 23,
@@ -1025,6 +1040,7 @@
     "selisih_rata": -0.19,
     "selisih_menang": -1.9,
     "p": 0.8055972013993004,
+    "p_menang": 0.6486756621689156,
     "awal": {
      "ya": {
       "n": 22,
@@ -1266,6 +1282,7 @@
     "selisih_rata": -0.61,
     "selisih_menang": -0.3,
     "p": 0.815592203898051,
+    "p_menang": 1.0,
     "awal": {
      "ya": {
       "n": 4,
@@ -1327,6 +1344,7 @@
     "selisih_rata": 0.41,
     "selisih_menang": 6.1,
     "p": 0.7876061969015492,
+    "p_menang": 0.5897051474262869,
     "awal": {
      "ya": {
       "n": 8,
@@ -1388,6 +1406,7 @@
     "selisih_rata": -1.96,
     "selisih_menang": 0.0,
     "p": 0.14842578710644677,
+    "p_menang": 1.0,
     "awal": {
      "ya": {
       "n": 10,
@@ -1449,6 +1468,7 @@
     "selisih_rata": -0.85,
     "selisih_menang": 1.2,
     "p": 0.35732133933033483,
+    "p_menang": 0.8725637181409296,
     "awal": {
      "ya": {
       "n": 6,
@@ -1510,6 +1530,7 @@
     "selisih_rata": -0.95,
     "selisih_menang": 3.1,
     "p": 0.40879560219890054,
+    "p_menang": 0.688655672163918,
     "awal": {
      "ya": {
       "n": 2,
@@ -1571,6 +1592,7 @@
     "selisih_rata": -1.56,
     "selisih_menang": 1.1,
     "p": 0.0814592703648176,
+    "p_menang": 0.8725637181409296,
     "awal": {
      "ya": {
       "n": 4,
@@ -1632,6 +1654,7 @@
     "selisih_rata": -0.6,
     "selisih_menang": 8.2,
     "p": 0.5962018990504747,
+    "p_menang": 0.07146426786606697,
     "awal": {
      "ya": {
       "n": 2,
@@ -1693,6 +1716,7 @@
     "selisih_rata": -0.38,
     "selisih_menang": 2.9,
     "p": 0.8140929535232384,
+    "p_menang": 0.7011494252873564,
     "awal": {
      "ya": {
       "n": 3,
@@ -3695,6 +3719,168 @@
      }
     }
    }
+  }
+ },
+ "prioritas": {
+  "va": {
+   "total": 186.7,
+   "total_min": 123.4,
+   "total_maks": 252.5,
+   "cagr": 31.3,
+   "maxdd": -24.9,
+   "sharpe": 1.08,
+   "per_tahun": {
+    "2023": 26.8,
+    "2024": 35.9,
+    "2025": 17.4,
+    "2026": 41.3
+   },
+   "transaksi": 445,
+   "menang": 76.4,
+   "rata": 1.33,
+   "terisi": 79.0,
+   "kandidat": 843,
+   "total_lebih_baik": 61
+  },
+  "poc": {
+   "total": 183.9,
+   "total_min": 127.4,
+   "total_maks": 257.6,
+   "cagr": 30.9,
+   "maxdd": -22.7,
+   "sharpe": 1.06,
+   "per_tahun": {
+    "2023": 30.6,
+    "2024": 35.3,
+    "2025": 17.6,
+    "2026": 34.6
+   },
+   "transaksi": 444,
+   "menang": 76.4,
+   "rata": 1.3,
+   "terisi": 79.0,
+   "kandidat": 843,
+   "total_lebih_baik": 58
+  },
+  "delta1": {
+   "total": 161.9,
+   "total_min": 124.3,
+   "total_maks": 210.6,
+   "cagr": 28.3,
+   "maxdd": -20.7,
+   "sharpe": 0.99,
+   "per_tahun": {
+    "2023": 30.9,
+    "2024": 31.3,
+    "2025": 13.8,
+    "2026": 34.9
+   },
+   "transaksi": 441,
+   "menang": 75.9,
+   "rata": 1.22,
+   "terisi": 78.0,
+   "kandidat": 843,
+   "total_lebih_baik": 26
+  },
+  "delta3": {
+   "total": 171.6,
+   "total_min": 131.9,
+   "total_maks": 225.2,
+   "cagr": 29.5,
+   "maxdd": -22.8,
+   "sharpe": 0.99,
+   "per_tahun": {
+    "2023": 25.3,
+    "2024": 37.7,
+    "2025": 14.0,
+    "2026": 36.0
+   },
+   "transaksi": 441,
+   "menang": 76.0,
+   "rata": 1.27,
+   "terisi": 79.0,
+   "kandidat": 843,
+   "total_lebih_baik": 38
+  },
+  "va_delta1": {
+   "total": 184.4,
+   "total_min": 126.8,
+   "total_maks": 253.8,
+   "cagr": 31.0,
+   "maxdd": -23.7,
+   "sharpe": 1.06,
+   "per_tahun": {
+    "2023": 26.4,
+    "2024": 35.5,
+    "2025": 16.4,
+    "2026": 39.3
+   },
+   "transaksi": 439,
+   "menang": 76.1,
+   "rata": 1.34,
+   "terisi": 78.0,
+   "kandidat": 843,
+   "total_lebih_baik": 60
+  },
+  "poc_delta3": {
+   "total": 182.7,
+   "total_min": 126.3,
+   "total_maks": 230.5,
+   "cagr": 30.9,
+   "maxdd": -23.4,
+   "sharpe": 1.0,
+   "per_tahun": {
+    "2023": 27.7,
+    "2024": 40.7,
+    "2025": 15.5,
+    "2026": 33.8
+   },
+   "transaksi": 442,
+   "menang": 76.2,
+   "rata": 1.33,
+   "terisi": 78.0,
+   "kandidat": 843,
+   "total_lebih_baik": 48
+  },
+  "uji_va_delta1": {
+   "total": 167.8,
+   "total_min": 117.9,
+   "total_maks": 218.5,
+   "cagr": 29.0,
+   "maxdd": -21.4,
+   "sharpe": 1.0,
+   "per_tahun": {
+    "2023": 27.9,
+    "2024": 33.1,
+    "2025": 14.6,
+    "2026": 34.9
+   },
+   "transaksi": 443,
+   "menang": 75.9,
+   "rata": 1.24,
+   "terisi": 78.0,
+   "kandidat": 843,
+   "total_lebih_baik": 22
+  },
+  "tembus_delta": {
+   "total": 184.7,
+   "total_min": 128.0,
+   "total_maks": 242.9,
+   "cagr": 31.1,
+   "maxdd": -23.7,
+   "sharpe": 1.06,
+   "per_tahun": {
+    "2023": 26.8,
+    "2024": 36.5,
+    "2025": 16.4,
+    "2026": 37.0
+   },
+   "transaksi": 440,
+   "menang": 76.0,
+   "rata": 1.34,
+   "terisi": 78.0,
+   "kandidat": 843,
+   "total_lebih_baik": 58
   }
  },
  "sl": {
