@@ -1,0 +1,72 @@
+name: Uji Order Flow & Market Profile
+
+on:
+  workflow_dispatch:
+    inputs:
+      tahap:
+        description: "data = tarik candle 1 jam & hitung fitur · model = uji dari fitur tersimpan · semua"
+        default: "semua"
+      mulai:
+        description: "Data mulai (YYYY-MM-DD)"
+        default: "2020-01-01"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radar-uji-orderflow
+  cancel-in-progress: false
+
+jobs:
+  uji:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    env:
+      TAHAP: ${{ github.event.inputs.tahap || 'semua' }}
+      MULAI: ${{ github.event.inputs.mulai || '2020-01-01' }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Pasang library
+        run: pip install -r requirements.txt
+
+      - name: Tarik candle 1 jam & hitung fitur
+        if: env.TAHAP != 'model'
+        run: python backtest_orderflow.py data --mulai "$MULAI"
+
+      # Berkas fitur besar (±15 MB) → disimpan di cabang tersendiri supaya cabang utama tetap ringan
+      - name: Simpan fitur ke cabang data-orderflow
+        if: env.TAHAP != 'model'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          blob=$(git hash-object -w backtest_orderflow/fitur.csv.gz)
+          t1=$(printf '100644 blob %s\tfitur.csv.gz\n' "$blob" | git mktree)
+          t2=$(printf '040000 tree %s\tbacktest_orderflow\n' "$t1" | git mktree)
+          c=$(git commit-tree "$t2" -m "data order flow $(date -u +%F)")
+          git push -f origin "$c:refs/heads/data-orderflow"
+
+      - name: Ambil fitur tersimpan
+        if: env.TAHAP == 'model'
+        run: |
+          git fetch --depth 1 origin data-orderflow
+          mkdir -p backtest_orderflow
+          git show FETCH_HEAD:backtest_orderflow/fitur.csv.gz > backtest_orderflow/fitur.csv.gz
+
+      - name: Uji dengan vs tanpa konfirmasi
+        if: env.TAHAP != 'data'
+        run: python backtest_orderflow.py model
+
+      - name: Simpan hasil
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtest_orderflow/ || exit 0
+          git commit -m "uji order flow: perbarui hasil" || exit 0
+          for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done
