@@ -1,0 +1,4046 @@
+{
+ "versi": 1,
+ "dibuat": "2026-11-15T17:02:37+00:00",
+ "dibuat_wib": "16 Nov 2026 00:02 WIB",
+ "data": {
+  "dibuat": "2026-11-15T17:00:05+00:00",
+  "dibuat_wib": "16 Nov 2026 00:00 WIB",
+  "koin": 128,
+  "gagal": [],
+  "mulai": "2020-01-01",
+  "candle_jam": 5134855,
+  "baris": 213970,
+  "dari": "2020-01-01",
+  "sampai": "2026-11-14",
+  "kosong": {
+   "d1": 0.0,
+   "d3": 0.1,
+   "poc30": 1.6,
+   "tpoc30": 1.6,
+   "poc90": 4.9
+  },
+  "durasi_detik": 147
+ },
+ "dari": "2020-09-17",
+ "sampai": "2026-10-14",
+ "konfirmasi": {
+  "va": {
+   "nama": "Tutup di luar zona nilai",
+   "beli": "harga tutup di atas batas atas zona nilai 30 hari",
+   "jual": "harga tutup di bawah batas bawah zona nilai 30 hari"
+  },
+  "poc": {
+   "nama": "Tutup melewati POC",
+   "beli": "harga tutup di atas POC 30 hari",
+   "jual": "harga tutup di bawah POC 30 hari"
+  },
+  "delta1": {
+   "nama": "Delta hari sinyal searah",
+   "beli": "beli agresif > jual agresif di hari sinyal",
+   "jual": "jual agresif > beli agresif di hari sinyal"
+  },
+  "delta3": {
+   "nama": "Delta 3 hari searah (CVD)",
+   "beli": "CVD 3 hari naik",
+   "jual": "CVD 3 hari turun"
+  },
+  "va_delta1": {
+   "nama": "Di luar zona nilai + delta hari sinyal",
+   "beli": "tutup di atas zona nilai DAN delta hari sinyal positif",
+   "jual": "tutup di bawah zona nilai DAN delta hari sinyal negatif"
+  },
+  "poc_delta3": {
+   "nama": "Melewati POC + delta 3 hari",
+   "beli": "tutup di atas POC DAN CVD 3 hari naik",
+   "jual": "tutup di bawah POC DAN CVD 3 hari turun"
+  },
+  "uji_va_delta1": {
+   "nama": "Uji zona nilai + delta hari sinyal",
+   "beli": "3 hari terakhir menyentuh zona nilai, tutup di atas POC, delta positif",
+   "jual": "pantulan 3 hari terakhir menyentuh zona nilai, tutup di bawah POC, delta negatif"
+  },
+  "tembus_delta": {
+   "nama": "Delta saat harga di luar zona nilai",
+   "beli": "tutup di atas zona nilai DAN jam-jam di atasnya didominasi beli agresif",
+   "jual": "tutup di bawah zona nilai DAN jam-jam di bawahnya didominasi jual agresif"
+  }
+ },
+ "cakupan": {
+  "sinyal": 902,
+  "ada_fitur": 902,
+  "persen": 100.0
+ },
+ "per_konfirmasi": {
+  "radar_naik": {
+   "semua": {
+    "n": 241,
+    "bulan": 40,
+    "menang": 74.3,
+    "rata": 2.36,
+    "median": 2.08,
+    "t": 1.53
+   },
+   "va": {
+    "ya": {
+     "n": 17,
+     "bulan": 12,
+     "menang": 82.4,
+     "rata": 1.97,
+     "median": 2.08,
+     "t": 0.81
+    },
+    "tidak": {
+     "n": 224,
+     "bulan": 40,
+     "menang": 73.7,
+     "rata": 2.39,
+     "median": 2.08,
+     "t": 1.53
+    },
+    "selisih_rata": -0.42,
+    "selisih_menang": 8.7,
+    "p": 0.8015992003998001,
+    "awal": {
+     "ya": {
+      "n": 3,
+      "bulan": 3,
+      "menang": 100.0,
+      "rata": 2.08,
+      "median": 2.08,
+      "t": null
+     },
+     "tidak": {
+      "n": 27,
+      "bulan": 11,
+      "menang": 85.2,
+      "rata": 4.67,
+      "median": 2.08,
+      "t": 2.28
+     },
+     "selisih_rata": -2.59,
+     "selisih_menang": 14.8
+    },
+    "akhir": {
+     "ya": {
+      "n": 14,
+      "bulan": 9,
+      "menang": 78.6,
+      "rata": 1.95,
+      "median": 2.08,
+      "t": 0.65
+     },
+     "tidak": {
+      "n": 197,
+      "bulan": 29,
+      "menang": 72.1,
+      "rata": 2.07,
+      "median": 2.08,
+      "t": 1.17
+     },
+     "selisih_rata": -0.12,
+     "selisih_menang": 6.5
+    }
+   },
+   "poc": {
+    "ya": {
+     "n": 105,
+     "bulan": 33,
+     "menang": 81.0,
+     "rata": 3.09,
+     "median": 2.08,
+     "t": 1.98
+    },
+    "tidak": {
+     "n": 136,
+     "bulan": 34,
+     "menang": 69.1,
+     "rata": 1.79,
+     "median": 2.08,
+     "t": 1.03
+    },
+    "selisih_rata": 1.3,
+    "selisih_menang": 11.9,
+    "p": 0.6881559220389805,
+    "awal": {
+     "ya": {
+      "n": 15,
+      "bulan": 10,
+      "menang": 100.0,
+      "rata": 6.03,
+      "median": 2.08,
+      "t": 3.03
+     },
+     "tidak": {
+      "n": 15,
+      "bulan": 9,
+      "menang": 73.3,
+      "rata": 2.79,
+      "median": 2.08,
+      "t": 0.96
+     },
+     "selisih_rata": 3.24,
+     "selisih_menang": 26.7
+    },
+    "akhir": {
+     "ya": {
+      "n": 90,
+      "bulan": 23,
+      "menang": 77.8,
+      "rata": 2.6,
+      "median": 2.08,
+      "t": 1.44
+     },
+     "tidak": {
+      "n": 121,
+      "bulan": 25,
+      "menang": 68.6,
+      "rata": 1.67,
+      "median": 2.08,
+      "t": 0.86
+     },
+     "selisih_rata": 0.93,
+     "selisih_menang": 9.2
+    }
+   },
+   "delta1": {
+    "ya": {
+     "n": 128,
+     "bulan": 35,
+     "menang": 77.3,
+     "rata": 2.01,
+     "median": 2.08,
+     "t": 1.84
+    },
+    "tidak": {
+     "n": 113,
+     "bulan": 33,
+     "menang": 70.8,
+     "rata": 2.75,
+     "median": 2.08,
+     "t": 1.26
+    },
+    "selisih_rata": -0.74,
+    "selisih_menang": 6.5,
+    "p": 0.3598200899550225,
+    "awal": {
+     "ya": {
+      "n": 19,
+      "bulan": 10,
+      "menang": 84.2,
+      "rata": 2.67,
+      "median": 2.08,
+      "t": 1.67
+     },
+     "tidak": {
+      "n": 11,
+      "bulan": 6,
+      "menang": 90.9,
+      "rata": 7.43,
+      "median": 2.08,
+      "t": 2.32
+     },
+     "selisih_rata": -4.76,
+     "selisih_menang": -6.7
+    },
+    "akhir": {
+     "ya": {
+      "n": 109,
+      "bulan": 25,
+      "menang": 76.1,
+      "rata": 1.89,
+      "median": 2.08,
+      "t": 1.5
+     },
+     "tidak": {
+      "n": 102,
+      "bulan": 27,
+      "menang": 68.6,
+      "rata": 2.25,
+      "median": 2.08,
+      "t": 0.93
+     },
+     "selisih_rata": -0.36,
+     "selisih_menang": 7.5
+    }
+   },
+   "delta3": {
+    "ya": {
+     "n": 101,
+     "bulan": 34,
+     "menang": 76.2,
+     "rata": 2.26,
+     "median": 2.08,
+     "t": 1.76
+    },
+    "tidak": {
+     "n": 140,
+     "bulan": 32,
+     "menang": 72.9,
+     "rata": 2.43,
+     "median": 2.08,
+     "t": 1.3
+    },
+    "selisih_rata": -0.17,
+    "selisih_menang": 3.3,
+    "p": 0.8470764617691154,
+    "awal": {
+     "ya": {
+      "n": 17,
+      "bulan": 8,
+      "menang": 82.4,
+      "rata": 1.76,
+      "median": 2.08,
+      "t": 1.1
+     },
+     "tidak": {
+      "n": 13,
+      "bulan": 5,
+      "menang": 92.3,
+      "rata": 7.88,
+      "median": 2.08,
+      "t": 2.53
+     },
+     "selisih_rata": -6.12,
+     "selisih_menang": -9.9
+    },
+    "akhir": {
+     "ya": {
+      "n": 84,
+      "bulan": 26,
+      "menang": 75.0,
+      "rata": 2.36,
+      "median": 2.08,
+      "t": 1.55
+     },
+     "tidak": {
+      "n": 127,
+      "bulan": 27,
+      "menang": 70.9,
+      "rata": 1.87,
+      "median": 2.08,
+      "t": 0.92
+     },
+     "selisih_rata": 0.49,
+     "selisih_menang": 4.1
+    }
+   },
+   "va_delta1": {
+    "ya": {
+     "n": 13,
+     "bulan": 10,
+     "menang": 84.6,
+     "rata": 2.39,
+     "median": 2.08,
+     "t": 0.84
+    },
+    "tidak": {
+     "n": 228,
+     "bulan": 40,
+     "menang": 73.7,
+     "rata": 2.35,
+     "median": 2.08,
+     "t": 1.48
+    },
+    "selisih_rata": 0.04,
+    "selisih_menang": 10.9,
+    "p": 0.9800099950024987,
+    "awal": {
+     "ya": {
+      "n": 3,
+      "bulan": 3,
+      "menang": 100.0,
+      "rata": 2.08,
+      "median": 2.08,
+      "t": null
+     },
+     "tidak": {
+      "n": 27,
+      "bulan": 11,
+      "menang": 85.2,
+      "rata": 4.67,
+      "median": 2.08,
+      "t": 2.28
+     },
+     "selisih_rata": -2.59,
+     "selisih_menang": 14.8
+    },
+    "akhir": {
+     "ya": {
+      "n": 10,
+      "bulan": 7,
+      "menang": 80.0,
+      "rata": 2.49,
+      "median": 2.08,
+      "t": 0.66
+     },
+     "tidak": {
+      "n": 201,
+      "bulan": 29,
+      "menang": 72.1,
+      "rata": 2.04,
+      "median": 2.08,
+      "t": 1.13
+     },
+     "selisih_rata": 0.45,
+     "selisih_menang": 7.9
+    }
+   },
+   "poc_delta3": {
+    "ya": {
+     "n": 58,
+     "bulan": 29,
+     "menang": 84.5,
+     "rata": 3.63,
+     "median": 2.08,
+     "t": 3.11
+    },
+    "tidak": {
+     "n": 183,
+     "bulan": 38,
+     "menang": 71.0,
+     "rata": 1.95,
+     "median": 2.08,
+     "t": 1.13
+    },
+    "selisih_rata": 1.68,
+    "selisih_menang": 13.5,
+    "p": 0.43228385807096453,
+    "awal": {
+     "ya": {
+      "n": 10,
+      "bulan": 7,
+      "menang": 100.0,
+      "rata": 3.67,
+      "median": 2.08,
+      "t": 3.95
+     },
+     "tidak": {
+      "n": 20,
+      "bulan": 10,
+      "menang": 80.0,
+      "rata": 4.78,
+      "median": 2.08,
+      "t": 1.73
+     },
+     "selisih_rata": -1.11,
+     "selisih_menang": 20.0
+    },
+    "akhir": {
+     "ya": {
+      "n": 48,
+      "bulan": 22,
+      "menang": 81.2,
+      "rata": 3.63,
+      "median": 2.08,
+      "t": 2.57
+     },
+     "tidak": {
+      "n": 163,
+      "bulan": 28,
+      "menang": 69.9,
+      "rata": 1.6,
+      "median": 2.08,
+      "t": 0.83
+     },
+     "selisih_rata": 2.03,
+     "selisih_menang": 11.3
+    }
+   },
+   "uji_va_delta1": {
+    "ya": {
+     "n": 63,
+     "bulan": 28,
+     "menang": 84.1,
+     "rata": 3.31,
+     "median": 2.08,
+     "t": 2.26
+    },
+    "tidak": {
+     "n": 178,
+     "bulan": 38,
+     "menang": 70.8,
+     "rata": 2.02,
+     "median": 2.08,
+     "t": 1.21
+    },
+    "selisih_rata": 1.29,
+    "selisih_menang": 13.3,
+    "p": 0.6091954022988506,
+    "awal": {
+     "ya": {
+      "n": 11,
+      "bulan": 8,
+      "menang": 100.0,
+      "rata": 3.53,
+      "median": 2.08,
+      "t": 4.11
+     },
+     "tidak": {
+      "n": 19,
+      "bulan": 10,
+      "menang": 78.9,
+      "rata": 4.92,
+      "median": 2.08,
+      "t": 1.73
+     },
+     "selisih_rata": -1.39,
+     "selisih_menang": 21.1
+    },
+    "akhir": {
+     "ya": {
+      "n": 52,
+      "bulan": 20,
+      "menang": 80.8,
+      "rata": 3.26,
+      "median": 2.08,
+      "t": 1.83
+     },
+     "tidak": {
+      "n": 159,
+      "bulan": 28,
+      "menang": 69.8,
+      "rata": 1.67,
+      "median": 2.08,
+      "t": 0.9
+     },
+     "selisih_rata": 1.59,
+     "selisih_menang": 11.0
+    }
+   },
+   "tembus_delta": {
+    "ya": {
+     "n": 10,
+     "bulan": 7,
+     "menang": 90.0,
+     "rata": 3.93,
+     "median": 2.08,
+     "t": 1.27
+    },
+    "tidak": {
+     "n": 231,
+     "bulan": 40,
+     "menang": 73.6,
+     "rata": 2.29,
+     "median": 2.08,
+     "t": 1.45
+    },
+    "selisih_rata": 1.64,
+    "selisih_menang": 16.4,
+    "p": 0.5367316341829086,
+    "awal": {
+     "ya": {
+      "n": 2,
+      "bulan": 2,
+      "menang": 100.0,
+      "rata": 2.08,
+      "median": 2.08,
+      "t": null
+     },
+     "tidak": {
+      "n": 28,
+      "bulan": 11,
+      "menang": 85.7,
+      "rata": 4.58,
+      "median": 2.08,
+      "t": 2.3
+     },
+     "selisih_rata": -2.5,
+     "selisih_menang": 14.3
+    },
+    "akhir": {
+     "ya": {
+      "n": 8,
+      "bulan": 5,
+      "menang": 87.5,
+      "rata": 4.39,
+      "median": 2.08,
+      "t": 1.13
+     },
+     "tidak": {
+      "n": 203,
+      "bulan": 29,
+      "menang": 71.9,
+      "rata": 1.97,
+      "median": 2.08,
+      "t": 1.1
+     },
+     "selisih_rata": 2.42,
+     "selisih_menang": 15.6
+    }
+   }
+  },
+  "awal_stage2": {
+   "semua": {
+    "n": 435,
+    "bulan": 44,
+    "menang": 80.7,
+    "rata": 1.81,
+    "median": 2.08,
+    "t": 2.82
+   },
+   "va": {
+    "ya": {
+     "n": 231,
+     "bulan": 35,
+     "menang": 79.2,
+     "rata": 1.64,
+     "median": 2.08,
+     "t": 2.2
+    },
+    "tidak": {
+     "n": 204,
+     "bulan": 39,
+     "menang": 82.4,
+     "rata": 2.0,
+     "median": 2.41,
+     "t": 2.89
+    },
+    "selisih_rata": -0.36,
+    "selisih_menang": -3.2,
+    "p": 0.5907046476761619,
+    "awal": {
+     "ya": {
+      "n": 38,
+      "bulan": 9,
+      "menang": 89.5,
+      "rata": 3.97,
+      "median": 7.07,
+      "t": 5.27
+     },
+     "tidak": {
+      "n": 46,
+      "bulan": 12,
+      "menang": 87.0,
+      "rata": 2.91,
+      "median": 7.07,
+      "t": 3.4
+     },
+     "selisih_rata": 1.06,
+     "selisih_menang": 2.5
+    },
+    "akhir": {
+     "ya": {
+      "n": 193,
+      "bulan": 26,
+      "menang": 77.2,
+      "rata": 1.18,
+      "median": 2.08,
+      "t": 1.3
+     },
+     "tidak": {
+      "n": 158,
+      "bulan": 27,
+      "menang": 81.0,
+      "rata": 1.74,
+      "median": 2.08,
+      "t": 2.0
+     },
+     "selisih_rata": -0.56,
+     "selisih_menang": -3.8
+    }
+   },
+   "poc": {
+    "ya": {
+     "n": 374,
+     "bulan": 43,
+     "menang": 80.7,
+     "rata": 1.88,
+     "median": 7.07,
+     "t": 2.74
+    },
+    "tidak": {
+     "n": 61,
+     "bulan": 27,
+     "menang": 80.3,
+     "rata": 1.37,
+     "median": 2.08,
+     "t": 1.36
+    },
+    "selisih_rata": 0.51,
+    "selisih_menang": 0.4,
+    "p": 0.6356821589205397,
+    "awal": {
+     "ya": {
+      "n": 68,
+      "bulan": 13,
+      "menang": 91.2,
+      "rata": 4.11,
+      "median": 7.07,
+      "t": 12.14
+     },
+     "tidak": {
+      "n": 16,
+      "bulan": 6,
+      "menang": 75.0,
+      "rata": 0.34,
+      "median": 2.08,
+      "t": 0.14
+     },
+     "selisih_rata": 3.77,
+     "selisih_menang": 16.2
+    },
+    "akhir": {
+     "ya": {
+      "n": 306,
+      "bulan": 30,
+      "menang": 78.4,
+      "rata": 1.38,
+      "median": 2.08,
+      "t": 1.62
+     },
+     "tidak": {
+      "n": 45,
+      "bulan": 21,
+      "menang": 82.2,
+      "rata": 1.74,
+      "median": 2.08,
+      "t": 1.58
+     },
+     "selisih_rata": -0.36,
+     "selisih_menang": -3.8
+    }
+   },
+   "delta1": {
+    "ya": {
+     "n": 165,
+     "bulan": 39,
+     "menang": 80.6,
+     "rata": 1.82,
+     "median": 7.07,
+     "t": 2.3
+    },
+    "tidak": {
+     "n": 270,
+     "bulan": 40,
+     "menang": 80.7,
+     "rata": 1.8,
+     "median": 2.08,
+     "t": 2.66
+    },
+    "selisih_rata": 0.02,
+    "selisih_menang": -0.1,
+    "p": 0.9835082458770614,
+    "awal": {
+     "ya": {
+      "n": 34,
+      "bulan": 10,
+      "menang": 91.2,
+      "rata": 3.89,
+      "median": 7.07,
+      "t": 4.48
+     },
+     "tidak": {
+      "n": 50,
+      "bulan": 12,
+      "menang": 86.0,
+      "rata": 3.05,
+      "median": 7.07,
+      "t": 3.73
+     },
+     "selisih_rata": 0.84,
+     "selisih_menang": 5.2
+    },
+    "akhir": {
+     "ya": {
+      "n": 131,
+      "bulan": 29,
+      "menang": 77.9,
+      "rata": 1.28,
+      "median": 2.08,
+      "t": 1.33
+     },
+     "tidak": {
+      "n": 220,
+      "bulan": 28,
+      "menang": 79.5,
+      "rata": 1.52,
+      "median": 2.08,
+      "t": 1.85
+     },
+     "selisih_rata": -0.24,
+     "selisih_menang": -1.6
+    }
+   },
+   "delta3": {
+    "ya": {
+     "n": 192,
+     "bulan": 39,
+     "menang": 80.2,
+     "rata": 1.79,
+     "median": 7.07,
+     "t": 2.18
+    },
+    "tidak": {
+     "n": 243,
+     "bulan": 41,
+     "menang": 81.1,
+     "rata": 1.82,
+     "median": 2.08,
+     "t": 2.7
+    },
+    "selisih_rata": -0.03,
+    "selisih_menang": -0.9,
+    "p": 0.9685157421289355,
+    "awal": {
+     "ya": {
+      "n": 43,
+      "bulan": 10,
+      "menang": 88.4,
+      "rata": 3.18,
+      "median": 7.07,
+      "t": 4.04
+     },
+     "tidak": {
+      "n": 41,
+      "bulan": 12,
+      "menang": 87.8,
+      "rata": 3.6,
+      "median": 7.07,
+      "t": 4.08
+     },
+     "selisih_rata": -0.42,
+     "selisih_menang": 0.6
+    },
+    "akhir": {
+     "ya": {
+      "n": 149,
+      "bulan": 29,
+      "menang": 77.9,
+      "rata": 1.39,
+      "median": 6.92,
+      "t": 1.33
+     },
+     "tidak": {
+      "n": 202,
+      "bulan": 29,
+      "menang": 79.7,
+      "rata": 1.46,
+      "median": 2.08,
+      "t": 1.85
+     },
+     "selisih_rata": -0.07,
+     "selisih_menang": -1.8
+    }
+   },
+   "va_delta1": {
+    "ya": {
+     "n": 110,
+     "bulan": 33,
+     "menang": 78.2,
+     "rata": 1.46,
+     "median": 6.99,
+     "t": 1.52
+    },
+    "tidak": {
+     "n": 325,
+     "bulan": 41,
+     "menang": 81.5,
+     "rata": 1.92,
+     "median": 2.08,
+     "t": 3.05
+    },
+    "selisih_rata": -0.46,
+    "selisih_menang": -3.3,
+    "p": 0.5907046476761619,
+    "awal": {
+     "ya": {
+      "n": 21,
+      "bulan": 8,
+      "menang": 90.5,
+      "rata": 3.79,
+      "median": 7.07,
+      "t": 3.49
+     },
+     "tidak": {
+      "n": 63,
+      "bulan": 12,
+      "menang": 87.3,
+      "rata": 3.25,
+      "median": 7.07,
+      "t": 4.53
+     },
+     "selisih_rata": 0.54,
+     "selisih_menang": 3.2
+    },
+    "akhir": {
+     "ya": {
+      "n": 89,
+      "bulan": 25,
+      "menang": 75.3,
+      "rata": 0.92,
+      "median": 2.08,
+      "t": 0.79
+     },
+     "tidak": {
+      "n": 262,
+      "bulan": 29,
+      "menang": 80.2,
+      "rata": 1.6,
+      "median": 2.08,
+      "t": 2.08
+     },
+     "selisih_rata": -0.68,
+     "selisih_menang": -4.9
+    }
+   },
+   "poc_delta3": {
+    "ya": {
+     "n": 170,
+     "bulan": 37,
+     "menang": 80.0,
+     "rata": 1.83,
+     "median": 7.07,
+     "t": 2.07
+    },
+    "tidak": {
+     "n": 265,
+     "bulan": 41,
+     "menang": 81.1,
+     "rata": 1.79,
+     "median": 2.08,
+     "t": 2.84
+    },
+    "selisih_rata": 0.04,
+    "selisih_menang": -1.1,
+    "p": 0.9570214892553723,
+    "awal": {
+     "ya": {
+      "n": 34,
+      "bulan": 10,
+      "menang": 91.2,
+      "rata": 3.89,
+      "median": 7.07,
+      "t": 5.69
+     },
+     "tidak": {
+      "n": 50,
+      "bulan": 12,
+      "menang": 86.0,
+      "rata": 3.05,
+      "median": 7.07,
+      "t": 3.57
+     },
+     "selisih_rata": 0.84,
+     "selisih_menang": 5.2
+    },
+    "akhir": {
+     "ya": {
+      "n": 136,
+      "bulan": 27,
+      "menang": 77.2,
+      "rata": 1.32,
+      "median": 6.99,
+      "t": 1.18
+     },
+     "tidak": {
+      "n": 215,
+      "bulan": 29,
+      "menang": 80.0,
+      "rata": 1.5,
+      "median": 2.08,
+      "t": 1.98
+     },
+     "selisih_rata": -0.18,
+     "selisih_menang": -2.8
+    }
+   },
+   "uji_va_delta1": {
+    "ya": {
+     "n": 127,
+     "bulan": 35,
+     "menang": 80.3,
+     "rata": 1.83,
+     "median": 7.07,
+     "t": 2.12
+    },
+    "tidak": {
+     "n": 308,
+     "bulan": 41,
+     "menang": 80.8,
+     "rata": 1.8,
+     "median": 2.08,
+     "t": 2.71
+    },
+    "selisih_rata": 0.03,
+    "selisih_menang": -0.5,
+    "p": 0.9675162418790605,
+    "awal": {
+     "ya": {
+      "n": 23,
+      "bulan": 10,
+      "menang": 95.7,
+      "rata": 4.92,
+      "median": 7.07,
+      "t": 4.71
+     },
+     "tidak": {
+      "n": 61,
+      "bulan": 12,
+      "menang": 85.2,
+      "rata": 2.81,
+      "median": 7.07,
+      "t": 3.43
+     },
+     "selisih_rata": 2.11,
+     "selisih_menang": 10.5
+    },
+    "akhir": {
+     "ya": {
+      "n": 104,
+      "bulan": 25,
+      "menang": 76.9,
+      "rata": 1.14,
+      "median": 2.08,
+      "t": 1.11
+     },
+     "tidak": {
+      "n": 247,
+      "bulan": 29,
+      "menang": 79.8,
+      "rata": 1.55,
+      "median": 2.08,
+      "t": 1.92
+     },
+     "selisih_rata": -0.41,
+     "selisih_menang": -2.9
+    }
+   },
+   "tembus_delta": {
+    "ya": {
+     "n": 116,
+     "bulan": 33,
+     "menang": 79.3,
+     "rata": 1.67,
+     "median": 7.07,
+     "t": 1.91
+    },
+    "tidak": {
+     "n": 319,
+     "bulan": 41,
+     "menang": 81.2,
+     "rata": 1.86,
+     "median": 2.08,
+     "t": 2.86
+    },
+    "selisih_rata": -0.19,
+    "selisih_menang": -1.9,
+    "p": 0.8055972013993004,
+    "awal": {
+     "ya": {
+      "n": 22,
+      "bulan": 8,
+      "menang": 90.9,
+      "rata": 3.94,
+      "median": 7.07,
+      "t": 3.87
+     },
+     "tidak": {
+      "n": 62,
+      "bulan": 12,
+      "menang": 87.1,
+      "rata": 3.19,
+      "median": 7.07,
+      "t": 4.55
+     },
+     "selisih_rata": 0.75,
+     "selisih_menang": 3.8
+    },
+    "akhir": {
+     "ya": {
+      "n": 94,
+      "bulan": 25,
+      "menang": 76.6,
+      "rata": 1.14,
+      "median": 2.08,
+      "t": 1.08
+     },
+     "tidak": {
+      "n": 257,
+      "bulan": 29,
+      "menang": 79.8,
+      "rata": 1.54,
+      "median": 2.08,
+      "t": 1.93
+     },
+     "selisih_rata": -0.4,
+     "selisih_menang": -3.2
+    }
+   }
+  },
+  "acak_long": {
+   "semua": {
+    "n": 12365,
+    "bulan": 53,
+    "menang": 72.6,
+    "rata": 0.18,
+    "median": 2.08,
+    "t": 0.34
+   },
+   "va": {
+    "ya": {
+     "n": 2812,
+     "bulan": 51,
+     "menang": 75.4,
+     "rata": 0.65,
+     "median": 2.08,
+     "t": 1.19
+    },
+    "tidak": {
+     "n": 9553,
+     "bulan": 53,
+     "menang": 71.7,
+     "rata": 0.04,
+     "median": 2.08,
+     "t": 0.08
+    },
+    "selisih_rata": 0.61,
+    "selisih_menang": 3.7
+   },
+   "poc": {
+    "ya": {
+     "n": 6588,
+     "bulan": 52,
+     "menang": 75.4,
+     "rata": 0.69,
+     "median": 2.08,
+     "t": 1.39
+    },
+    "tidak": {
+     "n": 5777,
+     "bulan": 53,
+     "menang": 69.3,
+     "rata": -0.4,
+     "median": 2.08,
+     "t": -0.66
+    },
+    "selisih_rata": 1.09,
+    "selisih_menang": 6.1
+   },
+   "delta1": {
+    "ya": {
+     "n": 4781,
+     "bulan": 53,
+     "menang": 73.5,
+     "rata": 0.37,
+     "median": 2.08,
+     "t": 0.71
+    },
+    "tidak": {
+     "n": 7584,
+     "bulan": 53,
+     "menang": 71.9,
+     "rata": 0.06,
+     "median": 2.08,
+     "t": 0.11
+    },
+    "selisih_rata": 0.31,
+    "selisih_menang": 1.6
+   },
+   "delta3": {
+    "ya": {
+     "n": 4249,
+     "bulan": 53,
+     "menang": 74.0,
+     "rata": 0.43,
+     "median": 2.08,
+     "t": 0.84
+    },
+    "tidak": {
+     "n": 8116,
+     "bulan": 53,
+     "menang": 71.8,
+     "rata": 0.05,
+     "median": 2.08,
+     "t": 0.09
+    },
+    "selisih_rata": 0.38,
+    "selisih_menang": 2.2
+   },
+   "va_delta1": {
+    "ya": {
+     "n": 1335,
+     "bulan": 51,
+     "menang": 74.8,
+     "rata": 0.54,
+     "median": 2.08,
+     "t": 1.01
+    },
+    "tidak": {
+     "n": 11030,
+     "bulan": 53,
+     "menang": 72.3,
+     "rata": 0.14,
+     "median": 2.08,
+     "t": 0.25
+    },
+    "selisih_rata": 0.4,
+    "selisih_menang": 2.5
+   },
+   "poc_delta3": {
+    "ya": {
+     "n": 2661,
+     "bulan": 51,
+     "menang": 75.7,
+     "rata": 0.78,
+     "median": 2.08,
+     "t": 1.58
+    },
+    "tidak": {
+     "n": 9704,
+     "bulan": 53,
+     "menang": 71.7,
+     "rata": 0.02,
+     "median": 2.08,
+     "t": 0.03
+    },
+    "selisih_rata": 0.76,
+    "selisih_menang": 4.0
+   },
+   "uji_va_delta1": {
+    "ya": {
+     "n": 2542,
+     "bulan": 52,
+     "menang": 75.4,
+     "rata": 0.73,
+     "median": 2.08,
+     "t": 1.4
+    },
+    "tidak": {
+     "n": 9823,
+     "bulan": 53,
+     "menang": 71.8,
+     "rata": 0.04,
+     "median": 2.08,
+     "t": 0.07
+    },
+    "selisih_rata": 0.69,
+    "selisih_menang": 3.6
+   },
+   "tembus_delta": {
+    "ya": {
+     "n": 1409,
+     "bulan": 51,
+     "menang": 74.8,
+     "rata": 0.56,
+     "median": 2.08,
+     "t": 1.06
+    },
+    "tidak": {
+     "n": 10956,
+     "bulan": 53,
+     "menang": 72.3,
+     "rata": 0.13,
+     "median": 2.08,
+     "t": 0.24
+    },
+    "selisih_rata": 0.43,
+    "selisih_menang": 2.5
+   }
+  },
+  "pantul_fib": {
+   "semua": {
+    "n": 226,
+    "bulan": 37,
+    "menang": 86.7,
+    "rata": 2.75,
+    "median": 1.94,
+    "t": 3.61
+   },
+   "va": {
+    "ya": {
+     "n": 74,
+     "bulan": 15,
+     "menang": 86.5,
+     "rata": 2.34,
+     "median": 1.9,
+     "t": 4.68
+    },
+    "tidak": {
+     "n": 152,
+     "bulan": 31,
+     "menang": 86.8,
+     "rata": 2.95,
+     "median": 1.94,
+     "t": 2.57
+    },
+    "selisih_rata": -0.61,
+    "selisih_menang": -0.3,
+    "p": 0.815592203898051,
+    "awal": {
+     "ya": {
+      "n": 4,
+      "bulan": 3,
+      "menang": 75.0,
+      "rata": 9.87,
+      "median": 9.93,
+      "t": 1.51
+     },
+     "tidak": {
+      "n": 14,
+      "bulan": 8,
+      "menang": 100.0,
+      "rata": 4.0,
+      "median": 1.97,
+      "t": 3.18
+     },
+     "selisih_rata": 5.87,
+     "selisih_menang": -25.0
+    },
+    "akhir": {
+     "ya": {
+      "n": 70,
+      "bulan": 12,
+      "menang": 87.1,
+      "rata": 1.91,
+      "median": 1.88,
+      "t": 3.78
+     },
+     "tidak": {
+      "n": 138,
+      "bulan": 23,
+      "menang": 85.5,
+      "rata": 2.84,
+      "median": 1.94,
+      "t": 2.2
+     },
+     "selisih_rata": -0.93,
+     "selisih_menang": 1.6
+    }
+   },
+   "poc": {
+    "ya": {
+     "n": 131,
+     "bulan": 23,
+     "menang": 89.3,
+     "rata": 2.92,
+     "median": 1.91,
+     "t": 5.3
+    },
+    "tidak": {
+     "n": 95,
+     "bulan": 25,
+     "menang": 83.2,
+     "rata": 2.51,
+     "median": 1.97,
+     "t": 1.97
+    },
+    "selisih_rata": 0.41,
+    "selisih_menang": 6.1,
+    "p": 0.7876061969015492,
+    "awal": {
+     "ya": {
+      "n": 8,
+      "bulan": 5,
+      "menang": 87.5,
+      "rata": 5.72,
+      "median": 1.97,
+      "t": 1.5
+     },
+     "tidak": {
+      "n": 10,
+      "bulan": 6,
+      "menang": 100.0,
+      "rata": 4.97,
+      "median": 2.02,
+      "t": 3.1
+     },
+     "selisih_rata": 0.75,
+     "selisih_menang": -12.5
+    },
+    "akhir": {
+     "ya": {
+      "n": 123,
+      "bulan": 18,
+      "menang": 89.4,
+      "rata": 2.74,
+      "median": 1.91,
+      "t": 4.28
+     },
+     "tidak": {
+      "n": 85,
+      "bulan": 19,
+      "menang": 81.2,
+      "rata": 2.22,
+      "median": 1.97,
+      "t": 1.54
+     },
+     "selisih_rata": 0.52,
+     "selisih_menang": 8.2
+    }
+   },
+   "delta1": {
+    "ya": {
+     "n": 166,
+     "bulan": 30,
+     "menang": 86.7,
+     "rata": 2.23,
+     "median": 1.91,
+     "t": 2.19
+    },
+    "tidak": {
+     "n": 60,
+     "bulan": 22,
+     "menang": 86.7,
+     "rata": 4.19,
+     "median": 2.0,
+     "t": 4.33
+    },
+    "selisih_rata": -1.96,
+    "selisih_menang": 0.0,
+    "p": 0.14842578710644677,
+    "awal": {
+     "ya": {
+      "n": 10,
+      "bulan": 5,
+      "menang": 90.0,
+      "rata": 3.72,
+      "median": 1.97,
+      "t": 1.77
+     },
+     "tidak": {
+      "n": 8,
+      "bulan": 8,
+      "menang": 100.0,
+      "rata": 7.29,
+      "median": 3.52,
+      "t": 2.46
+     },
+     "selisih_rata": -3.57,
+     "selisih_menang": -10.0
+    },
+    "akhir": {
+     "ya": {
+      "n": 156,
+      "bulan": 25,
+      "menang": 86.5,
+      "rata": 2.14,
+      "median": 1.91,
+      "t": 1.9
+     },
+     "tidak": {
+      "n": 52,
+      "bulan": 14,
+      "menang": 84.6,
+      "rata": 3.71,
+      "median": 2.0,
+      "t": 3.63
+     },
+     "selisih_rata": -1.57,
+     "selisih_menang": 1.9
+    }
+   },
+   "delta3": {
+    "ya": {
+     "n": 133,
+     "bulan": 25,
+     "menang": 87.2,
+     "rata": 2.4,
+     "median": 1.91,
+     "t": 2.66
+    },
+    "tidak": {
+     "n": 93,
+     "bulan": 29,
+     "menang": 86.0,
+     "rata": 3.25,
+     "median": 1.97,
+     "t": 3.62
+    },
+    "selisih_rata": -0.85,
+    "selisih_menang": 1.2,
+    "p": 0.35732133933033483,
+    "awal": {
+     "ya": {
+      "n": 6,
+      "bulan": 5,
+      "menang": 83.3,
+      "rata": 3.38,
+      "median": 2.02,
+      "t": 1.31
+     },
+     "tidak": {
+      "n": 12,
+      "bulan": 10,
+      "menang": 100.0,
+      "rata": 6.27,
+      "median": 1.97,
+      "t": 2.67
+     },
+     "selisih_rata": -2.89,
+     "selisih_menang": -16.7
+    },
+    "akhir": {
+     "ya": {
+      "n": 127,
+      "bulan": 20,
+      "menang": 87.4,
+      "rata": 2.35,
+      "median": 1.91,
+      "t": 2.43
+     },
+     "tidak": {
+      "n": 81,
+      "bulan": 19,
+      "menang": 84.0,
+      "rata": 2.81,
+      "median": 1.97,
+      "t": 2.65
+     },
+     "selisih_rata": -0.46,
+     "selisih_menang": 3.4
+    }
+   },
+   "va_delta1": {
+    "ya": {
+     "n": 55,
+     "bulan": 13,
+     "menang": 89.1,
+     "rata": 2.03,
+     "median": 1.91,
+     "t": 3.0
+    },
+    "tidak": {
+     "n": 171,
+     "bulan": 33,
+     "menang": 86.0,
+     "rata": 2.98,
+     "median": 1.94,
+     "t": 3.18
+    },
+    "selisih_rata": -0.95,
+    "selisih_menang": 3.1,
+    "p": 0.40879560219890054,
+    "awal": {
+     "ya": {
+      "n": 2,
+      "bulan": 2,
+      "menang": 50.0,
+      "rata": 2.98,
+      "median": 2.98,
+      "t": 0.36
+     },
+     "tidak": {
+      "n": 16,
+      "bulan": 10,
+      "menang": 100.0,
+      "rata": 5.59,
+      "median": 2.0,
+      "t": 3.01
+     },
+     "selisih_rata": -2.61,
+     "selisih_menang": -50.0
+    },
+    "akhir": {
+     "ya": {
+      "n": 53,
+      "bulan": 11,
+      "menang": 90.6,
+      "rata": 2.0,
+      "median": 1.91,
+      "t": 2.89
+     },
+     "tidak": {
+      "n": 155,
+      "bulan": 23,
+      "menang": 84.5,
+      "rata": 2.71,
+      "median": 1.91,
+      "t": 2.46
+     },
+     "selisih_rata": -0.71,
+     "selisih_menang": 6.1
+    }
+   },
+   "poc_delta3": {
+    "ya": {
+     "n": 87,
+     "bulan": 19,
+     "menang": 87.4,
+     "rata": 1.79,
+     "median": 1.91,
+     "t": 2.3
+    },
+    "tidak": {
+     "n": 139,
+     "bulan": 30,
+     "menang": 86.3,
+     "rata": 3.35,
+     "median": 2.0,
+     "t": 3.21
+    },
+    "selisih_rata": -1.56,
+    "selisih_menang": 1.1,
+    "p": 0.0814592703648176,
+    "awal": {
+     "ya": {
+      "n": 4,
+      "bulan": 3,
+      "menang": 75.0,
+      "rata": 2.48,
+      "median": 1.97,
+      "t": 0.67
+     },
+     "tidak": {
+      "n": 14,
+      "bulan": 10,
+      "menang": 100.0,
+      "rata": 6.11,
+      "median": 2.02,
+      "t": 3.12
+     },
+     "selisih_rata": -3.63,
+     "selisih_menang": -25.0
+    },
+    "akhir": {
+     "ya": {
+      "n": 83,
+      "bulan": 16,
+      "menang": 88.0,
+      "rata": 1.75,
+      "median": 1.88,
+      "t": 2.13
+     },
+     "tidak": {
+      "n": 125,
+      "bulan": 20,
+      "menang": 84.8,
+      "rata": 3.04,
+      "median": 2.0,
+      "t": 2.49
+     },
+     "selisih_rata": -1.29,
+     "selisih_menang": 3.2
+    }
+   },
+   "uji_va_delta1": {
+    "ya": {
+     "n": 67,
+     "bulan": 18,
+     "menang": 92.5,
+     "rata": 2.33,
+     "median": 1.91,
+     "t": 2.25
+    },
+    "tidak": {
+     "n": 159,
+     "bulan": 30,
+     "menang": 84.3,
+     "rata": 2.93,
+     "median": 1.94,
+     "t": 3.54
+    },
+    "selisih_rata": -0.6,
+    "selisih_menang": 8.2,
+    "p": 0.5962018990504747,
+    "awal": {
+     "ya": {
+      "n": 2,
+      "bulan": 1,
+      "menang": 100.0,
+      "rata": 1.94,
+      "median": 1.94,
+      "t": null
+     },
+     "tidak": {
+      "n": 16,
+      "bulan": 9,
+      "menang": 93.8,
+      "rata": 5.73,
+      "median": 2.02,
+      "t": 2.41
+     },
+     "selisih_rata": -3.79,
+     "selisih_menang": 6.2
+    },
+    "akhir": {
+     "ya": {
+      "n": 65,
+      "bulan": 17,
+      "menang": 92.3,
+      "rata": 2.34,
+      "median": 1.91,
+      "t": 2.2
+     },
+     "tidak": {
+      "n": 143,
+      "bulan": 21,
+      "menang": 83.2,
+      "rata": 2.61,
+      "median": 1.91,
+      "t": 2.67
+     },
+     "selisih_rata": -0.27,
+     "selisih_menang": 9.1
+    }
+   },
+   "tembus_delta": {
+    "ya": {
+     "n": 54,
+     "bulan": 13,
+     "menang": 88.9,
+     "rata": 2.46,
+     "median": 1.9,
+     "t": 3.65
+    },
+    "tidak": {
+     "n": 172,
+     "bulan": 33,
+     "menang": 86.0,
+     "rata": 2.84,
+     "median": 1.94,
+     "t": 2.98
+    },
+    "selisih_rata": -0.38,
+    "selisih_menang": 2.9,
+    "p": 0.8140929535232384,
+    "awal": {
+     "ya": {
+      "n": 3,
+      "bulan": 3,
+      "menang": 66.7,
+      "rata": 10.29,
+      "median": 11.25,
+      "t": 1.18
+     },
+     "tidak": {
+      "n": 15,
+      "bulan": 9,
+      "menang": 100.0,
+      "rata": 4.31,
+      "median": 2.0,
+      "t": 3.49
+     },
+     "selisih_rata": 5.98,
+     "selisih_menang": -33.3
+    },
+    "akhir": {
+     "ya": {
+      "n": 51,
+      "bulan": 10,
+      "menang": 90.2,
+      "rata": 2.0,
+      "median": 1.88,
+      "t": 2.77
+     },
+     "tidak": {
+      "n": 157,
+      "bulan": 24,
+      "menang": 84.7,
+      "rata": 2.7,
+      "median": 1.94,
+      "t": 2.49
+     },
+     "selisih_rata": -0.7,
+     "selisih_menang": 5.5
+    }
+   }
+  },
+  "acak_short": {
+   "semua": {
+    "n": 18026,
+    "bulan": 59,
+    "menang": 72.6,
+    "rata": -0.03,
+    "median": 2.0,
+    "t": -0.1
+   },
+   "va": {
+    "ya": {
+     "n": 7815,
+     "bulan": 59,
+     "menang": 71.0,
+     "rata": -0.38,
+     "median": 2.0,
+     "t": -1.1
+    },
+    "tidak": {
+     "n": 10211,
+     "bulan": 59,
+     "menang": 73.8,
+     "rata": 0.25,
+     "median": 2.0,
+     "t": 0.9
+    },
+    "selisih_rata": -0.63,
+    "selisih_menang": -2.8
+   },
+   "poc": {
+    "ya": {
+     "n": 13452,
+     "bulan": 59,
+     "menang": 71.7,
+     "rata": -0.22,
+     "median": 2.0,
+     "t": -0.73
+    },
+    "tidak": {
+     "n": 4574,
+     "bulan": 59,
+     "menang": 75.2,
+     "rata": 0.55,
+     "median": 2.03,
+     "t": 1.8
+    },
+    "selisih_rata": -0.77,
+    "selisih_menang": -3.5
+   },
+   "delta1": {
+    "ya": {
+     "n": 10982,
+     "bulan": 59,
+     "menang": 72.2,
+     "rata": -0.07,
+     "median": 2.0,
+     "t": -0.26
+    },
+    "tidak": {
+     "n": 7044,
+     "bulan": 58,
+     "menang": 73.1,
+     "rata": 0.05,
+     "median": 2.0,
+     "t": 0.17
+    },
+    "selisih_rata": -0.12,
+    "selisih_menang": -0.9
+   },
+   "delta3": {
+    "ya": {
+     "n": 11790,
+     "bulan": 59,
+     "menang": 72.8,
+     "rata": 0.05,
+     "median": 2.0,
+     "t": 0.17
+    },
+    "tidak": {
+     "n": 6236,
+     "bulan": 59,
+     "menang": 72.1,
+     "rata": -0.16,
+     "median": 2.0,
+     "t": -0.6
+    },
+    "selisih_rata": 0.21,
+    "selisih_menang": 0.7
+   },
+   "va_delta1": {
+    "ya": {
+     "n": 5035,
+     "bulan": 59,
+     "menang": 70.3,
+     "rata": -0.5,
+     "median": 2.0,
+     "t": -1.36
+    },
+    "tidak": {
+     "n": 12991,
+     "bulan": 59,
+     "menang": 73.4,
+     "rata": 0.16,
+     "median": 2.0,
+     "t": 0.6
+    },
+    "selisih_rata": -0.66,
+    "selisih_menang": -3.1
+   },
+   "poc_delta3": {
+    "ya": {
+     "n": 9232,
+     "bulan": 59,
+     "menang": 71.7,
+     "rata": -0.19,
+     "median": 2.0,
+     "t": -0.61
+    },
+    "tidak": {
+     "n": 8794,
+     "bulan": 59,
+     "menang": 73.5,
+     "rata": 0.15,
+     "median": 2.0,
+     "t": 0.59
+    },
+    "selisih_rata": -0.34,
+    "selisih_menang": -1.8
+   },
+   "uji_va_delta1": {
+    "ya": {
+     "n": 5999,
+     "bulan": 59,
+     "menang": 72.2,
+     "rata": -0.05,
+     "median": 2.0,
+     "t": -0.15
+    },
+    "tidak": {
+     "n": 12027,
+     "bulan": 59,
+     "menang": 72.8,
+     "rata": -0.01,
+     "median": 2.0,
+     "t": -0.05
+    },
+    "selisih_rata": -0.04,
+    "selisih_menang": -0.6
+   },
+   "tembus_delta": {
+    "ya": {
+     "n": 5063,
+     "bulan": 59,
+     "menang": 70.3,
+     "rata": -0.49,
+     "median": 2.0,
+     "t": -1.33
+    },
+    "tidak": {
+     "n": 12963,
+     "bulan": 59,
+     "menang": 73.4,
+     "rata": 0.16,
+     "median": 2.0,
+     "t": 0.6
+    },
+    "selisih_rata": -0.65,
+    "selisih_menang": -3.1
+   }
+  }
+ },
+ "bonferroni": {
+  "jumlah_uji": 24,
+  "ambang": 0.0021
+ },
+ "walk": {
+  "2023": {
+   "long": {
+    "batas": 6,
+    "pilihan": {
+     "radar_naik": null,
+     "awal_stage2": null
+    },
+    "kandidat": {
+     "radar_naik": [
+      {
+       "konf": null,
+       "n": 37,
+       "sharpe": 2.12,
+       "total": 107.2
+      }
+     ],
+     "awal_stage2": [
+      {
+       "konf": null,
+       "n": 140,
+       "sharpe": 2.12,
+       "total": 107.2
+      },
+      {
+       "konf": "va",
+       "n": 76,
+       "sharpe": 1.87,
+       "total": 68.5
+      },
+      {
+       "konf": "poc",
+       "n": 119,
+       "sharpe": 2.09,
+       "total": 108.4
+      },
+      {
+       "konf": "delta1",
+       "n": 62,
+       "sharpe": 1.95,
+       "total": 84.5
+      },
+      {
+       "konf": "delta3",
+       "n": 73,
+       "sharpe": 1.67,
+       "total": 69.4
+      },
+      {
+       "konf": "va_delta1",
+       "n": 44,
+       "sharpe": 2.02,
+       "total": 64.8
+      },
+      {
+       "konf": "poc_delta3",
+       "n": 63,
+       "sharpe": 1.58,
+       "total": 65.7
+      },
+      {
+       "konf": "uji_va_delta1",
+       "n": 47,
+       "sharpe": 1.88,
+       "total": 72.5
+      },
+      {
+       "konf": "tembus_delta",
+       "n": 47,
+       "sharpe": 1.99,
+       "total": 66.9
+      }
+     ]
+    },
+    "uji_dasar": {
+     "radar_naik": {
+      "n": 75,
+      "bulan": 9,
+      "menang": 70.7,
+      "rata": 1.04,
+      "median": 2.08,
+      "t": 0.67
+     },
+     "awal_stage2": {
+      "n": 192,
+      "bulan": 9,
+      "menang": 69.8,
+      "rata": -0.43,
+      "median": 2.08,
+      "t": -0.46
+     }
+    },
+    "uji_baru": {
+     "radar_naik": {
+      "n": 75,
+      "bulan": 9,
+      "menang": 70.7,
+      "rata": 1.04,
+      "median": 2.08,
+      "t": 0.67
+     },
+     "awal_stage2": {
+      "n": 192,
+      "bulan": 9,
+      "menang": 69.8,
+      "rata": -0.43,
+      "median": 2.08,
+      "t": -0.46
+     }
+    }
+   },
+   "short": {
+    "batas": 6,
+    "pilihan": {
+     "pantul_fib": null
+    },
+    "kandidat": {
+     "pantul_fib": []
+    },
+    "uji_dasar": {
+     "pantul_fib": {
+      "n": 13,
+      "bulan": 5,
+      "menang": 92.3,
+      "rata": 1.79,
+      "median": 1.85,
+      "t": 2.08
+     }
+    },
+    "uji_baru": {
+     "pantul_fib": {
+      "n": 13,
+      "bulan": 5,
+      "menang": 92.3,
+      "rata": 1.79,
+      "median": 1.85,
+      "t": 2.08
+     }
+    }
+   }
+  },
+  "2024": {
+   "long": {
+    "batas": 4,
+    "pilihan": {
+     "radar_naik": "poc",
+     "awal_stage2": null
+    },
+    "kandidat": {
+     "radar_naik": [
+      {
+       "konf": null,
+       "n": 95,
+       "sharpe": 1.59,
+       "total": 156.2
+      },
+      {
+       "konf": "poc",
+       "n": 45,
+       "sharpe": 1.82,
+       "total": 158.4
+      },
+      {
+       "konf": "delta1",
+       "n": 49,
+       "sharpe": 1.57,
+       "total": 126.9
+      },
+      {
+       "konf": "delta3",
+       "n": 39,
+       "sharpe": 1.48,
+       "total": 115.2
+      }
+     ],
+     "awal_stage2": [
+      {
+       "konf": null,
+       "n": 200,
+       "sharpe": 1.82,
+       "total": 158.4
+      },
+      {
+       "konf": "va",
+       "n": 97,
+       "sharpe": 1.7,
+       "total": 79.8
+      },
+      {
+       "konf": "poc",
+       "n": 170,
+       "sharpe": 1.74,
+       "total": 151.9
+      },
+      {
+       "konf": "delta1",
+       "n": 70,
+       "sharpe": 1.62,
+       "total": 81.5
+      },
+      {
+       "konf": "delta3",
+       "n": 80,
+       "sharpe": 1.63,
+       "total": 79.0
+      },
+      {
+       "konf": "va_delta1",
+       "n": 45,
+       "sharpe": 1.36,
+       "total": 52.5
+      },
+      {
+       "konf": "poc_delta3",
+       "n": 68,
+       "sharpe": 1.53,
+       "total": 71.8
+      },
+      {
+       "konf": "uji_va_delta1",
+       "n": 49,
+       "sharpe": 1.64,
+       "total": 73.9
+      },
+      {
+       "konf": "tembus_delta",
+       "n": 48,
+       "sharpe": 1.44,
+       "total": 56.9
+      }
+     ]
+    },
+    "uji_dasar": {
+     "radar_naik": {
+      "n": 74,
+      "bulan": 9,
+      "menang": 82.4,
+      "rata": 5.51,
+      "median": 2.08,
+      "t": 1.95
+     },
+     "awal_stage2": {
+      "n": 120,
+      "bulan": 8,
+      "menang": 85.0,
+      "rata": 2.7,
+      "median": 7.07,
+      "t": 2.08
+     }
+    },
+    "uji_baru": {
+     "radar_naik": {
+      "n": 26,
+      "bulan": 6,
+      "menang": 92.3,
+      "rata": 6.49,
+      "median": 7.87,
+      "t": 4.13
+     },
+     "awal_stage2": {
+      "n": 120,
+      "bulan": 8,
+      "menang": 85.0,
+      "rata": 2.7,
+      "median": 7.07,
+      "t": 2.08
+     }
+    }
+   },
+   "short": {
+    "batas": 6,
+    "pilihan": {
+     "pantul_fib": null
+    },
+    "kandidat": {
+     "pantul_fib": [
+      {
+       "konf": null,
+       "n": 31,
+       "sharpe": 1.69,
+       "total": 25.4
+      }
+     ]
+    },
+    "uji_dasar": {
+     "pantul_fib": {
+      "n": 23,
+      "bulan": 8,
+      "menang": 73.9,
+      "rata": 1.13,
+      "median": 1.82,
+      "t": 0.41
+     }
+    },
+    "uji_baru": {
+     "pantul_fib": {
+      "n": 23,
+      "bulan": 8,
+      "menang": 73.9,
+      "rata": 1.13,
+      "median": 1.82,
+      "t": 0.41
+     }
+    }
+   }
+  },
+  "2025": {
+   "long": {
+    "batas": 3,
+    "pilihan": {
+     "radar_naik": null,
+     "awal_stage2": null
+    },
+    "kandidat": {
+     "radar_naik": [
+      {
+       "konf": null,
+       "n": 140,
+       "sharpe": 1.47,
+       "total": 224.8
+      },
+      {
+       "konf": "poc",
+       "n": 56,
+       "sharpe": 1.46,
+       "total": 201.4
+      },
+      {
+       "konf": "delta1",
+       "n": 73,
+       "sharpe": 1.3,
+       "total": 156.7
+      },
+      {
+       "konf": "delta3",
+       "n": 55,
+       "sharpe": 1.23,
+       "total": 147.9
+      },
+      {
+       "konf": "poc_delta3",
+       "n": 31,
+       "sharpe": 1.31,
+       "total": 161.3
+      },
+      {
+       "konf": "uji_va_delta1",
+       "n": 33,
+       "sharpe": 1.29,
+       "total": 157.9
+      }
+     ],
+     "awal_stage2": [
+      {
+       "konf": null,
+       "n": 170,
+       "sharpe": 1.47,
+       "total": 224.8
+      },
+      {
+       "konf": "va",
+       "n": 79,
+       "sharpe": 1.47,
+       "total": 139.1
+      },
+      {
+       "konf": "poc",
+       "n": 143,
+       "sharpe": 1.48,
+       "total": 234.7
+      },
+      {
+       "konf": "delta1",
+       "n": 71,
+       "sharpe": 1.43,
+       "total": 133.0
+      },
+      {
+       "konf": "delta3",
+       "n": 75,
+       "sharpe": 1.25,
+       "total": 133.8
+      },
+      {
+       "konf": "va_delta1",
+       "n": 40,
+       "sharpe": 1.18,
+       "total": 97.2
+      },
+      {
+       "konf": "poc_delta3",
+       "n": 63,
+       "sharpe": 1.2,
+       "total": 124.6
+      },
+      {
+       "konf": "uji_va_delta1",
+       "n": 55,
+       "sharpe": 1.26,
+       "total": 110.5
+      },
+      {
+       "konf": "tembus_delta",
+       "n": 41,
+       "sharpe": 1.21,
+       "total": 110.2
+      }
+     ]
+    },
+    "uji_dasar": {
+     "radar_naik": {
+      "n": 37,
+      "bulan": 5,
+      "menang": 48.6,
+      "rata": -3.89,
+      "median": -8.59,
+      "t": -1.93
+     },
+     "awal_stage2": {
+      "n": 36,
+      "bulan": 8,
+      "menang": 77.8,
+      "rata": 0.86,
+      "median": 2.08,
+      "t": 0.68
+     }
+    },
+    "uji_baru": {
+     "radar_naik": {
+      "n": 37,
+      "bulan": 5,
+      "menang": 48.6,
+      "rata": -3.89,
+      "median": -8.59,
+      "t": -1.93
+     },
+     "awal_stage2": {
+      "n": 36,
+      "bulan": 8,
+      "menang": 77.8,
+      "rata": 0.86,
+      "median": 2.08,
+      "t": 0.68
+     }
+    }
+   },
+   "short": {
+    "batas": 6,
+    "pilihan": {
+     "pantul_fib": null
+    },
+    "kandidat": {
+     "pantul_fib": [
+      {
+       "konf": null,
+       "n": 54,
+       "sharpe": 1.15,
+       "total": 26.2
+      },
+      {
+       "konf": "delta1",
+       "n": 38,
+       "sharpe": 0.53,
+       "total": 7.6
+      }
+     ]
+    },
+    "uji_dasar": {
+     "pantul_fib": {
+      "n": 133,
+      "bulan": 9,
+      "menang": 91.7,
+      "rata": 3.57,
+      "median": 1.91,
+      "t": 7.74
+     }
+    },
+    "uji_baru": {
+     "pantul_fib": {
+      "n": 133,
+      "bulan": 9,
+      "menang": 91.7,
+      "rata": 3.57,
+      "median": 1.91,
+      "t": 7.74
+     }
+    }
+   }
+  },
+  "2026": {
+   "long": {
+    "batas": 4,
+    "pilihan": {
+     "radar_naik": null,
+     "awal_stage2": null
+    },
+    "kandidat": {
+     "radar_naik": [
+      {
+       "konf": null,
+       "n": 210,
+       "sharpe": 1.17,
+       "total": 265.6
+      },
+      {
+       "konf": "poc",
+       "n": 88,
+       "sharpe": 1.24,
+       "total": 252.5
+      },
+      {
+       "konf": "delta1",
+       "n": 107,
+       "sharpe": 1.04,
+       "total": 180.7
+      },
+      {
+       "konf": "delta3",
+       "n": 83,
+       "sharpe": 0.96,
+       "total": 160.2
+      },
+      {
+       "konf": "poc_delta3",
+       "n": 47,
+       "sharpe": 1.12,
+       "total": 201.0
+      },
+      {
+       "konf": "uji_va_delta1",
+       "n": 52,
+       "sharpe": 1.09,
+       "total": 190.1
+      }
+     ],
+     "awal_stage2": [
+      {
+       "konf": null,
+       "n": 365,
+       "sharpe": 1.17,
+       "total": 265.6
+      },
+      {
+       "konf": "va",
+       "n": 203,
+       "sharpe": 0.87,
+       "total": 123.1
+      },
+      {
+       "konf": "poc",
+       "n": 315,
+       "sharpe": 1.07,
+       "total": 223.8
+      },
+      {
+       "konf": "delta1",
+       "n": 132,
+       "sharpe": 0.91,
+       "total": 126.6
+      },
+      {
+       "konf": "delta3",
+       "n": 152,
+       "sharpe": 0.86,
+       "total": 140.0
+      },
+      {
+       "konf": "va_delta1",
+       "n": 90,
+       "sharpe": 0.74,
+       "total": 84.1
+      },
+      {
+       "konf": "poc_delta3",
+       "n": 135,
+       "sharpe": 0.81,
+       "total": 124.9
+      },
+      {
+       "konf": "uji_va_delta1",
+       "n": 101,
+       "sharpe": 0.8,
+       "total": 101.2
+      },
+      {
+       "konf": "tembus_delta",
+       "n": 96,
+       "sharpe": 0.8,
+       "total": 106.1
+      }
+     ]
+    },
+    "uji_dasar": {
+     "radar_naik": {
+      "n": 31,
+      "bulan": 7,
+      "menang": 74.2,
+      "rata": 3.35,
+      "median": 2.08,
+      "t": 1.24
+     },
+     "awal_stage2": {
+      "n": 70,
+      "bulan": 6,
+      "menang": 82.9,
+      "rata": 2.27,
+      "median": 4.82,
+      "t": 2.33
+     }
+    },
+    "uji_baru": {
+     "radar_naik": {
+      "n": 31,
+      "bulan": 7,
+      "menang": 74.2,
+      "rata": 3.35,
+      "median": 2.08,
+      "t": 1.24
+     },
+     "awal_stage2": {
+      "n": 70,
+      "bulan": 6,
+      "menang": 82.9,
+      "rata": 2.27,
+      "median": 4.82,
+      "t": 2.33
+     }
+    }
+   },
+   "short": {
+    "batas": 6,
+    "pilihan": {
+     "pantul_fib": null
+    },
+    "kandidat": {
+     "pantul_fib": [
+      {
+       "konf": null,
+       "n": 187,
+       "sharpe": 1.07,
+       "total": 42.0
+      },
+      {
+       "konf": "va",
+       "n": 73,
+       "sharpe": 0.45,
+       "total": 10.7
+      },
+      {
+       "konf": "poc",
+       "n": 123,
+       "sharpe": 0.62,
+       "total": 17.1
+      },
+      {
+       "konf": "delta1",
+       "n": 142,
+       "sharpe": 0.75,
+       "total": 19.1
+      },
+      {
+       "konf": "delta3",
+       "n": 119,
+       "sharpe": 0.86,
+       "total": 20.8
+      },
+      {
+       "konf": "va_delta1",
+       "n": 54,
+       "sharpe": 0.37,
+       "total": 6.8
+      },
+      {
+       "konf": "poc_delta3",
+       "n": 83,
+       "sharpe": 0.46,
+       "total": 7.2
+      },
+      {
+       "konf": "uji_va_delta1",
+       "n": 62,
+       "sharpe": 0.37,
+       "total": 4.6
+      },
+      {
+       "konf": "tembus_delta",
+       "n": 53,
+       "sharpe": 0.51,
+       "total": 11.2
+      }
+     ]
+    },
+    "uji_dasar": {
+     "pantul_fib": {
+      "n": 39,
+      "bulan": 5,
+      "menang": 71.8,
+      "rata": 0.06,
+      "median": 2.0,
+      "t": 0.05
+     }
+    },
+    "uji_baru": {
+     "pantul_fib": {
+      "n": 39,
+      "bulan": 5,
+      "menang": 71.8,
+      "rata": 0.06,
+      "median": 2.0,
+      "t": 0.05
+     }
+    }
+   }
+  }
+ },
+ "oos": {
+  "dari": "2023-01-01",
+  "sampai": "2026-10-14",
+  "portofolio": {
+   "DASAR (model pasar sekarang)": {
+    "total": 183.9,
+    "total_min": 120.3,
+    "total_maks": 275.0,
+    "cagr": 31.0,
+    "maxdd": -23.9,
+    "sharpe": 1.04,
+    "per_tahun": {
+     "2023": 25.9,
+     "2024": 36.0,
+     "2025": 16.0,
+     "2026": 38.3
+    },
+    "transaksi": 442,
+    "menang": 76.1,
+    "rata": 1.32,
+    "terisi": 79.0,
+    "kandidat": 843
+   },
+   "DASAR + konfirmasi order flow / market profile (walk-forward)": {
+    "total": 162.4,
+    "total_min": 110.0,
+    "total_maks": 237.2,
+    "cagr": 28.4,
+    "maxdd": -23.9,
+    "sharpe": 0.99,
+    "per_tahun": {
+     "2023": 25.9,
+     "2024": 28.5,
+     "2025": 16.0,
+     "2026": 38.3
+    },
+    "transaksi": 422,
+    "menang": 76.5,
+    "rata": 1.3,
+    "terisi": 77.0,
+    "kandidat": 795
+   }
+  },
+  "per_sinyal": {
+   "DASAR (model pasar sekarang)": {
+    "n": 843,
+    "bulan": 46,
+    "menang": 77.8,
+    "rata": 1.66,
+    "median": 2.08,
+    "t": 2.18
+   },
+   "DASAR + konfirmasi order flow / market profile (walk-forward)": {
+    "n": 795,
+    "bulan": 45,
+    "menang": 77.9,
+    "rata": 1.46,
+    "median": 2.08,
+    "t": 2.16
+   }
+  },
+  "berpasangan": {
+   "benih": 100,
+   "total_lebih_baik": 2,
+   "sharpe_lebih_baik": 0,
+   "maxdd_lebih_baik": 0,
+   "selisih_total_median": -18.1
+  },
+  "cek_dasar": {
+   "model_pasar": {
+    "total": 183.9,
+    "sharpe": 1.04
+   },
+   "di_sini": {
+    "total": 183.9,
+    "sharpe": 1.04
+   },
+   "cocok": true
+  }
+ },
+ "tetap": {
+  "radar_naik": {
+   "va": {
+    "total": 113.9,
+    "total_min": 69.0,
+    "total_maks": 189.8,
+    "cagr": 21.7,
+    "maxdd": -25.4,
+    "sharpe": 0.91,
+    "per_tahun": {
+     "2023": 13.7,
+     "2024": 26.4,
+     "2025": 13.6,
+     "2026": 29.6
+    },
+    "transaksi": 382,
+    "menang": 77.4,
+    "rata": 1.12,
+    "terisi": 75.0,
+    "kandidat": 642,
+    "sinyal": {
+     "n": 16,
+     "bulan": 11,
+     "menang": 75.0,
+     "rata": 2.13,
+     "median": 2.08,
+     "t": 0.8
+    }
+   },
+   "poc": {
+    "total": 146.4,
+    "total_min": 96.0,
+    "total_maks": 219.4,
+    "cagr": 26.2,
+    "maxdd": -22.6,
+    "sharpe": 0.95,
+    "per_tahun": {
+     "2023": 29.4,
+     "2024": 27.2,
+     "2025": 12.1,
+     "2026": 30.1
+    },
+    "transaksi": 403,
+    "menang": 77.0,
+    "rata": 1.24,
+    "terisi": 75.0,
+    "kandidat": 719,
+    "sinyal": {
+     "n": 93,
+     "bulan": 25,
+     "menang": 75.3,
+     "rata": 2.29,
+     "median": 2.08,
+     "t": 1.32
+    }
+   },
+   "delta1": {
+    "total": 130.1,
+    "total_min": 80.0,
+    "total_maks": 213.5,
+    "cagr": 24.1,
+    "maxdd": -23.9,
+    "sharpe": 0.88,
+    "per_tahun": {
+     "2023": 25.1,
+     "2024": 20.7,
+     "2025": 8.3,
+     "2026": 39.0
+    },
+    "transaksi": 419,
+    "menang": 76.6,
+    "rata": 1.13,
+    "terisi": 77.0,
+    "kandidat": 737,
+    "sinyal": {
+     "n": 111,
+     "bulan": 27,
+     "menang": 73.9,
+     "rata": 1.65,
+     "median": 2.08,
+     "t": 1.32
+    }
+   },
+   "delta3": {
+    "total": 127.3,
+    "total_min": 78.6,
+    "total_maks": 211.3,
+    "cagr": 23.6,
+    "maxdd": -24.6,
+    "sharpe": 0.84,
+    "per_tahun": {
+     "2023": 22.3,
+     "2024": 23.9,
+     "2025": 7.8,
+     "2026": 37.1
+    },
+    "transaksi": 409,
+    "menang": 76.5,
+    "rata": 1.14,
+    "terisi": 75.0,
+    "kandidat": 710,
+    "sinyal": {
+     "n": 84,
+     "bulan": 27,
+     "menang": 75.0,
+     "rata": 2.46,
+     "median": 2.08,
+     "t": 1.7
+    }
+   },
+   "va_delta1": {
+    "total": 111.7,
+    "total_min": 66.7,
+    "total_maks": 189.7,
+    "cagr": 21.4,
+    "maxdd": -25.4,
+    "sharpe": 0.92,
+    "per_tahun": {
+     "2023": 11.6,
+     "2024": 24.8,
+     "2025": 16.6,
+     "2026": 29.6
+    },
+    "transaksi": 380,
+    "menang": 77.5,
+    "rata": 1.11,
+    "terisi": 75.0,
+    "kandidat": 637,
+    "sinyal": {
+     "n": 11,
+     "bulan": 8,
+     "menang": 72.7,
+     "rata": 1.95,
+     "median": 2.08,
+     "t": 0.55
+    }
+   },
+   "poc_delta3": {
+    "total": 134.2,
+    "total_min": 94.8,
+    "total_maks": 213.0,
+    "cagr": 24.6,
+    "maxdd": -22.6,
+    "sharpe": 0.93,
+    "per_tahun": {
+     "2023": 24.1,
+     "2024": 29.8,
+     "2025": 11.2,
+     "2026": 29.8
+    },
+    "transaksi": 394,
+    "menang": 77.0,
+    "rata": 1.22,
+    "terisi": 75.0,
+    "kandidat": 675,
+    "sinyal": {
+     "n": 49,
+     "bulan": 23,
+     "menang": 79.6,
+     "rata": 3.48,
+     "median": 2.08,
+     "t": 2.5
+    }
+   },
+   "uji_va_delta1": {
+    "total": 134.6,
+    "total_min": 90.4,
+    "total_maks": 211.2,
+    "cagr": 24.7,
+    "maxdd": -24.8,
+    "sharpe": 0.91,
+    "per_tahun": {
+     "2023": 23.4,
+     "2024": 23.9,
+     "2025": 12.5,
+     "2026": 33.5
+    },
+    "transaksi": 393,
+    "menang": 77.2,
+    "rata": 1.21,
+    "terisi": 75.0,
+    "kandidat": 680,
+    "sinyal": {
+     "n": 54,
+     "bulan": 21,
+     "menang": 77.8,
+     "rata": 2.98,
+     "median": 2.08,
+     "t": 1.73
+    }
+   },
+   "tembus_delta": {
+    "total": 120.3,
+    "total_min": 73.5,
+    "total_maks": 201.7,
+    "cagr": 22.6,
+    "maxdd": -25.4,
+    "sharpe": 0.96,
+    "per_tahun": {
+     "2023": 13.7,
+     "2024": 24.8,
+     "2025": 19.1,
+     "2026": 29.6
+    },
+    "transaksi": 379,
+    "menang": 77.7,
+    "rata": 1.17,
+    "terisi": 74.0,
+    "kandidat": 636,
+    "sinyal": {
+     "n": 10,
+     "bulan": 7,
+     "menang": 80.0,
+     "rata": 4.19,
+     "median": 2.08,
+     "t": 1.3
+    }
+   }
+  },
+  "awal_stage2": {
+   "va": {
+    "total": 113.6,
+    "total_min": 66.5,
+    "total_maks": 152.0,
+    "cagr": 21.6,
+    "maxdd": -31.6,
+    "sharpe": 0.86,
+    "per_tahun": {
+     "2023": 3.2,
+     "2024": 36.0,
+     "2025": 6.9,
+     "2026": 39.9
+    },
+    "transaksi": 376,
+    "menang": 73.9,
+    "rata": 1.17,
+    "terisi": 74.0,
+    "kandidat": 645,
+    "sinyal": {
+     "n": 220,
+     "bulan": 26,
+     "menang": 75.0,
+     "rata": 0.77,
+     "median": 2.08,
+     "t": 0.86
+    }
+   },
+   "poc": {
+    "total": 146.1,
+    "total_min": 90.3,
+    "total_maks": 207.7,
+    "cagr": 26.2,
+    "maxdd": -27.9,
+    "sharpe": 0.92,
+    "per_tahun": {
+     "2023": 18.6,
+     "2024": 39.1,
+     "2025": 6.2,
+     "2026": 37.3
+    },
+    "transaksi": 424,
+    "menang": 75.4,
+    "rata": 1.23,
+    "terisi": 76.0,
+    "kandidat": 790,
+    "sinyal": {
+     "n": 365,
+     "bulan": 30,
+     "menang": 76.7,
+     "rata": 0.97,
+     "median": 2.08,
+     "t": 1.14
+    }
+   },
+   "delta1": {
+    "total": 109.1,
+    "total_min": 70.2,
+    "total_maks": 142.8,
+    "cagr": 21.0,
+    "maxdd": -20.1,
+    "sharpe": 0.94,
+    "per_tahun": {
+     "2023": 10.9,
+     "2024": 22.5,
+     "2025": 9.8,
+     "2026": 39.3
+    },
+    "transaksi": 354,
+    "menang": 74.1,
+    "rata": 1.19,
+    "terisi": 72.0,
+    "kandidat": 576,
+    "sinyal": {
+     "n": 151,
+     "bulan": 28,
+     "menang": 74.8,
+     "rata": 0.79,
+     "median": 2.08,
+     "t": 0.8
+    }
+   },
+   "delta3": {
+    "total": 118.6,
+    "total_min": 74.6,
+    "total_maks": 157.2,
+    "cagr": 22.4,
+    "maxdd": -24.7,
+    "sharpe": 0.91,
+    "per_tahun": {
+     "2023": 2.0,
+     "2024": 32.9,
+     "2025": 12.2,
+     "2026": 43.8
+    },
+    "transaksi": 371,
+    "menang": 74.5,
+    "rata": 1.21,
+    "terisi": 75.0,
+    "kandidat": 596,
+    "sinyal": {
+     "n": 171,
+     "bulan": 29,
+     "menang": 76.0,
+     "rata": 1.1,
+     "median": 2.73,
+     "t": 1.1
+    }
+   },
+   "va_delta1": {
+    "total": 90.6,
+    "total_min": 59.6,
+    "total_maks": 122.5,
+    "cagr": 18.1,
+    "maxdd": -22.8,
+    "sharpe": 0.84,
+    "per_tahun": {
+     "2023": 0.9,
+     "2024": 23.5,
+     "2025": 8.4,
+     "2026": 41.4
+    },
+    "transaksi": 319,
+    "menang": 73.3,
+    "rata": 1.16,
+    "terisi": 69.0,
+    "kandidat": 523,
+    "sinyal": {
+     "n": 98,
+     "bulan": 24,
+     "menang": 72.4,
+     "rata": 0.39,
+     "median": 2.08,
+     "t": 0.33
+    }
+   },
+   "poc_delta3": {
+    "total": 120.0,
+    "total_min": 85.3,
+    "total_maks": 157.5,
+    "cagr": 22.6,
+    "maxdd": -28.5,
+    "sharpe": 0.91,
+    "per_tahun": {
+     "2023": 4.9,
+     "2024": 35.0,
+     "2025": 10.2,
+     "2026": 42.1
+    },
+    "transaksi": 364,
+    "menang": 74.4,
+    "rata": 1.24,
+    "terisi": 74.0,
+    "kandidat": 580,
+    "sinyal": {
+     "n": 155,
+     "bulan": 27,
+     "menang": 76.1,
+     "rata": 1.14,
+     "median": 6.92,
+     "t": 1.04
+    }
+   },
+   "uji_va_delta1": {
+    "total": 79.2,
+    "total_min": 47.4,
+    "total_maks": 110.0,
+    "cagr": 16.2,
+    "maxdd": -22.9,
+    "sharpe": 0.76,
+    "per_tahun": {
+     "2023": 3.6,
+     "2024": 20.4,
+     "2025": 7.3,
+     "2026": 34.3
+    },
+    "transaksi": 337,
+    "menang": 73.0,
+    "rata": 1.03,
+    "terisi": 70.0,
+    "kandidat": 547,
+    "sinyal": {
+     "n": 122,
+     "bulan": 25,
+     "menang": 73.0,
+     "rata": 0.46,
+     "median": 2.08,
+     "t": 0.46
+    }
+   },
+   "tembus_delta": {
+    "total": 103.0,
+    "total_min": 67.8,
+    "total_maks": 139.8,
+    "cagr": 20.1,
+    "maxdd": -22.8,
+    "sharpe": 0.89,
+    "per_tahun": {
+     "2023": 3.7,
+     "2024": 29.7,
+     "2025": 8.4,
+     "2026": 39.5
+    },
+    "transaksi": 324,
+    "menang": 73.8,
+    "rata": 1.25,
+    "terisi": 69.0,
+    "kandidat": 528,
+    "sinyal": {
+     "n": 103,
+     "bulan": 24,
+     "menang": 73.8,
+     "rata": 0.61,
+     "median": 2.08,
+     "t": 0.57
+    }
+   }
+  },
+  "pantul_fib": {
+   "va": {
+    "total": 127.0,
+    "total_min": 70.0,
+    "total_maks": 175.6,
+    "cagr": 23.6,
+    "maxdd": -22.3,
+    "sharpe": 0.8,
+    "per_tahun": {
+     "2023": 23.9,
+     "2024": 34.4,
+     "2025": 6.2,
+     "2026": 25.7
+    },
+    "transaksi": 377,
+    "menang": 75.1,
+    "rata": 1.26,
+    "terisi": 60.0,
+    "kandidat": 705,
+    "sinyal": {
+     "n": 70,
+     "bulan": 12,
+     "menang": 87.1,
+     "rata": 1.91,
+     "median": 1.88,
+     "t": 3.78
+    }
+   },
+   "poc": {
+    "total": 149.6,
+    "total_min": 85.6,
+    "total_maks": 204.7,
+    "cagr": 26.7,
+    "maxdd": -22.3,
+    "sharpe": 0.9,
+    "per_tahun": {
+     "2023": 23.9,
+     "2024": 37.2,
+     "2025": 9.8,
+     "2026": 29.5
+    },
+    "transaksi": 397,
+    "menang": 75.7,
+    "rata": 1.32,
+    "terisi": 66.0,
+    "kandidat": 758,
+    "sinyal": {
+     "n": 123,
+     "bulan": 18,
+     "menang": 89.4,
+     "rata": 2.74,
+     "median": 1.91,
+     "t": 4.28
+    }
+   },
+   "delta1": {
+    "total": 143.4,
+    "total_min": 86.8,
+    "total_maks": 212.3,
+    "cagr": 25.9,
+    "maxdd": -24.2,
+    "sharpe": 0.92,
+    "per_tahun": {
+     "2023": 22.6,
+     "2024": 34.8,
+     "2025": 15.0,
+     "2026": 25.9
+    },
+    "transaksi": 422,
+    "menang": 76.0,
+    "rata": 1.19,
+    "terisi": 77.0,
+    "kandidat": 791,
+    "sinyal": {
+     "n": 156,
+     "bulan": 25,
+     "menang": 86.5,
+     "rata": 2.14,
+     "median": 1.91,
+     "t": 1.9
+    }
+   },
+   "delta3": {
+    "total": 136.6,
+    "total_min": 71.5,
+    "total_maks": 197.5,
+    "cagr": 24.9,
+    "maxdd": -22.6,
+    "sharpe": 0.85,
+    "per_tahun": {
+     "2023": 25.9,
+     "2024": 44.2,
+     "2025": 11.1,
+     "2026": 14.8
+    },
+    "transaksi": 409,
+    "menang": 75.4,
+    "rata": 1.21,
+    "terisi": 69.0,
+    "kandidat": 762,
+    "sinyal": {
+     "n": 127,
+     "bulan": 20,
+     "menang": 87.4,
+     "rata": 2.35,
+     "median": 1.91,
+     "t": 2.43
+    }
+   },
+   "va_delta1": {
+    "total": 133.4,
+    "total_min": 87.2,
+    "total_maks": 185.6,
+    "cagr": 24.5,
+    "maxdd": -22.3,
+    "sharpe": 0.84,
+    "per_tahun": {
+     "2023": 23.9,
+     "2024": 34.4,
+     "2025": 8.6,
+     "2026": 25.7
+    },
+    "transaksi": 369,
+    "menang": 75.5,
+    "rata": 1.32,
+    "terisi": 58.0,
+    "kandidat": 688,
+    "sinyal": {
+     "n": 53,
+     "bulan": 11,
+     "menang": 90.6,
+     "rata": 2.0,
+     "median": 1.91,
+     "t": 2.89
+    }
+   },
+   "poc_delta3": {
+    "total": 128.0,
+    "total_min": 78.6,
+    "total_maks": 184.1,
+    "cagr": 23.8,
+    "maxdd": -22.9,
+    "sharpe": 0.81,
+    "per_tahun": {
+     "2023": 22.6,
+     "2024": 36.8,
+     "2025": 8.5,
+     "2026": 23.4
+    },
+    "transaksi": 385,
+    "menang": 75.3,
+    "rata": 1.24,
+    "terisi": 63.0,
+    "kandidat": 718,
+    "sinyal": {
+     "n": 83,
+     "bulan": 16,
+     "menang": 88.0,
+     "rata": 1.75,
+     "median": 1.88,
+     "t": 2.13
+    }
+   },
+   "uji_va_delta1": {
+    "total": 143.6,
+    "total_min": 88.9,
+    "total_maks": 196.4,
+    "cagr": 25.9,
+    "maxdd": -22.3,
+    "sharpe": 0.89,
+    "per_tahun": {
+     "2023": 23.9,
+     "2024": 37.2,
+     "2025": 7.8,
+     "2026": 29.1
+    },
+    "transaksi": 385,
+    "menang": 76.0,
+    "rata": 1.32,
+    "terisi": 64.0,
+    "kandidat": 700,
+    "sinyal": {
+     "n": 65,
+     "bulan": 17,
+     "menang": 92.3,
+     "rata": 2.34,
+     "median": 1.91,
+     "t": 2.2
+    }
+   },
+   "tembus_delta": {
+    "total": 132.5,
+    "total_min": 85.7,
+    "total_maks": 183.4,
+    "cagr": 24.4,
+    "maxdd": -22.3,
+    "sharpe": 0.83,
+    "per_tahun": {
+     "2023": 23.9,
+     "2024": 33.8,
+     "2025": 8.4,
+     "2026": 25.7
+    },
+    "transaksi": 368,
+    "menang": 75.4,
+    "rata": 1.32,
+    "terisi": 58.0,
+    "kandidat": 686,
+    "sinyal": {
+     "n": 51,
+     "bulan": 10,
+     "menang": 90.2,
+     "rata": 2.0,
+     "median": 1.88,
+     "t": 2.77
+    }
+   }
+  }
+ },
+ "varian": {
+  "tpo30": {
+   "nama": "profil waktu (TPO) 30 hari",
+   "hasil": {
+    "radar_naik|va": {
+     "total": 101.3,
+     "total_min": 55.7,
+     "total_maks": 172.9,
+     "cagr": 19.8,
+     "maxdd": -26.6,
+     "sharpe": 0.81,
+     "per_tahun": {
+      "2023": 13.0,
+      "2024": 23.9,
+      "2025": 10.8,
+      "2026": 30.0
+     },
+     "transaksi": 382,
+     "menang": 76.9,
+     "rata": 1.03,
+     "terisi": 74.0,
+     "kandidat": 657,
+     "sinyal": {
+      "n": 31,
+      "bulan": 16,
+      "menang": 74.2,
+      "rata": 1.83,
+      "median": 2.08,
+      "t": 0.8
+     }
+    },
+    "awal_stage2|va": {
+     "total": 114.3,
+     "total_min": 74.9,
+     "total_maks": 158.9,
+     "cagr": 21.8,
+     "maxdd": -23.4,
+     "sharpe": 0.81,
+     "per_tahun": {
+      "2023": 12.4,
+      "2024": 34.0,
+      "2025": 5.1,
+      "2026": 34.6
+     },
+     "transaksi": 419,
+     "menang": 74.5,
+     "rata": 1.05,
+     "terisi": 77.0,
+     "kandidat": 734,
+     "sinyal": {
+      "n": 309,
+      "bulan": 31,
+      "menang": 77.3,
+      "rata": 1.14,
+      "median": 2.08,
+      "t": 1.5
+     }
+    },
+    "pantul_fib|va": {
+     "total": 134.3,
+     "total_min": 78.6,
+     "total_maks": 190.6,
+     "cagr": 24.6,
+     "maxdd": -22.3,
+     "sharpe": 0.83,
+     "per_tahun": {
+      "2023": 23.5,
+      "2024": 37.8,
+      "2025": 7.5,
+      "2026": 25.7
+     },
+     "transaksi": 372,
+     "menang": 75.3,
+     "rata": 1.32,
+     "terisi": 59.0,
+     "kandidat": 706,
+     "sinyal": {
+      "n": 71,
+      "bulan": 8,
+      "menang": 88.7,
+      "rata": 2.27,
+      "median": 1.91,
+      "t": 8.16
+     }
+    },
+    "radar_naik|poc": {
+     "total": 153.2,
+     "total_min": 99.8,
+     "total_maks": 244.4,
+     "cagr": 27.1,
+     "maxdd": -20.4,
+     "sharpe": 0.99,
+     "per_tahun": {
+      "2023": 31.8,
+      "2024": 29.6,
+      "2025": 10.8,
+      "2026": 34.2
+     },
+     "transaksi": 416,
+     "menang": 77.0,
+     "rata": 1.26,
+     "terisi": 76.0,
+     "kandidat": 742,
+     "sinyal": {
+      "n": 116,
+      "bulan": 26,
+      "menang": 74.1,
+      "rata": 1.97,
+      "median": 2.08,
+      "t": 1.24
+     }
+    },
+    "awal_stage2|poc": {
+     "total": 145.8,
+     "total_min": 87.9,
+     "total_maks": 235.2,
+     "cagr": 26.1,
+     "maxdd": -27.7,
+     "sharpe": 0.91,
+     "per_tahun": {
+      "2023": 16.4,
+      "2024": 38.2,
+      "2025": 9.7,
+      "2026": 37.6
+     },
+     "transaksi": 433,
+     "menang": 75.3,
+     "rata": 1.2,
+     "terisi": 78.0,
+     "kandidat": 820,
+     "sinyal": {
+      "n": 395,
+      "bulan": 31,
+      "menang": 76.5,
+      "rata": 0.98,
+      "median": 2.08,
+      "t": 1.21
+     }
+    },
+    "pantul_fib|poc": {
+     "total": 143.8,
+     "total_min": 91.5,
+     "total_maks": 203.4,
+     "cagr": 25.9,
+     "maxdd": -22.3,
+     "sharpe": 0.9,
+     "per_tahun": {
+      "2023": 23.9,
+      "2024": 31.1,
+      "2025": 16.0,
+      "2026": 26.1
+     },
+     "transaksi": 394,
+     "menang": 75.4,
+     "rata": 1.28,
+     "terisi": 65.0,
+     "kandidat": 752,
+     "sinyal": {
+      "n": 117,
+      "bulan": 18,
+      "menang": 88.9,
+      "rata": 2.81,
+      "median": 1.91,
+      "t": 4.32
+     }
+    }
+   }
+  },
+  "vol90": {
+   "nama": "profil volume 90 hari",
+   "hasil": {
+    "radar_naik|va": {
+     "total": 127.2,
+     "total_min": 77.0,
+     "total_maks": 218.1,
+     "cagr": 23.6,
+     "maxdd": -25.4,
+     "sharpe": 0.98,
+     "per_tahun": {
+      "2023": 12.1,
+      "2024": 29.2,
+      "2025": 20.1,
+      "2026": 28.9
+     },
+     "transaksi": 380,
+     "menang": 78.2,
+     "rata": 1.2,
+     "terisi": 74.0,
+     "kandidat": 646,
+     "sinyal": {
+      "n": 20,
+      "bulan": 13,
+      "menang": 80.0,
+      "rata": 2.53,
+      "median": 2.08,
+      "t": 1.16
+     }
+    },
+    "awal_stage2|va": {
+     "total": 141.6,
+     "total_min": 81.2,
+     "total_maks": 234.0,
+     "cagr": 25.6,
+     "maxdd": -20.7,
+     "sharpe": 1.02,
+     "per_tahun": {
+      "2023": 23.1,
+      "2024": 30.8,
+      "2025": 12.4,
+      "2026": 33.3
+     },
+     "transaksi": 398,
+     "menang": 75.5,
+     "rata": 1.25,
+     "terisi": 74.0,
+     "kandidat": 685,
+     "sinyal": {
+      "n": 260,
+      "bulan": 29,
+      "menang": 78.5,
+      "rata": 1.32,
+      "median": 2.08,
+      "t": 1.84
+     }
+    },
+    "pantul_fib|va": {
+     "total": 134.4,
+     "total_min": 73.5,
+     "total_maks": 187.3,
+     "cagr": 24.6,
+     "maxdd": -22.6,
+     "sharpe": 0.87,
+     "per_tahun": {
+      "2023": 23.4,
+      "2024": 33.2,
+      "2025": 10.6,
+      "2026": 26.6
+     },
+     "transaksi": 382,
+     "menang": 75.1,
+     "rata": 1.27,
+     "terisi": 63.0,
+     "kandidat": 761,
+     "sinyal": {
+      "n": 126,
+      "bulan": 13,
+      "menang": 90.5,
+      "rata": 3.46,
+      "median": 1.91,
+      "t": 5.79
+     }
+    },
+    "radar_naik|poc": {
+     "total": 138.4,
+     "total_min": 97.6,
+     "total_maks": 205.0,
+     "cagr": 25.2,
+     "maxdd": -22.3,
+     "sharpe": 0.96,
+     "per_tahun": {
+      "2023": 25.5,
+      "2024": 21.0,
+      "2025": 13.6,
+      "2026": 36.8
+     },
+     "transaksi": 412,
+     "menang": 77.0,
+     "rata": 1.17,
+     "terisi": 76.0,
+     "kandidat": 737,
+     "sinyal": {
+      "n": 111,
+      "bulan": 27,
+      "menang": 76.6,
+      "rata": 2.6,
+      "median": 2.08,
+      "t": 1.55
+     }
+    },
+    "awal_stage2|poc": {
+     "total": 183.9,
+     "total_min": 120.1,
+     "total_maks": 257.5,
+     "cagr": 30.9,
+     "maxdd": -22.8,
+     "sharpe": 1.08,
+     "per_tahun": {
+      "2023": 24.5,
+      "2024": 48.0,
+      "2025": 12.8,
+      "2026": 34.5
+     },
+     "transaksi": 429,
+     "menang": 76.2,
+     "rata": 1.37,
+     "terisi": 77.0,
+     "kandidat": 808,
+     "sinyal": {
+      "n": 383,
+      "bulan": 31,
+      "menang": 77.0,
+      "rata": 1.04,
+      "median": 2.08,
+      "t": 1.27
+     }
+    },
+    "pantul_fib|poc": {
+     "total": 166.8,
+     "total_min": 105.8,
+     "total_maks": 241.7,
+     "cagr": 28.9,
+     "maxdd": -22.0,
+     "sharpe": 0.98,
+     "per_tahun": {
+      "2023": 27.1,
+      "2024": 33.2,
+      "2025": 14.6,
+      "2026": 34.2
+     },
+     "transaksi": 425,
+     "menang": 75.8,
+     "rata": 1.29,
+     "terisi": 77.0,
+     "kandidat": 815,
+     "sinyal": {
+      "n": 180,
+      "bulan": 25,
+      "menang": 87.8,
+      "rata": 2.85,
+      "median": 1.91,
+      "t": 3.61
+     }
+    }
+   }
+  }
+ },
+ "sl": {
+  "cek": {
+   "n": 902,
+   "dari": 902,
+   "selisih_rata": 0.002,
+   "sama": 100.0
+  },
+  "per_strategi": {
+   "radar_naik": {
+    "n": 241,
+    "sl_berubah": 111,
+    "biasa": {
+     "n": 241,
+     "bulan": 40,
+     "menang": 74.3,
+     "rata": 2.36,
+     "median": 2.08,
+     "t": 1.53
+    },
+    "zona": {
+     "n": 241,
+     "bulan": 40,
+     "menang": 68.5,
+     "rata": 2.01,
+     "median": 2.08,
+     "t": 1.36
+    },
+    "biasa_yang_berubah": {
+     "n": 111,
+     "bulan": 30,
+     "menang": 81.1,
+     "rata": 3.35,
+     "median": 2.08,
+     "t": 1.77
+    },
+    "zona_yang_berubah": {
+     "n": 111,
+     "bulan": 30,
+     "menang": 68.5,
+     "rata": 2.59,
+     "median": 2.08,
+     "t": 1.47
+    }
+   },
+   "awal_stage2": {
+    "n": 435,
+    "sl_berubah": 77,
+    "biasa": {
+     "n": 435,
+     "bulan": 44,
+     "menang": 80.7,
+     "rata": 1.81,
+     "median": 2.08,
+     "t": 2.82
+    },
+    "zona": {
+     "n": 435,
+     "bulan": 44,
+     "menang": 79.5,
+     "rata": 1.81,
+     "median": 2.08,
+     "t": 2.82
+    },
+    "biasa_yang_berubah": {
+     "n": 77,
+     "bulan": 29,
+     "menang": 76.6,
+     "rata": 1.09,
+     "median": 2.08,
+     "t": 1.01
+    },
+    "zona_yang_berubah": {
+     "n": 77,
+     "bulan": 29,
+     "menang": 70.1,
+     "rata": 1.11,
+     "median": 2.08,
+     "t": 1.06
+    }
+   },
+   "pantul_fib": {
+    "n": 226,
+    "sl_berubah": 31,
+    "biasa": {
+     "n": 226,
+     "bulan": 37,
+     "menang": 86.7,
+     "rata": 2.75,
+     "median": 1.94,
+     "t": 3.61
+    },
+    "zona": {
+     "n": 226,
+     "bulan": 37,
+     "menang": 85.4,
+     "rata": 2.73,
+     "median": 1.91,
+     "t": 3.55
+    },
+    "biasa_yang_berubah": {
+     "n": 31,
+     "bulan": 18,
+     "menang": 74.2,
+     "rata": 1.43,
+     "median": 1.94,
+     "t": 0.84
+    },
+    "zona_yang_berubah": {
+     "n": 31,
+     "bulan": 18,
+     "menang": 64.5,
+     "rata": 1.31,
+     "median": 1.79,
+     "t": 0.85
+    }
+   }
+  },
+  "portofolio": {
+   "biasa": {
+    "total": 183.9,
+    "total_min": 120.2,
+    "total_maks": 275.0,
+    "cagr": 31.0,
+    "maxdd": -23.9,
+    "sharpe": 1.04,
+    "per_tahun": {
+     "2023": 25.9,
+     "2024": 36.0,
+     "2025": 16.0,
+     "2026": 38.3
+    },
+    "transaksi": 442,
+    "menang": 76.1,
+    "rata": 1.32,
+    "terisi": 79.0,
+    "kandidat": 843
+   },
+   "zona": {
+    "total": 132.1,
+    "total_min": 68.9,
+    "total_maks": 201.9,
+    "cagr": 24.4,
+    "maxdd": -32.2,
+    "sharpe": 0.84,
+    "per_tahun": {
+     "2023": 9.9,
+     "2024": 37.8,
+     "2025": 9.2,
+     "2026": 38.2
+    },
+    "transaksi": 457,
+    "menang": 72.7,
+    "rata": 1.07,
+    "terisi": 76.0,
+    "kandidat": 843
+   },
+   "berpasangan": {
+    "benih": 100,
+    "total_lebih_baik": 0,
+    "sharpe_lebih_baik": 0,
+    "maxdd_lebih_baik": 0,
+    "selisih_total_median": -47.7
+   }
+  },
+  "pakai": false
+ },
+ "putusan": {
+  "pakai": false,
+  "pakai_sl": false,
+  "ada_pilihan": true,
+  "alasan": "di luar sampel 2023-01-01 s/d 2026-10-14: dengan konfirmasi +162.4% · maks turun -23.9% · Sharpe 0.99 · menang 76.5% · 422 transaksi — DASAR +183.9% · maks turun -23.9% · Sharpe 1.04 · menang 76.1% · 442 transaksi"
+ },
+ "model": {
+  "konfirmasi": {
+   "radar_naik": null,
+   "awal_stage2": null,
+   "pantul_fib": null
+  },
+  "pilihan_akhir": {
+   "long": {
+    "pilihan": {
+     "radar_naik": null,
+     "awal_stage2": null
+    },
+    "kandidat": {
+     "radar_naik": [
+      {
+       "konf": null,
+       "n": 241,
+       "sharpe": 1.21,
+       "total": 353.8
+      },
+      {
+       "konf": "poc",
+       "n": 105,
+       "sharpe": 1.25,
+       "total": 311.0
+      },
+      {
+       "konf": "delta1",
+       "n": 128,
+       "sharpe": 1.12,
+       "total": 253.3
+      },
+      {
+       "konf": "delta3",
+       "n": 101,
+       "sharpe": 1.03,
+       "total": 224.3
+      },
+      {
+       "konf": "poc_delta3",
+       "n": 58,
+       "sharpe": 1.16,
+       "total": 259.1
+      },
+      {
+       "konf": "uji_va_delta1",
+       "n": 63,
+       "sharpe": 1.15,
+       "total": 250.4
+      }
+     ],
+     "awal_stage2": [
+      {
+       "konf": null,
+       "n": 435,
+       "sharpe": 1.21,
+       "total": 353.8
+      },
+      {
+       "konf": "va",
+       "n": 231,
+       "sharpe": 0.97,
+       "total": 179.0
+      },
+      {
+       "konf": "poc",
+       "n": 374,
+       "sharpe": 1.13,
+       "total": 307.5
+      },
+      {
+       "konf": "delta1",
+       "n": 165,
+       "sharpe": 1.0,
+       "total": 183.5
+      },
+      {
+       "konf": "delta3",
+       "n": 192,
+       "sharpe": 0.97,
+       "total": 211.6
+      },
+      {
+       "konf": "va_delta1",
+       "n": 110,
+       "sharpe": 0.86,
+       "total": 131.9
+      },
+      {
+       "konf": "poc_delta3",
+       "n": 170,
+       "sharpe": 0.91,
+       "total": 185.8
+      },
+      {
+       "konf": "uji_va_delta1",
+       "n": 127,
+       "sharpe": 0.89,
+       "total": 144.2
+      },
+      {
+       "konf": "tembus_delta",
+       "n": 116,
+       "sharpe": 0.9,
+       "total": 158.7
+      }
+     ]
+    }
+   },
+   "short": {
+    "pilihan": {
+     "pantul_fib": null
+    },
+    "kandidat": {
+     "pantul_fib": [
+      {
+       "konf": null,
+       "n": 226,
+       "sharpe": 1.13,
+       "total": 55.0
+      },
+      {
+       "konf": "va",
+       "n": 74,
+       "sharpe": 0.44,
+       "total": 11.2
+      },
+      {
+       "konf": "poc",
+       "n": 131,
+       "sharpe": 0.64,
+       "total": 21.1
+      },
+      {
+       "konf": "delta1",
+       "n": 166,
+       "sharpe": 0.57,
+       "total": 18.2
+      },
+      {
+       "konf": "delta3",
+       "n": 133,
+       "sharpe": 0.47,
+       "total": 13.3
+      },
+      {
+       "konf": "va_delta1",
+       "n": 55,
+       "sharpe": 0.37,
+       "total": 7.2
+      },
+      {
+       "konf": "poc_delta3",
+       "n": 87,
+       "sharpe": 0.34,
+       "total": 5.6
+      },
+      {
+       "konf": "uji_va_delta1",
+       "n": 67,
+       "sharpe": 0.53,
+       "total": 7.9
+      },
+      {
+       "konf": "tembus_delta",
+       "n": 54,
+       "sharpe": 0.49,
+       "total": 11.7
+      }
+     ]
+    }
+   }
+  }
+ }
+}
