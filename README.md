@@ -102,7 +102,10 @@ Jalankan ulang: **Actions → Model Kondisi Pasar → Run workflow** (otomatis t
 `backtest_perjam.py` menguji apakah sinyal layak dihitung dari candle 1 jam: mesin radar yang sama (`perjam.py`) dijalankan di
 setiap jam sejak 2020 pada 400 candle 1 jam terakhir (candle diperbesar √24× supaya ambang persennya sepadan), masuk dengan jeda
 1 jam, rencana jual & gerbang dipilih walk-forward, lalu portofolionya dibandingkan dengan sistem harian. Aturan lulus ditulis
-sebelum data ditarik. Hasil: `backtest_perjam/LAPORAN.md` dan tab 🌡️ Model pasar. Jalankan ulang:
+sebelum data ditarik.
+Hasil 16 Nov 2026: **tidak dipasang** — per jam saja +11% (penurunan terdalam −47%) vs harian +184% (−24%); setelah biaya & pajak
+±0,41% per transaksi, sinyal per jam nyaris sama dengan masuk di jam acak. Rinciannya di `backtest_perjam/LAPORAN.md` dan tab
+🌡️ Model pasar. Jalankan ulang:
 **Actions → Uji Sinyal Per Jam → Run workflow** (berat: 6 mesin × ±40 menit; sinyal mentah disimpan di cabang `data-perjam`).
 
 ## Uji order flow & market profile
