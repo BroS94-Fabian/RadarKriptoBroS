@@ -1011,6 +1011,10 @@ def tulis_dashboard(results, charts: dict[str, bytes], meta: dict) -> None:
     if os.path.exists(ofj):
         shutil.copy(ofj, os.path.join(SITE_DIR, "orderflow.json"))
         data["ada_orderflow"] = True
+    pjj = os.path.join(ROOT, "backtest_perjam", "hasil.json")
+    if os.path.exists(pjj):
+        shutil.copy(pjj, os.path.join(SITE_DIR, "perjam.json"))
+        data["ada_perjam"] = True
     s4 = os.path.join(ROOT, "siklus4")
     if os.path.exists(os.path.join(s4, "hasil.json")):
         os.makedirs(os.path.join(SITE_DIR, "siklus4"), exist_ok=True)

@@ -168,7 +168,7 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
                  3:["🟨","Stage 3 · Puncak","distribusi / pembentukan puncak"],4:["🟥","Stage 4 · Turun","tren turun (markdown)"]};
   const FASE = {"1":"membentuk dasar","1-akhir":"akhir dasar, siap tembus","1→2":"baru tembus dari dasar","2-awal":"awal naik","2":"naik berjalan",
                 "2-jenuh":"jenuh, rawan koreksi","3":"distribusi","3-akhir":"rawan jebol","3→4":"baru jebol dari puncak","4-awal":"awal turun","4":"turun berjalan"};
-  let BT = null, S4 = null, MP = null, OFX = null;
+  let BT = null, S4 = null, MP = null, OFX = null, PJX = null;
   let DATA = null, tab = "naik", q = "", sortKey = "rank", sortDir = 1;
 
   // tema (disimpan per perangkat)
@@ -542,7 +542,41 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
       <p class="sub"><b>Catatan jujur.</b> Rancangan pertama (tiap strategi boleh jalan mulai skor tertentu, dengan syarat statistik ketat) gagal — lihat baris "Percobaan 1".
       Model yang dipakai sekarang dirancang setelah melihat hasil itu, jadi angka ujinya tidak sebersih uji buta. Model lama disetel memakai data 2024–2026, jadi di uji ini model lama diuntungkan.
       Daftar koin = top CMC saat ini (survivorship bias). Untung-rugi dicatat saat posisi ditutup. Statistik masa lalu, bukan jaminan.</p>`;
-    return h + orderflowBlok();
+    return h + perjamBlok() + orderflowBlok();
+  }
+  function perjamBlok(){
+    const X = PJX;
+    if (!X || !X.oos || !X.per_strategi) return "";
+    const per = r => r && r.n ? `<span class="${cls(r.rata)}">${pct(r.rata)}</span> <span class="sub">· menang ${num(r.menang,0)}% (${num(r.n,0)})</span>` : "-";
+    const P = X.oos.portofolio, nmP = Object.keys(P), pk = X.putusan.pakai;
+    const brs = (nm, r) => !r || !r.transaksi ? `<tr><td>${esc(nm)}</td><td colspan="6" class="sub">tidak ada transaksi</td></tr>` :
+      `<tr><td>${esc(nm)}</td><td class="${cls(r.total)}"><b>${pct(r.total)}</b></td><td class="neg">${pct(r.maxdd)}</td><td>${num(r.sharpe,2)}</td>
+      <td>${num(r.transaksi,0)}</td><td>${num(r.menang,1)}%</td><td class="${cls(r.rata)}">${pct(r.rata)}</td></tr>`;
+    const judul = pk === "ganti" ? "✅ Sinyal per jam menggantikan sinyal harian" : pk === "tambah" ? "✅ Sinyal per jam ditambahkan di samping sinyal harian"
+      : "❌ Sinyal per jam tidak dipasang — tidak lebih baik dari sistem harian";
+    const nama = {radar_naik: "🟢 Radar naik", awal_stage2: "🟩 Awal Stage 2", acak_long: "Pembanding: beli acak", pantul_fib: "🔻 Jual dulu (pantulan Stage 4)", acak_short: "Pembanding: short acak"};
+    const kode = Object.keys(X.rencana);
+    let h = `<h3 style="font-size:17px;margin-top:30px;padding-top:16px;border-top:1px solid var(--line)">⏱ Uji sinyal per jam</h3>
+      <p class="sub">Dibuat ${esc(X.dibuat_wib)} · ${X.data.koin} koin · ${num(X.data.candle_jam / 1e6, 1)} juta candle 1 jam dianalisa satu per satu sejak ${esc(X.data.mulai)}.
+      Mesin radar yang sama dijalankan di setiap jam pada candle 1 jam (candle diperbesar √24× supaya ambang persennya sepadan dengan harian).
+      Masuk di penutupan candle 1 jam berikutnya (jeda 1 jam untuk keterlambatan alert &amp; pasang order). Aturan uji ditulis sebelum data ditarik.</p>
+      <div class="pasar" style="margin:0 0 12px"><b>${judul}</b><br>
+        Syarat pasang: total &gt; harian, Sharpe ≥ harian + 0,15, penurunan maksimum tidak lebih buruk dari 5 poin.</div>
+      <h3>Portofolio di luar sampel (${esc(X.oos.dari)} s/d ${esc(X.oos.sampai)})</h3>
+      <div class="tbl-wrap"><table class="jj"><thead><tr><th>Susunan</th><th>Total</th><th>Maks turun</th><th>Sharpe</th><th>Transaksi</th><th>Menang</th><th>Rata-rata</th></tr></thead><tbody>
+      ${nmP.map((nm, i) => brs(["Harian (sekarang)", "Per jam saja", "Harian + per jam"][i] || nm, P[nm])).join("")}
+      ${X.oos.tanpa_jeda ? brs("Per jam tanpa jeda (ideal)", X.oos.tanpa_jeda) : ""}
+      </tbody></table></div>
+      <h3>Hasil per sinyal per jam (2020–2026, lolos gerbang pasar, jeda 1 jam)</h3>
+      <p class="sub">Rencana jual: ${kode.map(k => `<b>${k}</b> = ${esc(X.rencana[k])}`).join(" · ")}.<br>Isi sel: rata-rata bersih per transaksi · tingkat menang (jumlah sinyal).</p>
+      <div class="tbl-wrap"><table class="jj"><thead><tr><th>Sinyal</th>${kode.map(k => `<th>Rencana ${k}</th>`).join("")}<th>Sinyal/hari</th></tr></thead><tbody>
+      ${Object.keys(nama).filter(s => X.per_strategi[s]).map(s => `<tr><td>${nama[s]}</td>${kode.map(k => `<td>${per((X.per_strategi[s][k] || {}).jeda)}</td>`).join("")}
+        <td>${X.jumlah && X.jumlah[s] && !s.startsWith("acak") ? num(X.jumlah[s].per_hari_lolos, 1) : "-"}</td></tr>`).join("")}
+      </tbody></table></div>
+      <p class="sub"><b>Catatan.</b> Biaya &amp; pajak ±0,41% per transaksi sama besarnya di candle 1 jam maupun harian, padahal gerak yang dikejar jauh lebih kecil —
+      hasil sinyal per jam nyaris sama dengan masuk di jam acak. Sharpe sistem harian di tabel ini sedikit berbeda dari tabel model pasar karena waktu masuk dihitung sampai ke jamnya.
+      Laporan lengkap: <code>backtest_perjam/LAPORAN.md</code> di GitHub.</p>`;
+    return h;
   }
   function orderflowBlok(){
     const X = OFX;
@@ -696,6 +730,7 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
       TABS.push(["modelpasar","🌡️ Model pasar"]);
       fetch("model_pasar.json?t=" + Date.now()).then(r => r.json()).then(x => { MP = x; if (tab === "modelpasar") render(); }).catch(() => {});
       if (d.ada_orderflow) fetch("orderflow.json?t=" + Date.now()).then(r => r.json()).then(x => { OFX = x; if (tab === "modelpasar") render(); }).catch(() => {});
+      if (d.ada_perjam) fetch("perjam.json?t=" + Date.now()).then(r => r.json()).then(x => { PJX = x; if (tab === "modelpasar") render(); }).catch(() => {});
     }
     if (d.ada_backtest) {
       TABS.push(["backtest","🧪 Backtest"]);

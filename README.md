@@ -98,6 +98,13 @@ Hasil: `model_pasar/LAPORAN.md`, `model_pasar/model.json` dan tab 🌡️ Model 
 Radar membaca `model.json`; dengan `model_pasar: auto` (bawaan) batas skor hanya dipakai bila model baru menang di uji itu.
 Jalankan ulang: **Actions → Model Kondisi Pasar → Run workflow** (otomatis tiap tanggal 1).
 
+## Uji sinyal per jam
+`backtest_perjam.py` menguji apakah sinyal layak dihitung dari candle 1 jam: mesin radar yang sama (`perjam.py`) dijalankan di
+setiap jam sejak 2020 pada 400 candle 1 jam terakhir (candle diperbesar √24× supaya ambang persennya sepadan), masuk dengan jeda
+1 jam, rencana jual & gerbang dipilih walk-forward, lalu portofolionya dibandingkan dengan sistem harian. Aturan lulus ditulis
+sebelum data ditarik. Hasil: `backtest_perjam/LAPORAN.md` dan tab 🌡️ Model pasar. Jalankan ulang:
+**Actions → Uji Sinyal Per Jam → Run workflow** (berat: 6 mesin × ±40 menit; sinyal mentah disimpan di cabang `data-perjam`).
+
 ## Uji order flow & market profile
 `backtest_orderflow.py` menguji apakah konfirmasi dari candle 1 jam — delta (beli agresif − jual agresif), arah CVD 3 hari,
 POC dan zona nilai 30 hari (`orderflow.py`) — memperbaiki hasil sinyal live. Sinyal dan hasilnya sama persis dengan uji

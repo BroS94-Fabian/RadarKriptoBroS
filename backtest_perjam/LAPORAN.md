@@ -1,6 +1,6 @@
 # ⏱ Uji Sinyal Per Jam
 
-Dibuat 16 Nov 2026 10:44 WIB · 128 koin · 5,136,135 candle 1 jam dianalisa satu per satu (±3.5 jam mesin) · sinyal 2020-01-17T17:00 s/d 2026-10-17T01:00 UTC · meme coin tidak ikut
+Dibuat 16 Nov 2026 10:46 WIB · 128 koin · 5,136,135 candle 1 jam dianalisa satu per satu (±3.5 jam mesin) · sinyal 2020-01-17T17:00 s/d 2026-10-17T01:00 UTC · meme coin tidak ikut
 
 ## Putusan
 
