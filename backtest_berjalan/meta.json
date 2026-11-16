@@ -1,0 +1,21 @@
+{
+ "dibuat": "2026-11-16T04:32:43+00:00",
+ "dibuat_wib": "16 Nov 2026 11:32 WIB",
+ "bagian": 6,
+ "koin": 12,
+ "gagal": [],
+ "candle_jam": 475292,
+ "analisa": 31140,
+ "analisa_gagal": 0,
+ "baris": 557,
+ "mulai": "2020-01-01",
+ "dari": "2026-07-01T00:00",
+ "sampai": "2026-10-12T15:00",
+ "jam_mesin": 0.0,
+ "per_strategi": {
+  "awal_stage2": 312,
+  "pantul_fib": 108,
+  "radar_naik": 86,
+  "radar_turun": 51
+ }
+}

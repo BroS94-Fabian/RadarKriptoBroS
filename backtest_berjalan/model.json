@@ -1,0 +1,30 @@
+{
+ "versi": 1,
+ "dibuat": "2026-11-16T04:32:51+00:00",
+ "dibuat_wib": "16 Nov 2026 11:32 WIB",
+ "pakai": false,
+ "putusan": "di luar sampel 2023-01-01 s/d 2026-10-12: tiap jam -4.5% · maks turun -5.7% · Sharpe -0.67 · menang 62.5% · 8 transaksi — hanya 07.00 WIB -2.7% · maks turun -3.9% · Sharpe -0.5 · menang 75.0% · 8 transaksi",
+ "jenis": [
+  "awal_stage2",
+  "pantul_fib"
+ ],
+ "jeda_jam": 240,
+ "uji": {
+  "awal_stage2": {
+   "n": 6,
+   "bulan": 1,
+   "menang": 66.7,
+   "rata": -1.91,
+   "median": 2.08,
+   "t": null
+  },
+  "pantul_fib": {
+   "n": 2,
+   "bulan": 1,
+   "menang": 50.0,
+   "rata": -5.69,
+   "median": -5.69,
+   "t": null
+  }
+ }
+}

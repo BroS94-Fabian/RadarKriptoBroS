@@ -1,0 +1,428 @@
+{
+ "versi": 1,
+ "dibuat": "2026-11-16T04:32:51+00:00",
+ "dibuat_wib": "16 Nov 2026 11:32 WIB",
+ "data": {
+  "dibuat": "2026-11-16T04:32:43+00:00",
+  "dibuat_wib": "16 Nov 2026 11:32 WIB",
+  "bagian": 6,
+  "koin": 12,
+  "gagal": [],
+  "candle_jam": 475292,
+  "analisa": 31140,
+  "analisa_gagal": 0,
+  "baris": 557,
+  "mulai": "2020-01-01",
+  "dari": "2026-07-01T00:00",
+  "sampai": "2026-10-12T15:00",
+  "jam_mesin": 0.0,
+  "per_strategi": {
+   "awal_stage2": 312,
+   "pantul_fib": 108,
+   "radar_naik": 86,
+   "radar_turun": 51
+  }
+ },
+ "dari": "2026-07-01T00:00",
+ "sampai": "2026-10-12T15:00",
+ "masuk": 1,
+ "jeda_jam": 240,
+ "sistem": {
+  "pembanding": "Hanya 07.00 WIB (sistem sekarang)",
+  "tiap_jam": "🟩 & 🔻 tiap jam",
+  "semua": "Semua tiap jam (termasuk 🟢)"
+ },
+ "batas": {
+  "2023": {
+   "long": 6,
+   "short": 6
+  },
+  "2024": {
+   "long": 4,
+   "short": 6
+  },
+  "2025": {
+   "long": 3,
+   "short": 6
+  },
+  "2026": {
+   "long": 4,
+   "short": 6
+  }
+ },
+ "cek": {
+  "radar": {
+   "n": 4,
+   "ketemu": 4,
+   "skor_sama": 4
+  },
+  "event": {
+   "awal_stage2": {
+    "n": 13,
+    "ketemu": 13
+   },
+   "pantul_fib": {
+    "n": 2,
+    "ketemu": 2
+   }
+  }
+ },
+ "oos": {
+  "dari": "2023-01-01",
+  "sampai": "2026-10-12",
+  "portofolio": {
+   "pembanding": {
+    "total": -2.7,
+    "total_min": -2.7,
+    "total_maks": -2.7,
+    "maxdd": -3.9,
+    "sharpe": -0.5,
+    "per_tahun": {
+     "2023": 0.0,
+     "2024": 0.0,
+     "2025": 0.0,
+     "2026": -2.7
+    },
+    "transaksi": 8,
+    "menang": 75.0,
+    "rata": -1.66,
+    "kandidat": 8
+   },
+   "tiap_jam": {
+    "total": -4.5,
+    "total_min": -4.5,
+    "total_maks": -4.5,
+    "maxdd": -5.7,
+    "sharpe": -0.67,
+    "per_tahun": {
+     "2023": 0.0,
+     "2024": 0.0,
+     "2025": 0.0,
+     "2026": -4.5
+    },
+    "transaksi": 8,
+    "menang": 62.5,
+    "rata": -2.85,
+    "kandidat": 8
+   },
+   "semua": {
+    "total": 4.7,
+    "total_min": 4.7,
+    "total_maks": 4.7,
+    "maxdd": -5.7,
+    "sharpe": 0.4,
+    "per_tahun": {
+     "2023": 0.0,
+     "2024": 0.0,
+     "2025": 0.0,
+     "2026": 4.7
+    },
+    "transaksi": 15,
+    "menang": 66.7,
+    "rata": 1.58,
+    "kandidat": 17
+   }
+  },
+  "terbit": {
+   "total": 183.9,
+   "total_min": 120.3,
+   "total_maks": 275.0,
+   "maxdd": -23.9,
+   "sharpe": 1.06,
+   "per_tahun": {
+    "2023": 24.4,
+    "2024": 37.8,
+    "2025": 14.4,
+    "2026": 38.3
+   },
+   "transaksi": 442,
+   "menang": 76.1,
+   "rata": 1.32,
+   "kandidat": 843
+  },
+  "tanpa_jeda": {
+   "pembanding": {
+    "total": -4.5,
+    "total_min": -4.5,
+    "total_maks": -4.5,
+    "maxdd": -5.8,
+    "sharpe": -0.66,
+    "per_tahun": {
+     "2023": 0.0,
+     "2024": 0.0,
+     "2025": 0.0,
+     "2026": -4.5
+    },
+    "transaksi": 8,
+    "menang": 62.5,
+    "rata": -2.82,
+    "kandidat": 8
+   },
+   "tiap_jam": {
+    "total": -3.5,
+    "total_min": -3.5,
+    "total_maks": -3.5,
+    "maxdd": -5.7,
+    "sharpe": -0.7,
+    "per_tahun": {
+     "2023": 0.0,
+     "2024": 0.0,
+     "2025": 0.0,
+     "2026": -3.5
+    },
+    "transaksi": 8,
+    "menang": 62.5,
+    "rata": -2.21,
+    "kandidat": 8
+   }
+  },
+  "berpasangan": {
+   "tiap_jam": {
+    "benih": 100,
+    "total_lebih_baik": 0,
+    "sharpe_lebih_baik": 0,
+    "maxdd_lebih_baik": 0,
+    "selisih_total_median": -1.8
+   },
+   "semua": {
+    "benih": 100,
+    "total_lebih_baik": 100,
+    "sharpe_lebih_baik": 100,
+    "maxdd_lebih_baik": 0,
+    "selisih_total_median": 7.4
+   }
+  },
+  "per_jenis": {
+   "pembanding": {
+    "radar_naik": {
+     "n": 0
+    },
+    "awal_stage2": {
+     "n": 6,
+     "bulan": 1,
+     "menang": 83.3,
+     "rata": -0.33,
+     "median": 2.08,
+     "t": null
+    },
+    "pantul_fib": {
+     "n": 2,
+     "bulan": 1,
+     "menang": 50.0,
+     "rata": -5.65,
+     "median": -5.65,
+     "t": null
+    }
+   },
+   "tiap_jam": {
+    "radar_naik": {
+     "n": 0
+    },
+    "awal_stage2": {
+     "n": 6,
+     "bulan": 1,
+     "menang": 66.7,
+     "rata": -1.91,
+     "median": 2.08,
+     "t": null
+    },
+    "pantul_fib": {
+     "n": 2,
+     "bulan": 1,
+     "menang": 50.0,
+     "rata": -5.69,
+     "median": -5.69,
+     "t": null
+    }
+   },
+   "semua": {
+    "radar_naik": {
+     "n": 9,
+     "bulan": 3,
+     "menang": 66.7,
+     "rata": 5.15,
+     "median": 7.07,
+     "t": 2.14
+    },
+    "awal_stage2": {
+     "n": 6,
+     "bulan": 1,
+     "menang": 66.7,
+     "rata": -1.91,
+     "median": 2.08,
+     "t": null
+    },
+    "pantul_fib": {
+     "n": 2,
+     "bulan": 1,
+     "menang": 50.0,
+     "rata": -5.69,
+     "median": -5.69,
+     "t": null
+    }
+   }
+  }
+ },
+ "semua_data": {
+  "pembanding": {
+   "radar_naik": {
+    "n": 0
+   },
+   "awal_stage2": {
+    "n": 6,
+    "bulan": 1,
+    "menang": 83.3,
+    "rata": -0.33,
+    "median": 2.08,
+    "t": null
+   },
+   "pantul_fib": {
+    "n": 2,
+    "bulan": 1,
+    "menang": 50.0,
+    "rata": -5.65,
+    "median": -5.65,
+    "t": null
+   }
+  },
+  "tiap_jam": {
+   "radar_naik": {
+    "n": 0
+   },
+   "awal_stage2": {
+    "n": 6,
+    "bulan": 1,
+    "menang": 66.7,
+    "rata": -1.91,
+    "median": 2.08,
+    "t": null
+   },
+   "pantul_fib": {
+    "n": 2,
+    "bulan": 1,
+    "menang": 50.0,
+    "rata": -5.69,
+    "median": -5.69,
+    "t": null
+   }
+  },
+  "semua": {
+   "radar_naik": {
+    "n": 9,
+    "bulan": 3,
+    "menang": 66.7,
+    "rata": 5.15,
+    "median": 7.07,
+    "t": 2.14
+   },
+   "awal_stage2": {
+    "n": 6,
+    "bulan": 1,
+    "menang": 66.7,
+    "rata": -1.91,
+    "median": 2.08,
+    "t": null
+   },
+   "pantul_fib": {
+    "n": 2,
+    "bulan": 1,
+    "menang": 50.0,
+    "rata": -5.69,
+    "median": -5.69,
+    "t": null
+   }
+  }
+ },
+ "sebaran_wib": {
+  "0": 0,
+  "1": 1,
+  "2": 1,
+  "3": 0,
+  "4": 0,
+  "5": 0,
+  "6": 0,
+  "7": 2,
+  "8": 1,
+  "9": 1,
+  "10": 0,
+  "11": 1,
+  "12": 0,
+  "13": 0,
+  "14": 0,
+  "15": 0,
+  "16": 0,
+  "17": 0,
+  "18": 0,
+  "19": 0,
+  "20": 1,
+  "21": 0,
+  "22": 0,
+  "23": 0
+ },
+ "di_0700": 25.0,
+ "lebih_cepat": {
+  "awal_stage2": {
+   "n": 6,
+   "tertangkap": 6,
+   "lebih_awal": 5,
+   "median_jam": 20.0
+  },
+  "pantul_fib": {
+   "n": 2,
+   "tertangkap": 2,
+   "lebih_awal": 1,
+   "median_jam": 77.0
+  }
+ },
+ "jumlah": {
+  "pembanding": {
+   "radar_naik": 0,
+   "awal_stage2": 6,
+   "pantul_fib": 2
+  },
+  "tiap_jam": {
+   "radar_naik": 0,
+   "awal_stage2": 6,
+   "pantul_fib": 2
+  },
+  "semua": {
+   "radar_naik": 9,
+   "awal_stage2": 6,
+   "pantul_fib": 2
+  }
+ },
+ "putusan": {
+  "pakai": false,
+  "alasan": "di luar sampel 2023-01-01 s/d 2026-10-12: tiap jam -4.5% · maks turun -5.7% · Sharpe -0.67 · menang 62.5% · 8 transaksi — hanya 07.00 WIB -2.7% · maks turun -3.9% · Sharpe -0.5 · menang 75.0% · 8 transaksi"
+ },
+ "model": {
+  "versi": 1,
+  "dibuat": "2026-11-16T04:32:51+00:00",
+  "dibuat_wib": "16 Nov 2026 11:32 WIB",
+  "pakai": false,
+  "putusan": "di luar sampel 2023-01-01 s/d 2026-10-12: tiap jam -4.5% · maks turun -5.7% · Sharpe -0.67 · menang 62.5% · 8 transaksi — hanya 07.00 WIB -2.7% · maks turun -3.9% · Sharpe -0.5 · menang 75.0% · 8 transaksi",
+  "jenis": [
+   "awal_stage2",
+   "pantul_fib"
+  ],
+  "jeda_jam": 240,
+  "uji": {
+   "awal_stage2": {
+    "n": 6,
+    "bulan": 1,
+    "menang": 66.7,
+    "rata": -1.91,
+    "median": 2.08,
+    "t": null
+   },
+   "pantul_fib": {
+    "n": 2,
+    "bulan": 1,
+    "menang": 50.0,
+    "rata": -5.69,
+    "median": -5.69,
+    "t": null
+   }
+  }
+ }
+}
