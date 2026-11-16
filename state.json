@@ -13,25 +13,25 @@
   "model_aktif": true,
   "nama": "SANGAT LEMAH",
   "nilai": {
-   "alt_r30": -29.4,
-   "alt_rs": -9.5,
+   "alt_r30": -29.5,
+   "alt_rs": -9.6,
    "btc_r30": -19.9,
    "d_lebar50": -0.8,
-   "lebar50": 2.3,
-   "n_koin": 128.0,
+   "lebar50": 2.4,
+   "n_koin": 127.0,
    "s2": 2.4,
-   "s4": 31.5
+   "s4": 31.7
   },
   "skor": -5,
-  "ts": "2026-11-16T01:48:19+00:00"
+  "ts": "2026-11-16T02:05:46+00:00"
  },
  "last_summary": "2026-11-16",
  "pasar": {
-  "harga": 64822.2,
+  "harga": 64812.1,
   "ma": 79843.76939999999,
   "rezim": "turun",
   "teks": "BTC di bawah MA50 & MA50 menurun",
-  "ts": "2026-11-16T01:48:19+00:00"
+  "ts": "2026-11-16T02:05:46+00:00"
  },
  "ranking": {
   "data": [
@@ -2182,7 +2182,7 @@
  "short_kandidat": {
   "kandidat": [],
   "sinyal": [],
-  "ts": "2026-11-16T01:48:19+00:00"
+  "ts": "2026-11-16T02:05:46+00:00"
  },
  "siklus": {
   "btc": {
@@ -2194,13 +2194,13 @@
    "TRX"
   ],
   "jumlah": {
-   "1": 46,
+   "1": 45,
    "2": 3,
    "3": 36,
    "4": 39
   },
   "persen_naik": 2,
-  "persen_turun": 31,
+  "persen_turun": 32,
   "siap_tembus": [
    "ZRO",
    "KITE",
@@ -2211,7 +2211,7 @@
   "tembus_dasar": [
    "PEPE"
   ],
-  "ts": "2026-11-16T01:48:19+00:00"
+  "ts": "2026-11-16T02:05:46+00:00"
  },
  "stage2": {}
 }
