@@ -13,25 +13,25 @@
   "model_aktif": true,
   "nama": "SANGAT LEMAH",
   "nilai": {
-   "alt_r30": -32.7,
-   "alt_rs": -10.7,
-   "btc_r30": -22.0,
-   "d_lebar50": -4.5,
+   "alt_r30": -29.4,
+   "alt_rs": -9.5,
+   "btc_r30": -19.9,
+   "d_lebar50": -0.8,
    "lebar50": 2.3,
    "n_koin": 132.0,
    "s2": 2.3,
-   "s4": 27.3
+   "s4": 31.2
   },
   "skor": -5,
-  "ts": "2026-11-15T23:49:55+00:00"
+  "ts": "2026-11-16T00:49:46+00:00"
  },
  "last_summary": "2026-11-15",
  "pasar": {
-  "harga": 65300.0,
-  "ma": 80225.4104,
+  "harga": 64968.0,
+  "ma": 79843.76939999999,
   "rezim": "turun",
   "teks": "BTC di bawah MA50 & MA50 menurun",
-  "ts": "2026-11-15T23:49:55+00:00"
+  "ts": "2026-11-16T00:49:46+00:00"
  },
  "ranking": {
   "data": [
@@ -2182,7 +2182,7 @@
  "short_kandidat": {
   "kandidat": [],
   "sinyal": [],
-  "ts": "2026-11-15T23:49:55+00:00"
+  "ts": "2026-11-16T00:49:46+00:00"
  },
  "siklus": {
   "btc": {
@@ -2194,21 +2194,24 @@
    "TRX"
   ],
   "jumlah": {
-   "1": 53,
+   "1": 48,
    "2": 3,
    "3": 37,
-   "4": 35
+   "4": 40
   },
   "persen_naik": 2,
-  "persen_turun": 27,
+  "persen_turun": 31,
   "siap_tembus": [
    "ZRO",
-   "SENT"
+   "KITE",
+   "BAT",
+   "SENT",
+   "S"
   ],
   "tembus_dasar": [
    "PEPE"
   ],
-  "ts": "2026-11-15T23:49:55+00:00"
+  "ts": "2026-11-16T00:49:46+00:00"
  },
  "stage2": {}
 }
