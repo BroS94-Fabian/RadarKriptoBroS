@@ -1,22 +1,22 @@
 {
- "dibuat": "2026-11-16T03:00:29+00:00",
- "dibuat_wib": "16 Nov 2026 10:00 WIB",
+ "dibuat": "2026-11-16T03:44:17+00:00",
+ "dibuat_wib": "16 Nov 2026 10:44 WIB",
  "bagian": 6,
- "koin": 12,
+ "koin": 128,
  "gagal": [],
- "candle_jam": 167706,
+ "candle_jam": 5136135,
  "analisa_gagal": 0,
- "baris": 5355,
- "mulai": "2025-03-01",
- "dari": "2025-03-17T20:00",
- "sampai": "2026-10-16T23:00",
- "jam_mesin": 0.2,
+ "baris": 171763,
+ "mulai": "2020-01-01",
+ "dari": "2020-01-17T17:00",
+ "sampai": "2026-10-17T01:00",
+ "jam_mesin": 3.5,
  "per_strategi": {
-  "acak_long": 1588,
-  "acak_short": 1588,
-  "awal_stage2": 895,
-  "radar_naik": 563,
-  "radar_turun": 403,
-  "pantul_fib": 318
+  "acak_long": 51421,
+  "acak_short": 51421,
+  "awal_stage2": 30011,
+  "radar_naik": 18271,
+  "radar_turun": 11310,
+  "pantul_fib": 9329
  }
 }
