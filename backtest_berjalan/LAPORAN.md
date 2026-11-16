@@ -1,35 +1,35 @@
 # 🕐 Uji "Harian Berjalan" — sinyal harian yang dihitung ulang tiap jam
 
-Dibuat 16 Nov 2026 11:32 WIB · 12 koin · 31,140 analisa (tiap koin × tiap jam, ±0.0 jam mesin) · catatan 2026-07-01T00:00 s/d 2026-10-12T15:00 UTC · meme coin tidak ikut
+Dibuat 16 Nov 2026 12:26 WIB · 128 koin · 4,245,888 analisa (tiap koin × tiap jam, ±3.6 jam mesin) · catatan 2020-09-18T01:00 s/d 2026-10-17T02:00 UTC · meme coin tidak ikut
 
 ## Putusan
 
 **❌ Tidak dipasang — dihitung tiap jam tidak lebih baik dari sekali sehari.**
 
-- 🟩 & 🔻 dicek tiap jam: -4.5% · maks turun -5.7% · Sharpe -0.67 · menang 62.5% · 8 transaksi
-- Hanya dicek 07.00 WIB (sistem sekarang): -2.7% · maks turun -3.9% · Sharpe -0.5 · menang 75.0% · 8 transaksi
+- 🟩 & 🔻 dicek tiap jam: +36.1% · maks turun -38.0% · Sharpe 0.33 · menang 73.5% · 540 transaksi
+- Hanya dicek 07.00 WIB (sistem sekarang): +156.8% · maks turun -20.2% · Sharpe 0.95 · menang 76.5% · 463 transaksi
 - Syarat (ditetapkan di muka): total ≥ pembanding, Sharpe ≥ pembanding, maks turun tidak lebih buruk dari pembanding − 5 poin.
 
 ## Yang diuji
 
 Mesin radar harian dijalankan apa adanya di setiap jam pada candle 24 jam berjalan (24 jam terakhir = satu candle, dst.). Tepat jam 07.00 WIB candle berjalan sama dengan candle harian biasa, jadi sistem sekarang adalah bagian darinya. Kedua sistem memakai aturan yang sama: gerbang model pasar, jeda 10 hari per koin & jenis sinyal, masuk di penutupan candle 1 jam berikutnya, rencana jual TP1 5% / SL 12% / maks 30 hari yang disimulasikan pada candle 1 jam, biaya & pajak dipotong.
 
-Cek mesin: dari 4 sinyal radar uji harian, 4 ditemukan mesin berjalan tepat di jam 00.00 UTC (4 dengan skor yang sama persis). Sinyal stage uji harian yang juga muncul di mesin berjalan jam 00.00 UTC: 🟩 13 dari 13, 🔻 2 dari 2 (uji harian menghitung stage dari seluruh riwayat; mesin berjalan & radar live dari 400 candle terakhir).
+Cek mesin: dari 744 sinyal radar uji harian, 743 ditemukan mesin berjalan tepat di jam 00.00 UTC (743 dengan skor yang sama persis). Sinyal stage uji harian yang juga muncul di mesin berjalan jam 00.00 UTC: 🟩 908 dari 908, 🔻 424 dari 424 (uji harian menghitung stage dari seluruh riwayat; mesin berjalan & radar live dari 400 candle terakhir).
 
-## Uji portofolio di luar sampel (2023-01-01 s/d 2026-10-12)
+## Uji portofolio di luar sampel (2023-01-01 s/d 2026-10-14)
 
 Maks 5 posisi, modal dibagi rata, median dari 100 urutan acak (dalam kurung = terendah…tertinggi).
 
 | Sistem | Total | Per tahun | Maks turun | Sharpe | Transaksi | Menang | Rata-rata/transaksi |
 |---|---|---|---|---|---|---|---|
-| Hanya 07.00 WIB (sistem sekarang) | **-2.7%** (-3…-3) | 2023: +0% · 2024: +0% · 2025: +0% · 2026: -3% | -3.9% | -0.5 | 8 dari 8 | 75.0% | -1.66% |
-| 🟩 & 🔻 tiap jam | **-4.5%** (-4…-4) | 2023: +0% · 2024: +0% · 2025: +0% · 2026: -4% | -5.7% | -0.67 | 8 dari 8 | 62.5% | -2.85% |
-| Semua tiap jam (termasuk 🟢) | **+4.7%** (+5…+5) | 2023: +0% · 2024: +0% · 2025: +0% · 2026: +5% | -5.7% | 0.4 | 15 dari 17 | 66.7% | +1.58% |
+| Hanya 07.00 WIB (sistem sekarang) | **+156.8%** (+100…+232) | 2023: +26% · 2024: +42% · 2025: +18% · 2026: +20% | -20.2% | 0.95 | 463 dari 874 | 76.5% | +1.17% |
+| 🟩 & 🔻 tiap jam | **+36.1%** (+14…+60) | 2023: +12% · 2024: +27% · 2025: -24% · 2026: +19% | -38.0% | 0.33 | 540 dari 1067 | 73.5% | +0.43% |
+| Semua tiap jam (termasuk 🟢) | **+27.1%** (+6…+52) | 2023: +14% · 2024: +17% · 2025: -22% · 2026: +23% | -40.3% | 0.24 | 641 dari 1953 | 71.8% | +0.33% |
 | (acuan) angka uji harian yang sudah terbit — candle harian, tanpa jeda masuk | **+183.9%** (+120…+275) | 2023: +24% · 2024: +38% · 2025: +14% · 2026: +38% | -23.9% | 1.06 | 442 dari 843 | 76.1% | +1.32% |
-| (pembanding) hanya 07.00 WIB, masuk tanpa jeda 1 jam | **-4.5%** (-4…-4) | 2023: +0% · 2024: +0% · 2025: +0% · 2026: -4% | -5.8% | -0.66 | 8 dari 8 | 62.5% | -2.82% |
-| (pembanding) 🟩 & 🔻 tiap jam, masuk tanpa jeda 1 jam | **-3.5%** (-4…-4) | 2023: +0% · 2024: +0% · 2025: +0% · 2026: -4% | -5.7% | -0.7 | 8 dari 8 | 62.5% | -2.21% |
+| (pembanding) hanya 07.00 WIB, masuk tanpa jeda 1 jam | **+168.4%** (+94…+231) | 2023: +24% · 2024: +41% · 2025: +12% · 2026: +32% | -21.2% | 0.98 | 470 dari 874 | 76.5% | +1.19% |
+| (pembanding) 🟩 & 🔻 tiap jam, masuk tanpa jeda 1 jam | **+28.2%** (+4…+47) | 2023: +15% · 2024: +28% · 2025: -29% · 2026: +22% | -40.4% | 0.27 | 553 dari 1067 | 72.9% | +0.37% |
 
-Berpasangan (100 urutan acak yang sama): '🟩 & 🔻 tiap jam' lebih tinggi totalnya dari 'hanya 07.00 WIB' di 0 urutan, Sharpe lebih tinggi di 0, penurunan maksimum lebih kecil di 0; selisih total (median) -1.8 poin. 'Semua tiap jam': total lebih tinggi di 100, Sharpe di 100.
+Berpasangan (100 urutan acak yang sama): '🟩 & 🔻 tiap jam' lebih tinggi totalnya dari 'hanya 07.00 WIB' di 0 urutan, Sharpe lebih tinggi di 0, penurunan maksimum lebih kecil di 0; selisih total (median) -121.0 poin. 'Semua tiap jam': total lebih tinggi di 0, Sharpe di 0.
 
 ### Hasil per jenis sinyal
 
@@ -37,24 +37,24 @@ Isi sel: rata-rata bersih per transaksi · tingkat menang (jumlah sinyal).
 
 | Jenis | Di luar sampel: hanya 07.00 WIB | Di luar sampel: tiap jam | Seluruh data 2020–2026: hanya 07.00 WIB | Seluruh data: tiap jam |
 |---|---|---|---|---|
-| 🟢 Radar naik | - | +5.15% · menang 66.7% (9) | - | +5.15% · menang 66.7% (9) |
-| 🟩 Awal Stage 2 | -0.33% · menang 83.3% (6) | -1.91% · menang 66.7% (6) | -0.33% · menang 83.3% (6) | -1.91% · menang 66.7% (6) |
-| 🔻 Jual dulu (pantulan Stage 4) | -5.65% · menang 50.0% (2) | -5.69% · menang 50.0% (2) | -5.65% · menang 50.0% (2) | -5.69% · menang 50.0% (2) |
+| 🟢 Radar naik | +1.34% · menang 70.5% (234) | +0.85% · menang 67.9% (1120) | +1.61% · menang 72.9% (262) | +0.90% · menang 68.6% (1263) |
+| 🟩 Awal Stage 2 | +1.30% · menang 79.2% (424) | +0.59% · menang 75.3% (494) | +1.78% · menang 81.4% (442) | +0.74% · menang 75.7% (572) |
+| 🔻 Jual dulu (pantulan Stage 4) | +2.01% · menang 85.2% (216) | +0.48% · menang 77.8% (338) | +2.24% · menang 86.0% (235) | +0.68% · menang 78.2% (377) |
 
 (Untuk 🟢 radar kolom 'tiap jam' berasal dari sistem 'semua tiap jam'; di sistem yang diputuskan 🟢 tetap seperti sekarang.)
 
 ### Kapan sinyal 🟩 & 🔻 muncul bila dicek tiap jam (seluruh data)
 
-Tepat jam 07.00 WIB: 25.0% — sisanya tersebar di jam lain.
+Tepat jam 07.00 WIB: 12.2% — sisanya tersebar di jam lain.
 
 | Jam WIB | 00 | 01 | 02 | 03 | 04 | 05 | 06 | 07 | 08 | 09 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Sinyal | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 2 | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 |
+| Sinyal | 33 | 34 | 32 | 27 | 34 | 41 | 27 | 116 | 63 | 43 | 42 | 39 | 28 | 38 | 39 | 34 | 36 | 26 | 25 | 26 | 38 | 45 | 37 | 46 |
 
 | Jenis | Sinyal 07.00 WIB | Sudah tertangkap versi tiap jam (≤10 hari sebelumnya) | Lebih awal | Median lebih awal |
 |---|---|---|---|---|
-| 🟩 Awal Stage 2 | 6 | 6 | 5 | 20.0 jam |
-| 🔻 Jual dulu (pantulan Stage 4) | 2 | 2 | 1 | 77.0 jam |
+| 🟩 Awal Stage 2 | 442 | 442 | 390 | 17.0 jam |
+| 🔻 Jual dulu (pantulan Stage 4) | 235 | 235 | 171 | 28.0 jam |
 
 ## Catatan jujur
 
