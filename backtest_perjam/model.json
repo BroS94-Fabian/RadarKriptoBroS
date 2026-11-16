@@ -1,0 +1,32 @@
+{
+ "versi": 1,
+ "dibuat": "2026-11-16T03:00:37+00:00",
+ "dibuat_wib": "16 Nov 2026 10:00 WIB",
+ "pakai": "tidak",
+ "putusan": "di luar sampel 2023-01-01 s/d 2026-10-14: per jam saja -7.2% · maks turun -7.2% · Sharpe -0.57 · menang 61.6% · 86 transaksi — gabungan +158.7% · maks turun -23.9% · Sharpe 0.97 · menang 73.9% · 506 transaksi — harian +183.9% · maks turun -23.9% · Sharpe 1.06 · menang 76.1% · 442 transaksi",
+ "masuk": 1,
+ "beli": {
+  "rencana": "C",
+  "btc_jam": true,
+  "n": 313,
+  "sharpe": -0.26,
+  "total": -10.7,
+  "aktif": false,
+  "alasan": "hasil latih terbaik pun tidak untung"
+ },
+ "jual": {
+  "rencana": "D",
+  "btc_jam": true,
+  "n": 143,
+  "sharpe": -0.11,
+  "total": -3.8,
+  "aktif": false,
+  "alasan": "hasil latih terbaik pun tidak untung"
+ },
+ "rencana": {
+  "A": "TP1 +1% · SL −2,5% · maks 30 jam (skala penuh dari rencana harian)",
+  "B": "TP1 +2% · SL −5% · maks 3 hari",
+  "C": "TP1 +3% · SL −7,5% · maks 7 hari",
+  "D": "TP1 +5% · SL −12% · maks 30 hari (rencana harian, masuknya saja per jam)"
+ }
+}

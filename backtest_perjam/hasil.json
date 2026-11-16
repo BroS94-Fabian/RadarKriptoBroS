@@ -1,0 +1,1653 @@
+{
+ "versi": 1,
+ "dibuat": "2026-11-16T03:00:37+00:00",
+ "dibuat_wib": "16 Nov 2026 10:00 WIB",
+ "data": {
+  "dibuat": "2026-11-16T03:00:29+00:00",
+  "dibuat_wib": "16 Nov 2026 10:00 WIB",
+  "bagian": 6,
+  "koin": 12,
+  "gagal": [],
+  "candle_jam": 167706,
+  "analisa_gagal": 0,
+  "baris": 5355,
+  "mulai": "2025-03-01",
+  "dari": "2025-03-17T20:00",
+  "sampai": "2026-10-16T23:00",
+  "jam_mesin": 0.2,
+  "per_strategi": {
+   "acak_long": 1588,
+   "acak_short": 1588,
+   "awal_stage2": 895,
+   "radar_naik": 563,
+   "radar_turun": 403,
+   "pantul_fib": 318
+  }
+ },
+ "dari": "2025-03-17T20:00",
+ "sampai": "2026-10-16T23:00",
+ "masuk": 1,
+ "rencana": {
+  "A": "TP1 +1% · SL −2,5% · maks 30 jam (skala penuh dari rencana harian)",
+  "B": "TP1 +2% · SL −5% · maks 3 hari",
+  "C": "TP1 +3% · SL −7,5% · maks 7 hari",
+  "D": "TP1 +5% · SL −12% · maks 30 hari (rencana harian, masuknya saja per jam)"
+ },
+ "per_strategi": {
+  "radar_naik": {
+   "A": {
+    "jeda": {
+     "n": 188,
+     "bulan": 13,
+     "menang": 59.6,
+     "rata": -0.35,
+     "median": 0.09,
+     "t": -3.54
+    },
+    "tanpa_jeda": {
+     "n": 188,
+     "bulan": 13,
+     "menang": 59.6,
+     "rata": -0.53,
+     "median": 0.09,
+     "t": -5.54
+    },
+    "btc_jam": {
+     "n": 88,
+     "bulan": 11,
+     "menang": 53.4,
+     "rata": -0.51,
+     "median": 0.09,
+     "t": -3.66
+    },
+    "tanpa_gerbang": {
+     "n": 512,
+     "bulan": 20,
+     "menang": 59.6,
+     "rata": -0.41,
+     "median": 0.09,
+     "t": -5.44
+    },
+    "jam_rata": 8.6,
+    "per_tahun": {
+     "2025": {
+      "n": 71,
+      "bulan": 6,
+      "menang": 63.4,
+      "rata": -0.22,
+      "median": 0.09,
+      "t": -0.98
+     },
+     "2026": {
+      "n": 117,
+      "bulan": 7,
+      "menang": 57.3,
+      "rata": -0.43,
+      "median": 0.09,
+      "t": -5.25
+     }
+    }
+   },
+   "B": {
+    "jeda": {
+     "n": 188,
+     "bulan": 13,
+     "menang": 54.8,
+     "rata": -0.04,
+     "median": 0.59,
+     "t": -0.32
+    },
+    "tanpa_jeda": {
+     "n": 188,
+     "bulan": 13,
+     "menang": 52.7,
+     "rata": -0.13,
+     "median": 0.59,
+     "t": -0.92
+    },
+    "btc_jam": {
+     "n": 88,
+     "bulan": 11,
+     "menang": 45.5,
+     "rata": -0.41,
+     "median": -0.91,
+     "t": -2.26
+    },
+    "tanpa_gerbang": {
+     "n": 512,
+     "bulan": 20,
+     "menang": 51.0,
+     "rata": -0.31,
+     "median": 0.59,
+     "t": -3.05
+    },
+    "jam_rata": 16.6,
+    "per_tahun": {
+     "2025": {
+      "n": 71,
+      "bulan": 6,
+      "menang": 57.7,
+      "rata": 0.17,
+      "median": 0.59,
+      "t": 0.58
+     },
+     "2026": {
+      "n": 117,
+      "bulan": 7,
+      "menang": 53.0,
+      "rata": -0.17,
+      "median": 0.59,
+      "t": -2.0
+     }
+    }
+   },
+   "C": {
+    "jeda": {
+     "n": 188,
+     "bulan": 13,
+     "menang": 43.6,
+     "rata": -0.23,
+     "median": -0.99,
+     "t": -0.97
+    },
+    "tanpa_jeda": {
+     "n": 188,
+     "bulan": 13,
+     "menang": 45.7,
+     "rata": -0.1,
+     "median": -1.04,
+     "t": -0.46
+    },
+    "btc_jam": {
+     "n": 88,
+     "bulan": 11,
+     "menang": 35.2,
+     "rata": -0.64,
+     "median": -1.21,
+     "t": -3.41
+    },
+    "tanpa_gerbang": {
+     "n": 512,
+     "bulan": 20,
+     "menang": 42.0,
+     "rata": -0.41,
+     "median": -1.2,
+     "t": -2.42
+    },
+    "jam_rata": 25.3,
+    "per_tahun": {
+     "2025": {
+      "n": 71,
+      "bulan": 6,
+      "menang": 46.5,
+      "rata": -0.01,
+      "median": -0.86,
+      "t": -0.01
+     },
+     "2026": {
+      "n": 117,
+      "bulan": 7,
+      "menang": 41.9,
+      "rata": -0.36,
+      "median": -1.05,
+      "t": -2.09
+     }
+    }
+   },
+   "D": {
+    "jeda": {
+     "n": 188,
+     "bulan": 13,
+     "menang": 33.5,
+     "rata": -0.08,
+     "median": -1.58,
+     "t": -0.24
+    },
+    "tanpa_jeda": {
+     "n": 188,
+     "bulan": 13,
+     "menang": 34.0,
+     "rata": 0.02,
+     "median": -1.57,
+     "t": 0.05
+    },
+    "btc_jam": {
+     "n": 88,
+     "bulan": 11,
+     "menang": 26.1,
+     "rata": -0.63,
+     "median": -1.7,
+     "t": -2.44
+    },
+    "tanpa_gerbang": {
+     "n": 512,
+     "bulan": 20,
+     "menang": 30.3,
+     "rata": -0.46,
+     "median": -1.69,
+     "t": -1.77
+    },
+    "jam_rata": 38.4,
+    "per_tahun": {
+     "2025": {
+      "n": 71,
+      "bulan": 6,
+      "menang": 39.4,
+      "rata": 0.41,
+      "median": -1.15,
+      "t": 0.61
+     },
+     "2026": {
+      "n": 117,
+      "bulan": 7,
+      "menang": 29.9,
+      "rata": -0.38,
+      "median": -1.64,
+      "t": -1.26
+     }
+    }
+   }
+  },
+  "awal_stage2": {
+   "A": {
+    "jeda": {
+     "n": 350,
+     "bulan": 13,
+     "menang": 71.4,
+     "rata": -0.36,
+     "median": 0.09,
+     "t": -2.61
+    },
+    "tanpa_jeda": {
+     "n": 350,
+     "bulan": 13,
+     "menang": 69.1,
+     "rata": -0.45,
+     "median": 0.09,
+     "t": -4.54
+    },
+    "btc_jam": {
+     "n": 225,
+     "bulan": 13,
+     "menang": 72.0,
+     "rata": -0.34,
+     "median": 0.09,
+     "t": -2.18
+    },
+    "tanpa_gerbang": {
+     "n": 817,
+     "bulan": 20,
+     "menang": 70.3,
+     "rata": -0.41,
+     "median": 0.09,
+     "t": -6.02
+    },
+    "jam_rata": 6.8,
+    "per_tahun": {
+     "2025": {
+      "n": 164,
+      "bulan": 6,
+      "menang": 72.0,
+      "rata": -0.32,
+      "median": 0.09,
+      "t": -1.19
+     },
+     "2026": {
+      "n": 186,
+      "bulan": 7,
+      "menang": 71.0,
+      "rata": -0.39,
+      "median": 0.09,
+      "t": -3.19
+     }
+    }
+   },
+   "B": {
+    "jeda": {
+     "n": 350,
+     "bulan": 13,
+     "menang": 68.9,
+     "rata": -0.46,
+     "median": 0.59,
+     "t": -1.47
+    },
+    "tanpa_jeda": {
+     "n": 350,
+     "bulan": 13,
+     "menang": 69.7,
+     "rata": -0.38,
+     "median": 0.59,
+     "t": -1.43
+    },
+    "btc_jam": {
+     "n": 225,
+     "bulan": 13,
+     "menang": 69.3,
+     "rata": -0.37,
+     "median": 0.59,
+     "t": -1.15
+    },
+    "tanpa_gerbang": {
+     "n": 817,
+     "bulan": 20,
+     "menang": 68.1,
+     "rata": -0.56,
+     "median": 0.59,
+     "t": -3.51
+    },
+    "jam_rata": 21.2,
+    "per_tahun": {
+     "2025": {
+      "n": 164,
+      "bulan": 6,
+      "menang": 69.5,
+      "rata": -0.49,
+      "median": 0.59,
+      "t": -0.83
+     },
+     "2026": {
+      "n": 186,
+      "bulan": 7,
+      "menang": 68.3,
+      "rata": -0.44,
+      "median": 0.59,
+      "t": -1.28
+     }
+    }
+   },
+   "C": {
+    "jeda": {
+     "n": 350,
+     "bulan": 13,
+     "menang": 68.0,
+     "rata": -0.6,
+     "median": 1.08,
+     "t": -1.02
+    },
+    "tanpa_jeda": {
+     "n": 350,
+     "bulan": 13,
+     "menang": 68.0,
+     "rata": -0.58,
+     "median": 1.08,
+     "t": -1.18
+    },
+    "btc_jam": {
+     "n": 225,
+     "bulan": 13,
+     "menang": 70.2,
+     "rata": -0.24,
+     "median": 1.08,
+     "t": -0.41
+    },
+    "tanpa_gerbang": {
+     "n": 817,
+     "bulan": 20,
+     "menang": 66.5,
+     "rata": -0.75,
+     "median": 1.08,
+     "t": -2.2
+    },
+    "jam_rata": 44.8,
+    "per_tahun": {
+     "2025": {
+      "n": 164,
+      "bulan": 6,
+      "menang": 64.6,
+      "rata": -1.07,
+      "median": 1.08,
+      "t": -0.99
+     },
+     "2026": {
+      "n": 186,
+      "bulan": 7,
+      "menang": 71.0,
+      "rata": -0.19,
+      "median": 1.08,
+      "t": -0.3
+     }
+    }
+   },
+   "D": {
+    "jeda": {
+     "n": 350,
+     "bulan": 13,
+     "menang": 69.1,
+     "rata": -0.45,
+     "median": 2.08,
+     "t": -0.42
+    },
+    "tanpa_jeda": {
+     "n": 350,
+     "bulan": 13,
+     "menang": 70.0,
+     "rata": -0.37,
+     "median": 2.08,
+     "t": -0.34
+    },
+    "btc_jam": {
+     "n": 225,
+     "bulan": 13,
+     "menang": 71.6,
+     "rata": -0.04,
+     "median": 2.08,
+     "t": -0.04
+    },
+    "tanpa_gerbang": {
+     "n": 817,
+     "bulan": 20,
+     "menang": 66.1,
+     "rata": -1.13,
+     "median": 2.08,
+     "t": -1.56
+    },
+    "jam_rata": 115.5,
+    "per_tahun": {
+     "2025": {
+      "n": 164,
+      "bulan": 6,
+      "menang": 66.5,
+      "rata": -0.93,
+      "median": 2.08,
+      "t": -0.59
+     },
+     "2026": {
+      "n": 186,
+      "bulan": 7,
+      "menang": 71.5,
+      "rata": -0.02,
+      "median": 2.08,
+      "t": -0.01
+     }
+    }
+   }
+  },
+  "acak_long": {
+   "A": {
+    "jeda": {
+     "n": 524,
+     "bulan": 14,
+     "menang": 65.8,
+     "rata": -0.59,
+     "median": 0.09,
+     "t": -5.52
+    },
+    "tanpa_jeda": {
+     "n": 524,
+     "bulan": 14,
+     "menang": 68.9,
+     "rata": -0.5,
+     "median": 0.09,
+     "t": -4.73
+    },
+    "btc_jam": {
+     "n": 204,
+     "bulan": 13,
+     "menang": 65.7,
+     "rata": -0.6,
+     "median": 0.09,
+     "t": -2.26
+    },
+    "tanpa_gerbang": {
+     "n": 1445,
+     "bulan": 20,
+     "menang": 69.6,
+     "rata": -0.45,
+     "median": 0.09,
+     "t": -8.45
+    },
+    "jam_rata": 7.4,
+    "per_tahun": {
+     "2025": {
+      "n": 239,
+      "bulan": 7,
+      "menang": 60.7,
+      "rata": -0.75,
+      "median": 0.09,
+      "t": -3.79
+     },
+     "2026": {
+      "n": 285,
+      "bulan": 7,
+      "menang": 70.2,
+      "rata": -0.45,
+      "median": 0.09,
+      "t": -5.75
+     }
+    }
+   },
+   "B": {
+    "jeda": {
+     "n": 524,
+     "bulan": 14,
+     "menang": 65.3,
+     "rata": -0.74,
+     "median": 0.59,
+     "t": -2.94
+    },
+    "tanpa_jeda": {
+     "n": 524,
+     "bulan": 14,
+     "menang": 68.5,
+     "rata": -0.47,
+     "median": 0.59,
+     "t": -1.96
+    },
+    "btc_jam": {
+     "n": 204,
+     "bulan": 13,
+     "menang": 65.7,
+     "rata": -0.66,
+     "median": 0.59,
+     "t": -1.32
+    },
+    "tanpa_gerbang": {
+     "n": 1445,
+     "bulan": 20,
+     "menang": 66.4,
+     "rata": -0.64,
+     "median": 0.59,
+     "t": -4.45
+    },
+    "jam_rata": 24.8,
+    "per_tahun": {
+     "2025": {
+      "n": 239,
+      "bulan": 7,
+      "menang": 63.2,
+      "rata": -0.88,
+      "median": 0.59,
+      "t": -2.46
+     },
+     "2026": {
+      "n": 285,
+      "bulan": 7,
+      "menang": 67.0,
+      "rata": -0.63,
+      "median": 0.59,
+      "t": -1.71
+     }
+    }
+   },
+   "C": {
+    "jeda": {
+     "n": 524,
+     "bulan": 14,
+     "menang": 69.5,
+     "rata": -0.36,
+     "median": 1.08,
+     "t": -0.88
+    },
+    "tanpa_jeda": {
+     "n": 524,
+     "bulan": 14,
+     "menang": 71.8,
+     "rata": -0.19,
+     "median": 1.08,
+     "t": -0.49
+    },
+    "btc_jam": {
+     "n": 204,
+     "bulan": 13,
+     "menang": 69.6,
+     "rata": -0.6,
+     "median": 1.08,
+     "t": -0.85
+    },
+    "tanpa_gerbang": {
+     "n": 1445,
+     "bulan": 20,
+     "menang": 67.3,
+     "rata": -0.67,
+     "median": 1.08,
+     "t": -2.6
+    },
+    "jam_rata": 55.8,
+    "per_tahun": {
+     "2025": {
+      "n": 239,
+      "bulan": 7,
+      "menang": 72.4,
+      "rata": -0.32,
+      "median": 1.08,
+      "t": -0.46
+     },
+     "2026": {
+      "n": 285,
+      "bulan": 7,
+      "menang": 67.0,
+      "rata": -0.4,
+      "median": 1.08,
+      "t": -0.74
+     }
+    }
+   },
+   "D": {
+    "jeda": {
+     "n": 524,
+     "bulan": 14,
+     "menang": 71.0,
+     "rata": 0.07,
+     "median": 2.08,
+     "t": 0.07
+    },
+    "tanpa_jeda": {
+     "n": 524,
+     "bulan": 14,
+     "menang": 71.4,
+     "rata": 0.09,
+     "median": 2.08,
+     "t": 0.08
+    },
+    "btc_jam": {
+     "n": 204,
+     "bulan": 13,
+     "menang": 71.1,
+     "rata": -0.02,
+     "median": 2.08,
+     "t": -0.01
+    },
+    "tanpa_gerbang": {
+     "n": 1445,
+     "bulan": 20,
+     "menang": 65.7,
+     "rata": -1.04,
+     "median": 2.08,
+     "t": -1.5
+    },
+    "jam_rata": 130.0,
+    "per_tahun": {
+     "2025": {
+      "n": 239,
+      "bulan": 7,
+      "menang": 70.3,
+      "rata": -0.15,
+      "median": 2.08,
+      "t": -0.09
+     },
+     "2026": {
+      "n": 285,
+      "bulan": 7,
+      "menang": 71.6,
+      "rata": 0.26,
+      "median": 2.08,
+      "t": 0.17
+     }
+    }
+   }
+  },
+  "pantul_fib": {
+   "A": {
+    "jeda": {
+     "n": 207,
+     "bulan": 17,
+     "menang": 72.5,
+     "rata": -0.27,
+     "median": 0.08,
+     "t": -2.44
+    },
+    "tanpa_jeda": {
+     "n": 207,
+     "bulan": 17,
+     "menang": 72.9,
+     "rata": -0.22,
+     "median": 0.08,
+     "t": -1.38
+    },
+    "btc_jam": {
+     "n": 143,
+     "bulan": 16,
+     "menang": 74.1,
+     "rata": -0.23,
+     "median": 0.08,
+     "t": -1.69
+    },
+    "tanpa_gerbang": {
+     "n": 288,
+     "bulan": 20,
+     "menang": 73.3,
+     "rata": -0.23,
+     "median": 0.08,
+     "t": -1.93
+    },
+    "jam_rata": 9.8,
+    "per_tahun": {
+     "2025": {
+      "n": 93,
+      "bulan": 9,
+      "menang": 69.9,
+      "rata": -0.31,
+      "median": 0.08,
+      "t": -1.67
+     },
+     "2026": {
+      "n": 114,
+      "bulan": 8,
+      "menang": 74.6,
+      "rata": -0.24,
+      "median": 0.08,
+      "t": -1.75
+     }
+    }
+   },
+   "B": {
+    "jeda": {
+     "n": 207,
+     "bulan": 17,
+     "menang": 62.3,
+     "rata": -0.3,
+     "median": 0.56,
+     "t": -1.15
+    },
+    "tanpa_jeda": {
+     "n": 207,
+     "bulan": 17,
+     "menang": 63.8,
+     "rata": -0.26,
+     "median": 0.56,
+     "t": -1.01
+    },
+    "btc_jam": {
+     "n": 143,
+     "bulan": 16,
+     "menang": 65.0,
+     "rata": -0.24,
+     "median": 0.56,
+     "t": -0.82
+    },
+    "tanpa_gerbang": {
+     "n": 288,
+     "bulan": 20,
+     "menang": 63.2,
+     "rata": -0.25,
+     "median": 0.56,
+     "t": -1.13
+    },
+    "jam_rata": 21.9,
+    "per_tahun": {
+     "2025": {
+      "n": 93,
+      "bulan": 9,
+      "menang": 61.3,
+      "rata": -0.25,
+      "median": 0.57,
+      "t": -0.72
+     },
+     "2026": {
+      "n": 114,
+      "bulan": 8,
+      "menang": 63.2,
+      "rata": -0.33,
+      "median": 0.55,
+      "t": -0.84
+     }
+    }
+   },
+   "C": {
+    "jeda": {
+     "n": 207,
+     "bulan": 17,
+     "menang": 56.5,
+     "rata": -0.25,
+     "median": 1.04,
+     "t": -0.78
+    },
+    "tanpa_jeda": {
+     "n": 207,
+     "bulan": 17,
+     "menang": 55.1,
+     "rata": -0.31,
+     "median": 1.03,
+     "t": -1.13
+    },
+    "btc_jam": {
+     "n": 143,
+     "bulan": 16,
+     "menang": 60.1,
+     "rata": -0.1,
+     "median": 1.05,
+     "t": -0.27
+    },
+    "tanpa_gerbang": {
+     "n": 288,
+     "bulan": 20,
+     "menang": 55.6,
+     "rata": -0.3,
+     "median": 1.04,
+     "t": -0.89
+    },
+    "jam_rata": 31.9,
+    "per_tahun": {
+     "2025": {
+      "n": 93,
+      "bulan": 9,
+      "menang": 57.0,
+      "rata": -0.32,
+      "median": 1.05,
+      "t": -0.68
+     },
+     "2026": {
+      "n": 114,
+      "bulan": 8,
+      "menang": 56.1,
+      "rata": -0.2,
+      "median": 1.04,
+      "t": -0.43
+     }
+    }
+   },
+   "D": {
+    "jeda": {
+     "n": 207,
+     "bulan": 17,
+     "menang": 43.5,
+     "rata": -0.15,
+     "median": -1.78,
+     "t": -0.38
+    },
+    "tanpa_jeda": {
+     "n": 207,
+     "bulan": 17,
+     "menang": 44.9,
+     "rata": -0.07,
+     "median": -2.13,
+     "t": -0.2
+    },
+    "btc_jam": {
+     "n": 143,
+     "bulan": 16,
+     "menang": 46.2,
+     "rata": 0.0,
+     "median": -1.64,
+     "t": 0.01
+    },
+    "tanpa_gerbang": {
+     "n": 288,
+     "bulan": 20,
+     "menang": 41.7,
+     "rata": -0.32,
+     "median": -2.23,
+     "t": -0.71
+    },
+    "jam_rata": 52.3,
+    "per_tahun": {
+     "2025": {
+      "n": 93,
+      "bulan": 9,
+      "menang": 41.9,
+      "rata": -0.55,
+      "median": -2.2,
+      "t": -0.9
+     },
+     "2026": {
+      "n": 114,
+      "bulan": 8,
+      "menang": 44.7,
+      "rata": 0.18,
+      "median": -1.75,
+      "t": 0.35
+     }
+    }
+   }
+  },
+  "acak_short": {
+   "A": {
+    "jeda": {
+     "n": 830,
+     "bulan": 16,
+     "menang": 68.7,
+     "rata": -0.5,
+     "median": 0.08,
+     "t": -4.8
+    },
+    "tanpa_jeda": {
+     "n": 830,
+     "bulan": 16,
+     "menang": 74.5,
+     "rata": -0.28,
+     "median": 0.09,
+     "t": -3.74
+    },
+    "btc_jam": {
+     "n": 464,
+     "bulan": 16,
+     "menang": 70.3,
+     "rata": -0.44,
+     "median": 0.09,
+     "t": -3.43
+    },
+    "tanpa_gerbang": {
+     "n": 1445,
+     "bulan": 20,
+     "menang": 70.2,
+     "rata": -0.42,
+     "median": 0.09,
+     "t": -6.19
+    },
+    "jam_rata": 7.6,
+    "per_tahun": {
+     "2025": {
+      "n": 389,
+      "bulan": 8,
+      "menang": 69.7,
+      "rata": -0.49,
+      "median": 0.09,
+      "t": -2.33
+     },
+     "2026": {
+      "n": 441,
+      "bulan": 8,
+      "menang": 67.8,
+      "rata": -0.51,
+      "median": 0.08,
+      "t": -6.02
+     }
+    }
+   },
+   "B": {
+    "jeda": {
+     "n": 830,
+     "bulan": 16,
+     "menang": 71.4,
+     "rata": -0.35,
+     "median": 0.57,
+     "t": -1.47
+    },
+    "tanpa_jeda": {
+     "n": 830,
+     "bulan": 16,
+     "menang": 70.5,
+     "rata": -0.41,
+     "median": 0.57,
+     "t": -1.82
+    },
+    "btc_jam": {
+     "n": 464,
+     "bulan": 16,
+     "menang": 75.6,
+     "rata": -0.08,
+     "median": 0.58,
+     "t": -0.33
+    },
+    "tanpa_gerbang": {
+     "n": 1445,
+     "bulan": 20,
+     "menang": 72.7,
+     "rata": -0.26,
+     "median": 0.58,
+     "t": -1.91
+    },
+    "jam_rata": 23.4,
+    "per_tahun": {
+     "2025": {
+      "n": 389,
+      "bulan": 8,
+      "menang": 69.9,
+      "rata": -0.49,
+      "median": 0.57,
+      "t": -1.11
+     },
+     "2026": {
+      "n": 441,
+      "bulan": 8,
+      "menang": 72.8,
+      "rata": -0.23,
+      "median": 0.57,
+      "t": -0.88
+     }
+    }
+   },
+   "C": {
+    "jeda": {
+     "n": 830,
+     "bulan": 16,
+     "menang": 73.7,
+     "rata": -0.09,
+     "median": 1.06,
+     "t": -0.32
+    },
+    "tanpa_jeda": {
+     "n": 830,
+     "bulan": 16,
+     "menang": 74.6,
+     "rata": -0.0,
+     "median": 1.06,
+     "t": -0.01
+    },
+    "btc_jam": {
+     "n": 464,
+     "bulan": 16,
+     "menang": 76.5,
+     "rata": 0.14,
+     "median": 1.07,
+     "t": 0.36
+    },
+    "tanpa_gerbang": {
+     "n": 1445,
+     "bulan": 20,
+     "menang": 72.7,
+     "rata": -0.24,
+     "median": 1.06,
+     "t": -1.2
+    },
+    "jam_rata": 49.9,
+    "per_tahun": {
+     "2025": {
+      "n": 389,
+      "bulan": 8,
+      "menang": 74.8,
+      "rata": -0.01,
+      "median": 1.07,
+      "t": -0.02
+     },
+     "2026": {
+      "n": 441,
+      "bulan": 8,
+      "menang": 72.8,
+      "rata": -0.15,
+      "median": 1.05,
+      "t": -0.59
+     }
+    }
+   },
+   "D": {
+    "jeda": {
+     "n": 830,
+     "bulan": 16,
+     "menang": 74.5,
+     "rata": 0.26,
+     "median": 2.02,
+     "t": 0.55
+    },
+    "tanpa_jeda": {
+     "n": 830,
+     "bulan": 16,
+     "menang": 75.2,
+     "rata": 0.39,
+     "median": 2.03,
+     "t": 0.83
+    },
+    "btc_jam": {
+     "n": 464,
+     "bulan": 16,
+     "menang": 73.9,
+     "rata": -0.04,
+     "median": 2.02,
+     "t": -0.05
+    },
+    "tanpa_gerbang": {
+     "n": 1445,
+     "bulan": 20,
+     "menang": 73.4,
+     "rata": -0.09,
+     "median": 2.01,
+     "t": -0.19
+    },
+    "jam_rata": 138.7,
+    "per_tahun": {
+     "2025": {
+      "n": 389,
+      "bulan": 8,
+      "menang": 77.1,
+      "rata": 0.86,
+      "median": 2.05,
+      "t": 1.67
+     },
+     "2026": {
+      "n": 441,
+      "bulan": 8,
+      "menang": 72.1,
+      "rata": -0.27,
+      "median": 1.99,
+      "t": -0.38
+     }
+    }
+   }
+  }
+ },
+ "jumlah": {
+  "radar_naik": {
+   "semua": 512,
+   "lolos": 188,
+   "per_hari_semua": 0.89,
+   "per_hari_lolos": 0.33
+  },
+  "awal_stage2": {
+   "semua": 817,
+   "lolos": 350,
+   "per_hari_semua": 1.41,
+   "per_hari_lolos": 0.61
+  },
+  "acak_long": {
+   "semua": 1445,
+   "lolos": 524,
+   "per_hari_semua": 2.5,
+   "per_hari_lolos": 0.91
+  },
+  "pantul_fib": {
+   "semua": 288,
+   "lolos": 207,
+   "per_hari_semua": 0.5,
+   "per_hari_lolos": 0.36
+  },
+  "acak_short": {
+   "semua": 1445,
+   "lolos": 830,
+   "per_hari_semua": 2.5,
+   "per_hari_lolos": 1.44
+  }
+ },
+ "walk": {
+  "2023": {
+   "long": {
+    "batas": 6,
+    "aktif": false,
+    "alasan": "sinyal latih kurang",
+    "kandidat": []
+   },
+   "short": {
+    "batas": 6,
+    "aktif": false,
+    "alasan": "sinyal latih kurang",
+    "kandidat": []
+   }
+  },
+  "2024": {
+   "long": {
+    "batas": 4,
+    "aktif": false,
+    "alasan": "sinyal latih kurang",
+    "kandidat": []
+   },
+   "short": {
+    "batas": 6,
+    "aktif": false,
+    "alasan": "sinyal latih kurang",
+    "kandidat": []
+   }
+  },
+  "2025": {
+   "long": {
+    "batas": 3,
+    "aktif": false,
+    "alasan": "sinyal latih kurang",
+    "kandidat": []
+   },
+   "short": {
+    "batas": 6,
+    "aktif": false,
+    "alasan": "sinyal latih kurang",
+    "kandidat": []
+   }
+  },
+  "2026": {
+   "long": {
+    "batas": 4,
+    "rencana": "D",
+    "btc_jam": false,
+    "n": 235,
+    "sharpe": -0.01,
+    "total": -2.6,
+    "aktif": false,
+    "alasan": "hasil latih terbaik pun tidak untung",
+    "kandidat": [
+     {
+      "rencana": "A",
+      "btc_jam": false,
+      "n": 235,
+      "sharpe": -0.48,
+      "total": -10.8
+     },
+     {
+      "rencana": "B",
+      "btc_jam": false,
+      "n": 235,
+      "sharpe": -0.26,
+      "total": -9.0
+     },
+     {
+      "rencana": "C",
+      "btc_jam": false,
+      "n": 235,
+      "sharpe": -0.14,
+      "total": -7.3
+     },
+     {
+      "rencana": "D",
+      "btc_jam": false,
+      "n": 235,
+      "sharpe": -0.01,
+      "total": -2.6
+     },
+     {
+      "rencana": "A",
+      "btc_jam": true,
+      "n": 147,
+      "sharpe": -0.53,
+      "total": -7.6
+     },
+     {
+      "rencana": "B",
+      "btc_jam": true,
+      "n": 147,
+      "sharpe": -0.32,
+      "total": -7.9
+     },
+     {
+      "rencana": "C",
+      "btc_jam": true,
+      "n": 147,
+      "sharpe": -0.24,
+      "total": -9.3
+     },
+     {
+      "rencana": "D",
+      "btc_jam": true,
+      "n": 147,
+      "sharpe": -0.18,
+      "total": -7.9
+     }
+    ]
+   },
+   "short": {
+    "batas": 6,
+    "rencana": "B",
+    "btc_jam": true,
+    "n": 57,
+    "sharpe": 0.02,
+    "total": 0.1,
+    "aktif": true,
+    "kandidat": [
+     {
+      "rencana": "A",
+      "btc_jam": false,
+      "n": 93,
+      "sharpe": -0.57,
+      "total": -5.7
+     },
+     {
+      "rencana": "B",
+      "btc_jam": false,
+      "n": 93,
+      "sharpe": -0.2,
+      "total": -3.0
+     },
+     {
+      "rencana": "C",
+      "btc_jam": false,
+      "n": 93,
+      "sharpe": -0.28,
+      "total": -5.0
+     },
+     {
+      "rencana": "D",
+      "btc_jam": false,
+      "n": 93,
+      "sharpe": -0.37,
+      "total": -7.8
+     },
+     {
+      "rencana": "A",
+      "btc_jam": true,
+      "n": 57,
+      "sharpe": -0.32,
+      "total": -2.2
+     },
+     {
+      "rencana": "B",
+      "btc_jam": true,
+      "n": 57,
+      "sharpe": 0.02,
+      "total": 0.1
+     },
+     {
+      "rencana": "C",
+      "btc_jam": true,
+      "n": 57,
+      "sharpe": -0.08,
+      "total": -1.1
+     },
+     {
+      "rencana": "D",
+      "btc_jam": true,
+      "n": 57,
+      "sharpe": -0.23,
+      "total": -3.6
+     }
+    ],
+    "uji": {
+     "pantul_fib": {
+      "n": 86,
+      "bulan": 8,
+      "menang": 61.6,
+      "rata": -0.42,
+      "median": 0.55,
+      "t": -1.03
+     }
+    }
+   }
+  }
+ },
+ "cek_simulator": {
+  "model_pasar": {
+   "total": 183.9,
+   "sharpe": 1.04,
+   "maxdd": -23.9
+  },
+  "di_sini": {
+   "total": 183.9,
+   "sharpe": 1.04,
+   "maxdd": -23.9
+  },
+  "cocok": true
+ },
+ "oos": {
+  "dari": "2023-01-01",
+  "sampai": "2026-10-14",
+  "portofolio": {
+   "Harian (sistem sekarang)": {
+    "total": 183.9,
+    "total_min": 120.3,
+    "total_maks": 275.0,
+    "maxdd": -23.9,
+    "sharpe": 1.06,
+    "per_tahun": {
+     "2023": 24.4,
+     "2024": 37.8,
+     "2025": 14.4,
+     "2026": 38.3
+    },
+    "transaksi": 442,
+    "menang": 76.1,
+    "rata": 1.32,
+    "kandidat": 843
+   },
+   "Per jam saja": {
+    "total": -7.2,
+    "total_min": -7.2,
+    "total_maks": -7.2,
+    "maxdd": -7.2,
+    "sharpe": -0.57,
+    "per_tahun": {
+     "2023": 0.0,
+     "2024": 0.0,
+     "2025": 0.0,
+     "2026": -7.2
+    },
+    "transaksi": 86,
+    "menang": 61.6,
+    "rata": -0.42,
+    "kandidat": 86
+   },
+   "Harian + per jam (5 slot bersama)": {
+    "total": 158.7,
+    "total_min": 99.2,
+    "total_maks": 242.9,
+    "maxdd": -23.9,
+    "sharpe": 0.97,
+    "per_tahun": {
+     "2023": 24.4,
+     "2024": 37.8,
+     "2025": 14.4,
+     "2026": 27.9
+    },
+    "transaksi": 506,
+    "menang": 73.9,
+    "rata": 1.07,
+    "kandidat": 929
+   }
+  },
+  "per_sinyal": {
+   "Harian (sistem sekarang)": {
+    "n": 843,
+    "bulan": 46,
+    "menang": 77.8,
+    "rata": 1.66,
+    "median": 2.08,
+    "t": 2.18
+   },
+   "Per jam saja": {
+    "n": 86,
+    "bulan": 8,
+    "menang": 61.6,
+    "rata": -0.42,
+    "median": 0.55,
+    "t": -1.03
+   }
+  },
+  "berpasangan": {
+   "per_jam_vs_harian": {
+    "benih": 100,
+    "total_lebih_baik": 0,
+    "sharpe_lebih_baik": 0,
+    "maxdd_lebih_baik": 100
+   },
+   "gabungan_vs_harian": {
+    "benih": 100,
+    "total_lebih_baik": 1,
+    "sharpe_lebih_baik": 0,
+    "maxdd_lebih_baik": 0
+   }
+  },
+  "tanpa_jeda": {
+   "total": -11.0,
+   "total_min": -11.0,
+   "total_maks": -11.0,
+   "maxdd": -11.5,
+   "sharpe": -0.64,
+   "per_tahun": {
+    "2023": 0.0,
+    "2024": 0.0,
+    "2025": 0.0,
+    "2026": -11.0
+   },
+   "transaksi": 86,
+   "menang": 59.3,
+   "rata": -0.66,
+   "kandidat": 86
+  }
+ },
+ "tetap": {
+  "A": {
+   "total": -37.5,
+   "total_min": -38.1,
+   "total_maks": -37.1,
+   "maxdd": -38.5,
+   "sharpe": -1.47,
+   "per_tahun": {
+    "2023": 0.0,
+    "2024": 0.0,
+    "2025": -16.9,
+    "2026": -24.6
+   },
+   "transaksi": 664,
+   "menang": 68.5,
+   "rata": -0.35,
+   "kandidat": 689,
+   "per_sinyal": {
+    "n": 689,
+    "bulan": 20,
+    "menang": 67.9,
+    "rata": -0.36,
+    "median": 0.09,
+    "t": -4.25
+   },
+   "beli": {
+    "n": 482,
+    "bulan": 13,
+    "menang": 66.0,
+    "rata": -0.4,
+    "median": 0.09,
+    "t": -3.45
+   },
+   "jual": {
+    "n": 207,
+    "bulan": 17,
+    "menang": 72.5,
+    "rata": -0.27,
+    "median": 0.08,
+    "t": -2.44
+   }
+  },
+  "B": {
+   "total": -33.5,
+   "total_min": -34.6,
+   "total_maks": -32.4,
+   "maxdd": -36.2,
+   "sharpe": -0.95,
+   "per_tahun": {
+    "2023": 0.0,
+    "2024": 0.0,
+    "2025": -14.5,
+    "2026": -22.2
+   },
+   "transaksi": 583,
+   "menang": 63.5,
+   "rata": -0.33,
+   "kandidat": 689,
+   "per_sinyal": {
+    "n": 689,
+    "bulan": 20,
+    "menang": 62.6,
+    "rata": -0.36,
+    "median": 0.59,
+    "t": -1.89
+   },
+   "beli": {
+    "n": 482,
+    "bulan": 13,
+    "menang": 62.7,
+    "rata": -0.38,
+    "median": 0.59,
+    "t": -1.64
+   },
+   "jual": {
+    "n": 207,
+    "bulan": 17,
+    "menang": 62.3,
+    "rata": -0.3,
+    "median": 0.56,
+    "t": -1.15
+   }
+  },
+  "C": {
+   "total": -22.8,
+   "total_min": -25.8,
+   "total_maks": -20.4,
+   "maxdd": -26.9,
+   "sharpe": -0.51,
+   "per_tahun": {
+    "2023": 0.0,
+    "2024": 0.0,
+    "2025": -14.1,
+    "2026": -10.2
+   },
+   "transaksi": 491,
+   "menang": 60.2,
+   "rata": -0.23,
+   "kandidat": 689,
+   "per_sinyal": {
+    "n": 689,
+    "bulan": 20,
+    "menang": 57.5,
+    "rata": -0.47,
+    "median": 1.08,
+    "t": -1.39
+   },
+   "beli": {
+    "n": 482,
+    "bulan": 13,
+    "menang": 57.9,
+    "rata": -0.57,
+    "median": 1.08,
+    "t": -1.2
+   },
+   "jual": {
+    "n": 207,
+    "bulan": 17,
+    "menang": 56.5,
+    "rata": -0.25,
+    "median": 1.04,
+    "t": -0.78
+   }
+  },
+  "D": {
+   "total": -17.0,
+   "total_min": -19.3,
+   "total_maks": -14.5,
+   "maxdd": -36.3,
+   "sharpe": -0.18,
+   "per_tahun": {
+    "2023": 0.0,
+    "2024": 0.0,
+    "2025": -10.7,
+    "2026": -7.1
+   },
+   "transaksi": 375,
+   "menang": 52.0,
+   "rata": -0.16,
+   "kandidat": 689,
+   "per_sinyal": {
+    "n": 689,
+    "bulan": 20,
+    "menang": 52.5,
+    "rata": -0.21,
+    "median": 2.04,
+    "t": -0.33
+   },
+   "beli": {
+    "n": 482,
+    "bulan": 13,
+    "menang": 56.4,
+    "rata": -0.24,
+    "median": 2.08,
+    "t": -0.26
+   },
+   "jual": {
+    "n": 207,
+    "bulan": 17,
+    "menang": 43.5,
+    "rata": -0.15,
+    "median": -1.78,
+    "t": -0.38
+   }
+  }
+ },
+ "putusan": {
+  "pakai": "tidak",
+  "aktif": true,
+  "alasan": "di luar sampel 2023-01-01 s/d 2026-10-14: per jam saja -7.2% · maks turun -7.2% · Sharpe -0.57 · menang 61.6% · 86 transaksi — gabungan +158.7% · maks turun -23.9% · Sharpe 0.97 · menang 73.9% · 506 transaksi — harian +183.9% · maks turun -23.9% · Sharpe 1.06 · menang 76.1% · 442 transaksi"
+ },
+ "model": {
+  "versi": 1,
+  "dibuat": "2026-11-16T03:00:37+00:00",
+  "dibuat_wib": "16 Nov 2026 10:00 WIB",
+  "pakai": "tidak",
+  "putusan": "di luar sampel 2023-01-01 s/d 2026-10-14: per jam saja -7.2% · maks turun -7.2% · Sharpe -0.57 · menang 61.6% · 86 transaksi — gabungan +158.7% · maks turun -23.9% · Sharpe 0.97 · menang 73.9% · 506 transaksi — harian +183.9% · maks turun -23.9% · Sharpe 1.06 · menang 76.1% · 442 transaksi",
+  "masuk": 1,
+  "beli": {
+   "rencana": "C",
+   "btc_jam": true,
+   "n": 313,
+   "sharpe": -0.26,
+   "total": -10.7,
+   "aktif": false,
+   "alasan": "hasil latih terbaik pun tidak untung"
+  },
+  "jual": {
+   "rencana": "D",
+   "btc_jam": true,
+   "n": 143,
+   "sharpe": -0.11,
+   "total": -3.8,
+   "aktif": false,
+   "alasan": "hasil latih terbaik pun tidak untung"
+  },
+  "rencana": {
+   "A": "TP1 +1% · SL −2,5% · maks 30 jam (skala penuh dari rencana harian)",
+   "B": "TP1 +2% · SL −5% · maks 3 hari",
+   "C": "TP1 +3% · SL −7,5% · maks 7 hari",
+   "D": "TP1 +5% · SL −12% · maks 30 hari (rencana harian, masuknya saja per jam)"
+  }
+ }
+}
