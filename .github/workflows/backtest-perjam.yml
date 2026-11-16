@@ -1,0 +1,116 @@
+name: Uji Sinyal Per Jam
+
+on:
+  workflow_dispatch:
+    inputs:
+      tahap:
+        description: "semua = hitung ulang sinyal per jam (berat: 6 mesin × ±30 menit) · model = uji dari sinyal tersimpan"
+        default: "semua"
+      mulai:
+        description: "Data mulai (YYYY-MM-DD)"
+        default: "2020-01-01"
+      koin:
+        description: "Batasi jumlah koin (0 = semua) — untuk uji cepat"
+        default: "0"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radar-uji-perjam
+  cancel-in-progress: false
+
+env:
+  TAHAP: ${{ github.event.inputs.tahap || 'semua' }}
+  MULAI: ${{ github.event.inputs.mulai || '2020-01-01' }}
+  KOIN: ${{ github.event.inputs.koin || '0' }}
+
+jobs:
+  # ±5 juta analisa (tiap koin × tiap jam) → dibagi 6 mesin; tiap mesin menyimpan bagiannya di cabang data-perjam-b<N>
+  data:
+    if: github.event.inputs.tahap != 'model'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        bagian: [0, 1, 2, 3, 4, 5]
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Pasang library
+        run: pip install -r requirements.txt
+
+      - name: Hitung sinyal per jam (bagian ${{ matrix.bagian }})
+        run: python backtest_perjam.py data --mulai "$MULAI" --koin "$KOIN" --bagian ${{ matrix.bagian }} --dari 6
+
+      - name: Simpan bagian ke cabang data
+        run: |
+          i=${{ matrix.bagian }}
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          b1=$(git hash-object -w backtest_perjam/bagian_$i.csv.gz)
+          b2=$(git hash-object -w backtest_perjam/bagian_$i.json)
+          t1=$(printf '100644 blob %s\tbagian_%s.csv.gz\n100644 blob %s\tbagian_%s.json\n' "$b1" "$i" "$b2" "$i" | git mktree)
+          t2=$(printf '040000 tree %s\tbacktest_perjam\n' "$t1" | git mktree)
+          c=$(git commit-tree "$t2" -m "sinyal per jam bagian $i $(date -u +%F)")
+          git push -f origin "$c:refs/heads/data-perjam-b$i"
+
+  model:
+    needs: data
+    if: always() && (needs.data.result == 'success' || needs.data.result == 'skipped')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Pasang library
+        run: pip install -r requirements.txt
+
+      - name: Gabungkan semua bagian
+        if: env.TAHAP != 'model'
+        run: |
+          mkdir -p backtest_perjam
+          for i in 0 1 2 3 4 5; do
+            git fetch --depth 1 origin "data-perjam-b$i"
+            git show "FETCH_HEAD:backtest_perjam/bagian_$i.csv.gz" > "backtest_perjam/bagian_$i.csv.gz"
+            git show "FETCH_HEAD:backtest_perjam/bagian_$i.json" > "backtest_perjam/bagian_$i.json"
+          done
+          python backtest_perjam.py gabung
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          blob=$(git hash-object -w backtest_perjam/sinyal.csv.gz)
+          t1=$(printf '100644 blob %s\tsinyal.csv.gz\n' "$blob" | git mktree)
+          t2=$(printf '040000 tree %s\tbacktest_perjam\n' "$t1" | git mktree)
+          c=$(git commit-tree "$t2" -m "sinyal per jam $(date -u +%F)")
+          git push -f origin "$c:refs/heads/data-perjam"
+          for i in 0 1 2 3 4 5; do git push origin --delete "data-perjam-b$i" || true; done
+
+      - name: Ambil sinyal tersimpan
+        if: env.TAHAP == 'model'
+        run: |
+          git fetch --depth 1 origin data-perjam
+          mkdir -p backtest_perjam
+          git show FETCH_HEAD:backtest_perjam/sinyal.csv.gz > backtest_perjam/sinyal.csv.gz
+
+      - name: Uji walk-forward & portofolio
+        run: python backtest_perjam.py model
+
+      - name: Simpan hasil
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtest_perjam/ || exit 0
+          git commit -m "uji sinyal per jam: perbarui hasil" || exit 0
+          for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done

@@ -3,3 +3,5 @@ __pycache__/
 out/
 site/
 backtest_orderflow/fitur.csv.gz
+backtest_perjam/sinyal.csv.gz
+backtest_perjam/bagian_*
