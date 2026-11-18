@@ -13,25 +13,25 @@
   "model_aktif": true,
   "nama": "SANGAT LEMAH",
   "nilai": {
-   "alt_r30": -26.7,
-   "alt_rs": -5.8,
+   "alt_r30": -26.1,
+   "alt_rs": -5.2,
    "btc_r30": -20.9,
    "d_lebar50": 0.0,
    "lebar50": 3.6,
    "n_koin": 112.0,
    "s2": 2.8,
-   "s4": 51.9
+   "s4": 50.9
   },
   "skor": -5,
-  "ts": "2026-11-18T17:10:47+00:00"
+  "ts": "2026-11-18T18:58:27+00:00"
  },
  "last_summary": "2026-11-18",
  "pasar": {
-  "harga": 62706.0,
+  "harga": 63180.4,
   "ma": 79080.9336,
   "rezim": "turun",
   "teks": "BTC di bawah MA50 & MA50 menurun",
-  "ts": "2026-11-18T17:10:47+00:00"
+  "ts": "2026-11-18T18:58:27+00:00"
  },
  "ranking": {
   "data": [
@@ -2182,7 +2182,7 @@
  "short_kandidat": {
   "kandidat": [],
   "sinyal": [],
-  "ts": "2026-11-18T17:10:47+00:00"
+  "ts": "2026-11-18T18:58:27+00:00"
  },
  "siklus": {
   "btc": {
@@ -2200,17 +2200,16 @@
    "OKB",
    "ONDO",
    "SKY",
-   "MORPHO",
-   "CVX"
+   "MORPHO"
   ],
   "jumlah": {
-   "1": 26,
+   "1": 27,
    "2": 3,
    "3": 23,
-   "4": 56
+   "4": 55
   },
   "persen_naik": 3,
-  "persen_turun": 52,
+  "persen_turun": 51,
   "siap_tembus": [
    "ZRO",
    "SENT",
@@ -2219,7 +2218,7 @@
   "tembus_dasar": [
    "PEPE"
   ],
-  "ts": "2026-11-18T17:10:47+00:00"
+  "ts": "2026-11-18T18:58:27+00:00"
  },
  "stage2": {}
 }
