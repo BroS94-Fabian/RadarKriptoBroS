@@ -98,6 +98,15 @@ Hasil: `model_pasar/LAPORAN.md`, `model_pasar/model.json` dan tab 🌡️ Model 
 Radar membaca `model.json`; dengan `model_pasar: auto` (bawaan) batas skor hanya dipakai bila model baru menang di uji itu.
 Jalankan ulang: **Actions → Model Kondisi Pasar → Run workflow** (otomatis tiap tanggal 1).
 
+## Uji "harian berjalan" (sinyal harian dicek tiap jam)
+`backtest_berjalan.py` menguji apakah 🟩 awal Stage 2 dan 🔻 jual dulu sebaiknya dicek tiap jam, bukan hanya saat candle harian
+tutup (07.00 WIB): mesin radar harian dijalankan apa adanya di setiap jam pada candle 24 jam berjalan (`berjalan.py`; tepat jam
+07.00 WIB hasilnya identik dengan radar harian). Kedua sistem memakai aturan yang sama (gerbang model pasar, jeda 10 hari, masuk
+1 jam setelah sinyal). Aturan lulus ditulis sebelum data ditarik.
+Hasil 16 Nov 2026: **tidak dipasang** — dicek tiap jam +36% (penurunan terdalam −38%) vs hanya 07.00 WIB +157% (−20%) di
+2023–Okt 2026. Rinciannya di `backtest_berjalan/LAPORAN.md` dan tab 🌡️ Model pasar.
+Jalankan ulang: **Actions → Uji Harian Berjalan → Run workflow** (6 mesin × ±40 menit; catatan mentah di cabang `data-berjalan`).
+
 ## Uji sinyal per jam
 `backtest_perjam.py` menguji apakah sinyal layak dihitung dari candle 1 jam: mesin radar yang sama (`perjam.py`) dijalankan di
 setiap jam sejak 2020 pada 400 candle 1 jam terakhir (candle diperbesar √24× supaya ambang persennya sepadan), masuk dengan jeda

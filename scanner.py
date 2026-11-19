@@ -1015,6 +1015,10 @@ def tulis_dashboard(results, charts: dict[str, bytes], meta: dict) -> None:
     if os.path.exists(pjj):
         shutil.copy(pjj, os.path.join(SITE_DIR, "perjam.json"))
         data["ada_perjam"] = True
+    brj = os.path.join(ROOT, "backtest_berjalan", "hasil.json")
+    if os.path.exists(brj):
+        shutil.copy(brj, os.path.join(SITE_DIR, "berjalan.json"))
+        data["ada_berjalan"] = True
     s4 = os.path.join(ROOT, "siklus4")
     if os.path.exists(os.path.join(s4, "hasil.json")):
         os.makedirs(os.path.join(SITE_DIR, "siklus4"), exist_ok=True)

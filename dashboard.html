@@ -168,7 +168,7 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
                  3:["🟨","Stage 3 · Puncak","distribusi / pembentukan puncak"],4:["🟥","Stage 4 · Turun","tren turun (markdown)"]};
   const FASE = {"1":"membentuk dasar","1-akhir":"akhir dasar, siap tembus","1→2":"baru tembus dari dasar","2-awal":"awal naik","2":"naik berjalan",
                 "2-jenuh":"jenuh, rawan koreksi","3":"distribusi","3-akhir":"rawan jebol","3→4":"baru jebol dari puncak","4-awal":"awal turun","4":"turun berjalan"};
-  let BT = null, S4 = null, MP = null, OFX = null, PJX = null;
+  let BT = null, S4 = null, MP = null, OFX = null, PJX = null, BRX = null;
   let DATA = null, tab = "naik", q = "", sortKey = "rank", sortDir = 1;
 
   // tema (disimpan per perangkat)
@@ -542,7 +542,42 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
       <p class="sub"><b>Catatan jujur.</b> Rancangan pertama (tiap strategi boleh jalan mulai skor tertentu, dengan syarat statistik ketat) gagal — lihat baris "Percobaan 1".
       Model yang dipakai sekarang dirancang setelah melihat hasil itu, jadi angka ujinya tidak sebersih uji buta. Model lama disetel memakai data 2024–2026, jadi di uji ini model lama diuntungkan.
       Daftar koin = top CMC saat ini (survivorship bias). Untung-rugi dicatat saat posisi ditutup. Statistik masa lalu, bukan jaminan.</p>`;
-    return h + perjamBlok() + orderflowBlok();
+    return h + berjalanBlok() + perjamBlok() + orderflowBlok();
+  }
+  function berjalanBlok(){
+    const X = BRX;
+    if (!X || !X.oos || !X.oos.portofolio) return "";
+    const per = r => r && r.n ? `<span class="${cls(r.rata)}">${pct(r.rata)}</span> <span class="sub">· menang ${num(r.menang,0)}% (${num(r.n,0)})</span>` : "-";
+    const P = X.oos.portofolio, pk = X.putusan.pakai;
+    const brs = (nm, r) => !r || !r.transaksi ? `<tr><td>${esc(nm)}</td><td colspan="6" class="sub">tidak ada transaksi</td></tr>` :
+      `<tr><td>${esc(nm)}</td><td class="${cls(r.total)}"><b>${pct(r.total)}</b></td><td class="neg">${pct(r.maxdd)}</td><td>${num(r.sharpe,2)}</td>
+      <td>${num(r.transaksi,0)}</td><td>${num(r.menang,1)}%</td><td class="${cls(r.rata)}">${pct(r.rata)}</td></tr>`;
+    const jenis = {radar_naik: "🟢 Radar naik", awal_stage2: "🟩 Awal Stage 2", pantul_fib: "🔻 Jual dulu (pantulan Stage 4)"};
+    const sb = X.sebaran_wib || {}, maks = Math.max(1, ...Object.values(sb));
+    const lc = X.lebih_cepat || {};
+    let h = `<h3 style="font-size:17px;margin-top:30px;padding-top:16px;border-top:1px solid var(--line)">🕐 Uji "harian berjalan" — sinyal harian yang dicek tiap jam</h3>
+      <p class="sub">Dibuat ${esc(X.dibuat_wib)} · ${X.data.koin} koin · ${num(X.data.analisa / 1e6, 1)} juta analisa (tiap koin × tiap jam sejak ${esc(X.data.mulai)}).
+      Mesin radar harian dijalankan apa adanya di setiap jam pada candle 24 jam berjalan; tepat jam 07.00 WIB hasilnya sama dengan radar harian.
+      Kedua sistem di bawah memakai aturan yang sama (gerbang model pasar, jeda 10 hari, masuk 1 jam setelah sinyal). Aturan uji ditulis sebelum data ditarik.</p>
+      <div class="pasar" style="margin:0 0 12px"><b>${pk ? "✅ 🟩 dan 🔻 sekarang dicek tiap jam" : "❌ Tidak dipasang — dicek tiap jam tidak lebih baik dari sekali sehari"}</b><br>
+        Syarat pasang: total ≥ pembanding, Sharpe ≥ pembanding, penurunan maksimum tidak lebih buruk dari 5 poin.</div>
+      <h3>Portofolio di luar sampel (${esc(X.oos.dari)} s/d ${esc(X.oos.sampai)})</h3>
+      <div class="tbl-wrap"><table class="jj"><thead><tr><th>Sistem</th><th>Total</th><th>Maks turun</th><th>Sharpe</th><th>Transaksi</th><th>Menang</th><th>Rata-rata</th></tr></thead><tbody>
+      ${brs("Hanya 07.00 WIB (sekarang)", P.pembanding)}${brs("🟩 & 🔻 tiap jam", P.tiap_jam)}${brs("Semua tiap jam (termasuk 🟢)", P.semua)}
+      </tbody></table></div>
+      <h3>Hasil per jenis sinyal (di luar sampel)</h3>
+      <div class="tbl-wrap"><table class="jj"><thead><tr><th>Jenis</th><th>Hanya 07.00 WIB</th><th>Tiap jam</th></tr></thead><tbody>
+      ${Object.keys(jenis).map(s => `<tr><td>${jenis[s]}</td><td>${per(X.oos.per_jenis.pembanding[s])}</td><td>${per(X.oos.per_jenis[s === "radar_naik" ? "semua" : "tiap_jam"][s])}</td></tr>`).join("")}
+      </tbody></table></div>
+      <h3>Jam munculnya sinyal 🟩 &amp; 🔻 bila dicek tiap jam</h3>
+      <div style="display:flex;align-items:flex-end;gap:2px;height:70px;max-width:560px">
+        ${Array.from({length: 24}, (_, k) => `<div title="${String(k).padStart(2, "0")}.00 WIB: ${sb[k] || 0} sinyal" style="flex:1;background:${k === 7 ? "var(--accent)" : "var(--line-2)"};height:${Math.max(2, Math.round((sb[k] || 0) / maks * 100))}%"></div>`).join("")}
+      </div>
+      <div class="sub" style="display:flex;justify-content:space-between;max-width:560px"><span>00</span><span>06</span><span>12</span><span>18</span><span>23 WIB</span></div>
+      <p class="sub">Batang biru = 07.00 WIB (${num(X.di_0700, 0)}% sinyal).
+      ${["awal_stage2", "pantul_fib"].filter(s => lc[s] && lc[s].n).map(s => `${jenis[s]}: dari ${lc[s].n} sinyal 07.00 WIB, ${lc[s].lebih_awal} sudah tertangkap lebih awal oleh versi tiap jam${lc[s].median_jam != null ? ` (median ${num(lc[s].median_jam, 0)} jam lebih cepat)` : ""}.`).join(" ")}
+      Laporan lengkap: <code>backtest_berjalan/LAPORAN.md</code> di GitHub.</p>`;
+    return h;
   }
   function perjamBlok(){
     const X = PJX;
@@ -731,6 +766,7 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
       fetch("model_pasar.json?t=" + Date.now()).then(r => r.json()).then(x => { MP = x; if (tab === "modelpasar") render(); }).catch(() => {});
       if (d.ada_orderflow) fetch("orderflow.json?t=" + Date.now()).then(r => r.json()).then(x => { OFX = x; if (tab === "modelpasar") render(); }).catch(() => {});
       if (d.ada_perjam) fetch("perjam.json?t=" + Date.now()).then(r => r.json()).then(x => { PJX = x; if (tab === "modelpasar") render(); }).catch(() => {});
+      if (d.ada_berjalan) fetch("berjalan.json?t=" + Date.now()).then(r => r.json()).then(x => { BRX = x; if (tab === "modelpasar") render(); }).catch(() => {});
     }
     if (d.ada_backtest) {
       TABS.push(["backtest","🧪 Backtest"]);
