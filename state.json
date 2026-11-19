@@ -13,25 +13,25 @@
   "model_aktif": true,
   "nama": "SANGAT LEMAH",
   "nilai": {
-   "alt_r30": -26.0,
-   "alt_rs": -5.1,
-   "btc_r30": -20.9,
-   "d_lebar50": 0.0,
-   "lebar50": 4.4,
-   "n_koin": 113.0,
-   "s2": 3.7,
-   "s4": 50.5
+   "alt_r30": -28.2,
+   "alt_rs": -5.2,
+   "btc_r30": -23.0,
+   "d_lebar50": 0.9,
+   "lebar50": 5.3,
+   "n_koin": 114.0,
+   "s2": 3.6,
+   "s4": 53.6
   },
   "skor": -5,
-  "ts": "2026-11-18T23:53:52+00:00"
+  "ts": "2026-11-19T00:49:43+00:00"
  },
  "last_summary": "2026-11-18",
  "pasar": {
-  "harga": 63223.7,
-  "ma": 79080.9336,
+  "harga": 63148.0,
+  "ma": 78669.0248,
   "rezim": "turun",
   "teks": "BTC di bawah MA50 & MA50 menurun",
-  "ts": "2026-11-18T23:53:52+00:00"
+  "ts": "2026-11-19T00:49:43+00:00"
  },
  "ranking": {
   "data": [
@@ -2182,7 +2182,7 @@
  "short_kandidat": {
   "kandidat": [],
   "sinyal": [],
-  "ts": "2026-11-18T23:53:52+00:00"
+  "ts": "2026-11-19T00:49:43+00:00"
  },
  "siklus": {
   "btc": {
@@ -2200,26 +2200,27 @@
    "OKB",
    "ONDO",
    "SKY",
-   "MORPHO"
+   "MORPHO",
+   "ETHFI"
   ],
   "jumlah": {
-   "1": 27,
+   "1": 25,
    "2": 4,
-   "3": 23,
-   "4": 55
+   "3": 22,
+   "4": 59
   },
   "persen_naik": 4,
-  "persen_turun": 50,
+  "persen_turun": 54,
   "siap_tembus": [
    "ZRO",
+   "KITE",
    "SENT",
    "SUPER"
   ],
   "tembus_dasar": [
-   "PEPE",
    "MEGA"
   ],
-  "ts": "2026-11-18T23:53:52+00:00"
+  "ts": "2026-11-19T00:49:43+00:00"
  },
  "stage2": {}
 }
