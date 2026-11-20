@@ -13,25 +13,25 @@
   "model_aktif": true,
   "nama": "SANGAT LEMAH",
   "nilai": {
-   "alt_r30": -28.5,
-   "alt_rs": -5.5,
-   "btc_r30": -23.0,
-   "d_lebar50": 0.8,
-   "lebar50": 5.1,
-   "n_koin": 118.0,
-   "s2": 3.5,
-   "s4": 55.3
+   "alt_r30": -32.1,
+   "alt_rs": -6.8,
+   "btc_r30": -25.3,
+   "d_lebar50": 1.7,
+   "lebar50": 6.0,
+   "n_koin": 117.0,
+   "s2": 2.7,
+   "s4": 61.9
   },
   "skor": -5,
-  "ts": "2026-11-19T23:47:32+00:00"
+  "ts": "2026-11-20T00:41:43+00:00"
  },
  "last_summary": "2026-11-19",
  "pasar": {
-  "harga": 61934.0,
-  "ma": 78669.0248,
+  "harga": 61966.7,
+  "ma": 78236.2874,
   "rezim": "turun",
   "teks": "BTC di bawah MA50 & MA50 menurun",
-  "ts": "2026-11-19T23:47:32+00:00"
+  "ts": "2026-11-20T00:41:43+00:00"
  },
  "ranking": {
   "data": [
@@ -2180,9 +2180,11 @@
  "riwayat_isi_ulang": true,
  "short": {},
  "short_kandidat": {
-  "kandidat": [],
+  "kandidat": [
+   "LUNC"
+  ],
   "sinyal": [],
-  "ts": "2026-11-19T23:47:32+00:00"
+  "ts": "2026-11-20T00:41:43+00:00"
  },
  "siklus": {
   "btc": {
@@ -2201,17 +2203,19 @@
    "ONDO",
    "SKY",
    "MORPHO",
+   "CAKE",
    "ETHFI",
+   "PENDLE",
    "CVX"
   ],
   "jumlah": {
-   "1": 25,
-   "2": 4,
-   "3": 22,
-   "4": 63
+   "1": 19,
+   "2": 3,
+   "3": 21,
+   "4": 70
   },
-  "persen_naik": 4,
-  "persen_turun": 55,
+  "persen_naik": 3,
+  "persen_turun": 62,
   "siap_tembus": [
    "ZRO",
    "KITE",
@@ -2221,7 +2225,7 @@
   "tembus_dasar": [
    "MEGA"
   ],
-  "ts": "2026-11-19T23:47:32+00:00"
+  "ts": "2026-11-20T00:41:43+00:00"
  },
  "stage2": {}
 }
