@@ -13,25 +13,25 @@
   "model_aktif": true,
   "nama": "SANGAT LEMAH",
   "nilai": {
-   "alt_r30": -36.2,
-   "alt_rs": -6.3,
+   "alt_r30": -36.1,
+   "alt_rs": -6.2,
    "btc_r30": -29.9,
    "d_lebar50": -1.5,
-   "lebar50": 2.2,
-   "n_koin": 135.0,
-   "s2": 1.5,
-   "s4": 66.4
+   "lebar50": 2.3,
+   "n_koin": 133.0,
+   "s2": 1.6,
+   "s4": 65.9
   },
   "skor": -5,
-  "ts": "2026-11-21T18:50:36+00:00"
+  "ts": "2026-11-21T19:51:06+00:00"
  },
  "last_summary": "2026-11-21",
  "pasar": {
-  "harga": 60128.5,
+  "harga": 60449.4,
   "ma": 77717.71659999999,
   "rezim": "turun",
   "teks": "BTC di bawah MA50 & MA50 menurun",
-  "ts": "2026-11-21T18:50:36+00:00"
+  "ts": "2026-11-21T19:51:06+00:00"
  },
  "ranking": {
   "data": [
@@ -198,24 +198,24 @@
    },
    {
     "meme": false,
-    "name": "Ripple USD",
+    "name": "Uniswap",
     "rank": 24,
+    "stabil": false,
+    "symbol": "UNI"
+   },
+   {
+    "meme": false,
+    "name": "Ripple USD",
+    "rank": 25,
     "stabil": true,
     "symbol": "RLUSD"
    },
    {
     "meme": false,
     "name": "World Liberty Financial USD",
-    "rank": 25,
+    "rank": 26,
     "stabil": true,
     "symbol": "USD1"
-   },
-   {
-    "meme": false,
-    "name": "Uniswap",
-    "rank": 26,
-    "stabil": false,
-    "symbol": "UNI"
    },
    {
     "meme": false,
@@ -226,17 +226,17 @@
    },
    {
     "meme": false,
-    "name": "Tether Gold",
+    "name": "Sui",
     "rank": 28,
-    "stabil": true,
-    "symbol": "XAUT"
+    "stabil": false,
+    "symbol": "SUI"
    },
    {
     "meme": false,
-    "name": "Sui",
+    "name": "Tether Gold",
     "rank": 29,
-    "stabil": false,
-    "symbol": "SUI"
+    "stabil": true,
+    "symbol": "XAUT"
    },
    {
     "meme": false,
@@ -289,24 +289,24 @@
    },
    {
     "meme": false,
-    "name": "OKB",
+    "name": "Quant",
     "rank": 37,
+    "stabil": false,
+    "symbol": "QNT"
+   },
+   {
+    "meme": false,
+    "name": "OKB",
+    "rank": 38,
     "stabil": false,
     "symbol": "OKB"
    },
    {
     "meme": false,
     "name": "United Stables",
-    "rank": 38,
+    "rank": 39,
     "stabil": true,
     "symbol": "U"
-   },
-   {
-    "meme": false,
-    "name": "Quant",
-    "rank": 39,
-    "stabil": false,
-    "symbol": "QNT"
    },
    {
     "meme": false,
@@ -345,17 +345,17 @@
    },
    {
     "meme": false,
-    "name": "Aster",
+    "name": "Ondo",
     "rank": 45,
     "stabil": false,
-    "symbol": "ASTER"
+    "symbol": "ONDO"
    },
    {
     "meme": false,
-    "name": "Ondo",
+    "name": "Aster",
     "rank": 46,
     "stabil": false,
-    "symbol": "ONDO"
+    "symbol": "ASTER"
    },
    {
     "meme": false,
@@ -373,17 +373,17 @@
    },
    {
     "meme": false,
-    "name": "JUST",
+    "name": "Venice Token",
     "rank": 49,
     "stabil": false,
-    "symbol": "JST"
+    "symbol": "VVV"
    },
    {
     "meme": false,
-    "name": "Venice Token",
+    "name": "JUST",
     "rank": 50,
     "stabil": false,
-    "symbol": "VVV"
+    "symbol": "JST"
    },
    {
     "meme": false,
@@ -393,11 +393,11 @@
     "symbol": "DOT"
    },
    {
-    "meme": false,
-    "name": "Internet Computer",
+    "meme": true,
+    "name": "Pump.fun",
     "rank": 52,
     "stabil": false,
-    "symbol": "ICP"
+    "symbol": "PUMP"
    },
    {
     "meme": false,
@@ -407,11 +407,11 @@
     "symbol": "BGB"
    },
    {
-    "meme": true,
-    "name": "Pump.fun",
+    "meme": false,
+    "name": "Internet Computer",
     "rank": 54,
     "stabil": false,
-    "symbol": "PUMP"
+    "symbol": "ICP"
    },
    {
     "meme": false,
@@ -422,17 +422,17 @@
    },
    {
     "meme": false,
-    "name": "Morpho",
+    "name": "Pieverse",
     "rank": 56,
     "stabil": false,
-    "symbol": "MORPHO"
+    "symbol": "PIEVERSE"
    },
    {
     "meme": false,
-    "name": "Pieverse",
+    "name": "Morpho",
     "rank": 57,
     "stabil": false,
-    "symbol": "PIEVERSE"
+    "symbol": "MORPHO"
    },
    {
     "meme": false,
@@ -471,10 +471,10 @@
    },
    {
     "meme": false,
-    "name": "Jupiter",
+    "name": "Midnight",
     "rank": 63,
     "stabil": false,
-    "symbol": "JUP"
+    "symbol": "NIGHT"
    },
    {
     "meme": false,
@@ -485,31 +485,31 @@
    },
    {
     "meme": false,
-    "name": "Kaspa",
+    "name": "Jupiter",
     "rank": 65,
+    "stabil": false,
+    "symbol": "JUP"
+   },
+   {
+    "meme": false,
+    "name": "Kaspa",
+    "rank": 66,
     "stabil": false,
     "symbol": "KAS"
    },
    {
     "meme": false,
-    "name": "Midnight",
-    "rank": 66,
+    "name": "GateToken",
+    "rank": 67,
     "stabil": false,
-    "symbol": "NIGHT"
+    "symbol": "GT"
    },
    {
     "meme": false,
     "name": "Algorand",
-    "rank": 67,
-    "stabil": false,
-    "symbol": "ALGO"
-   },
-   {
-    "meme": false,
-    "name": "GateToken",
     "rank": 68,
     "stabil": false,
-    "symbol": "GT"
+    "symbol": "ALGO"
    },
    {
     "meme": false,
@@ -562,45 +562,45 @@
    },
    {
     "meme": false,
-    "name": "LayerZero",
+    "name": "Stacks",
     "rank": 76,
+    "stabil": false,
+    "symbol": "STX"
+   },
+   {
+    "meme": false,
+    "name": "LayerZero",
+    "rank": 77,
     "stabil": false,
     "symbol": "ZRO"
    },
    {
     "meme": false,
-    "name": "Stacks",
-    "rank": 77,
+    "name": "ether.fi",
+    "rank": 78,
     "stabil": false,
-    "symbol": "STX"
+    "symbol": "ETHFI"
    },
    {
     "meme": true,
     "name": "币安人生",
-    "rank": 78,
+    "rank": 79,
     "stabil": false,
     "symbol": "币安人生"
    },
    {
     "meme": false,
     "name": "EURC",
-    "rank": 79,
+    "rank": 80,
     "stabil": true,
     "symbol": "EURC"
    },
    {
     "meme": false,
-    "name": "Filecoin",
-    "rank": 80,
-    "stabil": false,
-    "symbol": "FIL"
-   },
-   {
-    "meme": false,
-    "name": "ether.fi",
+    "name": "Dash",
     "rank": 81,
     "stabil": false,
-    "symbol": "ETHFI"
+    "symbol": "DASH"
    },
    {
     "meme": false,
@@ -611,10 +611,10 @@
    },
    {
     "meme": false,
-    "name": "Dash",
+    "name": "Filecoin",
     "rank": 83,
     "stabil": false,
-    "symbol": "DASH"
+    "symbol": "FIL"
    },
    {
     "meme": false,
@@ -632,17 +632,17 @@
    },
    {
     "meme": false,
-    "name": "Kite",
+    "name": "VeChain",
     "rank": 86,
     "stabil": false,
-    "symbol": "KITE"
+    "symbol": "VET"
    },
    {
     "meme": false,
-    "name": "VeChain",
+    "name": "Kite",
     "rank": 87,
     "stabil": false,
-    "symbol": "VET"
+    "symbol": "KITE"
    },
    {
     "meme": false,
@@ -653,17 +653,17 @@
    },
    {
     "meme": false,
-    "name": "Falcon Finance",
+    "name": "Raydium",
     "rank": 89,
-    "stabil": true,
-    "symbol": "FF"
+    "stabil": false,
+    "symbol": "RAY"
    },
    {
     "meme": false,
-    "name": "Raydium",
+    "name": "Falcon Finance",
     "rank": 90,
-    "stabil": false,
-    "symbol": "RAY"
+    "stabil": true,
+    "symbol": "FF"
    },
    {
     "meme": false,
@@ -695,31 +695,31 @@
    },
    {
     "meme": false,
-    "name": "Sun [New]",
-    "rank": 95,
-    "stabil": false,
-    "symbol": "SUN"
-   },
-   {
-    "meme": false,
     "name": "Bitcoin SV",
-    "rank": 96,
+    "rank": 95,
     "stabil": false,
     "symbol": "BSV"
    },
    {
     "meme": false,
-    "name": "First Digital USD",
-    "rank": 97,
-    "stabil": true,
-    "symbol": "FDUSD"
+    "name": "Sun [New]",
+    "rank": 96,
+    "stabil": false,
+    "symbol": "SUN"
    },
    {
     "meme": false,
     "name": "Curve DAO Token",
-    "rank": 98,
+    "rank": 97,
     "stabil": false,
     "symbol": "CRV"
+   },
+   {
+    "meme": false,
+    "name": "First Digital USD",
+    "rank": 98,
+    "stabil": true,
+    "symbol": "FDUSD"
    },
    {
     "meme": false,
@@ -750,60 +750,60 @@
     "symbol": "SPX"
    },
    {
-    "meme": false,
-    "name": "Virtuals Protocol",
-    "rank": 103,
-    "stabil": false,
-    "symbol": "VIRTUAL"
-   },
-   {
     "meme": true,
     "name": "OFFICIAL TRUMP",
-    "rank": 104,
+    "rank": 103,
     "stabil": false,
     "symbol": "TRUMP"
    },
    {
     "meme": false,
-    "name": "Gnosis",
-    "rank": 105,
+    "name": "Virtuals Protocol",
+    "rank": 104,
     "stabil": false,
-    "symbol": "GNO"
+    "symbol": "VIRTUAL"
    },
    {
     "meme": false,
     "name": "Starknet",
-    "rank": 106,
+    "rank": 105,
     "stabil": false,
     "symbol": "STRK"
    },
    {
     "meme": false,
-    "name": "Terra Classic",
-    "rank": 107,
+    "name": "Gnosis",
+    "rank": 106,
     "stabil": false,
-    "symbol": "LUNC"
+    "symbol": "GNO"
    },
    {
     "meme": false,
     "name": "Pendle",
-    "rank": 108,
+    "rank": 107,
     "stabil": false,
     "symbol": "PENDLE"
    },
    {
     "meme": false,
-    "name": "Plasma",
-    "rank": 109,
-    "stabil": true,
-    "symbol": "XPL"
+    "name": "Terra Classic",
+    "rank": 108,
+    "stabil": false,
+    "symbol": "LUNC"
    },
    {
     "meme": false,
     "name": "Tezos",
-    "rank": 110,
+    "rank": 109,
     "stabil": false,
     "symbol": "XTZ"
+   },
+   {
+    "meme": false,
+    "name": "Plasma",
+    "rank": 110,
+    "stabil": true,
+    "symbol": "XPL"
    },
    {
     "meme": false,
@@ -849,38 +849,38 @@
    },
    {
     "meme": false,
-    "name": "Immutable",
+    "name": "Beam",
     "rank": 117,
+    "stabil": false,
+    "symbol": "BEAM"
+   },
+   {
+    "meme": false,
+    "name": "Immutable",
+    "rank": 118,
     "stabil": false,
     "symbol": "IMX"
    },
    {
     "meme": false,
     "name": "Compound",
-    "rank": 118,
+    "rank": 119,
     "stabil": false,
     "symbol": "COMP"
    },
    {
     "meme": false,
-    "name": "Beam",
-    "rank": 119,
+    "name": "Zebec Network",
+    "rank": 120,
     "stabil": false,
-    "symbol": "BEAM"
+    "symbol": "ZBCN"
    },
    {
     "meme": false,
     "name": "SOON",
-    "rank": 120,
-    "stabil": false,
-    "symbol": "SOON"
-   },
-   {
-    "meme": false,
-    "name": "Zebec Network",
     "rank": 121,
     "stabil": false,
-    "symbol": "ZBCN"
+    "symbol": "SOON"
    },
    {
     "meme": false,
@@ -891,45 +891,45 @@
    },
    {
     "meme": false,
-    "name": "Conflux",
-    "rank": 123,
-    "stabil": false,
-    "symbol": "CFX"
-   },
-   {
-    "meme": false,
     "name": "Optimism",
-    "rank": 124,
+    "rank": 123,
     "stabil": false,
     "symbol": "OP"
    },
    {
     "meme": false,
-    "name": "Akash Network",
-    "rank": 125,
+    "name": "Conflux",
+    "rank": 124,
     "stabil": false,
-    "symbol": "AKT"
+    "symbol": "CFX"
    },
    {
     "meme": false,
-    "name": "Sentient",
-    "rank": 126,
+    "name": "Monad",
+    "rank": 125,
     "stabil": false,
-    "symbol": "SENT"
+    "symbol": "MON"
    },
    {
     "meme": true,
     "name": "FLOKI",
-    "rank": 127,
+    "rank": 126,
     "stabil": false,
     "symbol": "FLOKI"
    },
    {
     "meme": false,
-    "name": "Monad",
+    "name": "Akash Network",
+    "rank": 127,
+    "stabil": false,
+    "symbol": "AKT"
+   },
+   {
+    "meme": false,
+    "name": "Zama",
     "rank": 128,
     "stabil": false,
-    "symbol": "MON"
+    "symbol": "ZAMA"
    },
    {
     "meme": false,
@@ -940,31 +940,31 @@
    },
    {
     "meme": false,
-    "name": "Zama",
-    "rank": 130,
-    "stabil": false,
-    "symbol": "ZAMA"
-   },
-   {
-    "meme": false,
     "name": "Ethereum Name Service",
-    "rank": 131,
+    "rank": 130,
     "stabil": false,
     "symbol": "ENS"
    },
    {
     "meme": false,
-    "name": "Cap",
-    "rank": 132,
+    "name": "Sentient",
+    "rank": 131,
     "stabil": false,
-    "symbol": "CAP"
+    "symbol": "SENT"
    },
    {
     "meme": false,
     "name": "Arweave",
-    "rank": 133,
+    "rank": 132,
     "stabil": false,
     "symbol": "AR"
+   },
+   {
+    "meme": false,
+    "name": "GoМining",
+    "rank": 133,
+    "stabil": false,
+    "symbol": "GOMINING"
    },
    {
     "meme": false,
@@ -982,52 +982,52 @@
    },
    {
     "meme": false,
-    "name": "GoМining",
-    "rank": 136,
-    "stabil": false,
-    "symbol": "GOMINING"
-   },
-   {
-    "meme": false,
-    "name": "Fluid",
-    "rank": 137,
-    "stabil": false,
-    "symbol": "FLUID"
-   },
-   {
-    "meme": false,
     "name": "OriginTrail",
-    "rank": 138,
+    "rank": 136,
     "stabil": false,
     "symbol": "TRAC"
    },
    {
     "meme": false,
+    "name": "Cap",
+    "rank": 137,
+    "stabil": false,
+    "symbol": "CAP"
+   },
+   {
+    "meme": false,
     "name": "Trust Wallet Token",
-    "rank": 139,
+    "rank": 138,
     "stabil": false,
     "symbol": "TWT"
    },
    {
     "meme": false,
-    "name": "MX Token",
-    "rank": 140,
+    "name": "Fluid",
+    "rank": 139,
     "stabil": false,
-    "symbol": "MX"
+    "symbol": "FLUID"
    },
    {
     "meme": false,
     "name": "Telcoin",
-    "rank": 141,
+    "rank": 140,
     "stabil": true,
     "symbol": "TEL"
    },
    {
     "meme": false,
     "name": "Meteora",
-    "rank": 142,
+    "rank": 141,
     "stabil": false,
     "symbol": "MET"
+   },
+   {
+    "meme": false,
+    "name": "MX Token",
+    "rank": 142,
+    "stabil": false,
+    "symbol": "MX"
    },
    {
     "meme": false,
@@ -1038,17 +1038,17 @@
    },
    {
     "meme": false,
-    "name": "Jito",
+    "name": "Onyxcoin",
     "rank": 144,
     "stabil": false,
-    "symbol": "JTO"
+    "symbol": "XCN"
    },
    {
     "meme": false,
-    "name": "Onyxcoin",
+    "name": "Jito",
     "rank": 145,
     "stabil": false,
-    "symbol": "XCN"
+    "symbol": "JTO"
    },
    {
     "meme": false,
@@ -1073,17 +1073,17 @@
    },
    {
     "meme": false,
-    "name": "Vision",
+    "name": "Convex Finance",
     "rank": 149,
     "stabil": false,
-    "symbol": "VSN"
+    "symbol": "CVX"
    },
    {
     "meme": false,
-    "name": "Convex Finance",
+    "name": "Vision",
     "rank": 150,
     "stabil": false,
-    "symbol": "CVX"
+    "symbol": "VSN"
    },
    {
     "meme": false,
@@ -1101,31 +1101,31 @@
    },
    {
     "meme": false,
-    "name": "AWE",
-    "rank": 153,
-    "stabil": false,
-    "symbol": "AWE"
-   },
-   {
-    "meme": false,
     "name": "Axie Infinity",
-    "rank": 154,
+    "rank": 153,
     "stabil": false,
     "symbol": "AXS"
    },
    {
     "meme": false,
-    "name": "Maple Finance",
-    "rank": 155,
+    "name": "AWE",
+    "rank": 154,
     "stabil": false,
-    "symbol": "SYRUP"
+    "symbol": "AWE"
    },
    {
     "meme": false,
     "name": "Neo",
-    "rank": 156,
+    "rank": 155,
     "stabil": false,
     "symbol": "NEO"
+   },
+   {
+    "meme": false,
+    "name": "Maple Finance",
+    "rank": 156,
+    "stabil": false,
+    "symbol": "SYRUP"
    },
    {
     "meme": false,
@@ -1143,31 +1143,31 @@
    },
    {
     "meme": false,
-    "name": "The Sandbox",
-    "rank": 159,
-    "stabil": false,
-    "symbol": "SAND"
-   },
-   {
-    "meme": false,
-    "name": "Chiliz",
-    "rank": 160,
-    "stabil": false,
-    "symbol": "CHZ"
-   },
-   {
-    "meme": false,
     "name": "o1.exchange",
-    "rank": 161,
+    "rank": 159,
     "stabil": false,
     "symbol": "O"
    },
    {
     "meme": false,
+    "name": "The Sandbox",
+    "rank": 160,
+    "stabil": false,
+    "symbol": "SAND"
+   },
+   {
+    "meme": false,
     "name": "AIOZ Network",
-    "rank": 162,
+    "rank": 161,
     "stabil": false,
     "symbol": "AIOZ"
+   },
+   {
+    "meme": false,
+    "name": "Chiliz",
+    "rank": 162,
+    "stabil": false,
+    "symbol": "CHZ"
    },
    {
     "meme": false,
@@ -1198,25 +1198,25 @@
     "symbol": "ICNT"
    },
    {
+    "meme": true,
+    "name": "BUILDon",
+    "rank": 167,
+    "stabil": false,
+    "symbol": "B"
+   },
+   {
     "meme": false,
     "name": "GEODNET",
-    "rank": 167,
+    "rank": 168,
     "stabil": false,
     "symbol": "GEOD"
    },
    {
     "meme": false,
     "name": "Golem",
-    "rank": 168,
-    "stabil": false,
-    "symbol": "GLM"
-   },
-   {
-    "meme": true,
-    "name": "BUILDon",
     "rank": 169,
     "stabil": false,
-    "symbol": "B"
+    "symbol": "GLM"
    },
    {
     "meme": false,
@@ -1240,60 +1240,60 @@
     "symbol": "SFP"
    },
    {
-    "meme": false,
-    "name": "Reserve Rights",
-    "rank": 173,
-    "stabil": false,
-    "symbol": "RSR"
-   },
-   {
     "meme": true,
     "name": "Useless Coin",
-    "rank": 174,
+    "rank": 173,
     "stabil": false,
     "symbol": "USELESS"
    },
    {
     "meme": false,
-    "name": "GMX",
-    "rank": 175,
+    "name": "Reserve Rights",
+    "rank": 174,
     "stabil": false,
-    "symbol": "GMX"
-   },
-   {
-    "meme": false,
-    "name": "Sonic",
-    "rank": 176,
-    "stabil": false,
-    "symbol": "S"
+    "symbol": "RSR"
    },
    {
     "meme": false,
     "name": "ZKsync",
-    "rank": 177,
+    "rank": 175,
     "stabil": false,
     "symbol": "ZK"
    },
    {
     "meme": true,
     "name": "Fartcoin",
-    "rank": 178,
+    "rank": 176,
     "stabil": false,
     "symbol": "FARTCOIN"
    },
    {
     "meme": false,
-    "name": "SuperVerse",
-    "rank": 179,
+    "name": "Sonic",
+    "rank": 177,
     "stabil": false,
-    "symbol": "SUPER"
+    "symbol": "S"
+   },
+   {
+    "meme": false,
+    "name": "GMX",
+    "rank": 178,
+    "stabil": false,
+    "symbol": "GMX"
    },
    {
     "meme": false,
     "name": "Plume",
-    "rank": 180,
+    "rank": 179,
     "stabil": false,
     "symbol": "PLUME"
+   },
+   {
+    "meme": false,
+    "name": "SuperVerse",
+    "rank": 180,
+    "stabil": false,
+    "symbol": "SUPER"
    },
    {
     "meme": false,
@@ -1303,18 +1303,18 @@
     "symbol": "ATH"
    },
    {
-    "meme": true,
-    "name": "ApeCoin",
-    "rank": 182,
-    "stabil": false,
-    "symbol": "APE"
-   },
-   {
     "meme": false,
     "name": "MultiversX",
-    "rank": 183,
+    "rank": 182,
     "stabil": false,
     "symbol": "EGLD"
+   },
+   {
+    "meme": true,
+    "name": "ApeCoin",
+    "rank": 183,
+    "stabil": false,
+    "symbol": "APE"
    },
    {
     "meme": false,
@@ -1331,32 +1331,32 @@
     "symbol": "DEEP"
    },
    {
+    "meme": false,
+    "name": "Horizen",
+    "rank": 186,
+    "stabil": false,
+    "symbol": "ZEN"
+   },
+   {
     "meme": true,
     "name": "Dog (Bitcoin)",
-    "rank": 186,
+    "rank": 187,
     "stabil": false,
     "symbol": "DOG"
    },
    {
     "meme": false,
-    "name": "Horizen",
-    "rank": 187,
+    "name": "Qtum",
+    "rank": 188,
     "stabil": false,
-    "symbol": "ZEN"
+    "symbol": "QTUM"
    },
    {
     "meme": false,
     "name": "0G",
-    "rank": 188,
-    "stabil": false,
-    "symbol": "0G"
-   },
-   {
-    "meme": false,
-    "name": "Qtum",
     "rank": 189,
     "stabil": false,
-    "symbol": "QTUM"
+    "symbol": "0G"
    },
    {
     "meme": false,
@@ -1374,71 +1374,71 @@
    },
    {
     "meme": false,
-    "name": "Holo",
-    "rank": 192,
-    "stabil": false,
-    "symbol": "HOT"
-   },
-   {
-    "meme": false,
     "name": "RedStone",
-    "rank": 193,
+    "rank": 192,
     "stabil": false,
     "symbol": "RED"
    },
    {
     "meme": false,
-    "name": "Pons",
-    "rank": 194,
-    "stabil": false,
-    "symbol": "PONS"
-   },
-   {
-    "meme": false,
-    "name": "Livepeer",
-    "rank": 195,
-    "stabil": false,
-    "symbol": "LPT"
-   },
-   {
-    "meme": false,
-    "name": "FTX Token",
-    "rank": 196,
-    "stabil": false,
-    "symbol": "FTT"
-   },
-   {
-    "meme": false,
-    "name": "dYdX",
-    "rank": 197,
-    "stabil": false,
-    "symbol": "DYDX"
-   },
-   {
-    "meme": false,
     "name": "Gas",
-    "rank": 198,
+    "rank": 193,
     "stabil": false,
     "symbol": "GAS"
    },
    {
     "meme": false,
+    "name": "Livepeer",
+    "rank": 194,
+    "stabil": false,
+    "symbol": "LPT"
+   },
+   {
+    "meme": false,
+    "name": "Holo",
+    "rank": 195,
+    "stabil": false,
+    "symbol": "HOT"
+   },
+   {
+    "meme": false,
+    "name": "Pons",
+    "rank": 196,
+    "stabil": false,
+    "symbol": "PONS"
+   },
+   {
+    "meme": false,
     "name": "Yearn",
-    "rank": 199,
+    "rank": 197,
     "stabil": false,
     "symbol": "YFI"
    },
    {
     "meme": false,
-    "name": "Safe",
+    "name": "FTX Token",
+    "rank": 198,
+    "stabil": false,
+    "symbol": "FTT"
+   },
+   {
+    "meme": false,
+    "name": "Walrus",
+    "rank": 199,
+    "stabil": false,
+    "symbol": "WAL"
+   },
+   {
+    "meme": false,
+    "name": "dYdX",
     "rank": 200,
     "stabil": false,
-    "symbol": "SAFE"
+    "symbol": "DYDX"
    }
   ],
   "n": 200,
   "sumber": "CoinMarketCap",
-  "ts": "2026-11-21T12:57:31+00:00"
+  "ts": "2026-11-21T19:51:06+00:00"
  },
  "riwayat": [
   {
@@ -2182,7 +2182,7 @@
  "short_kandidat": {
   "kandidat": [],
   "sinyal": [],
-  "ts": "2026-11-21T18:50:36+00:00"
+  "ts": "2026-11-21T19:51:06+00:00"
  },
  "siklus": {
   "btc": {
@@ -2209,7 +2209,7 @@
    "1": 20,
    "2": 2,
    "3": 22,
-   "4": 87
+   "4": 85
   },
   "persen_naik": 2,
   "persen_turun": 66,
@@ -2218,7 +2218,7 @@
    "SENT"
   ],
   "tembus_dasar": [],
-  "ts": "2026-11-21T18:50:36+00:00"
+  "ts": "2026-11-21T19:51:06+00:00"
  },
  "stage2": {}
 }
