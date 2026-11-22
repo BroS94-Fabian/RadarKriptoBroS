@@ -13,25 +13,25 @@
   "model_aktif": true,
   "nama": "SANGAT LEMAH",
   "nilai": {
-   "alt_r30": -32.3,
+   "alt_r30": -32.4,
    "alt_rs": -6.3,
    "btc_r30": -26.0,
    "d_lebar50": 0.9,
    "lebar50": 3.5,
-   "n_koin": 115.0,
+   "n_koin": 114.0,
    "s2": 1.8,
-   "s4": 67.6
+   "s4": 67.3
   },
   "skor": -5,
-  "ts": "2026-11-22T10:50:12+00:00"
+  "ts": "2026-11-22T11:47:09+00:00"
  },
  "last_summary": "2026-11-22",
  "pasar": {
-  "harga": 60819.9,
+  "harga": 60955.2,
   "ma": 77231.6718,
   "rezim": "turun",
   "teks": "BTC di bawah MA50 & MA50 menurun",
-  "ts": "2026-11-22T10:50:12+00:00"
+  "ts": "2026-11-22T11:47:09+00:00"
  },
  "ranking": {
   "data": [
@@ -2182,7 +2182,7 @@
  "short_kandidat": {
   "kandidat": [],
   "sinyal": [],
-  "ts": "2026-11-22T10:50:12+00:00"
+  "ts": "2026-11-22T11:47:09+00:00"
  },
  "siklus": {
   "btc": {
@@ -2211,16 +2211,16 @@
    "1": 16,
    "2": 2,
    "3": 18,
-   "4": 75
+   "4": 74
   },
   "persen_naik": 2,
-  "persen_turun": 68,
+  "persen_turun": 67,
   "siap_tembus": [
    "KITE",
    "SENT"
   ],
   "tembus_dasar": [],
-  "ts": "2026-11-22T10:50:12+00:00"
+  "ts": "2026-11-22T11:47:09+00:00"
  },
  "stage2": {}
 }
