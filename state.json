@@ -13,25 +13,25 @@
   "model_aktif": true,
   "nama": "SANGAT LEMAH",
   "nilai": {
-   "alt_r30": -36.2,
-   "alt_rs": -6.3,
-   "btc_r30": -29.9,
-   "d_lebar50": -1.5,
-   "lebar50": 2.3,
+   "alt_r30": -32.4,
+   "alt_rs": -6.4,
+   "btc_r30": -26.0,
+   "d_lebar50": 0.8,
+   "lebar50": 3.1,
    "n_koin": 131.0,
    "s2": 1.6,
-   "s4": 66.1
+   "s4": 67.7
   },
   "skor": -5,
-  "ts": "2026-11-21T23:42:26+00:00"
+  "ts": "2026-11-22T00:35:52+00:00"
  },
  "last_summary": "2026-11-21",
  "pasar": {
-  "harga": 60223.1,
-  "ma": 77717.71659999999,
+  "harga": 60286.5,
+  "ma": 77231.6718,
   "rezim": "turun",
   "teks": "BTC di bawah MA50 & MA50 menurun",
-  "ts": "2026-11-21T23:42:26+00:00"
+  "ts": "2026-11-22T00:35:52+00:00"
  },
  "ranking": {
   "data": [
@@ -2182,7 +2182,7 @@
  "short_kandidat": {
   "kandidat": [],
   "sinyal": [],
-  "ts": "2026-11-21T23:42:26+00:00"
+  "ts": "2026-11-22T00:35:52+00:00"
  },
  "siklus": {
   "btc": {
@@ -2197,28 +2197,30 @@
    "LINK",
    "TAO",
    "OKB",
+   "AAVE",
    "ONDO",
    "SKY",
    "MORPHO",
    "CAKE",
    "ETHFI",
+   "币安人生",
    "PENDLE",
    "CVX"
   ],
   "jumlah": {
-   "1": 20,
+   "1": 21,
    "2": 2,
-   "3": 21,
-   "4": 84
+   "3": 18,
+   "4": 86
   },
   "persen_naik": 2,
-  "persen_turun": 66,
+  "persen_turun": 68,
   "siap_tembus": [
    "KITE",
    "SENT"
   ],
   "tembus_dasar": [],
-  "ts": "2026-11-21T23:42:26+00:00"
+  "ts": "2026-11-22T00:35:52+00:00"
  },
  "stage2": {}
 }
