@@ -1,6 +1,6 @@
 # 📌 Uji "Pilihan Harian" — minimal 1 koin per hari
 
-Dibuat 24 Nov 2026 10:13 WIB · 128 koin · 178,002 analisa harian · 2020-09-17 s/d 2026-10-24 · latih sebelum 2023-01-01, uji 2023-01-01 dst. · meme coin tidak ikut
+Dibuat 24 Nov 2026 10:17 WIB · 128 koin · 178,002 analisa harian · 2020-09-17 s/d 2026-10-24 · latih sebelum 2023-01-01, uji 2023-01-01 dst. · meme coin tidak ikut
 
 ## Putusan
 
@@ -8,6 +8,14 @@ Dibuat 24 Nov 2026 10:13 WIB · 128 koin · 178,002 analisa harian · 2020-09-17
 - **Jual dulu (saat BTC tidak tren naik): ✅ LAYAK → ⚪ Pilihan harian dengan rencana** — aturan S2 (Skor jual tertinggi di Stage 4); di luar sampel +0.44% · menang 75.3% (640) · acak -0.06% / 72.6%
 
 Syarat LAYAK (ditetapkan di muka): rata-rata bersih di luar sampel > 0 dan lebih tinggi dari koin acak di hari yang sama.
+
+### Cara dipasang di radar (diputuskan setelah hasil keluar)
+
+Pilihan hanya dikirim pada hari tanpa sinyal. Pada hari-hari itu hasilnya:
+- Beli (L1): -0.65% · menang 67.6% (398) · acak -0.60% / 68.5%
+- Jual dulu (S2): +0.04% · menang 73.1% (539) · acak -0.28% / 71.3%
+
+Bila ikut diperdagangkan, portofolio justru turun (lihat tabel portofolio). Karena itu radar memakai bawaan **`pilihan_harian: pantau`**: satu koin per hari dikirim sebagai 👀 pantauan beserta syarat yang membuatnya jadi sinyal sungguhan, tanpa ajakan masuk. `rencana` (dengan TP/SL) bisa dipilih sendiri di config.yaml.
 
 ## Semua aturan
 
@@ -56,6 +64,7 @@ Pilihan harian pada hari tanpa sinyal: -0.25% · menang 70.8% (937) · acak -0.4
 |---|---|
 | Sistem sekarang | +183.9% · maks turun -23.9% · Sharpe 1.04 · menang 76.1% · 442 transaksi |
 | Sistem sekarang + pilihan harian | +2.4% · maks turun -50.5% · Sharpe 0.11 · menang 73.0% · 960 transaksi |
+| Sistem sekarang + pilihan jual dulu saja | +118.5% · maks turun -29.7% · Sharpe 0.81 · menang 74.4% · 754 transaksi |
 | Pilihan harian saja (hari tanpa sinyal) | -42.7% · maks turun -60.4% · Sharpe -0.47 · menang 71.3% · 746 transaksi |
 
 ## Catatan jujur

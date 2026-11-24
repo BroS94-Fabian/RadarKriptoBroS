@@ -1,7 +1,7 @@
 {
  "versi": 1,
- "dibuat": "2026-11-24T03:13:42+00:00",
- "dibuat_wib": "24 Nov 2026 10:13 WIB",
+ "dibuat": "2026-11-24T03:17:06+00:00",
+ "dibuat_wib": "24 Nov 2026 10:17 WIB",
  "data": {
   "dibuat": "2026-11-24T03:05:33+00:00",
   "dibuat_wib": "24 Nov 2026 10:05 WIB",
@@ -755,7 +755,18 @@
     "acak_menang": 70.7,
     "lebih_acak": -0.03
    },
-   "layak": false
+   "layak": false,
+   "uji_hari_kosong": {
+    "n": 398,
+    "bulan": 37,
+    "menang": 67.6,
+    "rata": -0.65,
+    "median": 2.08,
+    "t": -1.09,
+    "acak_rata": -0.6,
+    "acak_menang": 68.5,
+    "lebih_acak": -0.05
+   }
   },
   "short": {
    "aturan": "S2",
@@ -782,7 +793,18 @@
     "acak_menang": 72.6,
     "lebih_acak": 0.5
    },
-   "layak": true
+   "layak": true,
+   "uji_hari_kosong": {
+    "n": 539,
+    "bulan": 36,
+    "menang": 73.1,
+    "rata": 0.04,
+    "median": 2.0,
+    "t": 0.08,
+    "acak_rata": -0.28,
+    "acak_menang": 71.3,
+    "lebih_acak": 0.32
+   }
   }
  },
  "hari": {
@@ -929,6 +951,25 @@
    "terisi": 98.0,
    "kandidat": 1780
   },
+  "Sistem sekarang + pilihan jual dulu saja": {
+   "total": 118.5,
+   "total_min": 66.5,
+   "total_maks": 185.1,
+   "cagr": 22.4,
+   "maxdd": -29.7,
+   "sharpe": 0.81,
+   "per_tahun": {
+    "2023": 26.7,
+    "2024": 7.6,
+    "2025": 33.2,
+    "2026": 23.0
+   },
+   "transaksi": 754,
+   "menang": 74.4,
+   "rata": 0.66,
+   "terisi": 93.0,
+   "kandidat": 1382
+  },
   "Pilihan harian saja (hari tanpa sinyal)": {
    "total": -42.7,
    "total_min": -42.7,
@@ -955,9 +996,10 @@
  },
  "model": {
   "versi": 1,
-  "dibuat": "2026-11-24T03:13:42+00:00",
-  "dibuat_wib": "24 Nov 2026 10:13 WIB",
+  "dibuat": "2026-11-24T03:17:06+00:00",
+  "dibuat_wib": "24 Nov 2026 10:17 WIB",
   "jeda_hari": 10,
+  "bawaan_radar": "pantau",
   "beli": {
    "aturan": "L1",
    "layak": false,
@@ -971,6 +1013,17 @@
     "acak_rata": -0.16,
     "acak_menang": 70.7,
     "lebih_acak": -0.03
+   },
+   "uji_hari_kosong": {
+    "n": 398,
+    "bulan": 37,
+    "menang": 67.6,
+    "rata": -0.65,
+    "median": 2.08,
+    "t": -1.09,
+    "acak_rata": -0.6,
+    "acak_menang": 68.5,
+    "lebih_acak": -0.05
    }
   },
   "jual": {
@@ -986,6 +1039,17 @@
     "acak_rata": -0.06,
     "acak_menang": 72.6,
     "lebih_acak": 0.5
+   },
+   "uji_hari_kosong": {
+    "n": 539,
+    "bulan": 36,
+    "menang": 73.1,
+    "rata": 0.04,
+    "median": 2.0,
+    "t": 0.08,
+    "acak_rata": -0.28,
+    "acak_menang": 71.3,
+    "lebih_acak": 0.32
    }
   }
  }

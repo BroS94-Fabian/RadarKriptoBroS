@@ -43,6 +43,7 @@ import yaml
 from analisa import BULAN, analisa_koin, fmt_pct, fmt_price
 import rekam_jejak as rekam
 import pasar as PS
+import pilihan as PL
 import strategi as ST
 from grafik import buat_grafik
 
@@ -87,6 +88,7 @@ DEFAULT_CONFIG = {
     "stage2_maks_grafik": 5,
     "stage2_jeda_hari": 10,
     "model_pasar": "auto",
+    "pilihan_harian": "pantau",
     "sinyal_short": True,
     "short_filter_pasar": "longgar",
     "short_maks_grafik": 5,
@@ -726,6 +728,62 @@ def caption_short(r: dict, cfg: dict, dash: str) -> str:
 REZIM_IKON = {"naik": "📈 NAIK", "turun": "📉 TURUN", "netral": "➖ SIDEWAYS"}
 
 
+def caption_pilihan(r: dict, p: dict, cfg: dict, dash: str, kp: dict | None, rz: dict, now: datetime) -> str:
+    """👀 Koin pantauan harian: dikirim bila 24 jam terakhir tidak ada sinyal sama sekali (lihat pilihan.py)."""
+    e = html.escape
+    q = cfg["quote"]
+    jual = p["sisi"] == "short"
+    rank = f" · #{r['rank']} CMC" if r.get("rank") else ""
+    f = p["fitur"]
+    L = [f"👀 <b>KOIN PANTAUAN HARI INI · {e(r['base'])}/{q}</b>{rank}",
+         f"Belum ada sinyal yang lolos filter dalam 24 jam terakhir. BTC {REZIM_IKON.get(rz['rezim'], rz['rezim'])}"
+         + (f", pasar {kp['ikon']} {kp['nama']} (skor {PS.angka(kp['skor'])})" if kp else "")
+         + f" → yang dipantau: kandidat <b>{'jual dulu' if jual else 'beli'}</b>.",
+         f"💰 {fmt_price(r['price'])} | 24j {fmt_pct(r['chg24'])} | 7h {fmt_pct(r['chg7'])} | 30h {fmt_pct(r['chg30'])}"]
+    st = (r.get("siklus") or {}).get("nama") or f"Stage {f['stage']}"
+    rs = f" · {fmt_pct(f['rs30'])} vs BTC 30 hari" if f.get("rs30") is not None else ""
+    L.append(f"📊 {e(st)} · skor {'jual' if jual else 'beli'} {f['skor_turun' if jual else 'skor_naik']}{rs}")
+    L.append(f"🔎 Dipilih karena {e(p['nama'])} hari ini.")
+    z = p.get("zona")
+    if jual and z and z["posisi"] == "bawah":
+        L.append(f"🎯 Jadi sinyal 🔻 kalau memantul ke {fmt_price(z['f382'])}–{fmt_price(z['f618'])} (zona Fibonacci) "
+                 f"lalu candle harian merah.")
+    elif jual and z and z["posisi"] == "zona":
+        L.append(f"🎯 Sudah di zona pantulan {fmt_price(z['f382'])}–{fmt_price(z['f618'])} — jadi sinyal 🔻 kalau candle harian merah.")
+    elif jual:
+        L.append("🎯 Jadi sinyal 🔻 kalau memantul naik ke zona Fibonacci lalu candle harian merah.")
+    else:
+        L.append("🎯 Jadi sinyal 🟢/🟩 kalau lolos semua filter (BTC tren naik & pasar tidak kepanasan).")
+    rc = p.get("rencana")
+    if rc:
+        if jual:
+            L.append(f"📋 Bila tetap ingin ikut (posisi kecil): jual ±{fmt_price(rc['entry'])} · beli kembali 50% di "
+                     f"{fmt_price(rc['tp1'])} ({fmt_pct(rc['tp1_pct'])}), sisa di {fmt_price(rc['tp2'])} ({fmt_pct(rc['tp2_pct'])}) · "
+                     f"cut loss {fmt_price(rc['sl'])} ({fmt_pct(rc['sl_pct'])})")
+        else:
+            L.append(f"📋 Bila tetap ingin ikut (posisi kecil): beli ±{fmt_price(rc['entry'])} · jual 50% di "
+                     f"{fmt_price(rc['tp1'])} ({fmt_pct(rc['tp1_pct'])}), sisa di {fmt_price(rc['tp2'])} ({fmt_pct(rc['tp2_pct'])}) · "
+                     f"SL {fmt_price(rc['sl'])} ({fmt_pct(rc['sl_pct'])})")
+    u = p.get("uji") or {}
+    if u.get("n"):
+        k = lambda x: f"{x:+.2f}".replace(".", ",").replace("-", "−")  # noqa: E731
+        L.append(f"<i>Pantauan, bukan sinyal masuk. Uji 2023–2026: memilih koin seperti ini setiap hari rata-rata "
+                 f"{k(u['rata'])}% per transaksi (menang {u['menang']:.0f}%, {u['n']}×), koin acak {k(u['acak_rata'])}% — "
+                 f"lebih baik tunggu sinyal sungguhan.</i>")
+    else:
+        L.append("<i>Pantauan, bukan sinyal masuk — lebih baik tunggu sinyal sungguhan.</i>")
+    links = []
+    if r.get("link"):
+        links.append(f'<a href="{e(r["link"])}">TradingView</a>')
+    if dash:
+        links.append(f'<a href="{e(dash)}">Dashboard</a>')
+    if links:
+        L.append(" · ".join(links))
+    while len("\n".join(L)) > 1020 and len(L) > 6:
+        L.pop(-2 if links else -1)
+    return "\n".join(L)
+
+
 def kondisi_pasar(results, r_btc) -> dict | None:
     """Skor pasar −6…+6 dari candle harian tutup (BTC + lebar pasar semua koin yang dianalisa)."""
     if not r_btc:
@@ -1134,6 +1192,7 @@ def main() -> int:
                        and (mp == "true" or (mp == "auto" and model.get("pakai"))))
     tertahan = 0
     for r in results:
+        r["kelas_asli"] = r["kelas"]
         arah = r["arah_utama"]
         t, b = r.get("target"), r.get("batal")
         r["rencana"] = ST.rencana(float(r["price"]), arah, t["harga"] if t else None, b["harga"] if b else None,
@@ -1353,14 +1412,51 @@ def main() -> int:
                 stS[r["symbol"]] = dict(tanggal=r["short"]["tanggal"], ts=now.isoformat(timespec="seconds"))
     state["short"] = {k: v for k, v in stS.items() if datetime.fromisoformat(v["ts"]) >= st2_batas}
 
+    # 👀 Koin pantauan harian: 24 jam terakhir tanpa sinyal sama sekali → kirim 1 koin sesuai arah pasar (pilihan.py)
+    w = now.astimezone(WIB)
+    today = w.date().isoformat()
+    pil_mode = str(cfg.get("pilihan_harian", "pantau")).lower()
+    pil = None
+    if pil_mode in ("pantau", "rencana", "true") and (demo or (
+            w.hour >= int(cfg["ringkasan_harian_jam_wib"]) and (state.get("pilihan") or {}).get("tanggal") != today)):
+        ada_sinyal = any(now - datetime.fromisoformat(e["ts"]) < timedelta(hours=24) for e in state.get("riwayat", []))
+        if demo or not ada_sinyal:
+            sisi = "long" if rz["rezim"] == "naik" else "short"
+            pm = PL.muat_model() or {}
+            mb = pm.get("beli" if sisi == "long" else "jual") or {}
+            kode = mb.get("aturan") or PL.BAWAAN[sisi]
+            btc_r30 = PL.r30(r_btc["_g"]["dc"]["close"].to_numpy()) if r_btc and r_btc.get("_g") else None
+            calon = {r["symbol"]: r for r in results if not r.get("meme") and r.get("_g")
+                     and r["symbol"] not in ("BTCUSDT", "BTC-USDT")}
+            fit = {s: PL.fitur(r, btc_r30) for s, r in calon.items()}
+            riw_p = state.setdefault("pilihan_riwayat", {})
+            sym = PL.pilih(list(fit.items()), kode, {} if demo else riw_p, today)
+            if sym:
+                r = calon[sym]
+                rc = None
+                if pil_mode == "rencana":
+                    rc = ST.rencana(float(r["price"]), "naik" if sisi == "long" else "turun", None, None, None, R)
+                pil = dict(symbol=sym, base=r["base"], sisi=sisi, aturan=kode, nama=PL.ATURAN[kode][1], fitur=fit[sym],
+                           zona=PL.zona_pantul(r["_g"]["dc"]) if sisi == "short" else None, rencana=rc, uji=mb.get("uji_hari_kosong") or mb.get("uji"))
+                png = charts.get(sym) or buat_grafik(r, cfg["quote"], src_harga, waktu)
+                tg.send_photo(png, caption_pilihan(r, pil, cfg, dash, kp, rz, now))
+                print(f"Koin pantauan harian: {r['base']} ({sisi}, aturan {kode})")
+                if not demo:
+                    riw_p[sym] = today
+                    state["pilihan"] = dict(tanggal=today, symbol=sym, base=r["base"], sisi=sisi, aturan=kode,
+                                            harga=float(r["price"]), ts=now.isoformat(timespec="seconds"))
+            if not demo:
+                batas_p = (w.date() - timedelta(days=PL.JEDA_HARI + 5)).isoformat()
+                state["pilihan_riwayat"] = {k: v for k, v in riw_p.items() if v >= batas_p}
+                if not pil:
+                    state["pilihan"] = dict(tanggal=today)
+
     riw = sorted(state.get("riwayat", []), key=lambda e: e["ts"], reverse=True)
     rk = rekam.rekap(riw, now)
     if os.environ.get("GITHUB_ACTIONS"):
         for x in rekam.rekap_teks(rk):
             print(f"::notice title=Rekam jejak {rk['hari']} hari::{x}")
 
-    w = now.astimezone(WIB)
-    today = w.date().isoformat()
     if demo or args.mode == "ringkasan" or (w.hour >= int(cfg["ringkasan_harian_jam_wib"])
                                             and state.get("last_summary") != today):
         tg.send_text(summary_text(results, now, src_rank, dash, rk, rz, ps, btc_st,
@@ -1376,6 +1472,8 @@ def main() -> int:
                 pasar=rz, tertahan=tertahan, siklus=ps, stage2_aktif=bool(cfg.get("sinyal_stage2", True)),
                 short_aktif=bool(cfg.get("sinyal_short", True)), short_leverage=cfg.get("short_leverage_maks", 2),
                 btc_siklus=(r_btc or {}).get("siklus"), kondisi_pasar=kp,
+                pilihan=(pil or (state.get("pilihan") if (state.get("pilihan") or {}).get("symbol")
+                                 and state["pilihan"].get("tanggal") == today else None)),
                 model_pasar=dict(aktif=pakai_model, baris=model_baris, pengaturan=mp,
                                  putusan=model.get("putusan"), dibuat=model.get("dibuat_wib"),
                                  beli=model.get("beli"), jual=model.get("jual")) if model else None,

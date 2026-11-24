@@ -98,6 +98,16 @@ Hasil: `model_pasar/LAPORAN.md`, `model_pasar/model.json` dan tab 🌡️ Model 
 Radar membaca `model.json`; dengan `model_pasar: auto` (bawaan) batas skor hanya dipakai bila model baru menang di uji itu.
 Jalankan ulang: **Actions → Model Kondisi Pasar → Run workflow** (otomatis tiap tanggal 1).
 
+## 👀 Koin pantauan harian (minimal 1 koin per hari)
+Kalau 24 jam terakhir tidak ada sinyal 🟢/🟩/🔻/🔴 sama sekali, mulai jam 08.00 WIB radar mengirim **satu koin per hari**
+yang paling menonjol sesuai arah pasar (`pilihan.py`): BTC tren naik → skor beli radar tertinggi; selain itu → skor jual
+tertinggi di antara koin Stage 4, beserta zona pantulan yang membuatnya jadi sinyal 🔻 sungguhan. Koin yang sama tidak
+dipilih lagi selama 10 hari.
+`backtest_pilihan.py` menguji 6 aturan pemilihan pada 178 ribu analisa harian (2020–2026). Hasil 24 Nov 2026: pada hari
+tanpa sinyal rata-ratanya ±0% per transaksi (beli −0,65%, jual dulu +0,04%) dan bila ikut diperdagangkan portofolio turun
+(+184% → +119%). Karena itu bawaannya **pantauan, bukan sinyal masuk** (`pilihan_harian: pantau`); `rencana` menambahkan
+TP/SL, `false` mematikannya. Rincian: `backtest_pilihan/LAPORAN.md`.
+
 ## Uji "harian berjalan" (sinyal harian dicek tiap jam)
 `backtest_berjalan.py` menguji apakah 🟩 awal Stage 2 dan 🔻 jual dulu sebaiknya dicek tiap jam, bukan hanya saat candle harian
 tutup (07.00 WIB): mesin radar harian dijalankan apa adanya di setiap jam pada candle 24 jam berjalan (`berjalan.py`; tepat jam

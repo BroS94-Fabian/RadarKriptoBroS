@@ -461,7 +461,9 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
     return `<div class="pasar" style="margin:0 0 12px">🌡️ Kondisi pasar: ${kp.ikon} <b>${esc(kp.nama)}</b> (skor ${sgn(kp.skor)} dari ±6)
       ${mp ? ` · model pasar <b>${mp.aktif ? "aktif" : "tidak dipakai"}</b>` : ""}
       <div class="ck" style="margin-top:6px">${kp.komponen.map(k => `<span>${ik[k.suara]} ${esc(k.nama)}: ${esc(k.teks)}</span>`).join("")}</div>
-      ${mp && mp.baris && mp.baris.length ? `<div style="margin-top:6px">${mp.baris.map(esc).join("<br>")}</div>` : ""}</div>`;
+      ${mp && mp.baris && mp.baris.length ? `<div style="margin-top:6px">${mp.baris.map(esc).join("<br>")}</div>` : ""}
+      ${DATA.pilihan && DATA.pilihan.base ? `<div style="margin-top:6px">👀 Pantauan hari ini: <b>${esc(DATA.pilihan.base)}</b>
+        (kandidat ${DATA.pilihan.sisi === "short" ? "jual dulu" : "beli"}) — bukan sinyal masuk; tunggu sinyal 🟢/🟩/🔻.</div>` : ""}</div>`;
   }
   function skorChart(rows){
     if (!rows || rows.length < 30) return "";
@@ -756,6 +758,7 @@ footer{margin-top:24px;font-size:12px;color:var(--muted)}
       $("#pasar").innerHTML = `${kp ? `🌡️ Kondisi pasar: ${kp.ikon} <b>${esc(kp.nama)}</b> (skor ${sgn(kp.skor)} dari ±6)${mp && mp.aktif && mp.baris ? " · " + mp.baris.map(esc).join(" · ") : ""}<br>` : ""}Pasar BTC: <b>${ik}</b> (${esc(d.pasar.teks)})${d.tertahan ? ` · ⏸ ${d.tertahan} sinyal ditahan filter` : ""}
         ${d.siklus ? `<br>🔄 Peta siklus: 🟦 Dasar ${d.siklus.jumlah["1"]} · 🟩 Naik ${d.siklus.jumlah["2"]} · 🟨 Puncak ${d.siklus.jumlah["3"]} · 🟥 Turun ${d.siklus.jumlah["4"]}` : ""}
         ${d.btc_siklus && d.btc_siklus.stage ? ` · BTC ${STAGE[d.btc_siklus.stage][0]} ${esc(d.btc_siklus.nama)}` : ""}
+        ${d.pilihan && d.pilihan.base ? `<br>👀 Pantauan hari ini: <b>${esc(d.pilihan.base)}</b> (kandidat ${d.pilihan.sisi === "short" ? "jual dulu" : "beli"}) — bukan sinyal masuk` : ""}
         <span class="sub"> · Filter: pasar ${f.pasar === false ? "mati" : f.pasar === true ? "aktif" : esc(String(f.pasar))}, meme ${f.meme === false ? "mati" : esc(String(f.meme))}${f.breakout ? ", wajib breakout" : ""}${f.min_rr ? ", rasio ≥ " + f.min_rr : ""}</span>`;
     }
     if (d.ada_siklus4) {

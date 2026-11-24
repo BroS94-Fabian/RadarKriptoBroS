@@ -126,6 +126,11 @@ biaya:
 cooldown_jam: 12                # koin yang sama tidak dikirim ulang selama X jam
 maks_grafik_per_run: 6          # maks. alert bergrafik per putaran (sisanya daftar singkat)
 ringkasan_harian_jam_wib: 8     # ringkasan harian dikirim sekali sehari mulai jam ini
+# 👀 Koin pantauan harian: bila 24 jam tidak ada sinyal sama sekali, kirim 1 koin per hari sesuai arah pasar.
+#   pantau  = dikirim sebagai pantauan + syarat yang membuatnya jadi sinyal (bawaan; hasil uji ±0% per transaksi)
+#   rencana = sama, ditambah rencana masuk/keluar TP/SL (tetap bukan sinyal yang lolos filter)
+#   false   = tidak dikirim
+pilihan_harian: pantau
 
 # ---- Dashboard ----
 maks_grafik_dashboard: 40

@@ -31,6 +31,12 @@ ATURAN YANG DITETAPKAN DI MUKA (ditulis & di-commit sebelum tahap model dijalank
   5. Hanya dilaporkan (tidak ikut putusan): pilihan pada hari tanpa sinyal saja, per tahun, dan portofolio
      "sistem sekarang" vs "sistem sekarang + pilihan harian" (maks 5 posisi).
 
+TAMBAHAN SETELAH HASIL KELUAR (24 Nov 2026): jual dulu lolos syarat butir 4 (rata-rata +0,44% semua hari), tetapi
+pada hari tanpa sinyal — satu-satunya hari pilihan dikirim — rata-ratanya hanya +0,04% dan bila ikut
+diperdagangkan portofolio turun dari +184% ke +119%. Karena itu radar memakai bawaan yang lebih hati-hati:
+`pilihan_harian: pantau` (kedua arah dikirim sebagai 👀 pantauan); `rencana` bisa dipilih sendiri di config.yaml.
+Laporan menambahkan hasil per arah pada hari tanpa sinyal dan portofolio "sistem + pilihan jual dulu saja".
+
 Hasil: backtest_pilihan/LAPORAN.md, hasil.json, model.json, meta.json
 """
 from __future__ import annotations
@@ -251,6 +257,11 @@ def tahap_model(args) -> int:
     kosong = [t for t in hari_uji if t not in hari_sinyal]
     H["hari"] = dict(uji=len(hari_uji), ada_sinyal=len(hari_uji) - len(kosong), tanpa_sinyal=len(kosong),
                      tanpa_sinyal_per_tahun={str(y): int(sum(1 for t in kosong if t.startswith(str(y)))) for y in range(AWAL_UJI.year, akhir.year + 1)})
+    set_kosong = set(kosong)
+    for s in ("long", "short"):
+        if H["pilihan"][s].get("aturan"):
+            Pu = uji(Pk[H["pilihan"][s]["aturan"]])
+            H["pilihan"][s]["uji_hari_kosong"] = ringkas(Pu[Pu["tanggal"].isin(set_kosong)], A_)
     gab = pd.concat([Pk[H["pilihan"][s]["aturan"]] for s in ("long", "short") if H["pilihan"][s].get("aturan")])
     gab_u = uji(gab)
     gab_k = gab_u[gab_u["tanggal"].isin(set(kosong))]
@@ -262,14 +273,20 @@ def tahap_model(args) -> int:
     r_live = BP.uji_portofolio(Td[kol], a0, a1)
     r_plus = BP.uji_portofolio(pd.concat([Td[kol], gab_k[kol]]), a0, a1)
     r_saja = BP.uji_portofolio(gab_k[kol], a0, a1)
-    for r in (r_live, r_plus, r_saja):
+    gab_j = gab_k[gab_k["sisi"] == "short"]
+    r_jual = BP.uji_portofolio(pd.concat([Td[kol], gab_j[kol]]), a0, a1)
+    for r in (r_live, r_plus, r_saja, r_jual):
         r.pop("_kurva")
     H["portofolio"] = {"Sistem sekarang": bersih_(r_live), "Sistem sekarang + pilihan harian": bersih_(r_plus),
+                       "Sistem sekarang + pilihan jual dulu saja": bersih_(r_jual),
                        "Pilihan harian saja (hari tanpa sinyal)": bersih_(r_saja)}
     H["putusan"] = putusan
     model = dict(versi=1, dibuat=H["dibuat"], dibuat_wib=H["dibuat_wib"], jeda_hari=JEDA,
-                 beli=dict(aturan=H["pilihan"]["long"].get("aturan"), layak=putusan["long"], uji=H["pilihan"]["long"].get("uji")),
-                 jual=dict(aturan=H["pilihan"]["short"].get("aturan"), layak=putusan["short"], uji=H["pilihan"]["short"].get("uji")))
+                 bawaan_radar="pantau",
+                 beli=dict(aturan=H["pilihan"]["long"].get("aturan"), layak=putusan["long"], uji=H["pilihan"]["long"].get("uji"),
+                           uji_hari_kosong=H["pilihan"]["long"].get("uji_hari_kosong")),
+                 jual=dict(aturan=H["pilihan"]["short"].get("aturan"), layak=putusan["short"], uji=H["pilihan"]["short"].get("uji"),
+                           uji_hari_kosong=H["pilihan"]["short"].get("uji_hari_kosong")))
     H["model"] = model
 
     # ---------- laporan ----------
@@ -292,6 +309,15 @@ def tahap_model(args) -> int:
         L.append(f"- **{nm}: {'✅ LAYAK → ⚪ Pilihan harian dengan rencana' if p['layak'] else '❌ tidak layak → 👀 Koin pantauan tanpa ajakan masuk'}** — "
                  f"aturan {p['aturan']} ({p['nama']}); di luar sampel {f_r(p['uji'])}")
     L += ["", "Syarat LAYAK (ditetapkan di muka): rata-rata bersih di luar sampel > 0 dan lebih tinggi dari koin acak di hari yang sama.", "",
+          "### Cara dipasang di radar (diputuskan setelah hasil keluar)", "",
+          "Pilihan hanya dikirim pada hari tanpa sinyal. Pada hari-hari itu hasilnya:"]
+    for sisi, nm in (("long", "Beli"), ("short", "Jual dulu")):
+        p = H["pilihan"][sisi]
+        if p.get("aturan"):
+            L.append(f"- {nm} ({p['aturan']}): {f_r(p.get('uji_hari_kosong'))}")
+    L += ["", "Bila ikut diperdagangkan, portofolio justru turun (lihat tabel portofolio). Karena itu radar memakai bawaan "
+          "**`pilihan_harian: pantau`**: satu koin per hari dikirim sebagai 👀 pantauan beserta syarat yang membuatnya jadi sinyal "
+          "sungguhan, tanpa ajakan masuk. `rencana` (dengan TP/SL) bisa dipilih sendiri di config.yaml.", "",
           "## Semua aturan", "", "Isi sel: rata-rata bersih per pilihan · tingkat menang (jumlah) · pembanding koin acak di hari yang sama.", "",
           "| Aturan | Arah | Latih (s/d 2022) | Uji (2023 dst.) |", "|---|---|---|---|"]
     for k, v in ATURAN.items():
