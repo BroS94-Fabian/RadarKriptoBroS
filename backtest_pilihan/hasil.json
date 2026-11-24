@@ -1,0 +1,992 @@
+{
+ "versi": 1,
+ "dibuat": "2026-11-24T03:13:42+00:00",
+ "dibuat_wib": "24 Nov 2026 10:13 WIB",
+ "data": {
+  "dibuat": "2026-11-24T03:05:33+00:00",
+  "dibuat_wib": "24 Nov 2026 10:05 WIB",
+  "koin": 128,
+  "gagal": [],
+  "analisa": 178002,
+  "analisa_gagal": 0,
+  "mulai": "2020-01-01",
+  "dari": "2020-09-17",
+  "sampai": "2026-10-24",
+  "durasi_detik": 487
+ },
+ "dari": "2020-09-17",
+ "sampai": "2026-10-24",
+ "awal_uji": "2023-01-01",
+ "aturan": {
+  "L1": {
+   "sisi": "long",
+   "nama": "Skor beli radar tertinggi"
+  },
+  "L2": {
+   "sisi": "long",
+   "nama": "Skor beli tertinggi di Stage 2"
+  },
+  "L3": {
+   "sisi": "long",
+   "nama": "Paling kuat vs BTC 30 hari (Stage 2)"
+  },
+  "S1": {
+   "sisi": "short",
+   "nama": "Skor jual radar tertinggi"
+  },
+  "S2": {
+   "sisi": "short",
+   "nama": "Skor jual tertinggi di Stage 4"
+  },
+  "S3": {
+   "sisi": "short",
+   "nama": "Paling lemah vs BTC 30 hari (Stage 4)"
+  }
+ },
+ "per_aturan": {
+  "L1": {
+   "latih": {
+    "n": 328,
+    "bulan": 18,
+    "menang": 76.8,
+    "rata": 1.13,
+    "median": 2.08,
+    "t": 1.99,
+    "acak_rata": 0.58,
+    "acak_menang": 74.7,
+    "lebih_acak": 0.55
+   },
+   "uji": {
+    "n": 717,
+    "bulan": 38,
+    "menang": 70.6,
+    "rata": -0.19,
+    "median": 2.08,
+    "t": -0.32,
+    "acak_rata": -0.16,
+    "acak_menang": 70.7,
+    "lebih_acak": -0.03
+   },
+   "semua": {
+    "n": 1045,
+    "bulan": 56,
+    "menang": 72.5,
+    "rata": 0.23,
+    "median": 2.08,
+    "t": 0.51,
+    "acak_rata": 0.07,
+    "acak_menang": 71.9,
+    "lebih_acak": 0.16
+   },
+   "per_tahun": {
+    "2020": {
+     "n": 74,
+     "bulan": 3,
+     "menang": 75.7,
+     "rata": 1.19,
+     "median": 7.07,
+     "t": 1.2,
+     "acak_rata": 1.02,
+     "acak_menang": 77.1,
+     "lebih_acak": 0.17
+    },
+    "2021": {
+     "n": 206,
+     "bulan": 10,
+     "menang": 80.6,
+     "rata": 1.79,
+     "median": 7.07,
+     "t": 3.2,
+     "acak_rata": 0.96,
+     "acak_menang": 76.6,
+     "lebih_acak": 0.83
+    },
+    "2022": {
+     "n": 48,
+     "bulan": 5,
+     "menang": 62.5,
+     "rata": -1.78,
+     "median": 2.08,
+     "t": -0.69,
+     "acak_rata": -1.75,
+     "acak_menang": 62.5,
+     "lebih_acak": -0.03
+    },
+    "2023": {
+     "n": 232,
+     "bulan": 11,
+     "menang": 73.7,
+     "rata": 0.19,
+     "median": 2.08,
+     "t": 0.18,
+     "acak_rata": 0.88,
+     "acak_menang": 76.6,
+     "lebih_acak": -0.69
+    },
+    "2024": {
+     "n": 200,
+     "bulan": 11,
+     "menang": 68.5,
+     "rata": -0.54,
+     "median": 2.08,
+     "t": -0.42,
+     "acak_rata": -0.98,
+     "acak_menang": 66.1,
+     "lebih_acak": 0.44
+    },
+    "2025": {
+     "n": 149,
+     "bulan": 9,
+     "menang": 62.4,
+     "rata": -1.5,
+     "median": 2.08,
+     "t": -1.4,
+     "acak_rata": -1.21,
+     "acak_menang": 65.3,
+     "lebih_acak": -0.29
+    },
+    "2026": {
+     "n": 136,
+     "bulan": 7,
+     "menang": 77.2,
+     "rata": 1.12,
+     "median": 2.08,
+     "t": 0.88,
+     "acak_rata": 0.41,
+     "acak_menang": 73.2,
+     "lebih_acak": 0.71
+    }
+   }
+  },
+  "L2": {
+   "latih": {
+    "n": 285,
+    "bulan": 18,
+    "menang": 76.1,
+    "rata": 0.99,
+    "median": 2.08,
+    "t": 1.63,
+    "acak_rata": 0.55,
+    "acak_menang": 74.4,
+    "lebih_acak": 0.44
+   },
+   "uji": {
+    "n": 605,
+    "bulan": 37,
+    "menang": 69.8,
+    "rata": -0.22,
+    "median": 2.08,
+    "t": -0.41,
+    "acak_rata": -0.45,
+    "acak_menang": 69.3,
+    "lebih_acak": 0.23
+   },
+   "semua": {
+    "n": 890,
+    "bulan": 55,
+    "menang": 71.8,
+    "rata": 0.17,
+    "median": 2.08,
+    "t": 0.39,
+    "acak_rata": -0.13,
+    "acak_menang": 70.9,
+    "lebih_acak": 0.3
+   },
+   "per_tahun": {
+    "2020": {
+     "n": 66,
+     "bulan": 3,
+     "menang": 75.8,
+     "rata": 0.69,
+     "median": 2.08,
+     "t": 0.65,
+     "acak_rata": 0.61,
+     "acak_menang": 74.8,
+     "lebih_acak": 0.08
+    },
+    "2021": {
+     "n": 200,
+     "bulan": 10,
+     "menang": 78.0,
+     "rata": 1.42,
+     "median": 7.07,
+     "t": 1.97,
+     "acak_rata": 0.87,
+     "acak_menang": 76.1,
+     "lebih_acak": 0.55
+    },
+    "2022": {
+     "n": 19,
+     "bulan": 5,
+     "menang": 57.9,
+     "rata": -2.43,
+     "median": 2.08,
+     "t": -0.78,
+     "acak_rata": -2.97,
+     "acak_menang": 55.9,
+     "lebih_acak": 0.54
+    },
+    "2023": {
+     "n": 210,
+     "bulan": 11,
+     "menang": 69.5,
+     "rata": -0.14,
+     "median": 2.08,
+     "t": -0.17,
+     "acak_rata": 0.56,
+     "acak_menang": 74.9,
+     "lebih_acak": -0.7
+    },
+    "2024": {
+     "n": 183,
+     "bulan": 11,
+     "menang": 69.9,
+     "rata": -0.38,
+     "median": 2.08,
+     "t": -0.31,
+     "acak_rata": -0.93,
+     "acak_menang": 66.4,
+     "lebih_acak": 0.55
+    },
+    "2025": {
+     "n": 115,
+     "bulan": 8,
+     "menang": 67.8,
+     "rata": -0.6,
+     "median": 2.08,
+     "t": -0.57,
+     "acak_rata": -2.02,
+     "acak_menang": 61.3,
+     "lebih_acak": 1.42
+    },
+    "2026": {
+     "n": 97,
+     "bulan": 7,
+     "menang": 72.2,
+     "rata": 0.36,
+     "median": 2.08,
+     "t": 0.24,
+     "acak_rata": 0.12,
+     "acak_menang": 71.9,
+     "lebih_acak": 0.24
+    }
+   }
+  },
+  "L3": {
+   "latih": {
+    "n": 285,
+    "bulan": 18,
+    "menang": 71.2,
+    "rata": 0.21,
+    "median": 2.08,
+    "t": 0.38,
+    "acak_rata": 0.55,
+    "acak_menang": 74.4,
+    "lebih_acak": -0.34
+   },
+   "uji": {
+    "n": 605,
+    "bulan": 37,
+    "menang": 71.4,
+    "rata": 0.11,
+    "median": 2.08,
+    "t": 0.21,
+    "acak_rata": -0.44,
+    "acak_menang": 69.4,
+    "lebih_acak": 0.55
+   },
+   "semua": {
+    "n": 890,
+    "bulan": 55,
+    "menang": 71.3,
+    "rata": 0.15,
+    "median": 2.08,
+    "t": 0.36,
+    "acak_rata": -0.12,
+    "acak_menang": 71.0,
+    "lebih_acak": 0.27
+   },
+   "per_tahun": {
+    "2020": {
+     "n": 66,
+     "bulan": 3,
+     "menang": 77.3,
+     "rata": 1.44,
+     "median": 7.07,
+     "t": 3.79,
+     "acak_rata": 0.61,
+     "acak_menang": 74.7,
+     "lebih_acak": 0.83
+    },
+    "2021": {
+     "n": 200,
+     "bulan": 10,
+     "menang": 71.0,
+     "rata": 0.11,
+     "median": 2.08,
+     "t": 0.15,
+     "acak_rata": 0.87,
+     "acak_menang": 76.1,
+     "lebih_acak": -0.76
+    },
+    "2022": {
+     "n": 19,
+     "bulan": 5,
+     "menang": 52.6,
+     "rata": -2.93,
+     "median": 2.08,
+     "t": -0.95,
+     "acak_rata": -2.97,
+     "acak_menang": 55.9,
+     "lebih_acak": 0.04
+    },
+    "2023": {
+     "n": 209,
+     "bulan": 11,
+     "menang": 72.7,
+     "rata": 0.57,
+     "median": 2.08,
+     "t": 0.6,
+     "acak_rata": 0.46,
+     "acak_menang": 74.5,
+     "lebih_acak": 0.11
+    },
+    "2024": {
+     "n": 185,
+     "bulan": 11,
+     "menang": 69.2,
+     "rata": -0.38,
+     "median": 2.08,
+     "t": -0.34,
+     "acak_rata": -0.87,
+     "acak_menang": 66.7,
+     "lebih_acak": 0.49
+    },
+    "2025": {
+     "n": 113,
+     "bulan": 8,
+     "menang": 70.8,
+     "rata": -0.35,
+     "median": 2.08,
+     "t": -0.29,
+     "acak_rata": -1.98,
+     "acak_menang": 61.7,
+     "lebih_acak": 1.63
+    },
+    "2026": {
+     "n": 98,
+     "bulan": 7,
+     "menang": 73.5,
+     "rata": 0.6,
+     "median": 2.08,
+     "t": 0.61,
+     "acak_rata": 0.21,
+     "acak_menang": 72.4,
+     "lebih_acak": 0.39
+    }
+   }
+  },
+  "S1": {
+   "latih": {
+    "n": 495,
+    "bulan": 22,
+    "menang": 73.1,
+    "rata": 0.14,
+    "median": 2.03,
+    "t": 0.45,
+    "acak_rata": 0.09,
+    "acak_menang": 72.5,
+    "lebih_acak": 0.05
+   },
+   "uji": {
+    "n": 676,
+    "bulan": 38,
+    "menang": 74.3,
+    "rata": 0.29,
+    "median": 2.0,
+    "t": 0.67,
+    "acak_rata": -0.09,
+    "acak_menang": 72.4,
+    "lebih_acak": 0.38
+   },
+   "semua": {
+    "n": 1184,
+    "bulan": 60,
+    "menang": 73.6,
+    "rata": 0.17,
+    "median": 2.0,
+    "t": 0.64,
+    "acak_rata": -0.04,
+    "acak_menang": 72.3,
+    "lebih_acak": 0.21
+   },
+   "per_tahun": {
+    "2020": {
+     "n": 32,
+     "bulan": 2,
+     "menang": 71.9,
+     "rata": -1.08,
+     "median": 1.94,
+     "t": -624.54,
+     "acak_rata": -0.78,
+     "acak_menang": 71.0,
+     "lebih_acak": -0.3
+    },
+    "2021": {
+     "n": 159,
+     "bulan": 8,
+     "menang": 72.3,
+     "rata": 0.2,
+     "median": 2.03,
+     "t": 0.29,
+     "acak_rata": 0.2,
+     "acak_menang": 72.0,
+     "lebih_acak": 0.0
+    },
+    "2022": {
+     "n": 317,
+     "bulan": 12,
+     "menang": 72.9,
+     "rata": 0.05,
+     "median": 2.0,
+     "t": 0.15,
+     "acak_rata": 0.02,
+     "acak_menang": 72.4,
+     "lebih_acak": 0.03
+    },
+    "2023": {
+     "n": 133,
+     "bulan": 8,
+     "menang": 80.5,
+     "rata": 1.35,
+     "median": 2.0,
+     "t": 1.04,
+     "acak_rata": 0.32,
+     "acak_menang": 74.7,
+     "lebih_acak": 1.03
+    },
+    "2024": {
+     "n": 166,
+     "bulan": 10,
+     "menang": 71.1,
+     "rata": -0.34,
+     "median": 2.0,
+     "t": -0.38,
+     "acak_rata": -0.77,
+     "acak_menang": 69.3,
+     "lebih_acak": 0.43
+    },
+    "2025": {
+     "n": 216,
+     "bulan": 11,
+     "menang": 72.7,
+     "rata": 0.06,
+     "median": 2.03,
+     "t": 0.1,
+     "acak_rata": 0.13,
+     "acak_menang": 73.1,
+     "lebih_acak": -0.07
+    },
+    "2026": {
+     "n": 161,
+     "bulan": 9,
+     "menang": 74.5,
+     "rata": 0.37,
+     "median": 1.97,
+     "t": 0.46,
+     "acak_rata": -0.05,
+     "acak_menang": 72.8,
+     "lebih_acak": 0.42
+    }
+   }
+  },
+  "S2": {
+   "latih": {
+    "n": 393,
+    "bulan": 20,
+    "menang": 73.0,
+    "rata": 0.16,
+    "median": 2.03,
+    "t": 0.37,
+    "acak_rata": -0.01,
+    "acak_menang": 72.1,
+    "lebih_acak": 0.17
+   },
+   "uji": {
+    "n": 640,
+    "bulan": 38,
+    "menang": 75.3,
+    "rata": 0.44,
+    "median": 2.0,
+    "t": 0.96,
+    "acak_rata": -0.06,
+    "acak_menang": 72.6,
+    "lebih_acak": 0.5
+   },
+   "semua": {
+    "n": 1044,
+    "bulan": 58,
+    "menang": 74.2,
+    "rata": 0.29,
+    "median": 2.0,
+    "t": 0.89,
+    "acak_rata": -0.07,
+    "acak_menang": 72.2,
+    "lebih_acak": 0.36
+   },
+   "per_tahun": {
+    "2020": {
+     "n": 13,
+     "bulan": 2,
+     "menang": 84.6,
+     "rata": 0.4,
+     "median": 1.88,
+     "t": 0.44,
+     "acak_rata": -1.36,
+     "acak_menang": 66.2,
+     "lebih_acak": 1.76
+    },
+    "2021": {
+     "n": 74,
+     "bulan": 6,
+     "menang": 70.3,
+     "rata": -0.17,
+     "median": 2.03,
+     "t": -0.14,
+     "acak_rata": -0.36,
+     "acak_menang": 69.7,
+     "lebih_acak": 0.19
+    },
+    "2022": {
+     "n": 317,
+     "bulan": 12,
+     "menang": 72.6,
+     "rata": 0.08,
+     "median": 2.03,
+     "t": 0.19,
+     "acak_rata": 0.02,
+     "acak_menang": 72.4,
+     "lebih_acak": 0.06
+    },
+    "2023": {
+     "n": 133,
+     "bulan": 8,
+     "menang": 78.9,
+     "rata": 0.92,
+     "median": 1.97,
+     "t": 0.72,
+     "acak_rata": 0.32,
+     "acak_menang": 74.7,
+     "lebih_acak": 0.6
+    },
+    "2024": {
+     "n": 136,
+     "bulan": 10,
+     "menang": 71.3,
+     "rata": -0.08,
+     "median": 2.03,
+     "t": -0.07,
+     "acak_rata": -0.73,
+     "acak_menang": 69.3,
+     "lebih_acak": 0.65
+    },
+    "2025": {
+     "n": 210,
+     "bulan": 11,
+     "menang": 78.1,
+     "rata": 0.76,
+     "median": 2.03,
+     "t": 1.08,
+     "acak_rata": 0.13,
+     "acak_menang": 73.1,
+     "lebih_acak": 0.63
+    },
+    "2026": {
+     "n": 161,
+     "bulan": 9,
+     "menang": 72.0,
+     "rata": 0.07,
+     "median": 2.0,
+     "t": 0.08,
+     "acak_rata": -0.05,
+     "acak_menang": 72.8,
+     "lebih_acak": 0.12
+    }
+   }
+  },
+  "S3": {
+   "latih": {
+    "n": 396,
+    "bulan": 20,
+    "menang": 71.0,
+    "rata": -0.24,
+    "median": 2.03,
+    "t": -0.45,
+    "acak_rata": 0.0,
+    "acak_menang": 72.2,
+    "lebih_acak": -0.24
+   },
+   "uji": {
+    "n": 641,
+    "bulan": 38,
+    "menang": 73.0,
+    "rata": 0.07,
+    "median": 2.03,
+    "t": 0.13,
+    "acak_rata": -0.05,
+    "acak_menang": 72.6,
+    "lebih_acak": 0.12
+   },
+   "semua": {
+    "n": 1045,
+    "bulan": 58,
+    "menang": 72.0,
+    "rata": -0.1,
+    "median": 2.03,
+    "t": -0.27,
+    "acak_rata": -0.07,
+    "acak_menang": 72.2,
+    "lebih_acak": -0.03
+   },
+   "per_tahun": {
+    "2020": {
+     "n": 13,
+     "bulan": 2,
+     "menang": 84.6,
+     "rata": 0.8,
+     "median": 1.97,
+     "t": 0.64,
+     "acak_rata": -1.52,
+     "acak_menang": 65.4,
+     "lebih_acak": 2.32
+    },
+    "2021": {
+     "n": 75,
+     "bulan": 6,
+     "menang": 73.3,
+     "rata": 0.19,
+     "median": 2.03,
+     "t": 0.26,
+     "acak_rata": -0.28,
+     "acak_menang": 70.0,
+     "lebih_acak": 0.47
+    },
+    "2022": {
+     "n": 316,
+     "bulan": 12,
+     "menang": 69.0,
+     "rata": -0.54,
+     "median": 2.0,
+     "t": -0.89,
+     "acak_rata": 0.0,
+     "acak_menang": 72.4,
+     "lebih_acak": -0.54
+    },
+    "2023": {
+     "n": 133,
+     "bulan": 8,
+     "menang": 69.2,
+     "rata": -0.48,
+     "median": 2.0,
+     "t": -0.29,
+     "acak_rata": 0.32,
+     "acak_menang": 74.7,
+     "lebih_acak": -0.8
+    },
+    "2024": {
+     "n": 137,
+     "bulan": 10,
+     "menang": 73.0,
+     "rata": -0.41,
+     "median": 2.0,
+     "t": -0.36,
+     "acak_rata": -0.7,
+     "acak_menang": 69.5,
+     "lebih_acak": 0.29
+    },
+    "2025": {
+     "n": 210,
+     "bulan": 11,
+     "menang": 72.9,
+     "rata": 0.24,
+     "median": 2.03,
+     "t": 0.33,
+     "acak_rata": 0.13,
+     "acak_menang": 73.1,
+     "lebih_acak": 0.11
+    },
+    "2026": {
+     "n": 161,
+     "bulan": 9,
+     "menang": 76.4,
+     "rata": 0.7,
+     "median": 2.03,
+     "t": 0.88,
+     "acak_rata": -0.05,
+     "acak_menang": 72.8,
+     "lebih_acak": 0.75
+    }
+   }
+  }
+ },
+ "pilihan": {
+  "long": {
+   "aturan": "L1",
+   "nama": "Skor beli radar tertinggi",
+   "latih": {
+    "n": 328,
+    "bulan": 18,
+    "menang": 76.8,
+    "rata": 1.13,
+    "median": 2.08,
+    "t": 1.99,
+    "acak_rata": 0.58,
+    "acak_menang": 74.7,
+    "lebih_acak": 0.55
+   },
+   "uji": {
+    "n": 717,
+    "bulan": 38,
+    "menang": 70.6,
+    "rata": -0.19,
+    "median": 2.08,
+    "t": -0.32,
+    "acak_rata": -0.16,
+    "acak_menang": 70.7,
+    "lebih_acak": -0.03
+   },
+   "layak": false
+  },
+  "short": {
+   "aturan": "S2",
+   "nama": "Skor jual tertinggi di Stage 4",
+   "latih": {
+    "n": 393,
+    "bulan": 20,
+    "menang": 73.0,
+    "rata": 0.16,
+    "median": 2.03,
+    "t": 0.37,
+    "acak_rata": -0.01,
+    "acak_menang": 72.1,
+    "lebih_acak": 0.17
+   },
+   "uji": {
+    "n": 640,
+    "bulan": 38,
+    "menang": 75.3,
+    "rata": 0.44,
+    "median": 2.0,
+    "t": 0.96,
+    "acak_rata": -0.06,
+    "acak_menang": 72.6,
+    "lebih_acak": 0.5
+   },
+   "layak": true
+  }
+ },
+ "hari": {
+  "uji": 1383,
+  "ada_sinyal": 410,
+  "tanpa_sinyal": 973,
+  "tanpa_sinyal_per_tahun": {
+   "2023": 223,
+   "2024": 259,
+   "2025": 284,
+   "2026": 207
+  }
+ },
+ "gabungan": {
+  "semua_hari": {
+   "n": 1357,
+   "bulan": 46,
+   "menang": 72.8,
+   "rata": 0.11,
+   "median": 2.08,
+   "t": 0.32,
+   "acak_rata": -0.11,
+   "acak_menang": 71.6,
+   "lebih_acak": 0.22
+  },
+  "hari_tanpa_sinyal": {
+   "n": 937,
+   "bulan": 46,
+   "menang": 70.8,
+   "rata": -0.25,
+   "median": 2.08,
+   "t": -0.71,
+   "acak_rata": -0.41,
+   "acak_menang": 70.1,
+   "lebih_acak": 0.16
+  },
+  "per_tahun": {
+   "2023": {
+    "n": 223,
+    "bulan": 12,
+    "menang": 76.2,
+    "rata": 0.68,
+    "median": 2.08,
+    "t": 0.79,
+    "acak_rata": 0.87,
+    "acak_menang": 76.9,
+    "lebih_acak": -0.19
+   },
+   "2024": {
+    "n": 229,
+    "bulan": 12,
+    "menang": 65.9,
+    "rata": -1.15,
+    "median": 2.08,
+    "t": -1.64,
+    "acak_rata": -1.5,
+    "acak_menang": 64.5,
+    "lebih_acak": 0.35
+   },
+   "2025": {
+    "n": 278,
+    "bulan": 12,
+    "menang": 69.8,
+    "rata": -0.5,
+    "median": 2.03,
+    "t": -0.88,
+    "acak_rata": -0.73,
+    "acak_menang": 68.5,
+    "lebih_acak": 0.23
+   },
+   "2026": {
+    "n": 207,
+    "bulan": 10,
+    "menang": 71.5,
+    "rata": 0.06,
+    "median": 2.08,
+    "t": 0.09,
+    "acak_rata": -0.18,
+    "acak_menang": 71.2,
+    "lebih_acak": 0.24
+   }
+  },
+  "per_sisi": {
+   "long": {
+    "n": 398,
+    "bulan": 37,
+    "menang": 67.6,
+    "rata": -0.65,
+    "median": 2.08,
+    "t": -1.09,
+    "acak_rata": -0.6,
+    "acak_menang": 68.5,
+    "lebih_acak": -0.05
+   },
+   "short": {
+    "n": 539,
+    "bulan": 36,
+    "menang": 73.1,
+    "rata": 0.04,
+    "median": 2.0,
+    "t": 0.08,
+    "acak_rata": -0.28,
+    "acak_menang": 71.3,
+    "lebih_acak": 0.32
+   }
+  }
+ },
+ "portofolio": {
+  "Sistem sekarang": {
+   "total": 183.9,
+   "total_min": 120.3,
+   "total_maks": 275.0,
+   "cagr": 31.0,
+   "maxdd": -23.9,
+   "sharpe": 1.04,
+   "per_tahun": {
+    "2023": 25.9,
+    "2024": 36.0,
+    "2025": 16.0,
+    "2026": 38.3
+   },
+   "transaksi": 442,
+   "menang": 76.1,
+   "rata": 1.32,
+   "terisi": 79.0,
+   "kandidat": 843
+  },
+  "Sistem sekarang + pilihan harian": {
+   "total": 2.4,
+   "total_min": -25.9,
+   "total_maks": 31.6,
+   "cagr": 0.6,
+   "maxdd": -50.5,
+   "sharpe": 0.11,
+   "per_tahun": {
+    "2023": 26.2,
+    "2024": -23.2,
+    "2025": -13.5,
+    "2026": 24.7
+   },
+   "transaksi": 960,
+   "menang": 73.0,
+   "rata": 0.15,
+   "terisi": 98.0,
+   "kandidat": 1780
+  },
+  "Pilihan harian saja (hari tanpa sinyal)": {
+   "total": -42.7,
+   "total_min": -42.7,
+   "total_maks": -42.7,
+   "cagr": -13.4,
+   "maxdd": -60.4,
+   "sharpe": -0.47,
+   "per_tahun": {
+    "2023": 9.5,
+    "2024": -45.6,
+    "2025": -8.7,
+    "2026": 8.0
+   },
+   "transaksi": 746,
+   "menang": 71.3,
+   "rata": -0.26,
+   "terisi": 93.0,
+   "kandidat": 937
+  }
+ },
+ "putusan": {
+  "long": false,
+  "short": true
+ },
+ "model": {
+  "versi": 1,
+  "dibuat": "2026-11-24T03:13:42+00:00",
+  "dibuat_wib": "24 Nov 2026 10:13 WIB",
+  "jeda_hari": 10,
+  "beli": {
+   "aturan": "L1",
+   "layak": false,
+   "uji": {
+    "n": 717,
+    "bulan": 38,
+    "menang": 70.6,
+    "rata": -0.19,
+    "median": 2.08,
+    "t": -0.32,
+    "acak_rata": -0.16,
+    "acak_menang": 70.7,
+    "lebih_acak": -0.03
+   }
+  },
+  "jual": {
+   "aturan": "S2",
+   "layak": true,
+   "uji": {
+    "n": 640,
+    "bulan": 38,
+    "menang": 75.3,
+    "rata": 0.44,
+    "median": 2.0,
+    "t": 0.96,
+    "acak_rata": -0.06,
+    "acak_menang": 72.6,
+    "lebih_acak": 0.5
+   }
+  }
+ }
+}

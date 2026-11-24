@@ -1,0 +1,36 @@
+{
+ "versi": 1,
+ "dibuat": "2026-11-24T03:13:42+00:00",
+ "dibuat_wib": "24 Nov 2026 10:13 WIB",
+ "jeda_hari": 10,
+ "beli": {
+  "aturan": "L1",
+  "layak": false,
+  "uji": {
+   "n": 717,
+   "bulan": 38,
+   "menang": 70.6,
+   "rata": -0.19,
+   "median": 2.08,
+   "t": -0.32,
+   "acak_rata": -0.16,
+   "acak_menang": 70.7,
+   "lebih_acak": -0.03
+  }
+ },
+ "jual": {
+  "aturan": "S2",
+  "layak": true,
+  "uji": {
+   "n": 640,
+   "bulan": 38,
+   "menang": 75.3,
+   "rata": 0.44,
+   "median": 2.0,
+   "t": 0.96,
+   "acak_rata": -0.06,
+   "acak_menang": 72.6,
+   "lebih_acak": 0.5
+  }
+ }
+}
