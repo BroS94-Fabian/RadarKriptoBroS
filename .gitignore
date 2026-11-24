@@ -7,3 +7,4 @@ backtest_perjam/sinyal.csv.gz
 backtest_perjam/bagian_*
 backtest_berjalan/sinyal.csv.gz
 backtest_berjalan/bagian_*
+backtest_pilihan/harian.csv.gz
