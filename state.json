@@ -13,25 +13,25 @@
   "model_aktif": true,
   "nama": "SANGAT LEMAH",
   "nilai": {
-   "alt_r30": -29.0,
-   "alt_rs": -3.9,
+   "alt_r30": -28.9,
+   "alt_rs": -3.8,
    "btc_r30": -25.1,
-   "d_lebar50": 2.7,
-   "lebar50": 5.4,
-   "n_koin": 111.0,
-   "s2": 1.9,
-   "s4": 73.6
+   "d_lebar50": 2.6,
+   "lebar50": 5.3,
+   "n_koin": 114.0,
+   "s2": 1.8,
+   "s4": 73.4
   },
   "skor": -4,
-  "ts": "2026-11-27T13:19:42+00:00"
+  "ts": "2026-11-27T15:00:09+00:00"
  },
  "last_summary": "2026-11-27",
  "pasar": {
-  "harga": 61414.9,
+  "harga": 59216.3,
   "ma": 74781.4124,
   "rezim": "turun",
   "teks": "BTC di bawah MA50 & MA50 menurun",
-  "ts": "2026-11-27T13:19:42+00:00"
+  "ts": "2026-11-27T15:00:09+00:00"
  },
  "pilihan": {
   "aturan": "S2",
@@ -2199,7 +2199,7 @@
    "LUNC"
   ],
   "sinyal": [],
-  "ts": "2026-11-27T13:19:42+00:00"
+  "ts": "2026-11-27T15:00:09+00:00"
  },
  "siklus": {
   "btc": {
@@ -2225,20 +2225,20 @@
    "PENDLE"
   ],
   "jumlah": {
-   "1": 11,
+   "1": 12,
    "2": 2,
    "3": 15,
-   "4": 78
+   "4": 80
   },
   "persen_naik": 2,
-  "persen_turun": 74,
+  "persen_turun": 73,
   "siap_tembus": [
    "PEPE",
    "KITE",
    "SENT"
   ],
   "tembus_dasar": [],
-  "ts": "2026-11-27T13:19:42+00:00"
+  "ts": "2026-11-27T15:00:09+00:00"
  },
  "stage2": {}
 }
