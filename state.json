@@ -23,29 +23,30 @@
    "s4": 75.0
   },
   "skor": -4,
-  "ts": "2026-11-28T00:48:59+00:00"
+  "ts": "2026-11-28T01:17:16+00:00"
  },
- "last_summary": "2026-11-27",
+ "last_summary": "2026-11-28",
  "pasar": {
-  "harga": 59973.9,
+  "harga": 60145.7,
   "ma": 74344.7854,
   "rezim": "turun",
   "teks": "BTC di bawah MA50 & MA50 menurun",
-  "ts": "2026-11-28T00:48:59+00:00"
+  "ts": "2026-11-28T01:17:16+00:00"
  },
  "pilihan": {
   "aturan": "S2",
-  "base": "MORPHO",
-  "harga": 1.634,
+  "base": "NEXO",
+  "harga": 0.621,
   "sisi": "short",
-  "symbol": "MORPHOUSDT",
-  "tanggal": "2026-11-27",
-  "ts": "2026-11-27T01:22:47+00:00"
+  "symbol": "NEXOUSDT",
+  "tanggal": "2026-11-28",
+  "ts": "2026-11-28T01:17:16+00:00"
  },
  "pilihan_riwayat": {
   "AXSUSDT": "2026-11-26",
   "EGLDUSDT": "2026-11-25",
   "MORPHOUSDT": "2026-11-27",
+  "NEXOUSDT": "2026-11-28",
   "XRPUSDT": "2026-11-24"
  },
  "ranking": {
@@ -2197,7 +2198,7 @@
  "short_kandidat": {
   "kandidat": [],
   "sinyal": [],
-  "ts": "2026-11-28T00:48:59+00:00"
+  "ts": "2026-11-28T01:17:16+00:00"
  },
  "siklus": {
   "btc": {
@@ -2237,7 +2238,7 @@
    "SENT"
   ],
   "tembus_dasar": [],
-  "ts": "2026-11-28T00:48:59+00:00"
+  "ts": "2026-11-28T01:17:16+00:00"
  },
  "stage2": {}
 }
