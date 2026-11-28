@@ -13,25 +13,25 @@
   "model_aktif": true,
   "nama": "SANGAT LEMAH",
   "nilai": {
-   "alt_r30": -28.8,
-   "alt_rs": -3.7,
-   "btc_r30": -25.1,
-   "d_lebar50": 2.5,
+   "alt_r30": -28.3,
+   "alt_rs": -2.0,
+   "btc_r30": -26.3,
+   "d_lebar50": 1.7,
    "lebar50": 5.0,
    "n_koin": 121.0,
    "s2": 1.7,
-   "s4": 74.1
+   "s4": 75.0
   },
   "skor": -4,
-  "ts": "2026-11-27T23:55:43+00:00"
+  "ts": "2026-11-28T00:48:59+00:00"
  },
  "last_summary": "2026-11-27",
  "pasar": {
-  "harga": 59913.5,
-  "ma": 74781.4124,
+  "harga": 59973.9,
+  "ma": 74344.7854,
   "rezim": "turun",
   "teks": "BTC di bawah MA50 & MA50 menurun",
-  "ts": "2026-11-27T23:55:43+00:00"
+  "ts": "2026-11-28T00:48:59+00:00"
  },
  "pilihan": {
   "aturan": "S2",
@@ -2195,11 +2195,9 @@
  "riwayat_isi_ulang": true,
  "short": {},
  "short_kandidat": {
-  "kandidat": [
-   "LUNC"
-  ],
+  "kandidat": [],
   "sinyal": [],
-  "ts": "2026-11-27T23:55:43+00:00"
+  "ts": "2026-11-28T00:48:59+00:00"
  },
  "siklus": {
   "btc": {
@@ -2217,6 +2215,7 @@
    "AAVE",
    "ONDO",
    "SKY",
+   "PUMP",
    "MORPHO",
    "CAKE",
    "币安人生",
@@ -2227,18 +2226,18 @@
   "jumlah": {
    "1": 13,
    "2": 2,
-   "3": 15,
-   "4": 86
+   "3": 14,
+   "4": 87
   },
   "persen_naik": 2,
-  "persen_turun": 74,
+  "persen_turun": 75,
   "siap_tembus": [
    "PEPE",
    "KITE",
    "SENT"
   ],
   "tembus_dasar": [],
-  "ts": "2026-11-27T23:55:43+00:00"
+  "ts": "2026-11-28T00:48:59+00:00"
  },
  "stage2": {}
 }
